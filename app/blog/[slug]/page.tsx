@@ -1,10 +1,11 @@
 import { PageProps } from '@/.next/types/app/page';
-import { getBlogData, getPost, getPostMetaData } from '@/fetch/notion';
+import { getPostList, getPost, getPostMetaData } from '@/fetch/notion';
 
+//Incremental Static Regeneration
 export const revalidate = 60;
 
 export async function generateSlugs() {
-  const posts = await getBlogData();
+  const posts = await getPostList();
   //@ts-expect-error
   const postSlugs = posts.map(post => post.id.slice(0, 8));
   return {

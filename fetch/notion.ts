@@ -1,7 +1,7 @@
 import { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_KEY as string });
-export const getBlogData = async () =>
+export const getPostList = async () =>
   await notion.databases.query({
     database_id: process.env.NOTION_BLOG_ID as string,
     sorts: [
