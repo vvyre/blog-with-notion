@@ -1,22 +1,41 @@
-import { PageProps } from '@/.next/types/app/page';
+import { getSummary } from '@/_lib/utils/get-summary';
+import { getTitle } from '@/_lib/utils/get-title';
+import { parsedSlug } from '@/_lib/utils/parsed-slug';
 import { getPostList, getPost, getPostMetaData } from '@/fetch/notion';
 
-//Incremental Static Regeneration
 export const revalidate = 60;
-
-export async function generateSlugs() {
+export async function generateStaticParams() {
   const posts = await getPostList();
-  //@ts-expect-error
-  const postSlugs = posts.map(post => post.id.slice(0, 8));
-  return {
-    paths: postSlugs,
-    fallback: 'blocking',
+  return posts.map(post => ({
+    slug: parsedSlug(post),
+  }));
+}
+
+interface PostPageProps {
+  params: {
+    slug: string;
   };
 }
 
-export default async function Post({ params }: PageProps) {
-  const meta = await getPostMetaData(params.slug);
-  const blocks = await getPost(params.slug);
+export async function generateMetadata({ params }: PostPageProps) {
+  const posts = await getPostList();
+  const [matchPost] = posts.filter(
+    post => parsedSlug(post) === decodeURIComponent(params.slug)
+  );
+
+  return {
+    title: `Seungyoon Yu / ${getTitle(matchPost)}`,
+    description: getSummary(matchPost),
+  };
+}
+
+export default async function Post({ params }: PostPageProps) {
+  const posts = await getPostList();
+  const [matchPost] = posts.filter(
+    post => parsedSlug(post) === decodeURIComponent(params.slug)
+  );
+  const meta = await getPostMetaData(matchPost.id);
+  const blocks = await getPost(matchPost.id);
 
   return (
     <main>
