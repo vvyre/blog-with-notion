@@ -1,14 +1,9 @@
-import { css } from '@emotion/react';
 import { ComponentPropsWithoutRef } from 'react';
+import { NotionPolymorphicComponentProps } from '../block/types';
 
-export function Divider() {
-  return (
-    <hr
-      css={css`
-        height: '1px';
-        background: 'transparent';
-        border-bottom: '1px solid black';
-      `}
-    />
-  );
+type DividerProps = Partial<NotionPolymorphicComponentProps<'divider'>> &
+  ComponentPropsWithoutRef<'hr'>;
+
+export function Divider({ block }: DividerProps) {
+  return <hr />;
 }

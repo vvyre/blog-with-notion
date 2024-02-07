@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import { ComponentPropsWithoutRef } from 'react';
 
 interface SpacingProps extends ComponentPropsWithoutRef<'div'> {
@@ -6,11 +5,5 @@ interface SpacingProps extends ComponentPropsWithoutRef<'div'> {
 }
 
 export function Spacing({ size }: SpacingProps) {
-  return (
-    <div
-      css={css`
-        height: ${size};
-      `}
-    />
-  );
+  return <div />;
 }
