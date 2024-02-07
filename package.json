@@ -43,6 +43,5 @@
     "jest-environment-jsdom": "^29.7.0",
     "storybook": "^7.6.12",
     "typescript": "^5"
-  },
-  "packageManager": "yarn@3.6.3"
+  }
 }
