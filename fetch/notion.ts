@@ -1,8 +1,8 @@
 import { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_KEY as string });
-export const getPostList = async () =>
-  await notion.databases.query({
+export const getPostList = async () => {
+  const response = await notion.databases.query({
     database_id: process.env.NOTION_BLOG_ID as string,
     sorts: [
       {
@@ -21,7 +21,8 @@ export const getPostList = async () =>
       ],
     },
   });
-
+  return response.results;
+};
 export const getPostMetaData = async (id: string) => {
   return await notion.pages.retrieve({ page_id: id });
 };
