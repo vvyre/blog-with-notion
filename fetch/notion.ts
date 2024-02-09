@@ -1,9 +1,16 @@
-import { Client } from '@notionhq/client';
+import {
+  BlockChildRetreive,
+  PageDataRow,
+  QueryDatabase,
+  RetrievePage,
+} from '@/fetch/notion-response';
+import { NotionBlock } from '@/_lib/types/block';
+import { DatabaseQuery } from '@/fetch/notion-request';
+import { notionFetch } from './notion-fetch';
 
-const notion = new Client({ auth: process.env.NOTION_KEY as string });
-export const getPostList = async () => {
-  const response = await notion.databases.query({
-    database_id: process.env.NOTION_BLOG_ID as string,
+export const getPostList = async (): Promise<PageDataRow[]> => {
+  const endpoint = `https://api.notion.com/v1/databases/${process.env.NOTION_BLOG_ID}/query`;
+  const query = {
     sorts: [
       {
         property: 'date',
@@ -20,27 +27,34 @@ export const getPostList = async () => {
         },
       ],
     },
-  });
+  };
+
+  const response = await notionFetch<DatabaseQuery, QueryDatabase>(
+    endpoint,
+    'POST',
+    query
+  );
   return response.results;
 };
-export const getPostMetaData = async (id: string) => {
-  return await notion.pages.retrieve({ page_id: id });
+export const getPostMetaData = async (page_id: string): Promise<RetrievePage> => {
+  const endpoint = `https://api.notion.com/v1/pages/${page_id}`;
+  const response = await notionFetch<undefined, RetrievePage>(endpoint, 'GET');
+  return response;
 };
 
-export const getPost = async (id: string) => {
-  const query = {
-    block_id: id,
-    page_size: 100,
-  };
+export const getPost = async (block_id: string): Promise<NotionBlock[]> => {
+  const endpoint = `https://api.notion.com/v1/blocks/${block_id}/children?`;
+  const query = new URLSearchParams();
+  query.set('page_size', '100');
+
   let results = [];
-  let blocks = await notion.blocks.children.list(query);
+  let blocks = await notionFetch<undefined, BlockChildRetreive>(endpoint + query);
   results = [...blocks.results];
   while (blocks.has_more) {
-    blocks = await notion.blocks.children.list({
-      ...query,
-      start_cursor: blocks.next_cursor as string | undefined,
-    });
+    query.set('start_cursor', blocks.next_cursor || '');
+    blocks = await notionFetch<undefined, BlockChildRetreive>(endpoint + query);
     results = [...results, ...blocks.results];
   }
+
   return results;
 };
