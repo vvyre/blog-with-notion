@@ -1,8 +1,8 @@
 import {
-  BlockChildRetreive,
+  RetreiveBlockChild,
   PageDataRow,
+  PageMetaData,
   QueryDatabase,
-  RetrievePage,
 } from '@/fetch/notion-response';
 import { NotionBlock } from '@/_lib/types/block';
 import { DatabaseQuery } from '@/fetch/notion-request';
@@ -36,9 +36,9 @@ export const getPostList = async (): Promise<PageDataRow[]> => {
   );
   return response.results;
 };
-export const getPostMetaData = async (page_id: string): Promise<RetrievePage> => {
+export const getPostMetaData = async (page_id: string): Promise<PageMetaData> => {
   const endpoint = `https://api.notion.com/v1/pages/${page_id}`;
-  const response = await notionFetch<undefined, RetrievePage>(endpoint, 'GET');
+  const response = await notionFetch<undefined, PageMetaData>(endpoint, 'GET');
   return response;
 };
 
@@ -48,11 +48,11 @@ export const getPost = async (block_id: string): Promise<NotionBlock[]> => {
   query.set('page_size', '100');
 
   let results = [];
-  let blocks = await notionFetch<undefined, BlockChildRetreive>(endpoint + query);
+  let blocks = await notionFetch<undefined, RetreiveBlockChild>(endpoint + query);
   results = [...blocks.results];
   while (blocks.has_more) {
     query.set('start_cursor', blocks.next_cursor || '');
-    blocks = await notionFetch<undefined, BlockChildRetreive>(endpoint + query);
+    blocks = await notionFetch<undefined, RetreiveBlockChild>(endpoint + query);
     results = [...results, ...blocks.results];
   }
 

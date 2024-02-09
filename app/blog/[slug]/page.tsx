@@ -1,8 +1,8 @@
-//@ts-nocheck
 import { getSummary } from '@/utils/get-summary';
 import { getTitle } from '@/utils/get-title';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { getPostList, getPost, getPostMetaData } from '@/fetch/notion';
+import { meta } from '@/constants/meta';
 
 interface PostPageProps {
   params: {
@@ -10,8 +10,10 @@ interface PostPageProps {
   };
 }
 
+export const revalidate = 60;
+
 export default async function Post({ params }: PostPageProps) {
-  const posts = await getPostList({ revalidate: 60 });
+  const posts = await getPostList();
   const [matchPost] = posts.filter(
     post => parsedSlug(post) === decodeURIComponent(params.slug)
   );
@@ -20,15 +22,8 @@ export default async function Post({ params }: PostPageProps) {
 
   return (
     <main>
-      <h1>{meta.id}</h1>
-      <div>
-        {/* {blocks.map(b => {
-          //@ts-expect-error
-          const type = b.type;
-          //@ts-expect-error
-          return b[type].rich_text[0].plain_text;
-        })} */}
-      </div>
+      <h1>{meta.properties.title.title[0].plain_text}</h1>
+      <p>{meta.properties.summary.rich_text.plain_text}</p>
     </main>
   );
 }
@@ -47,7 +42,7 @@ export async function generateMetadata({ params }: PostPageProps) {
   );
 
   return {
-    title: `Seungyoon Yu / ${getTitle(matchPost)}`,
+    title: `${meta.siteTitle} / ${getTitle(matchPost)}`,
     description: getSummary(matchPost),
   };
 }
