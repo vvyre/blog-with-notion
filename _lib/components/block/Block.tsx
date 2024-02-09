@@ -1,7 +1,7 @@
 import { BlockComponentMap } from './types';
 import { Divider } from '../layout/Divider.js';
 import { ComponentPropsWithoutRef } from 'react';
-import { BlockTypes, NotionBlock } from '@/_lib/types/notion';
+import { BlockTypes, NotionBlock } from '@/_lib/types/block';
 
 const blockComponentMap: BlockComponentMap = {
   bookmark: Divider,
