@@ -1,7 +1,8 @@
-import { BlockComponentMap } from './types';
-import { Divider } from '../layout/Divider.js';
+import { Divider } from '../layout/divider/Divider.jsx';
 import { ComponentPropsWithoutRef } from 'react';
 import { BlockTypes, NotionBlock } from '@/_lib/types/block';
+import { BlockComponentMap } from '@/_lib/types/components';
+import { Paragraph } from './paragraph/paragraph.jsx';
 
 const blockComponentMap: BlockComponentMap = {
   bookmark: Divider,
@@ -23,7 +24,7 @@ const blockComponentMap: BlockComponentMap = {
   link_preview: Divider,
   link_to_page: Divider,
   numbered_list_item: Divider,
-  paragraph: Divider,
+  paragraph: Paragraph,
   pdf: Divider,
   quote: Divider,
   synced_block: Divider,
@@ -40,6 +41,7 @@ const blockComponentMap: BlockComponentMap = {
 type BlockProps<T extends BlockTypes> = {
   block: NotionBlock<T>;
 } & ComponentPropsWithoutRef<BlockComponentMap[T]>;
+
 export const Block = <T extends BlockTypes>({ block }: BlockProps<T>) => {
   const Component = blockComponentMap[block.type];
   return <Component block={block} />;
