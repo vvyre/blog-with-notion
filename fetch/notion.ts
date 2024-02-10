@@ -1,9 +1,4 @@
-import {
-  BlockChildRetreive,
-  PageDataRow,
-  QueryDatabase,
-  RetrievePage,
-} from '@/fetch/notion-response';
+import { BlockChildRetreive, PageDataRow, PageMetaData, QueryDatabase, RetrievePage } from '@/fetch/notion-response';
 import { NotionBlock } from '@/_lib/types/block';
 import { DatabaseQuery } from '@/fetch/notion-request';
 import { notionFetch } from './notion-fetch';
@@ -29,16 +24,12 @@ export const getPostList = async (): Promise<PageDataRow[]> => {
     },
   };
 
-  const response = await notionFetch<DatabaseQuery, QueryDatabase>(
-    endpoint,
-    'POST',
-    query
-  );
+  const response = await notionFetch<DatabaseQuery, QueryDatabase>(endpoint, 'POST', query);
   return response.results;
 };
-export const getPostMetaData = async (page_id: string): Promise<RetrievePage> => {
+export const getPostMetaData = async (page_id: string): Promise<PageMetaData> => {
   const endpoint = `https://api.notion.com/v1/pages/${page_id}`;
-  const response = await notionFetch<undefined, RetrievePage>(endpoint, 'GET');
+  const response = await notionFetch<undefined, PageMetaData>(endpoint, 'GET');
   return response;
 };
 

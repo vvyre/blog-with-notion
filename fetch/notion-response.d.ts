@@ -19,16 +19,17 @@ export interface PageDataRow {
   icon: Object | null;
   parent: Object;
   archived: boolean;
-  properties: {
-    title: { title: [{ rich_text: RichText; plain_text: string }] };
-    summary: { rich_text: RichText };
-    published: {};
-    thumbnail: { thumbnail: [] };
-  };
+  properties: PageProperties;
   url: string;
   public_url: string | null;
 }
-
+export type PageProperties = {
+  title: { title: [{ rich_text: RichText; plain_text: string }] };
+  summary: { rich_text: RichText };
+  published: {};
+  thumbnail: { thumbnail: [] };
+  date: {};
+};
 export type RetrievePage = PageMetaData[];
 
 export interface PageMetaData {
@@ -45,7 +46,7 @@ export interface PageMetaData {
     database_id: string;
   };
   archived: false;
-  properties: Object;
+  properties: PageProperties;
   url: string;
   public_url: string | null;
   request_id: string;
