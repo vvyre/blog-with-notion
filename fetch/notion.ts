@@ -23,10 +23,34 @@ export const getPostList = async (): Promise<PageDataRow[]> => {
       ],
     },
   };
-
   const response = await notionFetch<DatabaseQuery, QueryDatabase>(endpoint, 'POST', query);
   return response.results;
 };
+
+const POST_LIST_CACHE: { POSTS: PageDataRow[]; TIMESTAMP: number; CACHE_DURATION: number } = {
+  POSTS: [],
+  TIMESTAMP: 0,
+  CACHE_DURATION: 1000,
+};
+
+/**
+ * 페이지 하나 빌드 시 같은 API를 너무 많이 중복호출해서 간단하게 캐시 로직을 실험하려고 간단히 만들었는데,
+ * 실제로 빌드 시나 ISR revalidate될 때에 캐시된 데이터가 리턴되지 않음... DEV 환경에서는 잘 리턴되는데 무슨 이슈일까
+ */
+export const getCachedPostList = async () => {
+  const now = Date.now();
+  if (POST_LIST_CACHE.POSTS.length > 0 && now - POST_LIST_CACHE.TIMESTAMP < POST_LIST_CACHE.CACHE_DURATION) {
+    console.log('cache called');
+    return POST_LIST_CACHE.POSTS;
+  } else {
+    const posts = await getPostList();
+    console.log('fetch called');
+    POST_LIST_CACHE.POSTS = posts;
+    POST_LIST_CACHE.TIMESTAMP = now;
+    return posts;
+  }
+};
+
 export const getPostMetaData = async (page_id: string): Promise<PageMetaData> => {
   const endpoint = `https://api.notion.com/v1/pages/${page_id}`;
   const response = await notionFetch<undefined, PageMetaData>(endpoint, 'GET');
