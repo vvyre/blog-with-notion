@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 interface TitleProps extends ComponentPropsWithoutRef<'h1'> {
   title: string;

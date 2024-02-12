@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
-import { RichText } from '@/_lib/types/block';
+import type { RichText } from '@/_lib/types/block';
 import { TEXT_COLORS } from './Typography.css';
 import { COLORS } from '@/_lib/styles/colors';
 import { Annotations } from './annotations/Annotations';
