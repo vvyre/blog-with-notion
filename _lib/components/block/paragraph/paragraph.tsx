@@ -2,14 +2,16 @@ import { RichText } from '@/_lib/types/block';
 import { Txt } from '../../typography/Txt';
 import { NotionPolymorphicComponentProps } from '@/_lib/types/components';
 import { ChildrenBlocks } from '../ChildrenBlocks';
+import { useId } from 'react';
 
 export function Paragraph({ block }: NotionPolymorphicComponentProps<'paragraph'>) {
+  const id = useId();
   return (
-    <>
+    <div>
       {block.paragraph.rich_text.map((txt: RichText) => (
-        <Txt as="p" richText={txt} />
+        <Txt key={id} as="p" richText={txt} />
       ))}
-      <ChildrenBlocks block={block.paragraph.children} />
-    </>
+      {block.paragraph.children && <ChildrenBlocks block={block.paragraph.children} />}
+    </div>
   );
 }
