@@ -10,13 +10,14 @@ export default async function PostList() {
 
   return (
     <main>
+      {posts.length === 0 && <p>작성된 글이 없어요.</p>}
       {posts.map(post => (
-        <>
+        <div key={post.id}>
           <h1>
             <Link href={`/blog/${parsedSlug(post)}`}>{getTitle(post)}</Link>
           </h1>
           <p>{getSummary(post)}</p>
-        </>
+        </div>
       ))}
     </main>
   );
