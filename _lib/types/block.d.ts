@@ -1,3 +1,5 @@
+import { COLORS } from '../styles/colors';
+
 export type BlockTypes =
   | 'bookmark'
   | 'breadcrumb'
@@ -42,7 +44,37 @@ export type NotionBlock<T = BlockTypes> = {
   has_children: boolean;
   archived: boolean;
   type: T;
-  [P in T]: TextElement;
+  bookmark?: any;
+  breadcrumb?: any;
+  bulleted_list_item?: any;
+  callout?: any;
+  child_database?: any;
+  child_page?: any;
+  column?: any;
+  column_list?: any;
+  divider?: any;
+  embed?: any;
+  equation?: any;
+  file?: any;
+  heading_1?: any;
+  heading_2?: any;
+  heading_3?: any;
+  image?: any;
+  link_preview?: any;
+  link_to_page?: any;
+  numbered_list_item?: any;
+  paragraph?: any;
+  pdf?: any;
+  quote?: any;
+  synced_block?: any;
+  table?: any;
+  table_of_contents?: any;
+  table_row?: any;
+  template?: any;
+  to_do?: any;
+  toggle?: any;
+  unsupported?: any;
+  video?: any;
 };
 
 interface Parent {
@@ -68,6 +100,7 @@ interface RichText {
   plain_text: string;
   href: null | string;
 }
+[];
 
 interface Text {
   content: string;
@@ -84,5 +117,23 @@ interface Annotations {
   strikethrough: boolean;
   underline: boolean;
   code: boolean;
-  color: string;
+  color: keyof typeof COLORS;
+}
+
+interface TextBlock {
+  type: 'text';
+  text: {
+    content: string;
+    link: Object;
+  };
+  annotations: {
+    bold: boolean;
+    italic: boolean;
+    strikethrough: boolean;
+    underline: boolean;
+    code: boolean;
+    color: keyof typeof COLORS;
+  };
+  plain_text: string;
+  href: string;
 }
