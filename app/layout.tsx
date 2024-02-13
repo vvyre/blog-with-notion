@@ -1,3 +1,4 @@
+import '../_lib/styles/global.css';
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 
