@@ -4,7 +4,8 @@ import { parsedSlug } from '@/utils/parsed-slug';
 import { meta } from '@/constants/meta';
 import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
 import { Block } from '@/_lib/components/block/Block';
-import { Title } from '@/_lib/components/layout/title/Title';
+import { Title } from '@/_lib/components/compounds/title/title';
+import { Article } from '@/_lib/components/template/article';
 
 interface PostPageProps {
   params: {
@@ -21,12 +22,12 @@ export default async function Post({ params }: PostPageProps) {
   const blocks = await getPost(matchPost.id);
 
   return (
-    <article>
+    <Article>
       <Title title={getTitle(meta)} />
       {blocks.map(b => (
         <Block key={b.id} block={b} />
       ))}
-    </article>
+    </Article>
   );
 }
 
