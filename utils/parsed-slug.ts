@@ -1,4 +1,4 @@
-import { PageDataRow } from '../fetch/notion-response';
+import { PageDataRow } from '../_lib/types/notion-response';
 
 export function parsedSlug(post: PageDataRow) {
   const str = post.properties.title.title[0].plain_text;
