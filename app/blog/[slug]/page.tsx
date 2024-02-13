@@ -6,6 +6,8 @@ import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
 import { Block } from '@/_lib/components/block/Block';
 import { Title } from '@/_lib/components/compounds/title/title';
 import { Article } from '@/_lib/components/template/article';
+import { Utterances } from '@/_lib/components/utterances/utterances';
+import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 
 interface PostPageProps {
   params: {
@@ -22,12 +24,17 @@ export default async function Post({ params }: PostPageProps) {
   const blocks = await getPost(matchPost.id);
 
   return (
-    <Article>
-      <Title title={getTitle(meta)} />
-      {blocks.map(b => (
-        <Block key={b.id} block={b} />
-      ))}
-    </Article>
+    <>
+      <Article>
+        <Title title={getTitle(meta)} />
+        {blocks.map(b => (
+          <Block key={b.id} block={b} />
+        ))}
+      </Article>
+      <Spacing size="3rem" />
+      <Utterances />
+      <Spacing size="10rem" />
+    </>
   );
 }
 
