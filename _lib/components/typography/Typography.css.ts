@@ -1,4 +1,3 @@
-import { COLORS } from '@/_lib/styles/colors.css';
 import { styleVariants } from '@vanilla-extract/css';
 
 export const TEXT_STYLE = styleVariants({
@@ -8,26 +7,26 @@ export const TEXT_STYLE = styleVariants({
   },
   XL: {
     fontSize: '1.5rem',
-    fontWeight: 500,
+    fontWeight: 600,
   },
   L: {
     fontSize: '1.25rem',
-    fontWeight: 300,
+    fontWeight: 400,
   },
   M: {
     fontSize: '1.15rem',
-    fontWeight: 300,
+    fontWeight: 400,
   },
   S: {
     fontSize: '1rem',
-    fontWeight: 300,
+    fontWeight: 400,
   },
   XS: {
     fontSize: '0.9rem',
-    fontWeight: 300,
+    fontWeight: 400,
   },
   XXS: {
     fontSize: '0.8rem',
-    fontWeight: 400,
+    fontWeight: 500,
   },
 });

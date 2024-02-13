@@ -6,5 +6,5 @@ interface TagProps {
 }
 export function Tag({ children }: TagProps) {
   const className = `${BASE}`;
-  return <span className={className}>{children}</span>;
+  return <span className={className}>*{children}</span>;
 }

@@ -1,5 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { code, main } from './fonts.css';
+import { COLORS, THEMES } from './colors.css';
 
 globalStyle('*, *:before, *:after', {
   boxSizing: 'inherit',
@@ -9,6 +10,7 @@ globalStyle('*, *:before, *:after', {
 });
 
 globalStyle('html', {
+  backgroundColor: THEMES.light_b1,
   boxSizing: 'border-box',
   MozBoxSizing: 'border-box',
   fontSize: '1em',
@@ -17,9 +19,15 @@ globalStyle('html', {
   MozTextSizeAdjust: '100%',
 });
 
+globalStyle('body', {
+  textRendering: 'optimizeLegibility',
+  WebkitFontSmoothing: 'antialiased',
+});
+
 globalStyle('body, p, h1, h2, h3, h4, h5, h6', {
   margin: 0,
   padding: 0,
+  wordBreak: 'break-word',
   fontWeight: 400,
 });
 

@@ -11,7 +11,8 @@ import { getTags } from '@/utils/get-tags';
 import { Tag } from '../../typography/tag/tag';
 import { View } from '../../layout/view/view';
 import { Spacing } from '../../layout/spacing/spacing';
-import { POST_BOX } from '../../layout/view/view.css';
+import { POST_BOX } from './post-list.css';
+import { Tagbox } from '../../typography/tag/tagbox';
 
 interface PostListProps {
   pageData: PageDataRow;
@@ -20,23 +21,26 @@ export function PostList({ pageData }: PostListProps) {
   return (
     <List as="li">
       <View styleVariant={POST_BOX}>
-        <View>
-          {getTags(pageData).map(t => (
-            <Tag key={t.id}>{t.name}</Tag>
-          ))}
-        </View>
-        <Spacing size="0.5rem" />
+        <Spacing size="0.25rem" />
         <View>
           <Link href={`/blog/${parsedSlug(pageData)}`}>
             <Heading size="XL">{getTitle(pageData)}</Heading>
             <Spacing size="0.5rem" />
             <Txt>{getSummary(pageData)}</Txt>
-            <Spacing size="0.25rem" />
-            <Txt>{getDate(pageData)}</Txt>
-            <Spacing size="0.25rem" />
+            <Spacing size="0.5rem" />
+            <Txt size="XS" color="gray">
+              {getDate(pageData)}
+            </Txt>
           </Link>
+          <Spacing size="0.15rem" />
+          <Tagbox>
+            {getTags(pageData).map(t => (
+              <Tag key={t.id}>{t.name}</Tag>
+            ))}
+          </Tagbox>
+          <Spacing size="0.5rem" />
+          {/*TODO: ADD THUMBNAIL*/}
         </View>
-        <Spacing size="0.75rem" />
       </View>
     </List>
   );
