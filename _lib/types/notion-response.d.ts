@@ -1,4 +1,4 @@
-import { NotionBlock, RichText } from './block';
+import { NotionBlock, RichText, Tag, TextElement, WrittenDate } from './block';
 
 export interface QueryDatabase {
   object: string;
@@ -24,11 +24,12 @@ export interface PageDataRow {
   public_url: string | null;
 }
 export type PageProperties = {
+  date: { date: WrittenDate };
   title: { title: [{ rich_text: RichText; plain_text: string }] };
   summary: { rich_text: RichText[] };
   published: {};
   thumbnail: { thumbnail: [] };
-  date: {};
+  tags: { multi_select: Tag[] };
 };
 export type RetrievePage = PageMetaData[];
 
@@ -59,12 +60,4 @@ export interface RetreiveBlockChild {
   has_more: boolean;
   type: 'block';
   block: Object;
-}
-export interface DatabaseColumn {
-  date: { date: {} };
-  title: { title: [{ rich_text: RichText; plain_text: string }] };
-  summary: { rich_text: RichText };
-  published: {};
-  thumbnail: { thumbnail: [] };
-  tags: { tags: [] };
 }

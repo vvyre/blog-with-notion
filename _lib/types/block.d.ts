@@ -100,7 +100,12 @@ interface RichText {
   plain_text: string;
   href: null | string;
 }
-[];
+
+interface WrittenDate {
+  start: 'string' | null;
+  end: 'string' | null;
+  time_zone: 'string' | null;
+}
 
 interface Text {
   content: string;
@@ -136,4 +141,10 @@ interface TextBlock {
   };
   plain_text: string;
   href: string;
+}
+
+interface Tag {
+  id: 'string';
+  name: 'string';
+  color: keyof typeof COLORS;
 }

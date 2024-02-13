@@ -1,8 +1,9 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 import type { RichText } from '@/_lib/types/block';
 import { COLORS, COLOR_STYLE_VARIANTS } from '@/_lib/styles/colors.css';
-import { Annotations } from '../annotations/Annotations';
+import { Annotations } from '../annotations/annotations';
 import Link from 'next/link';
+import { TEXT_STYLE } from '../typography.css';
 
 type TxtProps<T extends ElementType> = {
   as?: T | 'Link';
@@ -13,6 +14,7 @@ type TxtProps<T extends ElementType> = {
   underline?: boolean;
   color?: keyof typeof COLORS;
   richText?: RichText;
+  size?: keyof typeof TEXT_STYLE;
 } & ComponentPropsWithoutRef<T>;
 
 export function Txt<T extends ElementType>({
@@ -24,14 +26,17 @@ export function Txt<T extends ElementType>({
   underline,
   color = 'default',
   richText,
+  size,
   ...props
 }: TxtProps<T>) {
-  const className = richText ? richText.annotations.color : color;
+  const className = `${richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]} ${
+    size ? TEXT_STYLE[size] : TEXT_STYLE['S']
+  }`;
   const Component = as || 'p';
 
   if (Component !== 'Link')
     return (
-      <Component className={COLOR_STYLE_VARIANTS[className]} {...props}>
+      <Component className={className} {...props}>
         <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>
           {props.children}
         </Annotations>
@@ -39,7 +44,7 @@ export function Txt<T extends ElementType>({
     );
   else
     return (
-      <Link href={richText?.href || props.href} className={COLOR_STYLE_VARIANTS[className]} {...props}>
+      <Link href={richText?.href || props.href} className={className} {...props}>
         <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>
           {props.children}
         </Annotations>

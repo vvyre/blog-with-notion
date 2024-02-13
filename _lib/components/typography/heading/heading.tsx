@@ -1,8 +1,8 @@
 import { COLORS } from '@/_lib/styles/colors.css';
 import type { RichText } from '@/_lib/types/block';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
-import { Annotations } from '../annotations/Annotations';
-import { TEXT_STYLE } from '../Typography.css';
+import { Annotations } from '../annotations/annotations';
+import { TEXT_STYLE } from '../typography.css';
 
 type HeadingProps<T extends ElementType> = {
   as?: T;

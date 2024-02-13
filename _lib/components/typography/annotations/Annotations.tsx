@@ -1,11 +1,11 @@
 import { COLORS } from '@/_lib/styles/colors.css';
 import { RichText } from '@/_lib/types/block';
 import { Wrapper } from '../../util/Wrapper';
-import { Strong } from './Strong';
-import { Italic } from './Italic';
-import { Strike } from './Strike';
-import { Underline } from './Underline';
-import { Code } from './Code';
+import { Strong } from './strong';
+import { Italic } from './italic';
+import { Strike } from './strike';
+import { Underline } from './underline';
+import { Code } from './code';
 import { ReactNode } from 'react';
 
 interface AnnotationsProps {
