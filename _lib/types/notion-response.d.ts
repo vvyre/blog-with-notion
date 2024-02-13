@@ -1,4 +1,4 @@
-import { NotionBlock, RichText } from '../_lib/types/block';
+import { NotionBlock, RichText } from './block';
 
 export interface QueryDatabase {
   object: string;
@@ -25,7 +25,7 @@ export interface PageDataRow {
 }
 export type PageProperties = {
   title: { title: [{ rich_text: RichText; plain_text: string }] };
-  summary: { rich_text: RichText };
+  summary: { rich_text: RichText[] };
   published: {};
   thumbnail: { thumbnail: [] };
   date: {};

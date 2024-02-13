@@ -1,6 +1,12 @@
-import { RetreiveBlockChild, PageDataRow, PageMetaData, QueryDatabase, RetrievePage } from '@/fetch/notion-response';
+import {
+  RetreiveBlockChild,
+  PageDataRow,
+  PageMetaData,
+  QueryDatabase,
+  RetrievePage,
+} from '@/_lib/types/notion-response';
 import { NotionBlock } from '@/_lib/types/block';
-import { DatabaseQuery } from '@/fetch/notion-request';
+import { DatabaseQuery } from '@/_lib/types/notion-request';
 import { notionFetch } from './notion-fetch';
 
 export const getPostList = async (): Promise<PageDataRow[]> => {
