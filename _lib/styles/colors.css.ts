@@ -5,12 +5,12 @@ export const COLORS = {
   blue_background: ' ',
   brown: ' ',
   brown_background: ' ',
-  default: ' ',
-  gray: ' ',
-  gray_background: ' ',
+  default: '#303336',
+  gray: '#808386',
+  gray_background: '#F0F1F4',
   green: ' ',
   green_background: ' ',
-  orange: ' ',
+  orange: '#FA5A15',
   orange_background: ' ',
   pink: ' ',
   pink_background: ' ',
@@ -20,6 +20,14 @@ export const COLORS = {
   red_background: ' ',
   yellow: ' ',
   yellow_background: ' ',
+};
+
+export const THEMES = {
+  theme: '#13D483',
+  highlight: COLORS.orange,
+  light_b1: '#F7F8FA',
+  light_b2: '#E0E1E3',
+  light_b3: '#DFE4E8',
 };
 
 export const COLOR_STYLE_VARIANTS = styleVariants({
