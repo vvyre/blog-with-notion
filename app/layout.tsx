@@ -1,8 +1,9 @@
+import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Seungyoon Yu',
-  description: 'Seungyoon Yu Blog',
+  title: meta.siteTitle,
+  description: meta.siteDiscription,
 };
 
 export default function RootLayout({

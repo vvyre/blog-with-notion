@@ -1,4 +1,4 @@
-import { BlockChildRetreive, PageDataRow, PageMetaData, QueryDatabase, RetrievePage } from '@/fetch/notion-response';
+import { RetreiveBlockChild, PageDataRow, PageMetaData, QueryDatabase, RetrievePage } from '@/fetch/notion-response';
 import { NotionBlock } from '@/_lib/types/block';
 import { DatabaseQuery } from '@/fetch/notion-request';
 import { notionFetch } from './notion-fetch';
@@ -63,11 +63,11 @@ export const getPost = async (block_id: string): Promise<NotionBlock[]> => {
   query.set('page_size', '100');
 
   let results = [];
-  let blocks = await notionFetch<undefined, BlockChildRetreive>(endpoint + query);
+  let blocks = await notionFetch<undefined, RetreiveBlockChild>(endpoint + query);
   results = [...blocks.results];
   while (blocks.has_more) {
     query.set('start_cursor', blocks.next_cursor || '');
-    blocks = await notionFetch<undefined, BlockChildRetreive>(endpoint + query);
+    blocks = await notionFetch<undefined, RetreiveBlockChild>(endpoint + query);
     results = [...results, ...blocks.results];
   }
 

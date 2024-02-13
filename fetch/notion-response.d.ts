@@ -52,11 +52,19 @@ export interface PageMetaData {
   request_id: string;
 }
 
-export interface BlockChildRetreive {
+export interface RetreiveBlockChild {
   object: 'list';
   results: NotionBlock[];
   next_cursor: string | null;
   has_more: boolean;
   type: 'block';
   block: Object;
+}
+export interface DatabaseColumn {
+  date: { date: {} };
+  title: { title: [{ rich_text: RichText; plain_text: string }] };
+  summary: { rich_text: RichText };
+  published: {};
+  thumbnail: { thumbnail: [] };
+  tags: { tags: [] };
 }

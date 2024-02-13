@@ -5,6 +5,7 @@ import { getTitle } from '@/utils/get-title';
 import { getSummary } from '@/utils/get-summary';
 
 export const revalidate = 60;
+
 export default async function PostList() {
   const posts = await getPostList();
 

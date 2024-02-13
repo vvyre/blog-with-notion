@@ -1,6 +1,7 @@
 import { getSummary } from '@/utils/get-summary';
 import { getTitle } from '@/utils/get-title';
 import { parsedSlug } from '@/utils/parsed-slug';
+import { meta } from '@/constants/meta';
 import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
 import { Block } from '@/_lib/components/block/Block';
 import { Title } from '@/_lib/components/layout/title/Title';
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: PostPageProps) {
   const [matchPost] = posts.filter(post => parsedSlug(post) === decodeURIComponent(params.slug));
 
   return {
-    title: `Seungyoon Yu / ${getTitle(matchPost)}`,
+    title: `${meta.siteTitle} / ${getTitle(matchPost)}`,
     description: getSummary(matchPost),
   };
 }
