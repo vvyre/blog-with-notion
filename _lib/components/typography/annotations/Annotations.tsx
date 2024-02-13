@@ -4,7 +4,7 @@ import { Wrapper } from '../../util/Wrapper';
 import { Strong } from './Strong';
 import { Italic } from './Italic';
 import { Strike } from './Strike';
-import { Underline } from '../Underline';
+import { Underline } from './Underline';
 import { Code } from './Code';
 import { ReactNode } from 'react';
 
