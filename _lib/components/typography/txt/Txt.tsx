@@ -34,20 +34,34 @@ export function Txt<T extends ElementType>({
   }`;
   const Component = as || 'p';
 
-  if (Component !== 'Link')
-    return (
-      <Component className={className} {...props}>
-        <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>
-          {props.children}
-        </Annotations>
-      </Component>
-    );
-  else
-    return (
-      <Link href={richText?.href || props.href} className={className} {...props}>
-        <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>
-          {props.children}
-        </Annotations>
-      </Link>
-    );
+  switch (Component) {
+    default:
+      return (
+        <Component className={className} {...props}>
+          <Annotations
+            richText={richText}
+            bold={bold}
+            code={code}
+            italic={italic}
+            strike={strike}
+            underline={underline}>
+            {props.children}
+          </Annotations>
+        </Component>
+      );
+    case 'Link':
+      return (
+        <Link href={richText?.href || props.href} className={className} {...props}>
+          <Annotations
+            richText={richText}
+            bold={bold}
+            code={code}
+            italic={italic}
+            strike={strike}
+            underline={underline}>
+            {props.children}
+          </Annotations>
+        </Link>
+      );
+  }
 }
