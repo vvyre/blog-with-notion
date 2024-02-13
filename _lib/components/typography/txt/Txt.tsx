@@ -1,7 +1,6 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 import type { RichText } from '@/_lib/types/block';
-import { TEXT_COLORS } from '../Typography.css';
-import { COLORS } from '@/_lib/styles/colors';
+import { COLORS, COLOR_STYLE_VARIANTS } from '@/_lib/styles/colors.css';
 import { Annotations } from '../annotations/Annotations';
 import Link from 'next/link';
 
@@ -32,7 +31,7 @@ export function Txt<T extends ElementType>({
 
   if (Component !== 'Link')
     return (
-      <Component className={TEXT_COLORS[className]} {...props}>
+      <Component className={COLOR_STYLE_VARIANTS[className]} {...props}>
         <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>
           {props.children}
         </Annotations>
@@ -40,7 +39,7 @@ export function Txt<T extends ElementType>({
     );
   else
     return (
-      <Link href={richText?.href || props.href} className={TEXT_COLORS[className]} {...props}>
+      <Link href={richText?.href || props.href} className={COLOR_STYLE_VARIANTS[className]} {...props}>
         <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>
           {props.children}
         </Annotations>

@@ -1,4 +1,4 @@
-import { COLORS } from '@/_lib/styles/colors';
+import { COLORS } from '@/_lib/styles/colors.css';
 import type { RichText } from '@/_lib/types/block';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 import { Annotations } from '../annotations/Annotations';

@@ -1,4 +1,4 @@
-import { COLORS } from '@/_lib/styles/colors';
+import { COLORS } from '@/_lib/styles/colors.css';
 import { RichText } from '@/_lib/types/block';
 import { Wrapper } from '../../util/Wrapper';
 import { Strong } from './Strong';
