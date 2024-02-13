@@ -3,6 +3,7 @@ import { ComponentPropsWithoutRef } from 'react';
 import { BlockTypes, NotionBlock } from '@/_lib/types/block';
 import { BlockComponentMap } from '@/_lib/types/components';
 import { Paragraph } from './paragraph/paragraph';
+import { Heading_1 } from './headings/heading_1';
 
 const blockComponentMap: BlockComponentMap = {
   bookmark: Divider,
@@ -17,7 +18,7 @@ const blockComponentMap: BlockComponentMap = {
   embed: Divider,
   equation: Divider,
   file: Divider,
-  heading_1: Divider,
+  heading_1: Heading_1,
   heading_2: Divider,
   heading_3: Divider,
   image: Divider,

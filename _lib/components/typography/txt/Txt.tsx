@@ -1,8 +1,8 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 import type { RichText } from '@/_lib/types/block';
-import { TEXT_COLORS } from './Typography.css';
+import { TEXT_COLORS } from '../Typography.css';
 import { COLORS } from '@/_lib/styles/colors';
-import { Annotations } from './annotations/Annotations';
+import { Annotations } from '../annotations/Annotations';
 import Link from 'next/link';
 
 type TxtProps<T extends ElementType> = {
