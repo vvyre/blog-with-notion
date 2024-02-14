@@ -10,6 +10,6 @@ export const meta = {
   },
 };
 export const routes: { name: string; path: string }[] = [
-  { name: 'blog', path: '/' },
-  { name: 'about', path: '/about' },
+  { name: '블로그', path: '/' },
+  { name: '소개', path: '/about' },
 ];
