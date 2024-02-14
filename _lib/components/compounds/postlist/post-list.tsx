@@ -25,14 +25,14 @@ export function PostList({ pageData }: PostListProps) {
         <View>
           <Link href={`/blog/${parsedSlug(pageData)}`}>
             <Heading size="XL">{getTitle(pageData)}</Heading>
-            <Spacing size="0.5rem" />
+            <Spacing size="1rem" />
             <Txt>{getSummary(pageData)}</Txt>
-            <Spacing size="0.5rem" />
+            <Spacing size="0.75rem" />
             <Txt size="XS" color="gray">
               {getDate(pageData)}
             </Txt>
           </Link>
-          <Spacing size="0.15rem" />
+          <Spacing size="0.25rem" />
           <Tagbox>
             {getTags(pageData).map(t => (
               <Tag key={t.id}>{t.name}</Tag>
