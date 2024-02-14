@@ -4,6 +4,6 @@ export const RESPONSIVE = style({
   //TODO: 반응형 설정
   margin: '0 auto',
   width: '75vw',
-  maxWidth: '48rem',
+  maxWidth: '42rem',
   padding: '1rem',
 });
