@@ -1,11 +1,11 @@
-import { BlockComponentMap } from '../types/components';
-import { BreadCrumb } from './block/breadcrumb/breadcrumb';
-import { NotionDivider } from './block/divider/divider';
-import { Heading_1 } from './block/headings/heading_1';
-import { Heading_2 } from './block/headings/heading_2';
-import { Heading_3 } from './block/headings/heading_3';
-import { Paragraph } from './block/paragraph/paragraph';
-import { Divider } from './layout/divider/Divider';
+import { BlockComponentMap } from '../../types/components';
+import { BreadCrumb } from './breadcrumb/breadcrumb';
+import { NotionDivider } from './divider/divider';
+import { Heading_1 } from './headings/heading_1';
+import { Heading_2 } from './headings/heading_2';
+import { Heading_3 } from './headings/heading_3';
+import { Paragraph } from './paragraph/paragraph';
+import { Divider } from '../layout/divider/Divider';
 
 export const blockComponentMap: BlockComponentMap = {
   bookmark: Divider,
