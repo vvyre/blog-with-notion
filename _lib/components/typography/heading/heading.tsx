@@ -14,6 +14,7 @@ type HeadingProps<T extends ElementType> = {
   size?: keyof typeof TEXT_STYLE;
   color?: keyof typeof COLORS;
   richText?: RichText;
+  styleVariant?: string;
 } & ComponentPropsWithoutRef<T>;
 export function Heading<T extends ElementType>({
   as,
@@ -25,11 +26,12 @@ export function Heading<T extends ElementType>({
   size,
   color = 'default',
   richText,
+  styleVariant,
   ...props
 }: HeadingProps<T>) {
   const Component = as || 'h1';
   const SIZE = size || (Component === 'h1' ? 'XL' : Component === 'h2' ? 'L' : 'M');
-  const className = `${TEXT_STYLE[SIZE]} ${richText ? richText.annotations.color : color}`;
+  const className = `${TEXT_STYLE[SIZE]} ${richText ? richText.annotations.color : color} ${styleVariant}`;
   return (
     <Component className={className}>
       <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>

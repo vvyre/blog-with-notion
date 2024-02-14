@@ -15,6 +15,7 @@ type TxtProps<T extends ElementType> = {
   color?: keyof typeof COLORS;
   richText?: RichText;
   size?: keyof typeof TEXT_STYLE;
+  styleVariant?: string;
 } & ComponentPropsWithoutRef<T>;
 
 export function Txt<T extends ElementType>({
@@ -27,11 +28,12 @@ export function Txt<T extends ElementType>({
   color = 'default',
   richText,
   size,
+  styleVariant,
   ...props
 }: TxtProps<T>) {
-  const className = `${richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]} ${
-    size ? TEXT_STYLE[size] : TEXT_STYLE['S']
-  }`;
+  const className = `${styleVariant} ${
+    richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]
+  } ${size ? TEXT_STYLE[size] : TEXT_STYLE['S']}`;
   const Component = as || 'p';
 
   switch (Component) {

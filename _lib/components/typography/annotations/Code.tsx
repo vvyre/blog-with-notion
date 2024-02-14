@@ -1,6 +1,9 @@
+import { ReactNode } from 'react';
+import { CODE } from '../typography.css';
+
 export interface CodeProps {
-  codeblock: string;
+  children: ReactNode;
 }
-export function Code({ codeblock }: CodeProps) {
-  return <></>;
+export function Code({ children }: CodeProps) {
+  return <code className={CODE}>{children}</code>;
 }
