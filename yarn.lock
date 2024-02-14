@@ -9399,6 +9399,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight.js@npm:^11.9.0":
+  version: 11.9.0
+  resolution: "highlight.js@npm:11.9.0"
+  checksum: 4043d31c5de9d27d13387d9a9e5e1939557254b7b85f0fab85d9cae0e420e131a3456ebf6148552020a1d8a216d671d583f2433d6c4de6179b8a66487a8325cb
+  languageName: node
+  linkType: hard
+
 "hmac-drbg@npm:^1.0.1":
   version: 1.0.1
   resolution: "hmac-drbg@npm:1.0.1"
@@ -13920,6 +13927,7 @@ __metadata:
     eslint-config-next: 14.1.0
     eslint-plugin-storybook: ^0.6.15
     framer-motion: ^11.0.3
+    highlight.js: ^11.9.0
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
     mini-css-extract-plugin: ^2.8.0
