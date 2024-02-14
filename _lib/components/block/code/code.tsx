@@ -8,7 +8,6 @@ import { Flex } from '../../layout/flex/flex';
 import { getCodeLanguage } from '@/utils/get-code-language';
 
 export function Code({ block }: CodeBlock) {
-  console.log(block);
   const codeHtml = hljs.highlight(block.code.rich_text.map((txt: RichText) => txt.text.content).join('\n'), {
     language: block.code.language,
   }).value;

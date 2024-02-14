@@ -1,6 +1,6 @@
 import type { NotionBlock, RichText } from '../../../types/block';
 
-export interface Paragraph extends NotionBlock<'paragraph'> {
+export interface Paragraph extends NotionPolymorphicComponentProps<'paragraph'> {
   block: {
     type: 'paragraph';
     paragraph: {

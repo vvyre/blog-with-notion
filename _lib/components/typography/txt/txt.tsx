@@ -3,7 +3,7 @@ import type { RichText } from '@/_lib/types/block';
 import { COLORS, COLOR_STYLE_VARIANTS } from '@/_lib/styles/colors.css';
 import { Annotations } from '../annotations/annotations';
 import Link from 'next/link';
-import { TEXT_STYLE } from '../typography.css';
+import { LINK, TEXT_STYLE } from '../typography.css';
 
 type TxtProps<T extends ElementType> = {
   as?: T | 'Link';
@@ -34,7 +34,8 @@ export function Txt<T extends ElementType>({
   const className = `${styleVariant} ${
     richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]
   } ${size ? TEXT_STYLE[size] : TEXT_STYLE['S']}`;
-  const Component = as || 'p';
+  let Component = as || 'p';
+  if (richText?.href) Component = 'a';
 
   switch (Component) {
     default:
@@ -50,6 +51,21 @@ export function Txt<T extends ElementType>({
             {props.children}
           </Annotations>
         </Component>
+      );
+
+    case 'a':
+      return (
+        <a className={`${className} ${richText?.href && LINK}`} href={richText?.href || props.href} {...props}>
+          <Annotations
+            richText={richText}
+            bold={bold}
+            code={code}
+            italic={italic}
+            strike={strike}
+            underline={underline}>
+            {props.children} {'↗︎ '}
+          </Annotations>
+        </a>
       );
     case 'Link':
       return (

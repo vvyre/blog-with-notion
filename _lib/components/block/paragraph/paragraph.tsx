@@ -1,14 +1,13 @@
-import { RichText } from '@/_lib/types/block';
+import type { Paragraph } from './paragraph-block';
+import type { RichText } from '@/_lib/types/block';
 import { Txt } from '../../typography/txt/txt';
-import { NotionPolymorphicComponentProps } from '@/_lib/types/components';
 import { ChildrenBlocks } from '../children-blocks';
 import { useId } from 'react';
 import { View } from '../../layout/view/view';
 import { BASE } from './paragraph.css';
 
-export function Paragraph({ block }: NotionPolymorphicComponentProps<'paragraph'>) {
+export function Paragraph({ block }: Paragraph) {
   const id = useId();
-  console.log(block);
   return (
     <View as="p" styleVariant={BASE}>
       {block.paragraph.rich_text.map((txt: RichText) => (
