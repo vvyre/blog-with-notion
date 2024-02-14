@@ -12,7 +12,8 @@ const meta: Meta<typeof Tag> = {
   tags: ['autodocs'],
   argTypes: {
     children: {
-      description: '내부에 들어갈 컴포넌트입니다.',
+      description: '내부에 들어갈 태그 이름입니다. 텍스트 노드를 권장합니다.',
+      controls: 'text',
     },
   },
 };
