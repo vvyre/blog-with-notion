@@ -7,6 +7,7 @@ export const DEPTH_1 = style([
   BASE,
   {
     listStyleType: 'disc',
+    margin: 0,
   },
 ]);
 
