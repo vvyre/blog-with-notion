@@ -4,12 +4,13 @@ import Link from 'next/link';
 
 type BtnProps<T extends ElementType> = {
   as?: T | 'Link';
-  onClick: (e: MouseEvent) => void;
+  onClick?: (e: MouseEvent) => void;
   children: ReactNode;
+  styleVariant?: string;
 } & ComponentPropsWithoutRef<T>;
 
-export function Btn<T extends ElementType>({ as, onClick, children, ...props }: BtnProps<T>) {
-  const className = BASE;
+export function Btn<T extends ElementType>({ as, onClick, children, styleVariant, ...props }: BtnProps<T>) {
+  const className = `${BASE} ${styleVariant}`;
   const Component = as || 'button';
 
   switch (Component) {
