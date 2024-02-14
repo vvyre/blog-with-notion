@@ -1,4 +1,3 @@
-import { Tag } from '@/_lib/components/typography/tag/tag';
 import { PageDataRow, PageMetaData } from '../_lib/types/notion-response';
 
 export function getTags(post: PageDataRow | PageMetaData) {
