@@ -1,3 +1,5 @@
+import { BlockTypes } from './block';
+
 export interface NotionPolymorphicComponentProps<T> {
   block: NotionBlock<T>;
 }

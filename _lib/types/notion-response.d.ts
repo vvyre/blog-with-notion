@@ -30,6 +30,11 @@ export type PageProperties = {
   published: {};
   thumbnail: { thumbnail: [] };
   tags: { multi_select: Tag[] };
+  ID: {
+    id: 'string';
+    type: 'unique_id';
+    unique_id: { prefix: string | null; number: number };
+  };
 };
 export type RetrievePage = PageMetaData[];
 
