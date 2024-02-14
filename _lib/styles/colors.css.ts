@@ -1,4 +1,5 @@
 import { styleVariants } from '@vanilla-extract/css';
+
 export const THEMES = {
   theme: '#13D483',
   white: '#FFFFFF',

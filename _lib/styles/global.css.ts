@@ -12,8 +12,8 @@ globalStyle('*, *:before, *:after', {
 globalStyle('html', {
   boxSizing: 'border-box',
   MozBoxSizing: 'border-box',
-  fontSize: '1em',
-  lineHeight: '1.4',
+  fontSize: '1rem',
+  lineHeight: '1.65',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
 });
@@ -82,4 +82,8 @@ globalStyle('img, video, canvas, svg', {
 
 globalStyle('::selection, ::-moz-selection', {
   background: 'transparent',
+});
+
+globalStyle('p, span, pre, code, ul li, ol li, li', {
+  fontSize: '1.05rem',
 });
