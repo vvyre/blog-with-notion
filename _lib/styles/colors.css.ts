@@ -5,8 +5,8 @@ export const THEMES = {
   default: '#303336',
   gray: '#808386',
   highlight: '#FA5A15',
-  light_b1: '#F0F2F5',
-  light_b2: '#E8E9EB',
+  light_b1: '#F7F8F9',
+  light_b2: '#F2F3F4',
 };
 
 export const COLORS = {

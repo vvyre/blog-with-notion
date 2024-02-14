@@ -1,13 +1,17 @@
 import { styleVariants } from '@vanilla-extract/css';
 
 export const TEXT_STYLE = styleVariants({
+  XXXL: {
+    fontSize: '2.5rem',
+    fontWeight: 600,
+  },
   XXL: {
     fontSize: '2rem',
-    fontWeight: 600,
+    fontWeight: 500,
   },
   XL: {
     fontSize: '1.5rem',
-    fontWeight: 600,
+    fontWeight: 500,
   },
   L: {
     fontSize: '1.25rem',

@@ -10,7 +10,6 @@ globalStyle('*, *:before, *:after', {
 });
 
 globalStyle('html', {
-  backgroundColor: THEMES.light_b1,
   boxSizing: 'border-box',
   MozBoxSizing: 'border-box',
   fontSize: '1em',
@@ -79,4 +78,8 @@ globalStyle('hr', {
 
 globalStyle('img, video, canvas, svg', {
   verticalAlign: 'middle',
+});
+
+globalStyle('::selection, ::-moz-selection', {
+  background: 'transparent',
 });
