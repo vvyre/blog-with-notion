@@ -6,8 +6,8 @@ export const HEADING_1 = style([
   BASE,
   {
     fontWeight: 600,
-    marginTop: '3rem',
-    marginBottom: '1.5rem',
+    marginTop: '2rem',
+    marginBottom: '1rem',
   },
 ]);
 
@@ -15,8 +15,8 @@ export const HEADING_2 = style([
   BASE,
   {
     fontWeight: 600,
-    marginTop: '2.5rem',
-    marginBottom: '1.25rem',
+    marginTop: '1.5rem',
+    marginBottom: '1rem',
   },
 ]);
 
@@ -24,7 +24,7 @@ export const HEADING_3 = style([
   BASE,
   {
     fontWeight: 400,
-    marginTop: '2rem',
+    marginTop: '1.25rem',
     marginBottom: '1rem',
   },
 ]);

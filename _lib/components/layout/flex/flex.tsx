@@ -29,5 +29,3 @@ export function Flex<T extends ElementType>({
   const Component = as || 'div';
   return <Component className={className}>{children}</Component>;
 }
-
-export default Flex;

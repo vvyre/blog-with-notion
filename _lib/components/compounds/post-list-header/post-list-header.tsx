@@ -1,6 +1,6 @@
 import { PageDataRow } from '@/_lib/types/notion-response';
 import { List } from '../../list/list';
-import Flex from '../../layout/flex/flex';
+import { Flex } from '../../layout/flex/flex';
 import { Txt } from '../../typography/txt/txt';
 import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';

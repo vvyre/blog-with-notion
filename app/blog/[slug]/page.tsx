@@ -9,6 +9,8 @@ import { Article } from '@/_lib/components/template/article';
 import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { groupedBlocks } from '@/utils/grouped-blocks';
+import { Btn } from '@/_lib/components/interaction/button/btn';
+import { Txt } from '@/_lib/components/typography/txt/txt';
 
 interface PostPageProps {
   params: {
@@ -24,11 +26,14 @@ export default async function Post({ params }: PostPageProps) {
   const meta = await getPostMetaData(matchPost.id);
   const blocks = groupedBlocks(await getPost(matchPost.id));
 
-  console.dir(blocks);
   return (
     <>
       <Article>
-        <Title title={getTitle(meta)} />
+        <Txt as="Link" href="/" size="XL">
+          {'←'}
+        </Txt>
+        <Spacing size="2rem" />
+        <Title meta={meta} />
         {blocks.map(b => (
           <Block key={b.id} block={b} />
         ))}
