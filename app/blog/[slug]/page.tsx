@@ -21,7 +21,8 @@ export const revalidate = 60;
 
 export default async function Post({ params }: PostPageProps) {
   const posts = await getCachedPostList();
-  const [matchPost] = posts.filter(post => parsedSlug(post) === decodeURIComponent(params.slug));
+  const [matchPost] = posts.filter(post => parsedSlug(post) == params.slug);
+
   const meta = await getPostMetaData(matchPost.id);
   const blocks = groupedBlocks(await getPost(matchPost.id));
 
@@ -46,14 +47,17 @@ export default async function Post({ params }: PostPageProps) {
 
 export async function generateStaticParams() {
   const posts = await getCachedPostList();
-  return posts.map(post => ({
-    slug: parsedSlug(post),
-  }));
+
+  return posts.map(post => {
+    return {
+      slug: parsedSlug(post),
+    };
+  });
 }
 
 export async function generateMetadata({ params }: PostPageProps) {
   const posts = await getCachedPostList();
-  const [matchPost] = posts.filter(post => parsedSlug(post) === decodeURIComponent(params.slug));
+  const [matchPost] = posts.filter(post => parsedSlug(post) === params.slug);
 
   return {
     title: `${meta.siteTitle} / ${getTitle(matchPost)}`,

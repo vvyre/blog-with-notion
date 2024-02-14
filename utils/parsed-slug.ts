@@ -1,8 +1,6 @@
 import { PageDataRow } from '../_lib/types/notion-response';
 
 export function parsedSlug(post: PageDataRow) {
-  const str = post.properties.title.title[0].plain_text;
-  const blankToHypen = str.replace(/\s+/g, '-');
-  const sanitized = blankToHypen.replace(/[^a-zA-Z0-9-_\u3131-\uD79D]+/g, '');
-  return sanitized;
+  const str = post.properties.ID.unique_id.number;
+  return String(str);
 }
