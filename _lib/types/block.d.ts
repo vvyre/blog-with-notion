@@ -4,6 +4,7 @@ export type BlockTypes =
   | 'bookmark'
   | 'breadcrumb'
   | 'bulleted_list_item'
+  | 'bulleted_list_items'
   | 'callout'
   | 'child_database'
   | 'child_page'
@@ -20,6 +21,7 @@ export type BlockTypes =
   | 'link_preview'
   | 'link_to_page'
   | 'numbered_list_item'
+  | 'numbered_list_items'
   | 'paragraph'
   | 'pdf'
   | 'quote'
@@ -34,19 +36,20 @@ export type BlockTypes =
   | 'video';
 
 export type NotionBlock<T = BlockTypes> = {
-  object: string;
-  id: string;
-  parent: Parent;
-  created_time: string;
-  last_edited_time: string;
-  created_by: User;
-  last_edited_by: User;
-  has_children: boolean;
-  archived: boolean;
+  object?: string;
+  id?: string;
+  parent?: Parent;
+  created_time?: string;
+  last_edited_time?: string;
+  created_by?: User;
+  last_edited_by?: User;
+  has_children?: boolean;
+  archived?: boolean;
   type: T;
   bookmark?: any;
   breadcrumb?: any;
   bulleted_list_item?: any;
+  bulleted_list_items?: any;
   callout?: any;
   child_database?: any;
   child_page?: any;
@@ -63,6 +66,7 @@ export type NotionBlock<T = BlockTypes> = {
   link_preview?: any;
   link_to_page?: any;
   numbered_list_item?: any;
+  numbered_list_items?: any;
   paragraph?: any;
   pdf?: any;
   quote?: any;

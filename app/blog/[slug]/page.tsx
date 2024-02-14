@@ -8,6 +8,7 @@ import { Title } from '@/_lib/components/compounds/title/title';
 import { Article } from '@/_lib/components/template/article';
 import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
+import { groupedBlocks } from '@/utils/grouped-blocks';
 
 interface PostPageProps {
   params: {
@@ -21,8 +22,9 @@ export default async function Post({ params }: PostPageProps) {
   const posts = await getCachedPostList();
   const [matchPost] = posts.filter(post => parsedSlug(post) === decodeURIComponent(params.slug));
   const meta = await getPostMetaData(matchPost.id);
-  const blocks = await getPost(matchPost.id);
+  const blocks = groupedBlocks(await getPost(matchPost.id));
 
+  console.dir(blocks);
   return (
     <>
       <Article>
