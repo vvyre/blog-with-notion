@@ -8,6 +8,7 @@ import { BASE } from './paragraph.css';
 
 export function Paragraph({ block }: NotionPolymorphicComponentProps<'paragraph'>) {
   const id = useId();
+  console.log(block);
   return (
     <View as="p" styleVariant={BASE}>
       {block.paragraph.rich_text.map((txt: RichText) => (

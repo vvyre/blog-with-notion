@@ -15,6 +15,7 @@ import { ColumnList } from './column-list/column-list';
 import { NumberedListItem } from './numbered-list-item/numbered-list-item';
 import { BulletedListWrapper } from './bulleted-list-item/bulleted-list-wrapper';
 import { NumberedListWrapper } from './numbered-list-item/numbered-list-wrapper';
+import { Code } from './code/code';
 
 export const blockComponentMap: BlockComponentMap = {
   bookmark: Divider,
@@ -24,6 +25,7 @@ export const blockComponentMap: BlockComponentMap = {
   callout: Callout,
   child_database: ChildDatabase,
   child_page: ChildPage,
+  code: Code,
   column: Column,
   column_list: ColumnList,
   divider: NotionDivider,

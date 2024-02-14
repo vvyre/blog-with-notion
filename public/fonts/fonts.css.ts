@@ -8,8 +8,8 @@ export const main = fontFace([
   { src: './700.woff', fontWeight: '700' },
 ]);
 export const code = fontFace([
-  { src: './code-400.woff', fontWeight: '400' },
-  { src: './code-400-it.woff', fontWeight: '400', fontStyle: 'italic' },
-  { src: './code-400.woff', fontWeight: '700' },
-  { src: './code-700-it.woff', fontWeight: '700', fontStyle: 'italic' },
+  { src: 'url(/fonts/code-500.woff2)', fontWeight: '400' },
+  { src: 'url(/fonts/code-500-it.woff2)', fontWeight: '400', fontStyle: 'italic' },
+  { src: 'url(/fonts/code-600.woff2)', fontWeight: '700' },
+  { src: 'url(/fonts/code-600-it.woff2)', fontWeight: '700', fontStyle: 'italic' },
 ]);
