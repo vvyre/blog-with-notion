@@ -3,13 +3,12 @@ import { getTitle } from '@/utils/get-title';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { meta } from '@/constants/meta';
 import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
-import { Block } from '@/_lib/components/block/Block';
+import { Block } from '@/_lib/components/block/block';
 import { Title } from '@/_lib/components/compounds/title/title';
 import { Article } from '@/_lib/components/template/article';
 import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { groupedBlocks } from '@/utils/grouped-blocks';
-import { Btn } from '@/_lib/components/interaction/button/btn';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 
 interface PostPageProps {

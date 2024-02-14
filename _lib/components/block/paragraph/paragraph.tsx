@@ -1,7 +1,7 @@
 import { RichText } from '@/_lib/types/block';
 import { Txt } from '../../typography/txt/txt';
 import { NotionPolymorphicComponentProps } from '@/_lib/types/components';
-import { ChildrenBlocks } from '../ChildrenBlocks';
+import { ChildrenBlocks } from '../children-blocks';
 import { useId } from 'react';
 import { View } from '../../layout/view/view';
 import { BASE } from './paragraph.css';
