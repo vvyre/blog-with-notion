@@ -6,20 +6,46 @@ export const BASE = style({
 export const DEPTH_1 = style([
   BASE,
   {
-    listStyleType: 'disc',
-    margin: 0,
+    listStyleType: 'none',
+    position: 'relative',
+    selectors: {
+      '&::before': {
+        content: '* ',
+        position: 'relative',
+        paddingLeft: '0.5rem',
+        fontFeatureSettings: '"case"',
+      },
+    },
   },
 ]);
 
 export const DEPTH_2 = style([
   BASE,
   {
-    listStyleType: 'circle',
+    listStyleType: 'none',
+    position: 'relative',
+    selectors: {
+      '&::before': {
+        content: '• ',
+        position: 'relative',
+        paddingLeft: '0.5rem',
+        fontFeatureSettings: '"case"',
+      },
+    },
   },
 ]);
 export const DEPTH_3 = style([
   BASE,
   {
-    listStyleType: 'square',
+    listStyleType: 'none',
+    position: 'relative',
+    selectors: {
+      '&::before': {
+        content: '- ',
+        position: 'relative',
+        paddingLeft: '0.5rem',
+        fontFeatureSettings: '"case"',
+      },
+    },
   },
 ]);

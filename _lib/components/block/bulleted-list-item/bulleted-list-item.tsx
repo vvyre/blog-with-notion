@@ -5,6 +5,7 @@ import { ChildrenBlocks } from '../children-blocks';
 import { List } from '../../list/list';
 import { Txt } from '../../typography/txt/txt';
 import { DEPTH_1 } from './bulleted-list-item.css';
+import { View } from '../../layout/view/view';
 
 export function BulletedListItem({ block }: BulletedListItem) {
   const id = useId();
