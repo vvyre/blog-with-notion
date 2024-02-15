@@ -5,6 +5,6 @@ export interface BulletedListWrapper extends NotionPolymorphicComponentProps<'bu
   block: {
     type: string;
     id: string;
-    bulleted_list_item: BulletedListItem[];
+    bulleted_list_items: BulletedListItem[];
   };
 }

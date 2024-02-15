@@ -82,6 +82,9 @@ export type NotionBlock<T = BlockTypes> = {
   toggle?: any;
   unsupported?: any;
   video?: any;
+  code?: any;
+  text?: any;
+  mention?: any;
 };
 
 interface Parent {

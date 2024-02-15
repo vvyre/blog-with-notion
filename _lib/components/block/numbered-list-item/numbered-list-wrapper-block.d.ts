@@ -5,6 +5,6 @@ export interface NumberedListWrapper extends NotionPolymorphicComponentProps<'nu
   block: {
     type: string;
     id: string;
-    numbered_list_item: NumberedListItem[];
+    numbered_list_items: NumberedListItem[];
   };
 }
