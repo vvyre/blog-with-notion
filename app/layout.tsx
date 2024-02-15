@@ -9,6 +9,13 @@ import { Footer } from '@/_lib/components/compounds/footer/footer';
 export const metadata: Metadata = {
   title: meta.siteTitle,
   description: meta.siteDiscription,
+  openGraph: {
+    url: meta.og.url,
+    title: meta.og.title,
+    type: meta.og.type,
+    description: meta.og.description,
+    images: meta.og.images,
+  },
 };
 
 export default function RootLayout({

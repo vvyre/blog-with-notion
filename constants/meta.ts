@@ -1,6 +1,16 @@
+const TITLE = '유승윤 개발 블로그';
+const DESCRIPTION = '유승윤 개발 블로그';
+
 export const meta = {
-  siteTitle: '유승윤 개발 블로그',
-  siteDiscription: '유승윤 개발 블로그',
+  siteTitle: TITLE,
+  siteDiscription: DESCRIPTION,
+  og: {
+    url: '',
+    title: TITLE,
+    type: 'website' as const,
+    description: DESCRIPTION,
+    images: '',
+  },
   footer: {
     links: [
       { name: 'Github', href: 'https://github.com/brewcoldblue' },
