@@ -22,8 +22,6 @@ export const groupedBlocks = (blocks: NotionBlock[]) => {
       group[currBlock]?.push(block);
       prevBlock = currBlock;
     } else {
-      result.push(block);
-
       if (target[prevBlock] === true && prevBlock !== currBlock) {
         console.log(true);
         result.push({
@@ -33,6 +31,7 @@ export const groupedBlocks = (blocks: NotionBlock[]) => {
         });
       }
 
+      result.push(block);
       prevBlock = currBlock;
     }
   });
