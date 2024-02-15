@@ -11,6 +11,14 @@ export const postListMock: PageDataRow = {
   parent: {},
   archived: false,
   properties: {
+    ID: {
+      id: 'string',
+      type: 'unique_id',
+      unique_id: {
+        prefix: null,
+        number: 0,
+      },
+    },
     date: {
       date: { start: null, end: null, time_zone: null },
     },
