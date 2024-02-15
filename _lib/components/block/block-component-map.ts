@@ -5,7 +5,6 @@ import { Heading_1 } from './headings/heading_1';
 import { Heading_2 } from './headings/heading_2';
 import { Heading_3 } from './headings/heading_3';
 import { Paragraph } from './paragraph/paragraph';
-import { Divider } from '../layout/divider/Divider';
 import { BulletedListItem } from './bulleted-list-item/bulleted-list-item';
 import { Callout } from './callout/callout';
 import { ChildDatabase } from './child-database/child-database';
@@ -20,6 +19,7 @@ import { NotionImg } from './image/notion-img';
 import { NotionFile } from './file/notion-file';
 import { Mention } from './mention/mention';
 import { NotionText } from './text/text';
+import { Divider } from '../layout/divider/divider';
 
 export const blockComponentMap: BlockComponentMap = {
   bookmark: Divider,
