@@ -15,9 +15,12 @@ export function NotionImg({ block }: NotionImg) {
         height="100"
         alt={getPlainText(block.image.caption)}
       />
+      <Spacing size="0.25rem" />
       {block.image.caption.length > 0 ? (
         <>
-          <Txt size="XS">{getPlainText(block.image.caption)}</Txt>
+          <Txt size="XS" color="gray">
+            {getPlainText(block.image.caption)}
+          </Txt>
           <Spacing size="1rem" />
         </>
       ) : (
