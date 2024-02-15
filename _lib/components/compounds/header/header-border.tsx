@@ -1,5 +1,5 @@
 'use client';
-import { useScroll } from '@/_lib/react/useScroll';
+import { useScroll } from '@/_lib/react/use-scroll';
 import { NORMAL, SCROLLED } from './header-border.css';
 
 export function HeaderBorder() {
