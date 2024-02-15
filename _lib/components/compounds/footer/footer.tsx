@@ -1,6 +1,6 @@
 import { meta } from '@/constants/meta';
 import { Flex } from '../../layout/flex/flex';
-import { BASE } from './footer.css';
+import { BASE, FOOTER_LINK } from './footer.css';
 import { Txt } from '../../typography/txt/txt';
 import { View } from '../../layout/view/view';
 import { Spacing } from '../../layout/spacing/spacing';
@@ -18,7 +18,7 @@ export function Footer() {
         <List as="ul">
           {meta.footer.links.map(l => (
             <List as="li" key={l.name}>
-              <Txt as="a" href={l.href} size="XS">
+              <Txt as="a" href={l.href} size="XS" styleVariant={FOOTER_LINK}>
                 {l.name}
               </Txt>
             </List>

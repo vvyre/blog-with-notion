@@ -62,6 +62,13 @@ export const LINK = style({
   padding: '0.5rem 0.75rem 0.5rem 0.75rem',
   borderRadius: '0.5rem',
   backgroundColor: THEMES.light_b2,
-  fontFamily: jetbrainsMono,
-  fontSize: '0.75rem',
+  fontSize: '0.8rem',
+  selectors: {
+    '&:after': {
+      fontSize: '1rem',
+      marginLeft: '0.25rem',
+      fontFamily: jetbrainsMono,
+      content: '↗︎',
+    },
+  },
 });
