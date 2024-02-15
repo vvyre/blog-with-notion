@@ -24,15 +24,15 @@ export function Title({ meta }: TitleProps) {
           </Tag>
         ))}
       </View>
-      <Spacing size="0.75rem" />
+      <Spacing size="1rem" />
       <View>
-        <Heading as="h1" size="XXXL">
+        <Heading as="h1" size="XXXL" bold>
           {getTitle(meta)}
         </Heading>
       </View>
-      <Spacing size="0.75rem" />
+      <Spacing size="1rem" />
       <View>
-        <Txt color="gray" size="XS">
+        <Txt color="gray" size="S">
           {getDate(meta)}
         </Txt>
       </View>

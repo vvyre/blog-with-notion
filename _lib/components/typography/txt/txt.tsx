@@ -48,7 +48,8 @@ export function Txt<T extends ElementType>({
             italic={italic}
             strike={strike}
             underline={underline}>
-            {props.children} {Component === 'a' ? '↗︎ ' : ''}
+            {props.children}
+            {Component === 'a' ? '↗︎ ' : ''}
           </Annotations>
         </Component>
       );

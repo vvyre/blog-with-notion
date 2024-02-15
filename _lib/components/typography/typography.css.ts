@@ -8,7 +8,7 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 600,
   },
   XXL: {
-    fontSize: '2rem',
+    fontSize: '1.75rem',
     fontWeight: 500,
   },
   XL: {
