@@ -1,6 +1,6 @@
 import { COLORS } from '@/_lib/styles/colors.css';
 import { RichText } from '@/_lib/types/block';
-import { Wrapper } from '../../util/Wrapper';
+import { Wrapper } from '../../util/wrapper';
 import { Strong } from './strong';
 import { Italic } from './italic';
 import { Strike } from './strike';
