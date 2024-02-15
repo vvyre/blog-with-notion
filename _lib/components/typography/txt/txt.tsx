@@ -31,16 +31,16 @@ export function Txt<T extends ElementType>({
   styleVariant,
   ...props
 }: TxtProps<T>) {
-  const className = `${styleVariant} ${
-    richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]
-  } ${size ? TEXT_STYLE[size] : TEXT_STYLE['S']}`;
+  const className = `${styleVariant || ''} ${size ? TEXT_STYLE[size] : TEXT_STYLE['S']}
+  ${richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]} `;
+
   let Component = as || 'p';
   if (richText?.href) Component = 'a';
 
   switch (Component) {
     default:
       return (
-        <Component className={className} {...props}>
+        <Component className={`${className} ${(Component === 'a' || richText?.href) && LINK}`} {...props}>
           <Annotations
             richText={richText}
             bold={bold}
@@ -48,24 +48,9 @@ export function Txt<T extends ElementType>({
             italic={italic}
             strike={strike}
             underline={underline}>
-            {props.children}
+            {props.children} {Component === 'a' ? '↗︎ ' : ''}
           </Annotations>
         </Component>
-      );
-
-    case 'a':
-      return (
-        <a className={`${className} ${richText?.href && LINK}`} href={richText?.href || props.href} {...props}>
-          <Annotations
-            richText={richText}
-            bold={bold}
-            code={code}
-            italic={italic}
-            strike={strike}
-            underline={underline}>
-            {props.children} {'↗︎ '}
-          </Annotations>
-        </a>
       );
     case 'Link':
       return (
