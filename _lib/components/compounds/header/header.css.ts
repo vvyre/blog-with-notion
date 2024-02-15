@@ -6,6 +6,7 @@ export const BASE = style({
   height: '4.5rem',
   backgroundColor: THEMES.white,
   position: 'sticky',
+  zIndex: '999',
   top: 0,
 });
 
