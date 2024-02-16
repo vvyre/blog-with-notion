@@ -79,3 +79,9 @@ export const getPost = async (block_id: string): Promise<NotionBlock[]> => {
 
   return results;
 };
+
+export const getSingleBlock = async <T>(block_id: string): Promise<T> => {
+  const endpoint = `https://api.notion.com/v1/blocks/${block_id}`;
+  const result = await notionFetch<undefined, T>(endpoint);
+  return result;
+};
