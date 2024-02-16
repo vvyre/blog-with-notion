@@ -7,20 +7,25 @@ import { getPlainText } from '@/utils/get-plain-text';
 import { Txt } from '../../typography/txt/txt';
 import { Flex } from '../../layout/flex/flex';
 import { Spacing } from '../../layout/spacing/spacing';
-import { getSingleBlock } from '@/fetch/notion';
 import { View } from '../../layout/view/view';
 import { CAPTION, CAPTION_TXT, IMG_CONTAINER } from './img.css';
 
 export function NotionImg({ block }: NotionComponentProps<NotionImage>) {
-  const [imgurl, setImgUrl] = useState<string>(block.image.file.url);
+  const [imgUrl, setImgUrl] = useState<string>(
+    block.image.type === 'external' ? block.image.external.url : block.image.file.url
+  );
   const [imgError, setImgError] = useState<boolean>(false);
 
   useEffect(() => {
     (async () => {
       if (imgError) {
         try {
-          const retreivedBlock = await getSingleBlock<NotionImage>(block.id);
-          setImgUrl(retreivedBlock.image.file.url);
+          const response = await fetch('/reload-img', {
+            body: JSON.stringify(block.id),
+            method: 'POST',
+          });
+          const reloadedImg = await response.json();
+          setImgUrl(reloadedImg.image.file.url);
         } catch (err) {}
       }
     })();
@@ -30,10 +35,11 @@ export function NotionImg({ block }: NotionComponentProps<NotionImage>) {
     <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
       <View styleVariant={IMG_CONTAINER}>
         <Image
-          src={imgurl}
+          src={imgUrl}
           alt={getPlainText(block?.image?.caption)}
           onError={() => setImgError(true)}
           loading="lazy"
+          blurDataURL={block.blurDataURL}
           width={720}
           height={600}
           style={{
