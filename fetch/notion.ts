@@ -29,8 +29,9 @@ export const getPostList = async (): Promise<PageDataRow[]> => {
       ],
     },
   };
+
   const response = await notionFetch<DatabaseQuery, QueryDatabase>(endpoint, 'POST', query);
-  return response.results;
+  return response.results || response;
 };
 
 const POST_LIST_CACHE: { POSTS: PageDataRow[]; TIMESTAMP: number; CACHE_DURATION: number } = {

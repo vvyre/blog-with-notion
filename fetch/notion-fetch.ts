@@ -14,6 +14,8 @@ export const notionFetch = async <Req = unknown, Res = unknown>(
     },
     ...option,
   });
+  if (res.status === 429) throw new Error(`Retry-After: ${res.headers.get('Retry-After')}`);
+
   const result: Res = await res.json();
   return result;
 };
