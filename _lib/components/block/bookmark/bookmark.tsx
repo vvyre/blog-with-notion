@@ -8,6 +8,7 @@ import { NotionComponentProps } from '@/_lib/types/components/component-common';
 import { Bookmark } from '@/_lib/types/components/component-props';
 
 export function Bookmark({ block }: NotionComponentProps<Bookmark>) {
+  //TODO: unfurl 패키지 적용해 클라이언트에서 북마크 미리보기 생성
   const id = useId();
   return (
     <View styleVariant={BASE}>
