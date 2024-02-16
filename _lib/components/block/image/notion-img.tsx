@@ -1,6 +1,5 @@
 'use client';
-import type { NotionComponentProps } from '@/_lib/types/components/component-common';
-import type { NotionImage } from '@/_lib/types/components/component-props';
+import type { NotionImageResponse } from '@/_lib/types/components/component-props';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { getPlainText } from '@/utils/get-plain-text';
@@ -10,9 +9,9 @@ import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';
 import { CAPTION, CAPTION_TXT, IMG_CONTAINER } from './img.css';
 
-export function NotionImg({ block }: NotionComponentProps<NotionImage>) {
+export function NotionImg({ block }: NotionImageResponse) {
   const [imgUrl, setImgUrl] = useState<string>(
-    block.image.type === 'external' ? block.image.external.url : block.image.file.url
+    (block.image.type === 'external' ? block.image.external?.url : block.image.file?.url) as string
   );
   const [imgError, setImgError] = useState<boolean>(false);
 
@@ -20,7 +19,7 @@ export function NotionImg({ block }: NotionComponentProps<NotionImage>) {
     (async () => {
       if (imgError) {
         try {
-          const response = await fetch('/reload-img', {
+          const response = await fetch('/api/reload-img', {
             body: JSON.stringify(block.id),
             method: 'POST',
           });
