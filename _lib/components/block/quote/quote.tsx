@@ -4,8 +4,8 @@ import { Txt } from '../../typography/txt/txt';
 import { ChildrenBlocks } from '../children-blocks';
 import { useId } from 'react';
 import { View } from '../../layout/view/view';
-import { BASE } from './quote.tss';
-import { Paragraph, Quote } from '@/_lib/types/components/component-props';
+import { BASE } from './quote.css';
+import { Quote } from '@/_lib/types/components/component-props';
 
 export function Quote({ block }: NotionComponentProps<Quote>) {
   const id = useId();
