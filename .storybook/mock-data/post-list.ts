@@ -27,7 +27,7 @@ export const postListMock: PageDataRow = {
         {
           rich_text: {
             type: 'text',
-            text: { content: 'abcd', link: null },
+            text: { content: 'abcd', link: null, type: 'text' },
             plain_text: 'abcd',
             annotations: {
               bold: false,

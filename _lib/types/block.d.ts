@@ -60,7 +60,7 @@ export type BlockTypes =
   | 'unsupported'
   | 'video';
 
-export type NotionBlock<T = BlockTypes> = {
+export interface NotionBlock {
   object?: string;
   id: string;
   parent?: Parent;
@@ -70,45 +70,7 @@ export type NotionBlock<T = BlockTypes> = {
   last_edited_by?: User;
   has_children?: boolean;
   archived?: boolean;
-  type: T;
-  [P in T]: any;
-  bookmark?: Bookmark;
-  breadcrumb?: BreadCrumb;
-  bulleted_list_item?: BulletedListItem;
-  bulleted_list_items?: BulletedListWrapper;
-  callout?: Callout;
-  child_database?: ChildDatabase;
-  child_page?: ChildPage;
-  column?: Column;
-  column_list?: ColumnList;
-  divider?: any;
-  embed?: any;
-  equation?: any;
-  file?: any;
-  heading_1?: any;
-  heading_2?: any;
-  heading_3?: any;
-  image?: Image;
-  link_preview?: any;
-  link_to_page?: any;
-  numbered_list_item?: NumberedListItem;
-  numbered_list_items?: NumberedListWrapper;
-  paragraph?: Paragraph;
-  pdf?: any;
-  quote?: Quote;
-  synced_block?: SyncedBlock;
-  table?: Table;
-  table_of_contents?: TableOfContents;
-  table_row?: TableRow;
-  template?: any;
-  to_do?: any;
-  toggle?: any;
-  unsupported?: any;
-  video?: any;
-  code?: CodeBlock;
-  text?: Text;
-  mention?: Mention;
-};
+}
 
 interface Parent {
   type: string;

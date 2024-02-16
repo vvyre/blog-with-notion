@@ -4,10 +4,9 @@ import { ChildrenBlocks } from '../children-blocks';
 import { List } from '../../list/list';
 import { Txt } from '../../typography/txt/txt';
 import { BASE, DEPTH_1 } from './numbered-list-item.css';
-import { NotionComponentProps } from '@/_lib/types/components/component-common';
-import { NumberedListItem } from '@/_lib/types/components/component-props';
+import { NumberedListItemResponse } from '@/_lib/types/components/component-props';
 
-export function NumberedListItem({ block }: NotionComponentProps<NumberedListItem>) {
+export function NumberedListItem({ block }: NumberedListItemResponse) {
   const id = useId();
   return (
     <List as="li" styleVariant={`${BASE} ${DEPTH_1}`}>

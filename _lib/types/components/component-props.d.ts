@@ -1,194 +1,277 @@
 import { COLORS } from '@/_lib/styles/colors.css';
 import { NotionBlock, RichText, TextProperty } from '../block';
 
-export interface NotionImage extends NotionBlock<'image'> {
-  type: 'image';
-  image: {
-    caption: RichText[];
-    type: 'file';
-    file: {
-      url: string;
-      expiry_time: string;
-    };
-  };
-  blurDataURL?: string;
-}
+export type NotionComponents =
+  | NotionImageResponse
+  | TextResponse
+  | ParagraphResponse
+  | NumberedListItemResponse
+  | NumberedListWrapperResponse
+  | BulletedListItemResponse
+  | BulletedListWrapperResponse
+  | MentionResponse
+  | ColumnResponse
+  | ColumnListResponse
+  | CalloutResponse
+  | CodeBlockResponse
+  | ChildDatabaseResponse
+  | ChildPageResponse
+  | BookmarkResponse
+  | BreadCrumbResponse
+  | QuoteResponse
+  | TableResponse
+  | Heading_1Response
+  | Heading_2Response
+  | Heading_3Response
+  | FileBlockResponse
+  | SyncedBlockResponse;
 
-export interface Text extends NotionBlock<'text'> {
-  type: 'text';
-  text: TextProperty;
-  annotations: Annotations;
-  plain_text: string;
-  href: string | null;
-}
-
-export interface Paragraph extends NotionBlock<'paragraph'> {
-  type: 'paragraph';
-  paragraph: {
-    rich_text: RichText[];
-    color: keyof typeof COLORS;
-    children: Partial<NotionBlock[]>;
-  };
-}
-
-export interface NumberedListItem extends NotionBlock<'numbered_list_item'> {
-  type: 'numbered_list_item';
-  numbered_list_item: {
-    rich_text: RichText[];
-    color: keyof typeof COLORS;
-    children: Partial<NotionBlock[]>;
-  };
-}
-
-export interface NumberedListWrapper extends NotionBlock<'numbered_list_items'> {
-  type: 'numbered_list_items';
-  id: string;
-  numbered_list_items: NumberedListItem[];
-}
-
-export interface Mention extends NotionBlock<'mention'> {
-  type: 'mention';
-  mention: NotionBlock;
-  annotations: {
-    bold: boolean;
-    italic: boolean;
-    strikethrough: boolean;
-    underline: boolean;
-    code: boolean;
-    color: keyof typeof COLORS;
-  };
-  plain_text: string;
-  href: string;
-}
-
-export interface ColumnList extends NotionBlock<'column_list'> {
-  type: 'column_list';
-  column_list: {};
-}
-
-export interface Column extends NotionBlock<'column'> {
-  type: 'column';
-  column: {};
-}
-
-export interface CodeBlock extends NotionBlock<'code'> {
-  type: 'code';
-  code: {
-    caption: RichText[];
-    rich_text: RichText[];
-    language: string;
-  };
-}
-
-export interface ChildPage extends NotionBlock<'child_page'> {
-  type: 'child_page';
-  child_page: {
-    title: string;
-  };
-}
-
-export interface ChildDatabase extends NotionBlock<'child_database'> {
-  child_database: {
-    title: string;
-  };
-}
-
-export interface Callout extends NotionBlock<'callout'> {
-  type: 'callout';
-  callout: {
-    rich_text: RichText[];
-    color: 'default';
-  };
-}
-
-export interface BulletedListItem extends NotionBlock<'bulleted_list_item'> {
-  type: 'bulleted_list_item';
-  bulleted_list_item: {
-    rich_text: RichText[];
-    color: keyof typeof COLORS;
-    children: Partial<NotionBlock[]>;
-  };
-}
-
-export interface BulletedListWrapper extends NotionBlock<'bulleted_list_items'> {
-  type: 'bulleted_list_items';
-  bulleted_list_items: BulletedListItem[];
-}
-
-export interface BreadCrumb extends NotionBlock<'breadcrumb'> {
-  type: 'breadcrumb';
-  breadcrumb: {};
-}
-
-export interface Bookmark extends NotionBlock<'bookmark'> {
-  type: 'bookmark';
-  bookmark: {
-    caption: RichText[];
+interface Image_File {
+  caption: RichText[];
+  type: 'file' | 'external';
+  file?: {
     url: string;
+    expiry_time: string;
+  };
+}
+interface Image_External {
+  caption: RichText[];
+  type: 'file' | 'external';
+  external?: {
+    url: string;
+    expiry_time: string;
+  };
+}
+export interface NotionImageResponse {
+  block: {
+    type: 'image';
+    image: Image_File & Image_External;
+    blurDataURL?: string;
+  } & NotionBlock;
+}
+
+export interface TextResponse {
+  block: {
+    type: 'text';
+    text: TextProperty;
+    annotations: Annotations;
+    plain_text: string;
+    href: string | null;
+  } & NotionBlock;
+}
+
+export interface ParagraphResponse {
+  block: {
+    type: 'paragraph';
+    paragraph: {
+      rich_text: RichText[];
+      color: keyof typeof COLORS;
+      children: Partial<NotionBlock[]>;
+    } & NotionBlock;
   };
 }
 
-export interface Quote extends NotionBlock<'quote'> {
-  type: 'quote';
-  quote: {
-    rich_text: RichText[];
-    color: keyof typeof COLORS;
-    children?: NotionBlock[];
-  };
+export interface NumberedListItemResponse {
+  block: {
+    type: 'numbered_list_item';
+    numbered_list_item: {
+      rich_text: RichText[];
+      color: keyof typeof COLORS;
+      children: Partial<NotionBlock[]>;
+    };
+  } & NotionBlock;
 }
 
-export interface Table extends NotionBlock<'table'> {
-  type: 'table';
-  table: {
-    table_width: number;
-    has_column_header: boolean;
-    has_row_header: boolean;
-  };
+export interface NumberedListWrapperResponse {
+  block: {
+    type: 'numbered_list_items';
+    id: string;
+    numbered_list_items: NumberedListItem[];
+  } & NotionBlock;
 }
 
-export interface TableRow extends NotionBlock<'table_row'> {
-  type: 'table_row';
-  table_row: {
-    cells: NotionBlock[];
-  };
+export interface MentionResponse {
+  block: {
+    type: 'mention';
+    mention: NotionBlock;
+    annotations: {
+      bold: boolean;
+      italic: boolean;
+      strikethrough: boolean;
+      underline: boolean;
+      code: boolean;
+      color: keyof typeof COLORS;
+    };
+    plain_text: string;
+    href: string;
+  } & NotionBlock;
 }
 
-export interface TableOfContents extends NotionBlock<'table_of_contents'> {
-  type: 'table_of_contents';
-  table_of_contents: {
-    color: keyof typeof COLORS;
-  };
+export interface ColumnListResponse {
+  block: {
+    type: 'column_list';
+    column_list: {};
+  } & NotionBlock;
 }
 
-export interface Heading_1 extends NotionBlock<'heading_1'> {
-  type: 'heading_1';
-  heading_1: {
-    rich_text: RichText[];
-    color: 'default';
-  };
+export interface ColumnResponse {
+  block: {
+    type: 'column';
+    column: {};
+  } & NotionBlock;
+}
+export interface CodeBlockResponse {
+  block: {
+    type: 'code';
+    code: {
+      caption: RichText[];
+      rich_text: RichText[];
+      language: string;
+    };
+  } & NotionBlock;
 }
 
-export interface NotionDivider extends NotionBlock('divider') {}
-
-export interface Heading_2 extends NotionBlock<'heading_2'> {
-  type: 'heading_2';
-  heading_2: {
-    rich_text: RichText[];
-    color: 'default';
-  };
+export interface ChildPageResponse {
+  block: {
+    type: 'child_page';
+    child_page: {
+      title: string;
+    };
+  } & NotionBlock;
 }
 
-export interface Heading_3 extends NotionBlock<'heading_3'> {
-  type: 'heading_3';
-  heading_3: {
-    rich_text: RichText[];
-    color: 'default';
-  };
+export interface ChildDatabaseResponse {
+  block: {
+    type: 'child_database';
+    child_database: {
+      title: string;
+    };
+  } & NotionBlock;
+}
+export interface CalloutResponse {
+  block: {
+    type: 'callout';
+    callout: {
+      rich_text: RichText[];
+      color: 'default';
+      icon: {
+        emoji: string;
+      };
+    };
+  } & NotionBlock;
 }
 
-export interface FileBlock extends NotionBlock<'file'> {
-  block: NotionBlock<'file'>['block'] & InternalFile & ExternalFile;
+export interface BulletedListItemResponse {
+  block: {
+    type: 'bulleted_list_item';
+    bulleted_list_item: {
+      rich_text: RichText[];
+      color: keyof typeof COLORS;
+      children: Partial<NotionBlock[]>;
+    };
+  } & NotionBlock;
 }
+
+export interface BulletedListWrapperResponse {
+  block: {
+    type: 'bulleted_list_items';
+    bulleted_list_items: BulletedListItem[];
+  } & NotionBlock;
+}
+
+export interface BreadCrumbResponse {
+  block: {
+    type: 'breadcrumb';
+    breadcrumb: {};
+  } & NotionBlock;
+}
+
+export interface BookmarkResponse {
+  block: {
+    type: 'bookmark';
+    bookmark: {
+      caption: RichText[];
+      url: string;
+    };
+  } & NotionBlock;
+}
+
+export interface QuoteResponse {
+  block: {
+    type: 'quote';
+    quote: {
+      rich_text: RichText[];
+      color: keyof typeof COLORS;
+      children?: NotionBlock[];
+    };
+  } & NotionBlock;
+}
+
+export interface TableResponse {
+  block: {
+    type: 'table';
+    table: {
+      table_width: number;
+      has_column_header: boolean;
+      has_row_header: boolean;
+    };
+  } & NotionBlock;
+}
+
+export interface TableRowResponse {
+  block: {
+    type: 'table_row';
+    table_row: {
+      cells: NotionBlock[];
+    };
+  } & NotionBlock;
+}
+
+export interface TableOfContentsResponse {
+  block: {
+    type: 'table_of_contents';
+    table_of_contents: {
+      color: keyof typeof COLORS;
+    };
+  } & NotionBlock;
+}
+
+export interface NotionDividerResponse {
+  block: {
+    type: 'divider';
+  } & NotionBlock;
+}
+export interface Heading_1Response {
+  block: {
+    type: 'heading_1';
+    heading_1: {
+      rich_text: RichText[];
+      color: 'default';
+    };
+  } & NotionBlock;
+}
+
+export interface Heading_2Response {
+  block: {
+    type: 'heading_2';
+    heading_2: {
+      rich_text: RichText[];
+      color: 'default';
+    };
+  } & NotionBlock;
+}
+
+export interface Heading_3Response {
+  block: {
+    type: 'heading_3';
+    heading_3: {
+      rich_text: RichText[];
+      color: 'default';
+    };
+  } & NotionBlock;
+}
+
+export type FileBlockResponse = InternalFile & ExternalFile & NotionBlock;
 
 export interface InternalFile {
   type: 'file';
@@ -210,12 +293,13 @@ export interface ExternalFile {
  * duplicated_synced_block의 경우 api call을 통해 원본 페이지에서 따로 불러온 후 이 synced block에 합쳐야 함.
  * 이때 원본 페이지가 integration에 포함되어있지 않으면 권한 문제로 안 불러와질 수도 있음..
  */
-export interface SyncedBlock extends NotionBlock('synced_block') {
-  type: 'synced_block';
-  synced_block: {
-    synced_from: string | null;
-    children: NotionBlock[];
-    /**
+export interface SyncedBlockResponse {
+  block: {
+    type: 'synced_block';
+    synced_block: {
+      synced_from: string | null;
+      children: NotionBlock[];
+      /**
      * {
 
         callout: {
@@ -230,5 +314,10 @@ export interface SyncedBlock extends NotionBlock('synced_block') {
         };
       }
      */
-  };
+    };
+  } & NotionBlock;
+}
+
+export interface WithChildren {
+  children: NotionBlock[];
 }

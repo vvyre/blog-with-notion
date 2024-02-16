@@ -1,5 +1,4 @@
-import type { NotionComponentProps } from '@/_lib/types/components/component-common';
-import type { CodeBlock } from '@/_lib/types/components/component-props';
+import type { CodeBlockResponse } from '@/_lib/types/components/component-props';
 import { View } from '../../layout/view/view';
 import { RichText } from '@/_lib/types/block';
 import hljs from 'highlight.js';
@@ -8,7 +7,7 @@ import { Txt } from '../../typography/txt/txt';
 import { Flex } from '../../layout/flex/flex';
 import { getCodeLanguage } from '@/utils/get-code-language';
 
-export function Code({ block }: NotionComponentProps<CodeBlock>) {
+export function Code({ block }: CodeBlockResponse) {
   const codeHtml = hljs.highlight(block.code.rich_text.map((txt: RichText) => txt.text.content).join('\n'), {
     language: block.code.language,
   }).value;

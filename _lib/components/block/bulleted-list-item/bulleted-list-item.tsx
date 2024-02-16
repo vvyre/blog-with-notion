@@ -1,5 +1,4 @@
-import type { NotionComponentProps } from '@/_lib/types/components/component-common';
-import type { BulletedListItem } from '@/_lib/types/components/component-props';
+import type { BulletedListItemResponse } from '@/_lib/types/components/component-props';
 import type { RichText } from '@/_lib/types/block';
 import { useId } from 'react';
 import { ChildrenBlocks } from '../children-blocks';
@@ -7,7 +6,7 @@ import { List } from '../../list/list';
 import { Txt } from '../../typography/txt/txt';
 import { BASE, DEPTH_1 } from './bulleted-list-item.css';
 
-export function BulletedListItem({ block }: NotionComponentProps<BulletedListItem>) {
+export function BulletedListItem({ block }: BulletedListItemResponse) {
   const id = useId();
   return (
     <List as="li" styleVariant={`${BASE} ${DEPTH_1}`}>

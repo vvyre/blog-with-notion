@@ -1,10 +1,10 @@
 import { useId } from 'react';
 import { List } from '../../list/list';
 import { NumberedListItem } from './numbered-list-item';
-import { NumberedListWrapper } from './numbered-list-wrapper-block';
 import { Spacing } from '../../layout/spacing/spacing';
+import { NumberedListWrapperResponse } from '@/_lib/types/components/component-props';
 
-export function NumberedListWrapper({ block }: NumberedListWrapper) {
+export function NumberedListWrapper({ block }: NumberedListWrapperResponse) {
   const id = useId();
   return (
     <>
