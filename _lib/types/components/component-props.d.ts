@@ -127,3 +127,30 @@ export interface Quote extends NotionBlock<'quote'> {
     children?: NotionBlock[];
   };
 }
+
+/**
+ * 블록 자체에 type이라는 key가 없어서 이 블록 처리하는 컴포넌트를 따로 구현해야함
+ * duplicated의 경우 api call을 통해 원본 페이지에서 따로 불러온 후 이 synced block에 합쳐야 함.
+ * 이때 원본 페이지가 integration에 포함되어있지 않으면 권한 문제로 안 불러와질 수도 있음..
+ */
+export interface SyncedBlock extends NotionBlock('synced_block') {
+  synced_block: {
+    synced_from: string | null;
+    children: NotionBlock[];
+    /**
+     * {
+
+        callout: {
+          rich_text: [
+            {
+              type: 'text';
+              text: {
+                content: 'Callout in synced block';
+              };
+            }
+          ];
+        };
+      }
+     */
+  };
+}
