@@ -20,6 +20,7 @@ import { NotionFile } from './file/notion-file';
 import { Mention } from './mention/mention';
 import { NotionText } from './text/text';
 import { Divider } from '../layout/divider/divider';
+import { Quote } from './quote/quote';
 
 export const blockComponentMap: BlockComponentMap = {
   bookmark: Divider,
@@ -47,7 +48,7 @@ export const blockComponentMap: BlockComponentMap = {
   numbered_list_items: NumberedListWrapper,
   paragraph: Paragraph,
   pdf: Divider,
-  quote: Divider,
+  quote: Quote,
   synced_block: Divider,
   table: Divider,
   table_of_contents: Divider,

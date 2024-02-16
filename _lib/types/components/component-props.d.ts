@@ -1,5 +1,5 @@
 import { COLORS } from '@/_lib/styles/colors.css';
-import { NotionBlock, TextProperty } from '../block';
+import { NotionBlock, RichText, TextProperty } from '../block';
 
 export interface NotionImage extends NotionBlock<'image'> {
   image: {
@@ -59,7 +59,7 @@ export interface ColumnList extends NotionBlock<'column_list'> {
 }
 
 export interface Column extends NotionBlock<'column'> {
-  column_list: {};
+  column: {};
 }
 
 export interface CodeBlock extends NotionBlock<'code'> {
@@ -90,7 +90,6 @@ export interface Callout extends NotionBlock<'callout'> {
 }
 
 export interface BulletedListItem extends NotionBlock<'bulleted_list_item'> {
-  type: 'bulleted_list_item';
   bulleted_list_item: {
     rich_text: RichText[];
     color: keyof typeof COLORS;
@@ -99,20 +98,32 @@ export interface BulletedListItem extends NotionBlock<'bulleted_list_item'> {
 }
 
 export interface BulletedListWrapper extends NotionBlock<'bulleted_list_items'> {
-  type: string;
-  id: string;
   bulleted_list_items: BulletedListItem[];
 }
 
 export interface BreadCrumb extends NotionBlock<'breadcrumb'> {
-  type: 'breadcrumb';
   breadcrumb: {};
 }
 
 export interface Bookmark extends NotionBlock<'bookmark'> {
-  type: 'bookmark';
   bookmark: {
     caption: RichText[];
-    url: 'string';
+    url: string;
+  };
+}
+
+export interface Quote extends NotionBlock<'quote'> {
+  quote: {
+    rich_text: RichText[];
+    color: keyof typeof COLORS;
+    children?: NotionBlock[];
+  };
+}
+
+export interface Quote extends NotionBlock<'quote'> {
+  quote: {
+    rich_text: RichText[];
+    color: keyof typeof COLORS;
+    children?: NotionBlock[];
   };
 }
