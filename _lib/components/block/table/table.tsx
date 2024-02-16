@@ -1,6 +1,5 @@
-import type { NotionComponentProps } from '@/_lib/types/components/component-common';
-import type { Table } from '@/_lib/types/components/component-props';
+import { TableResponse } from '@/_lib/types/components/component-props';
 
-export function Table({ block }: NotionComponentProps<Table>) {
+export function Table({ block }: TableResponse) {
   console.log(block);
 }

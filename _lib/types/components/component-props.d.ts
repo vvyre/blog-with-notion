@@ -1,6 +1,7 @@
 import { COLORS } from '@/_lib/styles/colors.css';
 import { NotionBlock, RichText, TextProperty } from '../block';
 
+export type BlockResponse = NotionComponents['block'];
 export type NotionComponents =
   | NotionImageResponse
   | TextResponse
