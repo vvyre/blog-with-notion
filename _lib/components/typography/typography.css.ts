@@ -40,9 +40,11 @@ export const TEXT_STYLE = styleVariants({
 export const BOLD = style({
   fontWeight: 600,
 });
+
 export const ITALIC = style({
   fontStyle: 'italic',
 });
+
 export const CODE = style({
   fontSize: '0.85rem',
   padding: '0.1rem 0.25rem 0.1rem 0.25rem',
@@ -51,21 +53,17 @@ export const CODE = style({
   backgroundColor: THEMES.light_b2,
   color: THEMES.highlight,
 });
+
 export const STRIKE = style({});
+
 export const UNDERLINE = style({});
 
 export const LINK = style({
-  fontFeatureSettings: '"case"',
-  display: 'block',
-  marginTop: '0.25rem',
-  marginBottom: '0.25rem',
-  padding: '0.5rem 0.75rem 0.5rem 0.75rem',
-  borderRadius: '0.5rem',
-  backgroundColor: THEMES.light_b2,
-  fontSize: '0.8rem',
+  color: 'inherit',
   selectors: {
     '&:after': {
-      fontSize: '1rem',
+      fontFeatureSettings: '"case"',
+      fontSize: '0.9rem',
       marginLeft: '0.25rem',
       fontFamily: jetbrainsMono,
       content: '↗︎',
