@@ -1,8 +1,9 @@
+import type { NotionComponentProps } from '@/_lib/types/components/component-common';
+import type { Mention } from '@/_lib/types/components/component-props';
 import { View } from '../../layout/view/view';
 import { Txt } from '../../typography/txt/txt';
-import { Mention } from './mention-block';
 
-export function Mention({ block }: Mention) {
+export function Mention({ block }: NotionComponentProps<Mention>) {
   console.log('mention', block);
   return (
     <View>

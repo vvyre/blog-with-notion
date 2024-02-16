@@ -1,6 +1,7 @@
-import { NotionPolymorphicComponentProps } from '@/_lib/types/components';
+import type { NotionComponentProps } from '@/_lib/types/components/component-common';
+import type { ChildDatabase } from '@/_lib/types/components/component-props';
 
-export function ChildDatabase({ block }: NotionPolymorphicComponentProps<'child_database'>) {
+export function ChildDatabase({ block }: NotionComponentProps<ChildDatabase>) {
   //데이터베이스 임베드 블록을 제공하지는 않습니다. 이름으로 데이터베이스를 쿼리해 따로 구현해야 합니다.
   return <></>;
 }

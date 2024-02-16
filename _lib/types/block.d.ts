@@ -40,7 +40,7 @@ export type BlockTypes =
 
 export type NotionBlock<T = BlockTypes> = {
   object?: string;
-  id?: string;
+  id: string;
   parent?: Parent;
   created_time?: string;
   last_edited_time?: string;
@@ -49,6 +49,7 @@ export type NotionBlock<T = BlockTypes> = {
   has_children?: boolean;
   archived?: boolean;
   type: T;
+  [P in T]: any;
   bookmark?: any;
   breadcrumb?: any;
   bulleted_list_item?: any;
@@ -65,7 +66,7 @@ export type NotionBlock<T = BlockTypes> = {
   heading_1?: any;
   heading_2?: any;
   heading_3?: any;
-  image?: any;
+  image?: Image;
   link_preview?: any;
   link_to_page?: any;
   numbered_list_item?: any;
@@ -105,7 +106,7 @@ interface TextElement {
 
 interface RichText {
   type: string;
-  text: Text;
+  text: TextProperty;
   annotations: Annotations;
   plain_text: string;
   href: null | string;
@@ -117,7 +118,7 @@ interface WrittenDate {
   time_zone: 'string' | null;
 }
 
-interface Text {
+interface TextProperty {
   content: string;
   link: null | Link;
 }

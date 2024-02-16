@@ -1,8 +1,8 @@
-import { NotionBlock } from '@/_lib/types/block';
-import { NotionPolymorphicComponentProps } from '@/_lib/types/components';
+import { BlockTypes, NotionBlock } from '@/_lib/types/block';
+import { NotionPolymorphicComponentProps } from '@/_lib/types/components/component-common';
 import { Block } from './block';
 
-export function ChildrenBlocks<T>({ block }: NotionPolymorphicComponentProps<T>) {
+export function ChildrenBlocks<T extends BlockTypes>({ block }: NotionPolymorphicComponentProps<T>) {
   const type = block.type;
   return (
     <>

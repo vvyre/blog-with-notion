@@ -1,11 +1,13 @@
-import { RichText } from '@/_lib/types/block';
-import type { Bookmark } from './bookmark-block';
+import type { RichText } from '@/_lib/types/block';
+
 import { useId } from 'react';
 import { View } from '../../layout/view/view';
 import { Txt } from '../../typography/txt/txt';
 import { BASE } from './bookmark.css';
+import { NotionComponentProps } from '@/_lib/types/components/component-common';
+import { Bookmark } from '@/_lib/types/components/component-props';
 
-export function Bookmark({ block }: Bookmark) {
+export function Bookmark({ block }: NotionComponentProps<Bookmark>) {
   const id = useId();
   return (
     <View styleVariant={BASE}>

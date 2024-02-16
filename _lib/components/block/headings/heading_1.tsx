@@ -1,4 +1,4 @@
-import { NotionPolymorphicComponentProps } from '@/_lib/types/components';
+import { NotionPolymorphicComponentProps } from '@/_lib/types/components/component-common';
 import { Heading } from '../../typography/heading/heading';
 import { RichText } from '@/_lib/types/block';
 import { HEADING_1 } from './headings.css';

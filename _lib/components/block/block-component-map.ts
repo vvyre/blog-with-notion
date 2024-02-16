@@ -1,4 +1,4 @@
-import { BlockComponentMap } from '../../types/components';
+import { BlockComponentMap } from '../../types/components/component-common';
 import { BreadCrumb } from './breadcrumb/breadcrumb';
 import { NotionDivider } from './divider/notion-divider';
 import { Heading_1 } from './headings/heading_1';
