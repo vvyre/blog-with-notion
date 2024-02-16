@@ -5,7 +5,7 @@ export interface NotionPolymorphicComponentProps<T> {
 }
 
 export interface NotionComponentProps<BLOCK> {
-  block: BLOCK;
+  block: BLOCK & NotionBlock;
 }
 
 export type BlockComponentMap = Record<BlockTypes, ComponentType<NotionPolymorphicComponentProps> | ReactNode>;

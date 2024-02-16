@@ -21,6 +21,9 @@ import { Mention } from './mention/mention';
 import { NotionText } from './text/text';
 import { Divider } from '../layout/divider/divider';
 import { Quote } from './quote/quote';
+import { Table } from './table/table';
+import { TableOfContents } from './table-of-contents/table-of-contents';
+import { TableRow } from './table-row/table-row';
 
 export const blockComponentMap: BlockComponentMap = {
   bookmark: Divider,
@@ -50,9 +53,9 @@ export const blockComponentMap: BlockComponentMap = {
   pdf: Divider,
   quote: Quote,
   synced_block: Divider,
-  table: Divider,
-  table_of_contents: Divider,
-  table_row: Divider,
+  table: Table,
+  table_of_contents: TableOfContents,
+  table_row: TableRow,
   template: Divider,
   text: NotionText,
   to_do: Divider,

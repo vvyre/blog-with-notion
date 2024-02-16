@@ -1,4 +1,26 @@
 import { COLORS } from '../styles/colors.css';
+import {
+  Bookmark,
+  BreadCrumb,
+  BulletedListItem,
+  BulletedListWrapper,
+  Callout,
+  ChildDatabase,
+  ChildPage,
+  CodeBlock,
+  Column,
+  ColumnList,
+  Mention,
+  NumberedListItem,
+  NumberedListWrapper,
+  Paragraph,
+  Quote,
+  SyncedBlock,
+  Table,
+  TableOfContents,
+  TableRow,
+  Text,
+} from './components/component-props';
 
 export type BlockTypes =
   | 'bookmark'
@@ -50,15 +72,15 @@ export type NotionBlock<T = BlockTypes> = {
   archived?: boolean;
   type: T;
   [P in T]: any;
-  bookmark?: any;
-  breadcrumb?: any;
-  bulleted_list_item?: any;
-  bulleted_list_items?: any;
-  callout?: any;
-  child_database?: any;
-  child_page?: any;
-  column?: any;
-  column_list?: any;
+  bookmark?: Bookmark;
+  breadcrumb?: BreadCrumb;
+  bulleted_list_item?: BulletedListItem;
+  bulleted_list_items?: BulletedListWrapper;
+  callout?: Callout;
+  child_database?: ChildDatabase;
+  child_page?: ChildPage;
+  column?: Column;
+  column_list?: ColumnList;
   divider?: any;
   embed?: any;
   equation?: any;
@@ -69,23 +91,23 @@ export type NotionBlock<T = BlockTypes> = {
   image?: Image;
   link_preview?: any;
   link_to_page?: any;
-  numbered_list_item?: any;
-  numbered_list_items?: any;
-  paragraph?: any;
+  numbered_list_item?: NumberedListItem;
+  numbered_list_items?: NumberedListWrapper;
+  paragraph?: Paragraph;
   pdf?: any;
-  quote?: any;
-  synced_block?: any;
-  table?: any;
-  table_of_contents?: any;
-  table_row?: any;
+  quote?: Quote;
+  synced_block?: SyncedBlock;
+  table?: Table;
+  table_of_contents?: TableOfContents;
+  table_row?: TableRow;
   template?: any;
   to_do?: any;
   toggle?: any;
   unsupported?: any;
   video?: any;
-  code?: any;
-  text?: any;
-  mention?: any;
+  code?: CodeBlock;
+  text?: Text;
+  mention?: Mention;
 };
 
 interface Parent {
@@ -94,6 +116,7 @@ interface Parent {
 }
 
 interface User {
+  type: 'user';
   object: string;
   id: string;
 }
@@ -119,6 +142,7 @@ interface WrittenDate {
 }
 
 interface TextProperty {
+  type: 'text';
   content: string;
   link: null | Link;
 }
