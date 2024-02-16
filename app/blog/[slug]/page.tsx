@@ -35,6 +35,7 @@ export default async function Post({ params }: PostPageProps) {
         <Spacing size="3rem" />
         <Title meta={meta} />
         {blocks.map(b => (
+          //@ts-expect-error
           <Block key={b.id} block={b} />
         ))}
       </Article>

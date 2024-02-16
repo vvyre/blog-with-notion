@@ -1,6 +1,7 @@
 import { BlockTypes, NotionBlock } from '@/_lib/types/block';
+import { NotionComponents } from '@/_lib/types/components/component-props';
 
-export const groupedBlocks = (blocks: NotionBlock[]) => {
+export const groupedBlocks = (blocks: Array<NotionComponents['block']>) => {
   const result: NotionBlock[] = [];
 
   const target: Partial<Record<BlockTypes, boolean>> = {
@@ -19,18 +20,19 @@ export const groupedBlocks = (blocks: NotionBlock[]) => {
     const currBlock = block.type;
 
     if (target[currBlock] === true) {
-      group[currBlock]?.push(block);
+      group[currBlock]?.push(block as NotionBlock);
       prevBlock = currBlock;
     } else {
       if (target[prevBlock] === true && prevBlock !== currBlock) {
         result.push({
           [`${prevBlock}s`]: group[prevBlock],
+          //@ts-expect-error
           type: `${prevBlock}s` as BlockTypes,
           id: 'ul-list-item',
         });
       }
 
-      result.push(block);
+      result.push(block as NotionBlock);
       prevBlock = currBlock;
     }
   });

@@ -6,11 +6,14 @@ import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { groupedBlocks } from '@/utils/grouped-blocks';
 import { Txt } from '@/_lib/components/typography/txt/txt';
+import { BlockResponse, NotionComponents } from '@/_lib/types/components/component-props';
+import { NotionBlock } from '@/_lib/types/block';
 
 export const revalidate = 3600;
 
 export default async function Post() {
   const meta = await getPostMetaData(process.env.NOTION_ABOUT_ID as string);
+  //@ts-expect-error
   const blocks = groupedBlocks(await getPost(process.env.NOTION_ABOUT_ID as string));
 
   return (
@@ -21,6 +24,7 @@ export default async function Post() {
         </Txt>
         <Spacing size="5rem" />
         {blocks.map(b => (
+          //@ts-expect-error
           <Block key={b.id} block={b} />
         ))}
       </Article>

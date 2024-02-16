@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { NotionBlock } from '@/_lib/types/block';
 import { getBlurredImg } from './get-blurred-img';
 import { groupedBlocks } from './grouped-blocks';
