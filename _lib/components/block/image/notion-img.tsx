@@ -8,27 +8,10 @@ import { Flex } from '../../layout/flex/flex';
 import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';
 import { CAPTION, CAPTION_TXT, IMG_CONTAINER } from './img.css';
+import { useNotionImg } from './use-notion-img';
 
 export function NotionImg({ block }: NotionImageResponse) {
-  const [imgUrl, setImgUrl] = useState<string>(
-    (block.image.type === 'external' ? block.image.external?.url : block.image.file?.url) as string
-  );
-  const [imgError, setImgError] = useState<boolean>(false);
-
-  useEffect(() => {
-    (async () => {
-      if (imgError) {
-        try {
-          const response = await fetch('/api/reload-img', {
-            body: JSON.stringify(block.id),
-            method: 'POST',
-          });
-          const reloadedImg = await response.json();
-          setImgUrl(reloadedImg.image.file.url);
-        } catch (err) {}
-      }
-    })();
-  }, []);
+  const { imgUrl, reload } = useNotionImg(block);
 
   return (
     <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
@@ -36,8 +19,8 @@ export function NotionImg({ block }: NotionImageResponse) {
         <Image
           src={imgUrl}
           alt={getPlainText(block?.image?.caption)}
-          onError={() => setImgError(true)}
-          loading="lazy"
+          priority
+          onError={() => reload()}
           blurDataURL={block.blurDataURL}
           width={720}
           height={600}

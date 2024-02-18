@@ -9,11 +9,12 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { id } = body;
     const block = await getSingleBlock<NotionBlock>(id as string);
-    const processedImage = await getBlurredImg(block as NotionImageResponse['block']);
-
-    if (block) Response.json({ block: processedImage });
-    else Response.json({ block: null });
+    console.log('req', block);
+    // const processedImage = await getBlurredImg(block as NotionImageResponse['block']);
+    if (block) return Response.json({ block: block });
+    else return Response.json({ block: null });
   } catch (err) {
-    Response.json({ block: null });
+    console.log('err', err);
+    return Response.json({ block: null });
   }
 }
