@@ -17,7 +17,7 @@ interface TitleProps extends ComponentPropsWithoutRef<'h1'> {
 }
 export function Title({ ...meta }: GetPageResponse) {
   return (
-    <Flex width="fill" flexDirection="column" justifyContents="center" alignItems="center">
+    <Flex width="fill" flexDirection="column" justifyContents="center" alignItems="flexStart">
       <View>
         {getTags(meta).map(tag => (
           <Tag key={tag.id} styleVariant={TITLE_TAG}>

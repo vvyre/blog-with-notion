@@ -4,11 +4,11 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 export const TEXT_STYLE = styleVariants({
   XXXL: {
-    fontSize: '2.5rem',
+    fontSize: '2.75rem',
     fontWeight: 600,
   },
   XXL: {
-    fontSize: '1.75rem',
+    fontSize: '2rem',
     fontWeight: 500,
   },
   XL: {
@@ -20,8 +20,8 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 400,
   },
   M: {
-    fontSize: '1.15rem',
-    fontWeight: 400,
+    fontSize: '1.05rem',
+    fontWeight: 500,
   },
   S: {
     fontSize: '1.05rem',
@@ -63,9 +63,9 @@ export const LINK = style({
   selectors: {
     '&:after': {
       fontFeatureSettings: '"case"',
-      fontSize: '0.9rem',
-      marginLeft: '0.25rem',
-      fontFamily: jetbrainsMono,
+      fontSize: '1rem',
+      marginLeft: '0.15rem',
+      marginRight: '0.15rem',
       content: '↗︎',
     },
   },
