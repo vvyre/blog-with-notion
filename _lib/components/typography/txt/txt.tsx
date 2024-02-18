@@ -1,9 +1,9 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
-import type { RichText } from '@/_lib/types/block';
 import { COLORS, COLOR_STYLE_VARIANTS } from '@/_lib/styles/colors.css';
 import { Annotations } from '../annotations/annotations';
 import Link from 'next/link';
 import { LINK, TEXT_STYLE } from '../typography.css';
+import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
 type TxtProps<T extends ElementType> = {
   as?: T | 'Link';
@@ -13,7 +13,7 @@ type TxtProps<T extends ElementType> = {
   strike?: boolean;
   underline?: boolean;
   color?: keyof typeof COLORS;
-  richText?: RichText;
+  richText?: RichTextItemResponse;
   size?: keyof typeof TEXT_STYLE;
   styleVariant?: string;
 } & ComponentPropsWithoutRef<T>;

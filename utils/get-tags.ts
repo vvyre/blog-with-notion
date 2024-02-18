@@ -1,8 +1,17 @@
-import { PageDataRow, PageMetaData } from '../_lib/types/notion-response';
+import {
+  DatabaseObjectResponse,
+  GetPageResponse,
+  PageObjectResponse,
+  PartialDatabaseObjectResponse,
+  PartialPageObjectResponse,
+} from '@notionhq/client/build/src/api-endpoints';
 
-export function getTags(post: PageDataRow | PageMetaData) {
-  //TODO: BREADCRUMB COMPONENT + tag id를 통한 검색 기능
-  const tags = post.properties.tags.multi_select;
-
-  return tags;
+export function getTags(post: PageObjectResponse | GetPageResponse) {
+  if ('properties' in post) {
+    if ('multi_select' in post.properties.tags) {
+      const result = post.properties.tags.multi_select;
+      return result;
+    }
+  }
+  return [];
 }

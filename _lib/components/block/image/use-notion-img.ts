@@ -1,8 +1,8 @@
-import { NotionImageResponse } from '@/_lib/types/components/component-props';
+import { ExtendedImageBlockObjectResponse } from '@/_lib/types/component-props';
 import { getImgUrl } from '@/utils/get-img-url';
 import { useEffect, useState } from 'react';
 
-export const useNotionImg = (block: NotionImageResponse) => {
+export const useNotionImg = (block: ExtendedImageBlockObjectResponse) => {
   const [imgUrl, setImgUrl] = useState<string>(getImgUrl(block));
   const [imgError, setImgError] = useState<boolean>(false);
   const [fetchError, setFetchError] = useState<any>(null);
@@ -22,7 +22,6 @@ export const useNotionImg = (block: NotionImageResponse) => {
           });
           const reloadedImg = await response.json();
           setImgUrl(getImgUrl(reloadedImg));
-          console.log(reloadedImg);
         } catch (err) {
           console.log(err);
           setFetchError(err);

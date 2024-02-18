@@ -1,5 +1,5 @@
-import { FileBlockResponse } from '@/_lib/types/components/component-props';
+import { NotionComponentProps } from '@/_lib/types/component-common';
 
-export function NotionFile({ block }: FileBlockResponse) {
+export function NotionFile({ block }: NotionComponentProps<'file'>) {
   return <></>;
 }

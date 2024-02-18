@@ -1,18 +1,60 @@
+import {
+  BlockObjectResponse,
+  BookmarkBlockObjectResponse,
+  BreadcrumbBlockObjectResponse,
+  BulletedListItemBlockObjectResponse,
+  CalloutBlockObjectResponse,
+  ChildDatabaseBlockObjectResponse,
+  ChildPageBlockObjectResponse,
+  CodeBlockObjectResponse,
+  ColumnBlockObjectResponse,
+  ColumnListBlockObjectResponse,
+  DividerBlockObjectResponse,
+  EmbedBlockObjectResponse,
+  EquationBlockObjectResponse,
+  FileBlockObjectResponse,
+  Heading1BlockObjectResponse,
+  Heading2BlockObjectResponse,
+  Heading3BlockObjectResponse,
+  ImageBlockObjectResponse,
+  LinkPreviewBlockObjectResponse,
+  LinkToPageBlockObjectResponse,
+  MentionRichTextItemResponse,
+  NumberedListItemBlockObjectResponse,
+  ParagraphBlockObjectResponse,
+  PdfBlockObjectResponse,
+  QuoteBlockObjectResponse,
+  RichTextItemResponse,
+  SyncedBlockBlockObjectResponse,
+  TableBlockObjectResponse,
+  TableOfContentsBlockObjectResponse,
+  TableRowBlockObjectResponse,
+  TemplateBlockObjectResponse,
+  ToDoBlockObjectResponse,
+  ToggleBlockObjectResponse,
+  UnsupportedBlockObjectResponse,
+  VideoBlockObjectResponse,
+} from '@notionhq/client/build/src/api-endpoints';
 import { COLORS } from '../styles/colors.css';
 import {
   Bookmark,
   BreadCrumb,
   BulletedListItem,
   BulletedListWrapper,
+  BulletedListWrapperResponse,
   Callout,
   ChildDatabase,
   ChildPage,
   CodeBlock,
   Column,
   ColumnList,
+  ExtendedCalloutBlockObjectResponse,
+  ExtendedImageBlockObjectResponse,
   Mention,
+  NotionImageResponse,
   NumberedListItem,
   NumberedListWrapper,
+  NumberedListWrapperResponse,
   Paragraph,
   Quote,
   SyncedBlock,
@@ -20,9 +62,10 @@ import {
   TableOfContents,
   TableRow,
   Text,
-} from './components/component-props';
+} from './component-props';
 
 export type BlockTypes =
+  | 'audio'
   | 'bookmark'
   | 'breadcrumb'
   | 'bulleted_list_item'
@@ -60,17 +103,56 @@ export type BlockTypes =
   | 'unsupported'
   | 'video';
 
-export interface NotionBlock {
-  object?: string;
-  id: string;
-  parent?: Parent;
-  created_time?: string;
-  last_edited_time?: string;
-  created_by?: User;
-  last_edited_by?: User;
-  has_children?: boolean;
-  archived?: boolean;
-}
+export type BlockObjectResponseMap = {
+  bookmark: BookmarkBlockObjectResponse;
+  breadcrumb: BreadcrumbBlockObjectResponse;
+  bulleted_list_item: BulletedListItemBlockObjectResponse;
+  bulleted_list_items: BulletedListWrapperResponse;
+  callout: ExtendedCalloutBlockObjectResponse;
+  code: CodeBlockObjectResponse;
+  child_database: ChildDatabaseBlockObjectResponse;
+  child_page: ChildPageBlockObjectResponse;
+  column: ColumnBlockObjectResponse;
+  column_list: ColumnListBlockObjectResponse;
+  divider: DividerBlockObjectResponse;
+  embed: EmbedBlockObjectResponse;
+  equation: EquationBlockObjectResponse;
+  file: FileBlockObjectResponse;
+  heading_1: Heading1BlockObjectResponse;
+  heading_2: Heading2BlockObjectResponse;
+  heading_3: Heading3BlockObjectResponse;
+  image: ExtendedImageBlockObjectResponse;
+  link_preview: LinkPreviewBlockObjectResponse;
+  link_to_page: LinkToPageBlockObjectResponse;
+  mention: MentionRichTextItemResponse;
+  numbered_list_item: NumberedListItemBlockObjectResponse;
+  numbered_list_items: NumberedListWrapperResponse;
+  paragraph: ParagraphBlockObjectResponse;
+  pdf: PdfBlockObjectResponse;
+  quote: QuoteBlockObjectResponse;
+  synced_block: SyncedBlockBlockObjectResponse;
+  table: TableBlockObjectResponse;
+  table_of_contents: TableOfContentsBlockObjectResponse;
+  table_row: TableRowBlockObjectResponse;
+  template: TemplateBlockObjectResponse;
+  text: TextBlock;
+  to_do: ToDoBlockObjectResponse;
+  toggle: ToggleBlockObjectResponse;
+  unsupported: UnsupportedBlockObjectResponse;
+  video: VideoBlockObjectResponse;
+};
+
+export type NotionComponentTypesWithChildren<T extends BlockTypes> = BlockObjectResponseMap[T] & {
+  children: NotionPolymorphicComponentTypes[];
+};
+
+export type NotionPolymorphicComponentTypes<T extends BlockTypes> = BlockObjectResponseMap[T];
+
+export type NotionPolymorphicComponentTypesWithChildren<T extends BlockTypes> = BlockObjectResponseMap[T] & {
+  children: NotionPolymorphicComponentTypes[];
+};
+
+export type NotionBlock = BlockObjectResponse;
 
 interface Parent {
   type: string;

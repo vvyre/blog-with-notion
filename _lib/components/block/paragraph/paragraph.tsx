@@ -4,13 +4,14 @@ import { ChildrenBlocks } from '../children-blocks';
 import { useId } from 'react';
 import { View } from '../../layout/view/view';
 import { BASE } from './paragraph.css';
-import { ParagraphResponse } from '@/_lib/types/components/component-props';
+import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import { NotionComponentPropsWithChildren } from '@/_lib/types/component-common';
 
-export function Paragraph({ block }: ParagraphResponse) {
+export function Paragraph({ block }: NotionComponentPropsWithChildren<'paragraph'>) {
   const id = useId();
   return (
     <View as="p" styleVariant={BASE}>
-      {block.paragraph.rich_text.map((txt: RichText) => (
+      {block.paragraph.rich_text.map((txt: RichTextItemResponse) => (
         <Txt key={id} as="span" richText={txt} />
       ))}
       {block.paragraph.children && <ChildrenBlocks block={block} />}

@@ -1,5 +1,5 @@
-import type { TableOfContentsResponse } from '@/_lib/types/components/component-props';
+import { NotionComponentProps } from '@/_lib/types/component-common';
 
-export function TableOfContents({ block }: TableOfContentsResponse) {
+export function TableOfContents({ block }: NotionComponentProps<'table_of_contents'>) {
   console.log(block);
 }
