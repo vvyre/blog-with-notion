@@ -1,18 +1,14 @@
 import { BlockTypes, NotionBlock } from '@/_lib/types/block';
 import { Block } from './block';
-import { NotionComponents } from '@/_lib/types/components/component-props';
+import { NotionComponentPropsWithChildren } from '@/_lib/types/component-common';
 
-export function ChildrenBlocks({ block }: NotionComponents) {
+export function ChildrenBlocks<T extends BlockTypes>({ block }: NotionComponentPropsWithChildren<T>) {
   const type = block.type;
   return (
     <>
-      {
-        //@ts-expect-error
-        block[type].children.map((block: NotionBlock) => {
-          //@ts-expect-error
-          return <Block block={block} />;
-        })
-      }
+      {block[type].children.map((block: NotionBlock) => {
+        return <Block block={block} />;
+      })}
     </>
   );
 }
