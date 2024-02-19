@@ -1,8 +1,7 @@
-import type { NotionComponentProps } from '@/_lib/types/components/component-common';
-import type { Text } from '@/_lib/types/components/component-props';
+import { NotionComponentProps } from '@/_lib/types/component-common';
 import { Txt } from '../../typography/txt/txt';
 
-export function NotionText({ block }: NotionComponentProps<Text>) {
+export function NotionText({ block }: NotionComponentProps<'text'>) {
   const isLink = block.href;
   if (isLink)
     return (

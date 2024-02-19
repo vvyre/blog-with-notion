@@ -1,3 +1,10 @@
+import {
+  DatabaseObjectResponse,
+  GetPageResponse,
+  PageObjectResponse,
+  PartialDatabaseObjectResponse,
+  PartialPageObjectResponse,
+} from '@notionhq/client/build/src/api-endpoints';
 import { NotionBlock, RichText, Tag, TextElement, WrittenDate } from './block';
 
 export interface QueryDatabase {
@@ -8,7 +15,7 @@ export interface QueryDatabase {
   type: string;
   request_id: string;
 }
-export interface PageDataRow {
+export interface PageFullData {
   object: string;
   id: string;
   created_time: string;
@@ -36,33 +43,17 @@ export type PageProperties = {
     unique_id: { prefix: string | null; number: number };
   };
 };
-export type RetrievePage = PageMetaData[];
 
-export interface PageMetaData {
-  object: 'page';
-  id: string;
-  created_time: string;
-  last_edited_time: string;
-  created_by: Object;
-  last_edited_by: Object;
-  cover: null;
-  icon: null;
-  parent: {
-    type: string;
-    database_id: string;
-  };
-  archived: false;
+export type RetrievePages = PageMetaDataResponse[];
+
+export type PageMetaDataResponse = {
+  meta: PageObjectResponse;
+};
+
+export type PageObject = {
   properties: PageProperties;
-  url: string;
-  public_url: string | null;
-  request_id: string;
-}
+} & GetPageResponse;
 
-export interface RetreiveBlockChild {
-  object: 'list';
-  results: NotionBlock[];
-  next_cursor: string | null;
-  has_more: boolean;
-  type: 'block';
-  block: Object;
-}
+export type PostListObject = GetPageResponse[];
+
+export type ExtendedPostListObject = Partial<PostListObject & { properties: PageProperties }>[];

@@ -1,19 +1,17 @@
-import { PageDataRow } from '@/_lib/types/notion-response';
-import { List } from '../../list/list';
-import { Flex } from '../../layout/flex/flex';
 import { Txt } from '../../typography/txt/txt';
 import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';
 import { getTags } from '@/utils/get-tags';
-import { Tag } from '../../typography/tag/tag';
 import { CATEGORY } from './post-list-header.css';
+import { PostListObject } from '@/_lib/types/notion-response';
+import { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 
 interface PostListHeaderProps {
-  postListData: PageDataRow[];
+  postListData: PostListObject;
 }
 export function PostListHeader({ postListData }: PostListHeaderProps) {
   const tagSet: Set<string> = new Set();
-  postListData.forEach(post => getTags(post).forEach(tag => tagSet.add(JSON.stringify(tag))));
+  postListData.forEach(post => getTags(post as GetPageResponse).forEach(tag => tagSet.add(JSON.stringify(tag))));
   const tags = Array.from(tagSet).map(str => JSON.parse(str));
   return (
     <View>

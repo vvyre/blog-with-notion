@@ -33,7 +33,7 @@ export default async function Post({ params }: PostPageProps) {
           {'←'}
         </Txt>
         <Spacing size="3rem" />
-        <Title meta={meta} />
+        <Title {...meta} />
         {blocks.map(b => (
           <Block key={b.id} block={b} />
         ))}

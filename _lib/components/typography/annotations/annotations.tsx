@@ -1,5 +1,4 @@
 import { COLORS } from '@/_lib/styles/colors.css';
-import { RichText } from '@/_lib/types/block';
 import { Wrapper } from '../../util/wrapper';
 import { Strong } from './strong';
 import { Italic } from './italic';
@@ -7,6 +6,7 @@ import { Strike } from './strike';
 import { Underline } from './underline';
 import { Code } from './code';
 import { ReactNode } from 'react';
+import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
 interface AnnotationsProps {
   bold?: boolean;
@@ -15,7 +15,7 @@ interface AnnotationsProps {
   strike?: boolean;
   underline?: boolean;
   color?: keyof typeof COLORS;
-  richText?: RichText;
+  richText?: RichTextItemResponse;
   children?: ReactNode;
 }
 export function Annotations({

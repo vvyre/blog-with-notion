@@ -1,5 +1,7 @@
-import type { PageDataRow } from '../../_lib/types/notion-response';
-export const postListMock: PageDataRow = {
+import { PageObject } from '@/_lib/types/notion-response';
+import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+
+export const postListMock = {
   object: 'page',
   id: '123',
   created_time: '',
@@ -27,7 +29,7 @@ export const postListMock: PageDataRow = {
         {
           rich_text: {
             type: 'text',
-            text: { content: 'abcd', link: null },
+            text: { content: 'abcd', link: null, type: 'text' },
             plain_text: 'abcd',
             annotations: {
               bold: false,
@@ -56,4 +58,4 @@ export const postListMock: PageDataRow = {
   },
   url: '',
   public_url: null,
-};
+} as PageObject;

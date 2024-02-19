@@ -1,4 +1,3 @@
-import { PageDataRow } from '@/_lib/types/notion-response';
 import { List } from '../../list/list';
 import { getTitle } from '@/utils/get-title';
 import Link from 'next/link';
@@ -13,9 +12,17 @@ import { View } from '../../layout/view/view';
 import { Spacing } from '../../layout/spacing/spacing';
 import { FLEX_RIGHT, POST_BOX } from './post-list.css';
 import { Flex } from '../../layout/flex/flex';
+import { PageObject, PostListObject } from '@/_lib/types/notion-response';
+import {
+  DatabaseObjectResponse,
+  GetPageResponse,
+  PageObjectResponse,
+  PartialDatabaseObjectResponse,
+  PartialPageObjectResponse,
+} from '@notionhq/client/build/src/api-endpoints';
 
 interface PostListProps {
-  pageData: PageDataRow;
+  pageData: GetPageResponse;
 }
 export function PostList({ pageData }: PostListProps) {
   return (

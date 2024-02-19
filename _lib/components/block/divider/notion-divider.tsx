@@ -1,7 +1,6 @@
-import { NotionComponentProps } from '@/_lib/types/components/component-common';
-import { NotionDivider } from '@/_lib/types/components/component-props';
 import { Divider } from '../../layout/divider/divider';
+import { NotionComponentProps } from '@/_lib/types/component-common';
 
-export function NotionDivider({ block }: NotionComponentProps<NotionDivider>) {
+export function NotionDivider({ block }: NotionComponentProps<'divider'>) {
   return <Divider />;
 }

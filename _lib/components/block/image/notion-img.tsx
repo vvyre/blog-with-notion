@@ -1,35 +1,16 @@
 'use client';
-import type { NotionComponentProps } from '@/_lib/types/components/component-common';
-import type { NotionImage } from '@/_lib/types/components/component-props';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import { getPlainText } from '@/utils/get-plain-text';
 import { Txt } from '../../typography/txt/txt';
 import { Flex } from '../../layout/flex/flex';
 import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';
 import { CAPTION, CAPTION_TXT, IMG_CONTAINER } from './img.css';
+import { useNotionImg } from './use-notion-img';
+import { NotionComponentProps } from '@/_lib/types/component-common';
 
-export function NotionImg({ block }: NotionComponentProps<NotionImage>) {
-  const [imgUrl, setImgUrl] = useState<string>(
-    block.image.type === 'external' ? block.image.external.url : block.image.file.url
-  );
-  const [imgError, setImgError] = useState<boolean>(false);
-
-  useEffect(() => {
-    (async () => {
-      if (imgError) {
-        try {
-          const response = await fetch('/reload-img', {
-            body: JSON.stringify(block.id),
-            method: 'POST',
-          });
-          const reloadedImg = await response.json();
-          setImgUrl(reloadedImg.image.file.url);
-        } catch (err) {}
-      }
-    })();
-  }, []);
+export function NotionImg({ block }: NotionComponentProps<'image'>) {
+  const { imgUrl, reload } = useNotionImg(block);
 
   return (
     <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
@@ -37,8 +18,8 @@ export function NotionImg({ block }: NotionComponentProps<NotionImage>) {
         <Image
           src={imgUrl}
           alt={getPlainText(block?.image?.caption)}
-          onError={() => setImgError(true)}
-          loading="lazy"
+          priority
+          onError={() => reload()}
           blurDataURL={block.blurDataURL}
           width={720}
           height={600}

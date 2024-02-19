@@ -3,6 +3,7 @@ import type { RichText } from '@/_lib/types/block';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 import { Annotations } from '../annotations/annotations';
 import { TEXT_STYLE } from '../typography.css';
+import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
 type HeadingProps<T extends ElementType> = {
   as?: T;
@@ -13,7 +14,7 @@ type HeadingProps<T extends ElementType> = {
   underline?: boolean;
   size?: keyof typeof TEXT_STYLE;
   color?: keyof typeof COLORS;
-  richText?: RichText;
+  richText?: RichTextItemResponse;
   styleVariant?: string;
 } & ComponentPropsWithoutRef<T>;
 export function Heading<T extends ElementType>({

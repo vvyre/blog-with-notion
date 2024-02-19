@@ -1,14 +1,10 @@
-import { ComponentPropsWithoutRef } from 'react';
-import { BlockTypes, NotionBlock } from '@/_lib/types/block';
-import { BlockComponentMap } from '@/_lib/types/components/component-common';
+import { NotionPolymorphicComponentProps } from '@/_lib/types/component-common';
 import { blockComponentMap } from './block-component-map';
+import { BlockTypes } from '@/_lib/types/block';
 
-type BlockProps<T extends BlockTypes> = {
-  block: NotionBlock<T>;
-} & ComponentPropsWithoutRef<BlockComponentMap[T]>;
-
-export const Block = <T extends BlockTypes>({ block }: BlockProps<T>) => {
+export function Block<T extends BlockTypes>({ block }: NotionPolymorphicComponentProps<T>) {
+  //@ts-expect-error
   const Component = blockComponentMap[block.type];
   if (!Component) return <div />;
   else return <Component block={block} />;
-};
+}
