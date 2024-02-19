@@ -27,9 +27,8 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
           style={{
             width: 'auto',
             height: 'auto',
-            maxWidth: '100%',
+            maxWidth: 'calc(100% - 3rem)',
             maxHeight: '400px',
-            margin: '0 auto',
           }}
         />
       </View>
