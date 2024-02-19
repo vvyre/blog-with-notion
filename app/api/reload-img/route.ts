@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     if (block) return Response.json(processedBlock);
     else return Response.json({ block: null });
   } catch (err) {
-    console.log('err', err);
+    console.log('route-err', err);
     return Response.json({ block: null });
   }
 }

@@ -13,7 +13,6 @@ export const useNotionImg = (block: ExtendedImageBlockObjectResponse) => {
   }
 
   useEffect(() => {
-    console.log('effect');
     (async () => {
       if (imgError) {
         try {
@@ -23,10 +22,9 @@ export const useNotionImg = (block: ExtendedImageBlockObjectResponse) => {
             method: 'POST',
           });
           const reloadedImg = await response.json();
-          console.log(reloadedImg);
           setImgUrl(getImgUrl(reloadedImg));
         } catch (err) {
-          console.log(err);
+          console.log('notion-img-client-err', err);
           setFetchError(err);
         } finally {
           setIsReloading(false);

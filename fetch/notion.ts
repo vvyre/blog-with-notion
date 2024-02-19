@@ -32,7 +32,6 @@ export const getPostList = async (): Promise<PostListObject> => {
   };
 
   const response = await notion.databases.query(query);
-  console.log(response);
   return response.results as PostListObject;
 };
 
