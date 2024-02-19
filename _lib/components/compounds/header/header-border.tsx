@@ -1,8 +1,8 @@
 'use client';
 import { useScroll } from '@/_lib/react/use-scroll';
-import { NORMAL, SCROLLED } from './header-border.css';
+import { BASE, NORMAL, SCROLLED } from './header-border.css';
 
 export function HeaderBorder() {
   const scrolled = useScroll();
-  return <hr className={scrolled ? SCROLLED : NORMAL} />;
+  return <hr className={`${BASE} ${scrolled ? SCROLLED : NORMAL}`} />;
 }

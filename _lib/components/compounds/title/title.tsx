@@ -11,6 +11,8 @@ import { TITLE_TAG } from './title-tag.css';
 import { View } from '../../layout/view/view';
 import { PageObject } from '@/_lib/types/notion-response';
 import { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
+import { POST_TITLE } from './title.css';
+import { getSummary } from '@/utils/get-summary';
 
 interface TitleProps extends ComponentPropsWithoutRef<'h1'> {
   meta: GetPageResponse;
@@ -27,11 +29,18 @@ export function Title({ ...meta }: GetPageResponse) {
       </View>
       <Spacing size="1rem" />
       <View>
-        <Heading as="h1" size="XXXL" bold>
+        <Heading as="h1" size="XXXL" styleVariant={POST_TITLE} bold>
           {getTitle(meta)}
         </Heading>
       </View>
       <Spacing size="1rem" />
+      <View>
+        <Txt as="p" color="gray">
+          {getSummary(meta)}
+        </Txt>
+      </View>
+      <Spacing size="0.75rem" />
+
       <View>
         <Txt color="gray" size="S">
           {getDate(meta)}

@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <Flex as="nav" styleVariant={BASE} justifyContents="center" alignItems="flexEnd">
       <View styleVariant={RESPONSIVE}>
-        <Heading as="h3" size="S" bold>
+        <Heading as="h3" size="XS" bold>
           Contact
         </Heading>
         <List as="ul">
@@ -25,9 +25,7 @@ export function Footer() {
           ))}
         </List>
         <Spacing size="1rem" />
-        <Txt size="XS" bold>
-          {meta.footer.copyright}
-        </Txt>
+        <Txt size="XXS">{meta.footer.copyright}</Txt>
       </View>
     </Flex>
   );

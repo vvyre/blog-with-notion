@@ -9,30 +9,30 @@ export const TEXT_STYLE = styleVariants({
   },
   XXL: {
     fontSize: '2rem',
-    fontWeight: 500,
+    fontWeight: 600,
   },
   XL: {
     fontSize: '1.5rem',
-    fontWeight: 500,
+    fontWeight: 600,
   },
   L: {
     fontSize: '1.25rem',
-    fontWeight: 400,
+    fontWeight: 500,
   },
   M: {
-    fontSize: '1.05rem',
-    fontWeight: 500,
+    fontSize: '1.1rem',
+    fontWeight: 400,
   },
   S: {
     fontSize: '1.05rem',
     fontWeight: 400,
   },
   XS: {
-    fontSize: '0.9rem',
+    fontSize: '0.95rem',
     fontWeight: 400,
   },
   XXS: {
-    fontSize: '0.8rem',
+    fontSize: '0.85rem',
     fontWeight: 500,
   },
 });
@@ -59,14 +59,7 @@ export const STRIKE = style({});
 export const UNDERLINE = style({});
 
 export const LINK = style({
-  color: 'inherit',
-  selectors: {
-    '&:after': {
-      fontFeatureSettings: '"case"',
-      fontSize: '1rem',
-      marginLeft: '0.15rem',
-      marginRight: '0.15rem',
-      content: '↗︎',
-    },
-  },
+  textDecoration: 'underline',
+  color: THEMES.gray,
+  textUnderlineOffset: '0.2rem',
 });

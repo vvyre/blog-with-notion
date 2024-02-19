@@ -44,10 +44,12 @@ globalStyle('textarea', {
   overflow: 'auto',
 });
 
-globalStyle('a, a:hover, a:active', {
+globalStyle('a', {
   textDecoration: 'none',
   color: 'inherit',
   outline: 0,
+  background: 'transparent',
+  border: 'none',
 });
 
 globalStyle('ul, ol', {
@@ -89,5 +91,5 @@ globalStyle('::selection, ::-moz-selection', {
 });
 
 globalStyle('p, span, code, ul li, ol li, li', {
-  fontSize: '1.05rem',
+  fontSize: '1.1rem',
 });

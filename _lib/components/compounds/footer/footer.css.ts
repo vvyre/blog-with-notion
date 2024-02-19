@@ -3,20 +3,22 @@ import { jetbrainsMono } from '@/_lib/styles/fonts.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
-  marginTop: '5rem',
+  backgroundColor: THEMES.light_b1,
+  marginTop: '2rem',
   borderTop: `1px solid ${THEMES.light_b3}`,
-  padding: '2rem 2rem 5rem 2rem',
+  padding: '2rem 2rem 3rem 2rem',
+  lineHeight: '1.3',
   width: '100%',
-  minHeight: '10rem',
+  minHeight: '8rem',
 });
 
 export const FOOTER_LINK = style({
   background: 'transparent',
   fontFeatureSettings: '"case"',
-  fontSize: '0.9rem',
+  fontSize: '0.85rem',
   selectors: {
     '&:after': {
-      fontSize: '1rem',
+      fontSize: '0.85rem',
       marginLeft: '0.25rem',
       fontFamily: jetbrainsMono,
       content: '↗︎',
