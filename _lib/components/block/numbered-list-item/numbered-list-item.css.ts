@@ -1,5 +1,8 @@
 import { style } from '@vanilla-extract/css';
-export const BASE = style({});
+export const BASE = style({
+  fontFeatureSettings: '"tnum"',
+  listStylePosition: 'inside',
+});
 export const DEPTH_1 = style({
   listStyleType: 'decimal',
 });
