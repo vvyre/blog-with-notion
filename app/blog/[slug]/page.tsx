@@ -17,7 +17,7 @@ interface PostPageProps {
   };
 }
 
-export const revalidate = 60;
+export const revalidate = 180;
 
 export default async function Post({ params }: PostPageProps) {
   const posts = await getCachedPostList();

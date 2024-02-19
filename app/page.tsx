@@ -5,7 +5,7 @@ import { Section } from '@/_lib/components/template/section';
 import { PostListHeader } from '@/_lib/components/compounds/post-list-header/post-list-header';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 
-export const revalidate = 60;
+export const revalidate = 180;
 
 export default async function PostListPage() {
   const postList = await getPostList();
