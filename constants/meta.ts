@@ -1,4 +1,4 @@
-const TITLE = '유승윤 개발 블로그';
+const TITLE = '유승윤 개발 일지';
 const DESCRIPTION = '유승윤 개발 블로그';
 
 export const meta = {
