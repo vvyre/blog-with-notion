@@ -16,6 +16,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
     <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
       <View styleVariant={IMG_CONTAINER}>
         <Image
+          key={imgUrl}
           src={imgUrl}
           alt={getPlainText(block?.image?.caption)}
           priority
@@ -24,8 +25,11 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
           width={720}
           height={600}
           style={{
-            width: '100%',
-            height: '100%',
+            width: 'auto',
+            height: 'auto',
+            maxWidth: '100%',
+            maxHeight: '400px',
+            margin: '0 auto',
           }}
         />
       </View>

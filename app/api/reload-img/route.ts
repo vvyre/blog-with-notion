@@ -7,8 +7,8 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { id } = body;
     const block = await getSingleBlock(id as string);
-    const processedImage = await getBlurredImg(block);
-    if (block) return Response.json({ block: { ...block, blurDataUrl: processedImage } });
+    const processedBlock = await getBlurredImg(block);
+    if (block) return Response.json(processedBlock);
     else return Response.json({ block: null });
   } catch (err) {
     console.log('err', err);
