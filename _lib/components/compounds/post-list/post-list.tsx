@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { List } from '../../list/list';
 import { getTitle } from '@/utils/get-title';
-import Link from 'next/link';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { Heading } from '../../typography/heading/heading';
 import { Txt } from '../../typography/txt/txt';
@@ -10,16 +10,9 @@ import { getTags } from '@/utils/get-tags';
 import { Tag } from '../../typography/tag/tag';
 import { View } from '../../layout/view/view';
 import { Spacing } from '../../layout/spacing/spacing';
-import { FLEX_RIGHT, POST_BOX } from './post-list.css';
+import { POST_BOX, POST_BOX_INNER, SMALL } from './post-list.css';
 import { Flex } from '../../layout/flex/flex';
-import { PageObject, PostListObject } from '@/_lib/types/notion-response';
-import {
-  DatabaseObjectResponse,
-  GetPageResponse,
-  PageObjectResponse,
-  PartialDatabaseObjectResponse,
-  PartialPageObjectResponse,
-} from '@notionhq/client/build/src/api-endpoints';
+import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 
 interface PostListProps {
   pageData: GetPageResponse;
@@ -28,29 +21,33 @@ export function PostList({ pageData }: PostListProps) {
   return (
     <List as="li">
       <View styleVariant={POST_BOX}>
-        <View>
+        <View styleVariant={POST_BOX_INNER}>
           <Flex justifyContents="spaceBetween" alignItems="center">
             <View>
-              <Link href={`/blog/${parsedSlug(pageData)}`}>
-                <Heading size="XL">{getTitle(pageData)}</Heading>
-                <Txt size="XS">{getSummary(pageData)}</Txt>
-              </Link>
-            </View>
-            <Flex flexDirection="column" justifyContents="center" alignItems="flexEnd">
-              <View styleVariant={FLEX_RIGHT}>
-                <Txt as="span" size="XS" color="gray">
-                  {getDate(pageData)}
-                </Txt>
-              </View>
-              <View styleVariant={FLEX_RIGHT}>
+              <View styleVariant={SMALL}>
                 {getTags(pageData).map(t => (
                   <Tag key={t.id}>{t.name}</Tag>
                 ))}
               </View>
+              <Spacing size="0.5rem" />
+              <Link href={`/blog/${parsedSlug(pageData)}`}>
+                <Heading size="XL">{getTitle(pageData)}</Heading>
+                <Txt size="XS">{getSummary(pageData)}</Txt>
+              </Link>
+              <Spacing size="0.5rem" />
+              <View styleVariant={SMALL}>
+                <Txt as="span" size="XS" color="gray">
+                  {getDate(pageData)}
+                </Txt>
+              </View>
+            </View>
+            <Flex flexDirection="column" justifyContents="center" alignItems="flexEnd">
+              <Link href={`/blog/${parsedSlug(pageData)}`}>
+                <Txt size="XL">→</Txt>
+              </Link>
             </Flex>
           </Flex>
           <Spacing size="0.5rem" />
-          {/*TODO: ADD THUMBNAIL*/}
         </View>
       </View>
     </List>
