@@ -1,13 +1,15 @@
-import { NotionBlock } from '@/_lib/types/block';
+import type { NotionBlock, NotionBlockWithChildren } from '@/_lib/types/block';
 import { getBlurredImg } from './get-blurred-img';
 import { groupedBlocks } from './grouped-blocks';
 import pMap from 'p-map';
+import { getBookmarkMetadata } from './get-bookmark-metadata';
 
-export const processedBlock = async (blocks: NotionBlock[]) => {
-  const IMG_PROCESSED = await pMap(
+export const processedBlock = async (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+  const PROCESSED = await pMap(
     blocks,
     async block => {
       if (block.type === 'image') return (await getBlurredImg(block)) || block;
+      else if (block.type === 'bookmark') return (await getBookmarkMetadata(block)) || block;
       else return block;
     },
     {
@@ -15,6 +17,6 @@ export const processedBlock = async (blocks: NotionBlock[]) => {
     }
   );
 
-  const LIST_GROUPPED = groupedBlocks(IMG_PROCESSED);
+  const LIST_GROUPPED = groupedBlocks(PROCESSED);
   return LIST_GROUPPED;
 };
