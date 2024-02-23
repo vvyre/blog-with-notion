@@ -1,11 +1,11 @@
-import {
+import type {
   DatabaseObjectResponse,
   GetPageResponse,
   PageObjectResponse,
   PartialDatabaseObjectResponse,
   PartialPageObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints';
-import { NotionBlock, RichText, Tag, TextElement, WrittenDate } from './block';
+import type { NotionBlock, RichText, Tag, TextElement, WrittenDate } from './block';
 
 export interface QueryDatabase {
   object: string;

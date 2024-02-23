@@ -17,10 +17,6 @@ export type NotionComponentPropsWithChildren<T extends BlockTypes> = {
   block: NotionComponentTypesWithChildren[T];
 };
 
-export type NotionPolymorphicComponentProps<T extends BlockTypes> = {
-  block: NotionPolymorphicComponentTypes<T>;
-};
-
 export type NotionComponentPropsWithChildren<T extends BlockTypes> = {
   block: NotionPolymorphicComponentTypesWithChildren<T>;
 };

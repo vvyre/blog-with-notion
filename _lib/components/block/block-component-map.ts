@@ -24,13 +24,14 @@ import { Quote } from './quote/quote';
 import { Table } from './table/table';
 import { TableOfContents } from './table-of-contents/table-of-contents';
 import { TableRow } from './table-row/table-row';
+import { Bookmark } from './bookmark/bookmark';
 
 export const blockComponentMap: BlockComponentMap = {
   audio: Divider,
-  bookmark: Divider,
+  bookmark: Bookmark,
   breadcrumb: BreadCrumb,
   bulleted_list_item: BulletedListItem,
-  bulleted_list_items: BulletedListWrapper,
+  grouped_bulleted_list_item: BulletedListWrapper,
   callout: Callout,
   child_database: ChildDatabase,
   child_page: ChildPage,
@@ -47,9 +48,8 @@ export const blockComponentMap: BlockComponentMap = {
   image: NotionImg,
   link_preview: Divider,
   link_to_page: Divider,
-  mention: Mention,
   numbered_list_item: NumberedListItem,
-  numbered_list_items: NumberedListWrapper,
+  grouped_numbered_list_item: NumberedListWrapper,
   paragraph: Paragraph,
   pdf: Divider,
   quote: Quote,
@@ -58,7 +58,6 @@ export const blockComponentMap: BlockComponentMap = {
   table_of_contents: TableOfContents,
   table_row: TableRow,
   template: Divider,
-  text: NotionText,
   to_do: Divider,
   toggle: Divider,
   unsupported: Divider,

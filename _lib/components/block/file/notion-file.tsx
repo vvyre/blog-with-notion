@@ -1,4 +1,4 @@
-import { NotionComponentProps } from '@/_lib/types/component-common';
+import type { NotionComponentProps } from '@/_lib/types/component-common';
 
 export function NotionFile({ block }: NotionComponentProps<'file'>) {
   return <></>;

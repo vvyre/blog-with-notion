@@ -1,10 +1,4 @@
-import {
-  DatabaseObjectResponse,
-  GetPageResponse,
-  PageObjectResponse,
-  PartialDatabaseObjectResponse,
-  PartialPageObjectResponse,
-} from '@notionhq/client/build/src/api-endpoints';
+import type { GetPageResponse, PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export function getTags(post: PageObjectResponse | GetPageResponse) {
   if ('properties' in post) {

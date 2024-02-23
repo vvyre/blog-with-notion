@@ -1,4 +1,4 @@
-import {
+import type {
   BlockObjectResponse,
   BookmarkBlockObjectResponse,
   BreadcrumbBlockObjectResponse,
@@ -36,7 +36,7 @@ import {
   VideoBlockObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints';
 import { COLORS } from '../styles/colors.css';
-import {
+import type {
   Bookmark,
   BreadCrumb,
   BulletedListItem,
@@ -48,6 +48,7 @@ import {
   CodeBlock,
   Column,
   ColumnList,
+  ExtendedBookmarkObjectResponse,
   ExtendedCalloutBlockObjectResponse,
   ExtendedImageBlockObjectResponse,
   Mention,
@@ -64,50 +65,14 @@ import {
   Text,
 } from './component-props';
 
-export type BlockTypes =
-  | 'audio'
-  | 'bookmark'
-  | 'breadcrumb'
-  | 'bulleted_list_item'
-  | 'bulleted_list_items'
-  | 'callout'
-  | 'code'
-  | 'child_database'
-  | 'child_page'
-  | 'column'
-  | 'column_list'
-  | 'divider'
-  | 'embed'
-  | 'equation'
-  | 'file'
-  | 'heading_1'
-  | 'heading_2'
-  | 'heading_3'
-  | 'image'
-  | 'link_preview'
-  | 'link_to_page'
-  | 'mention'
-  | 'numbered_list_item'
-  | 'numbered_list_items'
-  | 'paragraph'
-  | 'pdf'
-  | 'quote'
-  | 'synced_block'
-  | 'table'
-  | 'table_of_contents'
-  | 'table_row'
-  | 'template'
-  | 'text'
-  | 'to_do'
-  | 'toggle'
-  | 'unsupported'
-  | 'video';
+type PrefixedBlockTypes = 'grouped_bulleted_list_item' | 'grouped_numbered_list_item';
+export type BlockTypes = BlockObjectResponse['type'] | PrefixedBlockTypes;
 
 export type BlockObjectResponseMap = {
-  bookmark: BookmarkBlockObjectResponse;
+  bookmark: ExtendedBookmarkObjectResponse;
   breadcrumb: BreadcrumbBlockObjectResponse;
   bulleted_list_item: BulletedListItemBlockObjectResponse;
-  bulleted_list_items: BulletedListWrapperResponse;
+  grouped_bulleted_list_item: BulletedListWrapperResponse;
   callout: ExtendedCalloutBlockObjectResponse;
   code: CodeBlockObjectResponse;
   child_database: ChildDatabaseBlockObjectResponse;
@@ -126,7 +91,7 @@ export type BlockObjectResponseMap = {
   link_to_page: LinkToPageBlockObjectResponse;
   mention: MentionRichTextItemResponse;
   numbered_list_item: NumberedListItemBlockObjectResponse;
-  numbered_list_items: NumberedListWrapperResponse;
+  grouped_numbered_list_item: NumberedListWrapperResponse;
   paragraph: ParagraphBlockObjectResponse;
   pdf: PdfBlockObjectResponse;
   quote: QuoteBlockObjectResponse;
@@ -142,6 +107,23 @@ export type BlockObjectResponseMap = {
   video: VideoBlockObjectResponse;
 };
 
+export type NotionBlock =
+  | Exclude<BlockObjectResponse, ImageBlockObjectResponse | BookmarkBlockObjectResponse | EquationBlockObjectResponse>
+  | ExtendedImageBlockObjectResponse
+  | BookmarkBlockObjectResponse;
+
+type ExtendedRichText<T> = {
+  [K in keyof T]: T[K] extends RichTextItemResponse ? RichText : T[K] extends object ? ExtendedRichText<T[K]> : T[K];
+};
+
+export type ExtendedNotionBlock<T> = ExtendedRichText<T> & WithChildren;
+
+export type WithChildren = {
+  children: NotionBlockWithChildren;
+};
+
+export type NotionBlockWithChildren = ExtendedNotionBlock<NotionBlock>;
+
 export type NotionComponentTypesWithChildren<T extends BlockTypes> = BlockObjectResponseMap[T] & {
   children: NotionPolymorphicComponentTypes[];
 };
@@ -151,77 +133,6 @@ export type NotionPolymorphicComponentTypes<T extends BlockTypes> = BlockObjectR
 export type NotionPolymorphicComponentTypesWithChildren<T extends BlockTypes> = BlockObjectResponseMap[T] & {
   children: NotionPolymorphicComponentTypes[];
 };
-
-export type NotionBlock = BlockObjectResponse;
-
-interface Parent {
-  type: string;
-  page_id: string;
-}
-
-interface User {
-  type: 'user';
-  object: string;
-  id: string;
-}
-
-interface TextElement {
-  rich_text: RichText[];
-  color: string;
-  is_toggleable: boolean;
-}
-
-interface RichText {
-  type: string;
-  text: TextProperty;
-  annotations: Annotations;
-  plain_text: string;
-  href: null | string;
-}
-
-interface WrittenDate {
-  start: 'string' | null;
-  end: 'string' | null;
-  time_zone: 'string' | null;
-}
-
-interface TextProperty {
-  type: 'text';
-  content: string;
-  link: null | Link;
-}
-
-interface Link {
-  url: string;
-}
-
-interface Annotations {
-  bold: boolean;
-  italic: boolean;
-  strikethrough: boolean;
-  underline: boolean;
-  code: boolean;
-  color: keyof typeof COLORS;
-}
-
-interface TextBlock {
-  type: 'text';
-  text: {
-    content: string;
-    link: Object;
-  };
-  annotations: {
-    bold: boolean;
-    italic: boolean;
-    strikethrough: boolean;
-    underline: boolean;
-    code: boolean;
-    color: keyof typeof COLORS;
-  };
-  plain_text: string;
-  href: string;
-}
-
 interface Tag {
   id: 'string';
   name: 'string';

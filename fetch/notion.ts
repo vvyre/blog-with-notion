@@ -9,6 +9,7 @@ import {
   QueryDatabaseParameters,
 } from '@notionhq/client/build/src/api-endpoints';
 import { PageObject, PostListObject } from '@/_lib/types/notion-response';
+import { NotionBlock, NotionBlockWithChildren } from '@/_lib/types/block';
 
 export const getPostList = async (): Promise<PostListObject> => {
   const query: QueryDatabaseParameters = {
@@ -65,7 +66,7 @@ export const getPostMetaData = async (page_id: string): Promise<GetPageResponse>
   return result;
 };
 
-export const getPost = async (block_id: string): Promise<BlockObjectResponse[]> => {
+export const getPost = async (block_id: string): Promise<(NotionBlock | NotionBlockWithChildren)[]> => {
   let results = [];
   let blocks = await notion.blocks.children.list({
     block_id,
@@ -81,7 +82,7 @@ export const getPost = async (block_id: string): Promise<BlockObjectResponse[]> 
     results = [...results, ...blocks.results];
   }
 
-  return results as BlockObjectResponse[];
+  return results as (NotionBlock | NotionBlockWithChildren)[];
 };
 
 export const getSingleBlock = async (block_id: string): Promise<GetBlockResponse> =>

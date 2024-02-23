@@ -1,6 +1,12 @@
 import { COLORS } from '@/_lib/styles/colors.css';
-import { NotionBlock, RichText, TextProperty } from './block';
-import { CalloutBlockObjectResponse, ImageBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { NotionBlock, RichText, TextProperty } from './block';
+import type {
+  BookmarkBlockObjectResponse,
+  CalloutBlockObjectResponse,
+  ImageBlockObjectResponse,
+} from '@notionhq/client/build/src/api-endpoints';
+import { Metadata } from 'unfurl.js/dist/types';
+import { BookmarkMeta } from '@/utils/get-bookmark-metadata';
 
 interface Image_File {
   caption: RichText[];
@@ -49,12 +55,6 @@ export interface BulletedListWrapperResponse {
   } & NotionBlock;
 }
 
-export interface BookmarkResponse {
-  block: {
-    type: 'bookmark';
-    bookmark: {
-      caption: RichText[];
-      url: string;
-    };
-  } & NotionBlock;
-}
+export type ExtendedBookmarkObjectResponse = BookmarkBlockObjectResponse & {
+  bookmarkInfo: BookmarkMeta;
+};

@@ -1,9 +1,9 @@
-import {
+import type {
   DatabaseObjectResponse,
   GetPageResponse,
   PartialDatabaseObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints';
-import { PageFullData, PageObject } from '../_lib/types/notion-response';
+import type { PageFullData } from '../_lib/types/notion-response';
 
 export function getDate(post: PageFullData | GetPageResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse) {
   if ('properties' in post) {

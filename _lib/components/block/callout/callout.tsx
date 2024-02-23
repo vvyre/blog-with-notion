@@ -3,8 +3,8 @@ import { Txt } from '../../typography/txt/txt';
 import { Heading } from '../../typography/heading/heading';
 import { View } from '../../layout/view/view';
 import { CALLOUT, CALLOUT_TEXT } from './callout.css';
-import { NotionComponentProps } from '@/_lib/types/component-common';
-import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { NotionComponentProps } from '@/_lib/types/component-common';
+import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export function Callout({ block }: NotionComponentProps<'callout'>) {
   const id = useId();

@@ -1,7 +1,7 @@
-import { NotionComponentProps } from '@/_lib/types/component-common';
 import { Txt } from '../../typography/txt/txt';
+import type { TextRichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
-export function NotionText({ block }: NotionComponentProps<'text'>) {
+export function NotionText({ block }: { block: TextRichTextItemResponse }) {
   const isLink = block.href;
   if (isLink)
     return (

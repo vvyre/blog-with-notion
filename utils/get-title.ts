@@ -1,6 +1,5 @@
-import {
+import type {
   DatabaseObjectResponse,
-  GetPageResponse,
   PageObjectResponse,
   PartialDatabaseObjectResponse,
   PartialPageObjectResponse,

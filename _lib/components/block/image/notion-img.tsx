@@ -7,7 +7,7 @@ import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';
 import { CAPTION, CAPTION_TXT, IMG_CONTAINER } from './img.css';
 import { useNotionImg } from './use-notion-img';
-import { NotionComponentProps } from '@/_lib/types/component-common';
+import type { NotionComponentProps } from '@/_lib/types/component-common';
 
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const { imgUrl, reload } = useNotionImg(block);

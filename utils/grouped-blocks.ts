@@ -1,105 +1,39 @@
-import { BlockTypes, NotionBlock } from '@/_lib/types/block';
+import type { NotionBlock, NotionBlockWithChildren } from '@/_lib/types/block';
 
-export const groupedBlocks = (blocks: NotionBlock[]) => {
-  const result: NotionBlock[] = [];
+export const groupedBlocks = (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+  if (!blocks.length) return blocks;
 
-  const target: Record<BlockTypes, boolean> = {
+  const result: (NotionBlock | NotionBlockWithChildren)[] = [];
+
+  const target: Partial<Record<NotionBlockWithChildren['type'], boolean>> = {
     bulleted_list_item: true,
     numbered_list_item: true,
-    code: false,
-    embed: false,
-    table: false,
-    template: false,
-    video: false,
-    image: false,
-    text: false,
-    file: false,
-    column: false,
-    bookmark: false,
-    breadcrumb: false,
-    bulleted_list_items: false,
-    callout: false,
-    child_database: false,
-    child_page: false,
-    column_list: false,
-    divider: false,
-    equation: false,
-    heading_1: false,
-    heading_2: false,
-    heading_3: false,
-    link_preview: false,
-    link_to_page: false,
-    mention: false,
-    numbered_list_items: false,
-    paragraph: false,
-    pdf: false,
-    quote: false,
-    synced_block: false,
-    table_of_contents: false,
-    table_row: false,
-    to_do: false,
-    toggle: false,
-    unsupported: false,
-    audio: false,
   };
 
-  let prevBlock = blocks[0].type;
+  let prevBlock: NotionBlockWithChildren['type'] = blocks[0].type;
 
-  const group: Record<BlockTypes, NotionBlock[]> = {
+  const group: Partial<Record<keyof typeof target, (NotionBlock | NotionBlockWithChildren)[]>> = {
     bulleted_list_item: [],
     numbered_list_item: [],
-    code: [],
-    embed: [],
-    table: [],
-    template: [],
-    video: [],
-    image: [],
-    text: [],
-    file: [],
-    column: [],
-    bookmark: [],
-    breadcrumb: [],
-    bulleted_list_items: [],
-    callout: [],
-    child_database: [],
-    child_page: [],
-    column_list: [],
-    divider: [],
-    equation: [],
-    heading_1: [],
-    heading_2: [],
-    heading_3: [],
-    link_preview: [],
-    link_to_page: [],
-    mention: [],
-    numbered_list_items: [],
-    paragraph: [],
-    pdf: [],
-    quote: [],
-    synced_block: [],
-    table_of_contents: [],
-    table_row: [],
-    to_do: [],
-    toggle: [],
-    unsupported: [],
-    audio: [],
   };
 
-  blocks.forEach(block => {
+  blocks.forEach((block, idx) => {
     const currBlock = block.type;
 
     if (target[currBlock] === true) {
       group[currBlock]?.push(block);
       prevBlock = currBlock;
     } else {
-      if (target[prevBlock] === true && prevBlock !== currBlock) {
-        const key = `${prevBlock}s`;
+      if (idx === blocks.length - 1 || (target[prevBlock] === true && prevBlock !== currBlock)) {
+        //마지막 블록이거나 블록의 종류가 바뀌면 작업 진행 그룹을 삽입하고 초기화
+        const key = `grouped_${prevBlock}`;
         result.push({
           [key]: group[prevBlock],
-          // @ts-ignore
+          //@ts-ignore
           type: key,
-          id: 'ul-list-item',
+          id: '',
         });
+        group[prevBlock] = [];
       }
 
       result.push(block);

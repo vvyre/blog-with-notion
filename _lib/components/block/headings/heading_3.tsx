@@ -1,8 +1,7 @@
 import { Heading } from '../../typography/heading/heading';
-import { RichText } from '@/_lib/types/block';
 import { HEADING_3 } from './headings.css';
-import { NotionComponentProps } from '@/_lib/types/component-common';
-import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { NotionComponentProps } from '@/_lib/types/component-common';
+import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export function Heading_3({ block }: NotionComponentProps<'heading_3'>) {
   return (
