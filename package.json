@@ -14,6 +14,7 @@
     "@notionhq/client": "^2.2.14",
     "@vanilla-extract/css": "^1.14.1",
     "@vanilla-extract/dynamic": "^2.1.0",
+    "@plaiceholder/next": "^3.0.0",
     "framer-motion": "^11.0.3",
     "highlight.js": "^11.9.0",
     "next": "14.1.0",
@@ -26,7 +27,6 @@
     "zustand": "^4.5.0"
   },
   "devDependencies": {
-    "@plaiceholder/next": "^3.0.0",
     "@storybook/addon-essentials": "^7.6.12",
     "@storybook/addon-interactions": "^7.6.12",
     "@storybook/addon-links": "^7.6.12",
