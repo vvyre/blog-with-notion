@@ -1,9 +1,8 @@
-import { COLORS } from '@/_lib/styles/colors.css';
-import type { RichText } from '@/_lib/types/block';
-import type { ComponentPropsWithoutRef, ElementType } from 'react';
+import { COLORS, COLOR_STYLE_VARIANTS } from '@/_lib/styles/colors.css';
 import { Annotations } from '../annotations/annotations';
 import { TEXT_STYLE } from '../typography.css';
-import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
 type HeadingProps<T extends ElementType> = {
   as?: T;
@@ -32,7 +31,9 @@ export function Heading<T extends ElementType>({
 }: HeadingProps<T>) {
   const Component = as || 'h1';
   const SIZE = size || (Component === 'h1' ? 'XL' : Component === 'h2' ? 'L' : 'M');
-  const className = `${TEXT_STYLE[SIZE]} ${richText ? richText.annotations.color : color} ${styleVariant || ''}`;
+  const className = `${TEXT_STYLE[SIZE]} ${
+    richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]
+  } ${styleVariant || ''}`;
   return (
     <Component className={className}>
       <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>
