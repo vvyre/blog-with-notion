@@ -1,9 +1,9 @@
-import type { ComponentPropsWithoutRef, ElementType } from 'react';
+import Link from 'next/link';
 import { COLORS, COLOR_STYLE_VARIANTS } from '@/_lib/styles/colors.css';
 import { Annotations } from '../annotations/annotations';
-import Link from 'next/link';
 import { LINK, TEXT_STYLE } from '../typography.css';
-import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
 type TxtProps<T extends ElementType> = {
   as?: T | 'Link';
