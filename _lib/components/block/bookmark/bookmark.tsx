@@ -12,7 +12,6 @@ import { Flex } from '../../layout/flex/flex';
 import { Spacing } from '../../layout/spacing/spacing';
 
 export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
-  //TODO: unfurl 패키지 적용해 클라이언트에서 북마크 미리보기 생성
   const id = useId();
   const og = block.bookmarkInfo.open_graph;
   const icon = block.bookmarkInfo.favicon;
@@ -24,27 +23,27 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
             {block.bookmarkInfo.title}
           </Heading>
           <Spacing size="0.15rem" />
-          {og.url && (
-            <Flex justifyContents="flexStart">
-              {icon && (
-                <i
-                  style={{
-                    width: '0.85rem',
-                    height: '0.85rem',
-                    backgroundImage: `url('${icon}')`,
-                    backgroundSize: '0.85rem',
-                    backgroundRepeat: 'no-repeat',
-                    display: 'inline',
-                    marginRight: '0.35rem',
-                  }}
-                />
-              )}
-              <Txt as="span" size="XS" color="gray">
-                {og.url}
-              </Txt>
-            </Flex>
-          )}
-          {og.description && (
+
+          <Flex justifyContents="flexStart">
+            {icon && (
+              <i
+                style={{
+                  width: '0.85rem',
+                  height: '0.85rem',
+                  backgroundImage: `url('${icon}')`,
+                  backgroundSize: '0.85rem',
+                  backgroundRepeat: 'no-repeat',
+                  display: 'inline',
+                  marginRight: '0.35rem',
+                }}
+              />
+            )}
+            <Txt as="span" size="XS" color="gray">
+              {block.bookmark.url}
+            </Txt>
+          </Flex>
+
+          {og?.description && (
             <Txt color="gray" size="XS">
               {og.description}
             </Txt>
