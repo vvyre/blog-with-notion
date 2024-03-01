@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import reloadingFallback from '/img/loading.svg';
 import { getPlainText } from '@/utils/get-plain-text';
 import { Txt } from '../../typography/txt/txt';
 import { Flex } from '../../layout/flex/flex';
@@ -7,11 +8,11 @@ import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';
 import { CAPTION, CAPTION_TXT, IMG_CONTAINER } from './img.css';
 import { useNotionImg } from './use-notion-img';
+
 import type { NotionComponentProps } from '@/_lib/types/component-common';
 
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const { imgUrl, reload } = useNotionImg(block);
-
   return (
     <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
       <View styleVariant={IMG_CONTAINER}>
@@ -21,7 +22,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
           alt={getPlainText(block?.image?.caption)}
           priority
           onError={() => reload()}
-          blurDataURL={block.blurDataURL}
+          blurDataURL={block.blurDataURL || reloadingFallback}
           width={720}
           height={600}
           style={{
