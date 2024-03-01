@@ -1,5 +1,4 @@
 import { getSingleBlock } from '@/fetch/notion';
-import { getBlurredImg } from '@/utils/get-blurred-img';
 import { NextRequest } from 'next/server';
 
 export async function POST(req: NextRequest) {
@@ -7,8 +6,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { id } = body;
     const block = await getSingleBlock(id as string);
-    const processedBlock = await getBlurredImg(block);
-    if (block) return Response.json(processedBlock);
+    if (block) return Response.json(block);
     else return Response.json({ block: null });
   } catch (err) {
     console.log('route-err', err);
