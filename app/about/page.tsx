@@ -5,6 +5,7 @@ import { Article } from '@/_lib/components/template/article';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { groupedBlocks } from '@/utils/grouped-blocks';
 import { Txt } from '@/_lib/components/typography/txt/txt';
+import Head from 'next/head';
 
 export const revalidate = 3600;
 
@@ -14,6 +15,9 @@ export default async function Post() {
 
   return (
     <>
+      <Head>
+        <link rel="canonical" href={`https://seungyoon-yu.com/about`} key="canonical" />
+      </Head>
       <Article>
         <Txt as="Link" href="/" size="XL">
           {'←'}

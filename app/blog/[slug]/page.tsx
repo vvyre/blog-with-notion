@@ -10,6 +10,7 @@ import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 import { processedBlock } from '@/utils/process-block';
+import Head from 'next/head';
 
 interface PostPageProps {
   params: {
@@ -28,6 +29,9 @@ export default async function Post({ params }: PostPageProps) {
 
   return (
     <>
+      <Head>
+        <link rel="canonical" href={`https://seungyoon-yu.com/blog/${params.slug}`} key="canonical" />
+      </Head>
       <Article>
         <Txt as="Link" href="/" size="XL">
           {'←'}
