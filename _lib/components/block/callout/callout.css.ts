@@ -7,6 +7,3 @@ export const CALLOUT = style({
   padding: '0.75rem 1.25rem 1.25rem 1.25rem',
   marginBottom: '1rem',
 });
-export const CALLOUT_TEXT = style({
-  fontSize: '0.925rem',
-});
