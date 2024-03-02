@@ -13,9 +13,7 @@ export function Code({ block }: NotionComponentProps<'code'>) {
   return (
     <View as="div" styleVariant={CODE_BLOCK}>
       <Flex justifyContents="spaceBetween" alignItems="center">
-        <Txt bold size="XS" styleVariant={CODE_LANGUAGE}>
-          {getCodeLanguage(block.code.language)}
-        </Txt>
+        <Txt styleVariant={CODE_LANGUAGE}>{getCodeLanguage(block.code.language)}</Txt>
       </Flex>
       <pre className={CODE_PRE} dangerouslySetInnerHTML={{ __html: codeHtml }} />
     </View>

@@ -9,6 +9,8 @@ export const CODE_BLOCK = style({
 });
 export const CODE_LANGUAGE = style({
   fontFeatureSettings: '"calt", "case"',
+  fontSize: '0.85rem',
+  fontWeight: 600,
 });
 export const CODE_PRE = style({
   overflowX: 'auto',
