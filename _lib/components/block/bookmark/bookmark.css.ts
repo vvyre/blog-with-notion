@@ -4,6 +4,7 @@ import { style } from '@vanilla-extract/css';
 export const BASE = style({
   backgroundColor: THEMES.white,
   padding: '0.1rem',
+  marginBottom: '1rem',
   borderRadius: '1.15rem',
   border: `4px solid ${THEMES.white}`,
   selectors: {
