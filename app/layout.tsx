@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { View } from '@/_lib/components/layout/view/view';
 import { Footer } from '@/_lib/components/compounds/footer/footer';
 import Head from 'next/head';
+
 export const metadata: Metadata = {
   title: meta.siteTitle,
   description: meta.siteDiscription,
@@ -15,6 +16,12 @@ export const metadata: Metadata = {
     type: meta.og.type,
     description: meta.og.description,
     images: meta.og.images,
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || '',
+    other: {
+      'naver-site-verification': process.env.NAVER_SITE_VERIFICATION || '',
+    },
   },
 };
 
@@ -26,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <Head>
-        <meta name="naver-site-verification" content="bae405a50bfce503cf32d8d3f8460931bc2bf9bd" />
+        <meta charSet="UTF-8" />
       </Head>
       <View as="body">
         <Header />

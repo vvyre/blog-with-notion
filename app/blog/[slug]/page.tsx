@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PostPageProps) {
   const [matchPost] = posts.filter(post => parsedSlug(post) === params.slug);
 
   return {
-    title: `${meta.siteTitle} / ${getTitle(matchPost)}`,
+    title: `${getTitle(matchPost)} –– ${meta.siteTitle}`,
     description: getSummary(matchPost),
   };
 }
