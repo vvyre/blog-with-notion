@@ -5,7 +5,7 @@ module.exports = {
   generateRobotsTxt: true,
   exclude: ['/server-sitemap.xml'],
   robotsTxtOptions: {
-    additionalSitemaps: ['https://example.com/server-sitemap.xml'],
+    additionalSitemaps: ['https://seungyoon-yu.com/server-sitemap.xml'],
   },
   outDir: './app/',
 };
