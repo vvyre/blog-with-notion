@@ -91,5 +91,5 @@ globalStyle('::selection, ::-moz-selection', {
 });
 
 globalStyle('p, span, code, ul li, ol li, li', {
-  fontSize: '1.1rem',
+  fontSize: '1.05rem',
 });

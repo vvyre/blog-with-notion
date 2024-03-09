@@ -27,7 +27,7 @@ export function Txt<T extends ElementType>({
   underline,
   color = 'default',
   richText,
-  size = 'S',
+  size = 'M',
   styleVariant,
   ...props
 }: TxtProps<T>) {

@@ -20,11 +20,11 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 500,
   },
   M: {
-    fontSize: '1.1rem',
+    fontSize: '1.05rem',
     fontWeight: 400,
   },
   S: {
-    fontSize: '1.05rem',
+    fontSize: '1rem',
     fontWeight: 400,
   },
   XS: {
