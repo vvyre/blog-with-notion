@@ -10,8 +10,6 @@ import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 import { processedBlock } from '@/utils/process-block';
-import Head from 'next/head';
-import { site_env } from '@/env';
 
 interface PostPageProps {
   params: {
