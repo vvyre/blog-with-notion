@@ -10,10 +10,12 @@ export function BulletedListItem({ block }: NotionComponentPropsWithChildren<'bu
   const id = useId();
   return (
     <List as="li" styleVariant={`${BASE} ${DEPTH_1}`}>
-      {block.bulleted_list_item.rich_text.map((txt: RichTextItemResponse) => (
-        <Txt key={id} as="span" richText={txt} />
-      ))}
-      {block.bulleted_list_item.children && <ChildrenBlocks block={block} />}
+      <div>
+        {block.bulleted_list_item.rich_text.map((txt: RichTextItemResponse) => (
+          <Txt key={id} as="span" richText={txt} />
+        ))}
+        {block.bulleted_list_item.children && <ChildrenBlocks block={block} />}
+      </div>
     </List>
   );
 }
