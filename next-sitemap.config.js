@@ -2,4 +2,5 @@
 module.exports = {
   siteUrl: 'https://seungyoon-yu.com',
   generateRobotsTxt: false,
+  outDir: './app/',
 };
