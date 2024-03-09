@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "gen-sitemap": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
@@ -18,6 +19,7 @@
     "framer-motion": "^11.0.3",
     "highlight.js": "^11.9.0",
     "next": "14.1.0",
+    "next-sitemap": "^4.2.3",
     "p-map": "^7.0.1",
     "plaiceholder": "^3.0.0",
     "react": "^18",
