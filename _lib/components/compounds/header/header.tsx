@@ -5,13 +5,16 @@ import { Btn } from '../../interaction/button/btn';
 import { BASE, MENU } from './header.css';
 import { RESPONSIVE } from '../../template/responsive.css';
 import { HeaderBorder } from './header-border';
+import { Txt } from '../../typography/txt/txt';
 
 export function Header() {
   return (
     <View styleVariant={BASE}>
       <Flex as="nav" styleVariant={RESPONSIVE} justifyContents="center" alignItems="center">
         <Flex width="fill" justifyContents="spaceBetween" alignItems="center">
-          <View>{meta.siteTitle}</View>
+          <View>
+            <Txt bold>{meta.siteTitle}</Txt>
+          </View>
           <Flex width="fit" justifyContents="spaceBetween" alignItems="center">
             {routes.map(route => (
               <Btn key={route.name} as="Link" href={route.path} styleVariant={MENU}>
