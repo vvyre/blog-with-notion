@@ -29,7 +29,7 @@ export default async function Post() {
 
 export async function generateMetadata() {
   return {
-    title: `${meta.siteTitle} / About`,
-    description: '소개',
+    title: `About – ${meta.siteTitle}`,
+    description: meta.siteDiscription,
   };
 }
