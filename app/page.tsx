@@ -14,9 +14,6 @@ export default async function PostListPage() {
 
   return (
     <>
-      <Head>
-        <link rel="canonical" href={site_env.root} key="canonical" />
-      </Head>
       <Section>
         <PostListHeader postListData={postList} />
         {postList.length > 0 ? (

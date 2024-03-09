@@ -16,9 +16,6 @@ export default async function Post() {
 
   return (
     <>
-      <Head>
-        <link rel="canonical" href={`${site_env.root}about`} key="canonical" />
-      </Head>
       <Article>
         <Txt as="Link" href="/" size="XL">
           {'←'}

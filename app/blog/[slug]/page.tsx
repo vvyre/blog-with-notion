@@ -30,9 +30,6 @@ export default async function Post({ params }: PostPageProps) {
 
   return (
     <>
-      <Head>
-        <link rel="canonical" href={`${site_env.root}/blog/${params.slug}`} key="canonical" />
-      </Head>
       <Article>
         <Txt as="Link" href="/" size="XL">
           {'←'}
