@@ -5,6 +5,7 @@ import { Section } from '@/_lib/components/template/section';
 import { PostListHeader } from '@/_lib/components/compounds/post-list-header/post-list-header';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 import Head from 'next/head';
+import { site_env } from '@/env';
 
 export const revalidate = 180;
 
@@ -14,7 +15,7 @@ export default async function PostListPage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href={`https://seungyoon-yu.com/`} key="canonical" />
+        <link rel="canonical" href={site_env.root} key="canonical" />
       </Head>
       <Section>
         <PostListHeader postListData={postList} />

@@ -6,6 +6,7 @@ import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { groupedBlocks } from '@/utils/grouped-blocks';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 import Head from 'next/head';
+import { site_env } from '@/env';
 
 export const revalidate = 3600;
 
@@ -16,7 +17,7 @@ export default async function Post() {
   return (
     <>
       <Head>
-        <link rel="canonical" href={`https://seungyoon-yu.com/about`} key="canonical" />
+        <link rel="canonical" href={`${site_env.root}about`} key="canonical" />
       </Head>
       <Article>
         <Txt as="Link" href="/" size="XL">

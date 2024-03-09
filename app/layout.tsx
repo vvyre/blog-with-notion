@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { View } from '@/_lib/components/layout/view/view';
 import { Footer } from '@/_lib/components/compounds/footer/footer';
 import Head from 'next/head';
+import { site_env } from '@/env';
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -18,9 +19,9 @@ export const metadata: Metadata = {
     images: meta.og.images,
   },
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION || '',
+    google: site_env.gv,
     other: {
-      'naver-site-verification': process.env.NAVER_SITE_VERIFICATION || '',
+      'naver-site-verification': site_env.nv,
     },
   },
 };
