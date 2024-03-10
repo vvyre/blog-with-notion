@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "gen-sitemap": "next-sitemap",
+    "preinstall": "npx only-allow pnpm",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
