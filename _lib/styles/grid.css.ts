@@ -11,7 +11,11 @@ export const BASE_GRID = style({
   columnGap: '0.25rem',
   '@media': {
     'screen and (max-width: 768px)': {
-      gridTemplateColumns: 'repeat(6, 1fr)',
+      gridTemplateColumns: 'repeat(6, auto)',
+      padding: '0 1.5rem 0 1.5rem',
+    },
+    'screen and (max-width: 430px)': {
+      gridTemplateColumns: 'repeat(1, auto)',
       padding: '0 1.5rem 0 1.5rem',
     },
   },

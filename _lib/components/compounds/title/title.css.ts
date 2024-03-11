@@ -38,6 +38,10 @@ export const TITLE_TEXT_PLACEMENT = style({
       gridColumnStart: 1,
       gridColumnEnd: 6,
     },
+    'screen and (max-width: 430px)': {
+      gridRow: 2,
+      gridColumn: 1,
+    },
   },
 });
 
@@ -48,6 +52,10 @@ export const TAG_GRID_PLACEMENT = style({
   alignItems: 'center',
   '@media': {
     'screen and (max-width: 768px)': {
+      gridRow: 4,
+      gridColumn: 1,
+    },
+    'screen and (max-width: 430px)': {
       gridRow: 4,
       gridColumn: 1,
     },
@@ -65,6 +73,9 @@ export const DATE_GRID_PLACEMENT = style({
       gridColumnStart: 2,
       gridColumnEnd: 6,
     },
+    'screen and (max-width: 430px)': {
+      display: 'none',
+    },
   },
 });
 export const SUMMARY_GRID_PLACEMENT = style({
@@ -77,6 +88,10 @@ export const SUMMARY_GRID_PLACEMENT = style({
       gridColumnStart: 1,
       gridColumnEnd: 6,
       marginBottom: '1rem',
+    },
+    'screen and (max-width: 430px)': {
+      gridRow: 3,
+      gridColumn: 1,
     },
   },
 });

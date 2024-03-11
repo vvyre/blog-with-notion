@@ -1,6 +1,5 @@
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
-import { TITLE_GRID } from '../compounds/title/title.css';
 
 export const BASE = style({
   margin: '3rem auto',
@@ -31,6 +30,10 @@ export const POST_GRID_PLACEMENT = style({
       gridRowEnd: 4,
       gridColumn: 1,
       gridColumnEnd: 6,
+    },
+    'screen and (max-width: 430px)': {
+      gridRow: 1,
+      gridColumn: 1,
     },
   },
 });
