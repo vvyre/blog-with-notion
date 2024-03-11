@@ -5,7 +5,7 @@ import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoi
 
 export function Heading_2({ block }: NotionComponentProps<'heading_2'>) {
   return (
-    <Heading as="h2" size="XL" styleVariant={HEADING_2}>
+    <Heading as="h3" styleVariant={HEADING_2}>
       {block.heading_2.rich_text.map((txt: RichTextItemResponse) => txt.plain_text)}
     </Heading>
   );

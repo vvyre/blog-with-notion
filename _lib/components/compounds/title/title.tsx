@@ -1,43 +1,56 @@
 import { Heading } from '../../typography/heading/heading';
 import { Flex } from '../../layout/flex/flex';
-import { Spacing } from '../../layout/spacing/spacing';
 import { getTitle } from '@/utils/get-title';
 import { getDate } from '@/utils/get-date';
 import { Txt } from '../../typography/txt/txt';
 import { getTags } from '@/utils/get-tags';
 import { Tag } from '../../typography/tag/tag';
 import { View } from '../../layout/view/view';
-import { POST_TITLE } from './title.css';
+import {
+  BASE,
+  TITLE,
+  SUMMARY_GRID_PLACEMENT,
+  DATE_GRID_PLACEMENT,
+  BACK_BUTTON_PLACEMENT,
+  TITLE_TEXT_PLACEMENT,
+  SUMMARY,
+  TAG_GRID_PLACEMENT,
+  POST_TAG,
+  TITLE_GRID,
+} from './title.css';
 import { getSummary } from '@/utils/get-summary';
 import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export function Title({ ...meta }: GetPageResponse) {
   return (
-    <Flex width="fill" flexDirection="column" justifyContents="center" alignItems="flexStart">
-      <View>
-        {getTags(meta).map(tag => (
-          <Tag key={tag.id}>{tag.name}</Tag>
-        ))}
+    <Flex width="fill" flexDirection="column" justifyContents="flexStart" alignItems="flexStart" styleVariant={BASE}>
+      <View styleVariant={TITLE_GRID}>
+        <View styleVariant={BACK_BUTTON_PLACEMENT}>
+          <Txt as="Link" href="/" size="XL">
+            {'←'}
+          </Txt>
+        </View>
+        <View styleVariant={TITLE_TEXT_PLACEMENT}>
+          <Heading as="h1" styleVariant={TITLE}>
+            {getTitle(meta)}
+          </Heading>
+        </View>
+        <View styleVariant={SUMMARY_GRID_PLACEMENT}>
+          <Txt as="p" styleVariant={SUMMARY}>
+            {getSummary(meta)}
+          </Txt>
+        </View>
+        <View styleVariant={TAG_GRID_PLACEMENT}>
+          {getTags(meta).map(tag => (
+            <Tag styleVariant={POST_TAG}>{tag.name}</Tag>
+          ))}
+        </View>
+        <View styleVariant={DATE_GRID_PLACEMENT}>
+          <Txt color="gray" size="S">
+            {getDate(meta)}
+          </Txt>
+        </View>
       </View>
-      <Spacing size="1rem" />
-      <View>
-        <Heading as="h1" size="XXXL" styleVariant={POST_TITLE} bold>
-          {getTitle(meta)}
-        </Heading>
-      </View>
-      <Spacing size="1rem" />
-      <View>
-        <Txt as="p" color="gray">
-          {getSummary(meta)}
-        </Txt>
-      </View>
-      <Spacing size="0.75rem" />
-      <View>
-        <Txt color="gray" size="S">
-          {getDate(meta)}
-        </Txt>
-      </View>
-      <Spacing size="4rem" />
     </Flex>
   );
 }

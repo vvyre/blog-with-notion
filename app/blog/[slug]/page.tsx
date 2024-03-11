@@ -10,6 +10,9 @@ import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 import { processedBlock } from '@/utils/process-block';
+import { View } from '@/_lib/components/layout/view/view';
+import { RESPONSIVE_POST } from '@/_lib/components/template/responsive.css';
+import { POST_GRID, POST_GRID_PLACEMENT } from '@/_lib/components/template/article.css';
 
 interface PostPageProps {
   params: {
@@ -29,18 +32,20 @@ export default async function Post({ params }: PostPageProps) {
   return (
     <>
       <Article>
-        <Txt as="Link" href="/" size="XL">
-          {'←'}
-        </Txt>
         <Spacing size="3rem" />
         <Title {...meta} />
-        {blocks.map(b => (
-          <Block key={b.id} block={b} />
-        ))}
+        <View styleVariant={POST_GRID}>
+          <View styleVariant={POST_GRID_PLACEMENT}>
+            {blocks.map(b => (
+              <Block key={b.id} block={b} />
+            ))}
+
+            <Spacing size="5rem" />
+            <Utterances />
+          </View>
+        </View>
       </Article>
-      <Spacing size="3rem" />
-      <Utterances />
-      <Spacing size="10rem" />
+      <Spacing size="8rem" />
     </>
   );
 }
