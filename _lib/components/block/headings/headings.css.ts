@@ -16,7 +16,7 @@ export const HEADING_2 = style([
   {
     fontWeight: 600,
     fontSize: '1.5rem',
-    lineHeight: '2',
+    lineHeight: '1.85',
   },
 ]);
 
@@ -25,6 +25,6 @@ export const HEADING_3 = style([
   {
     fontWeight: 600,
     fontSize: '1.25rem',
-    lineHeight: '1.85',
+    lineHeight: '1.65',
   },
 ]);
