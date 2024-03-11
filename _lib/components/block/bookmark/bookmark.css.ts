@@ -15,7 +15,7 @@ export const BASE = style({
 });
 
 export const INNER = style({
-  padding: '1.05rem',
+  padding: '0.7rem 1.05rem 1.05rem 1.05rem',
   borderRadius: '1rem',
   border: `2px solid ${THEMES.light_b3}`,
 });
