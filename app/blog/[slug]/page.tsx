@@ -8,12 +8,9 @@ import { Title } from '@/_lib/components/compounds/title/title';
 import { Article } from '@/_lib/components/template/article';
 import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
-import { Txt } from '@/_lib/components/typography/txt/txt';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
-import { RESPONSIVE_POST } from '@/_lib/components/template/responsive.css';
 import { POST_GRID, POST_GRID_PLACEMENT } from '@/_lib/components/template/article.css';
-import { Flex } from '@/_lib/components/layout/flex/flex';
 
 interface PostPageProps {
   params: {

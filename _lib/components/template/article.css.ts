@@ -1,36 +1,32 @@
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
-export const BASE = style({
-  width: '100vw',
-});
+export const BASE = style({});
 
 export const POST_GRID = style([
   BASE_GRID,
   {
     gridTemplateRows: 'repeat(1, auto)',
-    paddingTop: '5rem',
     margin: '0 auto',
+    padding: '5rem 3rem 0 3rem',
+    '@media': {
+      '(0px <= width <= 768px)': {
+        padding: '5rem 1.5rem 0 1.5rem',
+      },
+    },
   },
 ]);
 
 export const POST_GRID_PLACEMENT = style({
-  gridRowStart: 1,
-  gridRowEnd: 4,
+  gridRow: 1,
   gridColumnStart: 3,
   gridColumnEnd: 9,
   '@media': {
-    'screen and (max-width: 1200px)': {
+    '(0px <= width <= 768px)': {
       gridRowStart: 1,
-      gridRowEnd: 4,
-      gridColumn: 3,
-      gridColumnEnd: 11,
-    },
-    'screen and (max-width: 768px)': {
-      gridRowStart: 1,
-      gridRowEnd: 4,
-      gridColumn: 1,
-      gridColumnEnd: 6,
+      gridRowEnd: 2,
+      gridColumnStart: 1,
+      gridColumnEnd: 7,
     },
   },
 });

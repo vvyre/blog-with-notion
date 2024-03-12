@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { BASE } from './article.css';
-import { RESPONSIVE_POST } from './responsive.css';
 
 interface ArticleProps {
   children: ReactNode;
