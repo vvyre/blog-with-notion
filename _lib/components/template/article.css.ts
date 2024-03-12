@@ -2,13 +2,14 @@ import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
-  margin: '3rem auto',
-  width: '100%',
+  width: '100vw',
 });
 
 export const POST_GRID = style([
   BASE_GRID,
   {
+    gridTemplateRows: 'repeat(1, auto)',
+    paddingTop: '5rem',
     margin: '0 auto',
   },
 ]);
@@ -30,10 +31,6 @@ export const POST_GRID_PLACEMENT = style({
       gridRowEnd: 4,
       gridColumn: 1,
       gridColumnEnd: 6,
-    },
-    'screen and (max-width: 430px)': {
-      gridRow: 1,
-      gridColumn: 1,
     },
   },
 });

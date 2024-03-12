@@ -13,6 +13,7 @@ import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
 import { RESPONSIVE_POST } from '@/_lib/components/template/responsive.css';
 import { POST_GRID, POST_GRID_PLACEMENT } from '@/_lib/components/template/article.css';
+import { Flex } from '@/_lib/components/layout/flex/flex';
 
 interface PostPageProps {
   params: {
@@ -34,12 +35,12 @@ export default async function Post({ params }: PostPageProps) {
       <Article>
         <Spacing size="3rem" />
         <Title {...meta} />
+
         <View styleVariant={POST_GRID}>
           <View styleVariant={POST_GRID_PLACEMENT}>
             {blocks.map(b => (
               <Block key={b.id} block={b} />
             ))}
-
             <Spacing size="5rem" />
             <Utterances />
           </View>
