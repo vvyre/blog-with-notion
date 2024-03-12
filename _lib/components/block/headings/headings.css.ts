@@ -5,9 +5,11 @@ export const BASE = style({});
 export const HEADING_1 = style([
   BASE,
   {
-    fontWeight: 600,
-    fontSize: '2rem',
-    lineHeight: '2.25',
+    fontWeight: 700,
+    fontSize: '1.75rem',
+    lineHeight: '1.25',
+    marginTop: '0.75rem',
+    marginBottom: '1.25rem',
   },
 ]);
 
@@ -16,15 +18,15 @@ export const HEADING_2 = style([
   {
     fontWeight: 600,
     fontSize: '1.5rem',
-    lineHeight: '1.85',
+    lineHeight: '1.3',
+    marginBottom: '1rem',
   },
 ]);
 
 export const HEADING_3 = style([
   BASE,
   {
-    fontWeight: 600,
-    fontSize: '1.25rem',
-    lineHeight: '1.65',
+    fontWeight: 700,
+    fontSize: '1.1rem',
   },
 ]);
