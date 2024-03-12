@@ -8,7 +8,7 @@ export const BASE = style({
 export const SCROLLED = style({
   width: '100%',
   height: '1px',
-  borderBottom: `1px solid ${THEMES.light_b3}`,
+  borderBottom: `1px solid ${THEMES.theme}`,
 });
 
 export const NORMAL = style({

@@ -14,7 +14,12 @@ export const BASE = style([
   },
 ]);
 
-export const HEADER_GRID = BASE_GRID;
+export const HEADER_GRID = style([
+  BASE_GRID,
+  {
+    gridTemplateRows: '(1, auto)',
+  },
+]);
 
 export const MENU = style({
   marginLeft: '0.5rem',
@@ -24,7 +29,7 @@ export const MENU = style({
 
 export const LOGO_GRID_PLACEMENT = style({
   gridColumnStart: 3,
-  gridColumnEnd: 5,
+  gridColumnEnd: 6,
   '@media': {
     'screen and (max-width: 1200px)': {
       gridColumnStart: 3,
@@ -32,14 +37,14 @@ export const LOGO_GRID_PLACEMENT = style({
     },
     'screen and (max-width: 768px)': {
       gridColumnStart: 1,
-      gridColumnEnd: 2,
+      gridColumnEnd: 3,
     },
   },
 });
 
 export const MENU_GRID_PLACEMENT = style({
   gridColumnStart: 9,
-  gridColumnEnd: 11,
+  gridColumnEnd: 12,
   '@media': {
     'screen and (max-width: 1200px)': {
       gridColumnStart: 9,
@@ -47,7 +52,11 @@ export const MENU_GRID_PLACEMENT = style({
     },
     'screen and (max-width: 768px)': {
       gridColumnStart: 3,
-      gridColumnEnd: 6,
+      gridColumnEnd: 7,
     },
   },
+});
+
+export const LOGO = style({
+  fontWeight: 700,
 });
