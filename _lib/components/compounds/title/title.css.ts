@@ -3,14 +3,16 @@ import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
-  marginBottom: '7rem',
-  paddingBottom: '5rem',
+  width: '100vw',
+  paddingTop: '7rem',
+  paddingBottom: '2.5rem',
   borderBottom: `1px solid ${THEMES.theme}`,
 });
 
 export const TITLE_GRID = style([
   BASE_GRID,
   {
+    gridTemplateRows: 'repeat(4, auto)',
     margin: '0 auto',
   },
 ]);
@@ -38,10 +40,6 @@ export const TITLE_TEXT_PLACEMENT = style({
       gridColumnStart: 1,
       gridColumnEnd: 6,
     },
-    'screen and (max-width: 430px)': {
-      gridRow: 2,
-      gridColumn: 1,
-    },
   },
 });
 
@@ -52,10 +50,6 @@ export const TAG_GRID_PLACEMENT = style({
   alignItems: 'center',
   '@media': {
     'screen and (max-width: 768px)': {
-      gridRow: 4,
-      gridColumn: 1,
-    },
-    'screen and (max-width: 430px)': {
       gridRow: 4,
       gridColumn: 1,
     },
@@ -73,9 +67,6 @@ export const DATE_GRID_PLACEMENT = style({
       gridColumnStart: 2,
       gridColumnEnd: 6,
     },
-    'screen and (max-width: 430px)': {
-      display: 'none',
-    },
   },
 });
 export const SUMMARY_GRID_PLACEMENT = style({
@@ -88,10 +79,6 @@ export const SUMMARY_GRID_PLACEMENT = style({
       gridColumnStart: 1,
       gridColumnEnd: 6,
       marginBottom: '1rem',
-    },
-    'screen and (max-width: 430px)': {
-      gridRow: 3,
-      gridColumn: 1,
     },
   },
 });

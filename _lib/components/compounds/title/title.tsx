@@ -1,5 +1,4 @@
 import { Heading } from '../../typography/heading/heading';
-import { Flex } from '../../layout/flex/flex';
 import { getTitle } from '@/utils/get-title';
 import { getDate } from '@/utils/get-date';
 import { Txt } from '../../typography/txt/txt';
@@ -23,7 +22,7 @@ import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export function Title({ ...meta }: GetPageResponse) {
   return (
-    <Flex width="fill" flexDirection="column" justifyContents="flexStart" alignItems="flexStart" styleVariant={BASE}>
+    <View styleVariant={BASE}>
       <View styleVariant={TITLE_GRID}>
         <View styleVariant={BACK_BUTTON_PLACEMENT}>
           <Txt as="Link" href="/" size="XL">
@@ -42,7 +41,9 @@ export function Title({ ...meta }: GetPageResponse) {
         </View>
         <View styleVariant={TAG_GRID_PLACEMENT}>
           {getTags(meta).map(tag => (
-            <Tag styleVariant={POST_TAG}>{tag.name}</Tag>
+            <Tag key={tag.id} styleVariant={POST_TAG}>
+              {tag.name}
+            </Tag>
           ))}
         </View>
         <View styleVariant={DATE_GRID_PLACEMENT}>
@@ -51,6 +52,6 @@ export function Title({ ...meta }: GetPageResponse) {
           </Txt>
         </View>
       </View>
-    </Flex>
+    </View>
   );
 }
