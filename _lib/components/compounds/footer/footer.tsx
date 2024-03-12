@@ -6,12 +6,11 @@ import { View } from '../../layout/view/view';
 import { Spacing } from '../../layout/spacing/spacing';
 import { Heading } from '../../typography/heading/heading';
 import { List } from '../../list/list';
-import { RESPONSIVE } from '../../template/responsive.css';
 
 export function Footer() {
   return (
     <Flex as="nav" styleVariant={BASE} justifyContents="center" alignItems="flexEnd">
-      <View styleVariant={RESPONSIVE}>
+      <View>
         <Heading as="h3" size="XS" bold>
           Contact
         </Heading>
