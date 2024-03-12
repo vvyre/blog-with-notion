@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 export function useScroll(): boolean {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const handleScroll = () => {
-    window.scrollY > 64 && setScrolled(true);
-    window.scrollY < 64 && setScrolled(false);
+    window.scrollY > 446.25 && setScrolled(true);
+    window.scrollY < 446.25 && setScrolled(false);
   };
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
