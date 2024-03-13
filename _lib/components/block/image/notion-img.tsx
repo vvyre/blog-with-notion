@@ -18,11 +18,11 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
       <View styleVariant={IMG_CONTAINER}>
         <Image
           key={imgUrl}
-          src={imgUrl}
+          src={isReloading ? reloadingFallback : imgUrl}
           alt={getPlainText(block?.image?.caption)}
           priority
           onError={() => reload()}
-          blurDataURL={isReloading ? reloadingFallback : block.blurDataURL}
+          blurDataURL={block.blurDataURL}
           width={720}
           height={600}
           style={{
