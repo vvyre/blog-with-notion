@@ -12,7 +12,7 @@ import { useNotionImg } from './use-notion-img';
 import type { NotionComponentProps } from '@/_lib/types/component-common';
 
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
-  const { imgUrl, reload } = useNotionImg(block);
+  const { imgUrl, reload, isReloading } = useNotionImg(block);
   return (
     <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
       <View styleVariant={IMG_CONTAINER}>
@@ -22,7 +22,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
           alt={getPlainText(block?.image?.caption)}
           priority
           onError={() => reload()}
-          blurDataURL={block.blurDataURL || reloadingFallback}
+          blurDataURL={isReloading ? reloadingFallback : block.blurDataURL}
           width={720}
           height={600}
           style={{
