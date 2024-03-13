@@ -1,9 +1,10 @@
-const TITLE = 'SYU';
+const TITLE = '유승윤 개발 일지';
 const DESCRIPTION = '개발을 하면서 있었던 일들이나 공부한 것들, 생각들을 정리하는 곳입니다.';
 
 export const meta = {
   siteTitle: TITLE,
   siteDiscription: DESCRIPTION,
+  siteHeader: '우왓 대박',
   og: {
     url: '',
     title: TITLE,
