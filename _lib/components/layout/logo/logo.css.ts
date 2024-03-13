@@ -7,9 +7,4 @@ export const LOGO = style({
   width: '1.75rem',
   height: '1.75rem',
   borderRadius: '1rem',
-  selectors: {
-    '&:hover': {
-      backgroundColor: 'black',
-    },
-  },
 });

@@ -9,18 +9,20 @@ import { Flex } from '../flex/flex';
 import { List } from '../../list/list';
 import { Tag } from '../../typography/tag/tag';
 import { meta } from '@/constants/meta';
+import { ReactNode } from 'react';
 
 interface PostListHeaderProps {
   postListData: PostListObject;
+  children: ReactNode;
 }
-export function PostListHeader({ postListData }: PostListHeaderProps) {
+export function PostListHeader({ postListData, children }: PostListHeaderProps) {
   // const tagSet: Set<string> = new Set();
   // postListData.forEach(post => getTags(post as GetPageResponse).forEach(tag => tagSet.add(JSON.stringify(tag))));
   // const tags = Array.from(tagSet).map(str => JSON.parse(str));
   return (
     <View styleVariant={BASE}>
       <Spacing size="25vh" />
-      <Txt styleVariant={HEADER_TEXT}>{meta.siteHeader}</Txt>
+      <Txt styleVariant={HEADER_TEXT}>{children}</Txt>
       <Spacing size="5rem" />
       {/* <List as="ul">
         <Flex justifyContents="flexStart" alignItems="center">
