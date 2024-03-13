@@ -15,7 +15,7 @@ export default async function PostListPage() {
   return (
     <>
       <View as="section">
-        <PostListHeader postListData={postList} />
+        <PostListHeader postListData={postList}>전체 글 {postList.length}편</PostListHeader>
         <PostListBox>
           {postList.length > 0 ? (
             postList.map(post => <PostList key={post.id} pageData={post} />)

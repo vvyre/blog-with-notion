@@ -32,7 +32,6 @@ export default async function Post({ params }: PostPageProps) {
       <Article>
         <Spacing size="3rem" />
         <PostTitle {...meta} />
-
         <View styleVariant={POST_GRID}>
           <View styleVariant={POST_GRID_PLACEMENT}>
             {blocks.map(b => (
