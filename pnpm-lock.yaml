@@ -32,12 +32,18 @@ dependencies:
   p-map:
     specifier: ^7.0.1
     version: 7.0.1
+  plaiceholder:
+    specifier: ^3.0.0
+    version: 3.0.0(sharp@0.33.2)
   react:
     specifier: ^18
     version: 18.2.0
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+  sharp:
+    specifier: ^0.33.2
+    version: 0.33.2
   swr:
     specifier: ^2.2.4
     version: 2.2.5(react@18.2.0)

@@ -27,7 +27,7 @@ export function Header() {
           <Logo />
         </View>
         {routes.map((r, idx) => (
-          <View key={r.name} styleVariant={`${MENU_GRID_ITEM} ${idx === 0 && MENU_GRID_PLACEMENT}`}>
+          <View key={r.path} styleVariant={`${MENU_GRID_ITEM} ${idx === 0 && MENU_GRID_PLACEMENT}`}>
             <Btn as="Link" href={r.path} styleVariant={`${MENU} ${MENU_TEXT[color]}`}>
               {r.name}
             </Btn>

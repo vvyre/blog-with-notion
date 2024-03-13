@@ -12,7 +12,6 @@ import { Spacing } from '../spacing/spacing';
 import {
   GRID_SPAN,
   POST_BOX,
-  POST_BOX_BORDER,
   POST_CATEGORY_TEXT,
   POST_LINK,
   POST_SUMMARY,
@@ -27,14 +26,13 @@ interface PostListProps {
 export function PostList({ pageData }: PostListProps) {
   const URI = `/blog/${parsedSlug(pageData)}`;
   const TAGS = getTags(pageData);
-  const CATEGORY = TAGS[0];
   const TITLE = getTitle(pageData);
   const SUMMARY = getSummary(pageData);
   // const REL_DATE = getDate(pageData);
 
   return (
     <List as="li" styleVariant={GRID_SPAN}>
-      <View styleVariant={`${POST_BOX}}`}>
+      <View styleVariant={POST_BOX}>
         <Txt as="Link" href={URI} styleVariant={POST_LINK}>
           <View styleVariant={POST_THUMBNAIL}>
             {/* THUMBNAIL */}

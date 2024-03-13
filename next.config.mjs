@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
-import withPlaiceHolder from '@plaiceholder/next';
 
 const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig = {
@@ -16,4 +15,4 @@ const nextConfig = {
   },
 };
 
-export default withPlaiceHolder(withVanillaExtract(nextConfig));
+export default withVanillaExtract(nextConfig);
