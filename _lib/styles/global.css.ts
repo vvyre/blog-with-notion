@@ -87,7 +87,8 @@ globalStyle('img, video, canvas, svg', {
 });
 
 globalStyle('::selection, ::-moz-selection', {
-  background: 'transparent',
+  backgroundColor: 'black',
+  color: 'white',
 });
 
 globalStyle('p, span, code, ul li, ol li, li', {
