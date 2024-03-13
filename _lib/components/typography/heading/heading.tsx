@@ -23,17 +23,20 @@ export function Heading<T extends ElementType>({
   italic,
   strike,
   underline,
-  size,
+  size = 'XL',
   color = 'default',
   richText,
   styleVariant,
   ...props
 }: HeadingProps<T>) {
   const Component = as || 'h1';
-  const SIZE = size || (Component === 'h1' ? 'XL' : Component === 'h2' ? 'L' : 'M');
-  const className = `${TEXT_STYLE[SIZE]} ${
-    richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]
-  } ${styleVariant || ''}`;
+  const classNames = [
+    TEXT_STYLE[size],
+    richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color],
+  ];
+  let className = classNames.join(' ');
+  if (styleVariant) className = styleVariant;
+
   return (
     <Component className={className}>
       <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>

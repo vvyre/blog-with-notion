@@ -31,15 +31,16 @@ export function Txt<T extends ElementType>({
   styleVariant,
   ...props
 }: TxtProps<T>) {
-  let className = `${TEXT_STYLE[size]} ${
-    richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color]
-  }`;
+  const classNames = [
+    TEXT_STYLE[size],
+    richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color],
+  ];
+  let className = classNames.join(' ');
+  if (styleVariant) className = styleVariant;
 
   let Component = as || 'p';
-
   if (richText?.href) Component = 'a';
   if (Component === 'a' || richText?.href) className = LINK;
-  if (styleVariant) className = styleVariant;
 
   switch (Component) {
     default:

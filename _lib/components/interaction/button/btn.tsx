@@ -10,7 +10,7 @@ type BtnProps<T extends ElementType> = {
 } & ComponentPropsWithoutRef<T>;
 
 export function Btn<T extends ElementType>({ as, onClick, children, styleVariant, ...props }: BtnProps<T>) {
-  const className = `${BASE} ${styleVariant || ''}`;
+  const className = styleVariant || BASE;
   const Component = as || 'button';
 
   switch (Component) {

@@ -32,7 +32,7 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 400,
   },
   XXS: {
-    fontSize: '0.9rem',
+    fontSize: '0.85rem',
     fontWeight: 500,
   },
 });
