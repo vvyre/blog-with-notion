@@ -1,10 +1,10 @@
-import { Header } from '@/_lib/components/compounds/header/header';
+import { Header } from '@/_lib/components/layout/header/header';
 import '@/_lib/components/block/code/hljs.css';
 import '../_lib/styles/global.css';
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 import { View } from '@/_lib/components/layout/view/view';
-import { Footer } from '@/_lib/components/compounds/footer/footer';
+import { Footer } from '@/_lib/components/layout/footer/footer';
 import Head from 'next/head';
 import { site_env } from '@/env';
 

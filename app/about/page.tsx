@@ -1,7 +1,7 @@
 import { meta } from '@/constants/meta';
 import { getPost, getPostMetaData } from '@/fetch/notion';
 import { Block } from '@/_lib/components/block/block';
-import { Article } from '@/_lib/components/template/article';
+import { Article } from '@/_lib/components/layout/post/article';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { groupedBlocks } from '@/utils/grouped-blocks';
 import { Txt } from '@/_lib/components/typography/txt/txt';

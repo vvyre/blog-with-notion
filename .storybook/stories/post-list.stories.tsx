@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { PostList } from '../../_lib/components/compounds/post-list/post-list';
+import { PostList } from '../../_lib/components/layout/post-list/post-list';
 import { postListMock } from '../mock-data/post-list';
 
 const meta: Meta<typeof PostList> = {
