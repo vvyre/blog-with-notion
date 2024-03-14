@@ -19,16 +19,13 @@ import {
 } from './post-title.css';
 import { getSummary } from '@/utils/get-summary';
 import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
+import { BackButton } from '../../interaction/back-button/back-button';
 
 export function PostTitle({ ...meta }: GetPageResponse) {
   return (
     <View styleVariant={BASE}>
       <View styleVariant={TITLE_GRID}>
-        <View styleVariant={BACK_BUTTON_PLACEMENT}>
-          <Txt as="Link" href="/" size="XL">
-            {'←'}
-          </Txt>
-        </View>
+        <BackButton styleVariant={BACK_BUTTON_PLACEMENT} />
         <View styleVariant={TITLE_TEXT_PLACEMENT}>
           <Heading as="h1" styleVariant={TITLE}>
             {getTitle(meta)}

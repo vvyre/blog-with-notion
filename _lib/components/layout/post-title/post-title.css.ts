@@ -22,7 +22,7 @@ export const TITLE_GRID = style([
 export const BACK_BUTTON_PLACEMENT = style({
   gridRow: 1,
   gridColumn: 3,
-  marginBottom: '1rem',
+  marginBottom: '2rem',
   '@media': {
     'screen and (max-width: 768px)': {
       gridRow: 1,
@@ -35,7 +35,7 @@ export const TITLE_TEXT_PLACEMENT = style({
   gridRow: 2,
   gridColumnStart: 3,
   gridColumnEnd: 11,
-  marginBottom: '1rem',
+  marginBottom: '0.5rem',
   '@media': {
     'screen and (max-width: 768px)': {
       gridRow: 2,
@@ -87,20 +87,20 @@ export const SUMMARY_GRID_PLACEMENT = style({
 export const TITLE = style({
   textAlign: 'left',
   fontWeight: 700,
-  fontSize: '2.75rem',
-  lineHeight: '1.25',
+  fontSize: '2.5rem',
+  lineHeight: '1.2',
 });
 
 export const SUMMARY = style({
   textAlign: 'left',
   fontWeight: 400,
-  fontSize: '1.2rem',
+  fontSize: '1rem',
   lineHeight: '1.65',
 });
 
 export const POST_TAG = style({
   textAlign: 'left',
   fontWeight: 700,
-  fontSize: '1.2rem',
+  fontSize: '1rem',
   lineHeight: '1.65',
 });

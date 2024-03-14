@@ -7,7 +7,6 @@ export const POST_GRID = style([
   BASE_GRID,
   BASE_PADDING,
   {
-    gridTemplateRows: 'repeat(1, auto)',
     margin: '0 auto',
     paddingTop: '5rem',
     paddingBottom: '0',
@@ -15,7 +14,7 @@ export const POST_GRID = style([
 ]);
 
 export const POST_GRID_PLACEMENT = style({
-  gridRow: 1,
+  gridRow: 2,
   gridColumnStart: 3,
   gridColumnEnd: 9,
   '@media': {
