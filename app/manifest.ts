@@ -1,14 +1,16 @@
+import { THEMES } from '@/_lib/styles/colors.css';
+import { meta } from '@/constants/meta';
 import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: '유승윤 개발 일지',
-    short_name: '유승윤 개발 일지',
-    description: '유승윤의 개발 일지입니다.',
+    name: meta.siteTitle,
+    short_name: meta.siteTitle,
+    description: meta.siteDiscription,
     start_url: '/',
-    display: 'standalone',
-    background_color: '#fff',
-    theme_color: '#13D483',
+    display: 'browser',
+    background_color: THEMES.default,
+    theme_color: THEMES.default,
     // icons: [
     //   {
     //     src: '/favicon.ico',
