@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: meta.og.title,
     type: meta.og.type,
     description: meta.og.description,
-    images: meta.og.images,
+    images: meta.og.images.src,
   },
   verification: {
     google: site_env.gv,
