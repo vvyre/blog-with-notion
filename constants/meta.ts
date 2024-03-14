@@ -1,16 +1,18 @@
+import { site_env } from '@/env';
+import logo from '#/img/logo.png';
+
 const TITLE = '유승윤 개발 일지';
 const DESCRIPTION = '개발을 하면서 있었던 일들이나 공부한 것들, 생각들을 정리하는 곳입니다.';
 
 export const meta = {
   siteTitle: TITLE,
   siteDiscription: DESCRIPTION,
-  siteHeader: '우왓 대박',
   og: {
-    url: '',
+    url: site_env.root,
     title: TITLE,
     type: 'website' as const,
     description: DESCRIPTION,
-    images: '',
+    images: logo,
   },
   footer: {
     links: [
@@ -21,6 +23,6 @@ export const meta = {
   },
 };
 export const routes: { name: string; path: string }[] = [
-  { name: '블로그', path: '/' },
-  { name: '소개', path: '/about' },
+  { name: 'blog', path: '/' },
+  { name: 'FAQ', path: '/faq' },
 ];
