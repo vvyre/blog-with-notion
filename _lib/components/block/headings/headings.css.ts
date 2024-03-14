@@ -8,8 +8,8 @@ export const HEADING_1 = style([
     fontWeight: 700,
     fontSize: '1.75rem',
     lineHeight: '1.25',
-    marginTop: '1rem',
-    marginBottom: '1.5rem',
+    marginTop: '2rem',
+    marginBottom: '1.25rem',
   },
 ]);
 
@@ -19,7 +19,7 @@ export const HEADING_2 = style([
     fontWeight: 600,
     fontSize: '1.5rem',
     lineHeight: '1.3',
-    marginTop: '0.5rem',
+    marginTop: '1.25rem',
     marginBottom: '1rem',
   },
 ]);

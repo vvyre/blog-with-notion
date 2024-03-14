@@ -1,5 +1,5 @@
 import { BASE } from './divider.css';
 
-export function Divider() {
-  return <hr className={BASE} />;
+export function Divider({ styleVariant }: { styleVariant?: string }) {
+  return <hr className={styleVariant || BASE} />;
 }

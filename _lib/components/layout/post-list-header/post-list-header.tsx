@@ -22,7 +22,9 @@ export function PostListHeader({ postListData, children }: PostListHeaderProps) 
   return (
     <View styleVariant={BASE}>
       <Spacing size="25vh" />
-      <Txt styleVariant={HEADER_TEXT}>{children}</Txt>
+      <Txt as="span" styleVariant={HEADER_TEXT}>
+        {children}
+      </Txt>
       <Spacing size="5rem" />
       {/* <List as="ul">
         <Flex justifyContents="flexStart" alignItems="center">

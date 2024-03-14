@@ -5,14 +5,13 @@ import { COLORS, THEMES } from './colors.css';
 globalStyle('*, *:before, *:after', {
   boxSizing: 'inherit',
   MozBoxSizing: 'inherit',
-  fontSize: '100%',
   fontFamily: `-apple-system, BlinkMacSystemFont, ${pretendard}, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" `,
 });
 
 globalStyle('html', {
   boxSizing: 'border-box',
   MozBoxSizing: 'border-box',
-  fontSize: '1rem',
+  fontSize: '100%',
   lineHeight: '1.65',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
@@ -67,7 +66,7 @@ globalStyle('pre', {
 });
 
 globalStyle('code, pre, pre span', {
-  fontSize: '0.825rem',
+  fontSize: '0.8rem',
   lineHeight: '1.5',
   fontFamily: jetbrainsMono,
   MozTabSize: 2,
@@ -92,5 +91,5 @@ globalStyle('::selection, ::-moz-selection', {
 });
 
 globalStyle('p, span, code, ul li, ol li, li', {
-  fontSize: '1.05rem',
+  fontSize: '1rem',
 });

@@ -4,6 +4,10 @@ import { style } from '@vanilla-extract/css';
 export const CALLOUT = style({
   backgroundColor: THEMES.light_b2,
   borderRadius: '1rem',
-  padding: '0.75rem 1.25rem 1.25rem 1.25rem',
+  padding: '1.5rem',
   marginBottom: '1rem',
+});
+
+export const CALLOUT_EMOJI = style({
+  marginRight: '0.25rem',
 });

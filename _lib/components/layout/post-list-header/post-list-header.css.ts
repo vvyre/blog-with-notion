@@ -18,6 +18,9 @@ export const CATEGORY = style({
 export const BASE = style([BASE_PADDING, {}]);
 
 export const HEADER_TEXT = style({
-  fontSize: '15vw',
+  fontSize: '8rem',
   fontWeight: 700,
+  color: THEMES.white,
+  backgroundColor: THEMES.default,
+  padding: '0.5rem',
 });

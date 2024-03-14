@@ -1,5 +1,4 @@
-import { COLORS, THEMES } from '@/_lib/styles/colors.css';
-import { jetbrainsMono } from '@/_lib/styles/fonts.css';
+import { THEMES } from '@/_lib/styles/colors.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 export const TEXT_STYLE = styleVariants({
@@ -46,7 +45,8 @@ export const ITALIC = style({
 });
 
 export const CODE = style({
-  fontSize: '0.85rem',
+  verticalAlign: 'text-top',
+  fontSize: '0.8rem',
   padding: '0.1rem 0.25rem 0.1rem 0.25rem',
   borderRadius: '0.25rem',
   border: 'none',
@@ -62,4 +62,5 @@ export const LINK = style({
   textDecoration: 'underline',
   color: THEMES.gray,
   textUnderlineOffset: '0.2rem',
+  textDecorationThickness: '1px',
 });

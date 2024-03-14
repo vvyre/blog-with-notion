@@ -1,21 +1,14 @@
-import { THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID, BASE_PADDING } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style([
   BASE_PADDING,
-  {
-    paddingTop: '7rem',
-    paddingBottom: '2.5rem',
-    borderBottom: `1px solid ${THEMES.theme}`,
-  },
-]);
-
-export const TITLE_GRID = style([
   BASE_GRID,
   {
-    gridTemplateRows: 'repeat(4, auto)',
     margin: '0 auto',
+    paddingTop: '7rem',
+    paddingBottom: '2.5rem',
+    gridTemplateRows: 'repeat(4, auto)',
   },
 ]);
 

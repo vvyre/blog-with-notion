@@ -11,6 +11,7 @@ import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
 import { POST_GRID, POST_GRID_PLACEMENT } from '@/_lib/components/layout/post/article.css';
+import { Divider } from '@/_lib/components/layout/divider/divider';
 
 interface PostPageProps {
   params: {
@@ -32,6 +33,7 @@ export default async function Post({ params }: PostPageProps) {
       <Article>
         <Spacing size="3rem" />
         <PostTitle {...meta} />
+        <Divider />
         <View styleVariant={POST_GRID}>
           <View styleVariant={POST_GRID_PLACEMENT}>
             {blocks.map(b => (
