@@ -22,7 +22,7 @@ export const TITLE_GRID = style([
 export const BACK_BUTTON_PLACEMENT = style({
   gridRow: 1,
   gridColumn: 3,
-  marginBottom: '2rem',
+  marginBottom: '1rem',
   '@media': {
     'screen and (max-width: 768px)': {
       gridRow: 1,
@@ -35,7 +35,7 @@ export const TITLE_TEXT_PLACEMENT = style({
   gridRow: 2,
   gridColumnStart: 3,
   gridColumnEnd: 11,
-  marginBottom: '2rem',
+  marginBottom: '1rem',
   '@media': {
     'screen and (max-width: 768px)': {
       gridRow: 2,
@@ -63,7 +63,6 @@ export const DATE_GRID_PLACEMENT = style({
   gridRow: 3,
   gridColumnStart: 3,
   gridColumnEnd: 12,
-  marginBottom: '1rem',
   '@media': {
     'screen and (max-width: 768px)': {
       gridRow: 4,
