@@ -9,7 +9,7 @@ export const CODE_BLOCK = style({
 });
 export const CODE_LANGUAGE = style({
   fontFeatureSettings: '"calt", "case"',
-  fontSize: '0.85rem',
+  fontSize: '0.9rem',
   fontWeight: 600,
 });
 export const CODE_PRE = style({

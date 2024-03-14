@@ -16,19 +16,19 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 600,
   },
   L: {
-    fontSize: '1.25rem',
+    fontSize: '1.15rem',
     fontWeight: 500,
   },
   M: {
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     fontWeight: 400,
   },
   S: {
-    fontSize: '1.05rem',
+    fontSize: '0.95rem',
     fontWeight: 400,
   },
   XS: {
-    fontSize: '0.95rem',
+    fontSize: '0.9rem',
     fontWeight: 400,
   },
   XXS: {
