@@ -1,11 +1,11 @@
 import type { ElementType, ReactNode } from 'react';
 
 export function Wrapper({
-  condition,
+  condition = true,
   wrapper,
   children,
 }: {
-  condition: boolean;
+  condition?: boolean;
   wrapper: ElementType | React.ComponentType;
   children: ReactNode;
 }) {
