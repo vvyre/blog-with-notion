@@ -2,9 +2,8 @@ import { COLORS } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 
 export const IMG_CONTAINER = style({
-  width: '100vw',
-  maxWidth: '45rem',
-  maxHeight: '600px',
+  width: '100%',
+  maxHeight: '75vh',
   objectFit: 'contain',
   overflow: 'hidden',
   position: 'relative',
@@ -17,6 +16,6 @@ export const CAPTION_TXT = style({
 });
 
 export const CAPTION = style({
-  width: '75vw',
-  maxWidth: '22.5rem',
+  textAlign: 'center',
+  width: '100%',
 });

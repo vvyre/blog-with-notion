@@ -14,25 +14,23 @@ import type { NotionComponentProps } from '@/_lib/types/component-common';
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const { imgUrl, reload, isReloading } = useNotionImg(block);
   return (
-    <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
-      <View styleVariant={IMG_CONTAINER}>
-        <Image
-          key={imgUrl}
-          src={isReloading ? reloadingFallback : imgUrl}
-          alt={getPlainText(block?.image?.caption)}
-          priority
-          onError={() => reload()}
-          blurDataURL={block.blurDataURL}
-          width={720}
-          height={600}
-          style={{
-            width: 'auto',
-            height: 'auto',
-            maxWidth: 'calc(100% - 3rem)',
-            maxHeight: '400px',
-          }}
-        />
-      </View>
+    <Flex flexDirection="column" justifyContents="center" alignItems="center" styleVariant={IMG_CONTAINER}>
+      <Image
+        key={imgUrl}
+        src={isReloading ? reloadingFallback : imgUrl}
+        alt={getPlainText(block?.image?.caption)}
+        priority
+        onError={() => reload()}
+        blurDataURL={block.blurDataURL}
+        width={1200}
+        height={600}
+        style={{
+          width: 'auto',
+          height: 'auto',
+          maxWidth: '55vw',
+          maxHeight: '75vh',
+        }}
+      />
       <Spacing size="0.25rem" />
       {block.image.caption.length > 0 ? (
         <View styleVariant={CAPTION}>
