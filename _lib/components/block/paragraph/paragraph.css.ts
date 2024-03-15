@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
-  marginBottom: '1rem',
+  marginBottom: '0.5rem',
 });
