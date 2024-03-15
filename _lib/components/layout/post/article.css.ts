@@ -8,21 +8,7 @@ export const POST_GRID = style([
   BASE_PADDING,
   {
     margin: '0 auto',
-    paddingTop: '5rem',
+    paddingTop: '2rem',
     paddingBottom: '0',
   },
 ]);
-
-export const POST_GRID_PLACEMENT = style({
-  gridRow: 2,
-  gridColumnStart: 3,
-  gridColumnEnd: 9,
-  '@media': {
-    '(0px <= width <= 768px)': {
-      gridRowStart: 1,
-      gridRowEnd: 2,
-      gridColumnStart: 1,
-      gridColumnEnd: 7,
-    },
-  },
-});

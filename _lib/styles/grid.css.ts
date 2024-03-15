@@ -5,7 +5,7 @@ export const BASE_GRID = style({
   width: '100%',
   gridTemplateColumns: 'repeat(12, 1fr)',
   maxWidth: '105rem',
-  rowGap: '1rem',
+  rowGap: '0.5rem',
   columnGap: '0.5rem',
   '@media': {
     '(0 <= width <= 768px)': {

@@ -10,10 +10,12 @@ import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
-import { POST_GRID, POST_GRID_PLACEMENT } from '@/_lib/components/layout/post/article.css';
+import { POST_GRID } from '@/_lib/components/layout/post/article.css';
 import { Divider } from '@/_lib/components/layout/divider/divider';
+import { DEFAULT_BLOCK_GRID_PLACEMENT } from '@/_lib/components/block/block-layout.css';
+import { PostNavigation } from '@/_lib/components/layout/post-navigation/post-navigation';
 
-interface PostPageProps {
+export interface PostPageProps {
   params: {
     slug: string;
   };
@@ -30,21 +32,22 @@ export default async function Post({ params }: PostPageProps) {
 
   return (
     <>
-      <Article>
-        <Spacing size="3rem" />
-        <PostTitle {...meta} />
-        <Divider />
-        <View styleVariant={POST_GRID}>
-          <View styleVariant={POST_GRID_PLACEMENT}>
+      <View as="main">
+        <Article>
+          <PostTitle {...meta} />
+          <Divider />
+          <View styleVariant={POST_GRID}>
             {blocks.map(b => (
               <Block key={b.id} block={b} />
             ))}
-            <Spacing size="5rem" />
-            <Utterances />
+            <View styleVariant={DEFAULT_BLOCK_GRID_PLACEMENT}>
+              <Spacing size="5rem" />
+              <Utterances />
+            </View>
           </View>
-        </View>
-      </Article>
-      <Spacing size="8rem" />
+        </Article>
+        <Spacing size="8rem" />
+      </View>
     </>
   );
 }

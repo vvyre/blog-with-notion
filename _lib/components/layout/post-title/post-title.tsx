@@ -19,6 +19,7 @@ import {
 import { getSummary } from '@/utils/get-summary';
 import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 import { BackButton } from '../../interaction/back-button/back-button';
+import { Spacing } from '../spacing/spacing';
 
 export function PostTitle({ ...meta }: GetPageResponse) {
   return (

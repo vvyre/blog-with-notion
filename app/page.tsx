@@ -13,7 +13,7 @@ export default async function PostListPage() {
   const postList = await getPostList();
 
   return (
-    <>
+    <View as="main">
       <View as="section">
         <PostListHeader postListData={postList}>전체 글 {postList.length}편</PostListHeader>
         <PostListBox>
@@ -25,6 +25,6 @@ export default async function PostListPage() {
         </PostListBox>
       </View>
       <Spacing size="10rem" />
-    </>
+    </View>
   );
 }
