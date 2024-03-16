@@ -18,6 +18,7 @@ export const POST_THUMBNAIL = style({
   width: '100%',
   height: '12rem',
   backgroundColor: THEMES.light_b1,
+  borderRadius: '0.25rem',
 });
 
 export const POST_TEXT = style({

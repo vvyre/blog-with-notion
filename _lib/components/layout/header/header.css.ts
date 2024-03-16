@@ -1,4 +1,5 @@
 import { THEMES } from '@/_lib/styles/colors.css';
+import { jetbrainsMono } from '@/_lib/styles/fonts.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
@@ -67,10 +68,11 @@ export const LOGO_GRID_PLACEMENT = style({
 });
 
 export const MENU_GRID_PLACEMENT = style({
-  gridColumnStart: 10,
+  gridColumnStart: 9,
+  gridColumnEnd: 11,
   '@media': {
     '(0px <= width <= 768px)': {
-      gridColumnStart: 4,
+      gridColumnStart: 5,
     },
   },
 });
@@ -78,3 +80,10 @@ export const MENU_GRID_PLACEMENT = style({
 export const MENU_GRID_ITEM = style({
   placeItems: 'center start',
 });
+
+export const MENU_GITHUB_PLACEMENT = style({
+  justifySelf: 'right',
+  textDecoration: 'none',
+});
+
+export const MENU_GITHUB = style({});
