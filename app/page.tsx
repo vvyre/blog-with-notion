@@ -20,7 +20,7 @@ export default async function PostListPage() {
       <View as="section">
         <Profile>
           {PROFILE_BLOCKS.map(block => (
-            <Block block={block} />
+            <Block key={block.id} block={block} />
           ))}
         </Profile>
         <PostListBox>
