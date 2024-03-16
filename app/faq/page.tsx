@@ -9,12 +9,11 @@ import { BACK_BUTTON_PLACEMENT } from '@/_lib/components/layout/post-title/post-
 import { BackButton } from '@/_lib/components/interaction/back-button/back-button';
 import { notion_env } from '@/env';
 import { processedBlock } from '@/utils/process-block';
-import { DEFAULT_BLOCK_GRID_PLACEMENT } from '@/_lib/components/block/block-layout.css';
 
 export const revalidate = 3600;
 
 export default async function Post() {
-  const blocks = await processedBlock(await getPost(notion_env.about_id));
+  const blocks = await processedBlock(await getPost(notion_env.faq_id));
 
   return (
     <View as="main">
