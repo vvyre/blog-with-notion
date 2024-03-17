@@ -39,7 +39,7 @@ export const getPostList = async (): Promise<PostListObject> => {
 const POST_LIST_CACHE: { POSTS: PostListObject; TIMESTAMP: number; CACHE_DURATION: number } = {
   POSTS: [],
   TIMESTAMP: 0,
-  CACHE_DURATION: 5000,
+  CACHE_DURATION: 500,
 };
 
 export const getCachedPostList = async () => {
