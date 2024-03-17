@@ -42,7 +42,7 @@ export function Header() {
             </Btn>
           )}
 
-          <Btn as="a" href="https://github.com/brewcoldblue" styleVariant={`${MENU} ${MENU_GITHUB}`}>
+          <Btn as="a" href="https://github.com/brewcoldblue" target="_blank" styleVariant={`${MENU} ${MENU_GITHUB}`}>
             <Image alt="Seungyoon Yu's Github" src={GITHUB_MARK} style={{ width: '1.25rem', height: '1.25rem' }} />
           </Btn>
         </Flex>
