@@ -5,9 +5,6 @@ import { Txt } from '@/_lib/components/typography/txt/txt';
 import { View } from '@/_lib/components/layout/view/view';
 import { PostListBox } from '@/_lib/components/layout/post-list-box/post-list-box';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
-import { processedBlock } from '@/utils/process-block';
-import { notion_env } from '@/env';
-import { Block } from '@/_lib/components/block/block';
 
 export const revalidate = 300;
 
@@ -16,6 +13,7 @@ export default async function PostListPage() {
 
   return (
     <View as="main">
+      <Spacing size="5rem" />
       <View as="section">
         <PostListBox>
           {postList.length > 0 ? (
@@ -25,7 +23,7 @@ export default async function PostListPage() {
           )}
         </PostListBox>
       </View>
-      <Spacing size="10rem" />
+      <Spacing size="5rem" />
     </View>
   );
 }
