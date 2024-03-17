@@ -1,19 +1,7 @@
 'use client';
-import { routes } from '@/constants/routes';
 import { View } from '../view/view';
 import { Btn } from '../../interaction/button/btn';
-import {
-  BASE,
-  HEADER_GRID,
-  LOGO_GRID_PLACEMENT,
-  MENU,
-  MENU_GITHUB,
-  MENU_GITHUB_PLACEMENT,
-  MENU_GRID_ITEM,
-  MENU_GRID_PLACEMENT,
-  MENU_TEXT,
-  THEME,
-} from './header.css';
+import { BASE, MENU, MENU_GITHUB, MENU_GITHUB_IMG, MENU_TEXT, THEME } from './header.css';
 import { usePathname } from 'next/navigation';
 import { Logo } from '../logo/logo';
 import Github_black from '#/img/github-mark.svg';
@@ -42,8 +30,8 @@ export function Header() {
             </Btn>
           )}
 
-          <Btn as="a" href="https://github.com/brewcoldblue" target="_blank" styleVariant={`${MENU} ${MENU_GITHUB}`}>
-            <Image alt="Seungyoon Yu's Github" src={GITHUB_MARK} style={{ width: '1.25rem', height: '1.25rem' }} />
+          <Btn as="a" href="https://github.com/brewcoldblue" target="_blank" styleVariant={MENU_GITHUB}>
+            <Image className={MENU_GITHUB_IMG} alt="Seungyoon Yu's Github" src={GITHUB_MARK} />
           </Btn>
         </Flex>
       </View>

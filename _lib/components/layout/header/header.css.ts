@@ -97,4 +97,18 @@ export const MENU_GITHUB_PLACEMENT = style({
   textDecoration: 'none',
 });
 
-export const MENU_GITHUB = style({});
+export const MENU_GITHUB = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: '1rem',
+  width: '1.75rem',
+  backgroundColor: 'transparent',
+  fontWeight: 900,
+  transition: 'border 0.15s',
+  borderBottom: `1px solid transparent`,
+});
+export const MENU_GITHUB_IMG = style({
+  width: '1.35rem',
+  height: '1.35rem',
+});
