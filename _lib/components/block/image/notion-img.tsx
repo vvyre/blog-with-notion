@@ -6,15 +6,21 @@ import { Txt } from '../../typography/txt/txt';
 import { Flex } from '../../layout/flex/flex';
 import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';
-import { CAPTION, CAPTION_TXT, IMG, IMG_CONTAINER } from './img.css';
+import { CAPTION, CAPTION_TXT, IMG, IMG_CONTAINER, IMG_CONTAINER_ZOOMED } from './img.css';
 import { useNotionImg } from './use-notion-img';
 
 import type { NotionComponentProps } from '@/_lib/types/component-common';
+import { useState } from 'react';
 
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const { imgUrl, reload, isReloading } = useNotionImg(block);
+  const [zoomed, setZoomed] = useState<boolean>(false);
   return (
-    <Flex flexDirection="column" justifyContents="center" alignItems="center" styleVariant={IMG_CONTAINER}>
+    <Flex
+      flexDirection="column"
+      justifyContents="center"
+      alignItems="center"
+      styleVariant={zoomed ? IMG_CONTAINER_ZOOMED : IMG_CONTAINER}>
       <Image
         className={IMG}
         key={imgUrl}
@@ -22,9 +28,10 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
         alt={getPlainText(block?.image?.caption)}
         priority
         onError={() => reload()}
+        onClick={() => setZoomed(!zoomed)}
         blurDataURL={block.blurDataURL}
-        width={1200}
-        height={600}
+        width={1680}
+        height={1200}
       />
       <Spacing size="0.25rem" />
       {block.image.caption.length > 0 ? (
