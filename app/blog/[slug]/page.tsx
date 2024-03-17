@@ -11,6 +11,7 @@ import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
 import { POST_CENTERED } from '@/_lib/components/layout/post/article.css';
+import { isr_revalidate_period } from '@/env';
 
 export interface PostPageProps {
   params: {
@@ -18,7 +19,7 @@ export interface PostPageProps {
   };
 }
 
-export const revalidate = 300;
+export const revalidate = isr_revalidate_period;
 
 export default async function Post({ params }: PostPageProps) {
   const posts = await getCachedPostList();

@@ -10,3 +10,5 @@ export const site_env = {
   gv: process.env.GOOGLE_SITE_VERIFICATION || '',
   nv: process.env.NAVER_SITE_VERIFICATION || '',
 };
+
+export const isr_revalidate_period = 3600;

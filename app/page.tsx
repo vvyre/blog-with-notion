@@ -5,8 +5,9 @@ import { Txt } from '@/_lib/components/typography/txt/txt';
 import { View } from '@/_lib/components/layout/view/view';
 import { PostListBox } from '@/_lib/components/layout/post-list-box/post-list-box';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
+import { isr_revalidate_period, site_env } from '@/env';
 
-export const revalidate = 300;
+export const revalidate = isr_revalidate_period;
 
 export default async function PostListPage() {
   const postList = await getPostList();

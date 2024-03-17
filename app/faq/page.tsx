@@ -5,12 +5,12 @@ import { Article } from '@/_lib/components/layout/post/article';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { View } from '@/_lib/components/layout/view/view';
 import { POST_CENTERED } from '@/_lib/components/layout/post/article.css';
-import { notion_env } from '@/env';
+import { isr_revalidate_period, notion_env } from '@/env';
 import { processedBlock } from '@/utils/process-block';
 import { FaqTitle } from '@/_lib/components/layout/faq-title/faq-title';
 import { getTitle } from '@/utils/get-title';
 
-export const revalidate = 3600;
+export const revalidate = isr_revalidate_period;
 
 export default async function Post() {
   const blocks = await processedBlock(await getPost(notion_env.faq_id));
