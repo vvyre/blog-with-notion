@@ -5,24 +5,17 @@ import { Txt } from '@/_lib/components/typography/txt/txt';
 import { View } from '@/_lib/components/layout/view/view';
 import { PostListBox } from '@/_lib/components/layout/post-list-box/post-list-box';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
-import { processedBlock } from '@/utils/process-block';
-import { notion_env } from '@/env';
-import { Block } from '@/_lib/components/block/block';
+import { isr_revalidate_period, site_env } from '@/env';
 
-export const revalidate = 300;
+export const revalidate = isr_revalidate_period;
 
 export default async function PostListPage() {
   const postList = await getPostList();
-  const PROFILE_BLOCKS = await processedBlock(await getPost(notion_env.profile_id));
 
   return (
     <View as="main">
+      <Spacing size="5rem" />
       <View as="section">
-        <Profile>
-          {PROFILE_BLOCKS.map(block => (
-            <Block key={block.id} block={block} />
-          ))}
-        </Profile>
         <PostListBox>
           {postList.length > 0 ? (
             postList.map(post => <PostList key={post.id} pageData={post} />)
@@ -31,7 +24,7 @@ export default async function PostListPage() {
           )}
         </PostListBox>
       </View>
-      <Spacing size="10rem" />
+      <Spacing size="5rem" />
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { jetbrainsMono, pretendard } from './fonts.css';
-import { COLORS, THEMES } from './colors.css';
+import { THEMES } from './colors.css';
 
 globalStyle('*, *:before, *:after', {
   boxSizing: 'inherit',
@@ -21,6 +21,7 @@ globalStyle('body', {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
   minHeight: '100vh',
+  color: THEMES.default,
 });
 
 globalStyle('body, p, h1, h2, h3, h4, h5, h6', {

@@ -15,7 +15,7 @@ export const BASE = style([
     position: 'sticky',
     zIndex: '999',
     top: 0,
-    padding: '0.5rem 3rem 0.5rem 3rem',
+    padding: '0.5rem 2rem 0.5rem 2rem',
     '@media': {
       '(0px <= width <= 768px)': {
         padding: '0.5rem 1.5rem 0.5rem 1.5rem',
@@ -38,20 +38,30 @@ export const HEADER_GRID = style([
 ]);
 
 export const MENU = style({
-  fontSize: '0.9rem',
+  fontSize: '1rem',
   backgroundColor: 'transparent',
-  fontWeight: 400,
-  selectors: {
-    '&:hover': {
-      textDecoration: 'underline',
-      textUnderlineOffset: '0.25rem',
-    },
-  },
+  fontWeight: 900,
+  transition: 'border 0.15s',
+  borderBottom: `1px solid transparent`,
 });
 
 export const MENU_TEXT = styleVariants({
-  BLACK: { color: THEMES.white },
-  WHITE: { color: THEMES.default },
+  BLACK: {
+    color: THEMES.white,
+    selectors: {
+      '&:hover': {
+        borderBottom: `1px solid ${THEMES.white}`,
+      },
+    },
+  },
+  WHITE: {
+    color: THEMES.default,
+    selectors: {
+      '&:hover': {
+        borderBottom: `1px solid ${THEMES.default}`,
+      },
+    },
+  },
 });
 
 export const LOGO_GRID_PLACEMENT = style({
@@ -72,7 +82,8 @@ export const MENU_GRID_PLACEMENT = style({
   gridColumnEnd: 11,
   '@media': {
     '(0px <= width <= 768px)': {
-      gridColumnStart: 5,
+      gridColumnStart: 4,
+      gridColumnEnd: 5,
     },
   },
 });
@@ -86,4 +97,18 @@ export const MENU_GITHUB_PLACEMENT = style({
   textDecoration: 'none',
 });
 
-export const MENU_GITHUB = style({});
+export const MENU_GITHUB = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: '1rem',
+  width: '1.75rem',
+  backgroundColor: 'transparent',
+  fontWeight: 900,
+  transition: 'border 0.15s',
+  borderBottom: `1px solid transparent`,
+});
+export const MENU_GITHUB_IMG = style({
+  width: '1.35rem',
+  height: '1.35rem',
+});

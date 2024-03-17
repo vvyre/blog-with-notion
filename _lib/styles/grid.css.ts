@@ -15,8 +15,8 @@ export const BASE_GRID = style({
 });
 
 export const BASE_PADDING = style({
-  paddingRight: '3rem',
-  paddingLeft: '3rem',
+  paddingRight: '2rem',
+  paddingLeft: '2rem',
   '@media': {
     '(0 <= width <= 768px)': {
       paddingRight: '1.5rem',

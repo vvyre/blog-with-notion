@@ -12,12 +12,15 @@ import { Spacing } from '../spacing/spacing';
 import {
   GRID_SPAN,
   POST_BOX,
+  HOVER_TEXT,
   POST_CATEGORY_TEXT,
   POST_LINK,
   POST_SUMMARY,
-  POST_THUMBNAIL,
   POST_TITLE,
+  RELEASED_DATE,
 } from './post-list.css';
+import { getDate } from '@/utils/get-date';
+import { Flex } from '../flex/flex';
 
 interface PostListProps {
   pageData: GetPageResponse;
@@ -26,33 +29,27 @@ interface PostListProps {
 export function PostList({ pageData }: PostListProps) {
   const URI = `/blog/${parsedSlug(pageData)}`;
   const TAGS = getTags(pageData);
+  const CATEGORY = TAGS[0];
   const TITLE = getTitle(pageData);
   const SUMMARY = getSummary(pageData);
+  const DATE = getDate(pageData);
   // const REL_DATE = getDate(pageData);
 
   return (
     <List as="li" styleVariant={GRID_SPAN}>
-      <View styleVariant={POST_BOX}>
-        <Txt as="Link" href={URI} styleVariant={POST_LINK}>
-          <View styleVariant={POST_THUMBNAIL}>
-            {/* THUMBNAIL */}
-            <></>
-          </View>
-          <Spacing size="0.5rem" />
+      <Flex justifyContents="center" styleVariant={`${POST_BOX}`}>
+        <Txt as="Link" href={URI} styleVariant={`${POST_LINK} ${HOVER_TEXT[CATEGORY.color]}`}>
+          <Txt styleVariant={POST_CATEGORY_TEXT}>{CATEGORY.name}</Txt>
           <Heading as="h1" styleVariant={POST_TITLE}>
             {TITLE}
           </Heading>
-          <Spacing size="0.25rem" />
+          <Spacing size="0.75rem" />
           <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
-          <Spacing size="0.5rem" />
-          {TAGS.map(t => (
-            <Txt key={t.id} styleVariant={POST_CATEGORY_TEXT}>
-              {t.name}
-            </Txt>
-          ))}
+          <Spacing size="0.25rem" />
+          <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
         </Txt>
-      </View>
-      <Spacing size="1rem" />
+      </Flex>
+      <Spacing size="2rem" />
     </List>
   );
 }
