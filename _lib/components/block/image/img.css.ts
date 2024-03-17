@@ -25,9 +25,21 @@ export const CAPTION_TXT = style({
   color: COLORS.gray,
 });
 
+export const CAPTION_TXT_ZOOMED = style({
+  fontSize: '1rem',
+  color: THEMES.white,
+});
+
 export const CAPTION = style({
   textAlign: 'left',
   width: '100%',
+  maxWidth: '20rem',
+});
+
+export const CAPTION_ZOOMED = style({
+  textAlign: 'center',
+  width: '100%',
+  maxWidth: '20rem',
 });
 
 export const IMG = style({
