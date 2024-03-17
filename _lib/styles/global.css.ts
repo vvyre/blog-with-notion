@@ -20,6 +20,7 @@ globalStyle('html', {
 globalStyle('body', {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
+  minHeight: '100vh',
 });
 
 globalStyle('body, p, h1, h2, h3, h4, h5, h6', {
