@@ -72,7 +72,7 @@ export const MENU_GRID_PLACEMENT = style({
   gridColumnEnd: 11,
   '@media': {
     '(0px <= width <= 768px)': {
-      gridColumnStart: 5,
+      gridColumnStart: 4,
     },
   },
 });
