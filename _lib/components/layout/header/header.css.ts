@@ -38,9 +38,9 @@ export const HEADER_GRID = style([
 ]);
 
 export const MENU = style({
-  fontSize: '0.9rem',
+  fontSize: '1rem',
   backgroundColor: 'transparent',
-  fontWeight: 400,
+  fontWeight: 900,
   selectors: {
     '&:hover': {
       textDecoration: 'underline',

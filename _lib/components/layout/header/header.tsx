@@ -19,6 +19,7 @@ import { Logo } from '../logo/logo';
 import Github_black from '#/img/github-mark.svg';
 import Github_white from '#/img/github-mark-white.svg';
 import Image from 'next/image';
+import { Flex } from '../flex/flex';
 
 export function Header() {
   const PATH = usePathname();
@@ -28,22 +29,23 @@ export function Header() {
 
   return (
     <View styleVariant={BASE_CLASSNAME}>
-      <View as="nav" styleVariant={HEADER_GRID}>
-        <View styleVariant={LOGO_GRID_PLACEMENT}>
+      <View as="nav">
+        <Flex justifyContents="spaceBetween" alignItems="center">
           <Logo />
-        </View>
-        {routes.map((r, idx) => (
-          <View key={r.path} styleVariant={`${MENU_GRID_ITEM} ${idx === 0 && MENU_GRID_PLACEMENT}`}>
-            <Btn as="Link" href={r.path} styleVariant={`${MENU} ${MENU_TEXT[COLOR]}`}>
-              {r.name}
+          {PATH.includes('faq') ? (
+            <Btn as="Link" href={'/'} styleVariant={`${MENU} ${MENU_TEXT[COLOR]}`}>
+              {'BLOG'}
             </Btn>
-          </View>
-        ))}
-        <View styleVariant={`${MENU_GRID_ITEM} ${MENU_GITHUB_PLACEMENT}`}>
+          ) : (
+            <Btn as="Link" href={'/faq'} styleVariant={`${MENU} ${MENU_TEXT[COLOR]}`}>
+              {'ABOUT'}
+            </Btn>
+          )}
+
           <Btn as="a" href="https://github.com/brewcoldblue" styleVariant={`${MENU} ${MENU_GITHUB}`}>
-            <Image alt="Seungyoon Yu's Github" src={GITHUB_MARK} style={{ width: '1.2rem', height: '1.2rem' }} />
+            <Image alt="Seungyoon Yu's Github" src={GITHUB_MARK} style={{ width: '1.25rem', height: '1.25rem' }} />
           </Btn>
-        </View>
+        </Flex>
       </View>
     </View>
   );
