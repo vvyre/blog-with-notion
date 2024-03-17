@@ -15,6 +15,7 @@ import { useState } from 'react';
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const { imgUrl, reload, isReloading } = useNotionImg(block);
   const [zoomed, setZoomed] = useState<boolean>(false);
+
   return (
     <Flex
       flexDirection="column"

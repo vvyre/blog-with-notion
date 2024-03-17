@@ -18,18 +18,11 @@ export const IMG_CONTAINER_ZOOMED = style({
   top: '0',
   left: '0',
   cursor: 'pointer',
-  maxWidth: '100vw',
-  '@media': {
-    '(0px <= width <= 768px)': {
-      width: 'calc(100vw - 3rem)',
-    },
-  },
 });
 
 export const CAPTION_TXT = style({
   fontSize: '0.9rem',
   color: COLORS.gray,
-  marginLeft: '0.5rem',
 });
 
 export const CAPTION = style({
