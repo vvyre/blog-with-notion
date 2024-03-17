@@ -4,7 +4,7 @@ import { Block } from '@/_lib/components/block/block';
 import { Article } from '@/_lib/components/layout/post/article';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { View } from '@/_lib/components/layout/view/view';
-import { POST_CENTERED, POST_GRID } from '@/_lib/components/layout/post/article.css';
+import { POST_CENTERED } from '@/_lib/components/layout/post/article.css';
 import { notion_env } from '@/env';
 import { processedBlock } from '@/utils/process-block';
 import { FaqTitle } from '@/_lib/components/layout/faq-title/faq-title';
@@ -26,7 +26,7 @@ export default async function Post() {
           ))}
         </View>
       </Article>
-      <Spacing size="8rem" />
+      <Spacing size="5rem" />
     </View>
   );
 }

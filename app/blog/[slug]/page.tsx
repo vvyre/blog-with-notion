@@ -10,10 +10,7 @@ import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
-import { POST_CENTERED, POST_GRID } from '@/_lib/components/layout/post/article.css';
-import { Divider } from '@/_lib/components/layout/divider/divider';
-import { DEFAULT_BLOCK_GRID_PLACEMENT } from '@/_lib/components/block/block-layout.css';
-import { PostNavigation } from '@/_lib/components/layout/post-navigation/post-navigation';
+import { POST_CENTERED } from '@/_lib/components/layout/post/article.css';
 
 export interface PostPageProps {
   params: {
@@ -44,7 +41,7 @@ export default async function Post({ params }: PostPageProps) {
             <Utterances />
           </View>
         </Article>
-        <Spacing size="8rem" />
+        <Spacing size="5rem" />
       </View>
     </>
   );
