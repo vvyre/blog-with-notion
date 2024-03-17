@@ -26,7 +26,7 @@ export const CAPTION_TXT = style({
 });
 
 export const CAPTION = style({
-  textAlign: 'center',
+  textAlign: 'left',
   width: '100%',
 });
 
