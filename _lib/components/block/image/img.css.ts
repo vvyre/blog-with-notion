@@ -19,3 +19,15 @@ export const CAPTION = style({
   textAlign: 'center',
   width: '100%',
 });
+
+export const IMG = style({
+  width: 'auto',
+  height: 'auto',
+  maxWidth: 'calc(100vw - 3rem)',
+  maxHeight: '75vh',
+  '@media': {
+    '(0px <= width <= 768px)': {
+      width: 'calc(100vw - 3rem)',
+    },
+  },
+});
