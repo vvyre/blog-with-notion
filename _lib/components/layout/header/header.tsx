@@ -16,12 +16,14 @@ import {
 } from './header.css';
 import { usePathname } from 'next/navigation';
 import { Logo } from '../logo/logo';
-import Github from '#/img/github-mark.svg';
+import Github_black from '#/img/github-mark.svg';
+import Github_white from '#/img/github-mark-white.svg';
 import Image from 'next/image';
 
 export function Header() {
   const PATH = usePathname();
   const COLOR = PATH.includes('blog') || PATH.includes('faq') ? 'BLACK' : 'WHITE';
+  const GITHUB_MARK = COLOR === 'BLACK' ? Github_black : Github_white;
   const BASE_CLASSNAME = `${BASE} ${THEME[COLOR]}`;
 
   return (
@@ -39,7 +41,7 @@ export function Header() {
         ))}
         <View styleVariant={`${MENU_GRID_ITEM} ${MENU_GITHUB_PLACEMENT}`}>
           <Btn as="Link" href="https://github.com/brewcoldblue" styleVariant={`${MENU} ${MENU_GITHUB}`}>
-            <Image alt="Seungyoon Yu's Github" src={Github} style={{ width: '1.2rem', height: '1.2rem' }} />
+            <Image alt="Seungyoon Yu's Github" src={GITHUB_MARK} style={{ width: '1.2rem', height: '1.2rem' }} />
           </Btn>
         </View>
       </View>
