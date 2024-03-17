@@ -8,7 +8,6 @@ import { Spacing } from '../../layout/spacing/spacing';
 import { View } from '../../layout/view/view';
 import { CAPTION, CAPTION_TXT, IMG, IMG_CONTAINER, IMG_CONTAINER_ZOOMED } from './img.css';
 import { useNotionImg } from './use-notion-img';
-
 import type { NotionComponentProps } from '@/_lib/types/component-common';
 import { useState } from 'react';
 
