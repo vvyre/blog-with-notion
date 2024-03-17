@@ -15,7 +15,7 @@ export const BASE = style([
     position: 'sticky',
     zIndex: '999',
     top: 0,
-    padding: '0.5rem 3rem 0.5rem 3rem',
+    padding: '0.5rem 2rem 0.5rem 2rem',
     '@media': {
       '(0px <= width <= 768px)': {
         padding: '0.5rem 1.5rem 0.5rem 1.5rem',
