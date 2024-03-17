@@ -40,7 +40,7 @@ export function Header() {
           </View>
         ))}
         <View styleVariant={`${MENU_GRID_ITEM} ${MENU_GITHUB_PLACEMENT}`}>
-          <Btn as="Link" href="https://github.com/brewcoldblue" styleVariant={`${MENU} ${MENU_GITHUB}`}>
+          <Btn as="a" href="https://github.com/brewcoldblue" styleVariant={`${MENU} ${MENU_GITHUB}`}>
             <Image alt="Seungyoon Yu's Github" src={GITHUB_MARK} style={{ width: '1.2rem', height: '1.2rem' }} />
           </Btn>
         </View>

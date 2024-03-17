@@ -3,50 +3,30 @@ import { getTitle } from '@/utils/get-title';
 import { getDate } from '@/utils/get-date';
 import { Txt } from '../../typography/txt/txt';
 import { getTags } from '@/utils/get-tags';
-import { Tag } from '../../typography/tag/tag';
 import { View } from '../view/view';
-import {
-  BASE,
-  TITLE,
-  SUMMARY_GRID_PLACEMENT,
-  DATE_GRID_PLACEMENT,
-  BACK_BUTTON_PLACEMENT,
-  TITLE_TEXT_PLACEMENT,
-  SUMMARY,
-  TAG_GRID_PLACEMENT,
-  POST_TAG,
-} from './post-title.css';
+import { BASE, TITLE, SUMMARY, DEPTH3_TEXT } from './post-title.css';
 import { getSummary } from '@/utils/get-summary';
 import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
-import { BackButton } from '../../interaction/back-button/back-button';
 import { Spacing } from '../spacing/spacing';
 
 export function PostTitle({ ...meta }: GetPageResponse) {
+  const title = getTitle(meta);
+  const summary = getSummary(meta);
+  const rel_date = getDate(meta);
+  const category = getTags(meta)[0];
   return (
     <View styleVariant={BASE}>
-      <BackButton styleVariant={BACK_BUTTON_PLACEMENT} />
-      <View styleVariant={TITLE_TEXT_PLACEMENT}>
-        <Heading as="h1" styleVariant={TITLE}>
-          {getTitle(meta)}
-        </Heading>
-      </View>
-      <View styleVariant={SUMMARY_GRID_PLACEMENT}>
-        <Txt as="p" styleVariant={SUMMARY}>
-          {getSummary(meta)}
-        </Txt>
-      </View>
-      <View styleVariant={TAG_GRID_PLACEMENT}>
-        {getTags(meta).map(tag => (
-          <Tag key={tag.id} styleVariant={POST_TAG}>
-            {tag.name}
-          </Tag>
-        ))}
-      </View>
-      <View styleVariant={DATE_GRID_PLACEMENT}>
-        <Txt color="gray" size="S">
-          {getDate(meta)}
-        </Txt>
-      </View>
+      <Txt styleVariant={DEPTH3_TEXT}>{category.name}</Txt>
+      <Spacing size="0.5rem" />
+      <Heading as="h1" styleVariant={TITLE}>
+        {title}
+      </Heading>
+      <Spacing size="0.75rem" />
+      <Txt as="p" styleVariant={SUMMARY}>
+        {summary}
+      </Txt>
+      <Spacing size="0.25rem" />
+      <Txt styleVariant={DEPTH3_TEXT}>{rel_date}</Txt>
     </View>
   );
 }

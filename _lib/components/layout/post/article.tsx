@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { BASE } from './article.css';
+import { BASE, POST_CENTERED } from './article.css';
 
 interface ArticleProps {
   children: ReactNode;

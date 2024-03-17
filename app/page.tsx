@@ -13,16 +13,10 @@ export const revalidate = 300;
 
 export default async function PostListPage() {
   const postList = await getPostList();
-  const PROFILE_BLOCKS = await processedBlock(await getPost(notion_env.profile_id));
 
   return (
     <View as="main">
       <View as="section">
-        <Profile>
-          {PROFILE_BLOCKS.map(block => (
-            <Block key={block.id} block={block} />
-          ))}
-        </Profile>
         <PostListBox>
           {postList.length > 0 ? (
             postList.map(post => <PostList key={post.id} pageData={post} />)
