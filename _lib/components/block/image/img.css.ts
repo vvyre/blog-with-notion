@@ -33,13 +33,13 @@ export const CAPTION_TXT_ZOOMED = style({
 export const CAPTION = style({
   textAlign: 'left',
   width: '100%',
-  maxWidth: '20rem',
+  maxWidth: '35rem',
 });
 
 export const CAPTION_ZOOMED = style({
-  textAlign: 'center',
+  textAlign: 'left',
   width: '100%',
-  maxWidth: '20rem',
+  maxWidth: '35rem',
 });
 
 export const IMG = style({
