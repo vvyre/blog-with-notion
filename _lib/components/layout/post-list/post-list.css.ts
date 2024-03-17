@@ -36,11 +36,7 @@ export const POST_LINK = style({
   alignItems: 'center',
   cursor: 'pointer',
   color: THEMES.default,
-  selectors: {
-    '&:hover': {
-      color: THEMES.default,
-    },
-  },
+  transition: 'color 0.15s',
 });
 
 export const POST_TITLE = style([

@@ -41,17 +41,27 @@ export const MENU = style({
   fontSize: '1rem',
   backgroundColor: 'transparent',
   fontWeight: 900,
-  selectors: {
-    '&:hover': {
-      textDecoration: 'underline',
-      textUnderlineOffset: '0.25rem',
-    },
-  },
+  transition: 'border 0.15s',
+  borderBottom: `1px solid transparent`,
 });
 
 export const MENU_TEXT = styleVariants({
-  BLACK: { color: THEMES.white },
-  WHITE: { color: THEMES.default },
+  BLACK: {
+    color: THEMES.white,
+    selectors: {
+      '&:hover': {
+        borderBottom: `1px solid ${THEMES.white}`,
+      },
+    },
+  },
+  WHITE: {
+    color: THEMES.default,
+    selectors: {
+      '&:hover': {
+        borderBottom: `1px solid ${THEMES.default}`,
+      },
+    },
+  },
 });
 
 export const LOGO_GRID_PLACEMENT = style({
