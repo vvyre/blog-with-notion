@@ -23,7 +23,7 @@ import Image from 'next/image';
 export function Header() {
   const PATH = usePathname();
   const COLOR = PATH.includes('blog') || PATH.includes('faq') ? 'BLACK' : 'WHITE';
-  const GITHUB_MARK = COLOR === 'BLACK' ? Github_black : Github_white;
+  const GITHUB_MARK = COLOR === 'BLACK' ? Github_white : Github_black;
   const BASE_CLASSNAME = `${BASE} ${THEME[COLOR]}`;
 
   return (
