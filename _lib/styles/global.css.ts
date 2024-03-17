@@ -20,7 +20,6 @@ globalStyle('html', {
 globalStyle('body', {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
-  minHeight: '100vh',
   color: THEMES.default,
 });
 
@@ -29,6 +28,10 @@ globalStyle('body, p, h1, h2, h3, h4, h5, h6', {
   padding: 0,
   wordBreak: 'break-word',
   fontWeight: 400,
+});
+
+globalStyle('main', {
+  minHeight: 'calc(100vh - 8.5rem)',
 });
 
 globalStyle('input, button, select, textarea', {
