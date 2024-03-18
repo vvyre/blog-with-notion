@@ -1,3 +1,4 @@
+import { THEMES } from '@/_lib/styles/colors.css';
 import { jetbrainsMono } from '@/_lib/styles/fonts.css';
 import { style } from '@vanilla-extract/css';
 
@@ -29,4 +30,5 @@ export const FOOTER_LINK = style({
 
 export const FOOTER_COPYRIGHT = style({
   fontSize: '0.8rem',
+  color: THEMES.gray,
 });

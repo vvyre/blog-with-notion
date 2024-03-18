@@ -33,7 +33,6 @@ export function PostList({ pageData }: PostListProps) {
   const TITLE = getTitle(pageData);
   const SUMMARY = getSummary(pageData);
   const DATE = getDate(pageData);
-  // const REL_DATE = getDate(pageData);
 
   return (
     <List as="li" styleVariant={GRID_SPAN}>
@@ -43,9 +42,8 @@ export function PostList({ pageData }: PostListProps) {
           <Heading as="h1" styleVariant={POST_TITLE}>
             {TITLE}
           </Heading>
-          <Spacing size="0.75rem" />
+          <Spacing size="0.2rem" />
           <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
-          <Spacing size="0.25rem" />
           <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
         </Txt>
       </Flex>
