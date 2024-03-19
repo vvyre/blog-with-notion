@@ -19,19 +19,19 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 500,
   },
   M: {
-    fontSize: '1rem',
+    fontSize: '1.05rem',
     fontWeight: 400,
   },
   S: {
-    fontSize: '0.95rem',
+    fontSize: '0.975rem',
     fontWeight: 400,
   },
   XS: {
-    fontSize: '0.9rem',
+    fontSize: '0.925rem',
     fontWeight: 400,
   },
   XXS: {
-    fontSize: '0.85rem',
+    fontSize: '0.875rem',
     fontWeight: 500,
   },
 });
@@ -45,8 +45,8 @@ export const ITALIC = style({
 });
 
 export const CODE = style({
-  verticalAlign: 'text-top',
-  fontSize: '0.8rem',
+  verticalAlign: 'text-bottom',
+  fontSize: '0.82rem',
   padding: '0.1rem 0.25rem 0.1rem 0.25rem',
   borderRadius: '0.25rem',
   border: 'none',

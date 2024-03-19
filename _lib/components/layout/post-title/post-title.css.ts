@@ -1,4 +1,3 @@
-import { BASE_GRID, BASE_PADDING } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 import { THEMES } from '@/_lib/styles/colors.css';
 
@@ -63,13 +62,13 @@ export const DEPTH3_TEXT = style({
   textAlign: 'center',
   fontWeight: 400,
   color: THEMES.white,
-  fontSize: '0.9rem',
+  fontSize: '1.05rem',
 });
 
 export const SUMMARY = style({
   textAlign: 'center',
   fontWeight: 400,
-  fontSize: '1rem',
+  fontSize: '0.95rem',
   lineHeight: '1.65',
 });
 

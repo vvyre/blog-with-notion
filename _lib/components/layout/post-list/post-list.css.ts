@@ -11,7 +11,7 @@ export const GRID_SPAN = style({
 });
 
 export const POST_BOX = style({
-  fontFeatureSettings: '"calt"',
+  marginBottom: '3rem',
 });
 
 export const POST_THUMBNAIL = style({
@@ -55,19 +55,19 @@ export const POST_TITLE = style([
 
 export const POST_SUMMARY = style([
   {
-    fontSize: '0.9rem',
-    color: THEMES.gray,
+    fontSize: '0.85rem',
+
     cursor: 'pointer',
-    fontWeight: '400',
+    fontWeight: 400,
   },
 ]);
 
 export const RELEASED_DATE = style([
   {
-    fontSize: '0.85rem',
-    color: THEMES.gray,
+    fontSize: '0.9rem',
+
     cursor: 'pointer',
-    fontWeight: '400',
+    fontWeight: 400,
   },
 ]);
 

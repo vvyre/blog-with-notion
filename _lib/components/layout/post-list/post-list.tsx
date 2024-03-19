@@ -5,12 +5,9 @@ import { parsedSlug } from '@/utils/parsed-slug';
 import { Heading } from '../../typography/heading/heading';
 import { Txt } from '../../typography/txt/txt';
 import { getSummary } from '@/utils/get-summary';
-// import { getDate } from '@/utils/get-date';
 import { getTags } from '@/utils/get-tags';
-import { View } from '../view/view';
 import { Spacing } from '../spacing/spacing';
 import {
-  GRID_SPAN,
   POST_BOX,
   HOVER_TEXT,
   POST_CATEGORY_TEXT,
@@ -35,19 +32,18 @@ export function PostList({ pageData }: PostListProps) {
   const DATE = getDate(pageData);
 
   return (
-    <List as="li" styleVariant={GRID_SPAN}>
-      <Flex justifyContents="center" styleVariant={`${POST_BOX}`}>
+    <List as="li">
+      <Flex justifyContents="center" styleVariant={POST_BOX}>
         <Txt as="Link" href={URI} styleVariant={`${POST_LINK} ${HOVER_TEXT[CATEGORY.color]}`}>
           <Txt styleVariant={POST_CATEGORY_TEXT}>{CATEGORY.name}</Txt>
           <Heading as="h1" styleVariant={POST_TITLE}>
             {TITLE}
           </Heading>
-          <Spacing size="0.2rem" />
+          <Spacing size="0.35rem" />
           <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
           <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
         </Txt>
       </Flex>
-      <Spacing size="2rem" />
     </List>
   );
 }
