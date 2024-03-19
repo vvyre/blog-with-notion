@@ -31,7 +31,7 @@ export function Header() {
           )}
 
           <Btn as="a" href="https://github.com/brewcoldblue" target="_blank" styleVariant={MENU_GITHUB}>
-            <Image className={MENU_GITHUB_IMG} alt="Seungyoon Yu's Github" src={GITHUB_MARK} />
+            <Image unoptimized className={MENU_GITHUB_IMG} alt="Seungyoon Yu's Github" src={GITHUB_MARK} />
           </Btn>
         </Flex>
       </View>

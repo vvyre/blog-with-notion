@@ -30,6 +30,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
       alignItems="center"
       styleVariant={zoomed ? IMG_CONTAINER_ZOOMED : IMG_CONTAINER}>
       <Image
+        unoptimized
         className={IMG}
         key={imgUrl}
         src={isReloading ? reloadingFallback : imgUrl}
