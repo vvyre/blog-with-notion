@@ -17,8 +17,6 @@ import { NumberedListWrapper } from './numbered-list-item/numbered-list-wrapper'
 import { Code } from './code/code';
 import { NotionImg } from './image/notion-img';
 import { NotionFile } from './file/notion-file';
-import { Mention } from './mention/mention';
-import { NotionText } from './text/text';
 import { Divider } from '../layout/divider/divider';
 import { Quote } from './quote/quote';
 import { Table } from './table/table';
