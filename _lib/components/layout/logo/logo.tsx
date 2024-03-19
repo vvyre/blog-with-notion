@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { LOGO } from './logo.css';
 export function Logo() {
   return (
-    <Txt as="Link" href="/" styleVariant={LOGO}>
-      <Image unoptimized src={logo} alt="유승윤 개발 블로그 로고" style={{ width: '1.75rem', height: '1.75rem' }} />
+    <Txt as="Link" href="/faq" styleVariant={LOGO}>
+      <Image src={logo} alt="frequently asked questions, 프로필" style={{ width: '1.75rem', height: '1.75rem' }} />
     </Txt>
   );
 }

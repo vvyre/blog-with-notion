@@ -1,5 +1,5 @@
 import { THEMES } from '@/_lib/styles/colors.css';
-import { jetbrainsMono } from '@/_lib/styles/fonts.css';
+import { jetbrainsMono, pretendard } from '@/_lib/styles/fonts.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
@@ -10,7 +10,6 @@ export const THEME = styleVariants({
 
 export const BASE = style([
   {
-    width: '100vw',
     height: 'fit-content',
     position: 'sticky',
     zIndex: '999',
@@ -38,11 +37,16 @@ export const HEADER_GRID = style([
 ]);
 
 export const MENU = style({
-  fontSize: '1rem',
   backgroundColor: 'transparent',
-  fontWeight: 900,
-  transition: 'border 0.15s',
-  borderBottom: `1px solid transparent`,
+  margin: 0,
+  padding: 0,
+});
+
+export const MENU_TEXT_BASE = style({
+  backgroundColor: 'transparent',
+  borderBottom: '1px solid transparent',
+  fontSize: '0.9rem',
+  fontWeight: 700,
 });
 
 export const MENU_TEXT = styleVariants({
@@ -90,6 +94,10 @@ export const MENU_GRID_PLACEMENT = style({
 
 export const MENU_GRID_ITEM = style({
   placeItems: 'center start',
+});
+
+export const MENU_LIST = style({
+  fill: THEMES.white,
 });
 
 export const MENU_GITHUB_PLACEMENT = style({

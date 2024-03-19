@@ -30,6 +30,10 @@ globalStyle('body, p, h1, h2, h3, h4, h5, h6', {
   fontWeight: 400,
 });
 
+globalStyle('main', {
+  minHeight: 'calc(100vh - 8.5rem)',
+});
+
 globalStyle('input, button, select, textarea', {
   margin: 0,
   font: 'inherit',

@@ -31,15 +31,13 @@ export const CAPTION_TXT_ZOOMED = style({
 });
 
 export const CAPTION = style({
-  textAlign: 'left',
+  textAlign: 'center',
   width: '100%',
-  maxWidth: '35rem',
 });
 
 export const CAPTION_ZOOMED = style({
-  textAlign: 'left',
+  textAlign: 'center',
   width: '100%',
-  maxWidth: '35rem',
 });
 
 export const IMG = style({

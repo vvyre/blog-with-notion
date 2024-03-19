@@ -43,11 +43,11 @@ export const POST_TITLE = style([
   {
     cursor: 'pointer',
     fontWeight: '700',
-    fontSize: '2rem',
-    lineHeight: '1.25',
+    fontSize: '2.25rem',
+    lineHeight: '1.3',
     '@media': {
       '(0 <= width <= 768px)': {
-        fontSize: '1.5rem',
+        fontSize: '1.75rem',
       },
     },
   },
@@ -59,17 +59,15 @@ export const POST_SUMMARY = style([
     color: THEMES.gray,
     cursor: 'pointer',
     fontWeight: '400',
-    lineHeight: '1.3',
   },
 ]);
 
 export const RELEASED_DATE = style([
   {
-    fontSize: '0.9rem',
+    fontSize: '0.85rem',
     color: THEMES.gray,
     cursor: 'pointer',
     fontWeight: '400',
-    lineHeight: '1.3',
   },
 ]);
 
