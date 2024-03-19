@@ -1,11 +1,11 @@
 import { globalStyle } from '@vanilla-extract/css';
-import { jetbrainsMono, pretendard } from './fonts.css';
+import { code, kor, latin } from './fonts.css';
 import { THEMES } from './colors.css';
 
 globalStyle('*, *:before, *:after', {
   boxSizing: 'inherit',
   MozBoxSizing: 'inherit',
-  fontFamily: `-apple-system, BlinkMacSystemFont, ${pretendard}, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" `,
+  fontFamily: `${latin}, ${kor}, -apple-system, BlinkMacSystemFont,"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" `,
 });
 
 globalStyle('html', {
@@ -23,10 +23,10 @@ globalStyle('body', {
   color: THEMES.default,
 });
 
-globalStyle('body, p, h1, h2, h3, h4, h5, h6', {
+globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
   margin: 0,
   padding: 0,
-  wordBreak: 'break-word',
+  wordBreak: 'keep-all',
   fontWeight: 400,
 });
 
@@ -71,9 +71,9 @@ globalStyle('pre', {
 });
 
 globalStyle('code, pre, pre span', {
-  fontSize: '0.8rem',
+  fontSize: '0.815rem',
   lineHeight: '1.5',
-  fontFamily: jetbrainsMono,
+  fontFamily: code,
   MozTabSize: 2,
   tabSize: 2,
 });

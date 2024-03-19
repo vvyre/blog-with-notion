@@ -37,7 +37,7 @@ export const TEXT_STYLE = styleVariants({
 });
 
 export const BOLD = style({
-  fontWeight: 600,
+  fontWeight: 700,
 });
 
 export const ITALIC = style({

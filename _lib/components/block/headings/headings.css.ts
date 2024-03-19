@@ -30,6 +30,5 @@ export const HEADING_3 = style([
     fontWeight: 600,
     fontSize: '1.15rem',
     marginTop: '1.25rem',
-    marginBottom: '0.75rem',
   },
 ]);

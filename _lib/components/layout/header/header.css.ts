@@ -1,5 +1,4 @@
 import { THEMES } from '@/_lib/styles/colors.css';
-import { jetbrainsMono, pretendard } from '@/_lib/styles/fonts.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
