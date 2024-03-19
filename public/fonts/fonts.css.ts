@@ -1,10 +1,12 @@
 import { fontFace } from '@vanilla-extract/css';
 
-export const RADIO_GROTESK = fontFace([
-  { src: 'url(/fonts/400-en.woff)', fontWeight: '400' },
-  { src: 'url(/fonts/500-en.woff)', fontWeight: '500' },
-  { src: 'url(/fonts/500-en.woff)', fontWeight: '600' },
-  { src: 'url(/fonts/700-en.woff)', fontWeight: '700' },
+export const WORK_SANS = fontFace([
+  { src: 'url(/fonts/en.ttf)', fontWeight: '300' },
+  { src: 'url(/fonts/en.ttf)', fontWeight: '400' },
+  { src: 'url(/fonts/en.ttf)', fontWeight: '500' },
+  { src: 'url(/fonts/en.ttf)', fontWeight: '600' },
+  { src: 'url(/fonts/en.ttf)', fontWeight: '700' },
+  { src: 'url(/fonts/en.ttf)', fontWeight: '900' },
 ]);
 
 export const PRETENDARD = fontFace([
