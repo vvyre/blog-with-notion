@@ -13,6 +13,8 @@ globalStyle('html', {
   MozBoxSizing: 'border-box',
   fontSize: '100%',
   lineHeight: '1.65',
+  wordSpacing: '-0.2rem',
+  wordBreak: 'keep-all',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
 });
@@ -26,8 +28,7 @@ globalStyle('body', {
 globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
   margin: 0,
   padding: 0,
-  wordSpacing: '-0.2rem',
-  wordBreak: 'keep-all',
+
   fontWeight: 400,
 });
 
@@ -97,5 +98,5 @@ globalStyle('::selection, ::-moz-selection', {
 });
 
 globalStyle('p, span, code, ul li, ol li, li', {
-  fontSize: '1.05rem',
+  fontSize: '100%',
 });

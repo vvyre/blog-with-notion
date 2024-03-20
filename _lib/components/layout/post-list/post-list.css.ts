@@ -57,8 +57,7 @@ export const POST_TITLE = style([
 
 export const POST_SUMMARY = style([
   {
-    fontSize: '0.85rem',
-
+    fontSize: '0.9rem',
     cursor: 'pointer',
     fontWeight: 400,
   },
@@ -66,7 +65,7 @@ export const POST_SUMMARY = style([
 
 export const RELEASED_DATE = style([
   {
-    fontSize: '0.9rem',
+    fontSize: '0.85rem',
 
     cursor: 'pointer',
     fontWeight: 400,

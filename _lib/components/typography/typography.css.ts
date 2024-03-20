@@ -15,23 +15,23 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 700,
   },
   L: {
-    fontSize: '1.15rem',
+    fontSize: '1.25rem',
     fontWeight: 400,
   },
   M: {
-    fontSize: '1.05rem',
+    fontSize: '1rem',
     fontWeight: 400,
   },
   S: {
-    fontSize: '0.975rem',
+    fontSize: '0.95rem',
     fontWeight: 400,
   },
   XS: {
-    fontSize: '0.925rem',
+    fontSize: '0.9rem',
     fontWeight: 400,
   },
   XXS: {
-    fontSize: '0.875rem',
+    fontSize: '0.85rem',
     fontWeight: 400,
   },
 });
