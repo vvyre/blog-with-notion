@@ -1,5 +1,5 @@
-import { JETBRAINS_MONO, PRETENDARD, WORK_SANS } from '@/public/fonts/fonts.css';
+import { JETBRAINS_MONO, PRETENDARD, IA_Q } from '@/public/fonts/fonts.css';
 
-export const latin = WORK_SANS;
+export const latin = IA_Q;
 export const kor = PRETENDARD;
 export const code = JETBRAINS_MONO;

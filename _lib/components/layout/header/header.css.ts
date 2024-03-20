@@ -111,7 +111,7 @@ export const MENU_GITHUB = style({
   fontSize: '1rem',
   width: '1.75rem',
   backgroundColor: 'transparent',
-  fontWeight: 900,
+  fontWeight: 700,
   transition: 'border 0.15s',
   borderBottom: `1px solid transparent`,
 });

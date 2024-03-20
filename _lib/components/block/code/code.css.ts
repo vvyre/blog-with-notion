@@ -10,7 +10,7 @@ export const CODE_BLOCK = style({
 export const CODE_LANGUAGE = style({
   fontFeatureSettings: '"calt", "case"',
   fontSize: '0.9rem',
-  fontWeight: 600,
+  fontWeight: 700,
 });
 export const CODE_PRE = style({
   overflowX: 'auto',

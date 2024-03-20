@@ -4,19 +4,19 @@ import { style, styleVariants } from '@vanilla-extract/css';
 export const TEXT_STYLE = styleVariants({
   XXXL: {
     fontSize: '2.75rem',
-    fontWeight: 600,
+    fontWeight: 700,
   },
   XXL: {
     fontSize: '2rem',
-    fontWeight: 600,
+    fontWeight: 700,
   },
   XL: {
     fontSize: '1.5rem',
-    fontWeight: 600,
+    fontWeight: 700,
   },
   L: {
     fontSize: '1.15rem',
-    fontWeight: 500,
+    fontWeight: 400,
   },
   M: {
     fontSize: '1.05rem',
@@ -32,7 +32,7 @@ export const TEXT_STYLE = styleVariants({
   },
   XXS: {
     fontSize: '0.875rem',
-    fontWeight: 500,
+    fontWeight: 400,
   },
 });
 

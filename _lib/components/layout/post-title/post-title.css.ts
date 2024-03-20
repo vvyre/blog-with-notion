@@ -31,7 +31,7 @@ export const BACK_BUTTON_PLACEMENT = style({
 });
 
 export const BACK_BUTTON_STYLE_VARIANT = style({
-  fontWeight: 500,
+  fontWeight: 400,
   fontSize: '1.75rem',
   color: THEMES.white,
 });

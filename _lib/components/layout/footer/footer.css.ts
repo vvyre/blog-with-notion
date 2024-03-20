@@ -13,7 +13,7 @@ export const BASE = style([
 
 export const FOOTER_SITE_TITLE = style({
   fontSize: '1rem',
-  fontWeight: 500,
+  fontWeight: 400,
 });
 
 export const FOOTER_LINK = style({
