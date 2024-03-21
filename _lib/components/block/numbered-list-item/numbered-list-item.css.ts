@@ -1,6 +1,8 @@
+import { kor } from '@/_lib/styles/fonts.css';
 import { style } from '@vanilla-extract/css';
 export const BASE = style({
   fontFeatureSettings: '"tnum"',
+  fontFamily: kor,
   marginLeft: '1.5rem',
 });
 export const DEPTH_1 = style({

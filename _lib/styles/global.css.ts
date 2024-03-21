@@ -13,7 +13,6 @@ globalStyle('html', {
   MozBoxSizing: 'border-box',
   fontSize: '100%',
   lineHeight: '1.65',
-  wordSpacing: '-0.2rem',
   wordBreak: 'keep-all',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
@@ -28,7 +27,7 @@ globalStyle('body', {
 globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
   margin: 0,
   padding: 0,
-
+  letterSpacing: '0.25px',
   fontWeight: 400,
 });
 

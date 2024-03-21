@@ -12,7 +12,7 @@ export const TEXT_STYLE = styleVariants({
   },
   XL: {
     fontSize: '1.5rem',
-    fontWeight: 700,
+    fontWeight: 600,
   },
   L: {
     fontSize: '1.25rem',
@@ -37,7 +37,7 @@ export const TEXT_STYLE = styleVariants({
 });
 
 export const BOLD = style({
-  fontWeight: 700,
+  fontWeight: 600,
 });
 
 export const ITALIC = style({
