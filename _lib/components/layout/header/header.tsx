@@ -1,13 +1,12 @@
 'use client';
 import { View } from '../view/view';
 import { Btn } from '../../interaction/button/btn';
-import { BASE, MENU, MENU_GITHUB, MENU_GITHUB_IMG, MENU_LIST, MENU_TEXT, MENU_TEXT_BASE, THEME } from './header.css';
+import { BASE, MENU, MENU_GITHUB, MENU_GITHUB_IMG, MENU_ICON, THEME } from './header.css';
 import { usePathname } from 'next/navigation';
 import { Logo } from '../logo/logo';
 import Github_black from '#/img/github-mark.svg';
 import Github_white from '#/img/github-mark-white.svg';
-import icon_list_black from '#/img/icons/list-black.svg';
-import icon_question_black from '#/img/icons/questions.svg';
+import icon_info from '#/img/icons/info.svg';
 import icon_list_white from '#/img/icons/list-white.svg';
 import Image from 'next/image';
 import { Flex } from '../flex/flex';
@@ -25,11 +24,11 @@ export function Header() {
           <Logo />
           {PATH.includes('blog') || PATH.includes('faq') ? (
             <Btn as="Link" href={'/'} styleVariant={MENU}>
-              <Image className={MENU_LIST} alt="Go to the Post List" src={icon_list_white} />
+              <Image unoptimized className={MENU_ICON} alt="Go to the Post List" src={icon_list_white} />
             </Btn>
           ) : (
             <Btn as="Link" href={'/faq'} styleVariant={MENU}>
-              <Image className={MENU_LIST} alt="Go to the FAQ(Profile)" src={icon_question_black} />
+              <Image unoptimized className={MENU_ICON} alt="Go to the FAQ(Profile)" src={icon_info} />
             </Btn>
           )}
           <Btn as="a" href="https://github.com/brewcoldblue" target="_blank" styleVariant={MENU_GITHUB}>

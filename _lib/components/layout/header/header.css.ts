@@ -95,7 +95,7 @@ export const MENU_GRID_ITEM = style({
   placeItems: 'center start',
 });
 
-export const MENU_LIST = style({
+export const MENU_ICON = style({
   fill: THEMES.white,
 });
 
