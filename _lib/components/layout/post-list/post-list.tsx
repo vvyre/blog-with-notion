@@ -39,7 +39,7 @@ export function PostList({ pageData }: PostListProps) {
           <Heading as="h1" styleVariant={POST_TITLE}>
             {TITLE}
           </Heading>
-          <Spacing size="0.35rem" />
+          <Spacing size="0.25rem" />
           <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
           <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
         </Txt>

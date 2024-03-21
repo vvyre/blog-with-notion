@@ -1,6 +1,5 @@
 import { style } from '@vanilla-extract/css';
 import { THEMES } from '@/_lib/styles/colors.css';
-import { kor } from '@/_lib/styles/fonts.css';
 
 export const BASE = style([
   {
@@ -53,7 +52,6 @@ export const TITLE_TEXT_PLACEMENT = style({
 export const TITLE = style({
   textAlign: 'center',
   fontWeight: 700,
-  fontFamily: kor,
   fontSize: '2.5rem',
   lineHeight: '1.2',
   width: '100%',

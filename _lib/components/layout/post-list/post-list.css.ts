@@ -1,5 +1,4 @@
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
-import { kor } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 export const GRID_SPAN = style({
@@ -44,7 +43,6 @@ export const POST_TITLE = style([
   {
     cursor: 'pointer',
     fontWeight: 700,
-    fontFamily: kor,
     fontSize: '2.25rem',
     lineHeight: '1.3',
     '@media': {

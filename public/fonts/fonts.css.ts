@@ -1,10 +1,10 @@
 import { fontFace } from '@vanilla-extract/css';
 
-export const RADIO = fontFace([
-  { src: 'url(/fonts/300-en.woff)', fontWeight: '400' },
-  { src: 'url(/fonts/400-en.woff)', fontWeight: '500' },
-  { src: 'url(/fonts/400-en.woff)', fontWeight: '600' },
-  { src: 'url(/fonts/700-en.woff)', fontWeight: '700' },
+export const TELEGRAF = fontFace([
+  { src: 'url(/fonts/400en.woff)', fontWeight: '400' },
+  { src: 'url(/fonts/400en.woff)', fontWeight: '500' },
+  { src: 'url(/fonts/600en.woff)', fontWeight: '600' },
+  { src: 'url(/fonts/700en.woff)', fontWeight: '700' },
 ]);
 
 export const PRETENDARD = fontFace([
