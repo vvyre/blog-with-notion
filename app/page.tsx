@@ -1,11 +1,10 @@
-import { getPost, getPostList } from '@/fetch/notion';
+import { getPostList } from '@/fetch/notion';
 import { PostList } from '@/_lib/components/layout/post-list/post-list';
-import { Profile } from '@/_lib/components/layout/profile/profile';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 import { View } from '@/_lib/components/layout/view/view';
 import { PostListBox } from '@/_lib/components/layout/post-list-box/post-list-box';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
-import { isr_revalidate_period, site_env } from '@/env';
+import { isr_revalidate_period } from '@/env';
 
 export const revalidate = isr_revalidate_period;
 
