@@ -7,13 +7,12 @@ import { getSummary } from '@/utils/get-summary';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { getDate } from '@/utils/get-date';
 
-export const revalidate = 3600;
 export async function GET() {
   const feed = new RSS({
     title: meta.siteTitle,
     description: meta.siteDiscription,
     site_url: meta.og.url,
-    feed_url: `${site_env.root}/api/feed.xml`,
+    feed_url: `${site_env.root}/feed.xml`,
     copyright: 'Seungyoon Yu',
     language: 'ko',
     pubDate: new Date(),
