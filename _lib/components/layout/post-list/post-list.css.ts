@@ -11,7 +11,7 @@ export const GRID_SPAN = style({
 });
 
 export const POST_BOX = style({
-  marginBottom: '3rem',
+  marginBottom: '1rem',
 });
 
 export const POST_THUMBNAIL = style({
@@ -36,7 +36,15 @@ export const POST_LINK = style({
   alignItems: 'center',
   cursor: 'pointer',
   color: THEMES.default,
-  transition: 'color 0.15s',
+  padding: '1.5rem',
+  border: '1px solid transparent',
+  borderRadius: '1.5rem',
+  selectors: {
+    '&:hover': {
+      color: THEMES.white,
+    },
+  },
+  transition: 'all 0.2s',
 });
 
 export const POST_TITLE = style([
@@ -44,7 +52,9 @@ export const POST_TITLE = style([
     cursor: 'pointer',
     fontWeight: 700,
     fontSize: '2.25rem',
-    lineHeight: '1.3',
+    lineHeight: '1.25',
+    maxWidth: '30rem',
+    textAlign: 'center',
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '1.75rem',
@@ -64,7 +74,6 @@ export const POST_SUMMARY = style([
 export const RELEASED_DATE = style([
   {
     fontSize: '0.85rem',
-
     cursor: 'pointer',
     fontWeight: 400,
   },
@@ -73,26 +82,28 @@ export const RELEASED_DATE = style([
 export const POST_CATEGORY_TEXT = style({
   fontSize: '0.9rem',
   fontWeight: 400,
+  textDecoration: 'underline',
+  textUnderlineOffset: '0.125rem',
 });
 
 export const HOVER_TEXT = styleVariants({
-  default: { selectors: { '&:hover': { color: COLORS.default } } },
-  blue: { selectors: { '&:hover': { color: COLORS.blue } } },
-  blue_background: { selectors: { '&:hover': { color: COLORS.blue_background } } },
-  brown: { selectors: { '&:hover': { color: COLORS.brown } } },
-  brown_background: { selectors: { '&:hover': { color: COLORS.brown_background } } },
-  gray: { selectors: { '&:hover': { color: COLORS.gray } } },
-  gray_background: { selectors: { '&:hover': { color: COLORS.gray_background } } },
-  green: { selectors: { '&:hover': { color: COLORS.green } } },
-  green_background: { selectors: { '&:hover': { color: COLORS.gray_background } } },
-  orange: { selectors: { '&:hover': { color: COLORS.orange } } },
-  orange_background: { selectors: { '&:hover': { color: COLORS.orange_background } } },
-  pink: { selectors: { '&:hover': { color: COLORS.pink } } },
-  pink_background: { selectors: { '&:hover': { color: COLORS.pink_background } } },
-  purple: { selectors: { '&:hover': { color: COLORS.purple } } },
-  purple_background: { selectors: { '&:hover': { color: COLORS.purple_background } } },
-  red: { selectors: { '&:hover': { color: COLORS.red } } },
-  red_background: { selectors: { '&:hover': { color: COLORS.red_background } } },
-  yellow: { selectors: { '&:hover': { color: COLORS.yellow } } },
-  yellow_background: { selectors: { '&:hover': { color: COLORS.yellow_background } } },
+  default: { selectors: { '&:hover': { backgroundColor: COLORS.default } } },
+  blue: { selectors: { '&:hover': { backgroundColor: COLORS.blue } } },
+  blue_background: { selectors: { '&:hover': { backgroundColor: COLORS.blue_background } } },
+  brown: { selectors: { '&:hover': { backgroundColor: COLORS.brown } } },
+  brown_background: { selectors: { '&:hover': { backgroundColor: COLORS.brown_background } } },
+  gray: { selectors: { '&:hover': { backgroundColor: COLORS.gray } } },
+  gray_background: { selectors: { '&:hover': { backgroundColor: COLORS.gray_background } } },
+  green: { selectors: { '&:hover': { backgroundColor: COLORS.green } } },
+  green_background: { selectors: { '&:hover': { backgroundColor: COLORS.gray_background } } },
+  orange: { selectors: { '&:hover': { backgroundColor: COLORS.orange } } },
+  orange_background: { selectors: { '&:hover': { backgroundColor: COLORS.orange_background } } },
+  pink: { selectors: { '&:hover': { backgroundColor: COLORS.pink } } },
+  pink_background: { selectors: { '&:hover': { backgroundColor: COLORS.pink_background } } },
+  purple: { selectors: { '&:hover': { backgroundColor: COLORS.purple } } },
+  purple_background: { selectors: { '&:hover': { backgroundColor: COLORS.purple_background } } },
+  red: { selectors: { '&:hover': { backgroundColor: COLORS.red } } },
+  red_background: { selectors: { '&:hover': { backgroundColor: COLORS.red_background } } },
+  yellow: { selectors: { '&:hover': { backgroundColor: COLORS.yellow } } },
+  yellow_background: { selectors: { '&:hover': { backgroundColor: COLORS.yellow_background } } },
 });
