@@ -9,6 +9,7 @@ export const site_env = {
   root: process.env.NEXT_PUBLIC_ROOT || '',
   gv: process.env.GOOGLE_SITE_VERIFICATION || '',
   nv: process.env.NAVER_SITE_VERIFICATION || '',
+  utterances: process.env.NEXT_PUBLIC_UTTERANCES || '',
 };
 
 export const isr_revalidate_period = 3600;
