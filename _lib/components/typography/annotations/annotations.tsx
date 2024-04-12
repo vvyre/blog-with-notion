@@ -28,13 +28,15 @@ export function Annotations({
   children,
 }: AnnotationsProps) {
   return (
-    <Wrapper condition={richText ? richText.annotations.bold : bold} wrapper={Strong}>
-      <Wrapper condition={richText ? richText.annotations.italic : italic} wrapper={Italic}>
-        <Wrapper condition={richText ? richText.annotations.strikethrough : strike} wrapper={Strike}>
-          <Wrapper condition={richText ? richText.annotations.underline : underline} wrapper={Underline}>
-            <Wrapper condition={richText ? richText.annotations.code : code} wrapper={Code}>
-              {richText && richText.plain_text}
-              {children && children}
+    <Wrapper condition={richText ? richText.annotations.bold : bold} as={() => <Strong />}>
+      <Wrapper condition={richText ? richText.annotations.italic : italic} as={() => <Italic />}>
+        <Wrapper condition={richText ? richText.annotations.strikethrough : strike} as={() => <Strike />}>
+          <Wrapper condition={richText ? richText.annotations.underline : underline} as={() => <Underline />}>
+            <Wrapper condition={richText ? richText.annotations.code : code} as={() => <Code richText={richText} />}>
+              <>
+                {richText && richText.plain_text}
+                {children}
+              </>
             </Wrapper>
           </Wrapper>
         </Wrapper>
