@@ -51,7 +51,6 @@ export const CODE = style({
   borderRadius: '0.25rem',
   border: 'none',
   backgroundColor: THEMES.light_b2,
-  color: THEMES.highlight,
 });
 
 export const STRIKE = style({});
