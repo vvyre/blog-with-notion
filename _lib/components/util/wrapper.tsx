@@ -1,14 +1,14 @@
-import type { ElementType, ReactNode } from 'react';
+import { cloneElement, type ReactNode } from 'react';
 
 export function Wrapper({
+  as,
   condition = true,
-  wrapper,
   children,
 }: {
+  as: () => ReactNode & JSX.Element;
   condition?: boolean;
-  wrapper: ElementType | React.ComponentType;
-  children: ReactNode;
+  children?: ReactNode;
 }) {
-  const Component = wrapper;
-  return condition ? <Component>{children}</Component> : <>{children}</>;
+  if (!condition) return children;
+  else return cloneElement(as(), {}, children);
 }
