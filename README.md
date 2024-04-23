@@ -1,3 +1,5 @@
-# Blog Project
+# seungyoon-yu.com
 
-asdf
+[seungyoon-yu.com](https://seungyoon-yu.com)
+
+- Blog Project with Next.js and Notion
