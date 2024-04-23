@@ -82,8 +82,6 @@ export const RELEASED_DATE = style([
 export const POST_CATEGORY_TEXT = style({
   fontSize: '0.9rem',
   fontWeight: 400,
-  textDecoration: 'underline',
-  textUnderlineOffset: '0.125rem',
 });
 
 export const HOVER_TEXT = styleVariants({

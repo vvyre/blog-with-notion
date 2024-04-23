@@ -35,13 +35,14 @@ export function PostList({ pageData }: PostListProps) {
     <List as="li">
       <Flex justifyContents="center" styleVariant={POST_BOX}>
         <Txt as="Link" href={URI} styleVariant={`${POST_LINK} ${HOVER_TEXT[CATEGORY.color]}`}>
-          <Txt styleVariant={POST_CATEGORY_TEXT}>{CATEGORY.name}</Txt>
+          <Txt styleVariant={RELEASED_DATE}>
+            {DATE}・{CATEGORY.name}
+          </Txt>
           <Heading as="h1" styleVariant={POST_TITLE}>
             {TITLE}
           </Heading>
-          <Spacing size="0.25rem" />
+          <Spacing size="0.2rem" />
           <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
-          <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
         </Txt>
       </Flex>
     </List>
