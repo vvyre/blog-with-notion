@@ -23,6 +23,7 @@ import { Table } from './table/table';
 import { TableOfContents } from './table-of-contents/table-of-contents';
 import { TableRow } from './table-row/table-row';
 import { Bookmark } from './bookmark/bookmark';
+import { Toggle } from './toggle/toggle';
 
 export const blockComponentMap: BlockComponentMap = {
   audio: Divider,
@@ -57,7 +58,7 @@ export const blockComponentMap: BlockComponentMap = {
   table_row: TableRow,
   template: Divider,
   to_do: Divider,
-  toggle: Divider,
+  toggle: Toggle,
   unsupported: Divider,
   video: Divider,
 };
