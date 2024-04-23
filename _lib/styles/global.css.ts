@@ -27,7 +27,7 @@ globalStyle('body', {
 globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
   margin: 0,
   padding: 0,
-  letterSpacing: '0.25px',
+  wordSpacing: '-0.25px',
   fontWeight: 400,
 });
 
