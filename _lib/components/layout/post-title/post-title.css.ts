@@ -62,7 +62,7 @@ export const DEPTH3_TEXT = style({
   textAlign: 'center',
   fontWeight: 400,
   color: THEMES.white,
-  fontSize: '1.05rem',
+  fontSize: '0.9rem',
 });
 
 export const SUMMARY = style({

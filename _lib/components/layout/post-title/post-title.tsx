@@ -16,7 +16,9 @@ export function PostTitle({ ...meta }: GetPageResponse) {
   const category = getTags(meta)[0];
   return (
     <View styleVariant={BASE}>
-      <Txt styleVariant={DEPTH3_TEXT}>{category.name}</Txt>
+      <Txt styleVariant={DEPTH3_TEXT}>
+        {rel_date}・{category.name}
+      </Txt>
       <Spacing size="0.5rem" />
       <Heading as="h1" styleVariant={TITLE}>
         {title}
@@ -25,8 +27,6 @@ export function PostTitle({ ...meta }: GetPageResponse) {
       <Txt as="p" styleVariant={SUMMARY}>
         {summary}
       </Txt>
-      <Spacing size="0.25rem" />
-      <Txt styleVariant={DEPTH3_TEXT}>{rel_date}</Txt>
     </View>
   );
 }
