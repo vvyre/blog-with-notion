@@ -17,7 +17,7 @@ export function PostTitle({ ...meta }: GetPageResponse) {
   return (
     <View styleVariant={BASE}>
       <Txt styleVariant={DEPTH3_TEXT}>
-        {rel_date}・{category.name}
+        {category.name} – {rel_date}
       </Txt>
       <Spacing size="0.5rem" />
       <Heading as="h1" styleVariant={TITLE}>

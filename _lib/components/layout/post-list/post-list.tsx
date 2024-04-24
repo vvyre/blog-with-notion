@@ -36,7 +36,7 @@ export function PostList({ pageData }: PostListProps) {
       <Flex justifyContents="center" styleVariant={POST_BOX}>
         <Txt as="Link" href={URI} styleVariant={`${POST_LINK} ${HOVER_TEXT[CATEGORY.color]}`}>
           <Txt styleVariant={RELEASED_DATE}>
-            {DATE}・{CATEGORY.name}
+            {CATEGORY.name} – {DATE}
           </Txt>
           <Heading as="h1" styleVariant={POST_TITLE}>
             {TITLE}

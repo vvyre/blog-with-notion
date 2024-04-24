@@ -76,6 +76,7 @@ export const RELEASED_DATE = style([
     fontSize: '0.85rem',
     cursor: 'pointer',
     fontWeight: 400,
+    fontFeatureSettings: '"calt"',
   },
 ]);
 
