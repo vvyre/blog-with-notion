@@ -1,7 +1,9 @@
 import { BASE_GRID, BASE_PADDING } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
-export const BASE = style({});
+export const BASE = style({
+  minHeight: '75vh',
+});
 
 export const POST_GRID = style([
   BASE_PADDING,
