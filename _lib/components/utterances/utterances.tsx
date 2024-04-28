@@ -7,7 +7,7 @@ export function Utterances() {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.async = true;
+    script.defer = true;
     script.src = 'https://utteranc.es/client.js';
     script.setAttribute('repo', site_env.utterances);
     script.setAttribute('issue-term', 'pathname');
