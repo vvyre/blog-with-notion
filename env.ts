@@ -12,4 +12,4 @@ export const site_env = {
   utterances: process.env.NEXT_PUBLIC_UTTERANCES || '',
 };
 
-export const isr_revalidate_period = 3600;
+export const isr_revalidate_period = 1200;
