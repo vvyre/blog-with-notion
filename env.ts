@@ -10,6 +10,8 @@ export const site_env = {
   gv: process.env.GOOGLE_SITE_VERIFICATION || '',
   nv: process.env.NAVER_SITE_VERIFICATION || '',
   utterances: process.env.NEXT_PUBLIC_UTTERANCES || '',
+  giscus: process.env.NEXT_PUBLIC_GISCUS_REPO || '',
+  giscus_id: process.env.NEXT_PUBLIC_GISCUS_ID || '',
 };
 
 export const isr_revalidate_period = 1200;
