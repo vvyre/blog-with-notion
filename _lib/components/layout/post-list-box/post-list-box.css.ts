@@ -17,6 +17,7 @@ export const SELECTED = style({
   textDecoration: 'underline',
   textUnderlineOffset: '0.5rem',
   textDecorationColor: THEMES.theme,
+  textDecorationThickness: '2px',
 });
 
 export const CATEGORY = style({
