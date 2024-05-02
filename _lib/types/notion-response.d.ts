@@ -54,6 +54,6 @@ export type PageObject = {
   properties: PageProperties;
 } & GetPageResponse;
 
-export type PostListObject = GetPageResponse[];
+export type PostListObject = PageObject[];
 
 export type ExtendedPostListObject = Partial<PostListObject & { properties: PageProperties }>[];
