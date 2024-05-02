@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 export interface SpacingProps extends ComponentPropsWithoutRef<'div'> {
   size: string;
-  dir?: 'vert' | 'right' | 'left';
+  dir?: 'vert' | 'right' | 'left' | 'hori';
 }
 
 export const Spacing = memo(({ size, dir = 'vert' }: SpacingProps) => {
@@ -12,5 +12,7 @@ export const Spacing = memo(({ size, dir = 'vert' }: SpacingProps) => {
   const left_style = { marginLeft: size };
 
   if (dir === 'vert') return <div style={vert_style} />;
-  else return <span style={{ ...right_style, ...left_style }} />;
+  if (dir === 'left') return <span style={{ ...left_style }} />;
+  if (dir === 'right') return <span style={{ ...right_style }} />;
+  else return <span style={{ ...left_style }} />;
 });
