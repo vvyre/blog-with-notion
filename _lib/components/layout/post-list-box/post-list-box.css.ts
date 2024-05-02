@@ -1,3 +1,4 @@
+import { THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID, BASE_PADDING } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
@@ -11,3 +12,25 @@ export const POST_LIST_GRID = style([
 ]);
 
 export const POST_LIST_CENTERED = style([BASE_PADDING]);
+
+export const SELECTED = style({
+  textDecoration: 'underline',
+  textUnderlineOffset: '0.5rem',
+  textDecorationColor: THEMES.theme,
+});
+
+export const CATEGORY = style({
+  cursor: 'pointer',
+  padding: '0.25rem 1rem 0.25rem 1rem',
+  border: 'none',
+  backgroundColor: 'transparent',
+  selectors: {
+    '&:hover': {
+      textDecoration: 'underline',
+      textUnderlineOffset: '0.5rem',
+      textDecorationColor: THEMES.highlight,
+    },
+  },
+});
+
+export const FALLBACK = style({});

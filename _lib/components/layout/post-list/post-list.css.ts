@@ -68,6 +68,7 @@ export const POST_SUMMARY = style([
     fontSize: '0.9rem',
     cursor: 'pointer',
     fontWeight: 400,
+    textAlign: 'center',
   },
 ]);
 

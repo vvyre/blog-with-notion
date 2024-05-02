@@ -13,15 +13,9 @@ export default async function PostListPage() {
 
   return (
     <View as="main">
-      <Spacing size="5rem" />
+      <Spacing size="3rem" />
       <View as="section">
-        <PostListBox>
-          {postList.length > 0 ? (
-            postList.map(post => <PostList key={post.id} pageData={post} />)
-          ) : (
-            <Txt>작성된 글이 없어요.</Txt>
-          )}
-        </PostListBox>
+        <PostListBox postList={postList} />
       </View>
       <Spacing size="5rem" />
     </View>
