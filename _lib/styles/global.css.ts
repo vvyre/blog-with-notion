@@ -5,7 +5,7 @@ import { THEMES } from './colors.css';
 globalStyle('*, *:before, *:after', {
   boxSizing: 'inherit',
   MozBoxSizing: 'inherit',
-  fontFamily: `-apple-system, BlinkMacSystemFont, ${kor}, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" `,
+  fontFamily: `${kor}, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" `,
 });
 
 globalStyle('html', {
