@@ -2,12 +2,14 @@ import { THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
-  borderRadius: '0.75rem',
-  padding: '0.65rem 0.55rem 0.65rem 0.55rem',
+  cursor: 'pointer',
+  borderRadius: '0.5rem',
+  padding: '0.5rem 0.75rem 0.5rem 0.75rem',
+  border: `1px solid transparent`,
   backgroundColor: 'transparent',
   selectors: {
     '&:hover': {
-      backgroundColor: THEMES.light_b2,
+      outline: `1px solid ${THEMES.highlight}`,
     },
   },
 });
