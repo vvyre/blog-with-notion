@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { LOGO } from './logo.css';
 export function Logo() {
   return (
-    <Txt as="Link" href="/faq" styleVariant={LOGO}>
+    <Txt as="Link" href="/about" styleVariant={LOGO}>
       <Image
         unoptimized
         src={logo}

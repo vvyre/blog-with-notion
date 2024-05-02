@@ -13,7 +13,7 @@ import { Flex } from '../flex/flex';
 
 export function Header() {
   const PATH = usePathname();
-  const COLOR = PATH.includes('blog') || PATH.includes('faq') ? 'BLACK' : 'WHITE';
+  const COLOR = PATH.includes('blog') || PATH.includes('about') ? 'BLACK' : 'WHITE';
   const GITHUB_MARK = COLOR === 'BLACK' ? Github_white : Github_black;
   const BASE_CLASSNAME = `${BASE} ${THEME[COLOR]}`;
 
@@ -22,7 +22,7 @@ export function Header() {
       <View as="nav">
         <Flex justifyContents="spaceBetween" alignItems="center">
           <Logo />
-          {PATH.includes('blog') || PATH.includes('faq') ? (
+          {PATH.includes('blog') || PATH.includes('about') ? (
             <Btn as="Link" href={'/'} styleVariant={MENU}>
               <Image unoptimized className={MENU_ICON} alt="Go to the Post List" src={icon_list_white} />
             </Btn>

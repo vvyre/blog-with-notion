@@ -7,19 +7,19 @@ import { View } from '@/_lib/components/layout/view/view';
 import { POST_CENTERED } from '@/_lib/components/layout/post/article.css';
 import { isr_revalidate_period, notion_env } from '@/env';
 import { processedBlock } from '@/utils/process-block';
-import { FaqTitle } from '@/_lib/components/layout/faq-title/faq-title';
+import { AboutTitle } from '@/_lib/components/layout/about-title/about-title';
 import { getTitle } from '@/utils/get-title';
 
 export const revalidate = isr_revalidate_period;
 
 export default async function Post() {
-  const blocks = await processedBlock(await getPost(notion_env.faq_id));
-  const meta = await getPostMetaData(notion_env.faq_id);
+  const blocks = await processedBlock(await getPost(notion_env.about_id));
+  const meta = await getPostMetaData(notion_env.about_id);
 
   return (
     <View as="main">
       <Article>
-        <FaqTitle {...meta} />
+        <AboutTitle {...meta} />
         <View styleVariant={POST_CENTERED}>
           {blocks.map(b => (
             <Block key={b.id} block={b} />
@@ -32,7 +32,7 @@ export default async function Post() {
 }
 
 export async function generateMetadata() {
-  const postMeta = await getPostMetaData(notion_env.faq_id);
+  const postMeta = await getPostMetaData(notion_env.about_id);
   return {
     title: `${getTitle(postMeta)} – ${meta.siteTitle}`,
     description: meta.siteDiscription,

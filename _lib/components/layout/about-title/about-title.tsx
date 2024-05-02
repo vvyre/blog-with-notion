@@ -7,7 +7,7 @@ import { getLastEditedTime } from '@/utils/get-last-edited-time';
 
 import { BASE, TITLE_TEXT_PLACEMENT, TITLE, DATE_GRID_PLACEMENT, DEPTH3_TEXT } from '../post-title/post-title.css';
 
-export function FaqTitle({ ...meta }: GetPageResponse) {
+export function AboutTitle({ ...meta }: GetPageResponse) {
   return (
     <View styleVariant={BASE}>
       <View styleVariant={TITLE_TEXT_PLACEMENT}>
