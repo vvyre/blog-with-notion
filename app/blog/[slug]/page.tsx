@@ -13,6 +13,7 @@ import { View } from '@/_lib/components/layout/view/view';
 import { POST_CENTERED } from '@/_lib/components/layout/post/article.css';
 import { isr_revalidate_period } from '@/env';
 import { Giscus } from '@/_lib/components/giscus/giscus';
+import { getTags } from '@/utils/get-tags';
 
 export interface PostPageProps {
   params: {
@@ -29,6 +30,9 @@ export default async function Post({ params }: PostPageProps) {
   const meta = await getPostMetaData(matchPost.id);
   const blocks = await processedBlock(await getPost(matchPost.id));
 
+  const [category] = getTags(meta);
+  const isDevPost = category.color !== 'gray' && category.color !== 'default';
+
   return (
     <>
       <View as="main">
@@ -40,7 +44,7 @@ export default async function Post({ params }: PostPageProps) {
             ))}
 
             <Spacing size="5rem" />
-            <Giscus />
+            {isDevPost && <Giscus />}
           </View>
         </Article>
       </View>
