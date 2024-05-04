@@ -1,6 +1,6 @@
 import { getPostList } from '@/fetch/notion';
 import { View } from '@/_lib/components/layout/view/view';
-import { PostListBox } from '@/_lib/components/layout/post-list-box/post-list-box';
+import { PostListLayout } from '@/_lib/components/layout/post-list-layout/post-list-layout';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { isr_revalidate_period } from '@/env';
 
@@ -13,7 +13,7 @@ export default async function PostListPage() {
     <View as="main">
       <Spacing size="3rem" />
       <View as="section">
-        <PostListBox postList={postList} />
+        <PostListLayout postList={postList} />
       </View>
       <Spacing size="5rem" />
     </View>
