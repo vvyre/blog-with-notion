@@ -17,7 +17,7 @@ export const SELECTED = style({
   textDecoration: 'underline',
   textUnderlineOffset: '0.5rem',
   textDecorationColor: THEMES.theme,
-  textDecorationThickness: '2px',
+  textDecorationThickness: '3px',
 });
 
 export const CATEGORY = style({
@@ -29,7 +29,7 @@ export const CATEGORY = style({
     '&:hover': {
       textDecoration: 'underline',
       textUnderlineOffset: '0.5rem',
-      textDecorationColor: THEMES.highlight,
+      textDecorationColor: THEMES.gray,
     },
   },
 });
