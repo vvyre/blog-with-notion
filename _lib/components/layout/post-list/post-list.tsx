@@ -11,7 +11,6 @@ import { POST_BOX, POST_CATEGORY, POST_LINK, POST_SUMMARY, POST_TITLE, RELEASED_
 import { getDate } from '@/utils/get-date';
 import { Flex } from '../flex/flex';
 import { Category } from '../post-list-box/post-list-box';
-import { View } from '../view/view';
 
 interface PostListProps {
   pageData: GetPageResponse;
