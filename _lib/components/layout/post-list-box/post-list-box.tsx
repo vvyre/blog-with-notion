@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Txt } from '../../typography/txt/txt';
 import { PostList } from '../post-list/post-list';
 import { View } from '../view/view';
-import { CATEGORY, POST_LIST_CENTERED, SELECTED } from './post-list-box.css';
+import { CATEGORY, NOT_SELECTED, POST_LIST_CENTERED, SELECTED } from './post-list-box.css';
 import { PostListObject } from '@/_lib/types/notion-response';
 import { Btn } from '../../interaction/button/btn';
 import { Flex } from '../flex/flex';
@@ -36,7 +36,7 @@ export function PostListBox({ postList }: { postList: PostListObject }) {
           <>
             {idx > 0 && <Spacing size="0.5rem" dir="right" />}
             <Btn
-              styleVariant={`${current === category ? SELECTED : ''} ${CATEGORY}`}
+              styleVariant={`${CATEGORY} ${current === category ? SELECTED : NOT_SELECTED}`}
               type="button"
               onClick={() => setCategory(current)}>
               {current}

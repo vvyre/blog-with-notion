@@ -1,10 +1,10 @@
 import { meta } from '@/constants/meta';
 import { getPost, getPostMetaData } from '@/fetch/notion';
 import { Block } from '@/_lib/components/block/block';
-import { Article } from '@/_lib/components/layout/post/article';
+import { Article } from '@/_lib/components/layout/article/article';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { View } from '@/_lib/components/layout/view/view';
-import { POST_CENTERED } from '@/_lib/components/layout/post/article.css';
+import { POST_CENTERED } from '@/_lib/components/layout/article/article.css';
 import { isr_revalidate_period, notion_env } from '@/env';
 import { processedBlock } from '@/utils/process-block';
 import { AboutTitle } from '@/_lib/components/layout/about-title/about-title';

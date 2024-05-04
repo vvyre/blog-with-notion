@@ -58,7 +58,7 @@ export const TITLE = style({
   maxWidth: '42rem',
 });
 
-export const DEPTH3_TEXT = style({
+export const RELEASED_DATE = style({
   textAlign: 'center',
   fontWeight: 400,
   color: THEMES.white,

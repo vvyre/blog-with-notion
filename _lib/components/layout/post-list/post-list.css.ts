@@ -41,7 +41,7 @@ export const POST_LINK = style({
   borderRadius: '1.5rem',
   selectors: {
     '&:hover': {
-      color: THEMES.white,
+      backgroundColor: THEMES.light_b1,
     },
   },
   transition: 'all 0.2s',
@@ -69,6 +69,7 @@ export const POST_SUMMARY = style([
     cursor: 'pointer',
     fontWeight: 400,
     textAlign: 'center',
+    color: COLORS.gray,
   },
 ]);
 
@@ -78,6 +79,7 @@ export const RELEASED_DATE = style([
     cursor: 'pointer',
     fontWeight: 400,
     fontFeatureSettings: '"calt"',
+    color: COLORS.gray,
   },
 ]);
 

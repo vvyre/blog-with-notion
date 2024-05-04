@@ -34,10 +34,8 @@ export function PostList({ pageData }: PostListProps) {
   return (
     <List as="li">
       <Flex justifyContents="center" styleVariant={POST_BOX}>
-        <Txt as="Link" href={URI} styleVariant={`${POST_LINK} ${HOVER_TEXT[CATEGORY.color]}`}>
-          <Txt styleVariant={RELEASED_DATE}>
-            {CATEGORY.name} – {DATE}
-          </Txt>
+        <Txt as="Link" href={URI} styleVariant={POST_LINK}>
+          <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
           <Heading as="h1" styleVariant={POST_TITLE}>
             {TITLE}
           </Heading>
