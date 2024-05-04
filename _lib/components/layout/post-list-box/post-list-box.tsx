@@ -3,30 +3,30 @@ import { useState } from 'react';
 import { Txt } from '../../typography/txt/txt';
 import { PostList } from '../post-list/post-list';
 import { View } from '../view/view';
-import { CATEGORY, FALLBACK, POST_LIST_CENTERED, SELECTED } from './post-list-box.css';
+import { CATEGORY, POST_LIST_CENTERED, SELECTED } from './post-list-box.css';
 import { PostListObject } from '@/_lib/types/notion-response';
 import { Btn } from '../../interaction/button/btn';
 import { Flex } from '../flex/flex';
 import { Spacing } from '../spacing/spacing';
-import { Divider } from '../divider/divider';
 
-type Category = '전체' | '개발' | '잡기';
-const categories = ['전체', '개발', '잡기'] as const;
+type Category = '전체' | '개발' | '신변잡기' | '감상';
+const categories = ['전체', '개발', '신변잡기', '감상'] as const;
 
 export function PostListBox({ postList }: { postList: PostListObject }) {
   const [category, setCategory] = useState<Category>('전체');
-  const POSTS = {
+  const POSTS: Record<Category, PostListObject> = {
     전체: postList,
     개발: postList.filter(
       post =>
         post.properties.tags.multi_select[0].color !== 'gray' &&
         post.properties.tags.multi_select[0].color !== 'default'
     ),
-    잡기: postList.filter(
+    신변잡기: postList.filter(
       post =>
         post.properties.tags.multi_select[0].color === 'gray' ||
         post.properties.tags.multi_select[0].color === 'default'
     ),
+    감상: postList.filter(post => post.properties.tags.multi_select[0].color === 'yellow'),
   };
 
   return (
