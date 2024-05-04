@@ -27,6 +27,7 @@ export const CATEGORY = style({
   padding: '0.25rem 0.7rem 0.25rem 0.7rem',
   border: 'none',
   borderRadius: '0.75rem',
+  transition: '0.2s',
   selectors: {
     '&:hover': {
       backgroundColor: THEMES.light_b2,
