@@ -2,7 +2,7 @@ import { site_env } from '@/env';
 import logo from '#/img/logo.png';
 
 const TITLE = 'Seyu';
-const DESCRIPTION = 'Writings about life as a developer"';
+const DESCRIPTION = 'Writings about life as a developer';
 
 export const meta = {
   siteTitle: TITLE,
