@@ -5,7 +5,7 @@ import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 import { Txt } from '../../typography/txt/txt';
 import { getLastEditedTime } from '@/utils/get-last-edited-time';
 
-import { BASE, TITLE_TEXT_PLACEMENT, TITLE, DATE_GRID_PLACEMENT, DEPTH3_TEXT } from '../post-title/post-title.css';
+import { BASE, TITLE_TEXT_PLACEMENT, TITLE, DATE_GRID_PLACEMENT, RELEASED_DATE } from '../post-title/post-title.css';
 
 export function AboutTitle({ ...meta }: GetPageResponse) {
   return (
@@ -16,7 +16,7 @@ export function AboutTitle({ ...meta }: GetPageResponse) {
         </Heading>
       </View>
       <View styleVariant={DATE_GRID_PLACEMENT}>
-        <Txt styleVariant={DEPTH3_TEXT}>{`Last Updated ${getLastEditedTime(meta)}`}</Txt>
+        <Txt styleVariant={RELEASED_DATE}>{`Last Updated ${getLastEditedTime(meta)}`}</Txt>
       </View>
     </View>
   );
