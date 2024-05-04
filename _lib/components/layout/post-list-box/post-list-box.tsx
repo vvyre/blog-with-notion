@@ -9,11 +9,11 @@ import { Btn } from '../../interaction/button/btn';
 import { Flex } from '../flex/flex';
 import { Spacing } from '../spacing/spacing';
 
-type Category = '전체' | '개발' | '신변잡기' | '감상';
+export type Category = '전체' | '개발' | '신변잡기' | '감상';
 const categories = ['전체', '개발', '신변잡기', '감상'] as const;
 
 export function PostListBox({ postList }: { postList: PostListObject }) {
-  const [category, setCategory] = useState<Category>('전체');
+  const [selectedCategory, setCategory] = useState<Category>('전체');
   const POSTS: Record<Category, PostListObject> = {
     전체: postList,
     개발: postList.filter(post => post.properties.tags.multi_select[0].color === 'purple'),
@@ -28,7 +28,7 @@ export function PostListBox({ postList }: { postList: PostListObject }) {
           <>
             {idx > 0 && <Spacing size="0.5rem" dir="right" />}
             <Btn
-              styleVariant={`${CATEGORY} ${current === category ? SELECTED : NOT_SELECTED}`}
+              styleVariant={`${CATEGORY} ${current === selectedCategory ? SELECTED : NOT_SELECTED}`}
               type="button"
               onClick={() => setCategory(current)}>
               {current}
@@ -38,8 +38,8 @@ export function PostListBox({ postList }: { postList: PostListObject }) {
       </Flex>
       <Spacing size="3rem" />
       <View as="ul">
-        {POSTS[category].length > 0 ? (
-          postList.map(post => <PostList key={post.id} pageData={post} />)
+        {POSTS[selectedCategory].length > 0 ? (
+          postList.map(post => <PostList key={post.id} pageData={post} selectedCategory={selectedCategory} />)
         ) : (
           <Flex width="fill" justifyContents="center" alignItems="center">
             <Spacing size="10rem" />

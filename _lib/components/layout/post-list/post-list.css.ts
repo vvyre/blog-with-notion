@@ -83,9 +83,10 @@ export const RELEASED_DATE = style([
   },
 ]);
 
-export const POST_CATEGORY_TEXT = style({
-  fontSize: '0.9rem',
+export const POST_CATEGORY = style({
+  fontSize: '0.85rem',
   fontWeight: 400,
+  color: COLORS.gray,
 });
 
 export const HOVER_TEXT = styleVariants({
