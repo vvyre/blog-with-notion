@@ -6,7 +6,6 @@ import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
 import { Block } from '@/_lib/components/block/block';
 import { PostTitle } from '@/_lib/components/layout/post-title/post-title';
 import { Article } from '@/_lib/components/layout/article/article';
-import { Utterances } from '@/_lib/components/utterances/utterances';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
@@ -31,7 +30,7 @@ export default async function Post({ params }: PostPageProps) {
   const blocks = await processedBlock(await getPost(matchPost.id));
 
   const [category] = getTags(meta);
-  const isDevPost = category.color !== 'gray' && category.color !== 'default';
+  const isDevPost = category.color === 'purple';
 
   return (
     <>
@@ -42,9 +41,12 @@ export default async function Post({ params }: PostPageProps) {
             {blocks.map(b => (
               <Block key={b.id} block={b} />
             ))}
-
-            <Spacing size="5rem" />
-            {isDevPost && <Giscus />}
+            {isDevPost && (
+              <>
+                <Spacing size="5rem" />
+                <Giscus />
+              </>
+            )}
           </View>
         </Article>
       </View>

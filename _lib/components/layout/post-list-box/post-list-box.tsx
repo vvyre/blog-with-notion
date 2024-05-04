@@ -16,16 +16,8 @@ export function PostListBox({ postList }: { postList: PostListObject }) {
   const [category, setCategory] = useState<Category>('전체');
   const POSTS: Record<Category, PostListObject> = {
     전체: postList,
-    개발: postList.filter(
-      post =>
-        post.properties.tags.multi_select[0].color !== 'gray' &&
-        post.properties.tags.multi_select[0].color !== 'default'
-    ),
-    신변잡기: postList.filter(
-      post =>
-        post.properties.tags.multi_select[0].color === 'gray' ||
-        post.properties.tags.multi_select[0].color === 'default'
-    ),
+    개발: postList.filter(post => post.properties.tags.multi_select[0].color === 'purple'),
+    신변잡기: postList.filter(post => post.properties.tags.multi_select[0].color === 'blue'),
     감상: postList.filter(post => post.properties.tags.multi_select[0].color === 'yellow'),
   };
 
