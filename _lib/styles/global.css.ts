@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
-import { code, kor, latin } from './fonts.css';
+import { code, kor } from './fonts.css';
 import { THEMES } from './colors.css';
 
 globalStyle('*, *:before, *:after', {
@@ -39,9 +39,13 @@ globalStyle('input, button, select, textarea', {
   font: 'inherit',
 });
 
-globalStyle('button, input[type="submit"],input[type="reset"],input[type="button"]', {
-  cursor: 'pointer',
-});
+globalStyle(
+  'button, input[type="submit"], input[type="reset"], input[type="button"], input[type="reset"], input[type="file"]',
+  {
+    cursor: 'pointer',
+    color: THEMES.default,
+  }
+);
 
 globalStyle('textarea', {
   resize: 'none',
