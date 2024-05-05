@@ -18,5 +18,5 @@ export default meta;
 type Story = StoryObj<typeof PostList>;
 
 export const Primary: Story = {
-  render: () => <PostList pageData={postListMock} selectedCategory="전체" />,
+  render: () => <PostList pageData={postListMock} />,
 };
