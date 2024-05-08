@@ -13,7 +13,6 @@ globalStyle('html', {
   MozBoxSizing: 'border-box',
   fontSize: '100%',
   lineHeight: '1.65',
-  wordBreak: 'keep-all',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
 });
@@ -101,4 +100,14 @@ globalStyle('::selection, ::-moz-selection', {
 
 globalStyle('p, span, code, ul li, ol li, li', {
   fontSize: '100%',
+});
+
+globalStyle('p, p>span', {
+  textAlign: 'justify',
+  textJustify: 'inter-word',
+  hyphens: 'auto',
+});
+
+globalStyle('span>code', {
+  wordBreak: 'break-all',
 });
