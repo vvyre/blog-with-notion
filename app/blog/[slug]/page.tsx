@@ -41,11 +41,13 @@ export default async function Post({ params }: PostPageProps) {
             {blocks.map(b => (
               <Block key={b.id} block={b} />
             ))}
-            {isDevPost && (
+            {isDevPost ? (
               <>
                 <Spacing size="5rem" />
                 <Giscus />
               </>
+            ) : (
+              <Spacing size="10rem" />
             )}
           </View>
         </Article>
