@@ -30,7 +30,7 @@ globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
 });
 
 globalStyle('main', {
-  minHeight: 'calc(100vh - 10rem)',
+  minHeight: 'calc(100vh - 15rem)',
 });
 
 globalStyle('input, button, select, textarea', {
