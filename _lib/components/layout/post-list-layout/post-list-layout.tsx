@@ -8,20 +8,14 @@ import { PostListObject } from '@/_lib/types/notion-response';
 import { Btn } from '../../interaction/button/btn';
 import { Flex } from '../flex/flex';
 import { Spacing } from '../spacing/spacing';
-
-export type Category = '개발' | '신변잡기';
-
-type Posts = Record<Category, PostListObject>;
+import { Category, Posts, categories, init } from '@/constants/category';
+import { PostListFallback } from '../post-list/post-list-fallback';
 
 export function PostListLayout({ postList }: { postList: PostListObject }) {
-  const categories: Category[] = ['개발', '신변잡기'];
-  const POSTS: Posts = categories.reduce(
-    (acc: Posts, category) => {
-      acc[category] = postList.filter(post => post.properties.tags.multi_select[0].name === (category as string));
-      return acc;
-    },
-    { 개발: [], 신변잡기: [] }
-  );
+  const POSTS: Posts = categories.reduce((acc: Posts, category) => {
+    acc[category] = postList.filter(post => post.properties.tags.multi_select[0].name === (category as string));
+    return acc;
+  }, init);
 
   const [selectedCategory, setCategory] = useState<Category>('개발');
   return (
@@ -41,15 +35,10 @@ export function PostListLayout({ postList }: { postList: PostListObject }) {
       </Flex>
       <Spacing size="3rem" />
       <View as="ul">
-        {POSTS[selectedCategory].length > 0 ? (
-          postList.map(post => <PostList key={post.id} pageData={post} />)
+        {POSTS[selectedCategory]?.length > 0 ? (
+          POSTS[selectedCategory].map(post => <PostList key={post.id} pageData={post} />)
         ) : (
-          <Flex width="fill" justifyContents="center" alignItems="center">
-            <Spacing size="10rem" />
-            <Txt as="p" color="gray">
-              작성된 글이 없습니다
-            </Txt>
-          </Flex>
+          <PostListFallback />
         )}
       </View>
     </View>
