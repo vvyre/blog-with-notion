@@ -3,6 +3,7 @@ import { site_env } from '@/env';
 import { useEffect, useRef } from 'react';
 import { View } from '../layout/view/view';
 import { BASE } from './giscus.css';
+import { Spacing } from '../layout/spacing/spacing';
 
 export function Giscus() {
   const commentsEl = useRef<HTMLDivElement>(null);

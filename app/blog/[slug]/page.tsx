@@ -13,6 +13,9 @@ import { POST_CENTERED } from '@/_lib/components/layout/article/article.css';
 import { isr_revalidate_period } from '@/env';
 import { Giscus } from '@/_lib/components/giscus/giscus';
 import { getTags } from '@/utils/get-tags';
+import { Txt } from '@/_lib/components/typography/txt/txt';
+import { style } from '@vanilla-extract/css';
+import { GiscusFallback } from '@/_lib/components/giscus/giscus-fallback';
 
 export interface PostPageProps {
   params: {
@@ -41,14 +44,7 @@ export default async function Post({ params }: PostPageProps) {
             {blocks.map(b => (
               <Block key={b.id} block={b} />
             ))}
-            {isDevPost ? (
-              <>
-                <Spacing size="5rem" />
-                <Giscus />
-              </>
-            ) : (
-              <Spacing size="10rem" />
-            )}
+            {isDevPost ? <Giscus /> : <GiscusFallback />}
           </View>
         </Article>
       </View>
