@@ -11,11 +11,9 @@ export default async function PostListPage() {
 
   return (
     <View as="main">
-      <Spacing size="3rem" />
       <View as="section">
         <PostListLayout postList={postList} />
       </View>
-      <Spacing size="5rem" />
     </View>
   );
 }

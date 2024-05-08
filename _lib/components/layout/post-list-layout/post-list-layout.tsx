@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Txt } from '../../typography/txt/txt';
 import { PostList } from '../post-list/post-list';
 import { View } from '../view/view';
@@ -17,26 +17,26 @@ export function PostListLayout({ postList }: { postList: PostListObject }) {
     return acc;
   }, init);
 
-  const [selectedCategory, setCategory] = useState<Category>('개발');
+  const [selected, setCategory] = useState<Category>('개발');
   return (
     <View styleVariant={POST_LIST_CENTERED}>
       <Flex justifyContents="center">
-        {categories.map((current, idx) => (
-          <>
+        {categories.map((category, idx) => (
+          <Fragment key={category}>
             {idx > 0 && <Spacing size="0.5rem" dir="right" />}
             <Btn
-              styleVariant={`${CATEGORY} ${current === selectedCategory ? SELECTED : NOT_SELECTED}`}
+              styleVariant={`${CATEGORY} ${category === selected ? SELECTED : NOT_SELECTED}`}
               type="button"
-              onClick={() => setCategory(current)}>
-              {current}
+              onClick={() => setCategory(category)}>
+              {category}
             </Btn>
-          </>
+          </Fragment>
         ))}
       </Flex>
       <Spacing size="3rem" />
       <View as="ul">
-        {POSTS[selectedCategory]?.length > 0 ? (
-          POSTS[selectedCategory].map(post => <PostList key={post.id} pageData={post} />)
+        {POSTS[selected]?.length > 0 ? (
+          POSTS[selected].map(post => <PostList key={post.id} pageData={post} />)
         ) : (
           <PostListFallback />
         )}

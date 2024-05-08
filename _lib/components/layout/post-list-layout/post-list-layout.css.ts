@@ -11,7 +11,13 @@ export const POST_LIST_GRID = style([
   },
 ]);
 
-export const POST_LIST_CENTERED = style([BASE_PADDING]);
+export const POST_LIST_CENTERED = style([
+  BASE_PADDING,
+  {
+    marginTop: '5rem',
+    marginBottom: '3rem',
+  },
+]);
 
 export const SELECTED = style({
   backgroundColor: THEMES.light_b2,
