@@ -30,7 +30,7 @@ globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
 });
 
 globalStyle('main', {
-  minHeight: 'calc(100vh - 8.5rem)',
+  minHeight: 'calc(100vh - 10rem)',
 });
 
 globalStyle('input, button, select, textarea', {
@@ -102,7 +102,7 @@ globalStyle('p, span, code, ul li, ol li, li', {
   fontSize: '100%',
 });
 
-globalStyle('p, p>span', {
+globalStyle('article>p, article>p>span', {
   textAlign: 'justify',
   textJustify: 'inter-word',
   hyphens: 'auto',
