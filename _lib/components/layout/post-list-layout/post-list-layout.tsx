@@ -10,15 +10,20 @@ import { Flex } from '../flex/flex';
 import { Spacing } from '../spacing/spacing';
 
 export type Category = '개발' | '신변잡기';
-const categories = ['개발', '신변잡기'] as const;
+
+type Posts = Record<Category, PostListObject>;
 
 export function PostListLayout({ postList }: { postList: PostListObject }) {
-  const [selectedCategory, setCategory] = useState<Category>('개발');
-  const POSTS: Record<Category, PostListObject> = {
-    개발: postList.filter(post => post.properties.tags.multi_select[0].color === 'purple'),
-    신변잡기: postList.filter(post => post.properties.tags.multi_select[0].color === 'blue'),
-  };
+  const categories: Category[] = ['개발', '신변잡기'];
+  const POSTS: Posts = categories.reduce(
+    (acc: Posts, category) => {
+      acc[category] = postList.filter(post => post.properties.tags.multi_select[0].name === (category as string));
+      return acc;
+    },
+    { 개발: [], 신변잡기: [] }
+  );
 
+  const [selectedCategory, setCategory] = useState<Category>('개발');
   return (
     <View styleVariant={POST_LIST_CENTERED}>
       <Flex justifyContents="center">
