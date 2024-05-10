@@ -7,7 +7,7 @@ import { Txt } from '../../typography/txt/txt';
 import { getSummary } from '@/utils/get-summary';
 // import { getTags } from '@/utils/get-tags';
 import { Spacing } from '../spacing/spacing';
-import { POST_BOX, POST_LINK, POST_SUMMARY, POST_TITLE, RELEASED_DATE } from './post-list.css';
+import { POST_LINK, POST_LIST_BASE, POST_SUMMARY, POST_TITLE, RELEASED_DATE } from './post-list.css';
 import { getDate } from '@/utils/get-date';
 import { Flex } from '../flex/flex';
 
@@ -24,15 +24,15 @@ export function PostList({ pageData }: PostListProps) {
   const DATE = getDate(pageData);
 
   return (
-    <List as="li">
-      <Flex justifyContents="center" styleVariant={POST_BOX}>
+    <List as="li" styleVariant={POST_LIST_BASE}>
+      <Flex justifyContents="center">
         <Txt as="Link" href={URI} styleVariant={POST_LINK}>
-          <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
           <Heading as="h1" styleVariant={POST_TITLE}>
             {TITLE}
           </Heading>
           <Spacing size="0.2rem" />
           <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
+          <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
         </Txt>
       </Flex>
     </List>

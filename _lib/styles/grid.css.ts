@@ -19,8 +19,8 @@ export const BASE_PADDING = style({
   paddingLeft: '2rem',
   '@media': {
     '(0 <= width <= 768px)': {
-      paddingRight: '1.5rem',
-      paddingLeft: '1.5rem',
+      paddingRight: '0',
+      paddingLeft: '0',
     },
   },
 });

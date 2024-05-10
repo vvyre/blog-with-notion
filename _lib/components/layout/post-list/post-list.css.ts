@@ -10,10 +10,6 @@ export const GRID_SPAN = style({
   },
 });
 
-export const POST_BOX = style({
-  marginBottom: '1rem',
-});
-
 export const POST_THUMBNAIL = style({
   width: '100%',
   height: '12rem',
@@ -30,34 +26,53 @@ export const POST_TEXT = style({
   },
 });
 
-export const POST_LINK = style({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
+export const POST_LIST_BASE = style({
   cursor: 'pointer',
   color: THEMES.default,
-  padding: '1.5rem',
+  padding: '2rem',
+  marginBottom: '1rem',
   border: '1px solid transparent',
   borderRadius: '1.5rem',
+  width: '66vw',
+  maxWidth: '640px',
+  '@media': {
+    '(0 <= width <= 768px)': {
+      border: '1px solid transparent',
+      borderRadius: '0',
+      padding: '1.5rem',
+      width: '100vw',
+      maxWidth: '100vw',
+    },
+  },
   selectors: {
     '&:hover': {
       backgroundColor: THEMES.light_b1,
     },
   },
-  transition: 'all 0.2s',
+  transition: 'all 0.3s',
+});
+
+export const POST_LINK = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flexStart',
+  width: '66vw',
+  '@media': {
+    '(0 <= width <= 768px)': {
+      width: '100vw',
+    },
+  },
 });
 
 export const POST_TITLE = style([
   {
     cursor: 'pointer',
-    fontWeight: 700,
-    fontSize: '2.25rem',
+    fontWeight: 600,
+    fontSize: '1.5rem',
     lineHeight: '1.25',
-    maxWidth: '30rem',
-    textAlign: 'center',
     '@media': {
       '(0 <= width <= 768px)': {
-        fontSize: '1.75rem',
+        fontSize: '1.25rem',
       },
     },
   },
@@ -65,17 +80,21 @@ export const POST_TITLE = style([
 
 export const POST_SUMMARY = style([
   {
-    fontSize: '0.9rem',
+    fontSize: '1rem',
     cursor: 'pointer',
     fontWeight: 400,
-    textAlign: 'center',
     color: COLORS.gray,
+    '@media': {
+      '(0 <= width <= 768px)': {
+        fontSize: '0.9rem',
+      },
+    },
   },
 ]);
 
 export const RELEASED_DATE = style([
   {
-    fontSize: '0.85rem',
+    fontSize: '0.9rem',
     cursor: 'pointer',
     fontWeight: 400,
     fontFeatureSettings: '"calt"',

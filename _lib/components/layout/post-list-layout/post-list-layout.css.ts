@@ -16,6 +16,9 @@ export const POST_LIST_CENTERED = style([
   {
     marginTop: '5rem',
     marginBottom: '3rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 ]);
 
