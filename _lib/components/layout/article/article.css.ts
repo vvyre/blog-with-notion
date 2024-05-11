@@ -18,6 +18,12 @@ export const POST_CENTERED = style([
   {
     margin: '0 auto',
     paddingBottom: '0',
-    maxWidth: '42rem',
+    maxWidth: '45rem',
+    padding: '0 2rem 0 2rem',
+    '@media': {
+      '(0 <= width <= 768px)': {
+        padding: '0 1.5rem 0 1.5rem',
+      },
+    },
   },
 ]);

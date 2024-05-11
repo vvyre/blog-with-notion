@@ -55,7 +55,7 @@ export const TITLE = style({
   fontSize: '2.5rem',
   lineHeight: '1.2',
   width: '100%',
-  maxWidth: '42rem',
+  maxWidth: '45rem',
 });
 
 export const RELEASED_DATE = style({
