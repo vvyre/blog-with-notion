@@ -14,7 +14,7 @@ export const POST_LIST_GRID = style([
 export const POST_LIST_CENTERED = style([
   BASE_PADDING,
   {
-    margin: '8rem 2rem 3rem 2rem',
+    margin: '0 2rem 3rem 2rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

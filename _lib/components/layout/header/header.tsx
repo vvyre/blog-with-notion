@@ -22,13 +22,9 @@ export function Header() {
       <View as="nav">
         <Flex justifyContents="spaceBetween" alignItems="center">
           <Logo />
-          {PATH.includes('blog') || PATH.includes('about') ? (
+          {PATH.includes('blog') && (
             <Btn as="Link" href={'/'} styleVariant={MENU}>
               <Image unoptimized className={MENU_ICON} alt="Go to the Post List" src={icon_list_white} />
-            </Btn>
-          ) : (
-            <Btn as="Link" href={'/about'} styleVariant={MENU}>
-              <Image unoptimized className={MENU_ICON} alt="Go to the profile" src={icon_info} />
             </Btn>
           )}
           <Btn as="a" href="https://github.com/brewcold" target="_blank" styleVariant={MENU_GITHUB}>
