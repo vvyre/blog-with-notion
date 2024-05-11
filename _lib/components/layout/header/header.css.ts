@@ -108,12 +108,18 @@ export const MENU_GITHUB = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: '1rem',
   width: '1.75rem',
+  height: '1.75rem',
+  borderRadius: '1.75rem',
   backgroundColor: 'transparent',
   fontWeight: 700,
-  transition: 'border 0.15s',
-  borderBottom: `1px solid transparent`,
+  outline: `1px solid transparent`,
+  transition: 'outline 0.2s',
+  selectors: {
+    '&:hover': {
+      outline: `1px solid ${THEMES.highlight}`,
+    },
+  },
 });
 export const MENU_GITHUB_IMG = style({
   width: '1.35rem',
