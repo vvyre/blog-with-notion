@@ -25,7 +25,7 @@ export function PostListLayout({ postList }: { postList: PostListObject }) {
           <Fragment key={category}>
             {idx > 0 && <Spacing size="0.5rem" dir="right" />}
             <Btn
-              styleVariant={`${CATEGORY} ${category === selected ? SELECTED : NOT_SELECTED}`}
+              styleVariant={`${category === selected ? SELECTED : NOT_SELECTED} ${CATEGORY}`}
               type="button"
               onClick={() => setCategory(category)}>
               {category}
