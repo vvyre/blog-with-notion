@@ -28,38 +28,36 @@ export const POST_TEXT = style({
 
 export const POST_LIST_BASE = style({
   cursor: 'pointer',
-  color: THEMES.default,
-  padding: '2rem',
-  marginBottom: '1rem',
+  padding: '1.5rem 2rem 1.5rem 2rem',
   border: '1px solid transparent',
-  borderRadius: '1.5rem',
-  width: '66vw',
-  maxWidth: '640px',
+  borderBottom: `1px solid ${COLORS.gray_background}`,
+  width: '100vw',
   '@media': {
     '(0 <= width <= 768px)': {
       border: '1px solid transparent',
-      borderRadius: '0',
       padding: '1.5rem',
-      width: '100vw',
-      maxWidth: '100vw',
     },
   },
-  selectors: {
-    '&:hover': {
-      backgroundColor: THEMES.light_b1,
-    },
-  },
-  transition: 'all 0.3s',
 });
 
 export const POST_LINK = style({
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flexStart',
-  width: '66vw',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '100vw',
+  color: THEMES.default,
+  selectors: {
+    '&:hover': {
+      opacity: '0.5',
+    },
+  },
+  transition: 'all 0.3s',
   '@media': {
     '(0 <= width <= 768px)': {
       width: '100vw',
+      flexDirection: 'column',
+      alignItems: 'center',
     },
   },
 });
@@ -70,9 +68,11 @@ export const POST_TITLE = style([
     fontWeight: 600,
     fontSize: '1.5rem',
     lineHeight: '1.25',
+    width: '100%',
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '1.25rem',
+        textAlign: 'center',
       },
     },
   },
@@ -84,9 +84,11 @@ export const POST_SUMMARY = style([
     cursor: 'pointer',
     fontWeight: 400,
     color: COLORS.gray,
+    width: '100%',
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '0.9rem',
+        textAlign: 'center',
       },
     },
   },

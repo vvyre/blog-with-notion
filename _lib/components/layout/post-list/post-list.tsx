@@ -10,6 +10,7 @@ import { Spacing } from '../spacing/spacing';
 import { POST_LINK, POST_LIST_BASE, POST_SUMMARY, POST_TITLE, RELEASED_DATE } from './post-list.css';
 import { getDate } from '@/utils/get-date';
 import { Flex } from '../flex/flex';
+import { View } from '../view/view';
 
 interface PostListProps {
   pageData: GetPageResponse;
@@ -27,12 +28,16 @@ export function PostList({ pageData }: PostListProps) {
     <List as="li" styleVariant={POST_LIST_BASE}>
       <Flex justifyContents="center">
         <Txt as="Link" href={URI} styleVariant={POST_LINK}>
-          <Heading as="h1" styleVariant={POST_TITLE}>
-            {TITLE}
-          </Heading>
-          <Spacing size="0.2rem" />
-          <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
-          <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
+          <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
+            <Heading as="h1" styleVariant={POST_TITLE}>
+              {TITLE}
+            </Heading>
+            <Spacing size="0.2rem" />
+            <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
+          </Flex>
+          <View>
+            <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
+          </View>
         </Txt>
       </Flex>
     </List>
