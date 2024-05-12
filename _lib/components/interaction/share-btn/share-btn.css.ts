@@ -22,7 +22,7 @@ export const POST_SHARE = style({
   borderRadius: '1rem',
   backgroundColor: THEMES.light_b1,
   cursor: 'pointer',
-  transition: 'background-color 0.2s',
+  transition: 'background-color width 0.2s',
   selectors: {
     '&:hover': {
       backgroundColor: THEMES.light_b2,

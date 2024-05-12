@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.14",
+    "@syyu/util": "^1.0.8",
     "@vanilla-extract/css": "^1.14.1",
     "@vanilla-extract/dynamic": "^2.1.0",
     "framer-motion": "^11.0.3",
