@@ -6,5 +6,4 @@ Allow: /
 Host: https://seungyoon-yu.com
 
 # Sitemaps
-Sitemap: https://seungyoon-yu.com/sitemap.xml
 Sitemap: https://seungyoon-yu.com/server-sitemap.xml
