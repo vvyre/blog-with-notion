@@ -6,6 +6,7 @@ const DESCRIPTION = 'Writings about life as a developer';
 
 export const meta = {
   siteTitle: TITLE,
+  siteDomain: 'seungyoon-yu.com',
   siteDiscription: DESCRIPTION,
   og: {
     url: site_env.root,
