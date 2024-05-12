@@ -1,5 +1,5 @@
 import { getPost } from '@/fetch/notion';
-import { Block } from '@/_lib/components/block/block';
+import { Block } from '@/_lib/components/_blocks/block';
 import { Article } from '@/_lib/components/layout/article/article';
 import { View } from '@/_lib/components/layout/view/view';
 import { isr_revalidate_period, notion_env } from '@/env';

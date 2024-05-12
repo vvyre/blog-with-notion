@@ -3,7 +3,7 @@ import { getTitle } from '@/utils/get-title';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { meta } from '@/constants/meta';
 import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
-import { Block } from '@/_lib/components/block/block';
+import { Block } from '@/_lib/components/_blocks/block';
 import { PostTitle } from '@/_lib/components/layout/post-title/post-title';
 import { Article } from '@/_lib/components/layout/article/article';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
