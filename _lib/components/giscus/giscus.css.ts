@@ -8,7 +8,7 @@ export const BASE = style({
 });
 
 export const FALLBACK_BASE = style({
-  marginTop: '4rem',
+  marginTop: '6rem',
   marginBottom: '2rem',
 });
 

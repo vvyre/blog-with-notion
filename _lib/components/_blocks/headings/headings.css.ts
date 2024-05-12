@@ -1,6 +1,8 @@
 import { style } from '@vanilla-extract/css';
 
-export const BASE = style({});
+export const BASE = style({
+  verticalAlign: 'middle',
+});
 
 export const HEADING_1 = style([
   BASE,

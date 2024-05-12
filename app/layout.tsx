@@ -1,5 +1,5 @@
 import { Header } from '@/_lib/components/layout/header/header';
-import '@/_lib/components/block/code/hljs.css';
+import '@/_lib/components/_blocks/code/hljs.css';
 import '../_lib/styles/global.css';
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
