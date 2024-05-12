@@ -2,7 +2,7 @@ import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
-  margin: 0,
+  marginLeft: '0.75rem',
   padding: 0,
   display: 'inline-flex',
   color: COLORS.gray,
