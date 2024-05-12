@@ -20,7 +20,7 @@ export function PostListLayout({ postList }: { postList: PostListObject }) {
   const [selected, setCategory] = useState<Category>('개발');
   return (
     <View styleVariant={POST_LIST_CENTERED}>
-      <Flex justifyContents="center">
+      {/* <Flex justifyContents="center">
         {categories.map((category, idx) => (
           <Fragment key={category}>
             {idx > 0 && <Spacing size="0.5rem" dir="right" />}
@@ -32,8 +32,8 @@ export function PostListLayout({ postList }: { postList: PostListObject }) {
             </Btn>
           </Fragment>
         ))}
-      </Flex>
-      <Spacing size="3rem" />
+      </Flex> */}
+      {/* <Spacing size="3rem" /> */}
       <View as="ul">
         {POSTS[selected]?.length > 0 ? (
           POSTS[selected].map(post => <PostList key={post.id} pageData={post} />)
