@@ -1,4 +1,3 @@
-'use client';
 import { Fragment, useState } from 'react';
 import { Txt } from '../../typography/txt/txt';
 import { PostList } from '../post-list/post-list';
@@ -12,12 +11,12 @@ import { Category, Posts, categories, init } from '@/constants/category';
 import { PostListFallback } from '../post-list/post-list-fallback';
 
 export function PostListLayout({ postList }: { postList: PostListObject }) {
-  const POSTS: Posts = categories.reduce((acc: Posts, category) => {
-    acc[category] = postList.filter(post => post.properties.tags.multi_select[0].name === (category as string));
-    return acc;
-  }, init);
+  // const POSTS: Posts = categories.reduce((acc: Posts, category) => {
+  //   acc[category] = postList.filter(post => post.properties.tags.multi_select[0].name === (category as string));
+  //   return acc;
+  // }, init);
 
-  const [selected, setCategory] = useState<Category>('개발');
+  // const [selected, setCategory] = useState<Category>('개발');
   return (
     <View styleVariant={POST_LIST_CENTERED}>
       {/* <Flex justifyContents="center">
@@ -35,11 +34,7 @@ export function PostListLayout({ postList }: { postList: PostListObject }) {
       </Flex> */}
       {/* <Spacing size="3rem" /> */}
       <View as="ul">
-        {POSTS[selected]?.length > 0 ? (
-          POSTS[selected].map(post => <PostList key={post.id} pageData={post} />)
-        ) : (
-          <PostListFallback />
-        )}
+        {postList?.length > 0 ? postList.map(post => <PostList key={post.id} pageData={post} />) : <PostListFallback />}
       </View>
     </View>
   );
