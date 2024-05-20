@@ -11,9 +11,10 @@ import { POST_LINK, POST_LIST_BASE, POST_SUMMARY, POST_TITLE, RELEASED_DATE } fr
 import { getDate } from '@/utils/get-date';
 import { Flex } from '../flex/flex';
 import { View } from '../view/view';
+import { PageObject } from '@/_lib/types/notion-response';
 
 interface PostListProps {
-  pageData: GetPageResponse;
+  pageData: PageObject;
 }
 
 export function PostList({ pageData }: PostListProps) {

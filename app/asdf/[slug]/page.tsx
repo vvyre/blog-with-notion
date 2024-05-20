@@ -34,9 +34,6 @@ export default async function Post({ params }: PostPageProps) {
   const meta = await getPostMetaData(matchPost.id);
   const blocks = await processedBlock(await getPost(matchPost.id));
 
-  const [category] = getTags(meta);
-  const isDevPost = category.color === 'purple';
-
   return (
     <>
       <View as="main">
@@ -48,7 +45,7 @@ export default async function Post({ params }: PostPageProps) {
             ))}
             <Spacing size="2rem" />
             <ShareBtn />
-            {isDevPost ? <Giscus /> : <GiscusFallback />}
+            <GiscusFallback />
           </View>
         </Article>
       </View>
