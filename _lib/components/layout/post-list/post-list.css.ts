@@ -57,7 +57,7 @@ export const POST_LINK = style({
     '(0 <= width <= 768px)': {
       width: '100vw',
       flexDirection: 'column',
-      alignItems: 'center',
+      alignItems: 'flex-start',
     },
   },
 });
@@ -72,7 +72,6 @@ export const POST_TITLE = style([
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '1.25rem',
-        textAlign: 'center',
       },
     },
   },
@@ -88,7 +87,6 @@ export const POST_SUMMARY = style([
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '0.9rem',
-        textAlign: 'center',
       },
     },
   },
