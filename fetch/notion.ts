@@ -11,9 +11,9 @@ import {
 import { PageObject, PostListObject } from '@/_lib/types/notion-response';
 import { NotionBlock, NotionBlockWithChildren } from '@/_lib/types/block';
 
-export const getPostList = async (): Promise<PostListObject> => {
+export const getPostList = async (database_id: string): Promise<PostListObject> => {
   const query: QueryDatabaseParameters = {
-    database_id: notion_env.database_id,
+    database_id,
     sorts: [
       {
         property: 'date',
@@ -42,13 +42,13 @@ const POST_LIST_CACHE: { POSTS: PostListObject; TIMESTAMP: number; CACHE_DURATIO
   CACHE_DURATION: 10000,
 };
 
-export const getCachedPostList = async () => {
+export const getCachedPostList = async (database_id: string) => {
   const now = Date.now();
   if (POST_LIST_CACHE.POSTS.length > 0 && now - POST_LIST_CACHE.TIMESTAMP < POST_LIST_CACHE.CACHE_DURATION) {
     console.log('cache called');
     return POST_LIST_CACHE.POSTS;
   } else {
-    const posts = await getPostList();
+    const posts = await getPostList(database_id);
     console.log('fetch called');
     POST_LIST_CACHE.POSTS = posts || [];
     POST_LIST_CACHE.TIMESTAMP = now;

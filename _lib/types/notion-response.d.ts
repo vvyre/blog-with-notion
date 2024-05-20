@@ -34,6 +34,7 @@ export type PageProperties = {
   date: { date: WrittenDate };
   title: { title: [{ rich_text: RichText; plain_text: string }] };
   summary: { rich_text: RichText[] };
+  slug: { rich_text: RichText[] };
   published: {};
   thumbnail: { thumbnail: [] };
   tags: { multi_select: Tag[] };
@@ -52,6 +53,7 @@ export type PageMetaDataResponse = {
 
 export type PageObject = {
   properties: PageProperties;
+  last_edited_time: string;
 } & GetPageResponse;
 
 export type PostListObject = PageObject[];
