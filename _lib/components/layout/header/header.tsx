@@ -10,10 +10,12 @@ import icon_info from '#/img/icons/info.svg';
 import icon_list_white from '#/img/icons/list-white.svg';
 import Image from 'next/image';
 import { Flex } from '../flex/flex';
+import { NavShareBtn } from '../../interaction/share-btn/share-btn-nav';
 
 export function Header() {
   const PATH = usePathname();
-  const COLOR = PATH.includes('blog') || PATH.includes('about') ? 'BLACK' : 'WHITE';
+  const IS_POST = PATH.includes('engineering') || PATH.includes('asdf');
+  const COLOR = IS_POST ? 'BLACK' : 'WHITE';
   const GITHUB_MARK = COLOR === 'BLACK' ? Github_white : Github_black;
   const BASE_CLASSNAME = `${BASE} ${THEME[COLOR]}`;
 
@@ -22,11 +24,7 @@ export function Header() {
       <View as="nav">
         <Flex justifyContents="spaceBetween" alignItems="center">
           <Logo />
-          {PATH.includes('blog') && (
-            <Btn as="Link" href={'/'} styleVariant={MENU}>
-              <Image unoptimized className={MENU_ICON} alt="Go to the Post List" src={icon_list_white} />
-            </Btn>
-          )}
+          {IS_POST && <NavShareBtn />}
           <Btn as="a" href="https://github.com/brewcold" target="_blank" styleVariant={MENU_GITHUB}>
             <Image unoptimized className={MENU_GITHUB_IMG} alt="Seungyoon Yu's Github" src={GITHUB_MARK} />
           </Btn>
