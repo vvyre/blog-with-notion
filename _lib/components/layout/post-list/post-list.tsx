@@ -17,7 +17,7 @@ interface PostListProps {
 }
 
 export function PostList({ pageData }: PostListProps) {
-  const URI = `/blog/${parsedSlug(pageData)}`;
+  const URI = `/engineering/${parsedSlug(pageData)}`;
   // const TAGS = getTags(pageData);
   // const CATEGORY = TAGS[0].name;
   const TITLE = getTitle(pageData);
