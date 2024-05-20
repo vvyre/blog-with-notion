@@ -45,7 +45,6 @@ export default async function Post({ params }: PostPageProps) {
             ))}
             <Spacing size="2rem" />
             <ShareBtn />
-            <GiscusFallback />
           </View>
         </Article>
       </View>

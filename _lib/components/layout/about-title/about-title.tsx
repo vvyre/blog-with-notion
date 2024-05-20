@@ -1,13 +1,13 @@
 import { Heading } from '../../typography/heading/heading';
 import { getTitle } from '@/utils/get-title';
 import { View } from '../view/view';
-import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 import { Txt } from '../../typography/txt/txt';
 import { getLastEditedTime } from '@/utils/get-last-edited-time';
 
 import { BASE, TITLE_TEXT_PLACEMENT, TITLE, DATE_GRID_PLACEMENT, RELEASED_DATE } from '../post-title/post-title.css';
+import { PageObject } from '@/_lib/types/notion-response';
 
-export function AboutTitle({ ...meta }: GetPageResponse) {
+export function AboutTitle({ ...meta }: PageObject) {
   return (
     <View styleVariant={BASE}>
       <View styleVariant={TITLE_TEXT_PLACEMENT}>

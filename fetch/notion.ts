@@ -56,10 +56,10 @@ export const getCachedPostList = async (database_id: string) => {
   }
 };
 
-export const getPostMetaData = async (page_id: string): Promise<GetPageResponse> => {
+export const getPostMetaData = async (page_id: string): Promise<PageObject> => {
   const result = await notion.pages.retrieve({ page_id });
 
-  return result;
+  return result as PageObject;
 };
 
 export const getPost = async (block_id: string): Promise<(NotionBlock | NotionBlockWithChildren)[]> => {

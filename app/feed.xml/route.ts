@@ -1,6 +1,6 @@
 import RSS from 'rss';
 import { meta } from '@/constants/meta';
-import { site_env } from '@/env';
+import { notion_env, site_env } from '@/env';
 import { getCachedPostList } from '@/fetch/notion';
 import { getTitle } from '@/utils/get-title';
 import { getSummary } from '@/utils/get-summary';
@@ -18,7 +18,7 @@ export async function GET() {
     pubDate: new Date(),
   });
   try {
-    const postList = await getCachedPostList();
+    const postList = await getCachedPostList(notion_env.database_id);
     postList.map(post => {
       feed.item({
         title: getTitle(post),

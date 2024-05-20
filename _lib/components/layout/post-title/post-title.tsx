@@ -5,10 +5,10 @@ import { Txt } from '../../typography/txt/txt';
 import { View } from '../view/view';
 import { BASE, TITLE, SUMMARY, RELEASED_DATE } from './post-title.css';
 import { getSummary } from '@/utils/get-summary';
-import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 import { Spacing } from '../spacing/spacing';
+import { PageObject } from '@/_lib/types/notion-response';
 
-export function PostTitle({ ...meta }: GetPageResponse) {
+export function PostTitle({ ...meta }: PageObject) {
   const title = getTitle(meta);
   const summary = getSummary(meta);
   const rel_date = getDate(meta);
