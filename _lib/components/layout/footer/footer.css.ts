@@ -5,7 +5,7 @@ import { style } from '@vanilla-extract/css';
 export const BASE = style([
   {
     marginTop: '2rem',
-    marginBottom: '2rem',
+    marginBottom: '5rem',
     textAlign: 'center',
     width: '100%',
   },

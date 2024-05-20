@@ -9,13 +9,23 @@ export const THEME = styleVariants({
 
 export const BASE = style([
   {
-    height: 'fit-content',
-    position: 'sticky',
+    height: '2.75rem',
+    width: '100%',
     zIndex: '999',
-    top: 0,
     padding: '0.5rem 2rem 0.5rem 2rem',
     '@media': {
-      '(0px <= width <= 768px)': {
+      '(width > 768px)': {
+        position: 'sticky',
+        top: 0,
+      },
+      '(480px < width <= 768px)': {
+        position: 'sticky',
+        top: 0,
+        padding: '0.5rem 1.5rem 0.5rem 1.5rem',
+      },
+      '(0 <= width <= 480px)': {
+        position: 'fixed',
+        bottom: 0,
         padding: '0.5rem 1.5rem 0.5rem 1.5rem',
       },
     },
