@@ -1,16 +1,20 @@
 import { PageObject } from '@/_lib/types/notion-response';
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
-export const postListMock = {
+export const postListMock: PageObject = {
   object: 'page',
   id: '123',
   created_time: '',
   last_edited_time: '',
-  created_by: {},
-  last_edited_by: {},
+  created_by: {
+    id: '',
+    object: 'user',
+  },
+  last_edited_by: {
+    id: '',
+    object: 'user',
+  },
   cover: null,
   icon: null,
-  parent: {},
   archived: false,
   properties: {
     ID: {
@@ -48,6 +52,9 @@ export const postListMock = {
     summary: {
       rich_text: [],
     },
+    slug: {
+      rich_text: [],
+    },
     published: true,
     thumbnail: {
       thumbnail: [],
@@ -58,4 +65,4 @@ export const postListMock = {
   },
   url: '',
   public_url: null,
-} as PageObject;
+};
