@@ -13,11 +13,6 @@ export const BASE = style({
   borderRadius: '2rem',
   backgroundColor: 'transparent',
   cursor: 'pointer',
-  selectors: {
-    '&:hover': {
-      outline: `1px solid ${THEMES.light_b3}`,
-    },
-  },
 });
 
 export const POST_SHARE = style({
