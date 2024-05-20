@@ -36,22 +36,33 @@ export const getPostList = async (database_id: string): Promise<PostListObject> 
   return response.results as PostListObject;
 };
 
-const POST_LIST_CACHE: { POSTS: PostListObject; TIMESTAMP: number; CACHE_DURATION: number } = {
-  POSTS: [],
-  TIMESTAMP: 0,
-  CACHE_DURATION: 10000,
+const POST_LIST_CACHE: { [key: string]: { POSTS: PostListObject; TIMESTAMP: number; CACHE_DURATION: number } } = {
+  id: {
+    POSTS: [],
+    TIMESTAMP: 0,
+    CACHE_DURATION: 10000,
+  },
 };
 
 export const getCachedPostList = async (database_id: string) => {
   const now = Date.now();
-  if (POST_LIST_CACHE.POSTS.length > 0 && now - POST_LIST_CACHE.TIMESTAMP < POST_LIST_CACHE.CACHE_DURATION) {
+  if (!POST_LIST_CACHE[database_id])
+    POST_LIST_CACHE[database_id] = {
+      POSTS: [],
+      TIMESTAMP: 0,
+      CACHE_DURATION: 10000,
+    };
+  if (
+    POST_LIST_CACHE[database_id].POSTS.length > 0 &&
+    now - POST_LIST_CACHE[database_id].TIMESTAMP < POST_LIST_CACHE[database_id].CACHE_DURATION
+  ) {
     console.log('cache called');
-    return POST_LIST_CACHE.POSTS;
+    return POST_LIST_CACHE[database_id].POSTS;
   } else {
     const posts = await getPostList(database_id);
     console.log('fetch called');
-    POST_LIST_CACHE.POSTS = posts || [];
-    POST_LIST_CACHE.TIMESTAMP = now;
+    POST_LIST_CACHE[database_id].POSTS = posts || [];
+    POST_LIST_CACHE[database_id].TIMESTAMP = now;
     return posts;
   }
 };

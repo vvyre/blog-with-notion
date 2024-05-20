@@ -29,8 +29,7 @@ export const revalidate = isr_revalidate_period;
 
 export default async function Post({ params }: PostPageProps) {
   const posts = await getCachedPostList(notion_env.database_id);
-  const [matchPost] = posts.filter(post => parsedSlug(post) == params.slug);
-
+  const [matchPost] = posts.filter(post => parsedSlug(post) === params.slug);
   const meta = await getPostMetaData(matchPost.id);
   const blocks = await processedBlock(await getPost(matchPost.id));
 
