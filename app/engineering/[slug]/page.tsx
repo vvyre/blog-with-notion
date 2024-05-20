@@ -10,7 +10,7 @@ import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
 import { POST_CENTERED } from '@/_lib/components/layout/article/article.css';
-import { isr_revalidate_period } from '@/env';
+import { isr_revalidate_period, notion_env } from '@/env';
 import { Giscus } from '@/_lib/components/giscus/giscus';
 import { getTags } from '@/utils/get-tags';
 import { Txt } from '@/_lib/components/typography/txt/txt';
@@ -28,14 +28,11 @@ export interface PostPageProps {
 export const revalidate = isr_revalidate_period;
 
 export default async function Post({ params }: PostPageProps) {
-  const posts = await getCachedPostList();
+  const posts = await getCachedPostList(notion_env.database_id);
   const [matchPost] = posts.filter(post => parsedSlug(post) == params.slug);
 
   const meta = await getPostMetaData(matchPost.id);
   const blocks = await processedBlock(await getPost(matchPost.id));
-
-  const [category] = getTags(meta);
-  const isDevPost = category.color === 'purple';
 
   return (
     <>
@@ -48,7 +45,7 @@ export default async function Post({ params }: PostPageProps) {
             ))}
             <Spacing size="2rem" />
             <ShareBtn />
-            {isDevPost ? <Giscus /> : <GiscusFallback />}
+            <Giscus />
           </View>
         </Article>
       </View>
@@ -57,7 +54,7 @@ export default async function Post({ params }: PostPageProps) {
 }
 
 export async function generateStaticParams() {
-  const posts = await getCachedPostList();
+  const posts = await getCachedPostList(notion_env.database_id);
 
   return posts.map(post => {
     return {
@@ -67,7 +64,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PostPageProps) {
-  const posts = await getCachedPostList();
+  const posts = await getCachedPostList(notion_env.database_id);
   const [matchPost] = posts.filter(post => parsedSlug(post) === params.slug);
 
   return {

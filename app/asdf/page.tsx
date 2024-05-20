@@ -8,7 +8,7 @@ import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 export const revalidate = isr_revalidate_period;
 
 export default async function PostListPage() {
-  const postList = await getCachedPostList(notion_env.database_id);
+  const postList = await getCachedPostList(notion_env.asdf_id);
 
   return (
     <View as="main">
