@@ -9,11 +9,11 @@ import { cleanUrl } from '@/utils/clean-url';
 import { Flex } from '../../layout/flex/flex';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { useClipboard } from '@/hooks/use-clipboard';
+import { useClipboard } from '@/_lib/react/use-clipboard';
 
 export function ShareBtn({ subtitle }: { subtitle?: string }) {
   const path = usePathname();
-  const { copy, isCopied } = useClipboard();
+  const { copy, isCopied } = useClipboard(1000);
 
   const [label, setLabel] = useState<string>('포스트 링크 공유');
   useEffect(() => {
