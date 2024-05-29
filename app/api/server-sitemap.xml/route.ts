@@ -6,7 +6,7 @@ import { getServerSideSitemap } from 'next-sitemap';
 export async function GET(request: Request) {
   const posts = await getCachedPostList(notion_env.database_id);
 
-  const slugs = posts.map(post => `${site_env.root}/blog/${parsedSlug(post)}`);
+  const slugs = posts.map(post => `${site_env.blog}${parsedSlug(post)}`);
 
   return getServerSideSitemap(
     slugs.map(slug => {
