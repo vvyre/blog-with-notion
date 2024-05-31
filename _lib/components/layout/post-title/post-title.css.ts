@@ -47,7 +47,7 @@ export const TITLE_TEXT_PLACEMENT = style({
 });
 
 export const TITLE = style({
-  fontWeight: 700,
+  fontWeight: 600,
   fontSize: '2.5rem',
   lineHeight: '1.2',
   width: '100%',

@@ -4,9 +4,11 @@ import { Article } from '@/_lib/components/layout/article/article';
 import { View } from '@/_lib/components/layout/view/view';
 import { isr_revalidate_period, notion_env, site_env } from '@/env';
 import { processedBlock } from '@/utils/process-block';
-import { ABOUT, ABOUT_INNER } from './about.css';
+import { ABOUT, ABOUT_INNER, ABOUT_SITE_TITLE } from './about.css';
 import { Heading } from '../typography/heading/heading';
 import { meta } from '@/constants/meta';
+import { GithubLink } from '../layout/logo/github';
+import { Spacing } from '../layout/spacing/spacing';
 
 export const revalidate = isr_revalidate_period;
 
@@ -16,10 +18,13 @@ export default async function About() {
   return (
     <Article styleVariants={ABOUT}>
       <View styleVariant={ABOUT_INNER}>
-        <Heading as="h1">{meta.siteDomain}</Heading>
+        <Heading as="h1" styleVariant={ABOUT_SITE_TITLE}>
+          {meta.siteDomain}
+        </Heading>
         {blocks.map(b => (
           <Block key={b.id} block={b} />
         ))}
+        <GithubLink />
       </View>
     </Article>
   );

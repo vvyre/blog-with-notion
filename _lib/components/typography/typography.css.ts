@@ -71,4 +71,10 @@ export const LINK = style({
   textUnderlineOffset: '0.2rem',
   textDecorationThickness: '1px',
   wordSpacing: '-0.325rem',
+  transition: 'color 0.1s ease-out',
+  selectors: {
+    '&:hover': {
+      color: THEMES.highlight,
+    },
+  },
 });

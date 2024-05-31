@@ -1,4 +1,4 @@
-import { Header } from '@/_lib/components/layout/header/header';
+import { Navigation } from '@/_lib/components/layout/navigation/navigation';
 import '@/_lib/components/_blocks/code/hljs.css';
 import '../_lib/styles/global.css';
 import { meta } from '@/constants/meta';
@@ -37,7 +37,7 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
       </Head>
       <View as="body">
-        <Header />
+        <Navigation />
         {children}
         <Footer />
       </View>

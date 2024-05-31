@@ -65,7 +65,7 @@ export const POST_LINK = style({
 export const POST_TITLE = style([
   {
     cursor: 'pointer',
-    fontWeight: 700,
+    fontWeight: 600,
     textTransform: 'uppercase',
     fontSize: '1.75rem',
     lineHeight: '1.25',
