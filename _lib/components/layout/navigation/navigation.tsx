@@ -1,6 +1,6 @@
 'use client';
 import { View } from '../view/view';
-import { BASE, MENU, MENU_ICON, NAV_POST_TITLE, PADDINGS, THEME } from './navigation.css';
+import { BASE, MENU, MENU_ICON, NAV_POST_TITLE, PADDINGS, PROGRESS_BAR, THEME } from './navigation.css';
 import { usePathname } from 'next/navigation';
 import { Logo } from '../logo/logo';
 
@@ -26,22 +26,8 @@ export function Navigation() {
     setTitle(window && document.title.slice(0, document.title.length - 7));
   }, []);
 
-  const width = useScrollPosition();
-
   return (
     <View styleVariant={BASE_CLASSNAME}>
-      {IS_POST && (
-        <div
-          style={{
-            position: 'fixed',
-            backgroundColor: THEMES.theme,
-            width: width + '%',
-            height: '1px',
-            top: '3rem',
-            zIndex: '999',
-          }}
-        />
-      )}
       <View as="nav" styleVariant={PADDINGS}>
         <Logo />
         {IS_POST && (

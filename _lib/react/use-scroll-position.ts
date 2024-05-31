@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 export function useScrollPosition(): number {
   const [position, setPosition] = useState<number>(0);
@@ -6,18 +6,21 @@ export function useScrollPosition(): number {
   const handleScroll = () => setPosition(window?.scrollY);
 
   const update = () => {
-    const target = document.querySelector('main');
+    const target = document.querySelector('body');
     setScrollHeight(target?.scrollHeight || 0);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     update();
+  }, [window.innerHeight]);
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrollHeight, window.innerHeight]);
+  }, []);
 
-  return (position * 100) / scrollHeight;
+  return (position / scrollHeight) * 100;
 }

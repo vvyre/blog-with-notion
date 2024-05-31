@@ -134,3 +134,18 @@ export const NAV_POST_TITLE = style({
     },
   },
 });
+
+export const PROGRESS_BAR = style({
+  position: 'fixed',
+  backgroundColor: THEMES.theme,
+  height: '1px',
+  zIndex: '999',
+  '@media': {
+    '(768px <= width)': {
+      top: '3rem',
+    },
+    '(0px <= width <= 768px)': {
+      top: '0',
+    },
+  },
+});
