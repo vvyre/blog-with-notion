@@ -33,11 +33,13 @@ export const CAPTION_TXT_ZOOMED = style({
 export const CAPTION = style({
   textAlign: 'center',
   width: '100%',
+  wordSpacing: '-0.275rem',
 });
 
 export const CAPTION_ZOOMED = style({
   textAlign: 'center',
   width: '100%',
+  wordSpacing: '-0.275rem',
 });
 
 export const IMG = style({
@@ -46,4 +48,11 @@ export const IMG = style({
   height: 'auto',
   maxWidth: '100%',
   minWidth: '66%',
+  borderRadius: '1rem',
+  padding: '0.25rem',
+  selectors: {
+    '&:hover': {
+      outline: `1px solid ${THEMES.theme}`,
+    },
+  },
 });
