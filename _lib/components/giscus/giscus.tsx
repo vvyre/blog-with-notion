@@ -1,6 +1,6 @@
 'use client';
 import { site_env } from '@/env';
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { View } from '../layout/view/view';
 import { BASE } from './giscus.css';
 import { Spacing } from '../layout/spacing/spacing';
@@ -8,7 +8,7 @@ import { Spacing } from '../layout/spacing/spacing';
 export function Giscus() {
   const commentsEl = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
     script.async = true;

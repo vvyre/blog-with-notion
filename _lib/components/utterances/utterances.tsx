@@ -1,11 +1,11 @@
 'use client';
 import { site_env } from '@/env';
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 
 export function Utterances() {
   const commentsEl = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const script = document.createElement('script');
     script.defer = true;
     script.src = 'https://utteranc.es/client.js';

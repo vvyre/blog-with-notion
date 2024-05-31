@@ -10,6 +10,7 @@ import { Txt } from '../../typography/txt/txt';
 import { Spacing } from '../spacing/spacing';
 import { THEMES } from '@/_lib/styles/colors.css';
 import { useScrollPosition } from '@/_lib/react/use-scroll-position';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 export function Navigation() {
   const PATH = usePathname();
@@ -19,7 +20,11 @@ export function Navigation() {
   const COLOR = 'WHITE';
 
   const BASE_CLASSNAME = `${BASE} ${THEME[COLOR]}`;
-  const TITLE = document.title.slice(0, document.title.length - 7);
+
+  const [TITLE, setTitle] = useState<string>('');
+  useLayoutEffect(() => {
+    setTitle(window && document.title.slice(0, document.title.length - 7));
+  }, []);
 
   const [width, clientHeight] = useScrollPosition();
 
