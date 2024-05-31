@@ -3,7 +3,8 @@ import { styleVariants } from '@vanilla-extract/css';
 export const THEMES = {
   theme: '#13D483',
   white: '#FFFFFF',
-  default: '#303336',
+  default: '#000000',
+  blueblack: '#303336',
   gray: '#808386',
   highlight: '#FA5A15',
   light_b1: '#F7F8F9',

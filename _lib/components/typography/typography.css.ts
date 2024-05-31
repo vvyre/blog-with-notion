@@ -5,34 +5,42 @@ export const TEXT_STYLE = styleVariants({
   XXXL: {
     fontSize: '2.75rem',
     fontWeight: 700,
+    wordSpacing: '-0.5rem',
   },
   XXL: {
     fontSize: '2rem',
     fontWeight: 700,
+    wordSpacing: '-0.45rem',
   },
   XL: {
     fontSize: '1.5rem',
     fontWeight: 600,
+    wordSpacing: '-0.35rem',
   },
   L: {
     fontSize: '1.25rem',
     fontWeight: 400,
+    wordSpacing: '-0.35rem',
   },
   M: {
     fontSize: '1rem',
     fontWeight: 400,
+    wordSpacing: '-0.325rem',
   },
   S: {
     fontSize: '0.95rem',
     fontWeight: 400,
+    wordSpacing: '-0.325rem',
   },
   XS: {
     fontSize: '0.9rem',
     fontWeight: 400,
+    wordSpacing: '-0.325rem',
   },
   XXS: {
     fontSize: '0.85rem',
     fontWeight: 400,
+    wordSpacing: '-0.275rem',
   },
 });
 
@@ -62,4 +70,5 @@ export const LINK = style({
   color: THEMES.gray,
   textUnderlineOffset: '0.2rem',
   textDecorationThickness: '1px',
+  wordSpacing: '-0.325rem',
 });

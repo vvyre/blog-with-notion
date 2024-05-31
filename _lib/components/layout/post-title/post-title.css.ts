@@ -1,18 +1,16 @@
 import { style } from '@vanilla-extract/css';
-import { THEMES } from '@/_lib/styles/colors.css';
+import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 
 export const BASE = style([
   {
-    backgroundColor: THEMES.default,
-    color: 'white',
+    background: 'transparent',
+    color: COLORS.default,
     margin: '0 auto',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: '3rem',
+    alignItems: 'flexStart',
     height: 'auto',
-    padding: '0 3rem 0 3rem',
     minHeight: '16rem',
   },
 ]);
@@ -32,7 +30,6 @@ export const BACK_BUTTON_PLACEMENT = style({
 export const BACK_BUTTON_STYLE_VARIANT = style({
   fontWeight: 400,
   fontSize: '1.75rem',
-  color: THEMES.white,
 });
 
 export const TITLE_TEXT_PLACEMENT = style({
@@ -50,27 +47,26 @@ export const TITLE_TEXT_PLACEMENT = style({
 });
 
 export const TITLE = style({
-  textAlign: 'center',
   fontWeight: 700,
   fontSize: '2.5rem',
   lineHeight: '1.2',
   width: '100%',
   maxWidth: '45rem',
   wordBreak: 'keep-all',
+  wordSpacing: '-0.85rem',
+  textTransform: 'uppercase',
 });
 
 export const RELEASED_DATE = style({
-  textAlign: 'center',
   fontWeight: 400,
-  color: THEMES.white,
-  fontSize: '0.9rem',
 });
 
 export const SUMMARY = style({
-  textAlign: 'center',
   fontWeight: 400,
-  fontSize: '0.95rem',
+  fontSize: '0.9rem',
   lineHeight: '1.65',
+  wordSpacing: '-0.275rem',
+  verticalAlign: 'middle',
 });
 
 export const TAG_GRID_PLACEMENT = style({

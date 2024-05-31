@@ -7,6 +7,7 @@ import { BASE, TITLE, SUMMARY, RELEASED_DATE } from './post-title.css';
 import { getSummary } from '@/utils/get-summary';
 import { Spacing } from '../spacing/spacing';
 import { PageObject } from '@/_lib/types/notion-response';
+import { POST_CENTERED } from '../article/article.css';
 
 export function PostTitle({ ...meta }: PageObject) {
   const title = getTitle(meta);
@@ -14,16 +15,18 @@ export function PostTitle({ ...meta }: PageObject) {
   const rel_date = getDate(meta);
 
   return (
-    <View styleVariant={BASE}>
-      <Txt styleVariant={RELEASED_DATE}>{rel_date}</Txt>
+    <View styleVariant={`${BASE} ${POST_CENTERED}`}>
+      <Txt as="p" styleVariant={SUMMARY}>
+        <Txt as="span" styleVariant={RELEASED_DATE}>
+          {rel_date + ' • '}
+        </Txt>
+        <Txt as="span">{summary}</Txt>
+      </Txt>
       <Spacing size="0.5rem" />
       <Heading as="h1" styleVariant={TITLE}>
         {title}
       </Heading>
       <Spacing size="0.75rem" />
-      <Txt as="p" styleVariant={SUMMARY}>
-        {summary}
-      </Txt>
     </View>
   );
 }
