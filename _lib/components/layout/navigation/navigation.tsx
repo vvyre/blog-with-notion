@@ -26,7 +26,7 @@ export function Navigation() {
     setTitle(window && document.title.slice(0, document.title.length - 7));
   }, []);
 
-  const [width, clientHeight] = useScrollPosition();
+  const width = useScrollPosition();
 
   return (
     <View styleVariant={BASE_CLASSNAME}>
@@ -35,7 +35,7 @@ export function Navigation() {
           style={{
             position: 'fixed',
             backgroundColor: THEMES.theme,
-            width: (width / clientHeight) * 100 + '%',
+            width: width + '%',
             height: '1px',
             top: '3rem',
             zIndex: '999',
