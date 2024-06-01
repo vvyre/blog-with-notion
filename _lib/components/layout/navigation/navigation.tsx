@@ -22,9 +22,10 @@ export function Navigation() {
   const BASE_CLASSNAME = `${BASE} ${THEME[COLOR]}`;
 
   const [TITLE, setTitle] = useState<string>('');
+  const doc = window && document.title;
   useLayoutEffect(() => {
-    setTitle(window && document.title.slice(0, document.title.length - 7));
-  }, [document.title]);
+    setTitle(doc.slice(0, doc.length - 7));
+  }, [doc]);
 
   return (
     <View styleVariant={BASE_CLASSNAME}>
