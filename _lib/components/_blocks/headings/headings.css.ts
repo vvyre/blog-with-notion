@@ -11,7 +11,7 @@ export const HEADING_1 = style([
     fontSize: '1.75rem',
     lineHeight: '1.25',
     marginBottom: '1.25rem',
-    wordSpacing: '-0.55rem',
+    wordSpacing: '-0.65rem',
   },
 ]);
 
@@ -22,7 +22,7 @@ export const HEADING_2 = style([
     fontSize: '1.5rem',
     lineHeight: '1.3',
     marginBottom: '0.75rem',
-    wordSpacing: '-0.5rem',
+    wordSpacing: '-0.6rem',
   },
 ]);
 
@@ -32,6 +32,6 @@ export const HEADING_3 = style([
     fontWeight: 600,
     fontSize: '1.25rem',
     marginBottom: '0.25rem',
-    wordSpacing: '-0.4rem',
+    wordSpacing: '-0.5rem',
   },
 ]);

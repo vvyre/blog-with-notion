@@ -70,7 +70,7 @@ export const POST_TITLE = style([
     fontSize: '1.75rem',
     lineHeight: '1.25',
     width: '100%',
-    wordSpacing: '-0.5rem',
+    wordSpacing: '-0.65rem',
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '1.25rem',
