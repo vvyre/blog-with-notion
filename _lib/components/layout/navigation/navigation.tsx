@@ -22,7 +22,7 @@ export function Navigation() {
   const BASE_CLASSNAME = `${BASE} ${THEME[COLOR]}`;
 
   const [TITLE, setTitle] = useState<string>('');
-  const doc = window && document.title;
+  const doc = typeof window !== 'undefined' ? document.title : '';
   useLayoutEffect(() => {
     setTitle(doc.slice(0, doc.length - 7));
   }, [doc]);
