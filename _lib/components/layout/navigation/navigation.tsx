@@ -24,7 +24,7 @@ export function Navigation() {
   const [TITLE, setTitle] = useState<string>('');
   useLayoutEffect(() => {
     setTitle(window && document.title.slice(0, document.title.length - 7));
-  }, []);
+  }, [document.title]);
 
   return (
     <View styleVariant={BASE_CLASSNAME}>
