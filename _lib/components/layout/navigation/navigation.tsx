@@ -23,9 +23,10 @@ export function Navigation() {
 
   const [TITLE, setTitle] = useState<string>('');
   const doc = typeof window !== 'undefined' ? document.title : '';
+
   useEffect(() => {
     setTitle(doc.slice(0, doc.length - 7));
-  }, [doc]);
+  }, [PATH]);
 
   return (
     <View styleVariant={BASE_CLASSNAME}>
