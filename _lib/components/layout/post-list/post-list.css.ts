@@ -74,6 +74,7 @@ export const POST_TITLE = style([
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '1.25rem',
+        wordSpacing: '-0.35rem',
       },
     },
   },
