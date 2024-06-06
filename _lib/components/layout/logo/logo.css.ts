@@ -1,5 +1,5 @@
 import { THEMES } from '@/_lib/styles/colors.css';
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 const BASE = style({
   display: 'flex',
@@ -12,27 +12,38 @@ const BASE = style({
   transition: 'outline 0.1s ease-out',
 });
 
-export const LOGO = style([
-  {
-    textTransform: 'uppercase',
-    fontWeight: '700',
-    fontSize: '1rem',
-    wordSpacing: '-0.3rem',
-    '@media': {
-      '(0px <= width <= 768px)': {
-        fontSize: '0.75rem',
-        wordSpacing: '-0.25rem',
-        fontWeight: 500,
-      },
-    },
-    transition: 'color 0.1s ease-out',
-    selectors: {
-      '&:hover': {
-        color: `${THEMES.theme}`,
-      },
+const LOGOBASE = style({
+  textTransform: 'uppercase',
+  fontWeight: '700',
+  fontSize: '1.25rem',
+  wordSpacing: '-0.3rem',
+  '@media': {
+    '(0px <= width <= 768px)': {
+      fontSize: '1rem',
+      wordSpacing: '-0.3rem',
     },
   },
-]);
+  transition: 'color 0.1s ease-out',
+  selectors: {
+    '&:hover': {
+      color: `${THEMES.theme}`,
+    },
+  },
+});
+export const LOGO = styleVariants({
+  BLACK: [
+    LOGOBASE,
+    {
+      color: THEMES.default,
+    },
+  ],
+  WHITE: [
+    LOGOBASE,
+    {
+      color: THEMES.white,
+    },
+  ],
+});
 
 export const EXTERNAL_LINK = style([
   BASE,

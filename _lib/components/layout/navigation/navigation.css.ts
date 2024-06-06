@@ -9,7 +9,7 @@ export const THEME = styleVariants({
 
 export const BASE = style([
   {
-    height: '3rem',
+    height: '4rem',
     width: '100%',
     zIndex: '999',
     '@media': {
@@ -33,7 +33,7 @@ export const PADDINGS = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  height: '3rem',
+  height: '4rem',
   padding: '0.5rem 2rem 0.5rem 2rem',
   '@media': {
     '(480px < width <= 768px)': {
