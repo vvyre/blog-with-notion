@@ -23,9 +23,11 @@ export function Navigation() {
 
   const [TITLE, setTitle] = useState<string>('');
   const doc = typeof window !== 'undefined' ? document.title : '';
+  const handleTitle = () => setTitle(doc.slice(0, doc.length - 7));
 
   useEffect(() => {
-    setTitle(doc.slice(0, doc.length - 7));
+    addEventListener('onload', handleTitle);
+    return removeEventListener('onload', handleTitle);
   }, [PATH]);
 
   return (
