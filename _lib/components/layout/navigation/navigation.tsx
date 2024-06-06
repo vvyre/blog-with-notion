@@ -26,8 +26,10 @@ export function Navigation() {
   const handleTitle = () => setTitle(doc.slice(0, doc.length - 7));
 
   useEffect(() => {
-    addEventListener('onload', handleTitle);
-    return removeEventListener('onload', handleTitle);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('load', handleTitle);
+      return window.removeEventListener('load', handleTitle);
+    }
   }, [PATH]);
 
   return (
