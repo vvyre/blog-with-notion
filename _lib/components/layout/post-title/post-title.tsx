@@ -16,17 +16,16 @@ export function PostTitle({ ...meta }: PageObject) {
 
   return (
     <View styleVariant={`${BASE} ${POST_CENTERED}`}>
+      <Heading as="h1" styleVariant={TITLE}>
+        {title}
+      </Heading>
+      <Spacing size="0.75rem" />
       <Txt as="p" styleVariant={SUMMARY}>
         <Txt as="span" styleVariant={RELEASED_DATE}>
           {rel_date + ' • '}
         </Txt>
         <Txt as="span">{summary}</Txt>
       </Txt>
-      <Spacing size="0.5rem" />
-      <Heading as="h1" styleVariant={TITLE}>
-        {title}
-      </Heading>
-      <Spacing size="0.75rem" />
     </View>
   );
 }
