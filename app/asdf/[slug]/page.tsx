@@ -16,7 +16,7 @@ import { getTags } from '@/utils/get-tags';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 import { style } from '@vanilla-extract/css';
 import { GiscusFallback } from '@/_lib/components/giscus/giscus-fallback';
-import { ShareBtn } from '@/_lib/components/interaction/share-btn/share-btn';
+import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/layout/flex/flex';
 
 export interface PostPageProps {
