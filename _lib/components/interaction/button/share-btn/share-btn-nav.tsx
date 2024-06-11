@@ -1,5 +1,5 @@
 'use client';
-import { Btn } from '../button/btn';
+import { Btn } from '../btn';
 import { BASE, NAV_BASE, POST_SHARE } from './share-btn.css';
 import LinkIcon from '#/img/icons/link-white.svg';
 import OKIcon from '#/img/icons/ok.svg';

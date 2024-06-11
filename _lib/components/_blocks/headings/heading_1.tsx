@@ -2,7 +2,7 @@ import { Heading } from '../../typography/heading/heading';
 import { HEADING_1 } from './headings.css';
 import type { NotionComponentProps } from '@/_lib/types/component-common';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
-import { ShareBtn } from '../../interaction/share-btn/share-btn';
+import { ShareBtn } from '../../interaction/button/share-btn/share-btn';
 import { cleanUrl } from '@/utils/clean-url';
 import { Spacing } from '../../layout/spacing/spacing';
 

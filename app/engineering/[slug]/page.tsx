@@ -16,8 +16,10 @@ import { getTags } from '@/utils/get-tags';
 import { Txt } from '@/_lib/components/typography/txt/txt';
 import { style } from '@vanilla-extract/css';
 import { GiscusFallback } from '@/_lib/components/giscus/giscus-fallback';
-import { ShareBtn } from '@/_lib/components/interaction/share-btn/share-btn';
+import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/layout/flex/flex';
+import { Btn } from '@/_lib/components/interaction/button/btn';
+import { OtherArticlesBtn } from '@/_lib/components/interaction/button/other-articles-btn/other-articles-btn';
 
 export interface PostPageProps {
   params: {
@@ -42,8 +44,11 @@ export default async function Post({ params }: PostPageProps) {
             {blocks.map(b => (
               <Block key={b.id} block={b} />
             ))}
-            <Spacing size="2rem" />
-            <ShareBtn />
+            <Spacing size="5rem" />
+            <Flex justifyContents="spaceBetween">
+              <OtherArticlesBtn />
+              <ShareBtn />
+            </Flex>
             <Giscus />
           </View>
         </Article>

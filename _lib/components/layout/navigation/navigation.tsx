@@ -3,9 +3,8 @@ import { View } from '../view/view';
 import { BASE, MENU, MENU_ICON, NAV_POST_TITLE, PADDINGS, PROGRESS_BAR, THEME } from './navigation.css';
 import { usePathname } from 'next/navigation';
 import { Logo } from '../logo/logo';
-
 import { Flex } from '../flex/flex';
-import { NavShareBtn } from '../../interaction/share-btn/share-btn-nav';
+import { NavShareBtn } from '../../interaction/button/share-btn/share-btn-nav';
 import { Spacing } from '../spacing/spacing';
 
 export function Navigation() {
