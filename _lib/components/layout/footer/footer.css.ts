@@ -18,6 +18,7 @@ export const FOOTER_SITE_TITLE = style({
 
 export const FOOTER_LINK = style({
   fontSize: '0.85rem',
+  wordSpacing: '-0.25rem',
   selectors: {
     '&:after': {
       marginLeft: '0.25rem',
