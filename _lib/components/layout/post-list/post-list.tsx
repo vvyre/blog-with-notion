@@ -22,7 +22,7 @@ export function PostList({ pageData }: PostListProps) {
   // const TAGS = getTags(pageData);
   // const CATEGORY = TAGS[0].name;
   const TITLE = getTitle(pageData);
-  const SUMMARY = getSummary(pageData);
+  // const SUMMARY = getSummary(pageData);
   const DATE = getDate(pageData);
 
   return (
@@ -34,7 +34,6 @@ export function PostList({ pageData }: PostListProps) {
               {TITLE}
             </Heading>
             <Spacing size="0.2rem" />
-            <Txt styleVariant={POST_SUMMARY}>{SUMMARY}</Txt>
           </Flex>
           <View>
             <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>

@@ -28,13 +28,9 @@ export const POST_TEXT = style({
 
 export const POST_LIST_BASE = style({
   cursor: 'pointer',
-  padding: '1.5rem 2rem 1.5rem 2rem',
-  border: '1px solid transparent',
-  borderBottom: `1px solid ${COLORS.gray_background}`,
   width: '100vw',
   '@media': {
     '(0 <= width <= 768px)': {
-      border: '1px solid transparent',
       padding: '1.5rem',
     },
   },
@@ -42,6 +38,8 @@ export const POST_LIST_BASE = style({
 
 export const POST_LINK = style({
   display: 'flex',
+  borderBottom: `1px solid ${COLORS.gray_background}`,
+  padding: '2rem 2rem 2rem 2rem',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -49,10 +47,12 @@ export const POST_LINK = style({
   color: THEMES.default,
   selectors: {
     '&:hover': {
-      opacity: '0.5',
+      borderBottom: '1px solid transparent',
+      backgroundColor: THEMES.default,
+      color: THEMES.white,
     },
   },
-  transition: 'all 0.3s',
+  transition: 'background-color 0.15s, color 0.15s',
   '@media': {
     '(0 <= width <= 768px)': {
       width: '100vw',
@@ -65,15 +65,15 @@ export const POST_LINK = style({
 export const POST_TITLE = style([
   {
     cursor: 'pointer',
-    fontWeight: 600,
+    fontWeight: 700,
     textTransform: 'uppercase',
-    fontSize: '1.75rem',
+    fontSize: '2.15rem',
     lineHeight: '1.25',
     width: '100%',
-    wordSpacing: '-0.65rem',
+    wordSpacing: '-0.75rem',
     '@media': {
       '(0 <= width <= 768px)': {
-        fontSize: '1.25rem',
+        fontSize: '1.5rem',
         wordSpacing: '-0.35rem',
       },
     },
@@ -85,7 +85,6 @@ export const POST_SUMMARY = style([
     fontSize: '1rem',
     cursor: 'pointer',
     fontWeight: 400,
-    color: COLORS.gray,
     width: '100%',
     wordSpacing: '-0.325rem',
     '@media': {
@@ -102,7 +101,6 @@ export const RELEASED_DATE = style([
     cursor: 'pointer',
     fontWeight: 400,
     fontFeatureSettings: '"calt"',
-    color: COLORS.gray,
     wordSpacing: '-0.3rem',
   },
 ]);
