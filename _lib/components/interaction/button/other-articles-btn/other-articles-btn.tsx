@@ -4,7 +4,7 @@ import { BASE } from './other-articles-btn.css';
 
 export function OtherArticlesBtn() {
   return (
-    <Btn as="Link" href="/" styleVariants={BASE}>
+    <Btn as="Link" href="/" styleVariant={BASE}>
       다른 글
     </Btn>
   );
