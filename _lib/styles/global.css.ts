@@ -65,10 +65,6 @@ globalStyle('ul, ol', {
   listStyleType: 'none',
 });
 
-globalStyle('li', {
-  listStyleType: 'none',
-});
-
 globalStyle('pre', {
   overflow: 'auto',
 });
