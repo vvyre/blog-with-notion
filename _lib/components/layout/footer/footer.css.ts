@@ -13,7 +13,7 @@ export const BASE = style([
 
 export const FOOTER_SITE_TITLE = style({
   fontSize: '0.75rem',
-  wordSpacing: '-0.25rem',
+  wordSpacing: '-0.15rem',
   fontWeight: 400,
 });
 
@@ -24,7 +24,7 @@ export const FOOTER_DECORATION = style({
 
 export const FOOTER_LINK = style({
   fontSize: '0.75rem',
-  wordSpacing: '-0.25rem',
+  wordSpacing: '-0.15rem',
   transition: 'color 0.15s',
   selectors: {
     '&:hover': {
