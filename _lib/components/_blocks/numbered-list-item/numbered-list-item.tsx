@@ -10,7 +10,7 @@ import { Flex } from '../../layout/flex/flex';
 export function NumberedListItem({ block }: NotionComponentPropsWithChildren<'numbered_list_item'>) {
   const id = useId();
   return (
-    <List as="li" styleVariant={`${BASE} ${DEPTH_1}`}>
+    <List as="li" styleVariant={DEPTH_1}>
       {block.numbered_list_item.rich_text.map((txt: RichTextItemResponse) => (
         <Txt key={id} as="span" richText={txt} />
       ))}

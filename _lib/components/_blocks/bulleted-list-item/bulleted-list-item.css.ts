@@ -2,19 +2,18 @@ import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
   fontFeatureSettings: '"calt", "case"',
-  marginLeft: '1.5rem',
+  listStyleType: '"– "',
 });
 export const DEPTH_1 = style([
-  BASE,
   {
-    listStyleType: '"–  "',
+    // listStyleType: '"• "',
   },
 ]);
 
 export const DEPTH_2 = style([
   BASE,
   {
-    listStyleType: '"– "',
+    listStyleType: 'disc',
   },
 ]);
 export const DEPTH_3 = style([
