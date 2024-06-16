@@ -39,4 +39,5 @@ export const JETBRAINS_MONO = fontFace([
   { src: 'url(/fonts/code-700-it.woff2)', fontWeight: '600', fontStyle: 'italic' },
   { src: 'url(/fonts/code-700.woff2)', fontWeight: '700' },
   { src: 'url(/fonts/code-700-it.woff2)', fontWeight: '700', fontStyle: 'italic' },
+  { src: 'url(/fonts/code-900.woff2)', fontWeight: '900' },
 ]);

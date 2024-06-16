@@ -28,6 +28,6 @@ export const ABOUT_INNER = style([
 
 export const ABOUT_SITE_TITLE = style({
   textTransform: 'uppercase',
-  fontWeight: 700,
-  fontSize: '2rem',
+  fontWeight: 900,
+  fontSize: '3.25rem',
 });
