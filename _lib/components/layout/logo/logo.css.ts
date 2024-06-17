@@ -15,8 +15,8 @@ const BASE = style({
 const LOGOBASE = style({
   textTransform: 'uppercase',
   fontWeight: 900,
-  fontSize: '1rem',
-  wordSpacing: '-0.3rem',
+  fontSize: '1.75rem',
+  wordSpacing: '-0.5rem',
   '@media': {
     '(0px <= width <= 768px)': {
       fontSize: '1rem',

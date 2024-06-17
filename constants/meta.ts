@@ -1,7 +1,7 @@
 import { site_env } from '@/env';
 import logo from '#/img/logo.png';
 
-const TITLE = 'Seyu';
+const TITLE = 'Seungyoon Yu';
 const DESCRIPTION = 'Writings about life as a developer';
 
 export const meta = {
