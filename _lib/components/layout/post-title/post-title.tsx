@@ -19,7 +19,7 @@ export function PostTitle({ ...meta }: PageObject) {
       <Heading as="h1" styleVariant={TITLE}>
         {title}
       </Heading>
-      <Spacing size="0.75rem" />
+      <Spacing size="0.5rem" />
       <Txt as="p" styleVariant={SUMMARY}>
         <Txt as="span" styleVariant={RELEASED_DATE}>
           {rel_date + ' • '}
