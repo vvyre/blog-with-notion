@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
   margin: 0,
-  color: COLORS.blue_background,
+  color: THEMES.highlight,
   textDecoration: 'underline',
   textUnderlineOffset: '0.25rem',
   fontSize: '0.9rem',

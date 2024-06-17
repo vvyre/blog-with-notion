@@ -16,6 +16,7 @@ export const POST_GRID = style([
 export const POST_CENTERED = style([
   BASE_PADDING,
   {
+    background: 'transparent',
     margin: '0 auto',
     paddingBottom: '0',
     maxWidth: '45rem',

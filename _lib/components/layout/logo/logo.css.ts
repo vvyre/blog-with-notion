@@ -12,37 +12,19 @@ const BASE = style({
   transition: 'outline 0.1s ease-out',
 });
 
-const LOGOBASE = style({
+export const LOGO = style({
   textTransform: 'uppercase',
   fontWeight: 900,
+  mixBlendMode: 'difference',
   fontSize: '1.75rem',
   wordSpacing: '-0.5rem',
+  color: THEMES.white,
   '@media': {
     '(0px <= width <= 768px)': {
       fontSize: '1rem',
       wordSpacing: '-0.3rem',
     },
   },
-  transition: 'color 0.1s ease-out',
-  selectors: {
-    '&:hover': {
-      color: `${THEMES.theme}`,
-    },
-  },
-});
-export const LOGO = styleVariants({
-  BLACK: [
-    LOGOBASE,
-    {
-      color: THEMES.default,
-    },
-  ],
-  WHITE: [
-    LOGOBASE,
-    {
-      color: THEMES.white,
-    },
-  ],
 });
 
 export const EXTERNAL_LINK = style([

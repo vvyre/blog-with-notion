@@ -2,12 +2,17 @@ import { THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
-export const THEME = styleVariants({
-  BLACK: { backgroundColor: THEMES.default },
-  WHITE: { backgroundColor: THEMES.white },
+export const BASE = style({
+  display: 'linine',
+  width: '100%',
 });
 
-export const BASE = style([
+export const THEME = styleVariants({
+  BLACK: { backgroundColor: THEMES.default },
+  WHITE: { background: 'transparent' },
+});
+
+export const BASE_LEGACY = style([
   {
     height: '4rem',
     width: '100%',
