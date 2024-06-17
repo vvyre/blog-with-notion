@@ -3,15 +3,18 @@ import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 
 export const BACKGROUND = style({
   backgroundColor: THEMES.default,
-  height: 'calc(80vh - 4rem)',
+  height: '66vh',
+  width: '100vw',
   display: 'flex',
   alignItems: 'center',
-  marginBottom: '5rem',
+  marginBottom: '3rem',
 });
 export const BASE = style([
   {
-    margin: '0 auto',
     display: 'flex',
+    width: '100vw',
+    maxWidth: '41rem',
+    margin: '0 auto',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flexStart',

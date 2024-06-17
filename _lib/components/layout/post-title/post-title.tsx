@@ -17,7 +17,7 @@ export function PostTitle({ ...meta }: PageObject) {
 
   return (
     <View styleVariant={BACKGROUND}>
-      <View styleVariant={`${BASE} ${POST_CENTERED}`}>
+      <View styleVariant={`${BASE}`}>
         <Navigation />
         <Spacing size="1.5rem" />
         <Heading as="h1" styleVariant={TITLE}>
