@@ -7,7 +7,6 @@ export const BASE = style({
   padding: '0.5rem 0.75rem 0.5rem 0.75rem',
   border: `1px solid transparent`,
   backgroundColor: 'transparent',
-  wordSpacing: '-0.3rem',
   selectors: {
     '&:hover': {
       outline: `1px solid ${THEMES.highlight}`,

@@ -70,11 +70,9 @@ export const POST_TITLE = style([
     fontSize: '2.15rem',
     lineHeight: '1.25',
     width: '100%',
-    wordSpacing: '-0.75rem',
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '1.5rem',
-        wordSpacing: '-0.35rem',
       },
     },
   },
@@ -86,7 +84,6 @@ export const POST_SUMMARY = style([
     cursor: 'pointer',
     fontWeight: 400,
     width: '100%',
-    wordSpacing: '-0.325rem',
     '@media': {
       '(0 <= width <= 768px)': {
         fontSize: '0.9rem',
@@ -101,7 +98,6 @@ export const RELEASED_DATE = style([
     cursor: 'pointer',
     fontWeight: 400,
     fontFeatureSettings: '"calt"',
-    wordSpacing: '-0.3rem',
   },
 ]);
 
@@ -109,7 +105,6 @@ export const POST_CATEGORY = style({
   fontSize: '0.85rem',
   fontWeight: 400,
   color: COLORS.gray,
-  wordSpacing: '-0.25rem',
 });
 
 export const HOVER_TEXT = styleVariants({

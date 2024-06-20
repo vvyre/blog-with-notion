@@ -17,12 +17,11 @@ export const LOGO = style({
   fontWeight: 900,
   mixBlendMode: 'difference',
   fontSize: '1.75rem',
-  wordSpacing: '-0.5rem',
+
   color: THEMES.white,
   '@media': {
     '(0px <= width <= 768px)': {
       fontSize: '1rem',
-      wordSpacing: '-0.3rem',
     },
   },
 });

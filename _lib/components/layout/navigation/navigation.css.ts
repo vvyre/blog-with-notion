@@ -129,12 +129,10 @@ export const MENU_ICON = style({
 
 export const NAV_POST_TITLE = style({
   fontSize: '0.9rem',
-  wordSpacing: '-0.3rem',
   cursor: 'default',
   '@media': {
     '(0px <= width <= 768px)': {
       fontSize: '0.75rem',
-      wordSpacing: '-0.25rem',
       fontWeight: 500,
     },
   },

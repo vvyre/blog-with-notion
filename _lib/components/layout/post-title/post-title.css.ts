@@ -62,7 +62,6 @@ export const TITLE = style({
   width: '100%',
   maxWidth: '45rem',
   wordBreak: 'keep-all',
-  wordSpacing: '-0.85rem',
   textTransform: 'uppercase',
 });
 
@@ -73,7 +72,6 @@ export const RELEASED_DATE = style({
 
 export const INFO = style({
   lineHeight: '1.65',
-  wordSpacing: '-0.275rem',
   verticalAlign: 'middle',
 });
 

@@ -20,7 +20,6 @@ export const POST_SHARE = style({
   padding: '0.5rem 0.75rem 0.5rem 0.75rem',
   color: COLORS.gray,
   fontSize: '0.9rem',
-  wordSpacing: '-0.275rem',
   border: `none`,
   borderRadius: '2rem',
   backgroundColor: THEMES.light_b1,
