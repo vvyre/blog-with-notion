@@ -12,7 +12,7 @@ globalStyle('html', {
   boxSizing: 'border-box',
   MozBoxSizing: 'border-box',
   fontSize: '100%',
-  lineHeight: '1.65',
+  lineHeight: '1.68',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
 });

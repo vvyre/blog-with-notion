@@ -19,7 +19,7 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 400,
   },
   M: {
-    fontSize: '1rem',
+    fontSize: '1.05rem',
     fontWeight: 400,
   },
   S: {

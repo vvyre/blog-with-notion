@@ -3,11 +3,12 @@ import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 
 export const BACKGROUND = style({
   backgroundColor: THEMES.default,
-  height: '66vh',
+  height: '33vh',
+  minHeight: '27.5rem',
   width: '100vw',
   display: 'flex',
   alignItems: 'center',
-  marginBottom: '3rem',
+  marginBottom: '5rem',
 });
 export const BASE = style([
   {

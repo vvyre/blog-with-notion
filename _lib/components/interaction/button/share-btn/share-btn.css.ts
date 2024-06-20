@@ -2,8 +2,8 @@ import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
-  marginLeft: '0.5rem',
-  padding: '0.25rem',
+  marginLeft: '0.15rem',
+  paddingLeft: '0.25rem',
   display: 'inline-flex',
   color: COLORS.gray,
   justifyContent: 'center',
