@@ -6,7 +6,7 @@ export const THEMES = {
   default: '#000000',
   blueblack: '#303336',
   gray: '#808386',
-  highlight: '#FAC098',
+  highlight: '#2578BE',
   light_b1: '#F7F8F9',
   light_b2: '#F2F3F4',
   light_b3: '#E2E3E4',
