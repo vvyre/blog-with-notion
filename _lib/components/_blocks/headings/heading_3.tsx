@@ -10,7 +10,7 @@ export function Heading_3({ block }: NotionComponentProps<'heading_3'>) {
   return (
     <>
       <a id={cleanUrl(block.heading_3.rich_text[0].plain_text)} />
-      <Spacing size="2.5rem" />
+      <Spacing size="1rem" />
       <Heading as="h4" styleVariant={HEADING_3}>
         {block.heading_3.rich_text.map((txt: RichTextItemResponse) => txt.plain_text)}
         <ShareBtn subtitle={block.heading_3.rich_text[0].plain_text} />
