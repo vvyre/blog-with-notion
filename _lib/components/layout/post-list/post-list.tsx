@@ -30,10 +30,9 @@ export function PostList({ pageData }: PostListProps) {
       <Flex justifyContents="center">
         <Txt as="Link" href={URI} styleVariant={POST_LINK}>
           <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
-            <Heading as="h1" styleVariant={POST_TITLE}>
+            <Heading as="h3" styleVariant={POST_TITLE}>
               {TITLE}
             </Heading>
-            <Spacing size="0.2rem" />
           </Flex>
           <View>
             <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>

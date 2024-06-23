@@ -29,30 +29,18 @@ export const POST_TEXT = style({
 export const POST_LIST_BASE = style({
   cursor: 'pointer',
   width: '100vw',
-  '@media': {
-    '(0 <= width <= 768px)': {
-      padding: '1.5rem',
-    },
-  },
+  maxWidth: '41rem',
 });
 
 export const POST_LINK = style({
   display: 'flex',
-  borderBottom: `1px solid ${COLORS.gray_background}`,
-  padding: '2rem 2rem 2rem 2rem',
+  padding: '0.5rem 0 0.5rem 0',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100vw',
+  maxWidth: '41rem',
   color: THEMES.default,
-  selectors: {
-    '&:hover': {
-      borderBottom: '1px solid transparent',
-      backgroundColor: THEMES.default,
-      color: THEMES.white,
-    },
-  },
-  transition: 'background-color 0.15s, color 0.15s',
   '@media': {
     '(0 <= width <= 768px)': {
       width: '100vw',
@@ -65,22 +53,30 @@ export const POST_LINK = style({
 export const POST_TITLE = style([
   {
     cursor: 'pointer',
-    fontWeight: 700,
+    fontWeight: 500,
     textTransform: 'uppercase',
-    fontSize: '2.15rem',
-    lineHeight: '1.25',
+    fontSize: '1rem',
     width: '100%',
     '@media': {
-      '(0 <= width <= 768px)': {
-        fontSize: '1.5rem',
+      '(0 <= width <= 768px)': {},
+    },
+    textDecoration: 'underline transparent',
+    textUnderlineOffset: '0.25rem',
+    textDecorationThickness: '0',
+    selectors: {
+      '&:hover': {
+        textDecoration: 'underline',
+        textUnderlineOffset: '0.25rem',
+        textDecorationThickness: '1px',
       },
     },
+    transition: 'all 0.2s ease',
   },
 ]);
 
 export const POST_SUMMARY = style([
   {
-    fontSize: '1rem',
+    fontSize: '0.85rem',
     cursor: 'pointer',
     fontWeight: 400,
     width: '100%',
@@ -94,10 +90,11 @@ export const POST_SUMMARY = style([
 
 export const RELEASED_DATE = style([
   {
-    fontSize: '0.9rem',
+    fontSize: '0.85rem',
     cursor: 'pointer',
     fontWeight: 400,
     fontFeatureSettings: '"calt"',
+    textDecoration: 'none',
   },
 ]);
 
