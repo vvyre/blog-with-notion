@@ -44,6 +44,7 @@ export const POST_LINK = style({
   '@media': {
     '(0 <= width <= 768px)': {
       width: '100vw',
+      padding: '0.5rem 1.5rem 0.5rem 1.5rem',
       flexDirection: 'column',
       alignItems: 'flex-start',
     },
@@ -55,22 +56,19 @@ export const POST_TITLE = style([
     cursor: 'pointer',
     fontWeight: 500,
     textTransform: 'uppercase',
-    fontSize: '1rem',
+    fontSize: '0.95rem',
     width: '100%',
     '@media': {
       '(0 <= width <= 768px)': {},
     },
-    textDecoration: 'underline transparent',
-    textUnderlineOffset: '0.25rem',
-    textDecorationThickness: '0',
     selectors: {
       '&:hover': {
+        color: THEMES.highlight,
         textDecoration: 'underline',
         textUnderlineOffset: '0.25rem',
         textDecorationThickness: '1px',
       },
     },
-    transition: 'all 0.2s ease',
   },
 ]);
 
@@ -90,7 +88,8 @@ export const POST_SUMMARY = style([
 
 export const RELEASED_DATE = style([
   {
-    fontSize: '0.85rem',
+    fontSize: '0.8rem',
+    color: THEMES.gray,
     cursor: 'pointer',
     fontWeight: 400,
     fontFeatureSettings: '"calt"',
@@ -99,7 +98,7 @@ export const RELEASED_DATE = style([
 ]);
 
 export const POST_CATEGORY = style({
-  fontSize: '0.85rem',
+  fontSize: '0.8rem',
   fontWeight: 400,
   color: COLORS.gray,
 });
