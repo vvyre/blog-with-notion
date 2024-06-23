@@ -13,9 +13,9 @@ export default async function PostListPage() {
   return (
     <View as="main" styleVariant={POST_CENTERED}>
       <Spacing size="2rem" />
-      <About />
-      <Spacing size="3rem" />
       <PostListLayout postList={postList} />
+      <About />
+      <Spacing size="5rem" />
     </View>
   );
 }
