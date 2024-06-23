@@ -4,8 +4,9 @@ import { style } from '@vanilla-extract/css';
 
 export const BASE = style([
   {
-    marginBottom: '1rem',
-    textAlign: 'right',
+    marginTop: '1.25rem',
+    marginBottom: '0.75rem',
+    textAlign: 'center',
     width: '100%',
     padding: '0 2rem 0 2rem',
     '@media': {
