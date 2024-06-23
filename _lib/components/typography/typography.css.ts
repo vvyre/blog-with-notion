@@ -63,6 +63,7 @@ export const LINK = style({
   textUnderlineOffset: '0.25rem',
   textDecorationThickness: '1px',
   transition: 'color 0.2s ease',
+  fontSize: '1.05rem',
   selectors: {
     '&:hover': {
       color: THEMES.highlight,
