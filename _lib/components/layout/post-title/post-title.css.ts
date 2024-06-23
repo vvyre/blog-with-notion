@@ -2,13 +2,11 @@ import { style } from '@vanilla-extract/css';
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 
 export const BACKGROUND = style({
-  backgroundColor: THEMES.default,
-  height: '33vh',
-  minHeight: '27.5rem',
+  // backgroundColor: THEMES.white,
   width: '100vw',
   display: 'flex',
   alignItems: 'center',
-  marginBottom: '5rem',
+  marginBottom: '3rem',
 });
 export const BASE = style([
   {
@@ -56,9 +54,9 @@ export const TITLE_TEXT_PLACEMENT = style({
 });
 
 export const TITLE = style({
-  color: THEMES.white,
-  fontWeight: 900,
-  fontSize: '3rem',
+  color: THEMES.default,
+  fontWeight: 700,
+  fontSize: '2.5rem',
   lineHeight: '1.25',
   width: '100%',
   maxWidth: '45rem',
@@ -67,7 +65,7 @@ export const TITLE = style({
 });
 
 export const RELEASED_DATE = style({
-  color: THEMES.white,
+  color: THEMES.gray,
   fontWeight: 400,
 });
 
@@ -77,7 +75,7 @@ export const INFO = style({
 });
 
 export const SUMMARY = style({
-  color: THEMES.white,
+  color: THEMES.gray,
 });
 
 export const TAG_GRID_PLACEMENT = style({

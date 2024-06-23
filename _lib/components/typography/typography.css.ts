@@ -60,9 +60,9 @@ export const UNDERLINE = style({});
 export const LINK = style({
   textDecoration: 'underline',
   color: THEMES.gray,
-  textUnderlineOffset: '0.2rem',
+  textUnderlineOffset: '0.25rem',
   textDecorationThickness: '1px',
-  transition: 'color 0.1s ease-out',
+  transition: 'color 0.2s ease',
   selectors: {
     '&:hover': {
       color: THEMES.highlight,
