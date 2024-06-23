@@ -10,7 +10,6 @@ export function Footer() {
       <Txt as="a" target="_blank" href={`${site_env.root}/feed.xml`} styleVariant={FOOTER_LINK}>
         RSS
       </Txt>
-      <Txt styleVariant={FOOTER_COPYRIGHT}>{meta.footer.copyright}</Txt>
     </View>
   );
 }
