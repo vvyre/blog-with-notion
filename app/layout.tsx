@@ -36,10 +36,7 @@ export default function RootLayout({
       <Head>
         <meta charSet="UTF-8" />
       </Head>
-      <View as="body">
-        {children}
-        <Footer />
-      </View>
+      <View as="body">{children}</View>
     </html>
   );
 }
