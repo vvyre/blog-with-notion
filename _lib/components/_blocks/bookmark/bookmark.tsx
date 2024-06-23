@@ -1,4 +1,3 @@
-import { useId } from 'react';
 import { View } from '../../layout/view/view';
 import { Txt } from '../../typography/txt/txt';
 import { BASE, INNER } from './bookmark.css';
@@ -9,7 +8,6 @@ import { Flex } from '../../layout/flex/flex';
 import { Spacing } from '../../layout/spacing/spacing';
 
 export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
-  const id = useId();
   const og = block.bookmarkInfo.open_graph;
   const icon = block.bookmarkInfo.favicon;
   return (
@@ -46,8 +44,8 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
             </Txt>
           )}
 
-          {block.bookmark.caption.map((txt: RichTextItemResponse) => (
-            <Txt color="gray" key={id} as="p" richText={txt} />
+          {block.bookmark.caption.map((txt: RichTextItemResponse, idx) => (
+            <Txt color="gray" key={idx} as="p" richText={txt} />
           ))}
         </Flex>
       </a>
