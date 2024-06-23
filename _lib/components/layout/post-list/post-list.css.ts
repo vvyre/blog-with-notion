@@ -38,13 +38,12 @@ export const POST_LINK = style({
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
-  width: '100vw',
+  width: '100%',
   maxWidth: '41rem',
   color: THEMES.default,
   '@media': {
     '(0 <= width <= 768px)': {
-      width: '100vw',
-      padding: '0.5rem 1.5rem 0.5rem 1.5rem',
+      width: '100%',
       flexDirection: 'column',
       alignItems: 'flex-start',
     },
