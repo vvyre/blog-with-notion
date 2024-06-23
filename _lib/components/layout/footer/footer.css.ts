@@ -30,7 +30,7 @@ export const FOOTER_LINK = style({
     },
     '&:after': {
       marginLeft: '0.25rem',
-      marginRight: '0.75rem',
+      marginRight: '0.5rem',
       fontSize: '0.85rem',
       fontFamily: code,
       content: '↗︎',
