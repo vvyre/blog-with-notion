@@ -2,11 +2,16 @@ import { style } from '@vanilla-extract/css';
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 
 export const BACKGROUND = style({
-  // backgroundColor: THEMES.white,
   width: '100vw',
   display: 'flex',
   alignItems: 'center',
   marginBottom: '3rem',
+  padding: '0 2rem 0 2rem',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      padding: '0 1.5rem 0 1.5rem',
+    },
+  },
 });
 export const BASE = style([
   {

@@ -44,6 +44,7 @@ export const POST_LINK = style({
   '@media': {
     '(0 <= width <= 768px)': {
       width: '100%',
+      padding: '0.5rem 1.5rem 0.5rem 1.5rem',
       flexDirection: 'column',
       alignItems: 'flex-start',
     },
