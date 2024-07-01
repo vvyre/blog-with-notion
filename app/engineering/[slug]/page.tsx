@@ -31,24 +31,22 @@ export default async function Post({ params }: PostPageProps) {
   const blocks = await processedBlock(await getPost(matchPost.id));
 
   return (
-    <>
-      <View as="main">
-        <Article>
-          <PostTitle {...meta} />
-          <View styleVariant={LAYOUT_CENTERED}>
-            {blocks.map(b => (
-              <Block key={b.id} block={b} />
-            ))}
-            <Spacing size="5rem" />
-            <Flex justifyContents="spaceBetween">
-              <OtherArticlesBtn />
-              <ShareBtn />
-            </Flex>
-            <Giscus />
-          </View>
-        </Article>
-      </View>
-    </>
+    <View as="main">
+      <Article>
+        <PostTitle {...meta} />
+        <View styleVariant={LAYOUT_CENTERED}>
+          {blocks.map(b => (
+            <Block key={b.id} block={b} />
+          ))}
+          <Spacing size="5rem" />
+          <Flex justifyContents="spaceBetween">
+            <OtherArticlesBtn />
+            <ShareBtn />
+          </Flex>
+          <Giscus />
+        </View>
+      </Article>
+    </View>
   );
 }
 

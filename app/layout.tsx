@@ -37,6 +37,7 @@ export default function RootLayout({
       <Head>
         <meta charSet="UTF-8" />
       </Head>
+
       <View as="body">
         <View as="nav">
           <Category />
