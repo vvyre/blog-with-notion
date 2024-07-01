@@ -7,7 +7,7 @@ import { PostListObject } from '@/_lib/types/notion-response';
 import { Btn } from '../../interaction/button/btn';
 import { Flex } from '../flex/flex';
 import { Spacing } from '../spacing/spacing';
-import { Category, Posts, categories, init } from '@/constants/category';
+// import { Category, Posts, categories, init } from '@/constants/category';
 import { PostListFallback } from '../post-list/post-list-fallback';
 
 export function PostListLayout({ postList }: { postList: PostListObject }) {
