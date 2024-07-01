@@ -9,6 +9,7 @@ export const notion_env = {
 export const site_env = {
   root: process.env.NEXT_PUBLIC_ROOT || '',
   blog: (process.env.NEXT_PUBLIC_ROOT || '') + '/engineering/',
+  asdf: (process.env.NEXT_PUBLIC_ROOT || '') + '/asdf/',
   gv: process.env.GOOGLE_SITE_VERIFICATION || '',
   nv: process.env.NAVER_SITE_VERIFICATION || '',
   utterances: process.env.NEXT_PUBLIC_UTTERANCES || '',
