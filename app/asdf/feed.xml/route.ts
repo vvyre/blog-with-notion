@@ -25,6 +25,7 @@ export async function GET() {
         description: getSummary(post),
         url: `${site_env.asdf}${parsedSlug(post)}`,
         date: getDate(post),
+        author: '숭늉',
       });
     });
     return new Response(feed.xml(), {

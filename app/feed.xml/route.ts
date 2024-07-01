@@ -25,6 +25,7 @@ export async function GET() {
         description: getSummary(post),
         url: `${site_env.engineering}${parsedSlug(post)}`,
         date: getDate(post),
+        author: 'Seungyoon Yu',
       });
     });
     return new Response(feed.xml(), {
