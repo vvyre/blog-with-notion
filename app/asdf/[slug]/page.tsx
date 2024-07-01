@@ -44,6 +44,7 @@ export default async function Post({ params }: PostPageProps) {
               <OtherArticlesBtn />
               <ShareBtn />
             </Flex>
+            <Spacing size="10rem" />
           </View>
         </Article>
       </View>
