@@ -1,9 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { THEMES } from '@/_lib/styles/colors.css';
 export const HOVER = style({
   selectors: {
     '&:hover': {
-      color: THEMES.highlight,
       textDecoration: 'underline',
       textUnderlineOffset: '0.25rem',
     },
