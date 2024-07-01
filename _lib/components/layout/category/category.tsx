@@ -17,7 +17,7 @@ export function Category() {
           as="Link"
           key={c.name}
           href={c.route}
-          styleVariant={current === c.route ? CATEGORY['selected'] : CATEGORY['options']}>
+          styleVariant={current.includes(c.route) ? CATEGORY['selected'] : CATEGORY['options']}>
           {c.name}
         </Btn>
       ))}
