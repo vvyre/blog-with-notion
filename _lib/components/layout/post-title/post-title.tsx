@@ -7,7 +7,6 @@ import { BASE, TITLE, SUMMARY, RELEASED_DATE, BACKGROUND, INFO } from './post-ti
 import { getSummary } from '@/utils/get-summary';
 import { Spacing } from '../spacing/spacing';
 import { PageObject } from '@/_lib/types/notion-response';
-import { POST_CENTERED } from '../article/article.css';
 import { Navigation } from '../navigation/navigation';
 
 export function PostTitle({ ...meta }: PageObject) {
