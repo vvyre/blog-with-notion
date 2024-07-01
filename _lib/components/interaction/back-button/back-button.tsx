@@ -1,3 +1,5 @@
+'use client';
+import { useCategory } from '@/_lib/react/use-category';
 import { View } from '../../layout/view/view';
 import { Txt } from '../../typography/txt/txt';
 
@@ -8,9 +10,10 @@ export function BackButton({
   wrapperStyleVariant?: string;
   buttonStyleVariant?: string;
 }) {
+  const [path] = useCategory();
   return (
     <View styleVariant={wrapperStyleVariant}>
-      <Txt as="Link" href="/" size="XL" styleVariant={buttonStyleVariant}>
+      <Txt as="Link" href={path} size="XL" styleVariant={buttonStyleVariant}>
         {'←'}
       </Txt>
     </View>

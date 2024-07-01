@@ -1,16 +1,16 @@
 'use client';
-import { CategoryType, categories } from '@/constants/category';
+import { categories } from '@/constants/category';
 import { Btn } from '../../interaction/button/btn';
 import { CATEGORY } from './category.css';
 import { View } from '../view/view';
 import { LAYOUT_CENTERED } from '../article/article.css';
 import { Spacing } from '../spacing/spacing';
-import { usePathname } from 'next/navigation';
+import { useCategory } from '@/_lib/react/use-category';
 
 export function Category() {
-  const path = usePathname();
-  const isEngineering = path === '/' || path.startsWith('/engineering');
-  const isAsdf = path === '/asdf' || path.startsWith('/asdf');
+  const [path, category] = useCategory();
+  const isEngineering = category === 'engineering';
+  const isAsdf = category === 'asdf';
 
   return (
     <View as="nav" styleVariant={LAYOUT_CENTERED}>
