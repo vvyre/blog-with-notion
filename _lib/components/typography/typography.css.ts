@@ -19,7 +19,7 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 400,
   },
   M: {
-    fontSize: '1.05rem',
+    fontSize: '1rem',
     fontWeight: 400,
   },
   S: {
@@ -63,7 +63,7 @@ export const LINK = style({
   textUnderlineOffset: '0.25rem',
   textDecorationThickness: '1px',
   transition: 'color 0.2s ease',
-  fontSize: '1.05rem',
+  fontSize: '1rem',
   selectors: {
     '&:hover': {
       color: THEMES.highlight,
