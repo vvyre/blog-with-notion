@@ -9,8 +9,15 @@ import { Flex } from '../flex/flex';
 import { Spacing } from '../spacing/spacing';
 // import { Category, Posts, categories, init } from '@/constants/category';
 import { PostListFallback } from '../post-list/post-list-fallback';
+import { CategoryType } from '@/constants/category';
 
-export function PostListLayout({ postList }: { postList: PostListObject }) {
+export function PostListLayout({
+  postList,
+  category = 'engineering',
+}: {
+  postList: PostListObject;
+  category: CategoryType;
+}) {
   // const POSTS: Posts = categories.reduce((acc: Posts, category) => {
   //   acc[category] = postList.filter(post => post.properties.tags.multi_select[0].name === (category as string));
   //   return acc;
@@ -34,7 +41,11 @@ export function PostListLayout({ postList }: { postList: PostListObject }) {
       </Flex> */}
       {/* <Spacing size="3rem" /> */}
       <View as="ul">
-        {postList?.length > 0 ? postList.map(post => <PostList key={post.id} pageData={post} />) : <PostListFallback />}
+        {postList?.length > 0 ? (
+          postList.map(post => <PostList category={category} key={post.id} pageData={post} />)
+        ) : (
+          <PostListFallback />
+        )}
       </View>
     </View>
   );

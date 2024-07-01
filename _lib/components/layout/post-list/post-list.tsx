@@ -12,13 +12,15 @@ import { getDate } from '@/utils/get-date';
 import { Flex } from '../flex/flex';
 import { View } from '../view/view';
 import { PageObject } from '@/_lib/types/notion-response';
+import { CategoryType } from '@/constants/category';
 
 interface PostListProps {
   pageData: PageObject;
+  category: CategoryType;
 }
 
-export function PostList({ pageData }: PostListProps) {
-  const URI = `/engineering/${parsedSlug(pageData)}`;
+export function PostList({ pageData, category = 'engineering' }: PostListProps) {
+  const URI = `/${category}/${parsedSlug(pageData)}`;
   // const TAGS = getTags(pageData);
   // const CATEGORY = TAGS[0].name;
   const TITLE = getTitle(pageData);
