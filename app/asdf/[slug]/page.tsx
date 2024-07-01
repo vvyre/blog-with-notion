@@ -9,15 +9,12 @@ import { Article } from '@/_lib/components/layout/article/article';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
-import { POST_CENTERED } from '@/_lib/components/layout/article/article.css';
+import { LAYOUT_CENTERED } from '@/_lib/components/layout/article/article.css';
 import { isr_revalidate_period, notion_env } from '@/env';
 import { Giscus } from '@/_lib/components/giscus/giscus';
-import { getTags } from '@/utils/get-tags';
-import { Txt } from '@/_lib/components/typography/txt/txt';
-import { style } from '@vanilla-extract/css';
-import { GiscusFallback } from '@/_lib/components/giscus/giscus-fallback';
 import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/layout/flex/flex';
+import { OtherArticlesBtn } from '@/_lib/components/interaction/button/other-articles-btn/other-articles-btn';
 
 export interface PostPageProps {
   params: {
@@ -38,12 +35,15 @@ export default async function Post({ params }: PostPageProps) {
       <View as="main">
         <Article>
           <PostTitle {...meta} />
-          <View styleVariant={POST_CENTERED}>
+          <View styleVariant={LAYOUT_CENTERED}>
             {blocks.map(b => (
               <Block key={b.id} block={b} />
             ))}
-            <Spacing size="2rem" />
-            <ShareBtn />
+            <Spacing size="5rem" />
+            <Flex justifyContents="spaceBetween">
+              <OtherArticlesBtn />
+              <ShareBtn />
+            </Flex>
           </View>
         </Article>
       </View>

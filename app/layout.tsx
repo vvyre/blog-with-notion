@@ -7,6 +7,7 @@ import { View } from '@/_lib/components/layout/view/view';
 import { Footer } from '@/_lib/components/layout/footer/footer';
 import Head from 'next/head';
 import { site_env } from '@/env';
+import { Category } from '@/_lib/components/layout/category/category';
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -36,7 +37,12 @@ export default function RootLayout({
       <Head>
         <meta charSet="UTF-8" />
       </Head>
-      <View as="body">{children}</View>
+      <View as="body">
+        <View as="nav">
+          <Category />
+        </View>
+        {children}
+      </View>
     </html>
   );
 }
