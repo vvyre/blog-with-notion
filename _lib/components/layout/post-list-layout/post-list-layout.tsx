@@ -11,13 +11,7 @@ import { Spacing } from '../spacing/spacing';
 import { PostListFallback } from '../post-list/post-list-fallback';
 import { CategoryType } from '@/constants/category';
 
-export function PostListLayout({
-  postList,
-  category = 'engineering',
-}: {
-  postList: PostListObject;
-  category: CategoryType;
-}) {
+export function PostListLayout({ postList, category }: { postList: PostListObject; category: CategoryType }) {
   // const POSTS: Posts = categories.reduce((acc: Posts, category) => {
   //   acc[category] = postList.filter(post => post.properties.tags.multi_select[0].name === (category as string));
   //   return acc;

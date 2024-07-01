@@ -19,7 +19,7 @@ interface PostListProps {
   category: CategoryType;
 }
 
-export function PostList({ pageData, category = 'engineering' }: PostListProps) {
+export function PostList({ pageData, category }: PostListProps) {
   const URI = `/${category}/${parsedSlug(pageData)}`;
   // const TAGS = getTags(pageData);
   // const CATEGORY = TAGS[0].name;
