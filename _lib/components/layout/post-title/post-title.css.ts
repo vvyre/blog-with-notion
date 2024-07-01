@@ -5,6 +5,7 @@ export const BACKGROUND = style({
   width: '100vw',
   display: 'flex',
   alignItems: 'center',
+  marginTop: '2rem',
   marginBottom: '3rem',
   padding: '0 2rem 0 2rem',
   '@media': {
