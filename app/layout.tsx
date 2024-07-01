@@ -12,12 +12,16 @@ import { Category } from '@/_lib/components/layout/category/category';
 export const metadata: Metadata = {
   title: meta.siteTitle,
   description: meta.siteDiscription,
+  authors: [{ name: 'Seungyoon Yu', url: 'https://seungyoon-yu.com' }],
+  creator: 'Seungyoon Yu',
+  publisher: 'Seungyoon Yu',
   openGraph: {
     url: meta.og.url,
     title: meta.og.title,
     type: meta.og.type,
     description: meta.og.description,
     images: meta.og.images.src,
+    siteName: meta.og.title,
   },
   verification: {
     google: site_env.gv,
