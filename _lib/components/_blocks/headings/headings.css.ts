@@ -28,6 +28,6 @@ export const HEADING_3 = style([
   BASE,
   {
     fontWeight: 700,
-    fontSize: '1.05rem',
+    fontSize: '1.15rem',
   },
 ]);

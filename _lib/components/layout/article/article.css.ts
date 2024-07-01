@@ -13,7 +13,7 @@ export const POST_GRID = style([
   },
 ]);
 
-export const POST_CENTERED = style([
+export const LAYOUT_CENTERED = style([
   BASE_PADDING,
   {
     background: 'transparent',
