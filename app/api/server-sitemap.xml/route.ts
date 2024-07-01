@@ -4,9 +4,13 @@ import { parsedSlug } from '@/utils/parsed-slug';
 import { getServerSideSitemap } from 'next-sitemap';
 
 export async function GET(request: Request) {
-  const posts = await getCachedPostList(notion_env.database_id);
+  const engineeringPosts = await getCachedPostList(notion_env.database_id);
+  const asdfPosts = await getCachedPostList(notion_env.asdf_id);
 
-  const slugs = posts.map(post => `${site_env.blog}${parsedSlug(post)}`);
+  const engineeringSlugs = engineeringPosts.map(post => `${site_env.blog}${parsedSlug(post)}`);
+  const asdfSlugs = asdfPosts.map(post => `${site_env.asdf}${parsedSlug(post)}`);
+
+  const slugs = [...engineeringSlugs, ...asdfSlugs];
 
   return getServerSideSitemap(
     slugs.map(slug => {
