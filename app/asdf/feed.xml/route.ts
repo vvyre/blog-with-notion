@@ -12,7 +12,7 @@ export async function GET() {
     title: meta.siteTitle,
     description: meta.siteDiscription,
     site_url: meta.og.url,
-    feed_url: `${site_env.asdf}/feed.xml`,
+    feed_url: `${site_env.asdf}feed.xml`,
     copyright: 'Seungyoon Yu',
     language: 'ko',
     pubDate: new Date(),
