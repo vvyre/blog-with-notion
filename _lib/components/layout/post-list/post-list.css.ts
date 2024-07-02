@@ -66,10 +66,10 @@ export const POST_LINK = style({
 export const POST_TITLE = style([
   {
     cursor: 'pointer',
-    fontWeight: 600,
+    fontWeight: 500,
     textTransform: 'uppercase',
     width: '100%',
-    fontSize: '0.95rem',
+    fontSize: '1rem',
     '@media': {
       '(0 <= width <= 768px)': {},
     },
@@ -92,7 +92,8 @@ export const POST_SUMMARY = style([
 
 export const RELEASED_DATE = style([
   {
-    fontSize: '0.8rem',
+    fontSize: '0.75rem',
+    wordSpacing: '-0.3rem',
     color: THEMES.gray,
     fontFamily: code,
     cursor: 'pointer',
