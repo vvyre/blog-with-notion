@@ -1,4 +1,5 @@
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
+import { code } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 export const GRID_SPAN = style({
@@ -67,7 +68,6 @@ export const POST_TITLE = style([
     cursor: 'pointer',
     fontWeight: 500,
     textTransform: 'uppercase',
-    fontSize: '0.95rem',
     width: '100%',
     '@media': {
       '(0 <= width <= 768px)': {},
@@ -93,6 +93,7 @@ export const RELEASED_DATE = style([
   {
     fontSize: '0.8rem',
     color: THEMES.gray,
+    fontFamily: code,
     cursor: 'pointer',
     fontWeight: 400,
     fontFeatureSettings: '"calt"',
