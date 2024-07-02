@@ -34,29 +34,30 @@ export const POST_LIST_BASE = style({
 
 export const POST_LINK = style({
   display: 'flex',
-  padding: '0.35rem 0 0.35rem 0',
-  margin: '0.5rem 0 0.5rem 0',
+  padding: '0.35rem 0.75rem 0.35rem 0.75rem',
+  marginBottom: '0.5rem',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
   maxWidth: '41rem',
   color: THEMES.default,
-  borderRadius: '1rem',
+  borderRadius: '0.5rem',
   transition: 'all 0.1s ease',
   '@media': {
     '(0 <= width <= 768px)': {
       width: '100%',
-      padding: '0 0.25rem 0 0.25rem',
-      margin: '0.5rem 1.25rem 0.5rem 1.25rem',
+      padding: '0.75rem 1rem 0.75rem 1rem',
       flexDirection: 'column',
       alignItems: 'flex-start',
     },
   },
   selectors: {
     '&:hover': {
-      outline: '1.5px solid black',
-      outlineOffset: '0.5rem',
+      backgroundColor: THEMES.light_b1,
+    },
+    '&:active': {
+      backgroundColor: THEMES.light_b2,
     },
   },
 });
