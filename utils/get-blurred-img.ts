@@ -1,5 +1,5 @@
 import type { GetBlockResponse } from '@notionhq/client/build/src/api-endpoints';
-import loadingImg from '#/img/loading.svg';
+import loadingImg from '#/img/loading.png';
 // import { getPlaiceholder } from 'plaiceholder';
 
 export const getBlurredImg = async (block: GetBlockResponse) => {
