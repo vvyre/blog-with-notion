@@ -18,11 +18,11 @@ export function PostTitle({ ...meta }: PageObject) {
     <View styleVariant={BACKGROUND}>
       <View styleVariant={BASE}>
         <Navigation />
-        <Spacing size="1.5rem" />
+        <Spacing size="2.5rem" />
         <Heading as="h1" styleVariant={TITLE}>
           {title}
         </Heading>
-        <Spacing size="0.5rem" />
+        <Spacing size="1rem" />
         <Txt as="p" styleVariant={INFO}>
           <Txt as="span" styleVariant={RELEASED_DATE}>
             {rel_date + ' • '}
