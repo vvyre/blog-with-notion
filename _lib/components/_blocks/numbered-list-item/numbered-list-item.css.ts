@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 export const BASE = style({
   fontFeatureSettings: '"tnum"',
   listStyleType: 'decimal',
+  marginLeft: '1rem',
   fontSize: '0.95rem',
 });
 export const DEPTH_1 = style({
