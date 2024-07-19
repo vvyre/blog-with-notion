@@ -55,7 +55,11 @@ export const CODE = style({
 
 export const STRIKE = style({});
 
-export const UNDERLINE = style({});
+export const UNDERLINE = style({
+  textDecoration: 'underline',
+  textUnderlineOffset: '0.25rem',
+  textDecorationThickness: '1px',
+});
 
 export const LINK = style({
   textDecoration: 'underline',
