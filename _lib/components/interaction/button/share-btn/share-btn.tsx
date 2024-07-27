@@ -14,10 +14,10 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
   const path = usePathname();
   const { copy, isCopied } = useClipboard(1000);
 
-  const [label, setLabel] = useState<string>('포스트 링크 공유');
+  const [label, setLabel] = useState<string>('포스트 링크 복사');
   useEffect(() => {
     if (isCopied) setLabel('링크가 복사되었습니다');
-    else setLabel('포스트 링크 공유');
+    else setLabel('포스트 링크 복사');
   }, [isCopied]);
 
   const fullUrl = subtitle ? `${site_env.root}${path}/#${cleanUrl(subtitle)}` : `${site_env.root}${path}`;
