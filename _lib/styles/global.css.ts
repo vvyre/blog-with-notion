@@ -107,3 +107,29 @@ globalStyle('article>p, article>p>span', {
 globalStyle('span>code', {
   wordBreak: 'break-all',
 });
+
+//global UL, OL Styling b/c of nested selector issue of vanilla extract
+
+globalStyle('ul', {
+  listStyleType: 'disc',
+});
+
+globalStyle('ul ul', {
+  listStyleType: 'circle',
+});
+
+globalStyle('ul ul ul', {
+  listStyleType: 'square',
+});
+
+globalStyle('ol', {
+  listStyleType: 'decimal',
+});
+
+globalStyle('ol ol', {
+  listStyleType: 'lower-alpha',
+});
+
+globalStyle('ol ol ol', {
+  listStyleType: 'lower-roman',
+});
