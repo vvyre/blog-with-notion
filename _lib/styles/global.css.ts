@@ -110,26 +110,26 @@ globalStyle('span>code', {
 
 //global UL, OL Styling b/c of nested selector issue of vanilla extract
 
-globalStyle('ul', {
+globalStyle('article ul', {
   listStyleType: 'disc',
 });
 
-globalStyle('ul ul', {
+globalStyle('article ul ul', {
   listStyleType: 'circle',
 });
 
-globalStyle('ul ul ul', {
+globalStyle('article ul ul ul', {
   listStyleType: 'square',
 });
 
-globalStyle('ol', {
+globalStyle('article ol', {
   listStyleType: 'decimal',
 });
 
-globalStyle('ol ol', {
+globalStyle('article ol ol', {
   listStyleType: 'lower-alpha',
 });
 
-globalStyle('ol ol ol', {
+globalStyle('article ol ol ol', {
   listStyleType: 'lower-roman',
 });
