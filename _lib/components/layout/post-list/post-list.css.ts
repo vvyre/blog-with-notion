@@ -35,15 +35,14 @@ export const POST_LIST_BASE = style({
 
 export const POST_LINK = style({
   display: 'flex',
-  padding: '0.35rem 0.75rem 0.35rem 0.75rem',
-  marginBottom: '0.5rem',
+  padding: '0.85rem',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
   maxWidth: '41rem',
   color: THEMES.default,
-  borderRadius: '0.5rem',
+  borderRadius: '0.75rem',
   transition: 'all 0.1s ease',
   '@media': {
     '(0 <= width <= 768px)': {
@@ -69,7 +68,7 @@ export const POST_TITLE = style([
     fontWeight: 500,
     textTransform: 'uppercase',
     width: '100%',
-    fontSize: '1rem',
+    fontSize: '0.95rem',
     '@media': {
       '(0 <= width <= 768px)': {},
     },

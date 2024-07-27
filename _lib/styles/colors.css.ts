@@ -3,13 +3,14 @@ import { styleVariants } from '@vanilla-extract/css';
 export const THEMES = {
   theme: '#97F3F9',
   white: '#FFFFFF',
+  whitegray: '#FAFAFB',
   default: '#000000',
   blueblack: '#303336',
   gray: '#808386',
   highlight: '#2578BE',
-  light_b1: '#F7F8F9',
-  light_b2: '#F2F3F4',
-  light_b3: '#E2E3E4',
+  light_b1: '#F6F6F7',
+  light_b2: '#F2F2F3',
+  light_b3: '#E2E2E3',
 };
 
 export const COLORS = {
