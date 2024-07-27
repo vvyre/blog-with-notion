@@ -9,7 +9,7 @@ export function BulletedListWrapper({ block }: NotionComponentPropsWithChildren<
   return (
     <>
       <List as="ul" styleVariant={BASE}>
-        {block.grouped_bulleted_list_item.map((item: BulletedListItemBlockObjectResponse, idx: number) => (
+        {block.grouped_bulleted_list_item.children.map((item: BulletedListItemBlockObjectResponse, idx: number) => (
           <BulletedListItem key={idx} block={item} />
         ))}
       </List>

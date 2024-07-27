@@ -4,6 +4,7 @@ import {
   BlockObjectResponse,
   GetBlockResponse,
   GetPageResponse,
+  ListBlockChildrenResponse,
   PageObjectResponse,
   PartialBlockObjectResponse,
   QueryDatabaseParameters,
@@ -73,23 +74,43 @@ export const getPostMetaData = async (page_id: string): Promise<PageObject> => {
   return result as PageObject;
 };
 
-export const getPost = async (block_id: string): Promise<(NotionBlock | NotionBlockWithChildren)[]> => {
+const getChildrenBlocks = async (parent_block_id: string): Promise<(NotionBlock | NotionBlockWithChildren)[]> => {
   let results = [];
   let blocks = await notion.blocks.children.list({
-    block_id,
+    block_id: parent_block_id,
     page_size: 100,
   });
   results = [...blocks.results];
   while (blocks.has_more) {
-    block_id = blocks.next_cursor || '';
+    parent_block_id = blocks.next_cursor || '';
     blocks = await notion.blocks.children.list({
-      block_id,
+      block_id: parent_block_id,
       page_size: 100,
     });
     results = [...results, ...blocks.results];
   }
-
   return results as (NotionBlock | NotionBlockWithChildren)[];
+};
+
+const getAllChildrenBlocks = async (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+  const result = await Promise.all(
+    blocks.map(async depth_block => {
+      if (depth_block.has_children) {
+        const children = await getChildrenBlocks(depth_block.id);
+        const type = depth_block.type;
+        (depth_block as any)[type].children = children;
+      }
+      return depth_block;
+    })
+  );
+  return result;
+};
+
+export const getPost = async (block_id: string): Promise<(NotionBlock | NotionBlockWithChildren)[]> => {
+  const blocks = await getChildrenBlocks(block_id);
+  const fullBlocks = await getAllChildrenBlocks(blocks);
+
+  return fullBlocks;
 };
 
 export const getSingleBlock = async (block_id: string): Promise<GetBlockResponse> =>

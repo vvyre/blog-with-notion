@@ -1,6 +1,6 @@
 import type { NotionBlock, NotionBlockWithChildren } from '@/_lib/types/block';
 
-export const groupedBlocks = (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+const process = (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
   if (!blocks.length) return blocks;
 
   const result: (NotionBlock | NotionBlockWithChildren)[] = [];
@@ -20,26 +20,56 @@ export const groupedBlocks = (blocks: (NotionBlock | NotionBlockWithChildren)[])
   blocks.forEach((block, idx) => {
     const currBlock = block.type;
 
-    if (target[currBlock] === true) {
+    if (target[currBlock]) {
       group[currBlock]?.push(block);
       prevBlock = currBlock;
     } else {
-      if (idx === blocks.length - 1 || (target[prevBlock] === true && prevBlock !== currBlock)) {
-        //마지막 블록이거나 블록의 종류가 바뀌면 작업 진행 그룹을 삽입하고 초기화
+      if (target[prevBlock] && prevBlock !== currBlock) {
+        //블록의 종류가 바뀌면 작업 진행 그룹을 삽입하고 초기화
         const key = `grouped_${prevBlock}`;
         result.push({
-          [key]: group[prevBlock],
+          [key]: {
+            children: group[prevBlock],
+          },
           //@ts-ignore
           type: key,
           id: '',
+          has_content: false,
         });
+
         group[prevBlock] = [];
       }
-
       result.push(block);
       prevBlock = currBlock;
     }
+
+    if (idx === blocks.length - 1 && target[prevBlock] === true) {
+      // 마지막 블록을 처리할 때 그룹을 블록 리스트에 따로 추가
+      const key = `grouped_${prevBlock}`;
+      result.push({
+        [key]: {
+          children: group[prevBlock],
+        },
+        //@ts-ignore
+        type: key,
+        id: '',
+        has_content: false,
+      });
+      group[prevBlock] = [];
+    }
+  });
+  return result;
+};
+
+export const groupedBlocks = (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+  const result = blocks.map(depth_block => {
+    if (depth_block.has_children) {
+      const type = depth_block.type;
+      (depth_block as any)[type].children = process((depth_block as any)[type].children);
+      groupedBlocks((depth_block as any)[type].children);
+    }
+    return depth_block;
   });
 
-  return result;
+  return process(result);
 };

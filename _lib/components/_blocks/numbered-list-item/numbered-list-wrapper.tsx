@@ -9,7 +9,7 @@ export function NumberedListWrapper({ block }: NotionComponentPropsWithChildren<
   return (
     <>
       <List as="ol" styleVariant={BASE}>
-        {block.grouped_numbered_list_item.map((item: NumberedListItemBlockObjectResponse, idx: number) => (
+        {block.grouped_numbered_list_item.children.map((item: NumberedListItemBlockObjectResponse, idx: number) => (
           <NumberedListItem key={idx} block={item} />
         ))}
       </List>

@@ -116,7 +116,7 @@ type ExtendedRichText<T> = {
   [K in keyof T]: T[K] extends RichTextItemResponse ? RichText : T[K] extends object ? ExtendedRichText<T[K]> : T[K];
 };
 
-export type ExtendedNotionBlock<T> = ExtendedRichText<T> & WithChildren;
+export type ExtendedNotionBlock<T extends BlockTypes> = ExtendedRichText<T> & WithChildren;
 
 export type WithChildren = {
   children: NotionBlockWithChildren;

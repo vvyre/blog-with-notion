@@ -11,7 +11,7 @@ export function Paragraph({ block }: NotionComponentPropsWithChildren<'paragraph
       {block.paragraph.rich_text.map((txt: RichTextItemResponse, idx: number) => (
         <Txt key={idx} as="span" richText={txt} />
       ))}
-      {block.paragraph.children && <ChildrenBlocks block={block} />}
+      {block.paragraph.children && <ChildrenBlocks key={block.id} childrenBlocks={block.paragraph.children} />}
     </View>
   );
 }

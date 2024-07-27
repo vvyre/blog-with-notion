@@ -12,7 +12,7 @@ export function Toggle({ block }: NotionComponentPropsWithChildren<'toggle'>) {
           <Txt key={idx} as="span" richText={txt} />
         ))}
       </summary>
-      {block.toggle.children && <ChildrenBlocks block={block} />}
+      {block.toggle.children && <ChildrenBlocks key={block.id} childrenBlocks={block.toggle.children} />}
     </details>
   );
 }
