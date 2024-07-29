@@ -6,7 +6,7 @@ export function ChildrenBlocks({ childrenBlocks }: { childrenBlocks: NotionBlock
   return (
     <Fragment>
       {childrenBlocks?.map((block: NotionBlock) => {
-        return <Block block={block} />;
+        return <Block key={block.id} block={block} />;
       })}
     </Fragment>
   );
