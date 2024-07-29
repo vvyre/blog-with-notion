@@ -11,7 +11,7 @@ export function Quote({ block }: NotionComponentPropsWithChildren<'quote'>) {
       {block.quote.rich_text.map((txt: RichTextItemResponse, idx: number) => (
         <Txt key={idx} as="span" richText={txt} />
       ))}
-      {block.quote.children && <ChildrenBlocks key={block.id} childrenBlocks={block.quote.children} />}
+      {block.quote.children && <ChildrenBlocks childrenBlocks={block.quote.children} />}
     </View>
   );
 }
