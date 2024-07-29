@@ -29,8 +29,9 @@ export const POST_TEXT = style({
 
 export const POST_LIST_BASE = style({
   cursor: 'pointer',
-  width: '100vw',
-  maxWidth: '41rem',
+  display: 'flex',
+  width: '100%',
+  justifyContent: 'center',
 });
 
 export const POST_LINK = style({
@@ -54,10 +55,10 @@ export const POST_LINK = style({
   },
   selectors: {
     '&:hover': {
-      backgroundColor: THEMES.light_b1,
+      backgroundColor: THEMES.light_b2,
     },
     '&:active': {
-      backgroundColor: THEMES.light_b2,
+      backgroundColor: THEMES.light_b3,
     },
   },
 });

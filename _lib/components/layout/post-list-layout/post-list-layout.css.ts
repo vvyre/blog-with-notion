@@ -12,13 +12,13 @@ export const POST_LIST_GRID = style([
 ]);
 
 export const POST_LIST_CENTERED = style([
-  BASE_PADDING,
   {
     backgroundColor: THEMES.whitegray,
     borderRadius: '0.75rem',
     maxWidth: '45rem',
     width: '100%',
     margin: '0 0 5rem 0',
+    padding: '0.25rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
