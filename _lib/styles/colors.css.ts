@@ -10,7 +10,7 @@ export const THEMES = {
   highlight: '#2578BE',
   light_b1: '#F6F6F7',
   light_b2: '#F2F2F3',
-  light_b3: '#E2E2E3',
+  light_b3: '#E6E6E7',
 };
 
 export const COLORS = {
