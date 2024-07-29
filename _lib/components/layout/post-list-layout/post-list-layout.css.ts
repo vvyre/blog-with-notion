@@ -17,7 +17,7 @@ export const POST_LIST_CENTERED = style([
     borderRadius: '0.75rem',
     maxWidth: '45rem',
     width: '100%',
-    margin: '0 0 5rem 0',
+    margin: '0 0 3rem 0',
     padding: '0.25rem',
     display: 'flex',
     flexDirection: 'column',
