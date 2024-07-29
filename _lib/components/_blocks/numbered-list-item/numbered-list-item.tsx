@@ -10,7 +10,7 @@ export function NumberedListItem({ block }: NotionComponentPropsWithChildren<'nu
       {block.numbered_list_item.rich_text.map((txt: RichTextItemResponse, idx: number) => (
         <Txt key={idx} as="span" richText={txt} />
       ))}
-      {block.has_children && <ChildrenBlocks key={block.id} childrenBlocks={block.numbered_list_item.children} />}
+      {block.has_children && <ChildrenBlocks childrenBlocks={block.numbered_list_item.children} />}
     </List>
   );
 }
