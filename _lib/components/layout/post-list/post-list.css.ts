@@ -43,7 +43,7 @@ export const POST_LINK = style({
   width: '100%',
   maxWidth: '41rem',
   color: THEMES.default,
-  borderRadius: '0.75rem',
+  borderRadius: '0.5rem',
   transition: 'all 0.1s ease',
   '@media': {
     '(0 <= width <= 768px)': {
