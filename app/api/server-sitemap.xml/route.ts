@@ -5,12 +5,12 @@ import { getServerSideSitemap } from 'next-sitemap';
 
 export async function GET(request: Request) {
   const engineeringPosts = await getCachedPostList(notion_env.database_id);
-  const asdfPosts = await getCachedPostList(notion_env.asdf_id);
+  // const asdfPosts = await getCachedPostList(notion_env.asdf_id);
 
   const engineeringSlugs = engineeringPosts.map(post => `${site_env.engineering}${parsedSlug(post)}`);
-  const asdfSlugs = asdfPosts.map(post => `${site_env.asdf}${parsedSlug(post)}`);
+  // const asdfSlugs = asdfPosts.map(post => `${site_env.asdf}${parsedSlug(post)}`);
 
-  const slugs = [...engineeringSlugs, ...asdfSlugs];
+  const slugs = [...engineeringSlugs];
 
   return getServerSideSitemap(
     slugs.map(slug => {
