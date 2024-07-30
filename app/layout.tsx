@@ -1,10 +1,8 @@
-import { Navigation } from '@/_lib/components/layout/navigation/navigation_legacy';
 import '@/_lib/components/_blocks/code/hljs.css';
 import '../_lib/styles/global.css';
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 import { View } from '@/_lib/components/layout/view/view';
-import { Footer } from '@/_lib/components/layout/footer/footer';
 import Head from 'next/head';
 import { site_env } from '@/env';
 import { Category } from '@/_lib/components/layout/category/category';
@@ -40,6 +38,7 @@ export default function RootLayout({
     <html lang="ko">
       <Head>
         <meta charSet="UTF-8" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
       </Head>
 
       <View as="body">
