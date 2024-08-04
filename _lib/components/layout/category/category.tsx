@@ -13,23 +13,24 @@ export function Category() {
   const isAsdf = category === 'asdf';
 
   return (
-    <View as="nav" styleVariant={LAYOUT_CENTERED}>
-      <Spacing size="2rem" />
-      {categories.map(c => {
-        const isSelected =
-          c.route === path ||
-          (isEngineering && c.route.startsWith('/engineering')) ||
-          (isAsdf && c.route.startsWith('/asdf'));
-        return (
-          <Btn
-            as="Link"
-            key={c.name}
-            href={c.route}
-            styleVariant={isSelected ? CATEGORY['selected'] : CATEGORY['options']}>
-            {c.name}
-          </Btn>
-        );
-      })}
-    </View>
+    // <View as="nav" styleVariant={LAYOUT_CENTERED}>
+    //   <Spacing size="2rem" />
+    //   {categories.map(c => {
+    //     const isSelected =
+    //       c.route === path ||
+    //       (isEngineering && c.route.startsWith('/engineering')) ||
+    //       (isAsdf && c.route.startsWith('/asdf'));
+    //     return (
+    //       <Btn
+    //         as="Link"
+    //         key={c.name}
+    //         href={c.route}
+    //         styleVariant={isSelected ? CATEGORY['selected'] : CATEGORY['options']}>
+    //         {c.name}
+    //       </Btn>
+    //     );
+    //   })}
+    // </View>
+    <></>
   );
 }
