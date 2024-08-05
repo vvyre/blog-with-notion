@@ -10,9 +10,9 @@ import { Category } from '@/_lib/components/layout/category/category';
 export const metadata: Metadata = {
   title: meta.siteTitle,
   description: meta.siteDiscription,
-  authors: [{ name: 'Seungyoon Yu', url: 'https://seungyoon-yu.com' }],
-  creator: 'Seungyoon Yu',
-  publisher: 'Seungyoon Yu',
+  authors: [{ name: 'Brewcold', url: 'https://www.brewcoldblue.com' }],
+  creator: 'Brewcold',
+  publisher: 'Brewcold',
   openGraph: {
     url: meta.og.url,
     title: meta.og.title,

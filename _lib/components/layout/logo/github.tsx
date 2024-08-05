@@ -14,7 +14,7 @@ export function GithubLink() {
   const GITHUB_MARK = Github_black;
   return (
     <Btn as="a" href="https://github.com/brewcold" target="_blank" styleVariant={EXTERNAL_LINK}>
-      <Image unoptimized className={MENU_GITHUB_IMG} priority={true} alt="Seungyoon Yu's Github" src={GITHUB_MARK} />
+      <Image unoptimized className={MENU_GITHUB_IMG} priority={true} alt="brewcold github" src={GITHUB_MARK} />
     </Btn>
   );
 }

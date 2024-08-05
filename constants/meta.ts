@@ -1,7 +1,7 @@
 import { site_env } from '@/env';
 import logo from '#/img/logo.png';
 
-const TITLE = 'Seungyoon Yu';
+const TITLE = 'Brewcold';
 const DESCRIPTION = 'Writings about life as a developer';
 
 export const meta = {
@@ -16,10 +16,7 @@ export const meta = {
     images: logo,
   },
   footer: {
-    links: [
-      { name: 'Github', href: 'https://github.com/brewcold' },
-      { name: 'seung.yoon.yu (at) gmail', href: 'mailto:seung.yoon.yu@gmail.com' },
-    ],
-    copyright: 'Copyright 2024. SEUNGYOON YU All rights reserved.',
+    links: [{ name: 'Github', href: 'https://github.com/brewcold' }],
+    copyright: 'Copyright 2024. BREWCOLD All rights reserved.',
   },
 };

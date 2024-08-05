@@ -13,7 +13,7 @@ export async function GET() {
     description: meta.siteDiscription,
     site_url: meta.og.url,
     feed_url: `${site_env.asdf}feed.xml`,
-    copyright: 'Seungyoon Yu',
+    copyright: 'Brewcold',
     language: 'ko',
     pubDate: new Date(),
   });
