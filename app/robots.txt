@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://seungyoon-yu.com
+Host: https://www.brewcoldblue.com/
 
 # Sitemaps
-Sitemap: https://seungyoon-yu.com/server-sitemap.xml
+Sitemap: https://www.brewcoldblue.com/sitemap.xml
