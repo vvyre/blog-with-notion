@@ -2,10 +2,10 @@ import { style } from '@vanilla-extract/css';
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 
 export const BACKGROUND = style({
-  width: '100vw',
+  width: '100%',
   display: 'flex',
   alignItems: 'center',
-  marginTop: '2rem',
+  marginTop: '3rem',
   marginBottom: '3rem',
   padding: '0 2rem 0 2rem',
   '@media': {
