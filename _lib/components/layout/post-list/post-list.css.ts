@@ -36,7 +36,7 @@ export const POST_LIST_BASE = style({
 
 export const POST_LINK = style({
   display: 'flex',
-  padding: '0.85rem',
+  padding: '0.65rem 0.75rem 0.65rem 0.75rem',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -66,7 +66,7 @@ export const POST_LINK = style({
 export const POST_TITLE = style([
   {
     cursor: 'pointer',
-    fontWeight: 500,
+    fontWeight: 600,
     textTransform: 'uppercase',
     width: '100%',
     fontSize: '0.95rem',

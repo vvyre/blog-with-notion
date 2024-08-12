@@ -35,9 +35,11 @@ export function PostList({ pageData, category }: PostListProps) {
             {TITLE}
           </Heading>
         </Flex>
-        <View>
-          <Txt styleVariant={RELEASED_DATE}>{DATE}</Txt>
-        </View>
+        <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
+          <Txt as="p" styleVariant={RELEASED_DATE}>
+            {DATE}
+          </Txt>
+        </Flex>
       </Txt>
     </List>
   );
