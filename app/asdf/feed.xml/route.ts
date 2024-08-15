@@ -9,11 +9,11 @@ import { getDate } from '@/utils/get-date';
 
 export async function GET() {
   const feed = new RSS({
-    title: meta.siteTitle,
-    description: meta.siteDiscription,
+    title: '숭늉',
+    description: '숭늉',
     site_url: meta.og.url,
     feed_url: `${site_env.asdf}feed.xml`,
-    copyright: 'Brewcold',
+    copyright: '숭늉',
     language: 'ko',
     pubDate: new Date(),
   });
