@@ -11,7 +11,7 @@ export async function GET() {
   const feed = new RSS({
     title: '숭늉',
     description: '숭늉',
-    site_url: meta.og.url,
+    site_url: meta.og.url + '/asdf',
     feed_url: `${site_env.asdf}feed.xml`,
     copyright: '숭늉',
     language: 'ko',
