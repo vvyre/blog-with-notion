@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".storybook/stories/**/*.stories.tsx",
-    ".storybook/stories/**/*.stories.ts"
+    ".storybook/stories/**/*.stories.ts",
+    "_lib/components/tally/tally.jsx"
   ],
   "exclude": ["node_modules"]
 }

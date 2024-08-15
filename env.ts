@@ -15,6 +15,7 @@ export const site_env = {
   utterances: process.env.NEXT_PUBLIC_UTTERANCES || '',
   giscus: process.env.NEXT_PUBLIC_GISCUS_REPO || '',
   giscus_id: process.env.NEXT_PUBLIC_GISCUS_ID || '',
+  tally: process.env.NEXT_PUBLIC_TALLY || '',
 };
 
 export const isr_revalidate_period = 3600;
