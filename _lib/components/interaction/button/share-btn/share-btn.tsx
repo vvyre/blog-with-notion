@@ -20,7 +20,7 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
     else setLabel('포스트 링크 복사');
   }, [isCopied]);
 
-  const fullUrl = subtitle ? `${site_env.root}${path}/#${cleanUrl(subtitle)}` : `${site_env.root}${path}`;
+  const fullUrl = subtitle ? `${site_env.root}${path}#${cleanUrl(subtitle)}` : `${site_env.root}${path}`;
 
   const handleClick = () => {
     copy(fullUrl);

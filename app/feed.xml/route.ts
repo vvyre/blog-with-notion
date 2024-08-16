@@ -23,7 +23,7 @@ export async function GET() {
       feed.item({
         title: getTitle(post),
         description: getSummary(post),
-        url: `${site_env.engineering}${parsedSlug(post)}`,
+        url: `${site_env.engineering}/${parsedSlug(post)}`,
         date: getDate(post),
         author: 'Brewcold',
       });
