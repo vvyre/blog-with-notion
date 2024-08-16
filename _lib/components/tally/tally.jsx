@@ -2,7 +2,7 @@
 import { site_env } from '@/env';
 import React, { useEffect } from 'react';
 
-const TallyEmbed = () => {
+export function TallyEmbed() {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://tally.so/widgets/embed.js';
@@ -30,10 +30,8 @@ const TallyEmbed = () => {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: `<iframe data-tally-src="${site_env.tally}" loading="lazy" frameborder="0" width="100%" height="250" title="소식 전하기"></iframe>`,
+        __html: `<iframe data-tally-src="${site_env.tally}" loading="lazy" frameborder="0" width="100%" height="250" title='소식 전하기'></iframe>`,
       }}
     />
   );
-};
-
-export default TallyEmbed;
+}

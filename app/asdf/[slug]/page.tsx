@@ -15,7 +15,7 @@ import { Giscus } from '@/_lib/components/giscus/giscus';
 import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/layout/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/interaction/button/other-articles-btn/other-articles-btn';
-import TallyEmbed from '@/_lib/components/tally/tally';
+import { TallyEmbed } from '@/_lib/components/tally/tally';
 export interface PostPageProps {
   params: {
     slug: string;
