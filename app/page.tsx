@@ -5,6 +5,7 @@ import { isr_revalidate_period, notion_env } from '@/env';
 import About from '@/_lib/components/about/about';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { LAYOUT_CENTERED } from '@/_lib/components/layout/article/article.css';
+import { TallyEmbed } from '@/_lib/components/tally/tally';
 export const revalidate = isr_revalidate_period;
 
 export default async function PostListPage() {
@@ -15,6 +16,8 @@ export default async function PostListPage() {
       <Spacing size="2rem" />
       <PostListLayout category="engineering" postList={postList} />
       <About />
+      <Spacing size="1rem" />
+      <TallyEmbed />
       <Spacing size="5rem" />
     </View>
   );
