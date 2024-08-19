@@ -19,7 +19,6 @@ export default async function PostListPage() {
       <About />
       <Spacing size="1rem" />
       <Typeform />
-      <Spacing size="5rem" />
     </View>
   );
 }

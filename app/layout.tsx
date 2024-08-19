@@ -6,6 +6,7 @@ import { View } from '@/_lib/components/layout/view/view';
 import Head from 'next/head';
 import { site_env } from '@/env';
 import { Category } from '@/_lib/components/layout/category/category';
+import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -46,6 +47,7 @@ export default function RootLayout({
           <Category />
         </View>
         {children}
+        <Spacing size="10rem" />
       </View>
     </html>
   );
