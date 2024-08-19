@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { site_env } from '@/env';
 import { Category } from '@/_lib/components/layout/category/category';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
+import { Typeform } from '@/_lib/components/typeform/typeform';
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -47,6 +48,8 @@ export default function RootLayout({
           <Category />
         </View>
         {children}
+        <Spacing size="1rem" />
+        <Typeform />
         <Spacing size="10rem" />
       </View>
     </html>

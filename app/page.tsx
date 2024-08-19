@@ -17,8 +17,6 @@ export default async function PostListPage() {
       <Spacing size="2rem" />
       <PostListLayout category="engineering" postList={postList} />
       <About />
-      <Spacing size="1rem" />
-      <Typeform />
     </View>
   );
 }
