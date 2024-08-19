@@ -48,8 +48,6 @@ export default function RootLayout({
           <Category />
         </View>
         {children}
-        <Spacing size="1rem" />
-        <Typeform />
         <Spacing size="10rem" />
       </View>
     </html>
