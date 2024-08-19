@@ -11,7 +11,7 @@ import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 export const metadata: Metadata = {
   title: meta.siteTitle,
   description: meta.siteDiscription,
-  authors: [{ name: 'Brewcold', url: 'https://www.brewcoldblue.com' }],
+  authors: [{ name: 'Brewcold', url: meta.og.url }],
   creator: 'Brewcold',
   publisher: 'Brewcold',
   openGraph: {

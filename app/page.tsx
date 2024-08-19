@@ -5,7 +5,6 @@ import { isr_revalidate_period, notion_env } from '@/env';
 import About from '@/_lib/components/about/about';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { LAYOUT_CENTERED } from '@/_lib/components/layout/article/article.css';
-import { Typeform } from '@/_lib/components/typeform/typeform';
 
 export const revalidate = isr_revalidate_period;
 
