@@ -9,10 +9,9 @@ export const site_env = {
   engineering: (process.env.NEXT_PUBLIC_ROOT || '') + '/engineering',
   gv: process.env.GOOGLE_SITE_VERIFICATION || '',
   nv: process.env.NAVER_SITE_VERIFICATION || '',
-  utterances: process.env.NEXT_PUBLIC_UTTERANCES || '',
   giscus: process.env.NEXT_PUBLIC_GISCUS_REPO || '',
   giscus_id: process.env.NEXT_PUBLIC_GISCUS_ID || '',
-  tally: process.env.NEXT_PUBLIC_TALLY || '',
+  tf: process.env.NEXT_PUBLIC_TF_LIVE || '',
 };
 
 export const isr_revalidate_period = 3600;
