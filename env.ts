@@ -11,7 +11,6 @@ export const site_env = {
   nv: process.env.NAVER_SITE_VERIFICATION || '',
   giscus: process.env.NEXT_PUBLIC_GISCUS_REPO || '',
   giscus_id: process.env.NEXT_PUBLIC_GISCUS_ID || '',
-  tf: process.env.NEXT_PUBLIC_TF_LIVE || '',
 };
 
 export const isr_revalidate_period = 3600;
