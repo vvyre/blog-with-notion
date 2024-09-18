@@ -1,9 +1,9 @@
 import { THEMES } from '@/_lib/styles/colors.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
-export const TEXT_STYLE = styleVariants({
+export const TYPOGRAPHY = {
   XXXL: {
-    fontSize: '2.75rem',
+    fontSize: '2.5rem',
     fontWeight: 700,
   },
   XXL: {
@@ -19,22 +19,24 @@ export const TEXT_STYLE = styleVariants({
     fontWeight: 400,
   },
   M: {
-    fontSize: '1rem',
+    fontSize: '1.05rem',
     fontWeight: 400,
   },
   S: {
-    fontSize: '0.95rem',
+    fontSize: '0.975rem',
     fontWeight: 400,
   },
   XS: {
-    fontSize: '0.9rem',
+    fontSize: '0.925rem',
     fontWeight: 400,
   },
   XXS: {
     fontSize: '0.85rem',
     fontWeight: 400,
   },
-});
+};
+
+export const TEXT_STYLE = styleVariants(TYPOGRAPHY);
 
 export const BOLD = style({
   fontWeight: 600,
@@ -46,7 +48,7 @@ export const ITALIC = style({
 
 export const CODE = style({
   verticalAlign: 'text-bottom',
-  fontSize: '0.82rem',
+  fontSize: '0.825rem',
   padding: '0.1rem 0.25rem 0.1rem 0.25rem',
   borderRadius: '0.25rem',
   border: 'none',
@@ -67,7 +69,7 @@ export const LINK = style({
   textUnderlineOffset: '0.25rem',
   textDecorationThickness: '1px',
   transition: 'color 0.2s ease',
-  fontSize: '1rem',
+  fontSize: TYPOGRAPHY.M.fontSize,
   selectors: {
     '&:hover': {
       color: THEMES.highlight,
