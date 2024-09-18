@@ -13,20 +13,21 @@ globalStyle('html', {
   fontSize: '100%',
   lineHeight: '1.8',
   fontFamily: `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, ${kor}, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
-  fontFeatureSettings: "'ss07'",
-  WebkitTextSizeAdjust: '100%',
-  MozTextSizeAdjust: '100%',
+  fontFeatureSettings: "'case', 'ss05', 'ss07'",
 });
 
 globalStyle('body', {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
+  WebkitTextSizeAdjust: '100%',
+  MozTextSizeAdjust: '100%',
   color: THEMES.default,
 });
 
 globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
   margin: 0,
   padding: 0,
+  fontFeatureSettings: "'case', 'ss05', 'ss07'",
   fontWeight: 400,
 });
 
@@ -36,7 +37,7 @@ globalStyle('main', {
 
 globalStyle('input, button, select, textarea', {
   fontFamily: `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, ${kor}, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
-  fontFeatureSettings: "'ss07'",
+  fontFeatureSettings: "'case', 'ss05', 'ss07', ",
   margin: 0,
   font: 'inherit',
 });
@@ -56,7 +57,7 @@ globalStyle('textarea', {
 
 globalStyle('a', {
   fontFamily: `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, ${kor}, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
-  fontFeatureSettings: "'ss07'",
+  fontFeatureSettings: "'case', 'tnum', 'ss07'",
   fontSize: '100%',
   textDecoration: 'none',
   color: 'inherit',
@@ -68,6 +69,7 @@ globalStyle('a', {
 globalStyle('ul, ol', {
   margin: 0,
   padding: 0,
+  fontFeatureSettings: "'case', 'tnum', 'ss07', 'ss05'",
   listStyleType: 'none',
 });
 
