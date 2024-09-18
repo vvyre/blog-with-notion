@@ -61,13 +61,9 @@ export const TITLE_TEXT_PLACEMENT = style({
 });
 
 export const INFO_BOX = style({
-  backgroundColor: THEMES.light_b1,
-  borderRadius: '1rem',
   padding: '2rem 2.5rem 2rem 2.5rem',
-  marginBottom: '1rem',
+  marginBottom: '0.5rem',
   width: '100%',
-  outline: `1.5px solid ${THEMES.light_b3}`,
-  outlineOffset: '0.5rem',
   maxWidth: '45rem',
 });
 
