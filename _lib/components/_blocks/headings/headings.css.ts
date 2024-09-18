@@ -7,8 +7,8 @@ export const BASE = style({
 export const HEADING_1 = style([
   BASE,
   {
-    fontWeight: 900,
-    fontSize: '2rem',
+    fontWeight: 700,
+    fontSize: '1.875rem',
     lineHeight: '1.25',
     marginBottom: '0.5rem',
   },
@@ -17,7 +17,7 @@ export const HEADING_1 = style([
 export const HEADING_2 = style([
   BASE,
   {
-    fontWeight: 600,
+    fontWeight: 700,
     fontSize: '1.35rem',
     lineHeight: '1.3',
     marginBottom: '0.5rem',

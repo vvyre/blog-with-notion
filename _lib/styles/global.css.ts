@@ -14,17 +14,21 @@ globalStyle('html', {
   lineHeight: '1.8',
   fontFamily: `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, ${kor}, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
   fontFeatureSettings: "'case', 'ss05', 'ss07'",
-});
-
-globalStyle('body', {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
+});
+
+globalStyle('body', {
   color: THEMES.default,
 });
 
 globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
+  textRendering: 'optimizeLegibility',
+  WebkitFontSmoothing: 'antialiased',
+  WebkitTextSizeAdjust: '100%',
+  MozTextSizeAdjust: '100%',
   margin: 0,
   padding: 0,
   fontFeatureSettings: "'case', 'ss05', 'ss07'",
