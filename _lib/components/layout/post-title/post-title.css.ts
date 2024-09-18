@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
+import { TYPOGRAPHY } from '../../typography/typography.css';
 
 export const BACKGROUND = style({
   width: '100%',
@@ -59,25 +60,40 @@ export const TITLE_TEXT_PLACEMENT = style({
   // },
 });
 
-export const TITLE = style({
-  color: THEMES.default,
-  fontWeight: 700,
-  fontSize: '2.5rem',
-  lineHeight: '1.25',
+export const INFO_BOX = style({
+  backgroundColor: THEMES.light_b1,
+  borderRadius: '1rem',
+  padding: '2rem 2.5rem 2rem 2.5rem',
+  marginBottom: '1rem',
   width: '100%',
+  outline: `1.5px solid ${THEMES.light_b3}`,
+  outlineOffset: '0.5rem',
   maxWidth: '45rem',
-  wordBreak: 'keep-all',
-  textTransform: 'uppercase',
 });
+
+export const TITLE = style([
+  TYPOGRAPHY.XXXL,
+  {
+    color: THEMES.default,
+    fontWeight: 700,
+    textAlign: 'center',
+    lineHeight: '1.25',
+    width: '100%',
+    wordBreak: 'keep-all',
+    textTransform: 'uppercase',
+  },
+]);
 
 export const RELEASED_DATE = style({
   color: THEMES.gray,
   fontWeight: 400,
+  textAlign: 'center',
 });
 
 export const INFO = style({
   lineHeight: '1.65',
   verticalAlign: 'middle',
+  textAlign: 'center',
 });
 
 export const SUMMARY = style({

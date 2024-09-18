@@ -1,6 +1,7 @@
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { code } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
+import { TEXT_STYLE } from '../../typography/typography.css';
 
 export const GRID_SPAN = style({
   gridColumn: 'span 12',
@@ -55,21 +56,26 @@ export const POST_LINK = style({
   },
   selectors: {
     '&:hover': {
+      outline: `1.5px solid ${THEMES.light_b3}`,
+      outlineOffset: '0.25rem',
       backgroundColor: THEMES.light_b2,
     },
     '&:active': {
+      outline: `2px solid ${THEMES.light_b1}`,
+      outlineOffset: '0',
       backgroundColor: THEMES.light_b3,
     },
   },
 });
 
 export const POST_TITLE = style([
+  TEXT_STYLE.S,
   {
     cursor: 'pointer',
-    fontWeight: 600,
+    fontWeight: 500,
     textTransform: 'uppercase',
     width: '100%',
-    fontSize: '0.95rem',
+
     '@media': {
       '(0 <= width <= 768px)': {},
     },
@@ -77,8 +83,8 @@ export const POST_TITLE = style([
 ]);
 
 export const POST_SUMMARY = style([
+  TEXT_STYLE.XXS,
   {
-    fontSize: '0.85rem',
     cursor: 'pointer',
     fontWeight: 400,
     width: '100%',
@@ -103,11 +109,13 @@ export const RELEASED_DATE = style([
   },
 ]);
 
-export const POST_CATEGORY = style({
-  fontSize: '0.8rem',
-  fontWeight: 400,
-  color: COLORS.gray,
-});
+export const POST_CATEGORY = style([
+  TEXT_STYLE.XXS,
+  {
+    fontWeight: 400,
+    color: COLORS.gray,
+  },
+]);
 
 export const HOVER_TEXT = styleVariants({
   default: { selectors: { '&:hover': { backgroundColor: COLORS.default } } },
