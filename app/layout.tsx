@@ -3,7 +3,6 @@ import '../_lib/styles/global.css';
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 import { View } from '@/_lib/components/layout/view/view';
-import Head from 'next/head';
 import { site_env } from '@/env';
 import { Category } from '@/_lib/components/layout/category/category';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
@@ -14,6 +13,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Brewcold', url: meta.og.url }],
   creator: 'Brewcold',
   publisher: 'Brewcold',
+
   openGraph: {
     url: meta.og.url,
     title: meta.og.title,
@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     description: meta.og.description,
     images: meta.og.images.src,
     siteName: meta.og.title,
+  },
+  alternates: {
+    canonical: site_env.root,
+    types: {
+      'application/rss+xml': [{ url: 'feed.xml', title: 'RSS' }],
+    },
   },
   verification: {
     google: site_env.gv,
@@ -37,11 +43,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <Head>
-        <meta charSet="UTF-8" />
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
-      </Head>
-
       <View as="body">
         <View as="nav">
           <Category />
