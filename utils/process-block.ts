@@ -1,10 +1,10 @@
-import type { NotionBlock, NotionBlockWithChildren } from '@/_lib/types/block';
 import { getBlurredImg } from './get-blurred-img';
 import { groupedBlocks } from './grouped-blocks';
 import pMap from 'p-map';
 import { getBookmarkMetadata } from './get-bookmark-metadata';
+import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
-export const processedBlock = async (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+export const processedBlock = async (blocks: BlockObjectResponse[]) => {
   const PROCESSED = await pMap(
     blocks,
     async block => {

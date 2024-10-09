@@ -1,7 +1,7 @@
 import { NotionBlock } from '@/_lib/types/block';
 import { View } from '../../layout/view/view';
 import { Txt } from '../../typography/txt/txt';
-import type { NotionComponentProps } from '@/_lib/types/component-common';
+import type { NotionComponentProps } from '@/_lib/types/block';
 import { MentionRichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export function Mention({ block }: { block: MentionRichTextItemResponse }) {

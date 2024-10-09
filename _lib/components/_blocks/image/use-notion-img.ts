@@ -1,4 +1,4 @@
-import { ExtendedImageBlockObjectResponse } from '@/_lib/types/component-props';
+import { ExtendedImageBlockObjectResponse } from '@/_lib/types/block-transformed';
 import { getImgUrl } from '@/utils/get-img-url';
 import { useEffect, useState } from 'react';
 

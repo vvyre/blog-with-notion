@@ -1,6 +1,6 @@
 import { Heading } from '../../typography/heading/heading';
 import { HEADING_3 } from './headings.css';
-import type { NotionComponentProps } from '@/_lib/types/component-common';
+import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import { ShareBtn } from '../../interaction/button/share-btn/share-btn';
 import { cleanUrl } from '@/utils/clean-url';

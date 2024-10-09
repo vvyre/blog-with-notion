@@ -1,7 +1,7 @@
 import { View } from '../../layout/view/view';
 import { Txt } from '../../typography/txt/txt';
 import { BASE, INNER } from './bookmark.css';
-import type { NotionComponentProps } from '@/_lib/types/component-common';
+import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import { Heading } from '../../typography/heading/heading';
 import { Flex } from '../../layout/flex/flex';

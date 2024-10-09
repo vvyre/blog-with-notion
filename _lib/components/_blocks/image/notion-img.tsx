@@ -17,7 +17,7 @@ import {
 } from './img.css';
 import { useNotionImg } from './use-notion-img';
 import { useState } from 'react';
-import type { NotionComponentProps } from '@/_lib/types/component-common';
+import type { NotionComponentProps } from '@/_lib/types/block';
 
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const { imgUrl, reload, isReloading } = useNotionImg(block);

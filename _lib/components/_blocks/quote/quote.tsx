@@ -2,10 +2,10 @@ import { Txt } from '../../typography/txt/txt';
 import { ChildrenBlocks } from '../children-blocks';
 import { View } from '../../layout/view/view';
 import { BASE } from './quote.css';
-import type { NotionComponentPropsWithChildren } from '@/_lib/types/component-common';
+import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
-export function Quote({ block }: NotionComponentPropsWithChildren<'quote'>) {
+export function Quote({ block }: NotionComponentProps<'quote'>) {
   return (
     <View styleVariant={BASE}>
       {block.quote.rich_text.map((txt: RichTextItemResponse, idx: number) => (

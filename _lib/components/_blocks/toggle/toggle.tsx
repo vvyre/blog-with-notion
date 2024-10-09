@@ -1,10 +1,10 @@
-import { NotionComponentPropsWithChildren } from '@/_lib/types/component-common';
+import { NotionComponentProps } from '@/_lib/types/block';
 import { ChildrenBlocks } from '../children-blocks';
 import { BASE, SUMMARY } from './toggle.css';
 import { Txt } from '../../typography/txt/txt';
 import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
-export function Toggle({ block }: NotionComponentPropsWithChildren<'toggle'>) {
+export function Toggle({ block }: NotionComponentProps<'toggle'>) {
   return (
     <details className={BASE}>
       <summary className={SUMMARY}>

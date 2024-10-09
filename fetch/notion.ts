@@ -1,16 +1,11 @@
 import { notion } from './notion-client';
-import { notion_env } from '@/env';
 import {
   BlockObjectResponse,
   GetBlockResponse,
-  GetPageResponse,
-  ListBlockChildrenResponse,
-  PageObjectResponse,
   PartialBlockObjectResponse,
   QueryDatabaseParameters,
 } from '@notionhq/client/build/src/api-endpoints';
 import { PageObject, PostListObject } from '@/_lib/types/notion-response';
-import { NotionBlock, NotionBlockWithChildren } from '@/_lib/types/block';
 
 export const getPostList = async (database_id: string): Promise<PostListObject> => {
   const query: QueryDatabaseParameters = {
@@ -74,7 +69,9 @@ export const getPostMetaData = async (page_id: string): Promise<PageObject> => {
   return result as PageObject;
 };
 
-const getChildrenBlocks = async (parent_block_id: string): Promise<(NotionBlock | NotionBlockWithChildren)[]> => {
+const getChildrenBlocks = async (
+  parent_block_id: string
+): Promise<(BlockObjectResponse | PartialBlockObjectResponse)[]> => {
   let results = [];
   let blocks = await notion.blocks.children.list({
     block_id: parent_block_id,
@@ -89,10 +86,10 @@ const getChildrenBlocks = async (parent_block_id: string): Promise<(NotionBlock 
     });
     results = [...results, ...blocks.results];
   }
-  return results as (NotionBlock | NotionBlockWithChildren)[];
+  return results;
 };
 
-const getAllChildrenBlocks = async (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+const getAllChildrenBlocks = async (blocks: BlockObjectResponse[]) => {
   const result = await Promise.all(
     blocks.map(async depth_block => {
       if (depth_block.has_children) {
@@ -106,9 +103,9 @@ const getAllChildrenBlocks = async (blocks: (NotionBlock | NotionBlockWithChildr
   return result;
 };
 
-export const getPost = async (block_id: string): Promise<(NotionBlock | NotionBlockWithChildren)[]> => {
+export const getPost = async (block_id: string): Promise<BlockObjectResponse[]> => {
   const blocks = await getChildrenBlocks(block_id);
-  const fullBlocks = await getAllChildrenBlocks(blocks);
+  const fullBlocks = await getAllChildrenBlocks(blocks as BlockObjectResponse[]);
 
   return fullBlocks;
 };

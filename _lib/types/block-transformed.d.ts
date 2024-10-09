@@ -1,12 +1,14 @@
 import { COLORS } from '@/_lib/styles/colors.css';
 import type { NotionBlock, RichText, TextProperty } from './block';
 import type {
+  BlockObjectResponse,
   BookmarkBlockObjectResponse,
   CalloutBlockObjectResponse,
   ImageBlockObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints';
 import { Metadata } from 'unfurl.js/dist/types';
 import { BookmarkMeta } from '@/utils/get-bookmark-metadata';
+import { BlockObjectResponseMap } from './block-object-response-map';
 
 interface Image_File {
   caption: RichText[];
@@ -40,21 +42,17 @@ export interface TextResponse {
   } & NotionBlock;
 }
 
-export interface NumberedListWrapperResponse {
-  block: {
-    type: 'numbered_list_items';
-    id: string;
-    numbered_list_items: NumberedListItem[];
-  } & NotionBlock;
-}
+export type GroupedBulletedListItemResponse = {
+  grouped_bulleted_list_item: {
+    children: BlockObjectResponseMap['bulleted_list_item'][];
+  };
+};
 
-export interface BulletedListWrapperResponse {
-  block: {
-    type: 'bulleted_list_items';
-    bulleted_list_items: BulletedListItem[];
-  } & NotionBlock;
-}
-
+export type GroupedNumberedListItemResponse = {
+  grouped_numbered_list_item: {
+    children: BlockObjectResponseMap['numbered_list_item'][];
+  };
+};
 export type ExtendedBookmarkObjectResponse = BookmarkBlockObjectResponse & {
   bookmarkInfo: BookmarkMeta;
 };

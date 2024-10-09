@@ -1,7 +1,7 @@
 import { Txt } from '../../typography/txt/txt';
 import { View } from '../../layout/view/view';
 import { CALLOUT, CALLOUT_EMOJI } from './callout.css';
-import type { NotionComponentProps } from '@/_lib/types/component-common';
+import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export function Callout({ block }: NotionComponentProps<'callout'>) {

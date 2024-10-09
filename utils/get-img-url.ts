@@ -1,4 +1,4 @@
-import type { ExtendedImageBlockObjectResponse } from '@/_lib/types/component-props';
+import type { ExtendedImageBlockObjectResponse } from '@/_lib/types/block-transformed';
 
 export const getImgUrl = (block: ExtendedImageBlockObjectResponse): string => {
   const imageProps = block;

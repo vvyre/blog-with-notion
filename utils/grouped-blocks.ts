@@ -1,18 +1,18 @@
-import type { NotionBlock, NotionBlockWithChildren } from '@/_lib/types/block';
+import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
-const process = (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+const process = (blocks: BlockObjectResponse[]) => {
   if (!blocks.length) return blocks;
 
-  const result: (NotionBlock | NotionBlockWithChildren)[] = [];
+  const result: BlockObjectResponse[] = [];
 
-  const target: Partial<Record<NotionBlockWithChildren['type'], boolean>> = {
+  const target: Partial<Record<BlockObjectResponse['type'], boolean>> = {
     bulleted_list_item: true,
     numbered_list_item: true,
   };
 
-  let prevBlock: NotionBlockWithChildren['type'] = blocks[0].type;
+  let prevBlock: BlockObjectResponse['type'] = blocks[0].type;
 
-  const group: Partial<Record<keyof typeof target, (NotionBlock | NotionBlockWithChildren)[]>> = {
+  const group: Partial<Record<keyof typeof target, BlockObjectResponse[]>> = {
     bulleted_list_item: [],
     numbered_list_item: [],
   };
@@ -61,7 +61,7 @@ const process = (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
   return result;
 };
 
-export const groupedBlocks = (blocks: (NotionBlock | NotionBlockWithChildren)[]) => {
+export const groupedBlocks = (blocks: BlockObjectResponse[]) => {
   const result = blocks.map(depth_block => {
     if (depth_block.has_children) {
       const type = depth_block.type;

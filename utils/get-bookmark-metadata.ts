@@ -1,4 +1,4 @@
-import { ExtendedBookmarkObjectResponse } from '@/_lib/types/component-props';
+import { ExtendedBookmarkObjectResponse } from '@/_lib/types/block-transformed';
 import { BookmarkBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { unfurl } from 'unfurl.js';
 import { Metadata } from 'unfurl.js/dist/types';
