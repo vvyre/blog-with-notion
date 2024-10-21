@@ -5,7 +5,7 @@ import {
   ImageBlockObjectResponse,
   RichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';
-import type { BlockObjectResponseMap, BlockType } from './block-object-response-map';
+import type { BlockObjectResponseMap, BlockType, EntireNotionBlockResponse } from './block-object-response-map';
 import { COLORS } from '../styles/colors.css';
 import { ExtendedImageBlockObjectResponse } from './block-transformed';
 import { blockComponentMap } from '../components/_blocks/block-component-map';
@@ -32,7 +32,7 @@ export type NotionComponentProps<T extends keyof BlockObjectResponseMap> = {
 export type WithChildren<T extends BlockObjectResponse> = T & {
   has_children: true;
 } & {
-  [K in keyof T]: K extends T['type'] ? T[K] & { children: BlockObjectResponse[] } : T[K];
+  [K in keyof T]: K extends T['type'] ? T[K] & { children: EntireNotionBlockResponse[] } : T[K];
 };
 
 export interface Tag {

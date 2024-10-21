@@ -30,11 +30,33 @@ export interface PageFullData {
   public_url: string | null;
 }
 
+type RichText = {
+  rich_text: {
+    type: string;
+    text: { content: string; link: string | null; type: string };
+    plain_text: string;
+    annotations: Annotations;
+    href: string | null;
+  };
+  plain_text: string;
+};
+
+type Annotations = {
+  bold: false;
+  italic: false;
+  strikethrough: false;
+  underline: false;
+  code: false;
+  color: string;
+};
+
 export type PageProperties = {
-  date: { date: TextRichTextItemResponse[] };
-  title: { title: TextRichTextItemResponse[] };
-  summary: { rich_text: RichTextItemResponse[] };
-  slug: { rich_text: RichTextItemResponse[] };
+  date: { date: { start: string | null; end: string | null; time_zone: string | null } };
+  title: {
+    title: TextRichTextItemResponse[];
+  };
+  summary: { rich_text: RichText[] };
+  slug: { rich_text: RichText[] };
   published: {};
   thumbnail: { thumbnail: [] };
   tags: { multi_select: Tag[] };
