@@ -18,15 +18,13 @@ import { NotionImg } from './image/notion-img';
 import { NotionFile } from './file/notion-file';
 import { Divider } from '../layout/divider/divider';
 import { Quote } from './quote/quote';
-import { Table } from './table/table';
-import { TableOfContents } from './table-of-contents/table-of-contents';
-import { TableRow } from './table-row/table-row';
 import { Bookmark } from './bookmark/bookmark';
 import { Toggle } from './toggle/toggle';
 import { BlockComponentMap } from '@/_lib/types/block-object-response-map';
+import { Empty } from '../util/empty';
 
 export const blockComponentMap: BlockComponentMap = {
-  audio: Divider,
+  audio: Empty,
   bookmark: Bookmark,
   breadcrumb: BreadCrumb,
   bulleted_list_item: BulletedListItem,
@@ -47,18 +45,20 @@ export const blockComponentMap: BlockComponentMap = {
   image: NotionImg,
   link_preview: Divider,
   link_to_page: Divider,
+  mention: Empty,
   numbered_list_item: NumberedListItem,
   grouped_numbered_list_item: NumberedListWrapper,
   paragraph: Paragraph,
   pdf: Divider,
   quote: Quote,
   synced_block: Divider,
-  table: Table,
-  table_of_contents: TableOfContents,
-  table_row: TableRow,
+  table: Empty,
+  table_of_contents: Empty,
+  table_row: Empty,
   template: Divider,
   to_do: Divider,
   toggle: Toggle,
+  text: Empty,
   unsupported: Divider,
   video: Divider,
 };

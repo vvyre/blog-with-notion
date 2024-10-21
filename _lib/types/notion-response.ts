@@ -1,15 +1,14 @@
 import type {
-  DatabaseObjectResponse,
   GetPageResponse,
   PageObjectResponse,
-  PartialDatabaseObjectResponse,
-  PartialPageObjectResponse,
+  RichTextItemResponse,
+  TextRichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';
-import type { NotionBlock, RichText, Tag, TextElement, WrittenDate } from './block';
+import type { Tag } from './block';
 
 export interface QueryDatabase {
   object: string;
-  results: PageDataRow[];
+  results: unknown;
   next_cursor: Object | null;
   has_more: boolean;
   type: string;
@@ -30,11 +29,12 @@ export interface PageFullData {
   url: string;
   public_url: string | null;
 }
+
 export type PageProperties = {
-  date: { date: WrittenDate };
-  title: { title: [{ rich_text: RichText; plain_text: string }] };
-  summary: { rich_text: RichText[] };
-  slug: { rich_text: RichText[] };
+  date: { date: TextRichTextItemResponse[] };
+  title: { title: TextRichTextItemResponse[] };
+  summary: { rich_text: RichTextItemResponse[] };
+  slug: { rich_text: RichTextItemResponse[] };
   published: {};
   thumbnail: { thumbnail: [] };
   tags: { multi_select: Tag[] };

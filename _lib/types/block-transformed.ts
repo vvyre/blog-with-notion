@@ -1,25 +1,24 @@
-import { COLORS } from '@/_lib/styles/colors.css';
-import type { NotionBlock, RichText, TextProperty } from './block';
+import type { NotionBlock } from './block';
 import type {
   BlockObjectResponse,
   BookmarkBlockObjectResponse,
   CalloutBlockObjectResponse,
   ImageBlockObjectResponse,
+  RichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';
-import { Metadata } from 'unfurl.js/dist/types';
 import { BookmarkMeta } from '@/utils/get-bookmark-metadata';
 import { BlockObjectResponseMap } from './block-object-response-map';
 
-interface Image_File {
-  caption: RichText[];
+export interface Image_File {
+  caption: RichTextItemResponse[];
   type: 'file' | 'external';
   file?: {
     url: string;
     expiry_time: string;
   };
 }
-interface Image_External {
-  caption: RichText[];
+export interface Image_External {
+  caption: RichTextItemResponse[];
   type: 'file' | 'external';
   external?: {
     url: string;
@@ -32,23 +31,15 @@ export type ExtendedImageBlockObjectResponse = {
 
 export type ExtendedCalloutBlockObjectResponse = CalloutBlockObjectResponse;
 
-export interface TextResponse {
-  block: {
-    type: 'text';
-    text: TextProperty;
-    annotations: Annotations;
-    plain_text: string;
-    href: string | null;
-  } & NotionBlock;
-}
+export type ExtendedTextResponse = RichTextItemResponse & BlockObjectResponse;
 
-export type GroupedBulletedListItemResponse = {
+export type GroupedBulletedListItemResponse = BlockObjectResponse & {
   grouped_bulleted_list_item: {
     children: BlockObjectResponseMap['bulleted_list_item'][];
   };
 };
 
-export type GroupedNumberedListItemResponse = {
+export type GroupedNumberedListItemResponse = BlockObjectResponse & {
   grouped_numbered_list_item: {
     children: BlockObjectResponseMap['numbered_list_item'][];
   };

@@ -1,12 +1,11 @@
-import { NotionBlock } from '@/_lib/types/block';
 import { Block } from './block';
 import { Fragment } from 'react';
-import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
 
-export function ChildrenBlocks({ childrenBlocks }: { childrenBlocks: BlockObjectResponse[] }) {
+export function ChildrenBlocks({ childrenBlocks }: { childrenBlocks: EntireNotionBlockResponse[] }) {
   return (
     <Fragment>
-      {childrenBlocks?.map((block: BlockObjectResponse) => {
+      {childrenBlocks?.map((block: EntireNotionBlockResponse) => {
         return <Block key={block.id} block={block} />;
       })}
     </Fragment>

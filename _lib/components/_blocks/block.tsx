@@ -1,9 +1,9 @@
-import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
 import { blockComponentMap } from './block-component-map';
+import { Empty } from '../util/empty';
 
-export function Block({ block }: { block: BlockObjectResponse }) {
+export function Block({ block }: { block: EntireNotionBlockResponse }) {
   const Component = blockComponentMap[block.type];
-  if (!Component) return <div />;
-
+  if (!Component) return <Empty />;
   return <Component block={block} />;
 }

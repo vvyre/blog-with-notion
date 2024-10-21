@@ -1,9 +1,8 @@
 import type {
+  AudioBlockObjectResponse,
   BlockObjectResponse,
-  BookmarkBlockObjectResponse,
   BreadcrumbBlockObjectResponse,
   BulletedListItemBlockObjectResponse,
-  CalloutBlockObjectResponse,
   ChildDatabaseBlockObjectResponse,
   ChildPageBlockObjectResponse,
   CodeBlockObjectResponse,
@@ -16,7 +15,6 @@ import type {
   Heading1BlockObjectResponse,
   Heading2BlockObjectResponse,
   Heading3BlockObjectResponse,
-  ImageBlockObjectResponse,
   LinkPreviewBlockObjectResponse,
   LinkToPageBlockObjectResponse,
   MentionRichTextItemResponse,
@@ -35,48 +33,31 @@ import type {
   UnsupportedBlockObjectResponse,
   VideoBlockObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints';
-import { COLORS } from '../styles/colors.css';
 import type {
-  Bookmark,
-  BreadCrumb,
-  BulletedListItem,
-  BulletedListWrapper,
-  BulletedListWrapperResponse,
-  Callout,
-  ChildDatabase,
-  ChildPage,
-  CodeBlock,
-  Column,
-  ColumnList,
   ExtendedBookmarkObjectResponse,
   ExtendedCalloutBlockObjectResponse,
   ExtendedImageBlockObjectResponse,
+  ExtendedTextResponse,
   GroupedBulletedListItemResponse,
   GroupedNumberedListItemResponse,
-  Mention,
-  NotionImageResponse,
-  NumberedListItem,
-  NumberedListWrapper,
-  Paragraph,
-  Quote,
-  SyncedBlock,
-  Table,
-  TableOfContents,
-  TableRow,
-  Text,
 } from './block-transformed';
 import { WithChildren } from './block';
+import { ComponentType, ElementType } from 'react';
 
 type PrefixedBlockTypes = 'grouped_bulleted_list_item' | 'grouped_numbered_list_item';
 export type BlockType = BlockObjectResponse['type'] | PrefixedBlockTypes;
 export type BlockComponentMap = {
-  [T in BlockType]: ComponentType<{ block: Extract<BlockObjectResponse, { type: T }> }>;
+  [T in keyof BlockObjectResponseMap]: ComponentType<{ block: BlockObjectResponseMap[T] }> | ElementType;
 };
+export type EntireNotionBlockResponse = {
+  [K in keyof BlockObjectResponseMap]: BlockObjectResponseMap[K] & { type: K } & { id: string };
+}[keyof BlockObjectResponseMap];
 
 /**
  * children이 필요한 경우 WithChildren 제네릭을 사용하세요
  */
 export type BlockObjectResponseMap = {
+  audio: AudioBlockObjectResponse;
   bookmark: ExtendedBookmarkObjectResponse;
   breadcrumb: BreadcrumbBlockObjectResponse;
   bulleted_list_item: WithChildren<BulletedListItemBlockObjectResponse>;
@@ -108,7 +89,7 @@ export type BlockObjectResponseMap = {
   table_of_contents: WithChildren<TableOfContentsBlockObjectResponse>;
   table_row: TableRowBlockObjectResponse;
   template: TemplateBlockObjectResponse;
-  text: WithChildren<TextBlock>;
+  text: WithChildren<ExtendedTextResponse>;
   to_do: ToDoBlockObjectResponse;
   toggle: WithChildren<ToggleBlockObjectResponse>;
   unsupported: UnsupportedBlockObjectResponse;

@@ -2,12 +2,14 @@ import { notion } from './notion-client';
 import {
   BlockObjectResponse,
   GetBlockResponse,
+  PageObjectResponse,
   PartialBlockObjectResponse,
   QueryDatabaseParameters,
 } from '@notionhq/client/build/src/api-endpoints';
 import { PageObject, PostListObject } from '@/_lib/types/notion-response';
+import { APIResponseError, NotionClientError } from '@notionhq/client';
 
-export const getPostList = async (database_id: string): Promise<PostListObject> => {
+export const getPostList = async (database_id: string): Promise<PageObject[]> => {
   const query: QueryDatabaseParameters = {
     database_id,
     sorts: [
@@ -27,9 +29,14 @@ export const getPostList = async (database_id: string): Promise<PostListObject> 
       ],
     },
   };
-
-  const response = await notion.databases.query(query);
-  return response.results as PostListObject;
+  try {
+    const response = await notion.databases.query(query);
+    console.log('POSTLIST:', 'FETCH called');
+    return response.results as PageObject[];
+  } catch (err) {
+    console.log(err, '\n', 'POSTLIST:', 'ERR');
+    return [];
+  }
 };
 
 const POST_LIST_CACHE: { [key: string]: { POSTS: PostListObject; TIMESTAMP: number; CACHE_DURATION: number } } = {
@@ -52,11 +59,11 @@ export const getCachedPostList = async (database_id: string) => {
     POST_LIST_CACHE[database_id].POSTS.length > 0 &&
     now - POST_LIST_CACHE[database_id].TIMESTAMP < POST_LIST_CACHE[database_id].CACHE_DURATION
   ) {
-    console.log('cache called');
+    console.log('POSTLIST:', 'CACHE called');
     return POST_LIST_CACHE[database_id].POSTS;
   } else {
     const posts = await getPostList(database_id);
-    console.log('fetch called');
+
     POST_LIST_CACHE[database_id].POSTS = posts || [];
     POST_LIST_CACHE[database_id].TIMESTAMP = now;
     return posts;
