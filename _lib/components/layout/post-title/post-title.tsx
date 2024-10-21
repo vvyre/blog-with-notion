@@ -7,7 +7,6 @@ import { BASE, TITLE, SUMMARY, RELEASED_DATE, BACKGROUND, INFO, INFO_BOX } from 
 import { getSummary } from '@/utils/get-summary';
 import { Spacing } from '../spacing/spacing';
 import { PageObject } from '@/_lib/types/notion-response';
-import { Navigation } from '../navigation/navigation';
 
 export function PostTitle({ ...meta }: PageObject) {
   const title = getTitle(meta);
@@ -17,7 +16,6 @@ export function PostTitle({ ...meta }: PageObject) {
   return (
     <View styleVariant={BACKGROUND}>
       <View styleVariant={BASE}>
-        <Navigation />
         <Spacing size="2.5rem" />
         <View styleVariant={INFO_BOX}>
           <Heading as="h1" styleVariant={TITLE}>

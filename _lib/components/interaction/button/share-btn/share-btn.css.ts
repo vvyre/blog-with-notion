@@ -17,17 +17,22 @@ export const BASE = style({
 
 export const POST_SHARE = style({
   margin: 0,
-  padding: '0.5rem 0.75rem 0.5rem 0.75rem',
+  padding: '0.35rem 0.95rem 0.35rem 0.95rem',
   color: COLORS.gray,
   fontSize: '0.9rem',
   border: `none`,
-  borderRadius: '2rem',
-  backgroundColor: THEMES.light_b1,
+  background: 'transparent',
   cursor: 'pointer',
+  outline: `1px solid ${THEMES.gray}`,
   transition: 'background-color width 0.2s',
   selectors: {
     '&:hover': {
-      backgroundColor: THEMES.light_b2,
+      outline: `1px solid ${THEMES.default}`,
+      color: COLORS.default,
+    },
+    '&:active': {
+      outline: `1px solid ${THEMES.default}`,
+      color: COLORS.default,
     },
   },
 });

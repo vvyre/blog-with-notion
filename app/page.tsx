@@ -5,6 +5,7 @@ import { isr_revalidate_period, notion_env } from '@/env';
 import About from '@/_lib/components/about/about';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { LAYOUT_CENTERED } from '@/_lib/components/layout/article/article.css';
+import { Logo } from '@/_lib/components/layout/logo/logo';
 
 export const revalidate = isr_revalidate_period;
 
@@ -13,7 +14,9 @@ export default async function PostListPage() {
 
   return (
     <View as="main" styleVariant={LAYOUT_CENTERED}>
-      <Spacing size="2rem" />
+      <Spacing size="1rem" />
+      <Logo />
+      <Spacing size="1rem" />
       <PostListLayout category="engineering" postList={postList} />
       <About />
     </View>

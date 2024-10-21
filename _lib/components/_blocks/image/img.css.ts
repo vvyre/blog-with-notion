@@ -46,11 +46,4 @@ export const IMG = style({
   height: 'auto',
   maxWidth: '100%',
   minWidth: '66%',
-  borderRadius: '1rem',
-  padding: '0.25rem',
-  selectors: {
-    '&:hover': {
-      outline: `1px solid ${THEMES.theme}`,
-    },
-  },
 });

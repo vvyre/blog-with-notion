@@ -16,7 +16,6 @@ export const FALLBACK = style({
   textAlign: 'center',
   color: COLORS.gray,
   fontSize: '0.9rem',
-  borderRadius: '1rem',
   padding: '0.5rem',
   backgroundColor: THEMES.light_b1,
 });

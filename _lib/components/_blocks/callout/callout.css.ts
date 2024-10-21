@@ -3,8 +3,7 @@ import { style } from '@vanilla-extract/css';
 
 export const CALLOUT = style({
   backgroundColor: THEMES.light_b2,
-  borderRadius: '1rem',
-  padding: '1.5rem',
+  padding: '1.25rem',
   marginBottom: '1rem',
 });
 

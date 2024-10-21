@@ -5,7 +5,6 @@ export const BASE = style({
   backgroundColor: THEMES.white,
   padding: '0.1rem',
   marginBottom: '1rem',
-  borderRadius: '1.15rem',
   border: `4px solid ${THEMES.white}`,
   selectors: {
     '&:hover': {
@@ -16,6 +15,6 @@ export const BASE = style({
 
 export const INNER = style({
   padding: '0.7rem 1.05rem 1.05rem 1.05rem',
-  borderRadius: '1rem',
+
   border: `2px solid ${THEMES.light_b3}`,
 });

@@ -16,7 +16,6 @@ export const POST_THUMBNAIL = style({
   width: '100%',
   height: '12rem',
   backgroundColor: THEMES.light_b1,
-  borderRadius: '0.25rem',
 });
 
 export const POST_TEXT = style({
@@ -37,33 +36,26 @@ export const POST_LIST_BASE = style({
 
 export const POST_LINK = style({
   display: 'flex',
-  padding: '0.65rem 0.75rem 0.65rem 0.75rem',
+  padding: '0.8rem 1rem 0.8rem 1rem',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
-  maxWidth: '41rem',
   color: THEMES.default,
-  borderRadius: '0.5rem',
-  transition: 'all 0.1s ease',
   '@media': {
     '(0 <= width <= 768px)': {
       width: '100%',
-      padding: '0.75rem 1rem 0.75rem 1rem',
+      padding: '1rem',
       flexDirection: 'column',
       alignItems: 'flex-start',
     },
   },
   selectors: {
     '&:hover': {
-      outline: `1.5px solid ${THEMES.light_b3}`,
-      outlineOffset: '0.25rem',
-      backgroundColor: THEMES.light_b2,
+      outline: `1px solid ${THEMES.default}`,
     },
     '&:active': {
-      outline: `2px solid ${THEMES.light_b1}`,
-      outlineOffset: '0',
-      backgroundColor: THEMES.light_b3,
+      outline: `1px solid ${THEMES.default}`,
     },
   },
 });

@@ -14,11 +14,9 @@ export const POST_LIST_GRID = style([
 export const POST_LIST_CENTERED = style([
   {
     backgroundColor: THEMES.whitegray,
-    borderRadius: '0.75rem',
-    maxWidth: '45rem',
+    maxWidth: '50rem',
     width: '100%',
     margin: '0 0 2rem 0',
-    padding: '0.25rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

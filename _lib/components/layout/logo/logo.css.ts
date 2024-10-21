@@ -1,4 +1,5 @@
 import { THEMES } from '@/_lib/styles/colors.css';
+import { code } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 const BASE = style({
@@ -13,12 +14,11 @@ const BASE = style({
 });
 
 export const LOGO = style({
-  textTransform: 'uppercase',
   fontWeight: 900,
-  mixBlendMode: 'difference',
-  fontSize: '1.75rem',
-
-  color: THEMES.white,
+  fontSize: '0.95rem',
+  fontFamily: code,
+  textAlign: 'center',
+  color: THEMES.default,
   '@media': {
     '(0px <= width <= 768px)': {
       fontSize: '1rem',

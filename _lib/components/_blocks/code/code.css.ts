@@ -3,8 +3,7 @@ import { style } from '@vanilla-extract/css';
 
 export const CODE_BLOCK = style({
   backgroundColor: THEMES.light_b1,
-  borderRadius: '1rem',
-  padding: '1.25rem',
+  padding: '1.35rem',
   marginBottom: '1rem',
 });
 export const CODE_LANGUAGE = style({
