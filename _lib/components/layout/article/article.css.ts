@@ -19,7 +19,7 @@ export const LAYOUT_CENTERED = style([
     background: 'transparent',
     margin: '0 auto',
     paddingBottom: '0',
-    maxWidth: '45rem',
+    maxWidth: '50rem',
     padding: '0 2rem 0 2rem',
     '@media': {
       '(0 <= width <= 768px)': {

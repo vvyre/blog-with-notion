@@ -1,11 +1,52 @@
 import { THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
+import { TYPOGRAPHY } from '../../typography/typography.css';
 
 export const BASE = style({
-  display: 'linine',
-  width: '100%',
+  height: '5.5rem',
+  display: 'flex',
+  flexWrap: 'nowrap',
+  justifyContent: 'spaceBetween',
+  alignItems: 'center',
+  background: THEMES.default,
+  width: '100vw',
+  zIndex: '99999',
+  padding: '0.5rem 2rem 0.5rem 2rem',
+  position: 'sticky',
+  top: '0',
+  '@media': {
+    '(0 <= width <= 768px)': {
+      height: '3.5rem',
+      padding: '0.5rem 1.5rem 0.5rem 1.5rem',
+    },
+  },
 });
+
+export const BACK_BTN = style({
+  display: 'linine',
+});
+export const BTN_WRAPPER = style({
+  width: '100%',
+  maxWidth: '10vw',
+});
+
+export const POST_TITLE = style([
+  {
+    textAlign: 'right',
+    width: '100%',
+    maxWidth: '90vw',
+    color: 'white',
+    fontSize: TYPOGRAPHY.L.fontSize,
+    '@media': {
+      '(0 <= width <= 768px)': {
+        display: 'none',
+      },
+    },
+  },
+]);
+
+//LEGACY
 
 export const THEME = styleVariants({
   BLACK: { backgroundColor: THEMES.default },
