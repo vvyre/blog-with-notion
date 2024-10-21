@@ -33,7 +33,7 @@ export default async function Post({ params }: PostPageProps) {
 
   return (
     <View as="main">
-      <Navigation {...meta}/>
+      <Navigation {...meta} />
       <Article>
         <PostTitle {...meta} />
         <View styleVariant={LAYOUT_CENTERED}>
@@ -48,6 +48,7 @@ export default async function Post({ params }: PostPageProps) {
           <Giscus />
         </View>
       </Article>
+      <Spacing size="10rem" />
     </View>
   );
 }

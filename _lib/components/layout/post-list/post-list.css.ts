@@ -29,27 +29,19 @@ export const POST_TEXT = style({
 
 export const POST_LIST_BASE = style({
   cursor: 'pointer',
-  display: 'flex',
-  width: '100%',
+  display: 'inline-flex',
+
   justifyContent: 'center',
 });
 
 export const POST_LINK = style({
-  display: 'flex',
-  padding: '0.8rem 1rem 0.8rem 1rem',
+  display: 'inline-flex',
+  padding: '0.75rem',
   flexDirection: 'row',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-start',
   alignItems: 'center',
-  width: '100%',
+  opacity: '0.75',
   color: THEMES.default,
-  '@media': {
-    '(0 <= width <= 768px)': {
-      width: '100%',
-      padding: '1rem',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-    },
-  },
   selectors: {
     '&:hover': {
       outline: `1px solid ${THEMES.default}`,
@@ -61,13 +53,13 @@ export const POST_LINK = style({
 });
 
 export const POST_TITLE = style([
-  TEXT_STYLE.S,
+  TEXT_STYLE.L,
   {
+    display: 'block',
     cursor: 'pointer',
-    fontWeight: 500,
-    textTransform: 'uppercase',
-    width: '100%',
+    fontWeight: 600,
 
+    textTransform: 'uppercase',
     '@media': {
       '(0 <= width <= 768px)': {},
     },

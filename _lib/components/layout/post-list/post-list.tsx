@@ -30,16 +30,13 @@ export function PostList({ pageData, category }: PostListProps) {
   return (
     <List as="li" styleVariant={POST_LIST_BASE}>
       <Txt as="Link" href={URI} styleVariant={POST_LINK}>
-        <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
-          <Heading as="h3" styleVariant={POST_TITLE}>
-            {TITLE}
-          </Heading>
-        </Flex>
-        <Flex flexDirection="column" justifyContents="center" alignItems="flexStart">
-          <Txt as="p" styleVariant={RELEASED_DATE}>
-            {DATE}
-          </Txt>
-        </Flex>
+        <Heading as="h3" styleVariant={POST_TITLE}>
+          {TITLE}
+        </Heading>
+        <Spacing size="0.5rem" dir="hori" />
+        <Txt as="p" styleVariant={RELEASED_DATE}>
+          {DATE}
+        </Txt>
       </Txt>
     </List>
   );

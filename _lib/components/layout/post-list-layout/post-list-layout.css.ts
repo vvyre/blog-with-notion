@@ -2,24 +2,26 @@ import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID, BASE_PADDING } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
-export const POST_LIST_GRID = style([
-  BASE_GRID,
-  BASE_PADDING,
+export const POST_LIST_CENTERED = style([
   {
-    marginTop: '5rem',
-    gridTemplateRows: 'repeat(auto-fill, minmax(128px, 1fr))',
+    background: 'transparent',
+    height: '100%',
+    width: '100vw',
+    maxWidth: '70rem',
+    padding: '1rem',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 ]);
 
-export const POST_LIST_CENTERED = style([
+//LEGACY
+export const POST_LIST_GRID = style([
   {
-    backgroundColor: THEMES.whitegray,
-    maxWidth: '50rem',
-    width: '100%',
-    margin: '0 0 2rem 0',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    marginTop: '5rem',
+    gridTemplateRows: 'repeat(auto-fill, minmax(128px, 1fr))',
   },
 ]);
 

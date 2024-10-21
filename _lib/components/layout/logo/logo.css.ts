@@ -16,6 +16,7 @@ const BASE = style({
 export const LOGO = style({
   fontWeight: 900,
   fontSize: '0.95rem',
+  opacity: '0.75',
   fontFamily: code,
   textAlign: 'center',
   color: THEMES.default,
