@@ -4,7 +4,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { TYPOGRAPHY } from '../../typography/typography.css';
 
 export const BASE = style({
-  height: '5.5rem',
+  height: '5rem',
   display: 'flex',
   flexWrap: 'nowrap',
   justifyContent: 'spaceBetween',
