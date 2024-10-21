@@ -1,5 +1,5 @@
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
-import { code } from '@/_lib/styles/fonts.css';
+import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 import { TEXT_STYLE } from '../../typography/typography.css';
 
@@ -85,7 +85,7 @@ export const RELEASED_DATE = style([
     fontSize: '0.75rem',
     wordSpacing: '-0.3rem',
     color: THEMES.gray,
-    fontFamily: code,
+    fontFamily: fontFamilyCode,
     cursor: 'pointer',
     fontWeight: 400,
     fontFeatureSettings: '"calt"',

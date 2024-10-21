@@ -1,5 +1,5 @@
 import { THEMES } from '@/_lib/styles/colors.css';
-import { code } from '@/_lib/styles/fonts.css';
+import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 const BASE = style({
@@ -17,7 +17,7 @@ export const LOGO = style({
   fontWeight: 900,
   fontSize: '0.95rem',
   opacity: '0.75',
-  fontFamily: code,
+  fontFamily: fontFamilyCode,
   textAlign: 'center',
   color: THEMES.default,
   '@media': {

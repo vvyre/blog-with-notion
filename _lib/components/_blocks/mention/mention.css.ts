@@ -1,5 +1,5 @@
 import { THEMES } from '@/_lib/styles/colors.css';
-import { code } from '@/_lib/styles/fonts.css';
+import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
@@ -15,7 +15,7 @@ export const BASE = style({
     '&:after': {
       fontSize: '1rem',
       marginLeft: '0.25rem',
-      fontFamily: code,
+      fontFamily: fontFamilyCode,
       content: '↗︎',
     },
   },

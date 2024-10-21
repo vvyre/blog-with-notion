@@ -1,4 +1,4 @@
-import { code } from '@/_lib/styles/fonts.css';
+import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 import { BASE_PADDING } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
@@ -26,6 +26,6 @@ export const ABOUT_INNER = style([
 export const ABOUT_SITE_TITLE = style({
   textTransform: 'uppercase',
   fontWeight: 900,
-  fontFamily: code,
+  fontFamily: fontFamilyCode,
   fontSize: '3.25rem',
 });
