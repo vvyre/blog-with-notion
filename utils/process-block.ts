@@ -3,6 +3,7 @@ import { groupedBlocks } from './grouped-blocks';
 import pMap from 'p-map';
 import { getBookmarkMetadata } from './get-bookmark-metadata';
 import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
 
 export const processedBlock = async (blocks: BlockObjectResponse[]) => {
   const PROCESSED = await pMap(
@@ -18,5 +19,5 @@ export const processedBlock = async (blocks: BlockObjectResponse[]) => {
   );
 
   const LIST_GROUPPED = groupedBlocks(PROCESSED);
-  return LIST_GROUPPED;
+  return LIST_GROUPPED as EntireNotionBlockResponse[];
 };
