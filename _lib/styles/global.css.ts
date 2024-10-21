@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
-import { code, kor } from './fonts.css';
+import { latin, code, kor } from './fonts.css';
 import { THEMES } from './colors.css';
 
 globalStyle('*, *:before, *:after', {
@@ -12,7 +12,7 @@ globalStyle('html', {
   MozBoxSizing: 'border-box',
   fontSize: '100%',
   lineHeight: '1.8',
-  fontFamily: `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, ${kor}, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
+  fontFamily: `${latin}, ${kor}, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
   fontFeatureSettings: "'case', 'ss05', 'ss07'",
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
@@ -40,7 +40,7 @@ globalStyle('main', {
 });
 
 globalStyle('input, button, select, textarea', {
-  fontFamily: `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, ${kor}, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
+  fontFamily: `${latin}, ${kor}, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
   fontFeatureSettings: "'case', 'ss05', 'ss07', ",
   margin: 0,
   font: 'inherit',
@@ -60,7 +60,7 @@ globalStyle('textarea', {
 });
 
 globalStyle('a', {
-  fontFamily: `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, ${kor}, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
+  fontFamily: `${latin}, ${kor}, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`,
   fontFeatureSettings: "'case', 'tnum', 'ss07'",
   fontSize: '100%',
   textDecoration: 'none',
