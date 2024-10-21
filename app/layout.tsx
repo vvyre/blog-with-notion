@@ -6,6 +6,8 @@ import { View } from '@/_lib/components/layout/view/view';
 import { site_env } from '@/env';
 import { Category } from '@/_lib/components/layout/category/category';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
+import { Footer } from '@/_lib/components/layout/footer/footer';
+import { Providers } from '@/_lib/components/providers';
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -43,13 +45,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <View as="body">
-        <View as="nav">
-          <Category />
-        </View>
-        {children}
-        <Spacing size="10rem" />
-      </View>
+      <Providers>
+        <View as="body">{children}</View>
+      </Providers>
     </html>
   );
 }
