@@ -40,7 +40,6 @@ export const POST_LINK = style({
   flexDirection: 'row',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  opacity: '0.75',
   color: THEMES.default,
   selectors: {
     '&:hover': {
