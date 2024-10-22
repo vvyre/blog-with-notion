@@ -1,3 +1,4 @@
+'use client';
 import { Heading } from '../../typography/heading/heading';
 import { getTitle } from '@/utils/get-title';
 import { getDate } from '@/utils/get-date';
@@ -7,11 +8,18 @@ import { BASE, TITLE, SUMMARY, RELEASED_DATE, BACKGROUND, INFO, INFO_BOX } from 
 import { getSummary } from '@/utils/get-summary';
 import { Spacing } from '../spacing/spacing';
 import { PageObject } from '@/_lib/types/notion-response';
+import { CurrentPostContext } from '@/_lib/context/current-post-provider';
+import { useContext, useLayoutEffect } from 'react';
 
 export function PostTitle({ ...meta }: PageObject) {
+  const { setCurrentPost } = useContext(CurrentPostContext);
   const title = getTitle(meta);
   const summary = getSummary(meta);
   const rel_date = getDate(meta);
+
+  useLayoutEffect(() => {
+    setCurrentPost(meta);
+  }, [meta.id]);
 
   return (
     <View styleVariant={BACKGROUND}>

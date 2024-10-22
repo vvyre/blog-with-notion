@@ -2,17 +2,6 @@ import { THEMES } from '@/_lib/styles/colors.css';
 import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
-const BASE = style({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '1.75rem',
-  height: '1.75rem',
-  outline: `1px solid transparent`,
-  borderRadius: '1.75rem',
-  transition: 'outline 0.1s ease-out',
-});
-
 export const LOGO = style({
   fontWeight: 900,
   fontSize: '0.95rem',
@@ -27,16 +16,18 @@ export const LOGO = style({
   },
 });
 
-export const EXTERNAL_LINK = style([
-  BASE,
-  {
-    selectors: {
-      '&:hover': {
-        outline: `1px solid ${THEMES.highlight}`,
-      },
-    },
-  },
-]);
+const BASE = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 'fit-content',
+  height: 'fit-content',
+  outline: `1px solid transparent`,
+  borderRadius: '100%',
+  cursor: 'pointer',
+});
+
+export const EXTERNAL_LINK = style([BASE, {}]);
 
 export const MENU_GITHUB_PLACEMENT = style({
   justifySelf: 'right',
@@ -61,6 +52,6 @@ export const MENU_GITHUB = style({
   },
 });
 export const MENU_GITHUB_IMG = style({
-  width: '1.35rem',
-  height: '1.35rem',
+  width: '1.4rem',
+  height: '1.4rem',
 });

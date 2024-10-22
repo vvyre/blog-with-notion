@@ -2,14 +2,10 @@ import { THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 import { TYPOGRAPHY } from '../../typography/typography.css';
+import { fontFamily, fontFamilyCode } from '@/_lib/styles/fonts.css';
 
 export const BASE = style({
-  height: '5rem',
-  display: 'flex',
-  flexWrap: 'nowrap',
-  justifyContent: 'spaceBetween',
-  alignItems: 'center',
-  background: THEMES.default,
+  height: '3rem',
   width: '100vw',
   zIndex: '99999',
   padding: '0.5rem 2rem 0.5rem 2rem',
@@ -17,10 +13,25 @@ export const BASE = style({
   top: '0',
   '@media': {
     '(0 <= width <= 768px)': {
-      height: '3.5rem',
+      height: '2rem',
       padding: '0.5rem 1.5rem 0.5rem 1.5rem',
     },
   },
+});
+
+export const NAV = style({
+  display: 'flex',
+  flexWrap: 'nowrap',
+  justifyContent: 'spaceBetween',
+  alignItems: 'center',
+});
+
+export const EXPANDED = style({
+  backgroundColor: 'white',
+  display: 'flex',
+  alignItems: 'center',
+  height: 'calc(100vh - 5rem)',
+  zIndex: '99999',
 });
 
 export const BACK_BTN = style({
@@ -31,9 +42,11 @@ export const BTN_WRAPPER = style({
   maxWidth: '10vw',
 });
 
-export const POST_TITLE = style([
+export const POST_TITLE_WRAPPER = style([
   {
-    textAlign: 'right',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
     width: '100%',
     maxWidth: '90vw',
     color: 'white',
@@ -45,6 +58,34 @@ export const POST_TITLE = style([
     },
   },
 ]);
+
+export const POST_TITLE = style([
+  {
+    background: 'transparent',
+    border: 'none',
+    margin: 0,
+    padding: 0,
+    textAlign: 'right',
+    color: 'white',
+    fontWeight: '600',
+    fontSize: TYPOGRAPHY.M.fontSize,
+    '@media': {
+      '(0 <= width <= 768px)': {
+        display: 'none',
+      },
+    },
+  },
+]);
+
+export const BACKGROUND = styleVariants({
+  post: { background: THEMES.default },
+  main: { background: 'transparent' },
+});
+
+export const TEXT_COLOR = styleVariants({
+  post: { color: 'white' },
+  main: { color: 'black' },
+});
 
 //LEGACY
 

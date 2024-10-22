@@ -3,11 +3,15 @@ import '../_lib/styles/global.css';
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 import { View } from '@/_lib/components/layout/view/view';
-import { site_env } from '@/env';
+import { notion_env, site_env } from '@/env';
 import { Category } from '@/_lib/components/layout/category/category';
 import { Spacing } from '@/_lib/components/layout/spacing/spacing';
 import { Footer } from '@/_lib/components/layout/footer/footer';
 import { Providers } from '@/_lib/components/providers';
+import { Navigation } from '@/_lib/components/layout/navigation/navigation';
+import { getPost } from '@/fetch/notion';
+import Post from '@/_lib/components/layout/post/post';
+import { processedBlock } from '@/utils/process-block';
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -38,16 +42,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const profile = await getPost(notion_env.about_id);
+  const blocks = await processedBlock(profile);
+
   return (
     <html lang="ko">
-      <Providers>
-        <View as="body">{children}</View>
-      </Providers>
+      <View as="body">
+        <Providers>
+          <Navigation profile={blocks} />
+          {children}
+        </Providers>
+      </View>
     </html>
   );
 }

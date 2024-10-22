@@ -15,7 +15,6 @@ import { Giscus } from '@/_lib/components/giscus/giscus';
 import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/layout/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/interaction/button/other-articles-btn/other-articles-btn';
-import { Navigation } from '@/_lib/components/layout/navigation/navigation';
 
 export interface PostPageProps {
   params: {
@@ -33,7 +32,6 @@ export default async function Post({ params }: PostPageProps) {
 
   return (
     <View as="main">
-      <Navigation {...meta} />
       <Article>
         <PostTitle {...meta} />
         <View styleVariant={LAYOUT_CENTERED}>

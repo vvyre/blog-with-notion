@@ -1,12 +1,20 @@
 import { style } from '@vanilla-extract/css';
 
 export const LAYOUT = style({
+  position: 'fixed',
   width: '100%',
   height: '100%',
-  minHeight: '100vh',
+  top: '-3rem',
+  minHeight: 'calc(100vh + 3rem)',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  boxShadow: '0 0 200px rgba(0,0,0,0.12) inset',
+});
+
+export const FLEX = style({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
