@@ -15,12 +15,10 @@ import {
 } from './navigation.css';
 import { View } from '../view/view';
 import { getTitle } from '@/utils/get-title';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { CurrentPostContext } from '@/_lib/context/current-post-provider';
-import { usePathname } from 'next/navigation';
 import { useCategory } from '@/_lib/react/use-category';
 import type { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
-import { useBooleanState } from '@syyu/util/react';
 import { Spacing } from '../spacing/spacing';
 import { GithubLink } from '../logo/github';
 import { About } from './about';
