@@ -1,6 +1,5 @@
-import { INTER, JETBRAINS_MONO, PRETENDARD, TELEGRAF } from '@/public/fonts/fonts.css';
+import { JETBRAINS_MONO, PRETENDARD } from '@/public/fonts/fonts.css';
 
-const latin = TELEGRAF;
 const kor = PRETENDARD;
 const code = JETBRAINS_MONO;
 

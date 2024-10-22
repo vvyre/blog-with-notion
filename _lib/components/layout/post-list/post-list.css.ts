@@ -44,10 +44,12 @@ export const POST_LINK = style({
   color: THEMES.default,
   selectors: {
     '&:hover': {
-      outline: `1px solid ${THEMES.default}`,
+      backgroundColor: THEMES.default,
+      color: THEMES.white,
     },
     '&:active': {
-      outline: `1px solid ${THEMES.default}`,
+      backgroundColor: THEMES.default,
+      color: THEMES.white,
     },
   },
 });
@@ -55,14 +57,8 @@ export const POST_LINK = style({
 export const POST_TITLE = style([
   TEXT_STYLE.L,
   {
-    display: 'block',
     cursor: 'pointer',
-    fontWeight: 600,
-
-    textTransform: 'uppercase',
-    '@media': {
-      '(0 <= width <= 768px)': {},
-    },
+    fontWeight: 500,
   },
 ]);
 

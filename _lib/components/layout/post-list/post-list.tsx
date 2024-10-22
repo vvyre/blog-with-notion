@@ -30,11 +30,11 @@ export function PostList({ pageData, category }: PostListProps) {
   return (
     <List as="li" styleVariant={POST_LIST_BASE}>
       <Txt as="Link" href={URI} styleVariant={POST_LINK}>
-        <Heading as="h3" styleVariant={POST_TITLE}>
+        <Txt as="span" styleVariant={POST_TITLE}>
           {TITLE}
-        </Heading>
+        </Txt>
         <Spacing size="0.5rem" dir="hori" />
-        <Txt as="p" styleVariant={RELEASED_DATE}>
+        <Txt as="span" styleVariant={RELEASED_DATE}>
           {DATE}
         </Txt>
       </Txt>
