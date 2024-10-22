@@ -25,6 +25,7 @@ import { Spacing } from '../spacing/spacing';
 import { GithubLink } from '../logo/github';
 import { About } from './about';
 import { NavigationContext } from '@/_lib/context/navigation-provider';
+import { Logo } from '../logo/logo';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
@@ -32,7 +33,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
 
   const [href] = useCategory();
   const styleKey = isPost ? 'post' : 'main';
-  const RightFlexText = currentPost ? getTitle(currentPost) : 'About';
+  const RightFlexText = currentPost ? getTitle(currentPost) : <Logo />;
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null);

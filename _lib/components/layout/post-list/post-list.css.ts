@@ -36,7 +36,7 @@ export const POST_LIST_BASE = style({
 
 export const POST_LINK = style({
   display: 'inline-flex',
-  padding: '0.75rem',
+  padding: '0.35rem 0.85rem 0.35rem 0.85rem',
   flexDirection: 'row',
   justifyContent: 'flex-start',
   alignItems: 'center',

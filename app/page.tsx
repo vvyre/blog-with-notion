@@ -13,7 +13,6 @@ export default async function PostListPage() {
   const postList = await getCachedPostList(notion_env.database_id);
   return (
     <View as="main" styleVariant={LAYOUT}>
-      <Logo />
       <Flex flexDirection="column" justifyContents="center" alignItems="center">
         <Spacing size="1rem" />
         <Spacing size="1rem" />
