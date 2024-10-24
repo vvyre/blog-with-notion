@@ -41,7 +41,7 @@ export const CAPTION_ZOOMED = style({
 });
 
 export const IMG = style({
-  cursor: 'pointer',
+  cursor: 'zoom-in',
   width: '100%',
   height: '100%',
   objectFit: 'contain',
