@@ -16,7 +16,7 @@ export const TYPOGRAPHY = {
   },
   L: {
     fontSize: '1.25rem',
-    fontWeight: 400,
+    fontWeight: 500,
   },
   M: {
     fontSize: '1.05rem',
