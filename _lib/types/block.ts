@@ -1,13 +1,6 @@
-import {
-  BlockObjectResponse,
-  BookmarkBlockObjectResponse,
-  EquationBlockObjectResponse,
-  ImageBlockObjectResponse,
-  RichTextItemResponse,
-} from '@notionhq/client/build/src/api-endpoints';
-import type { BlockObjectResponseMap, BlockType, EntireNotionBlockResponse } from './block-object-response-map';
+import { BlockObjectResponse, RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { BlockObjectResponseMap, EntireNotionBlockResponse } from './block-object-response-map';
 import { COLORS } from '../styles/colors.css';
-import { ExtendedImageBlockObjectResponse } from './block-transformed';
 import { blockComponentMap } from '../components/_blocks/block-component-map';
 
 /** 타입 가드  */

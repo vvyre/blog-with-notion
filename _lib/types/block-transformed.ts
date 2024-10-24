@@ -1,4 +1,3 @@
-import type { NotionBlock } from './block';
 import type {
   BlockObjectResponse,
   BookmarkBlockObjectResponse,

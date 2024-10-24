@@ -1,7 +1,6 @@
 import type {
   GetPageResponse,
   PageObjectResponse,
-  RichTextItemResponse,
   TextRichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';
 import type { Tag } from './block';
