@@ -1,9 +1,8 @@
 'use client';
 import { site_env } from '@/env';
-import { useEffect, useLayoutEffect, useRef } from 'react';
-import { View } from '../layout/view/view';
+import { useLayoutEffect, useRef } from 'react';
 import { BASE } from './giscus.css';
-import { Spacing } from '../layout/spacing/spacing';
+import { View } from '../../layout/view/view';
 
 export function Giscus() {
   const commentsEl = useRef<HTMLDivElement>(null);
