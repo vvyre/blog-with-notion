@@ -34,6 +34,10 @@ export const TYPOGRAPHY = {
     fontSize: '0.85rem',
     fontWeight: 400,
   },
+  XXXS: {
+    fontSize: '0.75rem',
+    fontWeight: 400,
+  },
 };
 
 export const TEXT_STYLE = styleVariants(TYPOGRAPHY);

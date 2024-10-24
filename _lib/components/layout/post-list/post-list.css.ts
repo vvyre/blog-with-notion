@@ -74,13 +74,12 @@ export const POST_SUMMARY = style([
 ]);
 
 export const RELEASED_DATE = style([
+  TEXT_STYLE.XXXS,
   {
-    fontSize: '0.75rem',
     wordSpacing: '-0.3rem',
     color: THEMES.gray,
     fontFamily: fontFamilyCode,
     cursor: 'pointer',
-    fontWeight: 400,
     fontFeatureSettings: '"calt"',
     textDecoration: 'none',
   },
@@ -89,7 +88,6 @@ export const RELEASED_DATE = style([
 export const POST_CATEGORY = style([
   TEXT_STYLE.XXS,
   {
-    fontWeight: 400,
     color: COLORS.gray,
   },
 ]);
