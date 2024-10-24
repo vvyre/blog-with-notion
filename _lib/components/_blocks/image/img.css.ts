@@ -2,12 +2,14 @@ import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 
 export const IMG_CONTAINER = style({
+  cursor: 'zoom-in',
   margin: 0,
   position: 'relative',
   objectFit: 'contain',
 });
 
 export const IMG_CONTAINER_ZOOMED = style({
+  cursor: 'zoom-out',
   zIndex: '1',
   backgroundColor: THEMES.default,
   padding: '1.5rem',
@@ -17,7 +19,6 @@ export const IMG_CONTAINER_ZOOMED = style({
   height: '100vh',
   top: '0',
   left: '0',
-  cursor: 'pointer',
 });
 
 export const CAPTION_TXT = style({
@@ -41,7 +42,6 @@ export const CAPTION_ZOOMED = style({
 });
 
 export const IMG = style({
-  cursor: 'zoom-in',
   width: '100%',
   height: '100%',
   objectFit: 'contain',
