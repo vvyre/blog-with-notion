@@ -11,7 +11,7 @@ import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/layout/view/view';
 import { LAYOUT_CENTERED } from '@/_lib/components/layout/article/article.css';
 import { isr_revalidate_period, notion_env } from '@/env';
-import { Giscus } from '@/_lib/components/giscus/giscus';
+import { Giscus } from '@/_lib/components/embed/giscus/giscus';
 import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/layout/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/interaction/button/other-articles-btn/other-articles-btn';
