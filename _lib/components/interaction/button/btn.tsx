@@ -18,7 +18,7 @@ export function Btn<T extends ElementType>({ as, onClick, children, href, styleV
   switch (Component) {
     default:
       return (
-        <Component className={className} onClick={onClick} {...props}>
+        <Component className={className} href={href} onClick={onClick} {...props}>
           {children}
         </Component>
       );
