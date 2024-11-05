@@ -51,12 +51,24 @@ export const POST_LINK = style({
       color: THEMES.white,
     },
   },
+  '@media': {
+    '(0px <= width <= 700px)': {
+      display: 'flex',
+      justifyContent: 'space-between',
+      width: 'calc(100vw - 1.7rem)',
+    },
+  },
 });
 
 export const POST_TITLE = style([
   TEXT_STYLE.L,
   {
     cursor: 'pointer',
+    '@media': {
+      '(0px <= width <= 700px)': {
+        fontSize: '1.05rem',
+      },
+    },
   },
 ]);
 

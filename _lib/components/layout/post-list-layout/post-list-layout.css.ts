@@ -15,6 +15,11 @@ export const POST_LIST_CENTERED = style([
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
+    '@media': {
+      '(0px <= width <= 700px)': {
+        flexDirection: 'column',
+      },
+    },
   },
 ]);
 

@@ -12,7 +12,7 @@ export const BASE = style({
   position: 'sticky',
   top: '0',
   '@media': {
-    '(0 <= width <= 768px)': {
+    '(0 <= width <= 700px)': {
       height: '2rem',
       padding: '0.5rem 1.5rem 0.5rem 1.5rem',
     },
@@ -52,7 +52,7 @@ export const POST_TITLE_WRAPPER = style([
     color: 'white',
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
-      '(0 <= width <= 768px)': {
+      '(0 <= width <= 700px)': {
         display: 'none',
       },
     },
@@ -70,7 +70,7 @@ export const POST_TITLE = style([
     fontWeight: '600',
     fontSize: TYPOGRAPHY.M.fontSize,
     '@media': {
-      '(0 <= width <= 768px)': {
+      '(0 <= width <= 700px)': {
         display: 'none',
       },
     },
