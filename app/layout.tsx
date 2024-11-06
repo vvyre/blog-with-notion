@@ -4,13 +4,9 @@ import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 import { View } from '@/_lib/components/layout/view/view';
 import { notion_env, site_env } from '@/env';
-import { Category } from '@/_lib/components/layout/category/category';
-import { Spacing } from '@/_lib/components/layout/spacing/spacing';
-import { Footer } from '@/_lib/components/layout/footer/footer';
 import { Providers } from '@/_lib/components/providers';
 import { Navigation } from '@/_lib/components/layout/navigation/navigation';
 import { getPost } from '@/fetch/notion';
-import Post from '@/_lib/components/layout/post/post';
 import { processedBlock } from '@/utils/process-block';
 
 export const metadata: Metadata = {

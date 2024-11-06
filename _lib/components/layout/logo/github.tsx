@@ -6,7 +6,7 @@ import MARK_WHITE from '#/img/github-mark-white.svg';
 import { EXTERNAL_LINK, MENU_GITHUB_IMG } from './logo.css';
 
 export function GithubLink({ isPost }: { isPost: boolean }) {
-  const MARK = isPost ? MARK_WHITE : MARK_BLACK;
+  const MARK = isPost ? MARK_WHITE : MARK_WHITE;
 
   return (
     <Btn as="a" href="https://github.com/brewcold" target="_blank" styleVariant={EXTERNAL_LINK}>

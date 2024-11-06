@@ -43,11 +43,11 @@ export const POST_LINK = style({
   color: THEMES.white,
   selectors: {
     '&:hover': {
-      backgroundColor: 'rgba(0,0,0,0.5)',
+      backgroundColor: 'rgba(0,0,0,0.66)',
       color: THEMES.white,
     },
     '&:active': {
-      backgroundColor: 'rgba(0,0,0,0.5)',
+      backgroundColor: 'rgba(0,0,0,0.66)',
       color: THEMES.white,
     },
   },
@@ -89,7 +89,7 @@ export const RELEASED_DATE = style([
   TEXT_STYLE.XXXS,
   {
     wordSpacing: '-0.3rem',
-    color: THEMES.light_b2,
+    color: THEMES.light_b3,
     fontFamily: fontFamilyCode,
     cursor: 'pointer',
     fontFeatureSettings: '"calt"',

@@ -5,10 +5,9 @@ import { style, styleVariants } from '@vanilla-extract/css';
 export const LOGO = style({
   fontWeight: 900,
   fontSize: '0.95rem',
-  opacity: '0.75',
   fontFamily: fontFamilyCode,
   textAlign: 'center',
-  color: THEMES.default,
+  color: THEMES.white,
   '@media': {
     '(0px <= width <= 768px)': {
       fontSize: '1rem',

@@ -1,14 +1,14 @@
-import { meta } from '@/constants/meta';
-import { BASE, FOOTER_COPYRIGHT, FOOTER_LINK } from './footer.css';
+import { BASE, FOOTER_LINK } from './footer.css';
 import { Txt } from '../../typography/txt/txt';
 import { View } from '../view/view';
-import { site_env } from '@/env';
 
 export function Footer() {
   return (
-    <View styleVariant={BASE}>
-      <Txt as="a" target="_blank" href={`${site_env.root}/feed.xml`} styleVariant={FOOTER_LINK}>
-        RSS
+    <View as="footer" styleVariant={BASE}>
+      <Txt as="p" styleVariant={FOOTER_LINK}>
+        출처가 없는 모든 사진 및 컨텐츠의 저작권은 brewcold에 있습니다. 무단 전재 및 복제를 금합니다.
+        <br />
+        Copyright 2024. Brewcold all rights reserved.
       </Txt>
     </View>
   );

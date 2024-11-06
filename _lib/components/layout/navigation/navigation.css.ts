@@ -30,9 +30,14 @@ export const NAV = style({
 export const EXPANDED = style({
   backgroundColor: 'white',
   display: 'flex',
+  position: 'fixed',
+  top: '2.8rem',
+  left: 0,
+  opacity: '0.95',
   alignItems: 'center',
-  height: 'calc(100vh - 5rem)',
-  zIndex: '99999',
+  width: '100vw',
+  height: 'calc(100vh)',
+  zIndex: '9999',
 });
 
 export const BACK_BTN = style({
