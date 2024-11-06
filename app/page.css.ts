@@ -18,7 +18,6 @@ export const LAYOUT_BG = style([
     backgroundRepeat: 'no-repeat',
     backgroundBlendMode: 'overlay',
     backgroundPosition: 'center',
-    transition: 'background-image 0.5s',
   },
 ]);
 
