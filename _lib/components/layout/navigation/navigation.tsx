@@ -8,6 +8,8 @@ import {
   BASE,
   BTN_WRAPPER,
   EXPANDED,
+  HIDE_UNDER_500PX,
+  HIDE_UNDER_700PX,
   NAV,
   POST_TITLE,
   POST_TITLE_WRAPPER,
@@ -42,7 +44,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
       <View as="nav" styleVariant={NAV}>
         <View styleVariant={BTN_WRAPPER}>
           {isPost && (
-            <Btn as="Link" href={href} styleVariant={BACK_BTN}>
+            <Btn as="Link" href={href} styleVariant={`${BACK_BTN} ${HIDE_UNDER_500PX}`}>
               <Image alt="go to post list" unoptimized src={Arrow} />
             </Btn>
           )}
@@ -54,13 +56,16 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
             styleVariant={`${POST_TITLE} ${TEXT_COLOR[styleKey]}`}>
             {RightFlexText}
           </Btn>
-          <Spacing size="0.8rem" dir="hori" />
-          <GithubLink isPost={isPost} />
+          <View styleVariant={HIDE_UNDER_700PX}>
+            <Spacing size="0.8rem" dir="hori" />
+            <GithubLink isPost={isPost} />
+          </View>
         </View>
       </View>
-      <Spacing size="1rem" />
+
       {displayProfile && (
         <View styleVariant={EXPANDED}>
+          <Spacing size="1rem" />
           <About blocks={profile} />
         </View>
       )}

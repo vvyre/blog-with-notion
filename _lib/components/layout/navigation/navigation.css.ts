@@ -2,19 +2,20 @@ import { THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 import { TYPOGRAPHY } from '../../typography/typography.css';
-import { fontFamily, fontFamilyCode } from '@/_lib/styles/fonts.css';
 
 export const BASE = style({
-  height: '3rem',
+  height: '2.8rem',
   width: '100vw',
   zIndex: '99999',
-  padding: '0.5rem 2rem 0.5rem 2rem',
+  padding: '0.4rem 2rem 0.4rem 2rem',
   position: 'sticky',
+  display: 'flex',
+  flexDirection: 'column',
   top: '0',
   '@media': {
     '(0 <= width <= 700px)': {
-      height: '2rem',
-      padding: '0.5rem 1.5rem 0.5rem 1.5rem',
+      bottom: '0',
+      padding: '0.4rem 1.5rem 0.4rem 1.5rem',
     },
   },
 });
@@ -37,6 +38,7 @@ export const EXPANDED = style({
 export const BACK_BTN = style({
   display: 'linine',
 });
+
 export const BTN_WRAPPER = style({
   width: '100%',
   maxWidth: '10vw',
@@ -53,11 +55,27 @@ export const POST_TITLE_WRAPPER = style([
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
       '(0 <= width <= 700px)': {
-        display: 'none',
+        fontSize: TYPOGRAPHY.S.fontSize,
       },
     },
   },
 ]);
+
+export const HIDE_UNDER_700PX = style({
+  '@media': {
+    '(0 <= width <= 700px)': {
+      display: 'none',
+    },
+  },
+});
+
+export const HIDE_UNDER_500PX = style({
+  '@media': {
+    '(0 <= width <= 500px)': {
+      display: 'none',
+    },
+  },
+});
 
 export const POST_TITLE = style([
   {
@@ -71,7 +89,7 @@ export const POST_TITLE = style([
     fontSize: TYPOGRAPHY.M.fontSize,
     '@media': {
       '(0 <= width <= 700px)': {
-        display: 'none',
+        fontSize: TYPOGRAPHY.XS.fontSize,
       },
     },
   },
