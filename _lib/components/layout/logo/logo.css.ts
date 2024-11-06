@@ -3,9 +3,8 @@ import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 export const LOGO = style({
-  fontWeight: 900,
-  fontSize: '0.95rem',
-  fontFamily: fontFamilyCode,
+  fontWeight: 500,
+  fontSize: '0.85rem',
   textAlign: 'center',
   color: THEMES.white,
   '@media': {

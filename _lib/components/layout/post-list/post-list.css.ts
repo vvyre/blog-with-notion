@@ -61,8 +61,9 @@ export const POST_LINK = style({
 });
 
 export const POST_TITLE = style([
-  TEXT_STYLE.L,
   {
+    fontSize: '1.25rem',
+    fontWeight: '600',
     cursor: 'pointer',
     '@media': {
       '(0px <= width <= 700px)': {
