@@ -5,7 +5,6 @@ import { isr_revalidate_period, notion_env } from '@/env';
 import { LAYOUT_BG, LAYOUT_INNER } from './page.css';
 import { Flex } from '@/_lib/components/layout/flex/flex';
 import { getBackgroundImg } from '@/utils/get-background-img';
-import { Footer } from '@/_lib/components/layout/footer/footer';
 
 export const revalidate = isr_revalidate_period;
 
