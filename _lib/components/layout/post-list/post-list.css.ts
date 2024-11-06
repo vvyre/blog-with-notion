@@ -40,14 +40,14 @@ export const POST_LINK = style({
   flexDirection: 'row',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  color: THEMES.default,
+  color: THEMES.white,
   selectors: {
     '&:hover': {
-      backgroundColor: THEMES.default,
+      backgroundColor: 'rgba(0,0,0,0.5)',
       color: THEMES.white,
     },
     '&:active': {
-      backgroundColor: THEMES.default,
+      backgroundColor: 'rgba(0,0,0,0.5)',
       color: THEMES.white,
     },
   },
@@ -89,7 +89,7 @@ export const RELEASED_DATE = style([
   TEXT_STYLE.XXXS,
   {
     wordSpacing: '-0.3rem',
-    color: THEMES.gray,
+    color: THEMES.light_b2,
     fontFamily: fontFamilyCode,
     cursor: 'pointer',
     fontFeatureSettings: '"calt"',

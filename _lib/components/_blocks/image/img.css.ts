@@ -21,6 +21,16 @@ export const IMG_CONTAINER_ZOOMED = style({
   left: '0',
 });
 
+export const BACKGROUND = style({
+  zIndex: '-1',
+  position: 'fixed',
+  objectFit: 'contain',
+  width: '100vw',
+  height: '100vh',
+  top: '0',
+  left: '0',
+});
+
 export const CAPTION_TXT = style({
   fontSize: '0.9rem',
   color: COLORS.gray,

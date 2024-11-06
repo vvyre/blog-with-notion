@@ -1,10 +1,8 @@
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
-import { BASE_GRID, BASE_PADDING } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
 export const POST_LIST_CENTERED = style([
   {
-    opacity: '0.5',
     background: 'transparent',
     lineHeight: 1.65,
     height: '100%',

@@ -7,8 +7,12 @@ type ViewProps<T extends ElementType> = {
   children: ReactNode;
   //TODO: FLEX/GRID OPTIONS
 } & ComponentPropsWithoutRef<T>;
-export function View<T extends ElementType>({ as, styleVariant, children }: ViewProps<T>) {
+export function View<T extends ElementType>({ as, styleVariant, children, ...props }: ViewProps<T>) {
   const Component = as || 'div';
   const className = styleVariant || BASE;
-  return <Component className={className}>{children}</Component>;
+  return (
+    <Component className={className} {...props}>
+      {children}
+    </Component>
+  );
 }
