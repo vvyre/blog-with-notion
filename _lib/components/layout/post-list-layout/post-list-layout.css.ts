@@ -4,6 +4,7 @@ import { style } from '@vanilla-extract/css';
 
 export const POST_LIST_CENTERED = style([
   {
+    opacity: '0.5',
     background: 'transparent',
     lineHeight: 1.65,
     height: '100%',

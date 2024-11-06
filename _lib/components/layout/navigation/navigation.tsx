@@ -58,6 +58,8 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
           </Btn>
           <View styleVariant={HIDE_UNDER_700PX}>
             <Spacing size="0.8rem" dir="hori" />
+          </View>
+          <View styleVariant={HIDE_UNDER_700PX}>
             <GithubLink isPost={isPost} />
           </View>
         </View>
