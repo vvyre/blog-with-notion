@@ -1,17 +1,12 @@
 import { THEMES } from '@/_lib/styles/colors.css';
-import { fontFamilyCode } from '@/_lib/styles/fonts.css';
-import { style, styleVariants } from '@vanilla-extract/css';
+
+import { style } from '@vanilla-extract/css';
 
 export const LOGO = style({
   fontWeight: 500,
   fontSize: '0.85rem',
   textAlign: 'center',
   color: THEMES.white,
-  '@media': {
-    '(0px <= width <= 768px)': {
-      fontSize: '1rem',
-    },
-  },
 });
 
 const BASE = style({
