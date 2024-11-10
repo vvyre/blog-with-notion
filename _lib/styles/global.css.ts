@@ -82,7 +82,7 @@ globalStyle('pre', {
 });
 
 globalStyle('code, pre, pre span', {
-  fontSize: '0.815rem',
+  fontSize: '0.835rem',
   lineHeight: '1.5',
   fontFamily: fontFamilyCode,
   MozTabSize: 2,
