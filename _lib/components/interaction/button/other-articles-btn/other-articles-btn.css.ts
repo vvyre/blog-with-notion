@@ -7,6 +7,5 @@ export const BASE = style({
   textDecoration: 'underline',
   textUnderlineOffset: '0.25rem',
   fontSize: '0.9rem',
-  borderRadius: '2rem',
   cursor: 'pointer',
 });
