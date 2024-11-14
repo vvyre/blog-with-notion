@@ -1,12 +1,16 @@
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
+import { IMG_BLOCK_GRID_BASE } from '../block-layout.css';
 
-export const IMG_CONTAINER = style({
-  cursor: 'zoom-in',
-  margin: 0,
-  position: 'relative',
-  objectFit: 'contain',
-});
+export const IMG_CONTAINER = style([
+  IMG_BLOCK_GRID_BASE,
+  {
+    cursor: 'zoom-in',
+    margin: 0,
+    position: 'relative',
+    objectFit: 'contain',
+  },
+]);
 
 export const IMG_CONTAINER_ZOOMED = style({
   cursor: 'zoom-out',

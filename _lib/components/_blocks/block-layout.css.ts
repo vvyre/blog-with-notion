@@ -1,28 +1,13 @@
 import { style } from '@vanilla-extract/css';
 
-export const IMG_BLOCK_GRID_PLACEMENT = style({
-  gridColumnStart: 1,
-  gridColumnEnd: 13,
-  placeItems: 'center',
-  '@media': {
-    '(0px <= width <= 768px)': {
-      gridColumnStart: 1,
-      gridColumnEnd: 7,
-    },
-  },
+export const BLOCK_GRID_BASE = style({
+  gridColumn: '2 / 3',
+  width: '100%',
+  maxWidth: '50rem',
 });
 
-export const DEFAULT_BLOCK_GRID_PLACEMENT = style({
-  gridColumnStart: 3,
-  gridColumnEnd: 9,
-  '@media': {
-    '(769px <= width <= 1200px)': {
-      gridColumnStart: 3,
-      gridColumnEnd: 10,
-    },
-    '(0px <= width <= 768px)': {
-      gridColumnStart: 1,
-      gridColumnEnd: 7,
-    },
-  },
+export const IMG_BLOCK_GRID_BASE = style({
+  gridColumn: '1 / 4',
+  width: '100%',
+  maxWidth: '50rem',
 });

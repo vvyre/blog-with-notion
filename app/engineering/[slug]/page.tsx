@@ -15,6 +15,7 @@ import { Giscus } from '@/_lib/components/embed/giscus/giscus';
 import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/layout/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/interaction/button/other-articles-btn/other-articles-btn';
+import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 
 export interface PostPageProps {
   params: {
@@ -33,17 +34,19 @@ export default async function Post({ params }: PostPageProps) {
   return (
     <View as="main">
       <Article>
-        <PostTitle {...meta} />
         <View styleVariant={LAYOUT_CENTERED}>
+          <PostTitle {...meta} />
           {blocks.map(b => (
             <Block key={b.id} block={b} />
           ))}
           <Spacing size="5rem" />
-          <Flex justifyContents="spaceBetween">
-            <OtherArticlesBtn />
-            <ShareBtn />
-          </Flex>
-          <Giscus />
+          <View styleVariant={BLOCK_GRID_BASE}>
+            <Flex justifyContents="spaceBetween">
+              <OtherArticlesBtn />
+              <ShareBtn />
+            </Flex>
+            <Giscus />
+          </View>
         </View>
       </Article>
       <Spacing size="10rem" />

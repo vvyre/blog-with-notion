@@ -1,31 +1,19 @@
 import { style } from '@vanilla-extract/css';
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { TYPOGRAPHY } from '../../typography/typography.css';
+import { BLOCK_GRID_BASE } from '../../_blocks/block-layout.css';
 
-export const BACKGROUND = style({
-  width: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  marginTop: '3rem',
-  marginBottom: '3rem',
-  padding: '0 2rem 0 2rem',
-  '@media': {
-    'screen and (max-width: 768px)': {
-      padding: '0 1.5rem 0 1.5rem',
-    },
-  },
-});
 export const BASE = style([
+  BLOCK_GRID_BASE,
   {
     display: 'flex',
     width: '100%',
-    maxWidth: '46rem',
     margin: '0 auto',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     height: 'auto',
-    minHeight: '12rem',
+    minHeight: '14rem',
   },
 ]);
 

@@ -14,16 +14,16 @@ export const POST_GRID = style([
 ]);
 
 export const LAYOUT_CENTERED = style([
-  BASE_PADDING,
   {
+    display: 'grid',
+    width: '100%',
+    gridTemplateColumns: '2rem minmax(15rem, 48rem) 2rem',
     background: 'transparent',
     margin: '0 auto',
-    paddingBottom: '0',
-    maxWidth: '50rem',
-    padding: '0 2rem 0 2rem',
+    maxWidth: '48rem',
     '@media': {
       '(0 <= width <= 768px)': {
-        padding: '0 1.5rem 0 1.5rem',
+        gridTemplateColumns: '1.5rem minmax(15rem, 48rem) 1.5rem',
       },
     },
   },

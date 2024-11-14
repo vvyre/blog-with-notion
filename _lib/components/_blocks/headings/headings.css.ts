@@ -1,8 +1,12 @@
 import { style } from '@vanilla-extract/css';
+import { BLOCK_GRID_BASE } from '../block-layout.css';
 
-export const BASE = style({
-  verticalAlign: 'middle',
-});
+export const BASE = style([
+  BLOCK_GRID_BASE,
+  {
+    verticalAlign: 'middle',
+  },
+]);
 
 export const HEADING_1 = style([
   BASE,
