@@ -18,14 +18,14 @@ export const BACKGROUND = style({
 export const BASE = style([
   {
     display: 'flex',
-    width: '100vw',
-    maxWidth: '41rem',
+    width: '100%',
+    maxWidth: '46rem',
     margin: '0 auto',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flexStart',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     height: 'auto',
-    minHeight: '16rem',
+    minHeight: '12rem',
   },
 ]);
 
@@ -61,7 +61,6 @@ export const TITLE_TEXT_PLACEMENT = style({
 });
 
 export const INFO_BOX = style({
-  padding: '2rem 2.5rem 2rem 2.5rem',
   marginBottom: '0.5rem',
   width: '100%',
   maxWidth: '45rem',
@@ -72,7 +71,7 @@ export const TITLE = style([
   {
     color: THEMES.default,
     fontWeight: 700,
-    textAlign: 'center',
+    textAlign: 'left',
     lineHeight: '1.25',
     width: '100%',
     wordBreak: 'keep-all',
@@ -83,13 +82,13 @@ export const TITLE = style([
 export const RELEASED_DATE = style({
   color: THEMES.gray,
   fontWeight: 400,
-  textAlign: 'center',
+  textAlign: 'left',
 });
 
 export const INFO = style({
   lineHeight: '1.65',
   verticalAlign: 'middle',
-  textAlign: 'center',
+  textAlign: 'left',
 });
 
 export const SUMMARY = style({
