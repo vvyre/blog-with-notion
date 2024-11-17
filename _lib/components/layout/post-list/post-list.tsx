@@ -24,7 +24,6 @@ export function PostList({ pageData, category }: PostListProps) {
         <Txt as="span" styleVariant={POST_TITLE}>
           {TITLE}
         </Txt>
-        <Spacing size="0.5rem" dir="hori" />
         <Txt as="span" styleVariant={RELEASED_DATE}>
           {DATE}
         </Txt>

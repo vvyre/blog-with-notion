@@ -30,30 +30,36 @@ export const POST_TEXT = style({
 export const POST_LIST_BASE = style({
   cursor: 'pointer',
   display: 'inline-flex',
-
   justifyContent: 'center',
+  marginBottom: '0.75rem',
+  '@media': {
+    '(0px <= width <= 700px)': {
+      marginBottom: '0',
+    },
+  },
 });
 
 export const POST_LINK = style({
   display: 'inline-flex',
-  padding: '0.35rem 0.85rem 0.35rem 0.85rem',
-  flexDirection: 'row',
+  padding: '0.5rem 1rem 0.5rem 1rem',
+  flexDirection: 'column-reverse',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  color: THEMES.white,
+  color: 'rgba(0,255,255,0.85)',
   selectors: {
     '&:hover': {
-      backgroundColor: 'rgba(0,0,0,0.66)',
+      backgroundColor: 'rgba(0,0,0,0.8)',
       color: THEMES.white,
     },
     '&:active': {
-      backgroundColor: 'rgba(0,0,0,0.66)',
+      backgroundColor: 'rgba(0,0,0,0.8)',
       color: THEMES.white,
     },
   },
   '@media': {
     '(0px <= width <= 700px)': {
       display: 'flex',
+      flexDirection: 'row',
       justifyContent: 'space-between',
       width: 'calc(100vw - 1.7rem)',
     },
@@ -62,7 +68,7 @@ export const POST_LINK = style({
 
 export const POST_TITLE = style([
   {
-    fontSize: '1.25rem',
+    fontSize: '1.15rem',
     fontWeight: '600',
     cursor: 'pointer',
     '@media': {
@@ -90,7 +96,7 @@ export const RELEASED_DATE = style([
   TEXT_STYLE.XXXS,
   {
     wordSpacing: '-0.3rem',
-    color: THEMES.light_b3,
+    color: THEMES.white,
     fontFamily: fontFamilyCode,
     cursor: 'pointer',
     fontFeatureSettings: '"calt"',
