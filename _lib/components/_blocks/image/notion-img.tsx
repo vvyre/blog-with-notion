@@ -42,6 +42,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
       {block.image.caption.length > 0 && (
         <Txt styleVariant={zoomed ? CAPTION_TXT_ZOOMED : CAPTION_TXT}>{getPlainText(block.image.caption)}</Txt>
       )}
+      <Spacing size="2rem" />
     </Flex>
   );
 }

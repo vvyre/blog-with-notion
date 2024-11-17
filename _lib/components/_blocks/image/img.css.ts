@@ -9,7 +9,6 @@ export const IMG_CONTAINER = style([
     margin: 0,
     position: 'relative',
     objectFit: 'contain',
-    marginBottom: '2rem',
   },
 ]);
 
