@@ -56,7 +56,7 @@ export const POST_TITLE_WRAPPER = style([
     justifyContent: 'flex-end',
     width: '100%',
     maxWidth: '90vw',
-    color: 'white',
+    color: THEMES.default,
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
       '(0 <= width <= 700px)': {
@@ -89,7 +89,7 @@ export const POST_TITLE = style([
     margin: 0,
     padding: 0,
     textAlign: 'right',
-    color: 'white',
+    color: THEMES.default,
     fontWeight: '600',
     fontSize: TYPOGRAPHY.M.fontSize,
     '@media': {
@@ -101,19 +101,19 @@ export const POST_TITLE = style([
 ]);
 
 export const BACKGROUND = styleVariants({
-  post: { background: THEMES.default },
+  post: { background: THEMES.white },
   main: { background: 'transparent' },
 });
 
 export const TEXT_COLOR = styleVariants({
-  post: { color: 'white' },
-  main: { color: 'black' },
+  post: { color: THEMES.default },
+  main: { color: THEMES.default },
 });
 
 //LEGACY
 
 export const THEME = styleVariants({
-  BLACK: { backgroundColor: THEMES.default },
+  BLACK: { backgroundColor: THEMES.white },
   WHITE: { background: 'transparent' },
 });
 

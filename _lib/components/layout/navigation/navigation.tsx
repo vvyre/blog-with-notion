@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import Arrow from '#/img/icons/arrow_back_white.svg';
+import Arrow from '#/img/icons/arrow_back_black.svg';
 import { Btn } from '../../interaction/button/btn';
 import {
   BACK_BTN,
