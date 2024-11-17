@@ -39,11 +39,15 @@ export const BACKGROUND = style({
 export const CAPTION_TXT = style({
   fontSize: '0.9rem',
   color: COLORS.gray,
+  padding: '1.5rem',
+  maxWidth: '30rem',
 });
 
 export const CAPTION_TXT_ZOOMED = style({
   fontSize: '1rem',
   color: THEMES.white,
+  padding: '1.5rem',
+  maxWidth: '30rem',
 });
 
 export const CAPTION = style({});
