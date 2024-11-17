@@ -9,6 +9,7 @@ export const IMG_CONTAINER = style([
     margin: 0,
     position: 'relative',
     objectFit: 'contain',
+    marginBottom: '2rem',
   },
 ]);
 
@@ -45,10 +46,7 @@ export const CAPTION_TXT_ZOOMED = style({
   color: THEMES.white,
 });
 
-export const CAPTION = style({
-  textAlign: 'center',
-  width: '100%',
-});
+export const CAPTION = style({});
 
 export const CAPTION_ZOOMED = style({
   textAlign: 'center',

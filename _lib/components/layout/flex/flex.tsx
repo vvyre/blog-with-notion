@@ -22,10 +22,15 @@ export function Flex<T extends ElementType>({
   flexWrap = 'wrap',
   children,
   styleVariant,
+  ...props
 }: FlexProps<T>) {
   const className = `${width === 'fill' && BASE} ${DIRECTION_VARIANT[flexDirection]} ${
     JUSTIFY_VARIANT[justifyContents]
   } ${ALIGN_VARIANT[alignItems]} ${WRAP_VARIANT[flexWrap]} ${styleVariant || ''}`;
   const Component = as || 'div';
-  return <Component className={className}>{children}</Component>;
+  return (
+    <Component className={className} {...props}>
+      {children}
+    </Component>
+  );
 }

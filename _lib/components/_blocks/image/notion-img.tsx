@@ -24,11 +24,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const [zoomed, setZoomed] = useState<boolean>(false);
 
   return (
-    <Flex
-      flexDirection="column"
-      justifyContents="center"
-      alignItems="center"
-      styleVariant={zoomed ? IMG_CONTAINER_ZOOMED : IMG_CONTAINER}>
+    <Flex justifyContents="center" alignItems="center" styleVariant={zoomed ? IMG_CONTAINER_ZOOMED : IMG_CONTAINER}>
       <Image
         unoptimized
         className={IMG}
@@ -42,14 +38,9 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
         width={1680}
         height={1200}
       />
-      <Spacing size="0.25rem" />
-      {block.image.caption.length > 0 ? (
-        <View styleVariant={zoomed ? CAPTION_ZOOMED : CAPTION}>
-          <Txt styleVariant={zoomed ? CAPTION_TXT_ZOOMED : CAPTION_TXT}>{getPlainText(block.image.caption)}</Txt>
-          <Spacing size="1rem" />
-        </View>
-      ) : (
-        <Spacing size="1rem" />
+      <Spacing size="0.35rem" />
+      {block.image.caption.length > 0 && (
+        <Txt styleVariant={zoomed ? CAPTION_TXT_ZOOMED : CAPTION_TXT}>{getPlainText(block.image.caption)}</Txt>
       )}
     </Flex>
   );
