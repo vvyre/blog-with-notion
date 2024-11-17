@@ -4,8 +4,7 @@ import { style } from '@vanilla-extract/css';
 
 export const ABOUT = style([
   {
-    maxWidth: '41rem',
-    width: '100%',
+    width: '100vw',
     wordBreak: 'keep-all',
     '@media': {
       '(0 <= width <= 768px)': {

@@ -31,7 +31,7 @@ export const EXPANDED = style({
   backgroundColor: 'white',
   display: 'flex',
   position: 'fixed',
-  top: '2.8rem',
+  top: '2.5rem',
   left: 0,
   opacity: '0.95',
   alignItems: 'center',

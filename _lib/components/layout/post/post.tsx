@@ -13,16 +13,5 @@ export default function Post({
   theme?: 'light' | 'dark';
   blocks: EntireNotionBlockResponse[];
 }) {
-  return (
-    <View styleVariant={LAYOUT_CENTERED}>
-      <Article styleVariants={ABOUT}>
-        <View styleVariant={ABOUT_INNER}>
-          {blocks.map((b: EntireNotionBlockResponse) => (
-            <Block key={b.id} block={b} />
-          ))}
-        </View>
-      </Article>
-      <Spacing size="10rem" />
-    </View>
-  );
+  return blocks.map((b: EntireNotionBlockResponse) => <Block key={b.id} block={b} />);
 }
