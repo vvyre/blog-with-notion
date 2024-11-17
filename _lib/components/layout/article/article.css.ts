@@ -20,7 +20,6 @@ export const LAYOUT_CENTERED = style([
     gridTemplateColumns: '2rem minmax(15rem, 48rem) 2rem',
     background: 'transparent',
     margin: '0 auto',
-    maxWidth: '48rem',
     '@media': {
       '(0 <= width <= 768px)': {
         gridTemplateColumns: '1.5rem minmax(15rem, 48rem) 1.5rem',
