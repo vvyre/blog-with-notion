@@ -49,7 +49,7 @@ export const TITLE_TEXT_PLACEMENT = style({
 });
 
 export const INFO_BOX = style({
-  marginBottom: '0.5rem',
+  margin: '3rem 0 3rem 0',
   width: '100%',
   maxWidth: '45rem',
 });
@@ -58,7 +58,7 @@ export const TITLE = style([
   TYPOGRAPHY.XXXL,
   {
     color: THEMES.default,
-    fontWeight: 700,
+    fontWeight: 900,
     textAlign: 'left',
     lineHeight: '1.25',
     width: '100%',
