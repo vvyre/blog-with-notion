@@ -5,10 +5,14 @@ import { IMG_BLOCK_GRID_BASE } from '../block-layout.css';
 export const IMG_CONTAINER = style([
   IMG_BLOCK_GRID_BASE,
   {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
     cursor: 'zoom-in',
     margin: 0,
-    position: 'relative',
     objectFit: 'contain',
+    height: '100%',
   },
 ]);
 
@@ -25,31 +29,18 @@ export const IMG_CONTAINER_ZOOMED = style({
   left: '0',
 });
 
-export const BACKGROUND = style({
-  zIndex: '-1',
-  position: 'fixed',
-  objectFit: 'contain',
-  width: '100vw',
-  height: '100vh',
-  top: '0',
-  left: '0',
-});
-
 export const CAPTION_TXT = style({
   fontSize: '0.9rem',
+  textAlign: 'center',
+  width: '100%',
   color: COLORS.gray,
-  padding: '1.5rem',
+  padding: '0.25rem',
   maxWidth: '30rem',
 });
 
 export const CAPTION_TXT_ZOOMED = style({
-  fontSize: '1rem',
-  color: THEMES.white,
-  padding: '1.5rem',
-  maxWidth: '30rem',
+  display: 'none',
 });
-
-export const CAPTION = style({});
 
 export const CAPTION_ZOOMED = style({
   textAlign: 'center',
@@ -57,6 +48,7 @@ export const CAPTION_ZOOMED = style({
 });
 
 export const IMG = style({
+  position: 'relative',
   width: '100%',
   height: '100%',
   objectFit: 'contain',
