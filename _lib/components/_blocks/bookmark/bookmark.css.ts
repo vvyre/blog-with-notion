@@ -22,3 +22,8 @@ export const INNER = style({
 
   border: `2px solid ${THEMES.light_b3}`,
 });
+
+export const BOOKMARK = style({
+  color: THEMES.gray,
+  wordBreak: 'break-all',
+});

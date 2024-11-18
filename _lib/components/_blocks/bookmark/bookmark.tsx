@@ -1,6 +1,6 @@
 import { View } from '../../layout/view/view';
 import { Txt } from '../../typography/txt/txt';
-import { BASE, INNER } from './bookmark.css';
+import { BASE, BOOKMARK, INNER } from './bookmark.css';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import { Heading } from '../../typography/heading/heading';
@@ -45,7 +45,7 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
           )}
 
           {block.bookmark.caption.map((txt: RichTextItemResponse, idx) => (
-            <Txt color="gray" key={idx} as="p" richText={txt} />
+            <Txt key={idx} as="p" richText={txt} styleVariant={BOOKMARK} />
           ))}
         </Flex>
       </a>
