@@ -44,7 +44,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
       <View as="nav" styleVariant={NAV}>
         <View styleVariant={BTN_WRAPPER}>
           {isPost && (
-            <Btn as="Link" href={href} styleVariant={`${BACK_BTN} ${HIDE_UNDER_500PX}`}>
+            <Btn as="Link" href={href} styleVariant={BACK_BTN}>
               <Image alt="go to post list" unoptimized src={Arrow} />
             </Btn>
           )}
