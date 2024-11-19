@@ -1,5 +1,5 @@
+import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import { style } from '@vanilla-extract/css';
-import { BLOCK_GRID_BASE } from '../../_blocks/block-layout.css';
 
 export const BASE = style([
   BLOCK_GRID_BASE,

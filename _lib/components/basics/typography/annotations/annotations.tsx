@@ -1,5 +1,4 @@
 import { COLORS } from '@/_lib/styles/colors.css';
-import { Wrapper } from '../../layout/util/wrapper';
 import { Strong } from './strong';
 import { Italic } from './italic';
 import { Strike } from './strike';
@@ -7,6 +6,7 @@ import { Underline } from './underline';
 import { Code } from './code';
 import { ReactNode } from 'react';
 import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import { Wrapper } from '../../util/wrapper';
 
 interface AnnotationsProps {
   bold?: boolean;
