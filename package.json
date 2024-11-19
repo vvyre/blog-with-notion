@@ -32,9 +32,7 @@
     "@vanilla-extract/next-plugin": "^2.3.6",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
-    "eslint-plugin-storybook": "^0.6.15",
     "mini-css-extract-plugin": "^2.8.0",
-    "storybook": "^7.6.12",
     "typescript": "^5"
   }
 }
