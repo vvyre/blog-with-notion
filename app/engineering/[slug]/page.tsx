@@ -5,18 +5,18 @@ import { meta } from '@/constants/meta';
 import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
 import { Block } from '@/_lib/components/_blocks/block';
 import { PostTitle } from '@/_lib/components/layout/post-title/post-title';
-import { Article } from '@/_lib/components/layout/article/article';
-import { Spacing } from '@/_lib/components/layout/spacing/spacing';
+import { Article } from '@/_lib/components/basics/article/article';
+import { Spacing } from '@/_lib/components/basics/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
-import { View } from '@/_lib/components/layout/view/view';
-import { LAYOUT_CENTERED } from '@/_lib/components/layout/article/article.css';
+import { View } from '@/_lib/components/basics/view/view';
+import { LAYOUT_CENTERED } from '@/_lib/components/basics/article/article.css';
 import { isr_revalidate_period, notion_env } from '@/env';
-import { Giscus } from '@/_lib/components/embed/giscus/giscus';
-import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-btn';
-import { Flex } from '@/_lib/components/layout/flex/flex';
-import { OtherArticlesBtn } from '@/_lib/components/interaction/button/other-articles-btn/other-articles-btn';
+import { ShareBtn } from '@/_lib/components/basics/button/share-btn/share-btn';
+import { Flex } from '@/_lib/components/basics/flex/flex';
+import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles-btn/other-articles-btn';
 import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
+import { Giscus } from '@/_lib/components/layout/embed/giscus/giscus';
 
 export interface PostPageProps {
   params: {

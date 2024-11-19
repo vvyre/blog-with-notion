@@ -2,7 +2,7 @@ import '@/_lib/components/_blocks/code/hljs.css';
 import '../_lib/styles/global.css';
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
-import { View } from '@/_lib/components/layout/view/view';
+import { View } from '@/_lib/components/basics/view/view';
 import { notion_env, site_env } from '@/env';
 import { Providers } from '@/_lib/components/providers';
 import { Navigation } from '@/_lib/components/layout/navigation/navigation';

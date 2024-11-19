@@ -1,7 +1,7 @@
 'use client';
 
-import { ErrorFallback } from '@/_lib/components/layout/error-fallback/error-fallback';
-import { View } from '@/_lib/components/layout/view/view';
+import { ErrorFallback } from '@/_lib/components/basics/util/error-fallback/error-fallback';
+import { View } from '@/_lib/components/basics/view/view';
 import { useEffect } from 'react';
 
 export default function NotFound({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
