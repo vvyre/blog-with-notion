@@ -6,13 +6,13 @@ import { PostListObject } from '@/_lib/types/notion-response';
 import { PostListFallback } from '../post-list/post-list-fallback';
 import { CategoryType } from '@/constants/category';
 
-import { useContext, useEffect } from 'react';
+import { useContext, useLayoutEffect } from 'react';
 import { PostListContext } from '@/_lib/context/post-list-provider';
 
 export function PostListLayout({ posts, category }: { posts: PostListObject; category: CategoryType }) {
   const { postList, setPostList } = useContext(PostListContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (postList?.length) return;
     setPostList(posts);
   }, [posts]);

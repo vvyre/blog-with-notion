@@ -45,7 +45,7 @@ export const POST_LINK = style({
   flexDirection: 'column-reverse',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  color: 'rgba(0,255,255,0.85)',
+  color: 'rgba(255,255,0,0.85)',
   selectors: {
     '&:hover': {
       backgroundColor: 'rgba(0,0,0,0.8)',
@@ -131,4 +131,8 @@ export const HOVER_TEXT = styleVariants({
   red_background: { selectors: { '&:hover': { backgroundColor: COLORS.red_background } } },
   yellow: { selectors: { '&:hover': { backgroundColor: COLORS.yellow } } },
   yellow_background: { selectors: { '&:hover': { backgroundColor: COLORS.yellow_background } } },
+});
+
+export const FALLBACK = style({
+  color: THEMES.white,
 });
