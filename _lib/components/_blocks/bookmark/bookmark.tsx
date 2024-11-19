@@ -1,6 +1,6 @@
 import { View } from '../../basics/view/view';
 import { Txt } from '../../basics/typography/txt/txt';
-import { BASE, BOOKMARK, INNER } from './bookmark.css';
+import { BASE, BOOKMARK_TEXT, BOOKMARK_URL, INNER } from './bookmark.css';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import { Heading } from '../../basics/typography/heading/heading';
@@ -17,7 +17,7 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
           <Heading color="gray" as="h3" size="L">
             {block.bookmarkInfo.title}
           </Heading>
-          <Spacing size="0.15rem" />
+          <Spacing size="0.25rem" />
 
           <Flex justifyContents="flexStart">
             {icon && (
@@ -33,19 +33,19 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
                 }}
               />
             )}
-            <Txt as="span" size="XS" color="gray">
+            <Txt as="span" size="XS" color="gray" styleVariant={BOOKMARK_URL}>
               {block.bookmark.url}
             </Txt>
           </Flex>
 
           {og?.description && (
-            <Txt color="gray" size="XS">
+            <Txt color="gray" size="XS" styleVariant={BOOKMARK_TEXT}>
               {og.description}
             </Txt>
           )}
 
           {block.bookmark.caption.map((txt: RichTextItemResponse, idx) => (
-            <Txt key={idx} as="p" richText={txt} styleVariant={BOOKMARK} />
+            <Txt key={idx} as="p" richText={txt} styleVariant={BOOKMARK_TEXT} />
           ))}
         </Flex>
       </a>
