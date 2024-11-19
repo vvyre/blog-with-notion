@@ -6,15 +6,13 @@ import { View } from '../../basics/view/view';
 import { LAYOUT_CENTERED } from '../../basics/article/article.css';
 import { ABOUT } from './about.css';
 
-export async function About({ blocks }: { blocks: EntireNotionBlockResponse[] }) {
+export function About({ blocks }: { blocks: EntireNotionBlockResponse[] }) {
   return (
-    <>
-      <Flex width="fill" flexDirection="column" justifyContents="center" alignItems="center" styleVariant={ABOUT}>
-        <View styleVariant={LAYOUT_CENTERED}>
-          <Post blocks={blocks} />
-        </View>
-        <Footer />
-      </Flex>
-    </>
+    <Flex width="fill" flexDirection="column" justifyContents="center" alignItems="center" styleVariant={ABOUT}>
+      <View styleVariant={LAYOUT_CENTERED}>
+        <Post blocks={blocks} />
+      </View>
+      <Footer />
+    </Flex>
   );
 }
