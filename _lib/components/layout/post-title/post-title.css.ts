@@ -62,8 +62,7 @@ export const TITLE = style([
     textAlign: 'left',
     lineHeight: '1.25',
     width: '100%',
-    wordBreak: 'keep-all',
-    textTransform: 'uppercase',
+    wordBreak: 'break-all',
   },
 ]);
 

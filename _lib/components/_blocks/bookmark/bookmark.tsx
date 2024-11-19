@@ -1,6 +1,6 @@
 import { View } from '../../basics/view/view';
 import { Txt } from '../../basics/typography/txt/txt';
-import { BASE, BOOKMARK_TEXT, BOOKMARK_URL, INNER } from './bookmark.css';
+import { BASE, BOOKMARK_TEXT, BOOKMARK_TITLE, BOOKMARK_URL, DESC_URL, INNER } from './bookmark.css';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import { Heading } from '../../basics/typography/heading/heading';
@@ -14,32 +14,32 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
     <View styleVariant={BASE}>
       <a href={block.bookmark.url} target="_blank">
         <Flex as="div" styleVariant={INNER} flexDirection="column" justifyContents="center" alignItems="flexStart">
-          <Heading color="gray" as="h3" size="L">
+          <Heading color="gray" as="h3" size="L" styleVariant={BOOKMARK_TITLE}>
             {block.bookmarkInfo.title}
           </Heading>
-          <Spacing size="0.25rem" />
 
-          <Flex justifyContents="flexStart">
+          <Spacing size="0.4rem" />
+          <View styleVariant={DESC_URL}>
             {icon && (
-              <i
+              <div
                 style={{
                   width: '0.85rem',
                   height: '0.85rem',
                   backgroundImage: `url('${icon}')`,
                   backgroundSize: '0.85rem',
                   backgroundRepeat: 'no-repeat',
-                  display: 'inline',
                   marginRight: '0.35rem',
                 }}
               />
             )}
-            <Txt as="span" size="XS" color="gray" styleVariant={BOOKMARK_URL}>
+            <Txt as="p" color="gray" styleVariant={BOOKMARK_URL}>
               {block.bookmark.url}
             </Txt>
-          </Flex>
+          </View>
 
+          <Spacing size="0.4rem" />
           {og?.description && (
-            <Txt color="gray" size="XS" styleVariant={BOOKMARK_TEXT}>
+            <Txt color="gray" styleVariant={BOOKMARK_TEXT}>
               {og.description}
             </Txt>
           )}

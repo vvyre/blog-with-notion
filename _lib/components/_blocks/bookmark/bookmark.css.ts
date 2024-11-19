@@ -19,20 +19,34 @@ export const BASE = style([
 ]);
 
 export const INNER = style({
-  padding: '0.5rem 0.75rem 0.5rem 0.75rem',
+  padding: '0.75rem 1rem 0.75rem 1rem',
   border: `2px solid ${THEMES.light_b3}`,
+});
+
+export const DESC_URL = style({
+  display: 'inline-flex',
+  flexWrap: 'nowrap',
+  alignItems: 'center',
+});
+
+export const BOOKMARK_TITLE = style({
+  lineHeight: '1.2',
+  fontSize: TYPOGRAPHY.M.fontSize,
+  fontWeight: '600',
+  color: THEMES.gray,
+  wordBreak: 'break-all',
 });
 
 export const BOOKMARK_TEXT = style({
   lineHeight: '1.65',
-  fontSize: TYPOGRAPHY.XS.fontSize,
+  fontSize: '0.85rem',
   color: THEMES.gray,
   wordBreak: 'break-all',
 });
 
 export const BOOKMARK_URL = style({
   lineHeight: '1.3',
-  fontSize: TYPOGRAPHY.XS.fontSize,
+  fontSize: '0.85rem',
   color: THEMES.gray,
   wordBreak: 'break-all',
 });
