@@ -2,7 +2,7 @@
 import { site_env } from '@/env';
 import { useLayoutEffect, useRef } from 'react';
 import { BASE } from './giscus.css';
-import { View } from '../../basics/view/view';
+import { View } from '@/_lib/components/basics/view/view';
 
 export function Giscus() {
   const commentsEl = useRef<HTMLDivElement>(null);
