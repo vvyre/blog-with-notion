@@ -1,10 +1,10 @@
 import { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
-import Post from '../post/post';
+import Post from '../../render-blocks';
 import { Footer } from '../footer/footer';
 import { Flex } from '../flex/flex';
 import { View } from '../view/view';
 import { LAYOUT_CENTERED } from '../article/article.css';
-import { ABOUT } from '../post/post.css';
+import { ABOUT } from '../../util/render-blocks/about.css';
 
 export async function About({ blocks }: { blocks: EntireNotionBlockResponse[] }) {
   return (

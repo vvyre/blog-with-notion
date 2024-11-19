@@ -9,14 +9,14 @@ import type { PageObject } from '@/_lib/types/notion-response';
 import type { CategoryType } from '@/constants/category';
 
 interface PostListProps {
-  pageData: PageObject;
+  post: PageObject;
   category: CategoryType;
 }
 
-export function PostList({ pageData, category }: PostListProps) {
-  const URI = `/${category}/${parsedSlug(pageData)}`;
-  const TITLE = getTitle(pageData);
-  const DATE = getDate(pageData);
+export function PostList({ post, category }: PostListProps) {
+  const URI = `/${category}/${parsedSlug(post)}`;
+  const TITLE = getTitle(post);
+  const DATE = getDate(post);
 
   return (
     <List as="li" styleVariant={POST_LIST_BASE}>

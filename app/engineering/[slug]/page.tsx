@@ -16,6 +16,7 @@ import { ShareBtn } from '@/_lib/components/interaction/button/share-btn/share-b
 import { Flex } from '@/_lib/components/layout/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/interaction/button/other-articles-btn/other-articles-btn';
 import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
+import RenderBlocks from '@/_lib/components/render-blocks';
 
 export interface PostPageProps {
   params: {
@@ -36,6 +37,7 @@ export default async function Post({ params }: PostPageProps) {
       <Article>
         <View styleVariant={LAYOUT_CENTERED}>
           <PostTitle {...meta} />
+          <RenderBlocks blocks={blocks} />
           {blocks.map(b => (
             <Block key={b.id} block={b} />
           ))}

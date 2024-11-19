@@ -20,7 +20,7 @@ export default async function PostListPage() {
       }}>
       <View styleVariant={LAYOUT_INNER}>
         <Flex flexDirection="column" justifyContents="center" alignItems="center">
-          <PostListLayout category="engineering" postList={postList} />
+          <PostListLayout category="engineering" posts={postList} />
         </Flex>
       </View>
     </View>
