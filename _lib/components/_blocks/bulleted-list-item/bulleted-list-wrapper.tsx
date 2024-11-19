@@ -1,4 +1,4 @@
-import { List } from '../../list/list';
+import { List } from '../../basics/list/list';
 import { BulletedListItem } from './bulleted-list-item';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import { BASE } from './bulleted-list-item.css';

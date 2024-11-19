@@ -1,6 +1,6 @@
-import { Txt } from '../../typography/txt/txt';
+import { Txt } from '../../basics/typography/txt/txt';
 import { ChildrenBlocks } from '../children-blocks';
-import { View } from '../../layout/view/view';
+import { View } from '../../basics/view/view';
 import { BASE } from './quote.css';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';

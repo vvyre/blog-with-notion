@@ -1,6 +1,6 @@
 import { ChildrenBlocks } from '../children-blocks';
-import { List } from '../../list/list';
-import { Txt } from '../../typography/txt/txt';
+import { List } from '../../basics/list/list';
+import { Txt } from '../../basics/typography/txt/txt';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 export function BulletedListItem({ block }: NotionComponentProps<'bulleted_list_item'>) {

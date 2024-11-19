@@ -1,11 +1,11 @@
-import { View } from '../../layout/view/view';
-import { Txt } from '../../typography/txt/txt';
+import { View } from '../../basics/view/view';
+import { Txt } from '../../basics/typography/txt/txt';
 import { BASE, BOOKMARK, INNER } from './bookmark.css';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
-import { Heading } from '../../typography/heading/heading';
-import { Flex } from '../../layout/flex/flex';
-import { Spacing } from '../../layout/spacing/spacing';
+import { Heading } from '../../basics/typography/heading/heading';
+import { Flex } from '../../basics/flex/flex';
+import { Spacing } from '../../basics/spacing/spacing';
 
 export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
   const og = block.bookmarkInfo.open_graph;

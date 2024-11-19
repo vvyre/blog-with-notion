@@ -16,12 +16,12 @@ import { NumberedListWrapper } from './numbered-list-item/numbered-list-wrapper'
 import { Code } from './code/code';
 import { NotionImg } from './image/notion-img';
 import { NotionFile } from './file/notion-file';
-import { Divider } from '../layout/divider/divider';
+import { Divider } from '../basics/divider/divider';
 import { Quote } from './quote/quote';
 import { Bookmark } from './bookmark/bookmark';
 import { Toggle } from './toggle/toggle';
 import { BlockComponentMap } from '@/_lib/types/block-object-response-map';
-import { Empty } from '../util/empty';
+import { Empty } from '../basics/util/empty';
 
 export const blockComponentMap: BlockComponentMap = {
   audio: Empty,

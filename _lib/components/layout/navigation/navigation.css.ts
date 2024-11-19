@@ -1,7 +1,7 @@
 import { THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
-import { TYPOGRAPHY } from '../../typography/typography.css';
+import { TYPOGRAPHY } from '../../basics/typography/typography.css';
 
 export const BASE = style({
   height: '2.8rem',

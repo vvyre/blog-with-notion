@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { Btn } from '../../interaction/button/btn';
+import { Btn } from '../../basics/button/btn';
 import MARK_WHITE from '#/img/github-mark-white.svg';
 import { EXTERNAL_LINK, MENU_GITHUB_IMG } from './logo.css';
 

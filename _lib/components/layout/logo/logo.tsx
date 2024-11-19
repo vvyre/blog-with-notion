@@ -1,5 +1,5 @@
 'use client';
-import { Txt } from '../../typography/txt/txt';
+import { Txt } from '../../basics/typography/txt/txt';
 import { LOGO } from './logo.css';
 export function Logo() {
   return (

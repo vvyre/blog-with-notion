@@ -1,12 +1,12 @@
 'use client';
-import { Heading } from '../../typography/heading/heading';
+import { Heading } from '../../basics/typography/heading/heading';
 import { getTitle } from '@/utils/get-title';
 import { getDate } from '@/utils/get-date';
-import { Txt } from '../../typography/txt/txt';
-import { View } from '../view/view';
+import { Txt } from '../../basics/typography/txt/txt';
+import { View } from '../../basics/view/view';
 import { BASE, TITLE, SUMMARY, RELEASED_DATE, INFO, INFO_BOX } from './post-title.css';
 import { getSummary } from '@/utils/get-summary';
-import { Spacing } from '../spacing/spacing';
+import { Spacing } from '../../basics/spacing/spacing';
 import { PageObject } from '@/_lib/types/notion-response';
 import { CurrentPostContext } from '@/_lib/context/current-post-provider';
 import { useContext, useLayoutEffect } from 'react';

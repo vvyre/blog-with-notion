@@ -1,6 +1,6 @@
-import { Spacing } from '../../layout/spacing/spacing';
-import { View } from '../../layout/view/view';
-import { Txt } from '../../typography/txt/txt';
+import { Spacing } from '../../basics/spacing/spacing';
+import { View } from '../../basics/view/view';
+import { Txt } from '../../basics/typography/txt/txt';
 import { FALLBACK, FALLBACK_BASE } from './giscus.css';
 
 export function GiscusFallback() {

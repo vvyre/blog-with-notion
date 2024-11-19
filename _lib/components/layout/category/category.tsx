@@ -1,10 +1,10 @@
 'use client';
 import { categories } from '@/constants/category';
-import { Btn } from '../../interaction/button/btn';
+import { Btn } from '../../basics/button/btn';
 import { CATEGORY } from './category.css';
-import { View } from '../view/view';
-import { LAYOUT_CENTERED } from '../article/article.css';
-import { Spacing } from '../spacing/spacing';
+import { View } from '../../basics/view/view';
+import { LAYOUT_CENTERED } from '../../basics/article/article.css';
+import { Spacing } from '../../basics/spacing/spacing';
 import { useCategory } from '@/_lib/react/use-category';
 
 export function Category() {

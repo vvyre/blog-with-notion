@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { BASE as BTN_BASE } from '../../interaction/button/btn.css';
+import { BASE as BTN_BASE } from '../../button/btn.css';
 
 export const BASE = style({
   width: '100%',

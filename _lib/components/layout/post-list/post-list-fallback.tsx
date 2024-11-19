@@ -1,6 +1,6 @@
-import { Txt } from '../../typography/txt/txt';
-import { Flex } from '../flex/flex';
-import { Spacing } from '../spacing/spacing';
+import { Txt } from '../../basics/typography/txt/txt';
+import { Flex } from '../../basics/flex/flex';
+import { Spacing } from '../../basics/spacing/spacing';
 
 export function PostListFallback() {
   return (

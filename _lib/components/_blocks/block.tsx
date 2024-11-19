@@ -1,6 +1,6 @@
 import { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
 import { blockComponentMap } from './block-component-map';
-import { Empty } from '../util/empty';
+import { Empty } from '../basics/util/empty';
 
 export function Block({ block }: { block: EntireNotionBlockResponse }) {
   const Component = blockComponentMap[block.type];

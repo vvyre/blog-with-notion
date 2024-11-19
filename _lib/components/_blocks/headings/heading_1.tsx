@@ -1,10 +1,10 @@
-import { Heading } from '../../typography/heading/heading';
+import { Heading } from '../../basics/typography/heading/heading';
 import { HEADING_1 } from './headings.css';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
-import { ShareBtn } from '../../interaction/button/share-btn/share-btn';
+import { ShareBtn } from '../../basics/button/share-btn/share-btn';
 import { cleanUrl } from '@/utils/clean-url';
-import { Spacing } from '../../layout/spacing/spacing';
+import { Spacing } from '../../basics/spacing/spacing';
 
 export function Heading_1({ block }: NotionComponentProps<'heading_1'>) {
   return (

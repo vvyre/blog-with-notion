@@ -1,5 +1,5 @@
 import { COLORS } from '@/_lib/styles/colors.css';
-import { Wrapper } from '../../util/wrapper';
+import { Wrapper } from '../../layout/util/wrapper';
 import { Strong } from './strong';
 import { Italic } from './italic';
 import { Strike } from './strike';

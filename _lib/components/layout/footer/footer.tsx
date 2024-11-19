@@ -1,6 +1,6 @@
 import { BASE, FOOTER_LINK } from './footer.css';
-import { Txt } from '../../typography/txt/txt';
-import { View } from '../view/view';
+import { Txt } from '../../basics/typography/txt/txt';
+import { View } from '../../basics/view/view';
 import { BLOCK_GRID_BASE } from '../../_blocks/block-layout.css';
 
 export function Footer() {

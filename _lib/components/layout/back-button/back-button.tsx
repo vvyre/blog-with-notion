@@ -1,7 +1,7 @@
 'use client';
 import { useCategory } from '@/_lib/react/use-category';
-import { View } from '../../layout/view/view';
-import { Txt } from '../../typography/txt/txt';
+import { View } from '../view/view';
+import { Txt } from '../typography/txt/txt';
 
 export function BackButton({
   wrapperStyleVariant,

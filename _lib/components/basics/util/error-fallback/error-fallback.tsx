@@ -1,7 +1,7 @@
-import { Btn } from '../../interaction/button/btn';
+import { Btn } from '../../button/btn';
 import { Heading } from '../../typography/heading/heading';
-import { Spacing } from '../spacing/spacing';
-import { View } from '../view/view';
+import { Spacing } from '../../spacing/spacing';
+import { View } from '../../view/view';
 import { BASE, ERROR_BTN } from './error-fallback.css';
 
 export function ErrorFallback({ message, error = null }: { message?: string; error?: Error | null }) {

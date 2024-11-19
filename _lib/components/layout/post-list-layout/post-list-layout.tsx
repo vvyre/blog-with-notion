@@ -1,6 +1,6 @@
 'use client';
 import { PostList } from '../post-list/post-list';
-import { View } from '../view/view';
+import { View } from '../../basics/view/view';
 import { POST_LIST_CENTERED } from './post-list-layout.css';
 import { PostListObject } from '@/_lib/types/notion-response';
 import { PostListFallback } from '../post-list/post-list-fallback';

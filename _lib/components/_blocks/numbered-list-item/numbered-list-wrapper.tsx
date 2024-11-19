@@ -1,4 +1,4 @@
-import { List } from '../../list/list';
+import { List } from '../../basics/list/list';
 import { NumberedListItem } from './numbered-list-item';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import { NumberedListItemBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';

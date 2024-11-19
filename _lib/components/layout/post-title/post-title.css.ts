@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { COLORS, THEMES } from '@/_lib/styles/colors.css';
-import { TYPOGRAPHY } from '../../typography/typography.css';
+import { TYPOGRAPHY } from '../../basics/typography/typography.css';
 import { BLOCK_GRID_BASE } from '../../_blocks/block-layout.css';
 
 export const BASE = style([

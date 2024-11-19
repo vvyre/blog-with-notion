@@ -1,8 +1,8 @@
-import { View } from '../../layout/view/view';
+import { View } from '../../basics/view/view';
 import hljs from 'highlight.js';
 import { CODE_BLOCK, CODE_LANGUAGE, CODE_PRE } from './code.css';
-import { Txt } from '../../typography/txt/txt';
-import { Flex } from '../../layout/flex/flex';
+import { Txt } from '../../basics/typography/txt/txt';
+import { Flex } from '../../basics/flex/flex';
 import { getCodeLanguage } from '@/utils/get-code-language';
 import type { NotionComponentProps } from '@/_lib/types/block';
 

@@ -1,5 +1,5 @@
-import { Txt } from '../../typography/txt/txt';
-import { View } from '../../layout/view/view';
+import { Txt } from '../../basics/typography/txt/txt';
+import { View } from '../../basics/view/view';
 import { CALLOUT, CALLOUT_EMOJI } from './callout.css';
 import type { NotionComponentProps } from '@/_lib/types/block';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';

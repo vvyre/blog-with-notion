@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { View } from '../layout/view/view';
+import { View } from '../basics/view/view';
 
 export function ImageBlockGridPlacement({ children }: { children: ReactNode }) {
   return <View>{children}</View>;
