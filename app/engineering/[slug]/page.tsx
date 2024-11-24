@@ -26,7 +26,6 @@ export interface PostPageProps {
 }
 
 export const revalidate = 3600;
-export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const posts = await getCachedPostList(notion_env.database_id);
@@ -40,7 +39,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PostPageProps) {
   const posts = await getCachedPostList(notion_env.database_id);
-  const [matchPost] = posts.filter(async post => parsedSlug(post) === (await params).slug);
+  const { slug } = await params;
+  const [matchPost] = posts.filter(post => parsedSlug(post) === slug);
 
   return {
     title: `${getTitle(matchPost)} – ${meta.siteTitle}`,
@@ -50,7 +50,8 @@ export async function generateMetadata({ params }: PostPageProps) {
 
 export default async function Post({ params }: PostPageProps) {
   const posts = await getCachedPostList(notion_env.database_id);
-  const [matchPost] = posts.filter(async post => parsedSlug(post) === (await params).slug);
+  const { slug } = await params;
+  const [matchPost] = posts.filter(post => parsedSlug(post) === slug);
   const meta = await getPostMetaData(matchPost.id);
   const blocks = await processedBlock(await getPost(matchPost.id));
 
