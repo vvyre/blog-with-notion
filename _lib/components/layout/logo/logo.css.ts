@@ -1,13 +1,15 @@
 import { THEMES } from '@/_lib/styles/colors.css';
-
+import { BASE as BTN_BASE } from '@/_lib/components/basics/button/btn.css';
 import { style } from '@vanilla-extract/css';
 
-export const LOGO = style({
-  fontWeight: 500,
-  fontSize: '0.85rem',
-  textAlign: 'center',
-  color: THEMES.white,
-});
+export const LOGO = style([
+  {
+    fontWeight: 500,
+    fontSize: '0.85rem',
+    textAlign: 'center',
+    color: THEMES.white + '!important',
+  },
+]);
 
 const BASE = style({
   display: 'flex',
