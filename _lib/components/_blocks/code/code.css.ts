@@ -6,14 +6,16 @@ export const CODE_BLOCK = style([
   BLOCK_GRID_BASE,
   {
     backgroundColor: THEMES.light_b1,
-    padding: '1.35rem',
+    padding: '1.15rem',
     marginBottom: '1rem',
+    borderRadius: '0.3rem',
   },
 ]);
 export const CODE_LANGUAGE = style({
   fontFeatureSettings: '"calt", "case"',
+  textTransform: 'uppercase',
   fontSize: '0.9rem',
-  fontWeight: 500,
+  fontWeight: 600,
 });
 export const CODE_PRE = style({
   overflowX: 'auto',

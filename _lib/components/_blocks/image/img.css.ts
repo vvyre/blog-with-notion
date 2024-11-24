@@ -11,6 +11,7 @@ export const IMG_CONTAINER = style([
     flexDirection: 'column',
     cursor: 'zoom-in',
     margin: 0,
+    padding: '0.25rem',
     objectFit: 'contain',
     height: '100%',
   },

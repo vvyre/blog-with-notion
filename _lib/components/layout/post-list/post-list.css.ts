@@ -45,14 +45,15 @@ export const POST_LINK = style({
   flexDirection: 'column-reverse',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  color: 'rgba(255,255,0,0.85)',
+  color: 'rgba(255,255,0,0.825)',
+  borderRadius: '0.3rem',
   selectors: {
     '&:hover': {
-      backgroundColor: 'rgba(0,0,0,0.8)',
+      backgroundColor: 'rgba(0,0,0,0.4)',
       color: THEMES.white,
     },
     '&:active': {
-      backgroundColor: 'rgba(0,0,0,0.8)',
+      backgroundColor: 'rgba(0,0,0,0.4)',
       color: THEMES.white,
     },
   },
