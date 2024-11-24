@@ -8,7 +8,7 @@ export const CODE_BLOCK = style([
     backgroundColor: THEMES.light_b1,
     padding: '1.15rem',
     marginBottom: '1rem',
-    borderRadius: '0.3rem',
+    borderRadius: '0.4rem',
   },
 ]);
 export const CODE_LANGUAGE = style({

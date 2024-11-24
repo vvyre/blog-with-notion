@@ -46,7 +46,7 @@ export const POST_LINK = style({
   justifyContent: 'flex-start',
   alignItems: 'center',
   color: 'rgba(255,255,0,0.825)',
-  borderRadius: '0.3rem',
+  borderRadius: '0.5rem',
   selectors: {
     '&:hover': {
       backgroundColor: 'rgba(0,0,0,0.4)',

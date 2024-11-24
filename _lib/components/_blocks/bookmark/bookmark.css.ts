@@ -9,7 +9,7 @@ export const BASE = style([
     backgroundColor: THEMES.light_b1,
     marginBottom: '1rem',
     padding: '0.75rem 1rem 0.75rem 1rem',
-    borderRadius: '0.3rem',
+    borderRadius: '0.4rem',
     selectors: {
       '&:hover': {
         outline: `1px solid ${THEMES.highlight}`,
