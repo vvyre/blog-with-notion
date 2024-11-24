@@ -1,5 +1,5 @@
 import { Tag } from '@/_lib/types/block';
-import { PostListObject } from '@/_lib/types/notion-response';
+import { PageObject, PostListObject } from '@/_lib/types/notion-response';
 import { getTitle } from '@/utils/get-title';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { List } from '../../basics/list/list';
@@ -11,9 +11,12 @@ import { View } from '../../basics/view/view';
 import { Btn } from '../../basics/button/btn';
 import { getDate } from '@/utils/get-date';
 
-export function ArticleRecommend({ posts, targets }: { posts: PostListObject; targets: Tag[] }) {
+export function ArticleRecommend({ posts, targets, id }: { posts: PostListObject; targets: Tag[]; id: string }) {
   const recommended = posts
-    .filter(p => p.properties.tags.multi_select.some(t => targets.filter(tag => (tag.id === t.id ? true : false))))
+    .filter(
+      p =>
+        p.id !== id && p.properties.tags.multi_select.some(t => targets.filter(tag => (tag.id === t.id ? true : false)))
+    )
     .sort(_ => Math.random() - 0.5)
     .slice(0, 3);
 
