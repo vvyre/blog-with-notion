@@ -6,7 +6,7 @@ export function OtherArticlesBtn() {
   const [path] = useCategory();
   return (
     <Btn as="Link" href={path}>
-      다른 글
+      글 목록
     </Btn>
   );
 }
