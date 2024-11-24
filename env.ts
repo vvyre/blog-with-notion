@@ -12,5 +12,3 @@ export const site_env = {
   giscus: process.env.NEXT_PUBLIC_GISCUS_REPO || '',
   giscus_id: process.env.NEXT_PUBLIC_GISCUS_ID || '',
 };
-
-export const isr_revalidate_period = 3600;
