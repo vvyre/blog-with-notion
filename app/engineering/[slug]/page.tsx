@@ -10,7 +10,7 @@ import { Spacing } from '@/_lib/components/basics/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/basics/view/view';
 import { LAYOUT_CENTERED } from '@/_lib/components/basics/article/article.css';
-import { isr_revalidate_period, notion_env } from '@/env';
+import { notion_env } from '@/env';
 import { ShareBtn } from '@/_lib/components/basics/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/basics/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles-btn/other-articles-btn';
@@ -24,7 +24,7 @@ export interface PostPageProps {
   }>;
 }
 
-export const revalidate = isr_revalidate_period;
+export const revalidate = 3600;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
