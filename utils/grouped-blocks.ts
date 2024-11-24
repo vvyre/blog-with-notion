@@ -33,7 +33,7 @@ const process = (blocks: BlockObjectResponse[]) => {
           },
           //@ts-ignore
           type: key,
-          id: '',
+          id: `${key}_${block.id}`,
           has_content: false,
         });
 
@@ -52,7 +52,7 @@ const process = (blocks: BlockObjectResponse[]) => {
         },
         //@ts-ignore
         type: key,
-        id: '',
+        id: `${key}_${block.id}`,
         has_content: false,
       });
       group[prevBlock] = [];
