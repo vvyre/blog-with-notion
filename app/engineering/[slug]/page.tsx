@@ -19,16 +19,37 @@ import RenderBlocks from '@/_lib/components/render-blocks';
 import { Giscus } from '@/_lib/components/layout/embed/giscus/giscus';
 
 export interface PostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export const revalidate = isr_revalidate_period;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const posts = await getCachedPostList(notion_env.database_id);
+
+  return posts.map(post => {
+    return {
+      slug: parsedSlug(post),
+    };
+  });
+}
+
+export async function generateMetadata({ params }: PostPageProps) {
+  const posts = await getCachedPostList(notion_env.database_id);
+  const [matchPost] = posts.filter(async post => parsedSlug(post) === (await params).slug);
+
+  return {
+    title: `${getTitle(matchPost)} – ${meta.siteTitle}`,
+    description: getSummary(matchPost),
+  };
+}
 
 export default async function Post({ params }: PostPageProps) {
   const posts = await getCachedPostList(notion_env.database_id);
-  const [matchPost] = posts.filter(post => parsedSlug(post) === params.slug);
+  const [matchPost] = posts.filter(async post => parsedSlug(post) === (await params).slug);
   const meta = await getPostMetaData(matchPost.id);
   const blocks = await processedBlock(await getPost(matchPost.id));
 
@@ -54,24 +75,4 @@ export default async function Post({ params }: PostPageProps) {
       <Spacing size="10rem" />
     </View>
   );
-}
-
-export async function generateStaticParams() {
-  const posts = await getCachedPostList(notion_env.database_id);
-
-  return posts.map(post => {
-    return {
-      slug: parsedSlug(post),
-    };
-  });
-}
-
-export async function generateMetadata({ params }: PostPageProps) {
-  const posts = await getCachedPostList(notion_env.database_id);
-  const [matchPost] = posts.filter(post => parsedSlug(post) === params.slug);
-
-  return {
-    title: `${getTitle(matchPost)} – ${meta.siteTitle}`,
-    description: getSummary(matchPost),
-  };
 }
