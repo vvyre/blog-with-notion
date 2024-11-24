@@ -17,6 +17,7 @@ import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles
 import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
 import { Giscus } from '@/_lib/components/layout/embed/giscus/giscus';
+import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend';
 
 export interface PostPageProps {
   params: Promise<{
@@ -62,12 +63,13 @@ export default async function Post({ params }: PostPageProps) {
           {blocks.map(b => (
             <Block key={b.id} block={b} />
           ))}
-          <Spacing size="5rem" />
+          <Spacing size="3rem" />
           <View styleVariant={BLOCK_GRID_BASE}>
             <Flex justifyContents="spaceBetween">
-              <OtherArticlesBtn />
               <ShareBtn />
+              <OtherArticlesBtn />
             </Flex>
+            <ArticleRecommend posts={posts} targets={matchPost.properties.tags.multi_select} />
             <Giscus />
           </View>
         </View>

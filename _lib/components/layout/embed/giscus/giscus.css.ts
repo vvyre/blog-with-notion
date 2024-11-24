@@ -3,12 +3,12 @@ import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
   width: '100%',
-  marginTop: '5rem',
-  marginBottom: '3rem',
+  marginTop: '1rem',
+  marginBottom: '2rem',
 });
 
 export const FALLBACK_BASE = style({
-  marginTop: '6rem',
+  marginTop: '3rem',
   marginBottom: '2rem',
 });
 
