@@ -1,6 +1,6 @@
 'use client';
 import { Btn } from '../btn';
-import { BASE, NAV_BASE, POST_SHARE } from './share-btn.css';
+import { BASE } from './share-btn.css';
 import LinkIcon from '#/img/icons/link.svg';
 import OKIcon from '#/img/icons/ok.svg';
 import Image from 'next/image';
@@ -35,8 +35,6 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
       )}
     </Btn>
   ) : (
-    <Btn styleVariant={POST_SHARE} onClick={handleClick}>
-      {label}
-    </Btn>
+    <Btn onClick={handleClick}>{label}</Btn>
   );
 }
