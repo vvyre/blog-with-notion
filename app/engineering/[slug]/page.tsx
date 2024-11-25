@@ -61,9 +61,6 @@ export default async function Post({ params }: PostPageProps) {
         <View styleVariant={LAYOUT_CENTERED}>
           <PostTitle {...meta} />
           <RenderBlocks blocks={blocks} />
-          {blocks.map(b => (
-            <Block key={b.id} block={b} />
-          ))}
           <Spacing size="3rem" />
           <View styleVariant={BLOCK_GRID_BASE}>
             <Flex justifyContents="spaceBetween">
