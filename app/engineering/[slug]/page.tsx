@@ -63,13 +63,13 @@ export default async function Post({ params }: PostPageProps) {
         <View styleVariant={LAYOUT_CENTERED}>
           <PostTitle {...meta} />
           <RenderBlocks blocks={blocks} />
-          <Spacing size="5rem" dir="vert" />
-          <Divider />
           <View styleVariant={BLOCK_GRID_BASE}>
+            <Spacing size="3rem" dir="vert" />
             <Flex justifyContents="spaceBetween">
               <ShareBtn />
               <OtherArticlesBtn />
             </Flex>
+            <Divider />
             <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
             <Giscus />
           </View>
