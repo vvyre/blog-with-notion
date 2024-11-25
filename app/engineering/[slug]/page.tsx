@@ -18,6 +18,8 @@ import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
 import { Giscus } from '@/_lib/components/layout/embed/giscus/giscus';
 import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend';
+import { NotionDivider } from '@/_lib/components/_blocks/divider/notion-divider';
+import { Divider } from '@/_lib/components/basics/divider/divider';
 
 export interface PostPageProps {
   params: Promise<{
@@ -61,7 +63,8 @@ export default async function Post({ params }: PostPageProps) {
         <View styleVariant={LAYOUT_CENTERED}>
           <PostTitle {...meta} />
           <RenderBlocks blocks={blocks} />
-          <Spacing size="3rem" />
+          <Spacing size="5rem" dir="vert" />
+          <Divider />
           <View styleVariant={BLOCK_GRID_BASE}>
             <Flex justifyContents="spaceBetween">
               <ShareBtn />
