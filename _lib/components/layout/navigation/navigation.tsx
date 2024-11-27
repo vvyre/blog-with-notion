@@ -39,13 +39,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   return (
     <View as="nav" styleVariant={`${BACKGROUND[styleKey]} ${BASE}`}>
       <View as="nav" styleVariant={NAV}>
-        <View styleVariant={BTN_WRAPPER}>
-          {isPost && (
-            <Btn as="Link" href={href}>
-              글 목록
-            </Btn>
-          )}
-        </View>
+        <View styleVariant={BTN_WRAPPER}>{null}</View>
         <View styleVariant={POST_TITLE_WRAPPER}>
           <Btn
             as={isPost ? 'span' : 'div'}
