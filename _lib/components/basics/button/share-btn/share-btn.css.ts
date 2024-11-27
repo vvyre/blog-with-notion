@@ -6,7 +6,6 @@ export const BASE = style({
   marginLeft: '0.35rem',
   color: COLORS.gray,
   justifyContent: 'center',
-  height: '100%',
   border: 'none',
   backgroundColor: 'transparent',
   cursor: 'pointer',

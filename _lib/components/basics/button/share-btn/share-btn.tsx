@@ -1,16 +1,12 @@
 'use client';
 import { Btn } from '../btn';
 import { BASE, PARAGRAPH_SHARE, TEXT_COLOR_GREEN } from './share-btn.css';
-import LinkIcon from '#/img/icons/link.svg';
-import OKIcon from '#/img/icons/ok.svg';
-import Image from 'next/image';
 import { site_env } from '@/env';
 import { cleanUrl } from '@/utils/clean-url';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useClipboard } from '@/_lib/react/use-clipboard';
 import { Txt } from '../../typography/txt/txt';
-import { View } from '../../view/view';
 
 export function ShareBtn({ subtitle }: { subtitle?: string }) {
   const path = usePathname();
@@ -24,9 +20,7 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
 
   const fullUrl = subtitle ? `${site_env.root}${path}#${cleanUrl(subtitle)}` : `${site_env.root}${path}`;
 
-  const handleClick = () => {
-    copy(fullUrl);
-  };
+  const handleClick = () => copy(fullUrl);
 
   return subtitle ? (
     <Btn className={BASE} onClick={handleClick}>
