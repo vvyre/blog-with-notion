@@ -3,11 +3,11 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 export const TYPOGRAPHY = {
   XXXL: {
-    fontSize: '4.75rem',
-    fontWeight: 700,
+    fontSize: '4.5rem',
+    fontWeight: 900,
   },
   XXL: {
-    fontSize: '2rem',
+    fontSize: '2.5rem',
     fontWeight: 700,
   },
   XL: {

@@ -24,15 +24,17 @@ export function PostTitle({ ...meta }: PageObject) {
   return (
     <View styleVariant={BASE}>
       <View styleVariant={INFO_BOX}>
-        <Heading as="h1" styleVariant={TITLE}>
-          {title}
+        <Heading as="h1">
+          <Txt as="span" styleVariant={TITLE}>
+            {title}
+          </Txt>
         </Heading>
         <Spacing size="1rem" />
         <Txt as="p" styleVariant={INFO}>
           <Txt as="span" styleVariant={RELEASED_DATE}>
             {rel_date}
           </Txt>
-          <Spacing size="0.15rem" />
+          <Spacing size="0" />
           <Txt as="span" styleVariant={SUMMARY}>
             {summary}
           </Txt>

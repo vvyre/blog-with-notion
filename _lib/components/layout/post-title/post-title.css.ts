@@ -57,10 +57,11 @@ export const INFO_BOX = style({
 export const TITLE = style([
   TYPOGRAPHY.XXXL,
   {
-    color: THEMES.default,
+    color: THEMES.light_b1,
+    backgroundColor: THEMES.default,
     fontWeight: 900,
     textAlign: 'left',
-    lineHeight: '1.25',
+    lineHeight: '1.2',
     width: '100%',
     wordBreak: 'keep-all',
   },
