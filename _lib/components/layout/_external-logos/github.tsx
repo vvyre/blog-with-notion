@@ -1,8 +1,7 @@
-'use client';
 import Image from 'next/image';
 import { Btn } from '../../basics/button/btn';
 import MARK_WHITE from '#/img/github-mark-white.svg';
-import { EXTERNAL_LINK, MENU_GITHUB_IMG } from './logo.css';
+import { EXTERNAL_LINK, MENU_GITHUB_IMG } from '../navigation/about/about-btn.css';
 
 export function GithubLink({ isPost }: { isPost: boolean }) {
   const MARK = isPost ? null : MARK_WHITE;

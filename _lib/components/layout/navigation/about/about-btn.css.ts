@@ -1,13 +1,24 @@
 import { THEMES } from '@/_lib/styles/colors.css';
-import { BASE as BTN_BASE } from '@/_lib/components/basics/button/btn.css';
 import { style } from '@vanilla-extract/css';
 
 export const LOGO = style([
   {
-    fontWeight: 500,
+    fontWeight: 800,
+    padding: '0.4rem 0.55rem 0.4rem 0.55rem',
     fontSize: '0.85rem',
     textAlign: 'center',
     color: THEMES.white + '!important',
+    borderRadius: '0.3rem',
+    selectors: {
+      '&:hover': {
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        color: THEMES.white,
+      },
+      '&:active': {
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        color: THEMES.white,
+      },
+    },
   },
 ]);
 

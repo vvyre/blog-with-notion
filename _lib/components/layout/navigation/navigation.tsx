@@ -8,7 +8,6 @@ import {
   BASE,
   BTN_WRAPPER,
   EXPANDED,
-  HIDE_UNDER_500PX,
   HIDE_UNDER_700PX,
   NAV,
   POST_TITLE,
@@ -22,10 +21,10 @@ import { CurrentPostContext } from '@/_lib/context/current-post-provider';
 import { useCategory } from '@/_lib/react/use-category';
 import type { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
 import { Spacing } from '../../basics/spacing/spacing';
-import { GithubLink } from '../logo/github';
-import { About } from './about';
+import { GithubLink } from '../_external-logos/github';
+import { About } from './about/about';
 import { NavigationContext } from '@/_lib/context/navigation-provider';
-import { Logo } from '../logo/logo';
+import { AboutBtn } from './about/about-btn';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
@@ -33,7 +32,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
 
   const [href] = useCategory();
   const styleKey = isPost ? 'post' : 'main';
-  const RightFlexText = currentPost ? getTitle(currentPost) : <Logo />;
+  const RightFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null);

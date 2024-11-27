@@ -3,8 +3,8 @@ import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
   cursor: 'pointer',
-  padding: '0.15rem 0.75rem 0.15rem 0.75rem',
-  borderRadius: '0.25rem',
+  padding: '0.4rem 0.55rem 0.4rem 0.55rem',
+  borderRadius: '0.3rem',
   border: `1px solid transparent`,
   backgroundColor: 'transparent',
   backgroundBlendMode: 'exclusion',

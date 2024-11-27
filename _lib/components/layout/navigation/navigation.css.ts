@@ -4,7 +4,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { TYPOGRAPHY } from '../../basics/typography/typography.css';
 
 export const BASE = style({
-  height: '2.8rem',
+  height: '3rem',
   width: '100vw',
   zIndex: '99999',
   padding: '0.4rem 2rem 0.4rem 2rem',
@@ -31,7 +31,7 @@ export const EXPANDED = style({
   backgroundColor: 'white',
   display: 'flex',
   position: 'fixed',
-  top: '2.8rem',
+  top: '3rem',
   left: 0,
   opacity: '0.95',
   alignItems: 'center',
