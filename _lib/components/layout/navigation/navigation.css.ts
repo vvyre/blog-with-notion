@@ -11,6 +11,7 @@ export const BASE = style({
   position: 'sticky',
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'center',
   top: '0',
   '@media': {
     '(0 <= width <= 700px)': {
@@ -91,7 +92,7 @@ export const POST_TITLE = style([
     textAlign: 'right',
     color: THEMES.default,
     fontWeight: '600',
-    fontSize: TYPOGRAPHY.M.fontSize,
+    fontSize: TYPOGRAPHY.S.fontSize,
     '@media': {
       '(0 <= width <= 700px)': {
         fontSize: TYPOGRAPHY.XS.fontSize,
