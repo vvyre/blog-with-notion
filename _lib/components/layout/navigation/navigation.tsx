@@ -3,12 +3,10 @@ import Image from 'next/image';
 import Arrow from '#/img/icons/arrow_back_black.svg';
 import { Btn } from '../../basics/button/btn';
 import {
-  BACK_BTN,
   BACKGROUND,
   BASE,
   BTN_WRAPPER,
   EXPANDED,
-  HIDE_UNDER_700PX,
   NAV,
   POST_TITLE,
   POST_TITLE_WRAPPER,
@@ -43,24 +41,20 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
       <View as="nav" styleVariant={NAV}>
         <View styleVariant={BTN_WRAPPER}>
           {isPost && (
-            <Btn as="Link" href={href} styleVariant={BACK_BTN}>
-              <Image alt="go to post list" unoptimized src={Arrow} />
+            <Btn as="Link" href={href}>
+              글 목록
             </Btn>
           )}
         </View>
         <View styleVariant={POST_TITLE_WRAPPER}>
           <Btn
-            as={isPost ? 'span' : 'button'}
+            as={isPost ? 'span' : 'div'}
             onClick={() => handleProfile()}
             styleVariant={`${POST_TITLE} ${TEXT_COLOR[styleKey]}`}>
             {RightFlexText}
           </Btn>
-          <View styleVariant={HIDE_UNDER_700PX}>
-            <Spacing size="0.8rem" dir="hori" />
-          </View>
-          <View styleVariant={HIDE_UNDER_700PX}>
-            <GithubLink isPost={isPost} />
-          </View>
+          <Spacing size="0.3rem" dir="hori" />
+          <GithubLink isPost={isPost} />
         </View>
       </View>
 
