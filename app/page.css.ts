@@ -24,7 +24,7 @@ export const LAYOUT_BG = style([
 export const LAYOUT_INNER = style([
   LAYOUT,
   {
-    backgroundColor: 'rgba(0,0,0,0.2)',
+    backgroundColor: 'rgba(0,0,0,0.4)',
   },
 ]);
 
