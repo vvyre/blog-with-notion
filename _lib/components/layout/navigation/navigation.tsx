@@ -1,6 +1,4 @@
 'use client';
-import Image from 'next/image';
-import Arrow from '#/img/icons/arrow_back_black.svg';
 import { Btn } from '../../basics/button/btn';
 import {
   BACKGROUND,
