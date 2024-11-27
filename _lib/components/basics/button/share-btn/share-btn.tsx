@@ -1,6 +1,6 @@
 'use client';
 import { Btn } from '../btn';
-import { BASE } from './share-btn.css';
+import { BASE, PARAGRAPH_SHARE, TEXT_COLOR_GREEN } from './share-btn.css';
 import LinkIcon from '#/img/icons/link.svg';
 import OKIcon from '#/img/icons/ok.svg';
 import Image from 'next/image';
@@ -9,6 +9,8 @@ import { cleanUrl } from '@/utils/clean-url';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useClipboard } from '@/_lib/react/use-clipboard';
+import { Txt } from '../../typography/txt/txt';
+import { View } from '../../view/view';
 
 export function ShareBtn({ subtitle }: { subtitle?: string }) {
   const path = usePathname();
@@ -28,11 +30,9 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
 
   return subtitle ? (
     <Btn className={BASE} onClick={handleClick}>
-      {!isCopied ? (
-        <Image src={LinkIcon} alt={`copy link for ${fullUrl}`} width="20" height="20" />
-      ) : (
-        <Image src={OKIcon} alt={`COPIED!`} width="20" height="20" />
-      )}
+      <Txt as="p" styleVariant={`${PARAGRAPH_SHARE} ${isCopied && TEXT_COLOR_GREEN}`}>
+        {isCopied ? '!' : '#'}
+      </Txt>
     </Btn>
   ) : (
     <Btn onClick={handleClick}>{label}</Btn>
