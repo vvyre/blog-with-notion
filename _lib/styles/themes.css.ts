@@ -14,6 +14,7 @@ export const vars = createGlobalThemeContract({
     b2: 'color-light-b2',
     b3: 'color-light-b3',
     b4: 'color-light-b4',
+    btn_bg: 'color-btn-bg',
     postListText: 'color-postlist-text',
   },
   notion: {
@@ -53,6 +54,7 @@ createGlobalTheme('[data-theme="light"]', vars, {
     b2: '#F2F2F3',
     b3: '#E6E6E7',
     b4: 'rgba(88,91,94,0.4)',
+    btn_bg: 'rgba(241,242,247,0.4)',
     postListText: 'rgba(255,255,0,1)',
   },
   notion: {
@@ -92,6 +94,7 @@ createGlobalTheme('[data-theme="dark"]', vars, {
     b2: '#303236',
     b3: '#404246',
     b4: 'rgba(48,50,54,0.4)',
+    btn_bg: 'rgba(48,50,54,0.4)',
     postListText: 'rgba(255,255,0,0.825)',
   },
   notion: {
