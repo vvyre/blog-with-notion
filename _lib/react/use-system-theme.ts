@@ -20,8 +20,6 @@ export const useSystemTheme = (): [string, boolean, Function] => {
 
   useLayoutEffect(() => {
     //디바이스(또는 브라우저 설정)의 기본 선호에 반응해 블로그 테마를 변화시킵니다.
-    if (typeof window === 'undefined') return;
-
     const DevicePrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setPrefersDark(DevicePrefersDark);
 
@@ -30,8 +28,6 @@ export const useSystemTheme = (): [string, boolean, Function] => {
 
   useLayoutEffect(() => {
     //store의 변화에 반응해 React 외부의 값을 업데이트합니다
-    if (typeof window === 'undefined') return;
-
     localStorage.setItem('bc_blog_theme', theme);
     document.body.dataset.theme = theme;
   }, [theme]);
