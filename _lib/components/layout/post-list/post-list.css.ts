@@ -49,12 +49,12 @@ export const POST_LINK = style({
   borderRadius: '0.3rem',
   selectors: {
     '&:hover': {
-      backgroundColor: 'rgba(0,0,0,0.4)',
-      color: vars.color.white,
+      backgroundColor: vars.color.btn_bg,
+      color: vars.color.default,
     },
     '&:active': {
-      backgroundColor: 'rgba(0,0,0,0.4)',
-      color: vars.color.white,
+      backgroundColor: vars.color.btn_bg,
+      color: vars.color.default,
     },
   },
   '@media': {
