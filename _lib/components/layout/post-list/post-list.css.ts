@@ -45,7 +45,7 @@ export const POST_LINK = style({
   flexDirection: 'column-reverse',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  color: 'rgba(255,255,0,0.825)',
+  color: vars.color.postListText,
   borderRadius: '0.3rem',
   selectors: {
     '&:hover': {

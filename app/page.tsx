@@ -13,7 +13,6 @@ export default async function PostListPage() {
   const backgroundImg = getBackgroundImg();
   return (
     <View
-      as="main"
       styleVariant={LAYOUT_BG}
       style={{
         backgroundImage: `url(${backgroundImg})`,

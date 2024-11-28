@@ -1,3 +1,4 @@
+import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
 
 const LAYOUT = style({
@@ -24,7 +25,7 @@ export const LAYOUT_BG = style([
 export const LAYOUT_INNER = style([
   LAYOUT,
   {
-    backgroundColor: 'rgba(0,0,0,0.4)',
+    backgroundColor: vars.color.b4,
   },
 ]);
 

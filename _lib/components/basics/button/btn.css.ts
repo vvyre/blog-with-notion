@@ -13,10 +13,10 @@ export const BASE = style({
   color: vars.color.gray,
   selectors: {
     '&:hover': {
-      backgroundColor: vars.color.b2,
+      backgroundColor: vars.color.b4,
     },
     '&:active': {
-      backgroundColor: vars.color.b2,
+      backgroundColor: vars.color.b4,
     },
   },
 });

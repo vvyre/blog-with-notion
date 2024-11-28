@@ -13,7 +13,6 @@ export const BASE = style({
   flexDirection: 'column',
   justifyContent: 'center',
   top: '0',
-  borderBottom: `1px solid ${vars.color.b3}`,
   '@media': {
     '(0 <= width <= 700px)': {
       bottom: '0',
