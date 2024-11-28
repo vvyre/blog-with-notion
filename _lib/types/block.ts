@@ -1,7 +1,7 @@
 import { BlockObjectResponse, RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { BlockObjectResponseMap, EntireNotionBlockResponse } from './block-object-response-map';
-import { COLORS } from '../styles/colors.css';
 import { blockComponentMap } from '../components/_blocks/block-component-map';
+import { vars } from '../styles/themes.css';
 
 /** 타입 가드  */
 export function isBlockType(type: string): type is keyof typeof blockComponentMap {
@@ -31,5 +31,5 @@ export type WithChildren<T extends BlockObjectResponse> = T & {
 export interface Tag {
   id: 'string';
   name: 'string';
-  color: keyof typeof COLORS;
+  color: keyof typeof vars.notion;
 }

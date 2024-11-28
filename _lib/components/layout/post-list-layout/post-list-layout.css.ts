@@ -1,4 +1,4 @@
-import { COLORS, THEMES } from '@/_lib/styles/colors.css';
+import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
 
 export const POST_LIST_CENTERED = style([
@@ -31,22 +31,22 @@ export const POST_LIST_GRID = style([
 ]);
 
 export const SELECTED = style({
-  border: `1px solid ${THEMES.highlight}`,
+  border: `1px solid ${vars.color.highlight}`,
   backgroundColor: 'transparent',
   selectors: {
     '&:hover': {
-      border: `1px solid ${THEMES.highlight}`,
+      border: `1px solid ${vars.color.highlight}`,
     },
   },
 });
 
 export const NOT_SELECTED = style({
   backgroundColor: 'transparent',
-  color: COLORS.gray,
+  color: vars.notion.gray,
   border: `1px solid transparent`,
   selectors: {
     '&:hover': {
-      border: `1px solid ${COLORS.gray_background}`,
+      border: `1px solid ${vars.notion.gray_background}`,
     },
   },
 });

@@ -1,6 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { fontFamily, fontFamilyCode } from './fonts.css';
-import { THEMES } from './colors.css';
+import { vars } from './themes.css';
 
 globalStyle('*, *:before, *:after', {
   boxSizing: 'inherit',
@@ -21,7 +21,8 @@ globalStyle('html', {
 });
 
 globalStyle('body', {
-  color: THEMES.default,
+  color: vars.color.default,
+  backgroundColor: vars.color.b3,
 });
 
 globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
@@ -37,6 +38,7 @@ globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
 
 globalStyle('main', {
   minHeight: 'calc(100vh - 15rem)',
+  backgroundColor: vars.color.b1,
 });
 
 globalStyle('input, button, select, textarea', {
@@ -50,7 +52,7 @@ globalStyle(
   'button, input[type="submit"], input[type="reset"], input[type="button"], input[type="reset"], input[type="file"]',
   {
     cursor: 'pointer',
-    color: THEMES.default,
+    color: vars.color.default,
   }
 );
 
@@ -102,8 +104,8 @@ globalStyle('img, video, canvas, svg', {
 });
 
 globalStyle('::selection, ::-moz-selection', {
-  backgroundColor: 'black',
-  color: 'white',
+  backgroundColor: vars.color.default,
+  color: vars.color.b1,
 });
 
 globalStyle('p, span, code, ul li, ol li, li', {

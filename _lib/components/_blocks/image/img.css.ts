@@ -1,6 +1,6 @@
-import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 import { IMG_BLOCK_GRID_BASE } from '../block-layout.css';
+import { vars } from '@/_lib/styles/themes.css';
 
 export const IMG_CONTAINER = style([
   IMG_BLOCK_GRID_BASE,
@@ -20,7 +20,7 @@ export const IMG_CONTAINER = style([
 export const IMG_CONTAINER_ZOOMED = style({
   cursor: 'zoom-out',
   zIndex: '1',
-  backgroundColor: THEMES.default,
+  backgroundColor: vars.color.default,
   padding: '1.5rem',
   position: 'fixed',
   display: 'flex',
@@ -34,7 +34,7 @@ export const CAPTION_TXT = style({
   fontSize: '0.9rem',
   textAlign: 'center',
   width: '100%',
-  color: COLORS.gray,
+  color: vars.color.gray,
   padding: '0.25rem',
   maxWidth: '30rem',
 });

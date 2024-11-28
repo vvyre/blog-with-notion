@@ -1,7 +1,7 @@
-import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 import { TEXT_STYLE } from '../../basics/typography/typography.css';
+import { vars } from '@/_lib/styles/themes.css';
 
 export const GRID_SPAN = style({
   gridColumn: 'span 12',
@@ -15,14 +15,14 @@ export const GRID_SPAN = style({
 export const POST_THUMBNAIL = style({
   width: '100%',
   height: '12rem',
-  backgroundColor: THEMES.light_b1,
+  backgroundColor: vars.color.b1,
 });
 
 export const POST_TEXT = style({
-  color: THEMES.gray,
+  color: vars.color.gray,
   selectors: {
     '&:hover': {
-      color: THEMES.default,
+      color: vars.color.default,
     },
   },
 });
@@ -50,11 +50,11 @@ export const POST_LINK = style({
   selectors: {
     '&:hover': {
       backgroundColor: 'rgba(0,0,0,0.4)',
-      color: THEMES.white,
+      color: vars.color.white,
     },
     '&:active': {
       backgroundColor: 'rgba(0,0,0,0.4)',
-      color: THEMES.white,
+      color: vars.color.white,
     },
   },
   '@media': {
@@ -97,7 +97,7 @@ export const RELEASED_DATE = style([
   TEXT_STYLE.XXXS,
   {
     wordSpacing: '-0.3rem',
-    color: THEMES.white,
+    color: vars.color.white,
     fontFamily: fontFamilyCode,
     cursor: 'pointer',
     fontFeatureSettings: '"calt"',
@@ -108,32 +108,32 @@ export const RELEASED_DATE = style([
 export const POST_CATEGORY = style([
   TEXT_STYLE.XXS,
   {
-    color: COLORS.gray,
+    color: vars.notion.gray,
   },
 ]);
 
 export const HOVER_TEXT = styleVariants({
-  default: { selectors: { '&:hover': { backgroundColor: COLORS.default } } },
-  blue: { selectors: { '&:hover': { backgroundColor: COLORS.blue } } },
-  blue_background: { selectors: { '&:hover': { backgroundColor: COLORS.blue_background } } },
-  brown: { selectors: { '&:hover': { backgroundColor: COLORS.brown } } },
-  brown_background: { selectors: { '&:hover': { backgroundColor: COLORS.brown_background } } },
-  gray: { selectors: { '&:hover': { backgroundColor: COLORS.gray } } },
-  gray_background: { selectors: { '&:hover': { backgroundColor: COLORS.gray_background } } },
-  green: { selectors: { '&:hover': { backgroundColor: COLORS.green } } },
-  green_background: { selectors: { '&:hover': { backgroundColor: COLORS.gray_background } } },
-  orange: { selectors: { '&:hover': { backgroundColor: COLORS.orange } } },
-  orange_background: { selectors: { '&:hover': { backgroundColor: COLORS.orange_background } } },
-  pink: { selectors: { '&:hover': { backgroundColor: COLORS.pink } } },
-  pink_background: { selectors: { '&:hover': { backgroundColor: COLORS.pink_background } } },
-  purple: { selectors: { '&:hover': { backgroundColor: COLORS.purple } } },
-  purple_background: { selectors: { '&:hover': { backgroundColor: COLORS.purple_background } } },
-  red: { selectors: { '&:hover': { backgroundColor: COLORS.red } } },
-  red_background: { selectors: { '&:hover': { backgroundColor: COLORS.red_background } } },
-  yellow: { selectors: { '&:hover': { backgroundColor: COLORS.yellow } } },
-  yellow_background: { selectors: { '&:hover': { backgroundColor: COLORS.yellow_background } } },
+  default: { selectors: { '&:hover': { backgroundColor: vars.notion.default } } },
+  blue: { selectors: { '&:hover': { backgroundColor: vars.notion.blue } } },
+  blue_background: { selectors: { '&:hover': { backgroundColor: vars.notion.blue_background } } },
+  brown: { selectors: { '&:hover': { backgroundColor: vars.notion.brown } } },
+  brown_background: { selectors: { '&:hover': { backgroundColor: vars.notion.brown_background } } },
+  gray: { selectors: { '&:hover': { backgroundColor: vars.notion.gray } } },
+  gray_background: { selectors: { '&:hover': { backgroundColor: vars.notion.gray_background } } },
+  green: { selectors: { '&:hover': { backgroundColor: vars.notion.green } } },
+  green_background: { selectors: { '&:hover': { backgroundColor: vars.notion.gray_background } } },
+  orange: { selectors: { '&:hover': { backgroundColor: vars.notion.orange } } },
+  orange_background: { selectors: { '&:hover': { backgroundColor: vars.notion.orange_background } } },
+  pink: { selectors: { '&:hover': { backgroundColor: vars.notion.pink } } },
+  pink_background: { selectors: { '&:hover': { backgroundColor: vars.notion.pink_background } } },
+  purple: { selectors: { '&:hover': { backgroundColor: vars.notion.purple } } },
+  purple_background: { selectors: { '&:hover': { backgroundColor: vars.notion.purple_background } } },
+  red: { selectors: { '&:hover': { backgroundColor: vars.notion.red } } },
+  red_background: { selectors: { '&:hover': { backgroundColor: vars.notion.red_background } } },
+  yellow: { selectors: { '&:hover': { backgroundColor: vars.notion.yellow } } },
+  yellow_background: { selectors: { '&:hover': { backgroundColor: vars.notion.yellow_background } } },
 });
 
 export const FALLBACK = style({
-  color: THEMES.white,
+  color: vars.color.white,
 });

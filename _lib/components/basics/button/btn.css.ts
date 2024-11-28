@@ -1,6 +1,6 @@
-import { THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 import { TYPOGRAPHY } from '../typography/typography.css';
+import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style({
   cursor: 'pointer',
@@ -10,13 +10,13 @@ export const BASE = style({
   border: `1px solid transparent`,
   backgroundColor: 'transparent',
   backgroundBlendMode: 'exclusion',
-  color: THEMES.gray,
+  color: vars.color.gray,
   selectors: {
     '&:hover': {
-      backgroundColor: 'rgba(240,240,241,0.5)',
+      backgroundColor: vars.color.b2,
     },
     '&:active': {
-      backgroundColor: 'rgba(240,240,241,0.5)',
+      backgroundColor: vars.color.b2,
     },
   },
 });

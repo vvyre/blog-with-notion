@@ -1,4 +1,3 @@
-import { THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 
 export const BACK_BUTTON_PLACEMENT = style({

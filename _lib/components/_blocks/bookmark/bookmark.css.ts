@@ -1,18 +1,18 @@
-import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 import { BLOCK_GRID_BASE } from '../block-layout.css';
 import { TYPOGRAPHY } from '../../basics/typography/typography.css';
+import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style([
   BLOCK_GRID_BASE,
   {
-    backgroundColor: THEMES.light_b1,
+    backgroundColor: vars.color.b1,
     marginBottom: '1rem',
     padding: '0.75rem 1rem 0.75rem 1rem',
     borderRadius: '0.3rem',
     selectors: {
       '&:hover': {
-        outline: `1px solid ${THEMES.highlight}`,
+        outline: `1px solid ${vars.color.highlight}`,
         outlineOffset: '0.25rem',
       },
     },
@@ -31,20 +31,20 @@ export const BOOKMARK_TITLE = style({
   lineHeight: '1.2',
   fontSize: TYPOGRAPHY.M.fontSize,
   fontWeight: '600',
-  color: THEMES.default,
+  color: vars.color.default,
   wordBreak: 'break-all',
 });
 
 export const BOOKMARK_TEXT = style({
   lineHeight: '1.65',
   fontSize: '0.85rem',
-  color: THEMES.gray,
+  color: vars.color.gray,
   wordBreak: 'break-all',
 });
 
 export const BOOKMARK_URL = style({
   lineHeight: '1.3',
   fontSize: '0.85rem',
-  color: COLORS.blue,
+  color: vars.notion.blue,
   wordBreak: 'break-all',
 });

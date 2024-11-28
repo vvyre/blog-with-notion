@@ -1,4 +1,4 @@
-import { THEMES } from '@/_lib/styles/colors.css';
+import { vars } from '@/_lib/styles/themes.css';
 import { meta } from '@/constants/meta';
 import { MetadataRoute } from 'next';
 
@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: meta.siteDiscription,
     start_url: '/',
     display: 'browser',
-    background_color: THEMES.default,
-    theme_color: THEMES.default,
+    background_color: vars.color.default,
+    theme_color: vars.color.theme,
     // icons: [
     //   {
     //     src: '/favicon.ico',

@@ -1,4 +1,4 @@
-import { THEMES } from '@/_lib/styles/colors.css';
+import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
 
 export const LOGO = style([
@@ -7,16 +7,16 @@ export const LOGO = style([
     padding: '0.4rem 0.55rem 0.4rem 0.55rem',
     fontSize: '0.85rem',
     textAlign: 'center',
-    color: THEMES.white + '!important',
+    color: vars.color.white + '!important',
     borderRadius: '0.3rem',
     selectors: {
       '&:hover': {
         backgroundColor: 'rgba(0,0,0,0.4)',
-        color: THEMES.white,
+        color: vars.color.white,
       },
       '&:active': {
         backgroundColor: 'rgba(0,0,0,0.4)',
-        color: THEMES.white,
+        color: vars.color.white,
       },
     },
   },
@@ -53,7 +53,7 @@ export const MENU_GITHUB = style({
   transition: 'outline 0.1s ease-out',
   selectors: {
     '&:hover': {
-      outline: `1px solid ${THEMES.theme}`,
+      outline: `1px solid ${vars.color.theme}`,
     },
   },
 });

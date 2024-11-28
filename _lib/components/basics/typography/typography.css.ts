@@ -1,4 +1,4 @@
-import { THEMES } from '@/_lib/styles/colors.css';
+import { vars } from '@/_lib/styles/themes.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 export const TYPOGRAPHY = {
@@ -56,7 +56,7 @@ export const CODE = style({
   padding: '0.1rem 0.25rem 0.1rem 0.25rem',
   borderRadius: '0.3rem',
   border: 'none',
-  backgroundColor: THEMES.light_b2,
+  backgroundColor: vars.color.b2,
 });
 
 export const STRIKE = style({});
@@ -69,14 +69,14 @@ export const UNDERLINE = style({
 
 export const LINK = style({
   textDecoration: 'underline',
-  color: THEMES.gray,
+  color: vars.color.gray,
   textUnderlineOffset: '0.25rem',
   textDecorationThickness: '1px',
   transition: 'color 0.2s ease',
   fontSize: TYPOGRAPHY.M.fontSize,
   selectors: {
     '&:hover': {
-      color: THEMES.highlight,
+      color: vars.color.highlight,
     },
   },
 });

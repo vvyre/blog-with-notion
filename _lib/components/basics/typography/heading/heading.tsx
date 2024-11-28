@@ -1,4 +1,4 @@
-import { COLORS, COLOR_STYLE_VARIANTS } from '@/_lib/styles/colors.css';
+import { vars } from '@/_lib/styles/themes.css';
 import { Annotations } from '../annotations/annotations';
 import { TEXT_STYLE } from '../typography.css';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
@@ -12,7 +12,7 @@ type HeadingProps<T extends ElementType> = {
   strike?: boolean;
   underline?: boolean;
   size?: keyof typeof TEXT_STYLE;
-  color?: keyof typeof COLORS;
+  color?: keyof typeof vars.notion;
   richText?: RichTextItemResponse;
   styleVariant?: string;
 } & ComponentPropsWithoutRef<T>;
@@ -30,10 +30,7 @@ export function Heading<T extends ElementType>({
   ...props
 }: HeadingProps<T>) {
   const Component = as || 'h1';
-  const classNames = [
-    TEXT_STYLE[size],
-    richText ? COLOR_STYLE_VARIANTS[richText.annotations.color] : COLOR_STYLE_VARIANTS[color],
-  ];
+  const classNames = [TEXT_STYLE[size], richText ? vars.notion[richText.annotations.color] : vars.notion[color]];
   let className = classNames.join(' ');
   if (styleVariant) className = styleVariant;
 

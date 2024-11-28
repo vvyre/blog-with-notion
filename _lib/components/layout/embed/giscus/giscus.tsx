@@ -1,11 +1,13 @@
 'use client';
 import { site_env } from '@/env';
-import { useLayoutEffect, useRef } from 'react';
+import { useContext, useLayoutEffect, useRef } from 'react';
 import { BASE } from './giscus.css';
 import { View } from '@/_lib/components/basics/view/view';
+import { ThemeContext } from '@/_lib/context/theme-provider';
 
 export function Giscus() {
   const commentsEl = useRef<HTMLDivElement>(null);
+  const { theme } = useContext(ThemeContext);
 
   useLayoutEffect(() => {
     const script = document.createElement('script');
@@ -21,11 +23,11 @@ export function Giscus() {
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'top');
-    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-theme', theme);
     script.setAttribute('data-lang', 'ko');
 
     commentsEl.current?.appendChild(script);
-  }, []);
+  }, [theme]);
 
   return (
     <View styleVariant={BASE}>

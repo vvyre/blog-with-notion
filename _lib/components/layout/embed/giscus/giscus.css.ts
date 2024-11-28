@@ -1,4 +1,4 @@
-import { COLORS, THEMES } from '@/_lib/styles/colors.css';
+import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
@@ -14,8 +14,8 @@ export const FALLBACK_BASE = style({
 
 export const FALLBACK = style({
   textAlign: 'center',
-  color: COLORS.gray,
+  color: vars.color.gray,
   fontSize: '0.9rem',
   padding: '0.5rem',
-  backgroundColor: THEMES.light_b1,
+  backgroundColor: vars.color.b1,
 });

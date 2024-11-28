@@ -21,10 +21,12 @@ import { GithubLink } from '../_external-logos/github';
 import { About } from './about/about';
 import { NavigationContext } from '@/_lib/context/navigation-provider';
 import { AboutBtn } from './about/about-btn';
+import { ThemeContext } from '@/_lib/context/theme-provider';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
   const { isPost, handleProfile, displayProfile } = useContext(NavigationContext);
+  const { theme, prefersDark, toggle } = useContext(ThemeContext);
 
   const [href] = useCategory();
   const styleKey = isPost ? 'post' : 'main';
@@ -47,6 +49,8 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
           </Btn>
           <Spacing size="0.3rem" dir="hori" />
           <GithubLink isPost={isPost} />
+          <Spacing size="0.3rem" dir="hori" />
+          <Btn onClick={() => toggle()}>{theme === 'light' ? '🌚' : '🌞'}</Btn>
         </View>
       </View>
 

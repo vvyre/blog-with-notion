@@ -1,7 +1,7 @@
-import { THEMES } from '@/_lib/styles/colors.css';
 import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 import { TYPOGRAPHY } from '../../basics/typography/typography.css';
+import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style({
   height: '3rem',
@@ -13,6 +13,7 @@ export const BASE = style({
   flexDirection: 'column',
   justifyContent: 'center',
   top: '0',
+  borderBottom: `1px solid ${vars.color.b3}`,
   '@media': {
     '(0 <= width <= 700px)': {
       bottom: '0',
@@ -29,7 +30,6 @@ export const NAV = style({
 });
 
 export const EXPANDED = style({
-  backgroundColor: 'white',
   display: 'flex',
   position: 'fixed',
   top: '3rem',
@@ -53,7 +53,7 @@ export const POST_TITLE_WRAPPER = style([
     justifyContent: 'flex-end',
     width: '100%',
     maxWidth: '90vw',
-    color: THEMES.default,
+    color: vars.color.default,
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
       '(0 <= width <= 700px)': {
@@ -86,7 +86,7 @@ export const POST_TITLE = style([
     margin: 0,
     padding: 0,
     textAlign: 'right',
-    color: THEMES.default,
+    color: vars.color.default,
     fontWeight: '600',
     fontSize: TYPOGRAPHY.S.fontSize,
     '@media': {
@@ -98,19 +98,19 @@ export const POST_TITLE = style([
 ]);
 
 export const BACKGROUND = styleVariants({
-  post: { background: THEMES.white },
+  post: { background: vars.color.b1 },
   main: { background: 'transparent' },
 });
 
 export const TEXT_COLOR = styleVariants({
-  post: { color: THEMES.default },
-  main: { color: THEMES.default },
+  post: { color: vars.color.default },
+  main: { color: vars.color.default },
 });
 
 //LEGACY
 
 export const THEME = styleVariants({
-  BLACK: { backgroundColor: THEMES.white },
+  BLACK: { backgroundColor: vars.color.white },
   WHITE: { background: 'transparent' },
 });
 
@@ -180,18 +180,18 @@ export const MENU_TEXT_BASE = style({
 
 export const MENU_TEXT = styleVariants({
   BLACK: {
-    color: THEMES.white,
+    color: vars.color.white,
     selectors: {
       '&:hover': {
-        borderBottom: `1px solid ${THEMES.white}`,
+        borderBottom: `1px solid ${vars.color.white}`,
       },
     },
   },
   WHITE: {
-    color: THEMES.default,
+    color: vars.color.default,
     selectors: {
       '&:hover': {
-        borderBottom: `1px solid ${THEMES.default}`,
+        borderBottom: `1px solid ${vars.color.default}`,
       },
     },
   },
@@ -226,7 +226,7 @@ export const MENU_GRID_ITEM = style({
 });
 
 export const MENU_ICON = style({
-  fill: THEMES.white,
+  fill: vars.color.white,
 });
 
 export const NAV_POST_TITLE = style({
@@ -242,7 +242,7 @@ export const NAV_POST_TITLE = style({
 
 export const PROGRESS_BAR = style({
   position: 'fixed',
-  backgroundColor: THEMES.theme,
+  backgroundColor: vars.color.theme,
   height: '1px',
   zIndex: '999',
   '@media': {

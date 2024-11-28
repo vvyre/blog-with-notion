@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
-import { COLORS, THEMES } from '@/_lib/styles/colors.css';
 import { TYPOGRAPHY } from '../../basics/typography/typography.css';
 import { BLOCK_GRID_BASE } from '../../_blocks/block-layout.css';
+import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style([
   BLOCK_GRID_BASE,
@@ -57,8 +57,8 @@ export const INFO_BOX = style({
 export const TITLE = style([
   TYPOGRAPHY.XXXL,
   {
-    color: THEMES.light_b1,
-    backgroundColor: THEMES.default,
+    color: vars.color.b1,
+    backgroundColor: vars.color.default,
     fontWeight: 900,
     textAlign: 'left',
     lineHeight: '1.2',
@@ -68,7 +68,7 @@ export const TITLE = style([
 ]);
 
 export const RELEASED_DATE = style({
-  color: THEMES.gray,
+  color: vars.color.gray,
   fontWeight: 400,
   textAlign: 'left',
 });
@@ -80,7 +80,7 @@ export const INFO = style({
 });
 
 export const SUMMARY = style({
-  color: THEMES.gray,
+  color: vars.color.gray,
 });
 
 export const TAG_GRID_PLACEMENT = style({

@@ -1,8 +1,8 @@
-import { THEMES } from '@/_lib/styles/colors.css';
 import { style } from '@vanilla-extract/css';
 import { RELEASED_DATE } from '../post-list/post-list.css';
 import { BASE as BTN_BASE } from '../../basics/button/btn.css';
 import { TYPOGRAPHY } from '../../basics/typography/typography.css';
+import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style({
   marginTop: '2rem',
@@ -29,13 +29,13 @@ export const POST_LIST = style([
 export const TITLE = style({
   textAlign: 'center',
   fontSize: TYPOGRAPHY.XS.fontSize,
-  color: THEMES.default,
+  color: vars.color.default,
   fontWeight: 600,
 });
 
 export const DATE = style([
   RELEASED_DATE,
   {
-    color: `${THEMES.gray} !important`,
+    color: `${vars.color.gray} !important`,
   },
 ]);

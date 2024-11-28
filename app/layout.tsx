@@ -1,5 +1,6 @@
 import '@/_lib/components/_blocks/code/hljs.css';
-import '../_lib/styles/global.css';
+import '@/_lib/styles/themes.css';
+import '@/_lib/styles/global.css';
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 import { View } from '@/_lib/components/basics/view/view';
