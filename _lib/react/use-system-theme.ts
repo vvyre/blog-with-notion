@@ -19,11 +19,13 @@ export const useSystemTheme = (): [string, boolean, Function] => {
   const toggle = () => (theme === 'light' ? setDark() : setLight());
 
   useLayoutEffect(() => {
-    //디바이스(또는 브라우저 설정)의 기본 선호에 반응해 블로그 테마를 변화시킵니다.
+    //첫 방문 시 디바이스(또는 브라우저 설정)의 기본 선호에 반응해 블로그 테마를 변화시킵니다.
     const DevicePrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setPrefersDark(DevicePrefersDark);
 
-    if (DevicePrefersDark) setDark();
+    if (!get_theme) {
+      if (DevicePrefersDark) setDark();
+    }
   }, []);
 
   useLayoutEffect(() => {
