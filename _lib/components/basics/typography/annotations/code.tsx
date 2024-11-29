@@ -7,7 +7,17 @@ interface CodeProps {
 }
 
 export function Code({ richText, ...props }: CodeProps) {
-  const COLOR = richText && richText.annotations.color !== 'default' ? richText.annotations.color : 'red';
-  const className = `${vars.notion[COLOR]} ${CODE}`;
-  return <code className={className} {...props} />;
+  const COLOR = richText && richText?.annotations.color !== 'default' ? richText?.annotations.color : 'orange';
+
+  const TEXT_COLOR = vars.notion[COLOR];
+  const className = `${CODE}`;
+  return (
+    <code
+      className={className}
+      style={{
+        color: TEXT_COLOR,
+      }}
+      {...props}
+    />
+  );
 }
