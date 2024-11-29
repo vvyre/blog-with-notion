@@ -6,7 +6,7 @@ import { vars } from '@/_lib/styles/themes.css';
 export const BASE = style([
   BLOCK_GRID_BASE,
   {
-    backgroundColor: vars.color.b1,
+    backgroundColor: vars.color.b2,
     marginBottom: '1rem',
     padding: '0.75rem 1rem 0.75rem 1rem',
     borderRadius: '0.3rem',
