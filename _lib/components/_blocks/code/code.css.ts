@@ -5,7 +5,7 @@ import { vars } from '@/_lib/styles/themes.css';
 export const CODE_BLOCK = style([
   BLOCK_GRID_BASE,
   {
-    backgroundColor: vars.color.whitegray,
+    backgroundColor: vars.color.b2,
     padding: '1.15rem',
     marginBottom: '1rem',
     borderRadius: '0.3rem',
@@ -16,9 +16,9 @@ export const CODE_LANGUAGE = style({
   textTransform: 'uppercase',
   fontSize: '0.9rem',
   fontWeight: 600,
-  color: vars.color.blueblack,
+  color: vars.color.default,
 });
 export const CODE_PRE = style({
   overflowX: 'auto',
-  color: vars.color.blueblack,
+  color: vars.color.default,
 });
