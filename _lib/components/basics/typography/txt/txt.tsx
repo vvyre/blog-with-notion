@@ -4,6 +4,7 @@ import { LINK, TEXT_STYLE } from '../typography.css';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 import { vars } from '@/_lib/styles/themes.css';
+import { TEXT_COLOR } from '../annotations/color.css';
 
 type TxtProps<T extends ElementType> = {
   as?: T | 'Link';
@@ -31,7 +32,8 @@ export function Txt<T extends ElementType>({
   styleVariant,
   ...props
 }: TxtProps<T>) {
-  const classNames = [TEXT_STYLE[size], richText ? vars.notion[richText.annotations.color] : vars.notion[color]];
+  const COLOR = richText ? richText.annotations.color : color;
+  const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR]];
 
   let Component = as || 'p';
   if (richText?.href) Component = 'a';

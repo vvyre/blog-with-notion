@@ -1,6 +1,7 @@
 import { vars } from '@/_lib/styles/themes.css';
 import { CODE } from '../typography.css';
 import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import { TEXT_COLOR } from './color.css';
 
 interface CodeProps {
   richText?: RichTextItemResponse;
@@ -9,15 +10,6 @@ interface CodeProps {
 export function Code({ richText, ...props }: CodeProps) {
   const COLOR = richText && richText?.annotations.color !== 'default' ? richText?.annotations.color : 'orange';
 
-  const TEXT_COLOR = vars.notion[COLOR];
-  const className = `${CODE}`;
-  return (
-    <code
-      className={className}
-      style={{
-        color: TEXT_COLOR,
-      }}
-      {...props}
-    />
-  );
+  const className = `${CODE} ${TEXT_COLOR[COLOR]}`;
+  return <code className={className} {...props} />;
 }

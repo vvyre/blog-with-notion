@@ -3,6 +3,7 @@ import { Annotations } from '../annotations/annotations';
 import { TEXT_STYLE } from '../typography.css';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
+import { TEXT_COLOR } from '../annotations/color.css';
 
 type HeadingProps<T extends ElementType> = {
   as?: T;
@@ -30,7 +31,8 @@ export function Heading<T extends ElementType>({
   ...props
 }: HeadingProps<T>) {
   const Component = as || 'h1';
-  const classNames = [TEXT_STYLE[size], richText ? vars.notion[richText.annotations.color] : vars.notion[color]];
+  const COLOR = richText ? richText.annotations.color : color;
+  const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR]];
   let className = classNames.join(' ');
   if (styleVariant) className = styleVariant;
 
