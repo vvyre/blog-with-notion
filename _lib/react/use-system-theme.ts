@@ -1,11 +1,10 @@
-import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import { useIsomorphicLayoutEffect } from './use-isomorphic-layout-effect';
 
 type THEME = 'light' | 'dark';
 
-export const useSystemTheme = (): [string, boolean, Function] => {
-  const get_theme = typeof window === 'undefined' ? 'light' : localStorage.getItem('bc_blog_theme');
-  const STORED_THEME: THEME = (get_theme ? get_theme : 'light') as THEME;
-  let [theme, setTheme] = useState<THEME>(STORED_THEME);
+export const useSystemTheme = (): [THEME, boolean, () => void] => {
+  const [theme, setTheme] = useState<THEME>('light');
   const [prefersDark, setPrefersDark] = useState(false);
 
   const setLight = useCallback(() => {
@@ -16,23 +15,28 @@ export const useSystemTheme = (): [string, boolean, Function] => {
     setTheme('dark');
   }, []);
 
-  const toggle = () => (theme === 'light' ? setDark() : setLight());
+  const toggle = useCallback(() => {
+    theme === 'light' ? setDark() : setLight();
+  }, []);
 
-  useLayoutEffect(() => {
-    //첫 방문 시 디바이스(또는 브라우저 설정)의 기본 선호에 반응해 블로그 테마를 변화시킵니다.
-    const DevicePrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setPrefersDark(DevicePrefersDark);
+  useIsomorphicLayoutEffect(() => {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      const storedTheme = localStorage.getItem('bc_blog_theme') as THEME;
+      const devicePrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (!get_theme) {
-      if (DevicePrefersDark) setDark();
+      setPrefersDark(devicePrefersDark);
+
+      if (storedTheme) setTheme(storedTheme);
+      else if (devicePrefersDark) setTheme('dark');
     }
   }, []);
 
-  useLayoutEffect(() => {
-    //store의 변화에 반응해 React 외부의 값을 업데이트합니다
-    localStorage.setItem('bc_blog_theme', theme);
-    document.body.dataset.theme = theme;
+  useIsomorphicLayoutEffect(() => {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      localStorage.setItem('bc_blog_theme', theme);
+      document.body.dataset.theme = theme;
+    }
   }, [theme]);
 
-  return useMemo(() => [theme, prefersDark, toggle], [theme, prefersDark]);
+  return useMemo(() => [theme, prefersDark, toggle], [theme, prefersDark, toggle]);
 };
