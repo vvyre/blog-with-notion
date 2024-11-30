@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useIsomorphicLayoutEffect } from './use-isomorphic-layout-effect';
 
 type THEME = 'light' | 'dark';
@@ -17,7 +17,7 @@ export const useSystemTheme = (): [THEME, boolean, () => void] => {
 
   const toggle = useCallback(() => {
     theme === 'light' ? setDark() : setLight();
-  }, []);
+  }, [theme]);
 
   useIsomorphicLayoutEffect(() => {
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
@@ -27,11 +27,11 @@ export const useSystemTheme = (): [THEME, boolean, () => void] => {
       setPrefersDark(devicePrefersDark);
 
       if (storedTheme) setTheme(storedTheme);
-      else if (devicePrefersDark) setTheme('dark');
+      else if (devicePrefersDark) setDark();
     }
   }, []);
 
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       localStorage.setItem('bc_blog_theme', theme);
       document.body.dataset.theme = theme;
