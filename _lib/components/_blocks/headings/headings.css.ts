@@ -31,7 +31,7 @@ export const HEADING_2 = style([
     fontSize: '1.15rem',
     lineHeight: '1.25',
     marginTop: '1.5rem',
-    marginBottom: '0.5rem',
+    marginBottom: '0.75rem',
   },
 ]);
 
@@ -42,5 +42,6 @@ export const HEADING_3 = style([
     fontSize: '1.15rem',
     lineHeight: '1.25',
     marginTop: '1rem',
+    marginBottom: '0.75rem',
   },
 ]);
