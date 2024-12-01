@@ -35,7 +35,7 @@ export function Txt<T extends ElementType>({
   const COLOR = richText ? richText.annotations.color : color;
   const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR]];
 
-  let Component = as || 'p';
+  let Component = as || 'span';
   if (richText?.href) Component = 'a';
 
   let className = classNames.join(' ');
