@@ -1,5 +1,8 @@
 import { style } from '@vanilla-extract/css';
 
+export const BLOCK_GRID_BASE_INLINE = style({
+  gridColumn: '2 / 3',
+});
 export const BLOCK_GRID_BASE = style({
   gridColumn: '2 / 3',
   width: '100%',
