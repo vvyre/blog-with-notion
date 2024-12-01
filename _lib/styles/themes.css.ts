@@ -54,7 +54,7 @@ createGlobalTheme('[data-theme="light"]', vars, {
     b2: '#F7F8FB',
     b3: '#E6E6E7',
     b4: 'rgba(88,91,94,0.4)',
-    btn_bg: 'rgba(241,242,247,0.7)',
+    btn_bg: 'rgba(241,242,247,0.5)',
     postListText: 'rgba(255,255,0,1)',
   },
   notion: {
@@ -94,7 +94,7 @@ createGlobalTheme('[data-theme="dark"]', vars, {
     b2: '#303236',
     b3: '#404246',
     b4: 'rgba(48,50,54,0.4)',
-    btn_bg: 'rgba(48,50,54,0.66)',
+    btn_bg: 'rgba(48,50,54,0.5)',
     postListText: 'rgba(255,255,0,0.825)',
   },
   notion: {
