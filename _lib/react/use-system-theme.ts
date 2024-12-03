@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useIsomorphicLayoutEffect } from './use-isomorphic-layout-effect';
+import { useIsomorphicLayoutEffect } from '@syyu/util/react';
+import { isClient } from '@syyu/util';
 
 type THEME = 'light' | 'dark';
 
@@ -20,7 +21,7 @@ export const useSystemTheme = (): [THEME, boolean, () => void] => {
   }, [theme]);
 
   useIsomorphicLayoutEffect(() => {
-    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+    if (isClient() && typeof localStorage !== 'undefined') {
       const storedTheme = localStorage.getItem('bc_blog_theme') as THEME;
       const devicePrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -32,7 +33,7 @@ export const useSystemTheme = (): [THEME, boolean, () => void] => {
   }, []);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+    if (isClient() && typeof localStorage !== 'undefined') {
       localStorage.setItem('bc_blog_theme', theme);
       document.body.dataset.theme = theme;
     }

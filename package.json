@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
-    "@syyu/util": "^1.3.9",
+    "@syyu/util": "1.3.11",
     "@vanilla-extract/css": "^1.14.1",
     "highlight.js": "^11.9.0",
     "next": "15.0.3",
