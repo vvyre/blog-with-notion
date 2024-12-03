@@ -5,7 +5,7 @@ import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style({
   height: '3rem',
-  width: '100vw',
+  width: '100%',
   zIndex: '99999',
   padding: '0.4rem 2rem 0.4rem 2rem',
   position: 'sticky',
