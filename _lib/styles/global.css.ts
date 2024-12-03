@@ -11,6 +11,8 @@ globalStyle('html', {
   boxSizing: 'border-box',
   MozBoxSizing: 'border-box',
   fontSize: '100%',
+  margin: 0,
+  padding: 0,
   lineHeight: '1.8',
   fontFamily,
   fontFeatureSettings: "'case', 'ss05', 'ss07'",
