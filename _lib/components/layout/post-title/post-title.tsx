@@ -30,7 +30,7 @@ export function PostTitle({ ...meta }: PageObject) {
           </Txt>
         </Heading>
         <Spacing size="1rem" />
-        <Txt as="p" styleVariant={INFO}>
+        <Txt as="div" styleVariant={INFO}>
           <Txt as="span" styleVariant={RELEASED_DATE}>
             {rel_date}
           </Txt>
