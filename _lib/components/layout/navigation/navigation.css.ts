@@ -36,6 +36,7 @@ export const EXPANDED = style({
   opacity: '0.95',
   alignItems: 'center',
   width: '100vw',
+  backgroundColor: vars.color.b2,
   height: 'calc(100vh)',
   zIndex: '9999',
 });
