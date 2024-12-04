@@ -102,7 +102,7 @@ createGlobalTheme('[data-theme="dark"]', vars, {
     blue_background: '#A6D4FF',
     brown: '#A68A6F',
     brown_background: '#EDE3D6',
-    default: '#B0B2B6',
+    default: '#F0F2F6',
     gray: '#A0A2A6',
     gray_background: '#F2F2F3',
     green: '#2EE59D',
