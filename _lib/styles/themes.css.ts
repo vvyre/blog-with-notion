@@ -86,7 +86,7 @@ createGlobalTheme('[data-theme="dark"]', vars, {
     white: '#FFFFFF',
     whitegray: '#F7F8FB',
     lightgray: '#A0A2A6',
-    default: '#F7F7F7',
+    default: '#F0F2F6',
     blueblack: '#404246',
     gray: '#C0C3C6',
     highlight: '#3696eb',
