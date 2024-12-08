@@ -16,6 +16,7 @@ export const vars = createGlobalThemeContract({
     b4: 'color-light-b4',
     btn_bg: 'color-btn-bg',
     postListText: 'color-postlist-text',
+    postListTextHovered: 'color-postlist-text-hovered',
   },
   notion: {
     blue: 'notion-blue',
@@ -46,7 +47,7 @@ createGlobalTheme('[data-theme="light"]', vars, {
     white: '#FFFFFF',
     whitegray: '#F7F8FB',
     lightgray: '#A0A2A6',
-    default: '#303236',
+    default: 'rgba(64, 66, 70, 1)',
     blueblack: '#404246',
     gray: '#808286',
     highlight: '#3696eb',
@@ -56,6 +57,7 @@ createGlobalTheme('[data-theme="light"]', vars, {
     b4: 'rgba(88,91,94,0.4)',
     btn_bg: 'rgba(241,242,247,0.5)',
     postListText: 'rgba(255,255,0,1)',
+    postListTextHovered: 'rgba(240, 242, 246, 1)',
   },
   notion: {
     blue: '#1b64da',
@@ -86,7 +88,7 @@ createGlobalTheme('[data-theme="dark"]', vars, {
     white: '#FFFFFF',
     whitegray: '#F7F8FB',
     lightgray: '#A0A2A6',
-    default: '#F0F2F6',
+    default: 'rgba(240, 242, 246, 1)',
     blueblack: '#404246',
     gray: '#C0C3C6',
     highlight: '#3696eb',
@@ -96,6 +98,7 @@ createGlobalTheme('[data-theme="dark"]', vars, {
     b4: 'rgba(48,50,54,0.4)',
     btn_bg: 'rgba(48,50,54,0.5)',
     postListText: 'rgba(255,255,0,1)',
+    postListTextHovered: 'rgba(240, 242, 246, 1)',
   },
   notion: {
     blue: '#4A90E2',
