@@ -43,6 +43,10 @@ globalStyle('main', {
   backgroundColor: vars.color.b1,
 });
 
+globalStyle('body[data-theme] > main, body[data-theme] > nav', {
+  transition: 'background-color 0.15s ease, color 0.15s ease',
+});
+
 globalStyle('input, button, select, textarea', {
   fontFamily,
   fontFeatureSettings: "'case', 'ss05', 'ss07', ",
