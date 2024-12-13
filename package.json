@@ -17,20 +17,21 @@
     "next": "15.0.3",
     "next-sitemap": "^4.2.3",
     "p-map": "^7.0.1",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rss": "^1.2.2",
     "unfurl.js": "^6.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "@types/rss": "^0.0.32",
     "@vanilla-extract/next-plugin": "^2.3.6",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "mini-css-extract-plugin": "^2.8.0",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }
