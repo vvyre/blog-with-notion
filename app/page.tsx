@@ -17,7 +17,7 @@ export default async function PostListPage() {
       style={{
         backgroundImage: `url(${backgroundImg})`,
       }}>
-      <View styleVariant={LAYOUT_INNER}>
+      <View as="section" styleVariant={LAYOUT_INNER}>
         <Flex flexDirection="column" justifyContents="center" alignItems="center">
           <PostListLayout category="engineering" posts={postList} />
         </Flex>

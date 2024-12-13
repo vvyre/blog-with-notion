@@ -43,7 +43,7 @@ globalStyle('main', {
   backgroundColor: vars.color.b1,
 });
 
-globalStyle('body[data-theme] > main, body[data-theme] > nav', {
+globalStyle('body[data-theme] > main, body[data-theme] > nav, body[data-theme] section', {
   transition: 'background-color 0.15s ease, color 0.15s ease',
 });
 
