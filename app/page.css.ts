@@ -12,6 +12,7 @@ const LAYOUT = style({
   justifyContent: 'center',
   alignItems: 'center',
 });
+
 export const LAYOUT_BG = style([
   LAYOUT,
   {
@@ -19,6 +20,13 @@ export const LAYOUT_BG = style([
     backgroundRepeat: 'no-repeat',
     backgroundBlendMode: 'overlay',
     backgroundPosition: 'center',
+  },
+]);
+
+export const LAYOUT_BG_TIL = style([
+  LAYOUT,
+  {
+    backgroundColor: vars.color.blueblack,
   },
 ]);
 
