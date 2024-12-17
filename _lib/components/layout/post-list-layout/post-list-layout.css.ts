@@ -22,6 +22,22 @@ export const POST_LIST_CENTERED = style([
   },
 ]);
 
+export const POST_LIST_TIL = style([
+  {
+    background: 'transparent',
+    lineHeight: 1.65,
+    height: '100%',
+    width: '100vw',
+    maxWidth: '70rem',
+    padding: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+]);
+
 //LEGACY
 export const POST_LIST_GRID = style([
   {

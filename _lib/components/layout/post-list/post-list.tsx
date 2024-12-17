@@ -2,15 +2,13 @@ import { List } from '../../basics/list/list';
 import { getTitle } from '@/utils/get-title';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { Txt } from '../../basics/typography/txt/txt';
-import { Spacing } from '../../basics/spacing/spacing';
 import { POST_LINK, POST_LIST_BASE, POST_TITLE, RELEASED_DATE } from './post-list.css';
 import { getDate } from '@/utils/get-date';
 import type { PageObject } from '@/_lib/types/notion-response';
-import type { CategoryType } from '@/constants/category';
 
 interface PostListProps {
   post: PageObject;
-  category: CategoryType;
+  category: string;
 }
 
 export function PostList({ post, category }: PostListProps) {

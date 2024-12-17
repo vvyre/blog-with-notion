@@ -1,15 +1,6 @@
 'use client';
 import { Btn } from '../../basics/button/btn';
-import {
-  BACKGROUND,
-  BASE,
-  BTN_WRAPPER,
-  EXPANDED,
-  NAV,
-  POST_TITLE,
-  POST_TITLE_WRAPPER,
-  TEXT_COLOR,
-} from './navigation.css';
+import { BACKGROUND, BASE, EXPANDED, NAV, POST_TITLE, POST_TITLE_WRAPPER, TEXT_COLOR } from './navigation.css';
 import { View } from '../../basics/view/view';
 import { getTitle } from '@/utils/get-title';
 import { useContext, useEffect } from 'react';
@@ -22,15 +13,17 @@ import { About } from './about/about';
 import { NavigationContext } from '@/_lib/context/navigation-provider';
 import { AboutBtn } from './about/about-btn';
 import { ThemeContext } from '@/_lib/context/theme-provider';
+import { LOGO } from './about/about-btn.css';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
-  const { isPost, handleProfile, displayProfile } = useContext(NavigationContext);
-  const { theme, prefersDark, toggle } = useContext(ThemeContext);
+  const { handleProfile, displayProfile } = useContext(NavigationContext);
+  const { theme, toggle } = useContext(ThemeContext);
+  const { isTil, isPost } = useCategory();
 
-  const [href] = useCategory();
   const styleKey = isPost ? 'post' : 'main';
   const RightFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
+  const BLOG_TRANSFER = isTil ? 'BLOG' : 'TIL';
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null);
@@ -38,17 +31,19 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
 
   return (
     <View as="nav" styleVariant={`${BACKGROUND[styleKey]} ${BASE}`}>
-      <View as="nav" styleVariant={NAV}>
-        <View styleVariant={BTN_WRAPPER}>{null}</View>
+      <View as="div" styleVariant={NAV}>
+        <Btn
+          as={isPost ? 'span' : 'div'}
+          onClick={() => handleProfile()}
+          styleVariant={`${POST_TITLE} ${TEXT_COLOR[styleKey]}`}>
+          {RightFlexText}
+        </Btn>
         <View styleVariant={POST_TITLE_WRAPPER}>
-          <Btn
-            as={isPost ? 'span' : 'div'}
-            onClick={() => handleProfile()}
-            styleVariant={`${POST_TITLE} ${TEXT_COLOR[styleKey]}`}>
-            {RightFlexText}
+          <Btn as={'Link'} href={isTil ? '/' : '/til'} styleVariant={LOGO}>
+            {BLOG_TRANSFER}
           </Btn>
           <Spacing size="0.3rem" dir="hori" />
-          <GithubLink isPost={isPost} />
+          <GithubLink />
           <Spacing size="0.3rem" dir="hori" />
           <Btn onClick={() => toggle()}>{theme === 'light' ? '🌚' : '🌞'}</Btn>
         </View>

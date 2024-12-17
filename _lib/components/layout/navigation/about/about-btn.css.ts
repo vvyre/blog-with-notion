@@ -7,16 +7,14 @@ export const LOGO = style([
     padding: '0.4rem 0.55rem 0.4rem 0.55rem',
     fontSize: '0.85rem',
     textAlign: 'center',
-    color: vars.color.white + '!important',
     borderRadius: '0.3rem',
+    color: vars.color.default,
     selectors: {
       '&:hover': {
-        backgroundColor: 'rgba(0,0,0,0.4)',
-        color: vars.color.white,
+        backgroundColor: vars.color.btn_bg,
       },
       '&:active': {
-        backgroundColor: 'rgba(0,0,0,0.4)',
-        color: vars.color.white,
+        backgroundColor: vars.color.btn_bg,
       },
     },
   },

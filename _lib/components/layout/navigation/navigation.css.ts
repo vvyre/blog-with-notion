@@ -24,7 +24,7 @@ export const BASE = style({
 export const NAV = style({
   display: 'flex',
   flexWrap: 'nowrap',
-  justifyContent: 'spaceBetween',
+  justifyContent: 'space-between',
   alignItems: 'center',
 });
 
@@ -52,7 +52,7 @@ export const POST_TITLE_WRAPPER = style([
     alignItems: 'center',
     justifyContent: 'flex-end',
     width: '100%',
-    maxWidth: '90vw',
+    maxWidth: '50vw',
     color: vars.color.default,
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
@@ -99,7 +99,7 @@ export const POST_TITLE = style([
 
 export const BACKGROUND = styleVariants({
   post: { background: vars.color.b1 },
-  main: { background: 'transparent' },
+  main: { background: vars.color.nav_bg },
 });
 
 export const TEXT_COLOR = styleVariants({

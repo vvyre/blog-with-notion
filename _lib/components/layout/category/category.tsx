@@ -8,10 +8,6 @@ import { Spacing } from '../../basics/spacing/spacing';
 import { useCategory } from '@/_lib/react/use-category';
 
 export function Category() {
-  const [path, category] = useCategory();
-  const isEngineering = category === 'engineering';
-  const isAsdf = category === 'asdf';
-
   return (
     // <View as="nav" styleVariant={LAYOUT_CENTERED}>
     //   <Spacing size="2rem" />
