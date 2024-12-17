@@ -1,6 +1,7 @@
 export const notion_env = {
   api_key: process.env.NOTION_KEY || '',
   database_id: process.env.NOTION_BLOG_DATABASE_ID || '',
+  study_database_id: process.env.NOTION_STUDY_DATABASE_ID || '',
   about_id: process.env.NOTION_ABOUT_PAGE_ID || '',
 };
 
