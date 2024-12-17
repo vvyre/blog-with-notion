@@ -10,7 +10,7 @@ export function BackButton({
   wrapperStyleVariant?: string;
   buttonStyleVariant?: string;
 }) {
-  const [path] = useCategory();
+  const { path } = useCategory();
   return (
     <View styleVariant={wrapperStyleVariant}>
       <Txt as="Link" href={path} size="XL" styleVariant={buttonStyleVariant}>
