@@ -1,12 +1,10 @@
-import { CategoryType } from '@/constants/category';
 import { usePathname } from 'next/navigation';
 
-export const useCategory: () => [string, CategoryType] | [] = () => {
+export const useCategory: () => { path: string; isEngineering: boolean; isTil: boolean; isPost: boolean } = () => {
   const path = usePathname();
-  const isEngineering = path === '/' || path.startsWith('/engineering');
-  const isAsdf = path === '/asdf' || path.startsWith('/asdf');
-  if (isEngineering) return ['/', 'engineering'];
-  if (isAsdf) return ['/asdf', 'asdf'];
+  const isEngineering = path.startsWith('/engineering');
+  const isTil = path.startsWith('/til');
+  const isPost = isEngineering || (isTil && path.length > 4);
 
-  return [];
+  return { path, isEngineering, isTil, isPost };
 };

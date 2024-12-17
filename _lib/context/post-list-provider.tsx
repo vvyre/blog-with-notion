@@ -4,7 +4,7 @@ import type { PostListObject } from '../types/notion-response';
 import { noop } from '@syyu/util';
 
 interface PostListContextType {
-  postList: PostListObject | null;
+  postList: Record<string, PostListObject> | null;
   setPostList: Function;
 }
 
@@ -14,7 +14,7 @@ export const PostListContext = createContext<PostListContextType>({
 });
 
 export function PostListProvider({ children }: { children: ReactNode }) {
-  const [postList, setPostList] = useState<PostListObject | null>(null);
+  const [postList, setPostList] = useState<Record<string, PostListObject> | null>(null);
 
   return <PostListContext.Provider value={{ postList, setPostList }}>{children}</PostListContext.Provider>;
 }
