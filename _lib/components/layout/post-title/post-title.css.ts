@@ -63,7 +63,12 @@ export const TITLE = style([
     textAlign: 'left',
     lineHeight: '1.2',
     width: '100%',
-    wordBreak: 'break-all',
+    wordBreak: 'keep-all',
+    '@media': {
+      'screen and (max-width: 480px)': {
+        fontSize: '4rem',
+      },
+    },
   },
 ]);
 
