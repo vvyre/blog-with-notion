@@ -51,8 +51,6 @@ export const POST_TITLE_WRAPPER = style([
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    width: '100%',
-    maxWidth: '50vw',
     color: vars.color.default,
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
@@ -91,7 +89,7 @@ export const POST_TITLE = style([
     fontSize: TYPOGRAPHY.S.fontSize,
     '@media': {
       '(0 <= width <= 700px)': {
-        fontSize: TYPOGRAPHY.XS.fontSize,
+        fontSize: TYPOGRAPHY.XXS.fontSize,
       },
     },
   },
@@ -174,7 +172,7 @@ export const MENU = style({
 export const MENU_TEXT_BASE = style({
   backgroundColor: 'transparent',
   borderBottom: '1px solid transparent',
-  fontSize: '0.9rem',
+  fontSize: '0.85rem',
   fontWeight: 700,
 });
 
@@ -230,7 +228,7 @@ export const MENU_ICON = style({
 });
 
 export const NAV_POST_TITLE = style({
-  fontSize: '0.9rem',
+  fontSize: '0.85rem',
   cursor: 'default',
   '@media': {
     '(0px <= width <= 768px)': {
