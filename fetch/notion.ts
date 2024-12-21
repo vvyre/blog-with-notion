@@ -2,12 +2,14 @@ import { notion } from './notion-client';
 import {
   BlockObjectResponse,
   GetBlockResponse,
-  PageObjectResponse,
   PartialBlockObjectResponse,
   QueryDatabaseParameters,
 } from '@notionhq/client/build/src/api-endpoints';
-import { PageObject, PostListObject } from '@/_lib/types/notion-response';
-import { APIResponseError, NotionClientError } from '@notionhq/client';
+import { PageObject } from '@/_lib/types/notion-response';
+
+let CACHE_PROMISE_MAP: Record<string, Promise<PageObject[]>> = {
+  id: new Promise(() => []),
+};
 
 export const getPostList = async (database_id: string): Promise<PageObject[]> => {
   const query: QueryDatabaseParameters = {
@@ -31,43 +33,20 @@ export const getPostList = async (database_id: string): Promise<PageObject[]> =>
   };
   try {
     const response = await notion.databases.query(query);
-    console.log('POSTLIST:', database_id, 'FETCH called');
+    console.log(database_id, '>>>> FETCH CALL');
     return response.results as PageObject[];
   } catch (err) {
-    console.log(err, '\n', 'POSTLIST:', 'ERR');
+    console.log('\n', database_id, err, '\n', '>>>> FETCH CALL ERROR');
     return [];
   }
 };
 
-const POST_LIST_CACHE: { [key: string]: { POSTS: PostListObject; TIMESTAMP: number; CACHE_DURATION: number } } = {
-  id: {
-    POSTS: [],
-    TIMESTAMP: 0,
-    CACHE_DURATION: 10000,
-  },
-};
-
 export const getCachedPostList = async (database_id: string) => {
-  const now = Date.now();
-  if (!POST_LIST_CACHE[database_id])
-    POST_LIST_CACHE[database_id] = {
-      POSTS: [],
-      TIMESTAMP: 0,
-      CACHE_DURATION: 10000,
-    };
-  if (
-    POST_LIST_CACHE[database_id].POSTS.length > 0 &&
-    now - POST_LIST_CACHE[database_id].TIMESTAMP < POST_LIST_CACHE[database_id].CACHE_DURATION
-  ) {
-    console.log('POSTLIST:', database_id, 'CACHE called');
-    return POST_LIST_CACHE[database_id].POSTS;
-  } else {
-    const posts = await getPostList(database_id);
+  if (!CACHE_PROMISE_MAP[database_id]) {
+    CACHE_PROMISE_MAP[database_id] = getPostList(database_id);
+  } else console.log(database_id, '>>>> CACHED CALL');
 
-    POST_LIST_CACHE[database_id].POSTS = posts || [];
-    POST_LIST_CACHE[database_id].TIMESTAMP = now;
-    return posts;
-  }
+  return CACHE_PROMISE_MAP[database_id];
 };
 
 export const getPostMetaData = async (page_id: string): Promise<PageObject> => {
