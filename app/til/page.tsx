@@ -13,10 +13,10 @@ export default async function TIL() {
   return (
     <View styleVariant={LAYOUT_BG_TIL}>
       <View as="section" styleVariant={LAYOUT_INNER}>
+        <Txt bold as="pre">
+          STUDY ARCHIVE
+        </Txt>
         <Flex justifyContents="center" alignItems="center">
-          <Txt bold as="pre">
-            STUDY ARCHIVE
-          </Txt>
           <PostListLayout category="til" posts={postList} className={POST_LIST_TIL_CENTERED} />
         </Flex>
       </View>
