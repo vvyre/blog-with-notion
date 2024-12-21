@@ -2,7 +2,7 @@ import { getSummary } from '@/utils/get-summary';
 import { getTitle } from '@/utils/get-title';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { meta } from '@/constants/meta';
-import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
+import { getPostList, getPost, getPostMetaData } from '@/fetch/notion';
 import { PostTitle } from '@/_lib/components/layout/post-title/post-title';
 import { Article } from '@/_lib/components/basics/article/article';
 import { Spacing } from '@/_lib/components/basics/spacing/spacing';
@@ -28,7 +28,7 @@ export interface PostPageProps {
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  const posts = await getCachedPostList(notion_env.study_database_id);
+  const posts = await getPostList(notion_env.study_database_id);
 
   return posts.map(post => {
     return {
@@ -38,7 +38,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PostPageProps) {
-  const posts = await getCachedPostList(notion_env.study_database_id);
+  const posts = await getPostList(notion_env.study_database_id);
   const { slug } = await params;
   const [matchPost] = posts.filter(post => parsedSlug(post) === slug);
 
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PostPageProps) {
 }
 
 export default async function Post({ params }: PostPageProps) {
-  const posts = await getCachedPostList(notion_env.study_database_id);
+  const posts = await getPostList(notion_env.study_database_id);
   const { slug } = await params;
   const [matchPost] = posts.filter(post => parsedSlug(post) === slug);
   const meta = await getPostMetaData(matchPost.id);
