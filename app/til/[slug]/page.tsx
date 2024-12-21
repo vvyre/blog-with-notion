@@ -25,8 +25,6 @@ export interface PostPageProps {
   }>;
 }
 
-export const revalidate = 3600;
-
 export async function generateStaticParams() {
   const posts = await getCachedPostList(notion_env.study_database_id);
 
@@ -67,8 +65,6 @@ export default async function Post({ params }: PostPageProps) {
               <ShareBtn />
               <OtherArticlesBtn />
             </Flex>
-            <Spacing size="3rem" />
-            <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
             <Spacing size="10rem" />
           </View>
         </View>
