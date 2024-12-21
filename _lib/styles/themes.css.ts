@@ -57,7 +57,7 @@ createGlobalTheme('[data-theme="light"]', vars, {
     b3: '#E6E6E7',
     b4: 'rgba(88,91,94,0.4)',
     btn_bg: 'rgba(241,242,247,0.5)',
-    nav_bg: 'rgba(240,242,256, 0.7)',
+    nav_bg: 'rgba(240,242,256, 0.66)',
     postListText: 'rgba(255,255,0,1)',
     postListTextHovered: 'rgba(240, 242, 246, 1)',
   },

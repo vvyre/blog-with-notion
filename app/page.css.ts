@@ -26,7 +26,7 @@ export const LAYOUT_BG = style([
 export const LAYOUT_BG_TIL = style([
   LAYOUT,
   {
-    backgroundColor: vars.color.blueblack,
+    backgroundColor: vars.notion.purple,
   },
 ]);
 
