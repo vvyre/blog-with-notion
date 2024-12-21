@@ -31,7 +31,7 @@ export const getPostList = async (database_id: string): Promise<PageObject[]> =>
   };
   try {
     const response = await notion.databases.query(query);
-    console.log('POSTLIST:', 'FETCH called');
+    console.log('POSTLIST:', database_id, 'FETCH called');
     return response.results as PageObject[];
   } catch (err) {
     console.log(err, '\n', 'POSTLIST:', 'ERR');
@@ -59,7 +59,7 @@ export const getCachedPostList = async (database_id: string) => {
     POST_LIST_CACHE[database_id].POSTS.length > 0 &&
     now - POST_LIST_CACHE[database_id].TIMESTAMP < POST_LIST_CACHE[database_id].CACHE_DURATION
   ) {
-    console.log('POSTLIST:', 'CACHE called');
+    console.log('POSTLIST:', database_id, 'CACHE called');
     return POST_LIST_CACHE[database_id].POSTS;
   } else {
     const posts = await getPostList(database_id);
