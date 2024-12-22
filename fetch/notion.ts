@@ -11,10 +11,6 @@ const POST_LIST_CACHE: Record<string, Promise<PageObject[]>> = {
   id: new Promise(() => []),
 };
 
-const BLOCK_CACHE: Record<string, Promise<BlockObjectResponse[]>> = {
-  id: new Promise(() => []),
-};
-
 export const getPostList = async (database_id: string): Promise<PageObject[]> => {
   const query: QueryDatabaseParameters = {
     database_id,
@@ -95,12 +91,8 @@ const getAllChildrenBlocks = async (blocks: BlockObjectResponse[]) => {
 };
 
 export const getPost = async (block_id: string): Promise<BlockObjectResponse[]> => {
-  if (!BLOCK_CACHE[block_id]) {
-    const blocks = await getChildrenBlocks(block_id);
-    const fullBlocks = getAllChildrenBlocks(blocks as BlockObjectResponse[]);
-    BLOCK_CACHE[block_id] = fullBlocks;
-  } else console.log(block_id, '>>>> CACHED BLOCK');
-  return BLOCK_CACHE[block_id];
+  const blocks = await getChildrenBlocks(block_id);
+  return await getAllChildrenBlocks(blocks as BlockObjectResponse[]);
 };
 
 export const getSingleBlock = async (block_id: string): Promise<GetBlockResponse> => {
