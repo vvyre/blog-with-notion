@@ -7,7 +7,11 @@ import {
 } from '@notionhq/client/build/src/api-endpoints';
 import { PageObject } from '@/_lib/types/notion-response';
 
-let CACHE_PROMISE_MAP: Record<string, Promise<PageObject[]>> = {
+const POST_LIST_CACHE: Record<string, Promise<PageObject[]>> = {
+  id: new Promise(() => []),
+};
+
+const BLOCK_CACHE: Record<string, Promise<BlockObjectResponse[]>> = {
   id: new Promise(() => []),
 };
 
@@ -33,20 +37,20 @@ export const getPostList = async (database_id: string): Promise<PageObject[]> =>
   };
   try {
     const response = await notion.databases.query(query);
-    console.log(database_id, '>>>> FETCH CALL');
+    console.log(database_id, '>>>> POSTLIST FETCH CALL');
     return response.results as PageObject[];
   } catch (err) {
-    console.log('\n', database_id, err, '\n', '>>>> FETCH CALL ERROR');
+    console.log('\n', database_id, err, '\n', '>>>> POSTLIST FETCH ERROR');
     return [];
   }
 };
 
 export const getCachedPostList = async (database_id: string) => {
-  if (!CACHE_PROMISE_MAP[database_id]) {
-    CACHE_PROMISE_MAP[database_id] = getPostList(database_id);
-  } else console.log(database_id, '>>>> CACHED CALL');
+  if (!POST_LIST_CACHE[database_id]) {
+    POST_LIST_CACHE[database_id] = getPostList(database_id);
+  } else console.log(database_id, '>>>> CACHED POSTLIST');
 
-  return CACHE_PROMISE_MAP[database_id];
+  return POST_LIST_CACHE[database_id];
 };
 
 export const getPostMetaData = async (page_id: string): Promise<PageObject> => {
@@ -58,6 +62,7 @@ export const getPostMetaData = async (page_id: string): Promise<PageObject> => {
 const getChildrenBlocks = async (
   parent_block_id: string
 ): Promise<(BlockObjectResponse | PartialBlockObjectResponse)[]> => {
+  console.log(parent_block_id, '>>>> BLOCK FETCH CALL');
   let results = [];
   let blocks = await notion.blocks.children.list({
     block_id: parent_block_id,
@@ -91,10 +96,19 @@ const getAllChildrenBlocks = async (blocks: BlockObjectResponse[]) => {
 
 export const getPost = async (block_id: string): Promise<BlockObjectResponse[]> => {
   const blocks = await getChildrenBlocks(block_id);
-  const fullBlocks = await getAllChildrenBlocks(blocks as BlockObjectResponse[]);
-
-  return fullBlocks;
+  return await getAllChildrenBlocks(blocks as BlockObjectResponse[]);
 };
 
-export const getSingleBlock = async (block_id: string): Promise<GetBlockResponse> =>
-  await notion.blocks.retrieve({ block_id });
+// export const getPost = async (block_id: string): Promise<BlockObjectResponse[]> => {
+//   if (!BLOCK_CACHE[block_id]) {
+//     const blocks = await getChildrenBlocks(block_id);
+//     const fullBlocks = getAllChildrenBlocks(blocks as BlockObjectResponse[]);
+//     BLOCK_CACHE[block_id] = fullBlocks;
+//   } else console.log(block_id, '>>>> CACHED BLOCK');
+//   return BLOCK_CACHE[block_id];
+// };
+
+export const getSingleBlock = async (block_id: string): Promise<GetBlockResponse> => {
+  console.log(block_id, '>>>> SINGLE BLOCK FETCH CALL');
+  return await notion.blocks.retrieve({ block_id });
+};
