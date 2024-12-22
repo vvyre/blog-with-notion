@@ -95,18 +95,13 @@ const getAllChildrenBlocks = async (blocks: BlockObjectResponse[]) => {
 };
 
 export const getPost = async (block_id: string): Promise<BlockObjectResponse[]> => {
-  const blocks = await getChildrenBlocks(block_id);
-  return await getAllChildrenBlocks(blocks as BlockObjectResponse[]);
+  if (!BLOCK_CACHE[block_id]) {
+    const blocks = await getChildrenBlocks(block_id);
+    const fullBlocks = getAllChildrenBlocks(blocks as BlockObjectResponse[]);
+    BLOCK_CACHE[block_id] = fullBlocks;
+  } else console.log(block_id, '>>>> CACHED BLOCK');
+  return BLOCK_CACHE[block_id];
 };
-
-// export const getPost = async (block_id: string): Promise<BlockObjectResponse[]> => {
-//   if (!BLOCK_CACHE[block_id]) {
-//     const blocks = await getChildrenBlocks(block_id);
-//     const fullBlocks = getAllChildrenBlocks(blocks as BlockObjectResponse[]);
-//     BLOCK_CACHE[block_id] = fullBlocks;
-//   } else console.log(block_id, '>>>> CACHED BLOCK');
-//   return BLOCK_CACHE[block_id];
-// };
 
 export const getSingleBlock = async (block_id: string): Promise<GetBlockResponse> => {
   console.log(block_id, '>>>> SINGLE BLOCK FETCH CALL');
