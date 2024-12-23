@@ -8,10 +8,10 @@ type ViewProps<T extends ElementType> = {
 } & ComponentPropsWithRef<T>;
 
 function V<T extends ElementType>({ as, styleVariant, children, ...props }: ViewProps<T>, ref: Ref<HTMLElement>) {
-  const Component = as || 'div';
-  const className = styleVariant || BASE;
+  const Component = as ?? 'div';
+  const className = styleVariant ?? BASE;
   return (
-    <Component className={props.className || className} ref={ref} {...props}>
+    <Component className={props.className ?? className} ref={ref} {...props}>
       {children}
     </Component>
   );

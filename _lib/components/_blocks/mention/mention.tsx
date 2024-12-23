@@ -8,7 +8,7 @@ export function Mention({ block }: { block: MentionRichTextItemResponse }) {
   console.log('mention', block);
   return (
     <View>
-      <Txt as="a" href={block.href || ''}>
+      <Txt as="a" href={block.href ?? ''}>
         {block.plain_text}
       </Txt>
     </View>

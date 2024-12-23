@@ -8,6 +8,6 @@ type ListProps<T extends ElementType> = {
 
 export function List<T extends ElementType>({ as, styleVariant, children }: ListProps<T>) {
   const className = styleVariant;
-  const Component = as || 'ul';
+  const Component = as ?? 'ul';
   return <Component className={className}>{children}</Component>;
 }

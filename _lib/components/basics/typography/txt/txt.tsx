@@ -35,11 +35,11 @@ export function Txt<T extends ElementType>({
   const COLOR = richText ? richText.annotations.color : color;
   const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR]];
 
-  let Component = as || 'span';
+  let Component = as ?? 'span';
   if (richText?.href) Component = 'a';
 
   let className = classNames.join(' ');
-  if (Component === 'a' || richText?.href) className = LINK;
+  if (Component === 'a' ?? richText?.href) className = LINK;
   if (styleVariant) className = styleVariant;
 
   switch (Component) {
@@ -59,7 +59,7 @@ export function Txt<T extends ElementType>({
       );
     case 'a':
       return (
-        <a className={className} href={richText?.href || props.href} target="_blank" {...props}>
+        <a className={className} href={richText?.href ?? props.href} target="_blank" {...props}>
           <Annotations
             richText={richText}
             bold={bold}
@@ -73,7 +73,7 @@ export function Txt<T extends ElementType>({
       );
     case 'Link':
       return (
-        <Link href={richText?.href || props.href} className={className} {...props}>
+        <Link href={richText?.href ?? props.href} className={className} {...props}>
           <Annotations
             richText={richText}
             bold={bold}

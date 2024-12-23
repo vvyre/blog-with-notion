@@ -4,7 +4,7 @@ export const useCategory: () => { path: string; isEngineering: boolean; isTil: b
   const path = usePathname();
   const isEngineering = path.startsWith('/engineering');
   const isTil = path.startsWith('/til');
-  const isPost = isEngineering || (isTil && path.length > 4);
+  const isPost = isEngineering ?? (isTil && path.length > 4);
 
   return { path, isEngineering, isTil, isPost };
 };

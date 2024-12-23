@@ -7,7 +7,7 @@ export function useScrollPosition(): number {
 
   const update = () => {
     const target = document.querySelector('body');
-    setScrollHeight(target?.scrollHeight || 0);
+    setScrollHeight(target?.scrollHeight ?? 0);
   };
 
   useEffect(() => {

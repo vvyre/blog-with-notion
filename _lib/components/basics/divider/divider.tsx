@@ -7,5 +7,5 @@ interface DividerProps extends ComponentPropsWithRef<'hr'> {
 }
 
 export function Divider({ styleVariant, ref, ...props }: DividerProps) {
-  return <hr className={styleVariant || BASE} ref={ref} {...props} />;
+  return <hr className={styleVariant ?? BASE} ref={ref} {...props} />;
 }

@@ -9,8 +9,8 @@ export const processedBlock = async (blocks: BlockObjectResponse[]) => {
   const PROCESSED = await pMap(
     blocks,
     async block => {
-      if (block.type === 'image') return (await getBlurredImg(block)) || block;
-      else if (block.type === 'bookmark') return (await getBookmarkMetadata(block)) || block;
+      if (block.type === 'image') return (await getBlurredImg(block)) ?? block;
+      else if (block.type === 'bookmark') return (await getBookmarkMetadata(block)) ?? block;
       else return block;
     },
     {

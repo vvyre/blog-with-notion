@@ -32,7 +32,7 @@ export function PostListLayout({
   }, [posts, category]);
 
   return (
-    <View as="ul" styleVariant={props?.className || POST_LIST_CENTERED} {...props}>
+    <View as="ul" styleVariant={props?.className ?? POST_LIST_CENTERED} {...props}>
       {postList?.posts && postList?.posts?.length > 0 ? (
         postList?.posts.map(post => <PostList category={category} key={post.id} post={post} />)
       ) : (

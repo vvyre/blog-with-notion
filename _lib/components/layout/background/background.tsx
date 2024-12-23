@@ -9,7 +9,7 @@ export function BackgroundLayout({ ...props }: ComponentPropsWithoutRef<'div'>) 
 
   return (
     <View
-      stylevariant={props.className || LAYOUT_BG}
+      stylevariant={props.className ?? LAYOUT_BG}
       style={{
         backgroundImage: `url('${img}') !important`,
       }}

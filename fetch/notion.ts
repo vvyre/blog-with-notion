@@ -66,7 +66,7 @@ const getChildrenBlocks = async (
   });
   results = [...blocks.results];
   while (blocks.has_more) {
-    parent_block_id = blocks.next_cursor || '';
+    parent_block_id = blocks.next_cursor ?? '';
     blocks = await notion.blocks.children.list({
       block_id: parent_block_id,
       page_size: 100,

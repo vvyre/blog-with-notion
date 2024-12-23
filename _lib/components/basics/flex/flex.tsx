@@ -26,8 +26,8 @@ export function Flex<T extends ElementType>({
 }: FlexProps<T>) {
   const className = `${width === 'fill' && BASE} ${DIRECTION_VARIANT[flexDirection]} ${
     JUSTIFY_VARIANT[justifyContents]
-  } ${ALIGN_VARIANT[alignItems]} ${WRAP_VARIANT[flexWrap]} ${styleVariant || ''}`;
-  const Component = as || 'div';
+  } ${ALIGN_VARIANT[alignItems]} ${WRAP_VARIANT[flexWrap]} ${styleVariant ?? ''}`;
+  const Component = as ?? 'div';
   return (
     <Component className={className} {...props}>
       {children}

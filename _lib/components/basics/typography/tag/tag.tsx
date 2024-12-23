@@ -6,6 +6,6 @@ interface TagProps {
   styleVariant?: string;
 }
 export function Tag({ children, styleVariant }: TagProps) {
-  const className = `${styleVariant || BASE}`;
+  const className = `${styleVariant ?? BASE}`;
   return <span className={className}>{children}</span>;
 }

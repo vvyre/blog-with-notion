@@ -13,8 +13,8 @@ export function Category() {
     //   <Spacing size="2rem" />
     //   {categories.map(c => {
     //     const isSelected =
-    //       c.route === path ||
-    //       (isEngineering && c.route.startsWith('/engineering')) ||
+    //       c.route === path ??
+    //       (isEngineering && c.route.startsWith('/engineering')) ??
     //       (isAsdf && c.route.startsWith('/asdf'));
     //     return (
     //       <Btn

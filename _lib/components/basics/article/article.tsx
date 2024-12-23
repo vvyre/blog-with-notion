@@ -6,6 +6,6 @@ interface ArticleProps {
   styleVariants?: string;
 }
 export function Article({ children, styleVariants }: ArticleProps) {
-  const className = `${styleVariants || BASE}`;
+  const className = `${styleVariants ?? BASE}`;
   return <article className={className}>{children}</article>;
 }

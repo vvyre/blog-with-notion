@@ -12,8 +12,8 @@ type BtnProps<T extends ElementType> = {
 } & ComponentPropsWithoutRef<T>;
 
 export function Btn<T extends ElementType>({ as, onClick, children, href, styleVariant, ...props }: BtnProps<T>) {
-  const className = styleVariant || BASE;
-  const Component = as || 'button';
+  const className = styleVariant ?? BASE;
+  const Component = as ?? 'button';
 
   switch (Component) {
     default:
@@ -24,7 +24,7 @@ export function Btn<T extends ElementType>({ as, onClick, children, href, styleV
       );
     case 'Link':
       return (
-        <Link className={className} href={href || '/'}>
+        <Link className={className} href={href ?? '/'}>
           {children}
         </Link>
       );

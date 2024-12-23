@@ -30,7 +30,7 @@ export function Heading<T extends ElementType>({
   styleVariant,
   ...props
 }: HeadingProps<T>) {
-  const Component = as || 'h1';
+  const Component = as ?? 'h1';
   const COLOR = richText ? richText.annotations.color : color;
   const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR]];
   let className = classNames.join(' ');
