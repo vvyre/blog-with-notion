@@ -1,5 +1,5 @@
 import { site_env } from '@/env';
-import logo from '#/img/logo.png';
+import logo from '#/img/logo.webp';
 
 const TITLE = 'Brewcold';
 const DESCRIPTION = 'Writings about life as a developer';
