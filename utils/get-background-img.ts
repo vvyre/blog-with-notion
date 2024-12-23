@@ -3,7 +3,7 @@ import { useRandomInt } from './use-random-int';
 
 export const useRandomBackgroundImg = (nums_of_files: number): string => {
   const path = usePathname();
-  const n = useRandomInt([0, nums_of_files - 1], [path]);
+  const n = useRandomInt([0, nums_of_files], [path]);
 
   return `https://raw.githubusercontent.com/brewcold/blog/refs/heads/main/_backgrounds/brewcold-bg-${n}.png`;
 };
