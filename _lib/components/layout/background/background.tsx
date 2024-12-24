@@ -1,11 +1,11 @@
 'use client';
 import { LAYOUT_BG } from '@/app/page.css';
 import { View } from '../../basics/view/view';
-import { useBackgroundTransition } from '@/utils/get-background-img';
+import { useBackground } from '@/_lib/react/use-background';
 import { ComponentPropsWithoutRef } from 'react';
 
 export function BackgroundLayout({ ...props }: ComponentPropsWithoutRef<'div'>) {
-  const src = useBackgroundTransition(26);
+  const src = useBackground(26);
 
   return (
     <View
