@@ -15,7 +15,7 @@ globalStyle('html', {
   padding: 0,
   lineHeight: '1.8',
   fontFamily,
-  fontFeatureSettings: "'case', 'ss02',  'cv01', 'cv09', 'ss05', 'ss07'",
+  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
   WebkitTextSizeAdjust: '100%',
@@ -34,7 +34,7 @@ globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
   MozTextSizeAdjust: '100%',
   margin: 0,
   padding: 0,
-  fontFeatureSettings: "'case', 'ss02',  'cv01', 'cv09', 'ss05', 'ss07'",
+  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   fontWeight: 400,
 });
 
@@ -49,7 +49,7 @@ globalStyle('body[data-theme] > main, body[data-theme] > nav, body[data-theme] s
 
 globalStyle('input, button, select, textarea', {
   fontFamily,
-  fontFeatureSettings: "'case', 'ss02',  'cv01', 'cv09', 'ss05', 'ss07', ",
+  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', ",
   margin: 0,
   font: 'inherit',
 });
@@ -69,7 +69,7 @@ globalStyle('textarea', {
 
 globalStyle('a', {
   fontFamily,
-  fontFeatureSettings: "'case', 'ss02', 'cv01', 'cv09', 'tnum', 'ss07'",
+  fontFeatureSettings: "'case', 'ss02', 'cv13', 'cv09', 'tnum', 'ss07'",
   fontSize: '100%',
   textDecoration: 'none',
   color: 'inherit',
@@ -81,7 +81,7 @@ globalStyle('a', {
 globalStyle('ul, ol', {
   margin: 0,
   padding: 0,
-  fontFeatureSettings: "'case', 'tnum', 'cv01',  'ss02', 'cv09', 'ss07', 'ss05'",
+  fontFeatureSettings: "'case', 'tnum', 'cv13',  'ss02', 'cv09', 'ss07', 'ss05'",
   listStyleType: 'none',
 });
 
