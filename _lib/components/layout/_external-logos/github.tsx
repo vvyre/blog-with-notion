@@ -11,7 +11,7 @@ export function GithubLink() {
   const MARK = theme === 'dark' ? MARK_BLACK : MARK_WHITE;
 
   return isPost ? (
-    <Btn as="a" href="https://github.com/brewcold" target="_blank" styleVariant={EXTERNAL_LINK}>
+    <Btn as="a" href="https://github.com/brewcold" target="_blank" className={EXTERNAL_LINK}>
       <Image className={MENU_GITHUB_IMG} alt="brewcold github" src={MARK} />
     </Btn>
   ) : null;

@@ -21,13 +21,13 @@ export function ArticleRecommend({ posts, targets, id }: { posts: PostListObject
     .slice(0, 3);
 
   return (
-    <View styleVariant={BASE}>
+    <View className={BASE}>
       <Flex flexDirection="column" justifyContents="center" alignItems="center">
         <Txt as="span" bold>
           비슷한 글
         </Txt>
         <Spacing size="1rem" />
-        <List styleVariant={UL}>
+        <List className={UL}>
           {recommended.map(p => {
             const title = getTitle(p);
             const slug = parsedSlug(p);
@@ -35,11 +35,11 @@ export function ArticleRecommend({ posts, targets, id }: { posts: PostListObject
 
             return (
               <List as="li" key={p.id}>
-                <Btn as="Link" href={slug} styleVariant={POST_LIST}>
-                  <Txt as="span" styleVariant={TITLE}>
+                <Btn as="Link" href={slug} className={POST_LIST}>
+                  <Txt as="span" className={TITLE}>
                     {title}
                   </Txt>
-                  <Txt as="span" styleVariant={DATE}>
+                  <Txt as="span" className={DATE}>
                     {date}
                   </Txt>
                 </Btn>

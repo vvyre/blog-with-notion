@@ -30,7 +30,7 @@ export function Giscus() {
   }, [theme]);
 
   return (
-    <View styleVariant={BASE}>
+    <View className={BASE}>
       <div ref={commentsEl} />
     </View>
   );

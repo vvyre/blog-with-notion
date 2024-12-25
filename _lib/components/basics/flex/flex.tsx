@@ -10,7 +10,7 @@ type FlexProps<T extends ElementType> = {
   alignItems?: keyof typeof ALIGN_VARIANT;
   flexWrap?: keyof typeof WRAP_VARIANT;
   children: ReactNode;
-  styleVariant?: string;
+  className?: string;
 } & ComponentPropsWithoutRef<T>;
 
 export function Flex<T extends ElementType>({
@@ -21,15 +21,15 @@ export function Flex<T extends ElementType>({
   alignItems = 'center',
   flexWrap = 'wrap',
   children,
-  styleVariant,
+  className,
   ...props
 }: FlexProps<T>) {
-  const className = `${width === 'fill' && BASE} ${DIRECTION_VARIANT[flexDirection]} ${
-    JUSTIFY_VARIANT[justifyContents]
-  } ${ALIGN_VARIANT[alignItems]} ${WRAP_VARIANT[flexWrap]} ${styleVariant ?? ''}`;
+  const cn = `${width === 'fill' && BASE} ${DIRECTION_VARIANT[flexDirection]} ${JUSTIFY_VARIANT[justifyContents]} ${
+    ALIGN_VARIANT[alignItems]
+  } ${WRAP_VARIANT[flexWrap]} ${className ?? ''}`;
   const Component = as ?? 'div';
   return (
-    <Component className={className} {...props}>
+    <Component className={cn} {...props}>
       {children}
     </Component>
   );

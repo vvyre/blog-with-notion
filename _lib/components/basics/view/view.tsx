@@ -3,15 +3,14 @@ import { BASE } from './view.css';
 
 type ViewProps<T extends ElementType> = {
   as?: T;
-  styleVariant?: string;
   children: ReactNode;
 } & ComponentPropsWithRef<T>;
 
-function V<T extends ElementType>({ as, styleVariant, children, ...props }: ViewProps<T>, ref: Ref<HTMLElement>) {
+function V<T extends ElementType>({ as, children, ...props }: ViewProps<T>, ref: Ref<HTMLElement>) {
   const Component = as ?? 'div';
-  const className = styleVariant ?? BASE;
+  const cn = props.className ?? BASE;
   return (
-    <Component className={props.className ?? className} ref={ref} {...props}>
+    <Component className={cn} ref={ref} {...props}>
       {children}
     </Component>
   );

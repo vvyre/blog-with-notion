@@ -4,16 +4,16 @@ import { View } from '../../basics/view/view';
 import { Txt } from '../../basics/typography/txt/txt';
 
 export function BackButton({
-  wrapperStyleVariant,
-  buttonStyleVariant,
+  wrapperclassName,
+  buttonclassName,
 }: {
-  wrapperStyleVariant?: string;
-  buttonStyleVariant?: string;
+  wrapperclassName?: string;
+  buttonclassName?: string;
 }) {
   const { path } = useCategory();
   return (
-    <View styleVariant={wrapperStyleVariant}>
-      <Txt as="Link" href={path} size="XL" styleVariant={buttonStyleVariant}>
+    <View className={wrapperclassName}>
+      <Txt as="Link" href={path} size="XL" className={buttonclassName}>
         {'←'}
       </Txt>
     </View>

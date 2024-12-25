@@ -3,11 +3,10 @@ import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 type ListProps<T extends ElementType> = {
   as?: T;
   children: ReactNode;
-  styleVariant?: string;
 } & ComponentPropsWithoutRef<T>;
 
-export function List<T extends ElementType>({ as, styleVariant, children }: ListProps<T>) {
-  const className = styleVariant;
+export function List<T extends ElementType>({ as, children, ...props }: ListProps<T>) {
+  const className = props.className;
   const Component = as ?? 'ul';
   return <Component className={className}>{children}</Component>;
 }

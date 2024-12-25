@@ -16,7 +16,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const [zoomed, setZoomed] = useState<boolean>(false);
 
   return (
-    <View styleVariant={zoomed ? IMG_CONTAINER_ZOOMED : IMG_CONTAINER}>
+    <View className={zoomed ? IMG_CONTAINER_ZOOMED : IMG_CONTAINER}>
       <Image
         unoptimized
         className={IMG}
@@ -31,7 +31,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
         height={1200}
       />
       {block.image.caption.length > 0 && (
-        <Txt as="p" styleVariant={zoomed ? CAPTION_TXT_ZOOMED : CAPTION_TXT}>
+        <Txt as="p" className={zoomed ? CAPTION_TXT_ZOOMED : CAPTION_TXT}>
           {getPlainText(block.image.caption)}
         </Txt>
       )}

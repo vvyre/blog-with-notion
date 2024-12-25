@@ -11,8 +11,8 @@ export default async function TIL() {
   const postList = await getCachedPostList(notion_env.study_database_id);
 
   return (
-    <View styleVariant={LAYOUT_BG_TIL}>
-      <View as="section" styleVariant={LAYOUT_INNER}>
+    <View className={LAYOUT_BG_TIL}>
+      <View as="section" className={LAYOUT_INNER}>
         <Txt bold as="pre">
           STUDY ARCHIVE
         </Txt>

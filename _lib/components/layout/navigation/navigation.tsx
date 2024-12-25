@@ -30,16 +30,16 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   }, [isPost]);
 
   return (
-    <View as="nav" styleVariant={`${BACKGROUND[styleKey]} ${BASE}`}>
-      <View as="div" styleVariant={NAV}>
+    <View as="nav" className={`${BACKGROUND[styleKey]} ${BASE}`}>
+      <View as="div" className={NAV}>
         <Btn
           as={isPost ? 'span' : 'div'}
           onClick={() => handleProfile()}
-          styleVariant={`${POST_TITLE} ${TEXT_COLOR[styleKey]}`}>
+          className={`${POST_TITLE} ${TEXT_COLOR[styleKey]}`}>
           {RightFlexText}
         </Btn>
-        <View styleVariant={POST_TITLE_WRAPPER}>
-          <Btn as={'Link'} href={isTil ? '/' : '/til'} styleVariant={LOGO}>
+        <View className={POST_TITLE_WRAPPER}>
+          <Btn as={'Link'} href={isTil ? '/' : '/til'} className={LOGO}>
             {BLOG_TRANSFER}
           </Btn>
           <Spacing size="0.3rem" dir="hori" />
@@ -50,7 +50,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
       </View>
 
       {displayProfile && (
-        <View styleVariant={EXPANDED}>
+        <View className={EXPANDED}>
           <Spacing size="1rem" />
           <About blocks={profile} />
         </View>

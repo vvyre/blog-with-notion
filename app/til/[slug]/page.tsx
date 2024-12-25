@@ -56,10 +56,10 @@ export default async function Post({ params }: PostPageProps) {
   return (
     <View as="main">
       <Article>
-        <View styleVariant={LAYOUT_CENTERED}>
+        <View className={LAYOUT_CENTERED}>
           <PostTitle {...meta} />
           <RenderBlocks blocks={blocks} />
-          <View styleVariant={BLOCK_GRID_BASE}>
+          <View className={BLOCK_GRID_BASE}>
             <Spacing size="3rem" dir="vert" />
             <Flex justifyContents="spaceBetween">
               <ShareBtn />

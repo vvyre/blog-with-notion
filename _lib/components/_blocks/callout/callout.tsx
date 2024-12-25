@@ -6,9 +6,9 @@ import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoi
 
 export function Callout({ block }: NotionComponentProps<'callout'>) {
   return (
-    <View styleVariant={CALLOUT}>
+    <View className={CALLOUT}>
       <Txt as="p">
-        <Txt as="span" styleVariant={CALLOUT_EMOJI}>
+        <Txt as="span" className={CALLOUT_EMOJI}>
           {'emoji' in block.callout.icon! && block.callout.icon.emoji}
         </Txt>
         {block.callout.rich_text.map((txt: RichTextItemResponse, idx) => (

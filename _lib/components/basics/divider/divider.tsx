@@ -3,9 +3,9 @@ import { ComponentPropsWithRef } from 'react';
 import { BASE } from './divider.css';
 
 interface DividerProps extends ComponentPropsWithRef<'hr'> {
-  styleVariant?: string;
+  className?: string;
 }
 
-export function Divider({ styleVariant, ref, ...props }: DividerProps) {
-  return <hr className={styleVariant ?? BASE} ref={ref} {...props} />;
+export function Divider({ className, ref, ...props }: DividerProps) {
+  return <hr className={className ?? BASE} ref={ref} {...props} />;
 }

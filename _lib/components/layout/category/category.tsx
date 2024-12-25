@@ -9,7 +9,7 @@ import { useCategory } from '@/_lib/react/use-category';
 
 export function Category() {
   return (
-    // <View as="nav" styleVariant={LAYOUT_CENTERED}>
+    // <View as="nav" className={LAYOUT_CENTERED}>
     //   <Spacing size="2rem" />
     //   {categories.map(c => {
     //     const isSelected =
@@ -21,7 +21,7 @@ export function Category() {
     //         as="Link"
     //         key={c.name}
     //         href={c.route}
-    //         styleVariant={isSelected ? CATEGORY['selected'] : CATEGORY['options']}>
+    //         className={isSelected ? CATEGORY['selected'] : CATEGORY['options']}>
     //         {c.name}
     //       </Btn>
     //     );

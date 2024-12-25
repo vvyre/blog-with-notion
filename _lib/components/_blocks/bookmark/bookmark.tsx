@@ -11,14 +11,14 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
   const og = block.bookmarkInfo.open_graph;
   const icon = block.bookmarkInfo.favicon;
   return (
-    <View as="a" href={block.bookmark.url} target="_blank" styleVariant={BASE}>
-      <Flex as="div" styleVariant={INNER} flexDirection="column" justifyContents="center" alignItems="flexStart">
-        <Heading color="gray" as="h3" size="L" styleVariant={BOOKMARK_TITLE}>
+    <View as="a" href={block.bookmark.url} target="_blank" className={BASE}>
+      <Flex as="div" className={INNER} flexDirection="column" justifyContents="center" alignItems="flexStart">
+        <Heading color="gray" as="h3" size="L" className={BOOKMARK_TITLE}>
           {block.bookmarkInfo.title}
         </Heading>
 
         <Spacing size="0.4rem" />
-        <View styleVariant={DESC_URL}>
+        <View className={DESC_URL}>
           {icon && (
             <div
               style={{
@@ -31,20 +31,20 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
               }}
             />
           )}
-          <Txt as="p" color="gray" styleVariant={BOOKMARK_URL}>
+          <Txt as="p" color="gray" className={BOOKMARK_URL}>
             {block.bookmark.url}
           </Txt>
         </View>
 
         <Spacing size="0.4rem" />
         {og?.description && (
-          <Txt color="gray" styleVariant={BOOKMARK_TEXT}>
+          <Txt color="gray" className={BOOKMARK_TEXT}>
             {og.description}
           </Txt>
         )}
 
         {block.bookmark.caption.map((txt: RichTextItemResponse, idx) => (
-          <Txt key={idx} as="p" richText={txt} styleVariant={BOOKMARK_TEXT} />
+          <Txt key={idx} as="p" richText={txt} className={BOOKMARK_TEXT} />
         ))}
       </Flex>
     </View>

@@ -5,8 +5,8 @@ import { FALLBACK, FALLBACK_BASE } from './giscus.css';
 
 export function GiscusFallback() {
   return (
-    <View styleVariant={FALLBACK_BASE}>
-      <Txt as="p" styleVariant={FALLBACK}>
+    <View className={FALLBACK_BASE}>
+      <Txt as="p" className={FALLBACK}>
         댓글을 달 수 없는 포스트입니다
       </Txt>
       <Spacing size="5rem" />

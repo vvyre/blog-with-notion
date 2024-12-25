@@ -16,7 +16,7 @@ type TxtProps<T extends ElementType> = {
   color?: keyof typeof vars.notion;
   richText?: RichTextItemResponse;
   size?: keyof typeof TEXT_STYLE;
-  styleVariant?: string;
+  className?: string;
 } & ComponentPropsWithoutRef<T>;
 
 export function Txt<T extends ElementType>({
@@ -29,23 +29,22 @@ export function Txt<T extends ElementType>({
   color = 'default',
   richText,
   size = 'M',
-  styleVariant,
   ...props
 }: TxtProps<T>) {
   const COLOR = richText ? richText.annotations.color : color;
   const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR]];
+  let cn = classNames.join(' ');
 
   let Component = as ?? 'span';
   if (richText?.href) Component = 'a';
 
-  let className = classNames.join(' ');
-  if (Component === 'a' ?? richText?.href) className = LINK;
-  if (styleVariant) className = styleVariant;
+  if (Component === 'a' || richText?.href) cn = LINK;
+  if (cn) cn = cn;
 
   switch (Component) {
     default:
       return (
-        <Component className={className} {...props}>
+        <Component className={props.className} {...props}>
           <Annotations
             richText={richText}
             bold={bold}
@@ -59,7 +58,7 @@ export function Txt<T extends ElementType>({
       );
     case 'a':
       return (
-        <a className={className} href={richText?.href ?? props.href} target="_blank" {...props}>
+        <a className={props.className} href={richText?.href ?? props.href} target="_blank" {...props}>
           <Annotations
             richText={richText}
             bold={bold}
@@ -73,7 +72,7 @@ export function Txt<T extends ElementType>({
       );
     case 'Link':
       return (
-        <Link href={richText?.href ?? props.href} className={className} {...props}>
+        <Link href={richText?.href ?? props.href} className={props.className} {...props}>
           <Annotations
             richText={richText}
             bold={bold}

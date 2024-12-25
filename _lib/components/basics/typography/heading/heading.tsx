@@ -15,7 +15,7 @@ type HeadingProps<T extends ElementType> = {
   size?: keyof typeof TEXT_STYLE;
   color?: keyof typeof vars.notion;
   richText?: RichTextItemResponse;
-  styleVariant?: string;
+  className?: string;
 } & ComponentPropsWithoutRef<T>;
 export function Heading<T extends ElementType>({
   as,
@@ -27,17 +27,17 @@ export function Heading<T extends ElementType>({
   size = 'XL',
   color = 'default',
   richText,
-  styleVariant,
+  className,
   ...props
 }: HeadingProps<T>) {
   const Component = as ?? 'h1';
   const COLOR = richText ? richText.annotations.color : color;
   const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR]];
-  let className = classNames.join(' ');
-  if (styleVariant) className = styleVariant;
+  let cn = classNames.join(' ');
+  if (className) className = className;
 
   return (
-    <Component className={className}>
+    <Component className={cn}>
       <Annotations richText={richText} bold={bold} code={code} italic={italic} strike={strike} underline={underline}>
         {props.children}
       </Annotations>

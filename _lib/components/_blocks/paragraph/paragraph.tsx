@@ -13,7 +13,7 @@ export function Paragraph({ block }: NotionComponentProps<'paragraph'>) {
   }
 
   return (
-    <View as="p" styleVariant={BASE}>
+    <View as="p" className={BASE}>
       {block.paragraph.rich_text.map((txt: RichTextItemResponse, idx: number) => (
         <Txt key={idx} as="span" richText={txt} />
       ))}

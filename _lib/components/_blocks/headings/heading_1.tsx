@@ -13,8 +13,8 @@ export function Heading_1({ block }: NotionComponentProps<'heading_1'>) {
     <>
       <a id={cleanUrl(block.heading_1.rich_text[0].plain_text)} />
       <Spacing size="2.5rem" />
-      <View styleVariant={BASE}>
-        <Heading as="h2" styleVariant={HEADING_1}>
+      <View className={BASE}>
+        <Heading as="h2" className={HEADING_1}>
           {TITLE}
           <ShareBtn subtitle={block.heading_1.rich_text[0].plain_text} />
         </Heading>

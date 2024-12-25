@@ -22,20 +22,20 @@ export function PostTitle({ ...meta }: PageObject) {
   }, [meta.id]);
 
   return (
-    <View styleVariant={BASE}>
-      <View styleVariant={INFO_BOX}>
+    <View className={BASE}>
+      <View className={INFO_BOX}>
         <Heading as="h1">
-          <Txt as="span" styleVariant={TITLE}>
+          <Txt as="span" className={TITLE}>
             {title}
           </Txt>
         </Heading>
         <Spacing size="1rem" />
-        <Txt as="div" styleVariant={INFO}>
-          <Txt as="span" styleVariant={RELEASED_DATE}>
+        <Txt as="div" className={INFO}>
+          <Txt as="span" className={RELEASED_DATE}>
             {rel_date}
           </Txt>
           <Spacing size="0" />
-          <Txt as="span" styleVariant={SUMMARY}>
+          <Txt as="span" className={SUMMARY}>
             {summary}
           </Txt>
         </Txt>

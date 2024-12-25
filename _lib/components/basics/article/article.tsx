@@ -1,11 +1,10 @@
-import { ReactNode } from 'react';
-import { BASE, LAYOUT_CENTERED } from './article.css';
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { BASE } from './article.css';
 
-interface ArticleProps {
+interface ArticleProps extends ComponentPropsWithoutRef<'article'> {
   children: ReactNode;
-  styleVariants?: string;
 }
-export function Article({ children, styleVariants }: ArticleProps) {
-  const className = `${styleVariants ?? BASE}`;
-  return <article className={className}>{children}</article>;
+export function Article({ children, ...props }: ArticleProps) {
+  const cn = `${props.className ?? BASE}`;
+  return <article className={cn}>{children}</article>;
 }

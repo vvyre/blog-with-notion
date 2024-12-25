@@ -11,9 +11,9 @@ export function Code({ block }: NotionComponentProps<'code'>) {
     language: block.code.language,
   }).value;
   return (
-    <View as="div" styleVariant={CODE_BLOCK}>
+    <View as="div" className={CODE_BLOCK}>
       <Flex justifyContents="spaceBetween" alignItems="center">
-        <Txt styleVariant={CODE_LANGUAGE}>{getCodeLanguage(block.code.language)}</Txt>
+        <Txt className={CODE_LANGUAGE}>{getCodeLanguage(block.code.language)}</Txt>
       </Flex>
       <pre className={CODE_PRE} dangerouslySetInnerHTML={{ __html: codeHtml }} />
     </View>

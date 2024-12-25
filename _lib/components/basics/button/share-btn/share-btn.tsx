@@ -24,7 +24,7 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
 
   return subtitle ? (
     <Btn className={BASE} onClick={handleClick}>
-      <Txt as="p" styleVariant={`${PARAGRAPH_SHARE} ${isCopied && TEXT_COLOR_GREEN}`}>
+      <Txt as="p" className={`${PARAGRAPH_SHARE} ${isCopied && TEXT_COLOR_GREEN}`}>
         {isCopied ? '!' : '#'}
       </Txt>
     </Btn>

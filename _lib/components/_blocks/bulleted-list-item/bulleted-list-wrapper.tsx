@@ -5,7 +5,7 @@ import { BASE } from './bulleted-list-item.css';
 
 export function BulletedListWrapper({ block }: NotionComponentProps<'grouped_bulleted_list_item'>) {
   return (
-    <List as="ul" styleVariant={BASE}>
+    <List as="ul" className={BASE}>
       {block.grouped_bulleted_list_item.children.map((item, idx: number) => (
         <BulletedListItem key={idx} block={item} />
       ))}

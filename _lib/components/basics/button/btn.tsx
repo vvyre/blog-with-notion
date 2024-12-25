@@ -7,24 +7,23 @@ type BtnProps<T extends ElementType> = {
   as?: T | 'Link';
   onClick?: (e: MouseEvent) => void;
   children: ReactNode;
-  styleVariant?: string;
   href?: string | Url;
 } & ComponentPropsWithoutRef<T>;
 
-export function Btn<T extends ElementType>({ as, onClick, children, href, styleVariant, ...props }: BtnProps<T>) {
-  const className = styleVariant ?? BASE;
+export function Btn<T extends ElementType>({ as, onClick, children, href, ...props }: BtnProps<T>) {
+  const cn = props.className ?? BASE;
   const Component = as ?? 'button';
 
   switch (Component) {
     default:
       return (
-        <Component className={className} href={href} onClick={onClick} {...props}>
+        <Component className={cn} href={href} onClick={onClick} {...props}>
           {children}
         </Component>
       );
     case 'Link':
       return (
-        <Link className={className} href={href ?? '/'}>
+        <Link className={cn} href={href ?? '/'}>
           {children}
         </Link>
       );

@@ -19,7 +19,7 @@ export function NavShareBtn() {
   };
 
   return (
-    <Btn styleVariant={NAV_BASE} onClick={handleClick}>
+    <Btn className={NAV_BASE} onClick={handleClick}>
       {!isCopied ? (
         <Image src={LinkIcon} alt={`copy link for ${fullUrl}`} width="20" height="20" />
       ) : (

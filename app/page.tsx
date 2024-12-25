@@ -12,7 +12,7 @@ export default async function PostListPage() {
   const postList = await getCachedPostList(notion_env.database_id);
   return (
     <BackgroundLayout>
-      <View as="section" styleVariant={LAYOUT_INNER}>
+      <View as="section" className={LAYOUT_INNER}>
         <Flex flexDirection="column" justifyContents="center" alignItems="center">
           <PostListLayout category="engineering" posts={postList} />
         </Flex>

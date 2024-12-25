@@ -17,12 +17,12 @@ export function PostList({ post, category }: PostListProps) {
   const DATE = getDate(post);
 
   return (
-    <List as="li" styleVariant={POST_LIST_BASE}>
-      <Txt as="Link" href={URI} styleVariant={POST_LINK}>
-        <Txt as="span" styleVariant={POST_TITLE}>
+    <List as="li" className={POST_LIST_BASE}>
+      <Txt as="Link" href={URI} className={POST_LINK}>
+        <Txt as="span" className={POST_TITLE}>
           {TITLE}
         </Txt>
-        <Txt as="span" styleVariant={RELEASED_DATE}>
+        <Txt as="span" className={RELEASED_DATE}>
           {DATE}
         </Txt>
       </Txt>
