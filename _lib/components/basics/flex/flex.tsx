@@ -1,10 +1,10 @@
 import React from 'react';
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
-import { ALIGN_VARIANT, BASE, DIRECTION_VARIANT, JUSTIFY_VARIANT, WRAP_VARIANT } from './flex.css';
+import { ALIGN_VARIANT, DIRECTION_VARIANT, JUSTIFY_VARIANT, WIDTH_VARIANT, WRAP_VARIANT } from './flex.css';
 
 type FlexProps<T extends ElementType> = {
   as?: T;
-  width?: 'fill' | 'fit';
+  width?: keyof typeof WIDTH_VARIANT;
   flexDirection?: keyof typeof DIRECTION_VARIANT;
   justifyContent: keyof typeof JUSTIFY_VARIANT;
   alignItems?: keyof typeof ALIGN_VARIANT;
@@ -15,7 +15,7 @@ type FlexProps<T extends ElementType> = {
 
 export function Flex<T extends ElementType>({
   as,
-  width = 'fit',
+  width = 'fill',
   flexDirection = 'row',
   justifyContent,
   alignItems = 'center',
@@ -24,7 +24,7 @@ export function Flex<T extends ElementType>({
   className,
   ...props
 }: FlexProps<T>) {
-  const cn = `${width === 'fit' && BASE} ${DIRECTION_VARIANT[flexDirection]} ${JUSTIFY_VARIANT[justifyContent]} ${
+  const cn = `${WIDTH_VARIANT[width]} ${DIRECTION_VARIANT[flexDirection]} ${JUSTIFY_VARIANT[justifyContent]} ${
     ALIGN_VARIANT[alignItems]
   } ${WRAP_VARIANT[flexWrap]} ${className ?? ''}`;
   const Component = as ?? 'div';

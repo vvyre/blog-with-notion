@@ -1,6 +1,12 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-export const BASE = style({
-  width: 'fit-content',
+
+export const WIDTH_VARIANT = styleVariants({
+  fit: {
+    width: 'fit-content',
+  },
+  fill: {
+    width: '100%',
+  },
 });
 export const DIRECTION_VARIANT = styleVariants({
   row: { display: 'flex', flexDirection: 'row' },
