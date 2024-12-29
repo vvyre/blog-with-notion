@@ -11,10 +11,10 @@ export const LOGO = style([
     color: vars.color.default,
     selectors: {
       '&:hover': {
-        backgroundColor: vars.color.btn_bg,
+        background: 'transparent',
       },
       '&:active': {
-        backgroundColor: vars.color.btn_bg,
+        background: 'transparent',
       },
     },
   },

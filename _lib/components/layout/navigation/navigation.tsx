@@ -45,7 +45,9 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
           <Spacing size="0.3rem" dir="hori" />
           <GithubLink />
           <Spacing size="0.3rem" dir="hori" />
-          <Btn onClick={() => toggle()}>{theme === 'light' ? '🌚' : '🌞'}</Btn>
+          <Btn onClick={() => toggle()} className={LOGO}>
+            {theme === 'light' ? '🌚' : '🌞'}
+          </Btn>
         </View>
       </View>
 
