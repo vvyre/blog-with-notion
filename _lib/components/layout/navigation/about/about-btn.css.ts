@@ -9,6 +9,8 @@ export const LOGO = style([
     textAlign: 'center',
     borderRadius: '0.3rem',
     color: vars.color.default,
+    background: 'transparent',
+    border: 'none',
     selectors: {
       '&:hover': {
         background: 'transparent',
