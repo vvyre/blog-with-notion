@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export function PostListFallback() {
   return (
-    <Flex width="fill" justifyContents="center" alignItems="center">
+    <Flex width="fill" justifyContent="center" alignItems="center">
       <Image src={reloadingFallback} alt="loading" />
     </Flex>
   );

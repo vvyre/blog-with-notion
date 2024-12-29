@@ -16,7 +16,7 @@ export default async function TIL() {
         <Txt bold as="pre">
           STUDY ARCHIVE
         </Txt>
-        <Flex justifyContents="center" alignItems="center">
+        <Flex justifyContent="center" alignItems="center">
           <PostListLayout category="til" posts={postList} className={POST_LIST_TIL_CENTERED} />
         </Flex>
       </View>

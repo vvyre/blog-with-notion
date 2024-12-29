@@ -12,7 +12,7 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
   const icon = block.bookmarkInfo.favicon;
   return (
     <View as="a" href={block.bookmark.url} target="_blank" className={BASE}>
-      <Flex as="div" className={INNER} flexDirection="column" justifyContents="center" alignItems="flexStart">
+      <Flex as="div" className={INNER} flexDirection="column" justifyContent="center" alignItems="flexStart">
         <Heading color="gray" as="h3" size="L" className={BOOKMARK_TITLE}>
           {block.bookmarkInfo.title}
         </Heading>

@@ -61,7 +61,7 @@ export default async function Post({ params }: PostPageProps) {
           <RenderBlocks blocks={blocks} />
           <View className={BLOCK_GRID_BASE}>
             <Spacing size="3rem" dir="vert" />
-            <Flex justifyContents="spaceBetween">
+            <Flex justifyContent="spaceBetween">
               <ShareBtn />
               <OtherArticlesBtn />
             </Flex>

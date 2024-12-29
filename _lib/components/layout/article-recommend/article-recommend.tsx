@@ -22,7 +22,7 @@ export function ArticleRecommend({ posts, targets, id }: { posts: PostListObject
 
   return (
     <View className={BASE}>
-      <Flex flexDirection="column" justifyContents="center" alignItems="center">
+      <Flex flexDirection="column" justifyContent="center" alignItems="center">
         <Txt as="span" bold>
           비슷한 글
         </Txt>

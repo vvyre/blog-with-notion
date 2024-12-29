@@ -13,7 +13,7 @@ export default async function PostListPage() {
   return (
     <BackgroundLayout>
       <View as="section" className={LAYOUT_INNER}>
-        <Flex flexDirection="column" justifyContents="center" alignItems="center">
+        <Flex flexDirection="column" justifyContent="center" alignItems="center">
           <PostListLayout category="engineering" posts={postList} />
         </Flex>
       </View>

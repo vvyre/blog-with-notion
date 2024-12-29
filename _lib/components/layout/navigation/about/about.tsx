@@ -8,7 +8,7 @@ import { ABOUT } from './about.css';
 
 export function About({ blocks }: { blocks: EntireNotionBlockResponse[] }) {
   return (
-    <Flex width="fill" flexDirection="column" justifyContents="center" alignItems="center" className={ABOUT}>
+    <Flex width="fill" flexDirection="column" justifyContent="center" alignItems="center" className={ABOUT}>
       <View className={LAYOUT_CENTERED}>
         <Post blocks={blocks} />
       </View>
