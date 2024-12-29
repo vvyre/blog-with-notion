@@ -7,10 +7,6 @@ type THEME = 'light' | 'dark';
 export const useSystemTheme = (): [THEME, () => void] => {
   const [theme, setTheme] = useState<THEME>('light');
 
-  const setLight = () => setTheme('light');
-
-  const setDark = () => setTheme('dark');
-
   const setLightWithStorage = () => {
     setTheme('light');
     localStorage.setItem('bc_blog_theme', 'light');
@@ -34,7 +30,7 @@ export const useSystemTheme = (): [THEME, () => void] => {
       const deviceThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
       // 시스템 테마 변경이 있다면 시스템 테마 변경을 따릅니다
-      const handleThemeChange = (e: MediaQueryListEvent) => (e.matches ? setDark() : setLight());
+      const handleThemeChange = (e: MediaQueryListEvent) => (e.matches ? setDarkWithStorage() : setLightWithStorage());
       deviceThemeMediaQuery.addEventListener('change', handleThemeChange);
 
       return () => deviceThemeMediaQuery.removeEventListener('change', handleThemeChange);
