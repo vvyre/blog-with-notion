@@ -32,19 +32,18 @@ export function Txt<T extends ElementType>({
   ...props
 }: TxtProps<T>) {
   const COLOR = richText ? richText.annotations.color : color;
-  const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR]];
+  const classNames = [TEXT_STYLE[size], TEXT_COLOR[COLOR], props.className];
   let cn = classNames.join(' ');
 
   let Component = as ?? 'span';
-  if (richText?.href) Component = 'a';
 
+  if (richText?.href) Component = 'a';
   if (Component === 'a' || richText?.href) cn = LINK;
-  if (cn) cn = cn;
 
   switch (Component) {
     default:
       return (
-        <Component className={props.className} {...props}>
+        <Component className={cn} {...props}>
           <Annotations
             richText={richText}
             bold={bold}
@@ -58,7 +57,7 @@ export function Txt<T extends ElementType>({
       );
     case 'a':
       return (
-        <a className={props.className} href={richText?.href ?? props.href} target="_blank" {...props}>
+        <a className={cn} href={richText?.href ?? props.href} target={props.target ?? '_blank'} {...props}>
           <Annotations
             richText={richText}
             bold={bold}
@@ -72,7 +71,7 @@ export function Txt<T extends ElementType>({
       );
     case 'Link':
       return (
-        <Link href={richText?.href ?? props.href} className={props.className} {...props}>
+        <Link href={richText?.href ?? props.href} className={cn} {...props}>
           <Annotations
             richText={richText}
             bold={bold}

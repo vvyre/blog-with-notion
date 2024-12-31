@@ -69,7 +69,7 @@ export const UNDERLINE = style({
 
 export const LINK = style({
   textDecoration: 'underline',
-  color: vars.color.gray,
+  color: `${vars.color.gray}`,
   textUnderlineOffset: '0.25rem',
   textDecorationThickness: '1px',
   transition: 'color 0.2s ease',
