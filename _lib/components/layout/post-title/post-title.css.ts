@@ -13,7 +13,8 @@ export const BASE = style([
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     height: 'auto',
-    minHeight: '14rem',
+    minHeight: '15rem',
+    paddingBottom: '3rem',
   },
 ]);
 
