@@ -27,7 +27,7 @@ globalStyle('body', {
   backgroundColor: vars.color.b3,
 });
 
-globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
+globalStyle('body, main, article, p, h1, h2, h3, h4, h5, h6', {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
   WebkitTextSizeAdjust: '100%',
@@ -93,6 +93,7 @@ globalStyle('code, pre, pre span', {
   fontSize: '0.835rem',
   lineHeight: '1.5',
   fontFamily: fontFamilyCode,
+  fontFeatureSettings: 'normal',
   MozTabSize: 2,
   tabSize: 2,
 });
