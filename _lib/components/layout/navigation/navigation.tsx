@@ -22,7 +22,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   const { isTil, isPost } = useCategory();
 
   const styleKey = isPost ? 'post' : 'main';
-  const RightFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
+  const LeftFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
   const BLOG_TRANSFER = isTil ? 'BLOG' : 'TIL';
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
           as={isPost ? 'span' : 'div'}
           onClick={() => handleProfile()}
           className={`${POST_TITLE} ${TEXT_COLOR[styleKey]}`}>
-          {RightFlexText}
+          {LeftFlexText}
         </Btn>
         <View className={POST_TITLE_WRAPPER}>
           <Btn as={'Link'} href={isTil ? '/' : '/til'} className={LOGO}>
