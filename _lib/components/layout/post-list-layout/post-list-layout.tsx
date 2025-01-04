@@ -4,17 +4,7 @@ import { View } from '../../basics/view/view';
 import { POST_LIST_CENTERED } from './post-list-layout.css';
 import { PostListObject } from '@/_lib/types/notion-response';
 import { PostListFallback } from '../post-list/post-list-fallback';
-import {
-  Component,
-  ComponentProps,
-  ComponentPropsWithoutRef,
-  ComponentPropsWithRef,
-  ComponentType,
-  ElementType,
-  ReactNode,
-  useContext,
-  useLayoutEffect,
-} from 'react';
+import { ComponentPropsWithoutRef, useContext } from 'react';
 import { PostListContext } from '@/_lib/context/post-list-provider';
 import { useIsomorphicLayoutEffect } from '@syyu/util/react';
 

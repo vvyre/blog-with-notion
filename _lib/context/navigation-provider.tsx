@@ -17,7 +17,7 @@ export const NavigationContext = createContext<NavigationContextType>({
 });
 
 export function NavigationProvider({ children }: { children: ReactNode }) {
-  const { path, isPost, isEngineering, isTil } = useCategory();
+  const { path, isPost } = useCategory();
 
   const [displayProfile, _, __, toggle] = useBooleanState(false);
   const handleProfile = () => {

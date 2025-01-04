@@ -15,9 +15,6 @@ import { Flex } from '@/_lib/components/basics/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles-btn/other-articles-btn';
 import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
-import { Giscus } from '@/_lib/components/layout/embed/giscus/giscus';
-import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend';
-import { Divider } from '@/_lib/components/basics/divider/divider';
 
 export interface PostPageProps {
   params: Promise<{

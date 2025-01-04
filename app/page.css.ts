@@ -23,12 +23,7 @@ export const LAYOUT_BG = style([
   },
 ]);
 
-export const LAYOUT_BG_TIL = style([
-  LAYOUT,
-  {
-    backgroundColor: vars.notion.purple_background,
-  },
-]);
+export const LAYOUT_BG_STUDY = style([LAYOUT]);
 
 export const LAYOUT_INNER = style([
   LAYOUT,

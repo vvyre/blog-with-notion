@@ -22,7 +22,7 @@ export const POST_LIST_CENTERED = style([
   },
 ]);
 
-export const POST_LIST_TIL_CENTERED = style([
+export const POST_LIST_STUDY_CENTERED = style([
   {
     background: 'transparent',
     lineHeight: 1.65,
@@ -43,7 +43,7 @@ export const POST_LIST_TIL_CENTERED = style([
   },
 ]);
 
-export const POST_LIST_TIL = style([
+export const POST_LIST_STUDY = style([
   {
     background: 'transparent',
     lineHeight: 1.65,

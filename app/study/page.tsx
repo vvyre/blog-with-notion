@@ -3,23 +3,23 @@ import { View } from '@/_lib/components/basics/view/view';
 import { PostListLayout } from '@/_lib/components/layout/post-list-layout/post-list-layout';
 import { notion_env } from '@/env';
 import { Flex } from '@/_lib/components/basics/flex/flex';
-import { LAYOUT_BG_TIL, LAYOUT_INNER } from '../page.css';
-import { POST_LIST_TIL_CENTERED } from '@/_lib/components/layout/post-list-layout/post-list-layout.css';
+import { LAYOUT_BG_STUDY, LAYOUT_INNER } from '../page.css';
+import { POST_LIST_STUDY_CENTERED } from '@/_lib/components/layout/post-list-layout/post-list-layout.css';
 import { Txt } from '@/_lib/components/basics/typography/txt/txt';
+import { RandomColorBackground } from '@/_lib/components/layout/background/random-color-background';
 
 export default async function TIL() {
   const postList = await getCachedPostList(notion_env.study_database_id);
-
   return (
-    <View className={LAYOUT_BG_TIL}>
+    <RandomColorBackground className={LAYOUT_BG_STUDY}>
       <View as="section" className={LAYOUT_INNER}>
-        <Txt bold as="pre">
+        <Txt bold as="pre" style={{ color: 'white' }}>
           STUDY ARCHIVE
         </Txt>
         <Flex justifyContent="center" alignItems="center">
-          <PostListLayout category="til" posts={postList} className={POST_LIST_TIL_CENTERED} />
+          <PostListLayout category="study" posts={postList} className={POST_LIST_STUDY_CENTERED} />
         </Flex>
       </View>
-    </View>
+    </RandomColorBackground>
   );
 }

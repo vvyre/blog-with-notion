@@ -19,11 +19,11 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
   const { handleProfile, displayProfile } = useContext(NavigationContext);
   const { theme, toggle } = useContext(ThemeContext);
-  const { isTil, isPost } = useCategory();
+  const { isStudy, isPost } = useCategory();
 
   const styleKey = isPost ? 'post' : 'main';
   const RightFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
-  const BLOG_TRANSFER = isTil ? 'BLOG' : 'TIL';
+  const BLOG_TRANSFER = isStudy ? 'BLOG' : 'STUDY ARCHIVE';
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null);
@@ -39,7 +39,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
           {RightFlexText}
         </Btn>
         <View className={POST_TITLE_WRAPPER}>
-          <Btn as={'Link'} href={isTil ? '/' : '/til'} className={LOGO}>
+          <Btn as={'Link'} href={isStudy ? '/' : '/study'} className={LOGO}>
             {BLOG_TRANSFER}
           </Btn>
           <Spacing size="0.3rem" dir="hori" />
