@@ -1,6 +1,6 @@
 'use client';
 import { Btn } from '../../basics/button/btn';
-import { BACKGROUND, BASE, EXPANDED, NAV, POST_TITLE, POST_TITLE_WRAPPER, TEXT_COLOR } from './navigation.css';
+import { BACKGROUND, BASE, EXPANDED, HIDE, NAV, POST_TITLE, POST_TITLE_WRAPPER, TEXT_COLOR } from './navigation.css';
 import { View } from '../../basics/view/view';
 import { getTitle } from '@/utils/get-title';
 import { useContext, useEffect } from 'react';
@@ -17,9 +17,9 @@ import { LOGO } from './about/about-btn.css';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
-  const { handleProfile, displayProfile } = useContext(NavigationContext);
+  const { handleProfile, hideProfile, displayProfile } = useContext(NavigationContext);
   const { theme, toggle } = useContext(ThemeContext);
-  const { isStudy, isPost } = useCategory();
+  const { isStudy, isPost, path } = useCategory();
 
   const styleKey = isPost ? 'post' : 'main';
   const LeftFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
@@ -28,6 +28,10 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   useEffect(() => {
     if (!isPost) setCurrentPost(null);
   }, [isPost]);
+
+  useEffect(() => {
+    hideProfile();
+  }, [path]);
 
   return (
     <View as="nav" className={`${BACKGROUND[styleKey]} ${BASE}`}>
@@ -50,13 +54,11 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
           </Btn>
         </View>
       </View>
-
-      {displayProfile && (
-        <View className={EXPANDED}>
-          <Spacing size="1rem" />
-          <About blocks={profile} />
-        </View>
-      )}
+      {/* 프로필 */}
+      <View className={displayProfile ? EXPANDED : HIDE}>
+        <Spacing size="1rem" />
+        <About blocks={profile} />
+      </View>
     </View>
   );
 }

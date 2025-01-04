@@ -7,24 +7,28 @@ import { useCategory } from '../react/use-category';
 interface NavigationContextType {
   path: string;
   displayProfile: boolean;
+  hideProfile: Function;
   handleProfile: Function;
 }
 
 export const NavigationContext = createContext<NavigationContextType>({
   path: '/',
   displayProfile: false,
+  hideProfile: noop,
   handleProfile: noop,
 });
 
 export function NavigationProvider({ children }: { children: ReactNode }) {
   const { path, isPost } = useCategory();
 
-  const [displayProfile, _, __, toggle] = useBooleanState(false);
+  const [displayProfile, _, hideProfile, toggle] = useBooleanState(false);
   const handleProfile = () => {
     if (isPost) return;
     toggle();
   };
   return (
-    <NavigationContext.Provider value={{ path, displayProfile, handleProfile }}>{children}</NavigationContext.Provider>
+    <NavigationContext.Provider value={{ path, displayProfile, hideProfile, handleProfile }}>
+      {children}
+    </NavigationContext.Provider>
   );
 }

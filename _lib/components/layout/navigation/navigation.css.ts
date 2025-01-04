@@ -41,6 +41,10 @@ export const EXPANDED = style({
   zIndex: '9999',
 });
 
+export const HIDE = style({
+  display: 'none',
+});
+
 export const BTN_WRAPPER = style({
   width: '100%',
   maxWidth: '10vw',
