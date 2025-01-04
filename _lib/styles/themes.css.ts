@@ -72,7 +72,7 @@ createGlobalTheme('[data-theme="light"]', vars, {
     green: '#13D483',
     green_background: '#E4FA98',
     orange: '#FA5A15',
-    orange_background: '#2578BE',
+    orange_background: '#eda16f',
     pink: '#ff6666',
     pink_background: '#ffcccc',
     purple: '#7F38EC',
