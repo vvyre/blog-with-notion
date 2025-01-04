@@ -27,14 +27,14 @@ globalStyle('body', {
   backgroundColor: vars.color.b3,
 });
 
-globalStyle('body, main, article, span, p, h1, h2, h3, h4, h5, h6', {
+globalStyle('body, main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
   margin: 0,
   padding: 0,
-  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
+  fontFeatureSettings: "'case', 'ss02', 'cv13', 'cv09', 'ss05', 'ss07'",
   fontWeight: 400,
 });
 
@@ -93,6 +93,7 @@ globalStyle('code, pre, pre span', {
   fontSize: '0.835rem',
   lineHeight: '1.5',
   fontFamily: fontFamilyCode,
+  fontFeatureSettings: 'normal',
   MozTabSize: 2,
   tabSize: 2,
 });

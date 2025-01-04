@@ -13,7 +13,8 @@ export const BASE = style([
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     height: 'auto',
-    minHeight: '14rem',
+    minHeight: '15rem',
+    paddingBottom: '3rem',
   },
 ]);
 
@@ -67,6 +68,7 @@ export const TITLE = style([
     '@media': {
       'screen and (max-width: 480px)': {
         fontSize: '4rem',
+        lineHeight: '1.18',
       },
     },
   },
@@ -75,13 +77,13 @@ export const TITLE = style([
 export const RELEASED_DATE = style({
   color: vars.color.gray,
   fontWeight: 400,
-  textAlign: 'left',
+  textAlign: 'right',
 });
 
 export const INFO = style({
   lineHeight: '1.65',
   verticalAlign: 'middle',
-  textAlign: 'left',
+  textAlign: 'right',
 });
 
 export const SUMMARY = style({
