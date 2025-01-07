@@ -6,12 +6,13 @@ import MARK_BLACK from '#/img/github-mark.svg';
 import { EXTERNAL_LINK, MENU_GITHUB_IMG } from '../navigation/about/about-btn.css';
 import { useContext } from 'react';
 import { usePathname } from 'next/navigation';
-import { ThemeContext } from '@/_lib/context/theme-provider';
+import { BackgroundContext } from '@/_lib/context/background-provider';
 
 export function GithubLink() {
-  const { theme } = useContext(ThemeContext);
+  const { DARK_TEXT_PREFERED } = useContext(BackgroundContext);
   const path = usePathname();
   const isPost = path.startsWith('engineering') || path.startsWith('til/');
+  const theme = DARK_TEXT_PREFERED ? 'light' : 'dark';
 
   if (isPost) return <></>;
   else

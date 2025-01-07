@@ -1,6 +1,16 @@
 'use client';
 import { Btn } from '../../basics/button/btn';
-import { BACKGROUND, BASE, EXPANDED, HIDE, NAV, POST_TITLE, POST_TITLE_WRAPPER, TEXT_COLOR } from './navigation.css';
+import {
+  BACKGROUND,
+  BASE,
+  EXPANDED,
+  HIDE,
+  NAV,
+  NAV_TEXT,
+  POST_TITLE,
+  POST_TITLE_WRAPPER,
+  TEXT_COLOR,
+} from './navigation.css';
 import { View } from '../../basics/view/view';
 import { getTitle } from '@/utils/get-title';
 import { useContext, useEffect } from 'react';
@@ -14,16 +24,19 @@ import { NavigationContext } from '@/_lib/context/navigation-provider';
 import { AboutBtn } from './about/about-btn';
 import { ThemeContext } from '@/_lib/context/theme-provider';
 import { LOGO } from './about/about-btn.css';
+import { BackgroundContext } from '@/_lib/context/background-provider';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
   const { handleProfile, hideProfile, displayProfile } = useContext(NavigationContext);
   const { theme, toggle } = useContext(ThemeContext);
+  const { DARK_TEXT_PREFERED } = useContext(BackgroundContext);
   const { isStudy, isPost, path } = useCategory();
 
   const styleKey = isPost ? 'post' : 'main';
   const LeftFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
   const BLOG_TRANSFER = isStudy ? 'BLOG' : 'STUDY ARCHIVE';
+  const TEXT_COLOR = DARK_TEXT_PREFERED ? 'DARK' : 'LIGHT';
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null);
@@ -39,17 +52,17 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
         <Btn
           as={isPost ? 'span' : 'div'}
           onClick={() => handleProfile()}
-          className={`${POST_TITLE} ${TEXT_COLOR[styleKey]}`}>
+          className={`${POST_TITLE} ${NAV_TEXT[TEXT_COLOR]}`}>
           {LeftFlexText}
         </Btn>
         <View className={POST_TITLE_WRAPPER}>
-          <Btn as={'Link'} href={isStudy ? '/' : '/study'} className={LOGO}>
+          <Btn as={'Link'} href={isStudy ? '/' : '/study'} className={`${LOGO} ${NAV_TEXT[TEXT_COLOR]}`}>
             {BLOG_TRANSFER}
           </Btn>
           <Spacing size="0.3rem" dir="hori" />
           <GithubLink />
           <Spacing size="0.3rem" dir="hori" />
-          <Btn onClick={() => toggle()} className={LOGO}>
+          <Btn onClick={() => toggle()} className={`${LOGO} ${NAV_TEXT[TEXT_COLOR]}`}>
             {theme === 'light' ? '🌚' : '🌞'}
           </Btn>
         </View>

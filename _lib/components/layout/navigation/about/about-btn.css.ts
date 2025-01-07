@@ -8,7 +8,6 @@ export const LOGO = style([
     fontSize: '0.85rem',
     textAlign: 'center',
     borderRadius: '0.3rem',
-    color: vars.color.default,
     background: 'transparent',
     border: 'none',
     selectors: {

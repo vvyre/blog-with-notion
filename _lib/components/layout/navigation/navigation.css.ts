@@ -180,22 +180,12 @@ export const MENU_TEXT_BASE = style({
   fontWeight: 700,
 });
 
-export const MENU_TEXT = styleVariants({
-  BLACK: {
+export const NAV_TEXT = styleVariants({
+  LIGHT: {
     color: vars.color.white,
-    selectors: {
-      '&:hover': {
-        borderBottom: `1px solid ${vars.color.white}`,
-      },
-    },
   },
-  WHITE: {
-    color: vars.color.default,
-    selectors: {
-      '&:hover': {
-        borderBottom: `1px solid ${vars.color.default}`,
-      },
-    },
+  DARK: {
+    color: vars.color.blueblack,
   },
 });
 
