@@ -4,9 +4,8 @@ import { style } from '@vanilla-extract/css';
 const LAYOUT = style({
   position: 'fixed',
   width: '100%',
-  height: '100%',
-  top: '-3rem',
-  minHeight: 'calc(100vh + 3rem)',
+  height: '100dvh',
+  top: '0',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

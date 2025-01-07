@@ -39,7 +39,7 @@ globalStyle('body, main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
 });
 
 globalStyle('main', {
-  minHeight: 'calc(100vh - 15rem)',
+  minHeight: '100dvh',
   backgroundColor: vars.color.b1,
 });
 

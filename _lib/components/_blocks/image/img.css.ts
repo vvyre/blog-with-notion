@@ -25,7 +25,7 @@ export const IMG_CONTAINER_ZOOMED = style({
   position: 'fixed',
   display: 'flex',
   width: '100vw',
-  height: '100vh',
+  height: '100dvh',
   top: '0',
   left: '0',
 });
