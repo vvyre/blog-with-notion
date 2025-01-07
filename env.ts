@@ -8,6 +8,7 @@ export const notion_env = {
 export const site_env = {
   root: process.env.NEXT_PUBLIC_ROOT ?? '',
   engineering: (process.env.NEXT_PUBLIC_ROOT ?? '') + '/engineering',
+  study: (process.env.NEXT_PUBLIC_ROOT ?? '') + '/study',
   gv: process.env.GOOGLE_SITE_VERIFICATION ?? '',
   nv: process.env.NAVER_SITE_VERIFICATION ?? '',
   giscus: process.env.NEXT_PUBLIC_GISCUS_REPO ?? '',
