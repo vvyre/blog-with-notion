@@ -52,8 +52,8 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
     const data = imageData?.data ?? [];
 
     // 명도 계산, 0.2126R + 0.7152G + 0.0722B
-    // 내비게이션 위치 부분(그림의 상단부)만 측정
-    const totalPixels = 500 * 40;
+    // 내비게이션 위치 부분의 텍스트 영역(그림의 상단부)만 측정
+    const totalPixels = 50 * 40;
     let sumBrightness = 0;
 
     for (let i = 0; i < data.length; i += 4) {

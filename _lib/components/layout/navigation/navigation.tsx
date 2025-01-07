@@ -28,10 +28,10 @@ import { BackgroundContext } from '@/_lib/context/background-provider';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
-  const { handleProfile, hideProfile, displayProfile } = useContext(NavigationContext);
+  const { handleProfile, hideProfile, displayProfile, path } = useContext(NavigationContext);
   const { theme, toggle } = useContext(ThemeContext);
   const { DARK_TEXT_PREFERED } = useContext(BackgroundContext);
-  const { isStudy, isPost, path } = useCategory();
+  const { isStudy, isPost } = useCategory();
 
   const styleKey = isPost ? 'post' : 'main';
   const LeftFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
