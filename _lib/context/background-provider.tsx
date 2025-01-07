@@ -5,7 +5,7 @@ import { HIDE } from '../components/layout/navigation/navigation.css';
 import { useBackground } from '../react/use-background';
 import { useIsomorphicLayoutEffect } from '@syyu/util/react';
 import { useCategory } from '../react/use-category';
-import { getRandomBackground, useRandomBackground } from '@/utils/get-random-background';
+import { useRandomBackground } from '@/utils/get-random-background';
 
 interface BackgroundContextType {
   src: string;
@@ -40,8 +40,8 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
   }, [path, backgroundColor]);
 
   useIsomorphicLayoutEffect(() => {
-    if (!canvasRef) return;
     if (isStudy) return;
+    if (!canvasRef) return;
 
     const canvasCtx = canvasRef.current?.getContext('2d');
     const IMG = document.createElement('img');
@@ -52,7 +52,7 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
     const data = imageData?.data ?? [];
 
     // 명도 계산, 0.2126R + 0.7152G + 0.0722B
-    // 내비게이션 위치 부분만 측정
+    // 내비게이션 위치 부분(그림의 상단부)만 측정
     const totalPixels = 500 * 40;
     let sumBrightness = 0;
 
@@ -60,16 +60,14 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
       const r = data[i];
       const g = data[i + 1];
       const b = data[i + 2];
-
       const brightness = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-
       sumBrightness += brightness;
     }
 
     // 평균 명도
     const averageBrightness = sumBrightness / totalPixels;
     setBrightness(averageBrightness);
-  }, [url]);
+  }, [url, path]);
 
   return (
     <BackgroundContext.Provider value={{ src: url, brightness, DARK_TEXT_PREFERED, backgroundColor }}>
