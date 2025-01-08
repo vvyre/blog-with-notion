@@ -84,15 +84,7 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <BackgroundContext.Provider value={{ src: imgSrc, brightness, DARK_TEXT_PREFERED, backgroundColor }}>
-      <canvas
-        id="background_image"
-        className={HIDE}
-        style={{
-          width: '500px',
-          height: '400px',
-        }}
-        ref={canvasRef}
-      />
+      <canvas id="background_image" className={HIDE} ref={canvasRef} />
       {children}
     </BackgroundContext.Provider>
   );
