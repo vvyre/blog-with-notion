@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { HIDE } from '../components/layout/navigation/navigation.css';
 import { useBackground } from '../react/use-background';
-import { useCategory } from '../react/use-category';
 import { useRandomBackground } from '@/utils/get-random-background';
 import { NavigationContext } from './navigation-provider';
 import { useIsomorphicLayoutEffect } from '@syyu/util/react';
@@ -82,7 +81,7 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
       setBrightness(averageBrightness);
     };
   }, [imgSrc, path]);
-  console.log(brightness);
+
   return (
     <BackgroundContext.Provider value={{ src: imgSrc, brightness, DARK_TEXT_PREFERED, backgroundColor }}>
       <canvas
