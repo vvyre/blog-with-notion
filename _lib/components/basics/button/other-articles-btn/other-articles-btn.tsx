@@ -1,6 +1,6 @@
 'use client';
 import { Btn } from '../btn';
-import { useCategory } from '@/_lib/react/use-category';
+import { useCategory } from '@/_lib/hooks/use-category';
 
 export function OtherArticlesBtn() {
   const { path } = useCategory();

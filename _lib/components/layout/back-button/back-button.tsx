@@ -1,5 +1,5 @@
 'use client';
-import { useCategory } from '@/_lib/react/use-category';
+import { useCategory } from '@/_lib/hooks/use-category';
 import { View } from '../../basics/view/view';
 import { Txt } from '../../basics/typography/txt/txt';
 

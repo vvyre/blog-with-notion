@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { HIDE } from '../components/layout/navigation/navigation.css';
-import { useBackground } from '../react/use-background';
+import { useBackground } from '../hooks/use-background';
 import { useRandomBackground } from '@/utils/get-random-background';
 import { NavigationContext } from './navigation-provider';
 import { useIsomorphicLayoutEffect } from '@syyu/util/react';

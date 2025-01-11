@@ -6,7 +6,7 @@ import OKIcon from '#/img/icons/ok.svg';
 import Image from 'next/image';
 import { site_env } from '@/env';
 import { usePathname } from 'next/navigation';
-import { useClipboard } from '@/_lib/react/use-clipboard';
+import { useClipboard } from '@/_lib/hooks/use-clipboard';
 
 export function NavShareBtn() {
   const path = usePathname();

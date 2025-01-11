@@ -15,7 +15,7 @@ import { View } from '../../basics/view/view';
 import { getTitle } from '@/utils/get-title';
 import { useContext, useEffect } from 'react';
 import { CurrentPostContext } from '@/_lib/context/current-post-provider';
-import { useCategory } from '@/_lib/react/use-category';
+import { useCategory } from '@/_lib/hooks/use-category';
 import type { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
 import { Spacing } from '../../basics/spacing/spacing';
 import { GithubLink } from '../_external-logos/github';

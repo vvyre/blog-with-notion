@@ -5,7 +5,7 @@ import { CATEGORY } from './category.css';
 import { View } from '../../basics/view/view';
 import { LAYOUT_CENTERED } from '../../basics/article/article.css';
 import { Spacing } from '../../basics/spacing/spacing';
-import { useCategory } from '@/_lib/react/use-category';
+import { useCategory } from '@/_lib/hooks/use-category';
 
 export function Category() {
   return (

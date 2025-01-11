@@ -5,7 +5,7 @@ import { site_env } from '@/env';
 import { cleanUrl } from '@/utils/clean-url';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { useClipboard } from '@/_lib/react/use-clipboard';
+import { useClipboard } from '@/_lib/hooks/use-clipboard';
 import { Txt } from '../../typography/txt/txt';
 
 export function ShareBtn({ subtitle }: { subtitle?: string }) {

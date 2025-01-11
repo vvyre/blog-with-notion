@@ -2,7 +2,7 @@ import { createContext } from 'react';
 import type { ReactNode } from 'react';
 import { noop } from '@syyu/util';
 import { useBooleanState } from '@syyu/util/react';
-import { useCategory } from '../react/use-category';
+import { useCategory } from '../hooks/use-category';
 
 interface NavigationContextType {
   path: string;

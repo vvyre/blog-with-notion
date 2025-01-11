@@ -1,5 +1,5 @@
 import { ReactNode, createContext } from 'react';
-import { useSystemTheme } from '../react/use-system-theme';
+import { useSystemTheme } from '../hooks/use-system-theme';
 
 export const ThemeContext = createContext<{ theme: string; toggle: Function }>({
   theme: 'light',
