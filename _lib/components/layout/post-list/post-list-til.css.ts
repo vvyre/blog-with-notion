@@ -10,7 +10,7 @@ export const POST_LINK_TIL = style({
   justifyContent: 'flex-start',
   alignItems: 'center',
   color: vars.color.default,
-  borderRadius: '0.3rem',
+  borderRadius: '0.425rem',
   selectors: {
     '&:hover': {
       backgroundColor: vars.color.b4,

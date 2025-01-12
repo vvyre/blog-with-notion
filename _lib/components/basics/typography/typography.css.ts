@@ -63,7 +63,7 @@ export const CODE = style({
   verticalAlign: 'text-bottom',
   fontSize: '0.825rem',
   padding: '0.1rem 0.25rem 0.1rem 0.25rem',
-  borderRadius: '0.3rem',
+  borderRadius: '0.425rem',
   border: 'none',
   backgroundColor: vars.color.b2,
 });

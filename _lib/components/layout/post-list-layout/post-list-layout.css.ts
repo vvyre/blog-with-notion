@@ -91,7 +91,7 @@ export const NOT_SELECTED = style({
 export const CATEGORY = style({
   cursor: 'pointer',
   padding: '0.25rem 0.7rem 0.25rem 0.7rem',
-  borderRadius: '0.3rem',
+  borderRadius: '0.425rem',
   transition: '0.2s',
 });
 

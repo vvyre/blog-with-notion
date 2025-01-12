@@ -11,7 +11,7 @@ export const BASE = style([
     marginTop: '0.25rem',
     marginBottom: '0.25rem',
     padding: '0.5rem 0.75rem 0.5rem 0.75rem',
-    borderRadius: '0.3rem',
+    borderRadius: '0.425rem',
     backgroundColor: vars.color.b2,
     fontSize: '0.8rem',
     selectors: {

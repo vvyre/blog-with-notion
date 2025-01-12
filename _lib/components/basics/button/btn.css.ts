@@ -5,7 +5,7 @@ import { vars } from '@/_lib/styles/themes.css';
 export const BASE = style({
   cursor: 'pointer',
   padding: '0.4rem 0.55rem 0.4rem 0.55rem',
-  borderRadius: '0.3rem',
+  borderRadius: '0.425rem',
   fontSize: TYPOGRAPHY.S.fontSize,
   border: `1px solid transparent`,
   backgroundColor: 'transparent',

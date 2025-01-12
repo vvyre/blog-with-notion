@@ -11,7 +11,7 @@ export const LOGO = style([
     padding: '0.4rem 0.55rem 0.4rem 0.55rem',
     fontSize: '0.85rem',
     textAlign: 'center',
-    borderRadius: '0.3rem',
+    borderRadius: '0.425rem',
     background: 'transparent',
     border: 'none',
   },

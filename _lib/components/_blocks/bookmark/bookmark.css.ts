@@ -9,7 +9,7 @@ export const BASE = style([
     backgroundColor: vars.color.b2,
     marginBottom: '1rem',
     padding: '0.75rem 1rem 0.75rem 1rem',
-    borderRadius: '0.3rem',
+    borderRadius: '0.425rem',
     selectors: {
       '&:hover': {
         outline: `1px solid ${vars.color.highlight}`,
