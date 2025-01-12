@@ -7,7 +7,7 @@ import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoi
 
 export function Quote({ block }: NotionComponentProps<'quote'>) {
   return (
-    <View className={BASE}>
+    <View as="blockquote" className={BASE}>
       {block.quote.rich_text.map((txt: RichTextItemResponse, idx: number) => (
         <Txt key={idx} as="span" richText={txt} />
       ))}

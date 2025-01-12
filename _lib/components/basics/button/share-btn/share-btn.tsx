@@ -23,7 +23,7 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
   const handleClick = () => copy(fullUrl);
 
   return subtitle ? (
-    <Btn className={BASE} onClick={handleClick}>
+    <Btn className={BASE} onClick={handleClick} aria-label={`hare link for ${subtitle}`}>
       <Txt as="p" className={`${PARAGRAPH_SHARE} ${isCopied && TEXT_COLOR_GREEN}`}>
         {isCopied ? '!' : '#'}
       </Txt>

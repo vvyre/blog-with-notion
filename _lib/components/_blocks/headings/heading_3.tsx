@@ -11,7 +11,7 @@ export function Heading_3({ block }: NotionComponentProps<'heading_3'>) {
   const TITLE = block.heading_3.rich_text.map((txt: RichTextItemResponse) => txt.plain_text);
   return (
     <>
-      <a id={cleanUrl(block.heading_3.rich_text[0].plain_text)} />
+      <a id={cleanUrl(block.heading_3.rich_text[0].plain_text)} aria-hidden="true" />
       <Spacing size="1rem" />
       <View className={BASE}>
         <Heading as="h4" className={HEADING_3}>
