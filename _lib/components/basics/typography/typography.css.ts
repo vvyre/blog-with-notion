@@ -1,6 +1,15 @@
 import { vars } from '@/_lib/styles/themes.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
+export const TEXT_COLOR_THEME_VARIANT = styleVariants({
+  LIGHT: {
+    color: vars.color.white,
+  },
+  DARK: {
+    color: vars.color.blueblack,
+  },
+});
+
 export const TYPOGRAPHY = {
   XXXL: {
     fontSize: '4.5rem',
