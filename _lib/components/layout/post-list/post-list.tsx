@@ -27,11 +27,11 @@ export function PostList({ post, category }: PostListProps) {
   return (
     <List as="li" className={POST_LIST_BASE}>
       <Txt as="Link" href={URI} className={POST_LINK}>
-        <Txt as="span" className={POST_TITLE}>
-          {TITLE}
-        </Txt>
-        <Txt as="span" className={`${RELEASED_DATE} ${TEXT_COLOR_STYLE}`}>
+        <Txt as="div" className={`${RELEASED_DATE} ${TEXT_COLOR_STYLE}`}>
           {DATE}
+        </Txt>
+        <Txt as="div" className={POST_TITLE}>
+          {TITLE}
         </Txt>
       </Txt>
     </List>

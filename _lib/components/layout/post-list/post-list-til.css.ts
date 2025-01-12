@@ -1,16 +1,16 @@
 import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
-import { TEXT_STYLE } from '../../basics/typography/typography.css';
+import { TEXT_STYLE, TYPOGRAPHY } from '../../basics/typography/typography.css';
 import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 
 export const POST_LINK_TIL = style({
   display: 'inline-flex',
-  padding: '0.5rem 1rem 0.5rem 1rem',
+  padding: vars.padding.card,
   flexDirection: 'column-reverse',
   justifyContent: 'flex-start',
   alignItems: 'center',
   color: vars.color.default,
-  borderRadius: '0.425rem',
+  borderRadius: vars.border.radius.card,
   selectors: {
     '&:hover': {
       backgroundColor: vars.color.b4,
@@ -48,8 +48,11 @@ export const RELEASED_DATE_TIL = style([
   TEXT_STYLE.XXXS,
   {
     wordSpacing: '-0.3rem',
-    color: vars.color.white,
     fontFamily: fontFamilyCode,
+    fontSize: TYPOGRAPHY.XXXS.fontSize,
+    fontWeight: 500,
+    textAlign: 'left',
+    width: '100%',
     cursor: 'pointer',
     fontFeatureSettings: '"calt"',
     textDecoration: 'none',

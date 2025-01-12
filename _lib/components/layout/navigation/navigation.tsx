@@ -1,6 +1,6 @@
 'use client';
 import { Btn } from '../../basics/button/btn';
-import { BACKGROUND, BASE, EXPANDED, HIDE, NAV, POST_TITLE, POST_TITLE_WRAPPER } from './navigation.css';
+import { BASE, EXPANDED, HIDE, NAV, POST_TITLE_WRAPPER } from './navigation.css';
 import { View } from '../../basics/view/view';
 import { getTitle } from '@/utils/get-title';
 import { useContext, useEffect } from 'react';
@@ -24,7 +24,6 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   const { handleProfile, hideProfile, displayProfile, path } = useContext(NavigationContext);
   const { DARK_TEXT_PREFERED } = useContext(BackgroundContext);
   const { isStudy, isPost } = useCategory();
-  const styleKey = isPost ? 'post' : 'main';
   const LeftFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
   const BLOG_TRANSFER = isStudy ? 'BLOG' : 'STUDY ARCHIVE';
 
@@ -40,7 +39,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   }, [path]);
 
   return (
-    <View as="nav" className={`${BACKGROUND[styleKey]} ${BASE}`}>
+    <View as="nav" className={BASE}>
       <View as="div" className={NAV}>
         <Btn as={isPost ? 'span' : 'div'} onClick={() => handleProfile()} className={NAV_TEXT_STYLE}>
           {LeftFlexText}
@@ -51,10 +50,14 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
           </Btn>
           <Spacing size="0.3rem" dir="hori" />
           <GithubLink />
-          <Spacing size="0.3rem" dir="hori" />
-          <Btn onClick={() => toggle()} className={NAV_TEXT_STYLE}>
-            {theme === 'light' ? '🌚' : '🌞'}
-          </Btn>
+          {isPost && (
+            <>
+              <Spacing size="0.3rem" dir="hori" />
+              <Btn onClick={() => toggle()} className={NAV_TEXT_STYLE}>
+                {theme === 'light' ? '🌚' : '🌞'}
+              </Btn>
+            </>
+          )}
         </View>
       </View>
       {/* 프로필 */}

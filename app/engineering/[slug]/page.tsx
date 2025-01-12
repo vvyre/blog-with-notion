@@ -3,7 +3,6 @@ import { getTitle } from '@/utils/get-title';
 import { parsedSlug } from '@/utils/parsed-slug';
 import { meta } from '@/constants/meta';
 import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
-import { Block } from '@/_lib/components/_blocks/block';
 import { PostTitle } from '@/_lib/components/layout/post-title/post-title';
 import { Article } from '@/_lib/components/basics/article/article';
 import { Spacing } from '@/_lib/components/basics/spacing/spacing';
@@ -18,8 +17,7 @@ import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
 import { Giscus } from '@/_lib/components/layout/embed/giscus/giscus';
 import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend';
-import { NotionDivider } from '@/_lib/components/_blocks/divider/notion-divider';
-import { Divider } from '@/_lib/components/basics/divider/divider';
+import { LAYOUT_INNER, OVERFLOW } from '@/app/page.css';
 
 export interface PostPageProps {
   params: Promise<{
@@ -58,24 +56,26 @@ export default async function Post({ params }: PostPageProps) {
   const blocks = await processedBlock(await getPost(matchPost.id));
 
   return (
-    <View as="main">
-      <Article>
-        <View className={LAYOUT_CENTERED}>
-          <PostTitle {...meta} />
-          <RenderBlocks blocks={blocks} />
-          <View className={BLOCK_GRID_BASE}>
-            <Spacing size="3rem" dir="vert" />
-            <Flex justifyContent="spaceBetween">
-              <ShareBtn />
-              <OtherArticlesBtn />
-            </Flex>
-            <Spacing size="3rem" />
-            <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
-            <Giscus />
+    <View className={LAYOUT_INNER}>
+      <View as="main">
+        <Article>
+          <View className={LAYOUT_CENTERED}>
+            <PostTitle {...meta} />
+            <RenderBlocks blocks={blocks} />
+            <View className={BLOCK_GRID_BASE}>
+              <Spacing size="3rem" dir="vert" />
+              <Flex justifyContent="spaceBetween">
+                <ShareBtn />
+                <OtherArticlesBtn />
+              </Flex>
+              <Spacing size="3rem" />
+              <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
+              <Giscus />
+            </View>
           </View>
-        </View>
-      </Article>
-      <Spacing size="10rem" />
+        </Article>
+        <Spacing size="10rem" />
+      </View>
     </View>
   );
 }

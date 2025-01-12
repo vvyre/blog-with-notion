@@ -5,8 +5,7 @@ export const POST_LIST_CENTERED = style([
   {
     background: 'transparent',
     lineHeight: 1.65,
-    height: '100%',
-    width: '100vw',
+    width: '100%',
     maxWidth: '70rem',
     padding: '1rem',
     display: 'flex',
@@ -16,7 +15,11 @@ export const POST_LIST_CENTERED = style([
     alignItems: 'center',
     '@media': {
       '(0px <= width <= 700px)': {
+        marginTop: '25rem',
         flexDirection: 'column',
+        flexWrap: 'nowrap',
+        justifyContent: 'center',
+        alignItems: 'center',
       },
     },
   },
@@ -27,6 +30,7 @@ export const POST_LIST_STUDY_CENTERED = style([
     background: 'transparent',
     lineHeight: 1.65,
     height: '100%',
+    minHeight: '100dvh',
     width: '100vw',
     maxWidth: '70rem',
     padding: '1rem',
@@ -91,7 +95,7 @@ export const NOT_SELECTED = style({
 export const CATEGORY = style({
   cursor: 'pointer',
   padding: '0.25rem 0.7rem 0.25rem 0.7rem',
-  borderRadius: '0.425rem',
+  borderRadius: vars.border.radius.card,
   transition: '0.2s',
 });
 

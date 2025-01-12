@@ -1,6 +1,6 @@
 import { fontFamilyCode } from '@/_lib/styles/fonts.css';
 import { style, styleVariants } from '@vanilla-extract/css';
-import { TEXT_STYLE } from '../../basics/typography/typography.css';
+import { TEXT_STYLE, TYPOGRAPHY } from '../../basics/typography/typography.css';
 import { vars } from '@/_lib/styles/themes.css';
 
 export const GRID_SPAN = style({
@@ -35,18 +35,20 @@ export const POST_LIST_BASE = style({
   '@media': {
     '(0px <= width <= 700px)': {
       marginBottom: '0',
+      display: 'flex',
+      width: '100%',
     },
   },
 });
 
 export const POST_LINK = style({
   display: 'inline-flex',
-  padding: '0.5rem 1rem 0.5rem 1rem',
-  flexDirection: 'column-reverse',
+  padding: vars.padding.card,
+  flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',
   color: vars.color.postListText,
-  borderRadius: '0.425rem',
+  borderRadius: vars.border.radius.card,
   selectors: {
     '&:hover': {
       backgroundColor: vars.color.b4,
@@ -60,15 +62,14 @@ export const POST_LINK = style({
   '@media': {
     '(0px <= width <= 700px)': {
       display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      width: 'calc(100vw - 1.7rem)',
+      width: '100%',
     },
   },
 });
 
 export const POST_TITLE = style([
   {
+    width: '100%',
     fontSize: '1.15rem',
     fontWeight: '600',
     cursor: 'pointer',
@@ -94,11 +95,13 @@ export const POST_SUMMARY = style([
 ]);
 
 export const RELEASED_DATE = style([
-  TEXT_STYLE.XXXS,
   {
     wordSpacing: '-0.3rem',
-    color: vars.color.white,
     fontFamily: fontFamilyCode,
+    fontSize: TYPOGRAPHY.XXXS.fontSize,
+    fontWeight: 500,
+    textAlign: 'left',
+    width: '100%',
     cursor: 'pointer',
     fontFeatureSettings: '"calt"',
     textDecoration: 'none',

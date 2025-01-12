@@ -1,4 +1,5 @@
 import { BASE_GRID, BASE_PADDING } from '@/_lib/styles/grid.css';
+import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
@@ -21,6 +22,7 @@ export const LAYOUT_CENTERED = style([
   {
     display: 'grid',
     width: '100%',
+    backgroundColor: vars.color.b1,
     gridTemplateColumns: '2rem minmax(15rem, 50rem) 2rem',
     background: 'transparent',
     margin: '0 auto',

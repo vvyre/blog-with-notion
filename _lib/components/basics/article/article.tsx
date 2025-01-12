@@ -6,6 +6,6 @@ interface ArticleProps extends ComponentPropsWithoutRef<'article'> {
   children: ReactNode;
 }
 export function Article({ children, ...props }: ArticleProps) {
-  const cn = `${props.className ?? BASE} ${OVERFLOW}`;
+  const cn = `${props.className ?? BASE}`;
   return <article className={cn}>{children}</article>;
 }

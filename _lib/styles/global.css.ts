@@ -24,7 +24,7 @@ globalStyle('html', {
 
 globalStyle('body', {
   color: vars.color.default,
-  backgroundColor: vars.color.b3,
+  backgroundColor: 'transparent',
 });
 
 globalStyle('body, main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
@@ -40,6 +40,14 @@ globalStyle('body, main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
 
 globalStyle('main', {
   minHeight: '100dvh',
+  height: '100%',
+  paddingTop: '5rem',
+  maskImage: `linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)`,
+  WebkitMaskImage: `linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)`,
+  overflowY: 'auto',
+});
+
+globalStyle('body', {
   backgroundColor: vars.color.b1,
 });
 
