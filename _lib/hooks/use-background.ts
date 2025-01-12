@@ -5,7 +5,7 @@ import { getRandomInt } from '@/utils/get-random-int';
 import { preload } from 'react-dom';
 
 export const useBackground = (nums_of_files: number): string => {
-  const path = usePathname;
+  const path = usePathname();
   const [num, setNum] = useState<number>(0);
   const [next, setNext] = useState<number>(0);
   const url = `https://raw.githubusercontent.com/brewcold/blog/refs/heads/main/_backgrounds/brewcold-bg-${num}.webp`;
@@ -21,10 +21,11 @@ export const useBackground = (nums_of_files: number): string => {
       setNext(getRandomInt([0, nums_of_files - 1]));
     }, 10000);
 
-    return () => clearTimeout(T);
+    return () => clearInterval(T);
   }, [next, nums_of_files]);
 
   useEffect(() => {
+    if (!(path === '/')) return;
     preload(url, { as: 'image' });
     preload(nextUrl, { as: 'image' });
   }, [url, nextUrl]);
