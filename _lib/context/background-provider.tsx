@@ -64,8 +64,9 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
     IMG.crossOrigin = 'anonymous';
     IMG.src = imgSrc;
 
-    // ref나 포탈로 정확한 width 측정하는 것으로 해야 하지만 임시로
-    // DOM값을 좌측 위 프로필 버튼을 수동으로 계산하여 측정함
+    // TODO: zustand 마이그레이션 후 버튼 등 DOM의 ref로 측정해
+    // 정확한 위치에 따른 텍스트 색깔을 변경하는 로직을 추가할 예정
+    // 그 전까지는 프로필 버튼을 대략적으로 측정해서 사용함
     const marginTop = 1 * 16; // appr. 1rem
     const marginLeft = 2 * 16; // appr. 2rem
     const width = 10 * 16; // appr. 10rem
