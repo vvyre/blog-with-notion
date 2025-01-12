@@ -180,15 +180,6 @@ export const MENU_TEXT_BASE = style({
   fontWeight: 700,
 });
 
-export const NAV_TEXT = styleVariants({
-  LIGHT: {
-    color: vars.color.white,
-  },
-  DARK: {
-    color: vars.color.blueblack,
-  },
-});
-
 export const LOGO_GRID_PLACEMENT = style({
   display: 'block',
   gridColumnStart: 1,
