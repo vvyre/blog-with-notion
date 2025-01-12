@@ -4,8 +4,8 @@ import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style({
   cursor: 'pointer',
-  padding: '0.4rem 0.55rem 0.4rem 0.55rem',
-  borderRadius: '0.425rem',
+  padding: vars.padding.btn_square,
+  borderRadius: vars.border.radius.card,
   fontSize: TYPOGRAPHY.S.fontSize,
   border: `1px solid transparent`,
   backgroundColor: 'transparent',

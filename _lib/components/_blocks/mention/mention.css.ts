@@ -10,8 +10,8 @@ export const BASE = style([
     display: 'block',
     marginTop: '0.25rem',
     marginBottom: '0.25rem',
-    padding: '0.5rem 0.75rem 0.5rem 0.75rem',
-    borderRadius: '0.425rem',
+    padding: vars.padding.btn_square,
+    borderRadius: vars.border.radius.card,
     backgroundColor: vars.color.b2,
     fontSize: '0.8rem',
     selectors: {

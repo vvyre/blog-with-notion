@@ -8,7 +8,7 @@ export const CALLOUT = style([
     backgroundColor: vars.color.b2,
     padding: '1.25rem',
     marginBottom: '1rem',
-    borderRadius: '0.425rem',
+    borderRadius: vars.border.radius.card,
   },
 ]);
 

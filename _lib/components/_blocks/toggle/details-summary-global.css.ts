@@ -8,7 +8,7 @@ export const SUMMARY = globalStyle('details > summary', {
   cursor: 'pointer',
   backgroundColor: 'transparent',
   borderRadius: '1rem',
-  padding: '0.65rem',
+  padding: vars.padding.btn_square,
 });
 
 export const SUMMARY_HOVER = globalStyle('details > summary:hover', {

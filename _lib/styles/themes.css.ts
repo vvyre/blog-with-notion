@@ -1,5 +1,17 @@
 import { createGlobalTheme, createGlobalThemeContract } from '@vanilla-extract/css';
 
+const RADIUS = {
+  card: '0.425rem',
+  btn_square: '0.425rem',
+  btn_round: '2rem',
+};
+
+const PADDING = {
+  card: '0.75rem 1rem 0.75rem 1rem',
+  btn_square: '0.4rem 0.55rem 0.4rem 0.55rem',
+  btn_round: '0.65rem',
+};
+
 export const vars = createGlobalThemeContract({
   color: {
     theme: 'color-theme',
@@ -40,9 +52,23 @@ export const vars = createGlobalThemeContract({
     yellow: 'notion-yellow',
     yellow_background: 'notion-yellow-background',
   },
+  padding: {
+    card: 'padding-card',
+    btn_round: 'padding-btn-round',
+    btn_square: 'padding-btn-squre',
+  },
+  border: {
+    radius: {
+      card: 'border-radius-card',
+      btn_square: 'border-radius-btn-square',
+      btn_round: 'border-radius-btn-round',
+    },
+  },
 });
 
 createGlobalTheme('[data-theme="light"]', vars, {
+  border: { radius: RADIUS },
+  padding: PADDING,
   color: {
     theme: '#F0F2F6',
     white: '#FFFFFF',
@@ -85,6 +111,8 @@ createGlobalTheme('[data-theme="light"]', vars, {
 });
 
 createGlobalTheme('[data-theme="dark"]', vars, {
+  border: { radius: RADIUS },
+  padding: PADDING,
   color: {
     theme: '#101216',
     white: '#FFFFFF',

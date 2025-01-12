@@ -8,8 +8,8 @@ export const BASE = style([
   {
     backgroundColor: vars.color.b2,
     marginBottom: '1rem',
-    padding: '0.75rem 1rem 0.75rem 1rem',
-    borderRadius: '0.425rem',
+    padding: vars.padding.card,
+    borderRadius: vars.border.radius.card,
     selectors: {
       '&:hover': {
         outline: `1px solid ${vars.color.highlight}`,
