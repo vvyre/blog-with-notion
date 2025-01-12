@@ -1,23 +1,19 @@
 import { vars } from '@/_lib/styles/themes.css';
+import { JETBRAINS_MONO } from '@/public/fonts/fonts.css';
 import { style } from '@vanilla-extract/css';
 
 export const LOGO = style([
   {
-    fontWeight: 800,
+    fontWeight: 900,
+    fontFamily: JETBRAINS_MONO,
+    textTransform: 'uppercase',
+    wordSpacing: '-0.3rem',
     padding: '0.4rem 0.55rem 0.4rem 0.55rem',
     fontSize: '0.85rem',
     textAlign: 'center',
     borderRadius: '0.3rem',
     background: 'transparent',
     border: 'none',
-    selectors: {
-      '&:hover': {
-        background: 'transparent',
-      },
-      '&:active': {
-        background: 'transparent',
-      },
-    },
   },
 ]);
 
