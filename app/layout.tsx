@@ -1,6 +1,10 @@
 import '@/_lib/components/_blocks/code/hljs.css';
 import '@/_lib/styles/themes.css';
 import '@/_lib/styles/global.css';
+import '@/_lib/components/_blocks/toggle/details-summary-global.css';
+import '@/_lib/components/_blocks/numbered-list-item/ol-global.css';
+import '@/_lib/components/_blocks/bulleted-list-item/ul-global.css';
+
 import { meta } from '@/constants/meta';
 import type { Metadata } from 'next';
 import { View } from '@/_lib/components/basics/view/view';
