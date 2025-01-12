@@ -23,7 +23,7 @@ export function Btn<T extends ElementType>({ as, onClick, children, href, ...pro
       );
     case 'Link':
       return (
-        <Link className={cn} href={href ?? '/'}>
+        <Link className={cn} href={href ?? '/'} scroll={props.scroll ?? false}>
           {children}
         </Link>
       );

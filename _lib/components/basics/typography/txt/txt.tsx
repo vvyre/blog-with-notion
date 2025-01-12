@@ -71,7 +71,7 @@ export function Txt<T extends ElementType>({
       );
     case 'Link':
       return (
-        <Link href={richText?.href ?? props.href} className={cn} {...props}>
+        <Link href={richText?.href ?? props.href} className={cn} {...props} scroll={props.scroll ?? false}>
           <Annotations
             richText={richText}
             bold={bold}
