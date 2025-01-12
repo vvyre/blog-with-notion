@@ -10,6 +10,7 @@ export const BASE = style([
     justifyContent: 'flex-start',
     alignItems: 'center',
     height: '100%',
+    flexWrap: 'wrap',
   },
 ]);
 

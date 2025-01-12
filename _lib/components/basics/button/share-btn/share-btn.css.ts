@@ -3,7 +3,7 @@ import { JETBRAINS_MONO } from '@/public/fonts/fonts.css';
 import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style({
-  marginLeft: '0.35rem',
+  marginLeft: '0.25rem',
   color: vars.color.gray,
   justifyContent: 'center',
   border: 'none',
