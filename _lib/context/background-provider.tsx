@@ -6,6 +6,8 @@ import { useBackground } from '../hooks/use-background';
 import { useRandomBackground } from '@/utils/get-random-background';
 import { NavigationContext } from './navigation-provider';
 import { useIsomorphicLayoutEffect } from '@syyu/util/react';
+import { useCategory } from '../hooks/use-category';
+import { ThemeContext } from './theme-provider';
 
 interface BackgroundContextType {
   src: string;
@@ -24,15 +26,27 @@ export const BackgroundContext = createContext<BackgroundContextType>({
 export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { path } = useContext(NavigationContext);
-  const isStudy = path.startsWith('/study');
+  const { isStudy, isPost } = useCategory();
+
   const imgSrc = useBackground(26);
   const { backgroundColor } = useRandomBackground();
 
   const [brightness, setBrightness] = useState<number>(0);
   const DARK_TEXT_PREFERED = brightness > 186;
 
+  const { theme } = useContext(ThemeContext);
+
+  //포스트를 보고 있는 경우
   useEffect(() => {
-    if (!isStudy) return;
+    if (!isPost) return;
+
+    if (theme === 'light') setBrightness(255);
+    else setBrightness(0);
+  }, [isPost, theme]);
+
+  //study archive의 랜덤 색깔 배경인 경우
+  useIsomorphicLayoutEffect(() => {
+    if (!isStudy || isPost) return;
     if (!backgroundColor) return;
     const r = parseInt(backgroundColor.slice(1, 3), 10);
     const g = parseInt(backgroundColor.slice(2, 5), 10);
@@ -40,8 +54,9 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
     setBrightness(0.2126 * r + 0.7152 * g + 0.0722 * b);
   }, [path, backgroundColor]);
 
+  //메인 화면의 랜덤 사진 배경인 경우
   useIsomorphicLayoutEffect(() => {
-    if (isStudy) return;
+    if (isStudy || isPost) return;
     if (!canvasRef) return;
 
     const canvasCtx = canvasRef.current?.getContext('2d');
@@ -81,6 +96,10 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
       setBrightness(averageBrightness);
     };
   }, [imgSrc, path]);
+
+  useEffect(() => {
+    console.log(brightness);
+  }, [brightness, isPost, isStudy, theme, backgroundColor]);
 
   return (
     <BackgroundContext.Provider value={{ src: imgSrc, brightness, DARK_TEXT_PREFERED, backgroundColor }}>
