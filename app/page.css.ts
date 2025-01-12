@@ -27,7 +27,7 @@ export const LAYOUT_BG_STUDY = style([LAYOUT]);
 export const LAYOUT_INNER = style([
   LAYOUT,
   {
-    backgroundColor: vars.color.b4,
+    backgroundColor: 'transparent',
   },
 ]);
 
