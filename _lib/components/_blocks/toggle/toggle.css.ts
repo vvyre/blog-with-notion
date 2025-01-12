@@ -8,6 +8,7 @@ export const BASE = style([
   },
 ]);
 
-export const SUMMARY = style({
+export const SUMMARY_TXT = style({
   cursor: 'pointer',
+  fontWeight: '900',
 });
