@@ -42,8 +42,8 @@ globalStyle('main', {
   minHeight: '100dvh',
   height: '100%',
   paddingTop: '5rem',
-  maskImage: `linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)`,
-  WebkitMaskImage: `linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)`,
+  maskImage: `linear-gradient(to bottom, transparent, black 12.5%, black 95%, transparent)`,
+  WebkitMaskImage: `linear-gradient(to bottom, transparent,  black 12.5%, black 95%, transparent)`,
   overflowY: 'auto',
 });
 
