@@ -117,6 +117,7 @@ export const RELEASED_DATE = style([
     fontFamily: fontFamilyCode,
     fontSize: TYPOGRAPHY.XXXS.fontSize,
     fontWeight: 500,
+    color: vars.color.white,
     textAlign: 'left',
     width: '100%',
     cursor: 'pointer',
