@@ -2,7 +2,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 export const WIDTH_VARIANT = styleVariants({
   fit: {
-    width: 'fit-content',
+    width: 'auto',
   },
   fill: {
     width: '100%',
