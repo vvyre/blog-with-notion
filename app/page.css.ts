@@ -26,7 +26,6 @@ export const LAYOUT_BG_STUDY = style([LAYOUT]);
 
 export const LAYOUT_INNER = style([
   LAYOUT,
-
   {
     backgroundColor: 'transparent',
   },
@@ -40,9 +39,10 @@ export const OVERFLOW = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  backgroundColor: vars.color.background_filter,
   overflowY: 'auto',
-  maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 80%, transparent)',
-  WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 80%, transparent)',
+  maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 85%, transparent)',
+  WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 85%, transparent)',
 });
 
 export const FLEX = style({

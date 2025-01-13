@@ -15,6 +15,7 @@ const PADDING = {
 export const vars = createGlobalThemeContract({
   color: {
     theme: 'color-theme',
+    background_filter: 'color-background-filter',
     white: 'color-white',
     whitegray: 'color-whitegray',
     lightgray: 'color-lightgray',
@@ -75,6 +76,7 @@ createGlobalTheme('[data-theme="light"]', vars, {
   padding: PADDING,
   color: {
     theme: '#F0F2F6',
+    background_filter: 'rgba(88,91,94,0.5)',
     white: '#FFFFFF',
     whitegray: '#F7F8FB',
     lightgray: '#A0A2A6',
@@ -123,6 +125,7 @@ createGlobalTheme('[data-theme="dark"]', vars, {
   padding: PADDING,
   color: {
     theme: '#101216',
+    background_filter: 'rgba(88,91,94,0.5)',
     white: '#FFFFFF',
     whitegray: '#F7F8FB',
     lightgray: '#A0A2A6',
