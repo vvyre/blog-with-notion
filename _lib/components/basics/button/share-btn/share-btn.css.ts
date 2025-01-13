@@ -5,7 +5,7 @@ import { vars } from '@/_lib/styles/themes.css';
 export const SHARE_BTN_BASE = style({
   display: 'inline-flex',
   height: 'auto',
-  width: '1.75rem',
+  width: '1.2rem',
   margin: 0,
   padding: 0,
   border: 'none',
@@ -16,7 +16,7 @@ export const SHARE_BTN_BASE = style({
 export const PARAGRAPH_SHARE = style({
   fontFamily: JETBRAINS_MONO,
   fontWeight: '700',
-  fontSize: '0.9em',
+  fontSize: '0.66em',
   fontFeatureSettings: '"calt" "case"',
   color: vars.color.default,
   selectors: {
