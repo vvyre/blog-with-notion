@@ -8,12 +8,15 @@ export const BASE = style({
   marginTop: '2rem',
   marginBottom: '3rem',
   width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
 
 export const UL = style({
   listStyleType: 'none',
   width: '100%',
-  maxWidth: '30rem',
 });
 
 export const POST_LIST = style([
@@ -21,13 +24,15 @@ export const POST_LIST = style([
   {
     width: '100%',
     display: 'flex',
+    gap: '0.75rem',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
 ]);
 
 export const TITLE = style({
-  textAlign: 'center',
+  textAlign: 'right',
+  width: '100%',
   fontSize: TYPOGRAPHY.XS.fontSize,
   color: vars.color.default,
   fontWeight: 600,
