@@ -16,7 +16,7 @@ export const POST_LIST_CENTERED = style([
     '@media': {
       '(0px <= width <= 700px)': {
         marginTop: '25rem',
-        marginBottom: '15rem',
+        marginBottom: '7.5rem',
         flexDirection: 'column',
         flexWrap: 'nowrap',
         justifyContent: 'center',
