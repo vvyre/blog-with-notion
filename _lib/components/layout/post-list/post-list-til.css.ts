@@ -11,16 +11,6 @@ export const POST_LINK_TIL = style({
   alignItems: 'center',
   color: vars.color.default,
   borderRadius: vars.border.radius.card,
-  selectors: {
-    '&:hover': {
-      backgroundColor: vars.color.b4,
-      color: vars.color.postListTextHovered,
-    },
-    '&:active': {
-      backgroundColor: vars.color.b4,
-      color: vars.color.postListTextHovered,
-    },
-  },
   '@media': {
     '(0px <= width <= 700px)': {
       display: 'flex',
