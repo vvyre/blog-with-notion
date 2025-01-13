@@ -1,16 +1,13 @@
 import { style } from '@vanilla-extract/css';
 import { BLOCK_GRID_BASE } from '../block-layout.css';
-import { TYPOGRAPHY } from '../../basics/typography/typography.css';
 
 export const BASE = style([
   BLOCK_GRID_BASE,
   {
+    marginLeft: '-1.75rem',
     verticalAlign: 'middle',
-    display: 'inline-flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
     height: '100%',
-    flexWrap: 'wrap',
+    flexWrap: 'nowrap',
   },
 ]);
 
