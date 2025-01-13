@@ -10,6 +10,31 @@ export const TEXT_COLOR_THEME_VARIANT = styleVariants({
   },
 });
 
+export const TEXT_COLOR_WITH_THEME_HOVER_VARIANT = styleVariants({
+  LIGHT: {
+    color: vars.color.white,
+    selectors: {
+      '&:hover': {
+        color: vars.color.blueblack,
+      },
+      '&:active': {
+        color: vars.color.blueblack,
+      },
+    },
+  },
+  DARK: {
+    color: vars.color.blueblack,
+    selectors: {
+      '&:hover': {
+        color: vars.color.white,
+      },
+      '&:active': {
+        color: vars.color.white,
+      },
+    },
+  },
+});
+
 export const TYPOGRAPHY = {
   XXXL: {
     fontSize: '4.5rem',

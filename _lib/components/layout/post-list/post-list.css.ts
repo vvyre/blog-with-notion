@@ -41,24 +41,41 @@ export const POST_LIST_BASE = style({
   },
 });
 
+export const POST_LINK_THEME_VARIANT = styleVariants({
+  DARK: {
+    selectors: {
+      '&:hover': {
+        backgroundColor: vars.color.postListBgDark,
+        color: vars.color.postListTextHoveredDark,
+      },
+      '&:active': {
+        backgroundColor: vars.color.postListBgDark,
+        color: vars.color.postListTextHoveredDark,
+      },
+    },
+  },
+  LIGHT: {
+    selectors: {
+      '&:hover': {
+        backgroundColor: vars.color.postListBgLight,
+        color: vars.color.postListTextHoveredLight,
+      },
+      '&:active': {
+        backgroundColor: vars.color.postListBgLight,
+        color: vars.color.postListTextHoveredLight,
+      },
+    },
+  },
+});
+
 export const POST_LINK = style({
   display: 'inline-flex',
   padding: vars.padding.card,
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  color: vars.color.postListText,
+  color: vars.color.postListTitleText,
   borderRadius: vars.border.radius.card,
-  selectors: {
-    '&:hover': {
-      backgroundColor: vars.color.b4,
-      color: vars.color.postListTextHovered,
-    },
-    '&:active': {
-      backgroundColor: vars.color.b4,
-      color: vars.color.postListTextHovered,
-    },
-  },
   '@media': {
     '(0px <= width <= 700px)': {
       display: 'flex',
