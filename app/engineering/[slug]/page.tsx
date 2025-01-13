@@ -68,7 +68,7 @@ export default async function Post({ params }: PostPageProps) {
                 <ShareBtn />
                 <OtherArticlesBtn />
               </Flex>
-              <Spacing size="3rem" />
+              <Spacing size="1rem" />
               <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
               <Giscus />
             </View>
