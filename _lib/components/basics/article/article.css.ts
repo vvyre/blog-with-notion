@@ -22,7 +22,7 @@ export const LAYOUT_CENTERED = style([
   {
     display: 'grid',
     width: '100%',
-    backgroundColor: vars.color.b1,
+    height: 'auto',
     gridTemplateColumns: '2rem minmax(15rem, 50rem) 2rem',
     background: 'transparent',
     margin: '0 auto',
