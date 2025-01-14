@@ -24,10 +24,19 @@ export function useScrollPosition(ref?: MutableRefObject<HTMLElement | null>): [
     REF.current = ref.current;
   }, [ref]);
 
-  const updateLayout = () => setHeight(TARGET ? TARGET.scrollHeight - TARGET.clientHeight : 0);
+  const updateLayout = () => {
+    setHeight(TARGET ? TARGET.scrollHeight - TARGET.clientHeight : 0);
+  };
+
+  const updateTargetLayout = () => {
+    updateLayout();
+    const posY = TARGET?.scrollTop || 0;
+    setPosition(posY);
+    ref && setRefPosition(REF.current?.scrollTop || 0);
+  };
 
   useIsomorphicLayoutEffect(() => {
-    updateLayout();
+    updateTargetLayout();
   }, []);
 
   const handleScroll = useDebouncedCallback(
@@ -35,10 +44,9 @@ export function useScrollPosition(ref?: MutableRefObject<HTMLElement | null>): [
       const posY = TARGET?.scrollTop || 0;
       setPosition(posY);
       ref && setRefPosition(REF.current?.scrollTop || 0);
-      console.log(Math.floor(100 * (position / height)));
     },
     25,
-    [TARGET]
+    [TARGET, REF]
   );
 
   useEffect(() => {
@@ -49,7 +57,7 @@ export function useScrollPosition(ref?: MutableRefObject<HTMLElement | null>): [
       TARGET?.removeEventListener('scroll', handleScroll);
       WINDOW?.removeEventListener('resize', updateLayout);
     };
-  }, [WINDOW]);
+  }, [TARGET, WINDOW]);
 
   //scrollHeight로 나눌 때 초기값이 0으로 렌더링되어 0으로 나누어지는 경우 방지
   return [refPosition, position, height > 0 ? height : 1];
