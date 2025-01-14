@@ -3,6 +3,7 @@ import { vars } from '@/_lib/styles/themes.css';
 import { View } from '../../basics/view/view';
 import { useScrollPosition } from '@/_lib/hooks/use-scroll-position';
 import { useRandomBackground } from '@/utils/get-random-background';
+import { BASE, INNER } from './reading-position.css';
 
 export function ReadingPosition() {
   const [_, pos, height] = useScrollPosition();
@@ -12,33 +13,17 @@ export function ReadingPosition() {
   const read = Math.round(Number((pos / height).toFixed(2)) * 100);
   const { backgroundColor } = useRandomBackground();
 
-  console.log(read);
-
   return (
     <View
+      className={BASE}
       style={{
-        zIndex: '99999',
-        position: 'fixed',
-        bottom: '50%',
-        right: '1rem',
-        width: '2.5rem',
-        height: `2.5rem`,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        border: 'transparent',
-        borderRadius: '2rem',
-        backgroundColor: 'transparent',
         outline: `1.25px ${read < 100 ? 'dotted' : 'solid'} ${backgroundColor}`,
       }}>
       <View
-        as="div"
+        className={INNER}
         style={{
           height: `${read}%`,
           width: `${read}%`,
-          border: 'none',
-          borderRadius: '2rem',
-          transition: 'all 0.1s ease-in-out',
           backgroundColor: read < 100 ? vars.color.default : backgroundColor,
         }}
       />
