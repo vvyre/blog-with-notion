@@ -23,6 +23,7 @@ globalStyle('html', {
 });
 
 globalStyle('body', {
+  height: '100%',
   color: vars.color.default,
   backgroundColor: 'transparent',
 });
@@ -40,7 +41,7 @@ globalStyle('body, main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
 
 globalStyle('main', {
   minHeight: '100dvh',
-  height: '100%',
+  height: 'fit-content',
   paddingTop: '5rem',
   maskImage: `linear-gradient(to bottom, transparent, black 10%, black 95%, transparent)`,
   WebkitMaskImage: `linear-gradient(to bottom, transparent, black 10%, black 95%, transparent)`,

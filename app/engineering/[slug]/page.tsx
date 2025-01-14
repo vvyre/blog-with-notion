@@ -8,7 +8,7 @@ import { Article } from '@/_lib/components/basics/article/article';
 import { Spacing } from '@/_lib/components/basics/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/basics/view/view';
-import { LAYOUT_CENTERED } from '@/_lib/components/basics/article/article.css';
+
 import { notion_env } from '@/env';
 import { ShareBtn } from '@/_lib/components/basics/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/basics/flex/flex';
@@ -16,8 +16,9 @@ import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles
 import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
 import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend';
-import { LAYOUT_INNER, OVERFLOW } from '@/app/page.css';
+import { LAYOUT_INNER } from '@/app/page.css';
 import { ReadingPosition } from '@/_lib/components/layout/reading-position/reading-position';
+import { PostBorder } from '@/_lib/components/layout/post-border/post-border';
 
 export interface PostPageProps {
   params: Promise<{
@@ -58,24 +59,21 @@ export default async function Post({ params }: PostPageProps) {
   return (
     <View className={LAYOUT_INNER}>
       <ReadingPosition />
-      <View as="main">
-        <Article>
-          <View className={LAYOUT_CENTERED}>
-            <PostTitle {...meta} />
-            <RenderBlocks blocks={blocks} />
-            <View className={BLOCK_GRID_BASE}>
-              <Spacing size="3rem" dir="vert" />
-              <Flex justifyContent="spaceBetween">
-                <ShareBtn />
-                <OtherArticlesBtn />
-              </Flex>
-              <Spacing size="1rem" />
-              <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
-            </View>
-          </View>
-          <Spacing size="10rem" />
-        </Article>
-      </View>
+      <PostBorder>
+        <PostTitle {...meta} />
+        <RenderBlocks blocks={blocks} />
+        <View className={BLOCK_GRID_BASE}>
+          <Spacing size="3rem" dir="vert" />
+          <Flex justifyContent="spaceBetween">
+            <ShareBtn />
+            <OtherArticlesBtn />
+          </Flex>
+          <Spacing size="1rem" />
+          <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
+        </View>
+
+        <Spacing size="10rem" />
+      </PostBorder>
     </View>
   );
 }

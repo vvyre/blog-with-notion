@@ -16,6 +16,8 @@ import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles
 import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
 import { LAYOUT_INNER } from '@/app/page.css';
+import { ReadingPosition } from '@/_lib/components/layout/reading-position/reading-position';
+import { PostBorder } from '@/_lib/components/layout/post-border/post-border';
 
 export interface PostPageProps {
   params: Promise<{
@@ -53,22 +55,21 @@ export default async function Post({ params }: PostPageProps) {
 
   return (
     <View className={LAYOUT_INNER}>
-      <View as="main">
-        <Article>
-          <View className={LAYOUT_CENTERED}>
-            <PostTitle {...meta} />
-            <RenderBlocks blocks={blocks} />
-            <View className={BLOCK_GRID_BASE}>
-              <Spacing size="3rem" dir="vert" />
-              <Flex justifyContent="spaceBetween">
-                <ShareBtn />
-                <OtherArticlesBtn />
-              </Flex>
-              <Spacing size="10rem" />
-            </View>
+      <ReadingPosition />
+      <PostBorder>
+        <View id="post" className={LAYOUT_CENTERED}>
+          <PostTitle {...meta} />
+          <RenderBlocks blocks={blocks} />
+          <View className={BLOCK_GRID_BASE}>
+            <Spacing size="3rem" dir="vert" />
+            <Flex justifyContent="spaceBetween">
+              <ShareBtn />
+              <OtherArticlesBtn />
+            </Flex>
+            <Spacing size="10rem" />
           </View>
-        </Article>
-      </View>
+        </View>
+      </PostBorder>
     </View>
   );
 }
