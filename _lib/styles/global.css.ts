@@ -45,6 +45,9 @@ globalStyle('main', {
   maskImage: `linear-gradient(to bottom, transparent, black 12.5%, black 95%, transparent)`,
   WebkitMaskImage: `linear-gradient(to bottom, transparent,  black 12.5%, black 95%, transparent)`,
   overflowY: 'auto',
+  scrollbarWidth: 'none',
+  msOverflowStyle: 'none',
+  scrollbarColor: 'transparent',
 });
 
 globalStyle('body', {
