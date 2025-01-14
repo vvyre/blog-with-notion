@@ -4,11 +4,9 @@ import { parsedSlug } from '@/utils/parsed-slug';
 import { meta } from '@/constants/meta';
 import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
 import { PostTitle } from '@/_lib/components/layout/post-title/post-title';
-import { Article } from '@/_lib/components/basics/article/article';
 import { Spacing } from '@/_lib/components/basics/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/basics/view/view';
-
 import { notion_env } from '@/env';
 import { ShareBtn } from '@/_lib/components/basics/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/basics/flex/flex';
@@ -70,9 +68,8 @@ export default async function Post({ params }: PostPageProps) {
           </Flex>
           <Spacing size="1rem" />
           <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
+          <Spacing size="10rem" />
         </View>
-
-        <Spacing size="10rem" />
       </PostBorder>
     </View>
   );

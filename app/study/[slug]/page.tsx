@@ -4,7 +4,6 @@ import { parsedSlug } from '@/utils/parsed-slug';
 import { meta } from '@/constants/meta';
 import { getCachedPostList, getPost, getPostMetaData } from '@/fetch/notion';
 import { PostTitle } from '@/_lib/components/layout/post-title/post-title';
-import { Article } from '@/_lib/components/basics/article/article';
 import { Spacing } from '@/_lib/components/basics/spacing/spacing';
 import { processedBlock } from '@/utils/process-block';
 import { View } from '@/_lib/components/basics/view/view';
@@ -66,8 +65,8 @@ export default async function Post({ params }: PostPageProps) {
               <ShareBtn />
               <OtherArticlesBtn />
             </Flex>
-            <Spacing size="10rem" />
           </View>
+          <Spacing size="10rem" />
         </View>
       </PostBorder>
     </View>
