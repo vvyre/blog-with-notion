@@ -4,7 +4,6 @@ import { BLOCK_GRID_BASE } from '../block-layout.css';
 export const BASE = style([
   BLOCK_GRID_BASE,
   {
-    marginLeft: '-1.2rem',
     verticalAlign: 'middle',
     height: '100%',
     flexWrap: 'nowrap',

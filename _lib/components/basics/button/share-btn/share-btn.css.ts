@@ -6,7 +6,7 @@ export const SHARE_BTN_BASE = style({
   display: 'inline-flex',
   height: 'auto',
   width: '1.2rem',
-  margin: 0,
+  marginLeft: '0.33rem',
   padding: 0,
   border: 'none',
   backgroundColor: 'transparent',
@@ -16,7 +16,7 @@ export const SHARE_BTN_BASE = style({
 export const PARAGRAPH_SHARE = style({
   fontFamily: JETBRAINS_MONO,
   fontWeight: '700',
-  fontSize: '0.66em',
+  fontSize: '0.75em',
   fontFeatureSettings: '"calt" "case"',
   color: vars.color.default,
   selectors: {
