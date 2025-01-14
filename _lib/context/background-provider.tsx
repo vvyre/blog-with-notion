@@ -98,9 +98,9 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
     };
   }, [imgSrc, path]);
 
-  useEffect(() => {
-    console.log(brightness);
-  }, [brightness, isPost, isStudy, theme, backgroundColor]);
+  // useEffect(() => {
+  //   console.log(brightness);
+  // }, [brightness, isPost, isStudy, theme, backgroundColor]);
 
   return (
     <BackgroundContext.Provider value={{ src: imgSrc, brightness, DARK_TEXT_PREFERED, backgroundColor }}>

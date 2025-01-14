@@ -24,30 +24,23 @@ export function useScrollPosition(ref?: MutableRefObject<HTMLElement | null>): [
     REF.current = ref.current;
   }, [ref]);
 
-  const updateLayout = () => {
-    setHeight(TARGET ? TARGET.scrollHeight - TARGET.clientHeight : 0);
-  };
+  const updateLayout = () => setHeight(TARGET ? TARGET.scrollHeight - TARGET.clientHeight : 0);
 
   const updateTargetLayout = () => {
-    updateLayout();
     const posY = TARGET?.scrollTop || 0;
     setPosition(posY);
     ref && setRefPosition(REF.current?.scrollTop || 0);
   };
 
   useIsomorphicLayoutEffect(() => {
+    updateLayout();
+  }, []);
+
+  useEffect(() => {
     updateTargetLayout();
   }, []);
 
-  const handleScroll = useDebouncedCallback(
-    () => {
-      const posY = TARGET?.scrollTop || 0;
-      setPosition(posY);
-      ref && setRefPosition(REF.current?.scrollTop || 0);
-    },
-    25,
-    [TARGET, REF]
-  );
+  const handleScroll = useDebouncedCallback(() => updateTargetLayout(), 25, [TARGET, REF]);
 
   useEffect(() => {
     TARGET?.addEventListener('scroll', handleScroll);
