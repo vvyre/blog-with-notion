@@ -45,11 +45,15 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
           {LeftFlexText}
         </Btn>
         <View className={POST_TITLE_WRAPPER}>
-          <Btn as={'Link'} href={isStudy ? '/' : '/study'} className={NAV_TEXT_STYLE}>
-            {BLOG_TRANSFER}
-          </Btn>
-          <Spacing size="0.3rem" dir="hori" />
-          <GithubLink />
+          {!isPost && (
+            <>
+              <Btn as={'Link'} href={isStudy ? '/' : '/study'} className={NAV_TEXT_STYLE}>
+                {BLOG_TRANSFER}
+              </Btn>
+              <Spacing size="0.3rem" dir="hori" />
+              <GithubLink />
+            </>
+          )}
           {isPost && (
             <>
               <Spacing size="0.3rem" dir="hori" />
