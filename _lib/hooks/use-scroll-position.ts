@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { isClient } from '@syyu/util';
 import { useIsomorphicLayoutEffect } from '@syyu/util/react';
-import { MutableRefObject, Ref, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import { useDebouncedCallback } from './use-debounced-callback';
 
 /**
  *
@@ -10,10 +11,11 @@ import { MutableRefObject, Ref, useCallback, useEffect, useImperativeHandle, use
 export function useScrollPosition(ref?: MutableRefObject<HTMLElement | null>): [number, number, number] {
   const [refPosition, setRefPosition] = useState<number>(0);
   const [position, setPosition] = useState<number>(0);
-  const [scrollHeight, setScrollHeight] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
 
   const isCSR = isClient();
-  const BODY = isCSR ? document.body : null;
+  // const BODY = isCSR ? document.body : null;
+  const TARGET = isCSR ? document.querySelector('main') : null;
   const WINDOW = isCSR ? window : null;
   const REF = useRef<HTMLElement | null>(null);
 
@@ -22,27 +24,33 @@ export function useScrollPosition(ref?: MutableRefObject<HTMLElement | null>): [
     REF.current = ref.current;
   }, [ref]);
 
-  const updateLayout = () => setScrollHeight(BODY?.scrollHeight ?? 0);
+  const updateLayout = () => setHeight(TARGET ? TARGET.scrollHeight - TARGET.clientHeight : 0);
 
   useIsomorphicLayoutEffect(() => {
     updateLayout();
   }, []);
 
-  const handleScroll = useCallback(() => {
-    setPosition(WINDOW?.scrollY || 0);
-    ref && setRefPosition(REF.current?.scrollTop || 0);
-  }, [WINDOW, REF.current]);
+  const handleScroll = useDebouncedCallback(
+    () => {
+      const posY = TARGET?.scrollTop || 0;
+      setPosition(posY);
+      ref && setRefPosition(REF.current?.scrollTop || 0);
+      console.log(Math.floor(100 * (position / height)));
+    },
+    25,
+    [TARGET]
+  );
 
   useEffect(() => {
-    WINDOW?.addEventListener('scroll', handleScroll);
+    TARGET?.addEventListener('scroll', handleScroll);
     WINDOW?.addEventListener('resize', updateLayout);
 
     return () => {
-      WINDOW?.removeEventListener('scroll', handleScroll);
+      TARGET?.removeEventListener('scroll', handleScroll);
       WINDOW?.removeEventListener('resize', updateLayout);
     };
   }, [WINDOW]);
 
   //scrollHeight로 나눌 때 초기값이 0으로 렌더링되어 0으로 나누어지는 경우 방지
-  return [refPosition, position, scrollHeight > 0 ? scrollHeight : 1];
+  return [refPosition, position, height > 0 ? height : 1];
 }
