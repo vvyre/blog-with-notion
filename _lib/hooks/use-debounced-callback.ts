@@ -1,7 +1,10 @@
 import { debounce } from '@/utils/debounce';
 import { useCallback, useEffect, useRef } from 'react';
 
-/** 콜백을 디바운스시켜 리턴함. delay 시간 후 fn이 한 번만 실행됨  */
+/** returns `fn` with `delay`ms debouncing
+ * @param fn: callback
+ * @param delay: ms
+ */
 export const useDebouncedCallback = <T extends (...args: any[]) => any>(fn: T, delay: number) => {
   // fn의 참조가 바뀌면 ref + effect로 발생시켜 참조를 업데이트시킴
   // state로 쓰지 않음으로써 리렌더를 트리거하지 않고 최신 콜백의 참조를 유지하기 위함
