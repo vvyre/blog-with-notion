@@ -17,6 +17,7 @@ import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
 import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend';
 import { LAYOUT_INNER, OVERFLOW } from '@/app/page.css';
+import { ReadingPosition } from '@/_lib/components/layout/reading-position/reading-position';
 
 export interface PostPageProps {
   params: Promise<{
@@ -56,6 +57,7 @@ export default async function Post({ params }: PostPageProps) {
 
   return (
     <View className={LAYOUT_INNER}>
+      <ReadingPosition />
       <View as="main">
         <Article>
           <View className={LAYOUT_CENTERED}>
@@ -71,8 +73,8 @@ export default async function Post({ params }: PostPageProps) {
               <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
             </View>
           </View>
+          <Spacing size="10rem" />
         </Article>
-        <Spacing size="10rem" />
       </View>
     </View>
   );
