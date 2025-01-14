@@ -37,9 +37,6 @@ export function ArticleRecommend({ posts, targets, id }: { posts: PostListObject
                 <Txt as="span" className={TITLE}>
                   {title}
                 </Txt>
-                <Txt as="span" className={DATE}>
-                  {date}
-                </Txt>
               </Btn>
             </List>
           );

@@ -31,7 +31,7 @@ export const POST_LIST = style([
 ]);
 
 export const TITLE = style({
-  textAlign: 'right',
+  textAlign: 'center',
   width: '100%',
   fontSize: TYPOGRAPHY.XS.fontSize,
   color: vars.color.default,
