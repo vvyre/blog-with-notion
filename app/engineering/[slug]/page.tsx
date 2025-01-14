@@ -15,7 +15,6 @@ import { Flex } from '@/_lib/components/basics/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles-btn/other-articles-btn';
 import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
-import { Giscus } from '@/_lib/components/layout/embed/giscus/giscus';
 import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend';
 import { LAYOUT_INNER, OVERFLOW } from '@/app/page.css';
 
@@ -70,7 +69,6 @@ export default async function Post({ params }: PostPageProps) {
               </Flex>
               <Spacing size="1rem" />
               <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
-              <Giscus />
             </View>
           </View>
         </Article>
