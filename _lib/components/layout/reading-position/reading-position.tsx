@@ -17,7 +17,7 @@ export function ReadingPosition() {
     resetRefs();
   }, [path]);
 
-  const [pos, _, height] = useScrollPosition(scrollHeightRef, anchorRef);
+  const [pos, _, height] = useScrollPosition(scrollHeightRef, anchorRef, 15);
 
   //round, toFixed로 스크롤 끝단에서의 감성 조정
   //완전 끝까지 다 스크롤하지 않아도 글을 다 읽었으면 원을 다 채울 수 있도록
@@ -26,8 +26,6 @@ export function ReadingPosition() {
   const PX = read > 90 ? 100 : read;
 
   const { backgroundColor } = useRandomBackground();
-
-  console.log(PX, read);
 
   return (
     <View
