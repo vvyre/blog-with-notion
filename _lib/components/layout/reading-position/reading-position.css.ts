@@ -3,25 +3,30 @@ import { style } from '@vanilla-extract/css';
 export const BASE = style({
   zIndex: '99999',
   position: 'fixed',
-  width: '2.25rem',
-  height: `2.25rem`,
+  width: '3rem',
+  height: '3rem',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   border: 'transparent',
-  borderRadius: '2rem',
+  borderRadius: '3rem',
   backgroundColor: 'transparent',
-  bottom: '50%',
+  bottom: '50dvh',
   right: '0.75rem',
+  overflow: 'hidden',
   '@media': {
     '(0 <= width <= 500px)': {
-      bottom: '1rem',
+      width: '2rem',
+      height: '2rem',
+      bottom: '2rem',
+      left: '50%',
+      transform: 'translateX(-50%)',
     },
   },
 });
 
 export const INNER = style({
+  position: 'absolute',
   border: 'none',
-  borderRadius: '2rem',
-  transition: 'all 0.1s ease-in-out',
+  transition: 'height 0.1s ease-in-out',
 });
