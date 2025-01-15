@@ -7,6 +7,7 @@ export interface ScrollStateSlice {
   anchorRef: RefObject<HTMLElement> | null;
   setScrollHeightRef: (ref: RefObject<HTMLElement> | null) => void;
   setAnchorRef: (ref: RefObject<HTMLElement> | null) => void;
+  resetRefs: () => void;
 }
 
 export const createScrollRefSlice: StateCreator<
@@ -19,4 +20,5 @@ export const createScrollRefSlice: StateCreator<
   anchorRef: null,
   setScrollHeightRef: (ref: RefObject<HTMLElement> | null) => set(_ => ({ scrollHeightRef: ref })),
   setAnchorRef: (ref: RefObject<HTMLElement> | null) => set(_ => ({ anchorRef: ref })),
+  resetRefs: () => set(_ => ({ scrollHeightRef: null, anchorRef: null })),
 });

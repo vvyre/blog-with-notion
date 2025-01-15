@@ -6,34 +6,41 @@ import { useRandomBackground } from '@/utils/get-random-background';
 import { BASE, INNER } from './reading-position.css';
 
 import { useReadingPositionStore } from './store';
-import { useIsomorphicLayoutEffect } from '@syyu/util/react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function ReadingPosition() {
-  const { scrollHeightRef, anchorRef } = useReadingPositionStore();
-  const [pos, _, height] = useScrollPosition(scrollHeightRef, anchorRef);
+  const { scrollHeightRef, anchorRef, resetRefs } = useReadingPositionStore();
 
-  const correction = anchorRef?.current?.getBoundingClientRect();
-  const correctionHeight = (correction?.bottom ?? 0) - (correction?.top ?? 0);
+  const path = usePathname;
+  useEffect(() => {
+    resetRefs();
+  }, [path]);
+
+  const [pos, _, height] = useScrollPosition(scrollHeightRef, anchorRef);
 
   //round, toFixed로 스크롤 끝단에서의 감성 조정
   //완전 끝까지 다 스크롤하지 않아도 글을 다 읽었으면 원을 다 채울 수 있도록
-  const percentage = Number((pos / (height - correctionHeight)).toFixed(1));
-  const read = Math.round(percentage * 100);
+  const percentage = Number((pos / height).toFixed(3));
+  const read = Math.ceil(percentage * 100);
+  const PX = read > 90 ? 100 : read;
+
   const { backgroundColor } = useRandomBackground();
+
+  console.log(PX, read);
 
   return (
     <View
       className={BASE}
       style={{
-        outline: `1.25px ${read < 100 ? 'dotted' : 'solid'} ${backgroundColor}`,
+        outline: `1.5px solid ${backgroundColor}`,
       }}>
       <View
         className={INNER}
         style={{
-          height: `${read}%`,
-          width: `${read}%`,
-          backgroundColor: read < 100 ? vars.color.default : backgroundColor,
+          height: `${PX}%`,
+          width: `${100}%`,
+          backgroundColor: PX === 100 ? backgroundColor : vars.color.default,
         }}
       />
     </View>
