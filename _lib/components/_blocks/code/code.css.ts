@@ -1,13 +1,13 @@
 import { style } from '@vanilla-extract/css';
-import { BLOCK_GRID_BASE } from '../block-layout.css';
+import { NOTION_BLOCK_LAYOUT } from '../block-layout.css';
 import { vars } from '@/_lib/styles/themes.css';
 
 export const CODE_BLOCK = style([
-  BLOCK_GRID_BASE,
+  NOTION_BLOCK_LAYOUT,
   {
-    backgroundColor: vars.color.b2,
+    backgroundColor: vars.color.b1,
     padding: '1.15rem',
-    marginBottom: '1rem',
+    margin: '3rem 0 3rem 0',
     borderRadius: vars.border.radius.card,
   },
 ]);

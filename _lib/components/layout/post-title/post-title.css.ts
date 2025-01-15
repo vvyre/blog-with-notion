@@ -1,10 +1,10 @@
 import { style } from '@vanilla-extract/css';
 import { TYPOGRAPHY } from '../../basics/typography/typography.css';
-import { BLOCK_GRID_BASE } from '../../_blocks/block-layout.css';
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../../_blocks/block-layout.css';
 import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style([
-  BLOCK_GRID_BASE,
+  NOTION_PARAGRAPH_BLOCK_LAYOUT,
   {
     display: 'flex',
     width: '100%',
@@ -52,13 +52,13 @@ export const TITLE_TEXT_PLACEMENT = style({
 export const INFO_BOX = style({
   margin: '3rem 0 3rem 0',
   width: '100%',
-  maxWidth: '45rem',
+  maxWidth: '62rem',
 });
 
 export const TITLE = style([
   TYPOGRAPHY.XXXL,
   {
-    color: vars.color.b1,
+    color: vars.color.b2,
     backgroundColor: vars.color.default,
     fontWeight: 900,
     textAlign: 'left',

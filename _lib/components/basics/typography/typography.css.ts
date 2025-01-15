@@ -53,15 +53,15 @@ export const TYPOGRAPHY = {
     fontWeight: 500,
   },
   M: {
-    fontSize: '1.05rem',
+    fontSize: '1rem',
     fontWeight: 400,
   },
   S: {
-    fontSize: '0.975rem',
+    fontSize: '0.95rem',
     fontWeight: 400,
   },
   XS: {
-    fontSize: '0.925rem',
+    fontSize: '0.9rem',
     fontWeight: 400,
   },
   XXS: {
@@ -90,7 +90,7 @@ export const CODE = style({
   padding: '0.1rem 0.25rem 0.1rem 0.25rem',
   borderRadius: vars.border.radius.card,
   border: 'none',
-  backgroundColor: vars.color.b2,
+  backgroundColor: vars.color.b3,
 });
 
 export const STRIKE = style({});
@@ -101,16 +101,17 @@ export const UNDERLINE = style({
   textDecorationThickness: '1px',
 });
 
-export const LINK = style({
-  textDecoration: 'underline',
-  color: `${vars.color.gray}`,
-  textUnderlineOffset: '0.25rem',
-  textDecorationThickness: '1px',
-  transition: 'color 0.2s ease',
-  fontSize: TYPOGRAPHY.M.fontSize,
-  selectors: {
-    '&:hover': {
-      color: vars.color.highlight,
+export const LINK = style([
+  TYPOGRAPHY.M,
+  {
+    textDecoration: 'underline',
+    color: `${vars.color.gray}`,
+    textUnderlineOffset: '0.22rem',
+    textDecorationThickness: '1px',
+    selectors: {
+      '&:hover': {
+        color: vars.notion.blue,
+      },
     },
   },
-});
+]);

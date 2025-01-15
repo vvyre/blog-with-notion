@@ -1,19 +1,19 @@
 import { style } from '@vanilla-extract/css';
-import { BLOCK_GRID_BASE } from '../block-layout.css';
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css';
 import { TYPOGRAPHY } from '../../basics/typography/typography.css';
 import { vars } from '@/_lib/styles/themes.css';
 
 export const BASE = style([
-  BLOCK_GRID_BASE,
+  NOTION_PARAGRAPH_BLOCK_LAYOUT,
   {
-    backgroundColor: vars.color.b2,
-    marginBottom: '1rem',
+    backgroundColor: vars.color.b1,
+    margin: '2rem 1.25rem 2rem 1.25rem',
     padding: vars.padding.card,
     borderRadius: vars.border.radius.card,
+    border: '1px solid transparent',
     selectors: {
       '&:hover': {
-        outline: `1px solid ${vars.color.highlight}`,
-        outlineOffset: '0.25rem',
+        border: `1px solid ${vars.color.highlight}`,
       },
     },
   },

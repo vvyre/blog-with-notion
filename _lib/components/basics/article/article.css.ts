@@ -1,35 +1,20 @@
-import { BASE_GRID, BASE_PADDING } from '@/_lib/styles/grid.css';
-import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style({
   width: '100%',
-  maxWidth: '50rem',
+  maxWidth: '62rem',
   margin: '0 auto',
 });
 
-export const POST_GRID = style([
-  BASE_PADDING,
-  BASE_GRID,
-  {
-    margin: '0 auto',
-    paddingTop: '2rem',
-    paddingBottom: '0',
-  },
-]);
-
 export const LAYOUT_CENTERED = style([
   {
-    display: 'grid',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '100%',
-    height: 'auto',
-    gridTemplateColumns: '2rem minmax(15rem, 50rem) 2rem',
+    height: '100%',
     background: 'transparent',
     margin: '0 auto',
-    '@media': {
-      '(0 <= width <= 768px)': {
-        gridTemplateColumns: '1.5rem minmax(15rem, 50rem) 1.5rem',
-      },
-    },
   },
 ]);

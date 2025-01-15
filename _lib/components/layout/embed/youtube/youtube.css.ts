@@ -1,9 +1,9 @@
-import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
+import { NOTION_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css';
 import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
 
 export const BASE = style([
-  BLOCK_GRID_BASE,
+  NOTION_BLOCK_LAYOUT,
   {
     width: '100%',
     height: '100%',

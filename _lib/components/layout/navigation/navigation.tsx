@@ -16,6 +16,7 @@ import { ThemeContext } from '@/_lib/context/theme-provider';
 import { LOGO } from './about/about-btn.css';
 import { BackgroundContext } from '@/_lib/context/background-provider';
 import { TEXT_COLOR_THEME_VARIANT } from '../../basics/typography/typography.css';
+import { vars } from '@/_lib/styles/themes.css';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { theme, toggle } = useContext(ThemeContext);
@@ -39,7 +40,12 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   }, [path]);
 
   return (
-    <View as="nav" className={BASE}>
+    <View
+      as="nav"
+      className={BASE}
+      style={{
+        backgroundColor: isPost ? vars.color.b2 : 'transparent',
+      }}>
       <View as="div" className={NAV}>
         <Btn as={isPost ? 'span' : 'div'} onClick={() => handleProfile()} className={NAV_TEXT_STYLE}>
           {LeftFlexText}

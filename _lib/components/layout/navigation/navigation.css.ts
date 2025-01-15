@@ -35,8 +35,8 @@ export const EXPANDED = style({
   left: 0,
   opacity: '0.95',
   alignItems: 'center',
-  width: '100vw',
-  backgroundColor: vars.color.b2,
+  width: '100%',
+  backgroundColor: vars.color.b3,
   height: '100dvh',
   zIndex: '9999',
 });

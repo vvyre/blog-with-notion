@@ -6,7 +6,7 @@ export const ABOUT = style([
   {
     width: '100vw',
     margin: '0 auto',
-    maxWidth: '50rem',
+    maxWidth: '62rem',
     wordBreak: 'keep-all',
     '@media': {
       '(0 <= width <= 768px)': {

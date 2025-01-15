@@ -5,7 +5,6 @@ export const OL = globalStyle('[data-role=orderedlist]', {
   fontFeatureSettings: '"calt", "case"',
   marginLeft: '0.75rem',
   counterReset: 'list-counter',
-  gridColumn: '2 / 3', //BLOCK_GRID_BASE_INLINE
 });
 
 export const LI = globalStyle('[data-role=orderedlistitem]', {

@@ -1,11 +1,11 @@
 import { style } from '@vanilla-extract/css';
-import { BLOCK_GRID_BASE_INLINE } from '../block-layout.css';
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css';
 
 export const BASE = style([
-  BLOCK_GRID_BASE_INLINE,
+  NOTION_PARAGRAPH_BLOCK_LAYOUT,
   {
-    fontFeatureSettings: '"calt", "case"',
-    // listStyleType: 'disc', //in global style b/c of selector nesting issue
-    marginLeft: '1rem',
+    listStyleType: 'disc',
+    paddingLeft: '2.5rem',
+    fontFeatureSettings: "'case', 'tnum', 'cv13',  'ss02', 'cv09', 'ss07', 'ss05'",
   },
 ]);

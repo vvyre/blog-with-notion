@@ -1,11 +1,12 @@
 import { style } from '@vanilla-extract/css';
-import { BLOCK_GRID_BASE_INLINE } from '../block-layout.css';
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css';
+import { JETBRAINS_MONO } from '@/public/fonts/fonts.css';
+
 export const BASE = style([
-  BLOCK_GRID_BASE_INLINE,
+  NOTION_PARAGRAPH_BLOCK_LAYOUT,
   {
-    fontFeatureSettings: '"tnum"',
-    // listStyleType: 'decimal', //in global style b/c of selector nesting issue
-    marginLeft: '1rem',
-    fontSize: '0.95rem',
+    listStyleType: 'decimal',
+    paddingLeft: '2.5rem',
+    fontFeatureSettings: "'case', 'tnum', 'cv13',  'ss02', 'cv09', 'ss07', 'ss05'",
   },
 ]);

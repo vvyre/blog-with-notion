@@ -1,6 +1,7 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { fontFamily, fontFamilyCode } from './fonts.css';
 import { vars } from './themes.css';
+import { JETBRAINS_MONO } from '@/public/fonts/fonts.css';
 
 globalStyle('*, *:before, *:after', {
   boxSizing: 'inherit',
@@ -23,12 +24,15 @@ globalStyle('html', {
 });
 
 globalStyle('body', {
-  height: '100%',
+  width: '100%',
+  height: 'auto',
   color: vars.color.default,
-  backgroundColor: 'transparent',
+  background: 'transparent',
+  margin: 0,
+  padding: 0,
 });
 
-globalStyle('body, main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
+globalStyle('main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
   WebkitTextSizeAdjust: '100%',
@@ -40,22 +44,21 @@ globalStyle('body, main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
 });
 
 globalStyle('main', {
+  width: '100%',
   minHeight: '100dvh',
   height: 'fit-content',
   paddingTop: '5rem',
-  maskImage: `linear-gradient(to bottom, transparent, black 10%, black 95%, transparent)`,
-  WebkitMaskImage: `linear-gradient(to bottom, transparent, black 10%, black 95%, transparent)`,
-  overflowY: 'auto',
-  scrollbarWidth: 'none',
-  msOverflowStyle: 'none',
-  scrollbarColor: 'transparent',
+  // overflowY: 'auto',
+  // scrollbarWidth: 'none',
+  // msOverflowStyle: 'none',
+  // scrollbarColor: 'transparent',
 });
 
-globalStyle('body', {
-  backgroundColor: vars.color.b1,
+globalStyle('main', {
+  backgroundColor: vars.color.b2,
 });
 
-globalStyle('body[data-theme] > main, body[data-theme] > nav, body[data-theme] section', {
+globalStyle('body[data-theme] main, body[data-theme] nav, body[data-theme] section', {
   transition: 'background-color 0.15s ease, color 0.15s ease',
 });
 
@@ -91,10 +94,9 @@ globalStyle('a', {
 });
 
 globalStyle('ul, ol', {
-  margin: 0,
-  padding: 0,
-  fontFeatureSettings: "'case', 'tnum', 'cv13',  'ss02', 'cv09', 'ss07', 'ss05'",
-  listStyleType: 'none',
+  display: 'block',
+  width: '100%',
+  padding: vars.padding.post_component,
 });
 
 globalStyle('pre', {
@@ -124,7 +126,7 @@ globalStyle('img, video, canvas, svg', {
 
 globalStyle('::selection, ::-moz-selection', {
   backgroundColor: vars.color.default,
-  color: vars.color.b1,
+  color: vars.color.b2,
 });
 
 globalStyle('p, span, code, ul li, ol li, li', {

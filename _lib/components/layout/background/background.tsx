@@ -1,5 +1,5 @@
 'use client';
-import { LAYOUT_BG } from '@/app/page.css';
+import { LAYOUT_BG, LAYOUT_FILTER, OVERFLOW } from '@/app/page.css';
 import { View } from '../../basics/view/view';
 import { ComponentPropsWithoutRef, useContext } from 'react';
 import { BackgroundContext } from '@/_lib/context/background-provider';
@@ -14,7 +14,9 @@ export function BackgroundLayout({ ...props }: ComponentPropsWithoutRef<'div'>) 
         backgroundImage: `url('${src}')`,
       }}
       {...props}>
-      {props.children}
+      <View className={LAYOUT_FILTER}>
+        <View className={OVERFLOW}>{props.children}</View>
+      </View>
     </View>
   );
 }

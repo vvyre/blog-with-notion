@@ -15,7 +15,7 @@ export const GRID_SPAN = style({
 export const POST_THUMBNAIL = style({
   width: '100%',
   height: '12rem',
-  backgroundColor: vars.color.b1,
+  backgroundColor: vars.color.b2,
 });
 
 export const POST_TEXT = style({

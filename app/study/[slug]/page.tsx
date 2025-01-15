@@ -12,9 +12,9 @@ import { notion_env } from '@/env';
 import { ShareBtn } from '@/_lib/components/basics/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/basics/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles-btn/other-articles-btn';
-import { BLOCK_GRID_BASE } from '@/_lib/components/_blocks/block-layout.css';
+import { NOTION_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
-import { LAYOUT_INNER } from '@/app/page.css';
+import { LAYOUT_INNER, POST_LAYOUT } from '@/app/page.css';
 import { ReadingPosition } from '@/_lib/components/layout/reading-position/reading-position';
 import { PostBorder } from '@/_lib/components/layout/post-border/post-border';
 
@@ -53,13 +53,12 @@ export default async function Post({ params }: PostPageProps) {
   const blocks = await processedBlock(await getPost(matchPost.id));
 
   return (
-    <View className={LAYOUT_INNER}>
-      <ReadingPosition />
+    <View className={POST_LAYOUT}>
       <PostBorder>
         <View id="post" className={LAYOUT_CENTERED}>
           <PostTitle {...meta} />
           <RenderBlocks blocks={blocks} />
-          <View className={BLOCK_GRID_BASE}>
+          <View className={NOTION_BLOCK_LAYOUT}>
             <Spacing size="3rem" dir="vert" />
             <Flex justifyContent="spaceBetween">
               <ShareBtn />

@@ -1,16 +1,24 @@
+import { vars } from '@/_lib/styles/themes.css';
 import { style } from '@vanilla-extract/css';
 
-export const BLOCK_GRID_BASE_INLINE = style({
-  gridColumn: '2 / 3',
-});
-export const BLOCK_GRID_BASE = style({
-  gridColumn: '2 / 3',
-  width: '100%',
-  maxWidth: '50rem',
+export const NOTION_BLOCK_LAYOUT_INLINE = style({
+  display: 'inline',
 });
 
-export const IMG_BLOCK_GRID_BASE = style({
-  gridColumn: '1 / 4',
+export const NOTION_BLOCK_LAYOUT = style({
   width: '100%',
-  maxWidth: '50rem',
+  maxWidth: '42rem',
+});
+
+export const NOTION_PARAGRAPH_BLOCK_LAYOUT = style({
+  width: '100%',
+  maxWidth: '42rem',
+  margin: '0 1.25rem 0 1.25rem',
+  wordBreak: 'break-all',
+  padding: vars.padding.post_component,
+});
+
+export const NOTION_IMG_BLOCK_LAYOUT = style({
+  width: '100%',
+  maxWidth: '62rem',
 });
