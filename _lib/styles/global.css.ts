@@ -15,10 +15,6 @@ globalStyle('html', {
   padding: 0,
   lineHeight: '1.85',
   fontFamily,
-  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
-
-  WebkitTextSizeAdjust: '100%',
-  MozTextSizeAdjust: '100%',
 })
 
 globalStyle('body', {
@@ -28,9 +24,14 @@ globalStyle('body', {
   background: 'transparent',
   margin: 0,
   padding: 0,
-  MozFontFeatureSettings: 'kern', //최대한 커닝하도록
-  fontFeatureSettings: 'kern',
-  WebkitFontFeatureSettings: 'kern',
+  fontFeatureSettings:
+    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  WebkitFontFeatureSettings:
+    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  WebkitTextSizeAdjust: '100%',
+  MozTextSizeAdjust: '100%',
+  MozOsxFontSmoothing: 'grayscale',
+  WebkitFontSmoothing: 'antialiased', //os별, 브라우저별 폰트 렌더링 방식 차이 최소화
 })
 
 globalStyle('main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
@@ -38,7 +39,10 @@ globalStyle('main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
   MozTextSizeAdjust: '100%',
   margin: 0,
   padding: 0,
-  fontFeatureSettings: "'case', 'ss02', 'cv13', 'cv09', 'ss05', 'ss07'",
+  fontFeatureSettings:
+    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  WebkitFontFeatureSettings:
+    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   fontWeight: 400,
 })
 
@@ -47,10 +51,6 @@ globalStyle('main', {
   minHeight: '100dvh',
   height: 'fit-content',
   paddingTop: '5rem',
-  // overflowY: 'auto',
-  // scrollbarWidth: 'none',
-  // msOverflowStyle: 'none',
-  // scrollbarColor: 'transparent',
 })
 
 globalStyle('main', {
@@ -66,7 +66,10 @@ globalStyle(
 
 globalStyle('input, button, select, textarea', {
   fontFamily,
-  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', ",
+  fontFeatureSettings:
+    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  WebkitFontFeatureSettings:
+    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   margin: 0,
   font: 'inherit',
 })
@@ -86,7 +89,10 @@ globalStyle('textarea', {
 
 globalStyle('a', {
   fontFamily,
-  fontFeatureSettings: "'case', 'ss02', 'cv13', 'cv09', 'tnum', 'ss07'",
+  fontFeatureSettings:
+    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  WebkitFontFeatureSettings:
+    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   fontSize: '100%',
   textDecoration: 'none',
   color: 'inherit',
