@@ -38,12 +38,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   }, [path]);
 
   return (
-    <View
-      as="nav"
-      className={BASE}
-      style={{
-        backgroundColor: isPost ? vars.color.b2 : 'transparent',
-      }}>
+    <View as="nav" className={BASE}>
       <View as="div" className={NAV}>
         <AboutBtn onClick={() => handleProfile()} />
         <View className={POST_TITLE_WRAPPER}>
