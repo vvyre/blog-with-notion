@@ -5,14 +5,13 @@ import pluginReact from 'eslint-plugin-react'
 import pluginPrettier from 'eslint-plugin-prettier'
 import configPrettier from 'eslint-config-prettier'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   pluginJs.configs.recommended,
-  {
-    plugins: [pluginPrettier],
-    extends: ['plugin:prettier/recommended', configPrettier],
-  },
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  pluginPrettier.configs.flat.recommend,
+  configPrettier,
 ]
