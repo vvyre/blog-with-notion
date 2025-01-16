@@ -5,12 +5,10 @@ import { getServerSideSitemap, ISitemapField } from 'next-sitemap';
 
 export async function GET(request: Request) {
   const engineeringPosts = await getCachedPostList(notion_env.database_id);
-  const studyArchivePosts = await getCachedPostList(notion_env.study_database_id);
 
   const engineeringSlugs = engineeringPosts.map(post => `${site_env.engineering}/${parsedSlug(post)}`);
-  const studyArchiveSlugs = studyArchivePosts.map(post => `${site_env.study}/${parsedSlug(post)}`);
 
-  const slugs = [...getSiteMapField(engineeringSlugs, 'daily'), ...getSiteMapField(studyArchiveSlugs, 'never')];
+  const slugs = [...getSiteMapField(engineeringSlugs, 'daily')];
 
   return getServerSideSitemap(slugs);
 }

@@ -24,9 +24,7 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
   const { setCurrentPost } = useContext(CurrentPostContext);
   const { handleProfile, hideProfile, displayProfile, path } = useContext(NavigationContext);
   const { DARK_TEXT_PREFERED } = useContext(BackgroundContext);
-  const { isStudy, isPost } = useCategory();
-
-  const BLOG_TRANSFER = isStudy ? 'BLOG' : 'STUDY ARCHIVE';
+  const { isPost } = useCategory();
 
   const TEXT_COLOR = DARK_TEXT_PREFERED ? 'DARK' : 'LIGHT';
   const NAV_TEXT_STYLE = [LOGO, isPost && TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ');
@@ -48,14 +46,8 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
       }}>
       <View as="div" className={NAV}>
         <AboutBtn onClick={() => handleProfile()} />
-
         <View className={POST_TITLE_WRAPPER}>
-          <Btn as={'Link'} href={isStudy ? '/' : '/study'} className={NAV_TEXT_STYLE}>
-            {BLOG_TRANSFER}
-          </Btn>
-          <Spacing size="0.3rem" dir="hori" />
           <GithubLink />
-
           {isPost && (
             <>
               <Spacing size="0.3rem" dir="hori" />

@@ -23,8 +23,6 @@ export const LAYOUT_BG = style([
   },
 ]);
 
-export const LAYOUT_BG_STUDY = style([LAYOUT]);
-
 export const LAYOUT_INNER = style([
   LAYOUT,
   {

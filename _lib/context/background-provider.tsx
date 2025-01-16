@@ -26,7 +26,7 @@ export const BackgroundContext = createContext<BackgroundContextType>({
 export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { path } = useContext(NavigationContext);
-  const { isStudy, isPost } = useCategory();
+  const { isPost } = useCategory();
 
   const imgSrc = useBackground(26);
   const { backgroundColor } = useRandomBackground();
@@ -44,19 +44,9 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
     else setBrightness(0);
   }, [isPost, theme]);
 
-  //study archive의 랜덤 색깔 배경인 경우
-  useIsomorphicLayoutEffect(() => {
-    if (!isStudy || isPost) return;
-    if (!backgroundColor) return;
-    const r = parseInt(backgroundColor.slice(1, 3), 10);
-    const g = parseInt(backgroundColor.slice(2, 5), 10);
-    const b = parseInt(backgroundColor.slice(4), 10);
-    setBrightness(0.2126 * r + 0.7152 * g + 0.0722 * b);
-  }, [path, backgroundColor]);
-
   //메인 화면의 랜덤 사진 배경인 경우
   useIsomorphicLayoutEffect(() => {
-    if (isStudy || isPost) return;
+    if (isPost) return;
     if (!canvasRef) return;
 
     const canvasCtx = canvasRef.current?.getContext('2d');
@@ -97,10 +87,6 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
       setBrightness(averageBrightness);
     };
   }, [imgSrc, path]);
-
-  // useEffect(() => {
-  //   console.log(brightness);
-  // }, [brightness, isPost, isStudy, theme, backgroundColor]);
 
   return (
     <BackgroundContext.Provider value={{ src: imgSrc, brightness, DARK_TEXT_PREFERED, backgroundColor }}>
