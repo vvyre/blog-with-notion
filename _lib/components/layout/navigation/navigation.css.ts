@@ -13,8 +13,6 @@ export const BASE = style({
   justifyContent: 'center',
   top: '0',
   backgroundColor: 'transparent',
-  backdropFilter: 'blur(8px)', //ios safari 9, chrome 76 and edge(2019), samsung in-app browser 12.0 (2020), firefox 103 (2022)
-  WebkitBackdropFilter: 'blur(8px)', //<safari 9
   '@media': {
     '(0 <= width <= 700px)': {
       bottom: '0',
