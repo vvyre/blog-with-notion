@@ -14,7 +14,7 @@ globalStyle('html', {
   fontSize: '100%',
   margin: 0,
   padding: 0,
-  lineHeight: '1.8',
+  lineHeight: '1.85',
   fontFamily,
   fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
 

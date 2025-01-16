@@ -13,8 +13,8 @@ export const BASE = style([
 export const HEADING_1 = style([
   BASE,
   {
-    fontWeight: 700,
-    fontSize: '1.275rem',
+    fontWeight: 600,
+    fontSize: TYPOGRAPHY.L.fontSize,
     lineHeight: '1.25',
     marginTop: '3rem',
     marginBottom: '1rem',
@@ -24,7 +24,7 @@ export const HEADING_1 = style([
 export const HEADING_2 = style([
   BASE,
   {
-    fontWeight: 700,
+    fontWeight: 600,
     fontSize: TYPOGRAPHY.M.fontSize,
     lineHeight: '1.2',
     marginTop: '1.5rem',
