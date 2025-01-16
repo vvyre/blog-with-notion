@@ -21,11 +21,11 @@ import { vars } from '@/_lib/styles/themes.css';
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { theme, toggle } = useContext(ThemeContext);
 
-  const { currentPost, setCurrentPost } = useContext(CurrentPostContext);
+  const { setCurrentPost } = useContext(CurrentPostContext);
   const { handleProfile, hideProfile, displayProfile, path } = useContext(NavigationContext);
   const { DARK_TEXT_PREFERED } = useContext(BackgroundContext);
   const { isStudy, isPost } = useCategory();
-  const LeftFlexText = currentPost ? getTitle(currentPost) : <AboutBtn />;
+
   const BLOG_TRANSFER = isStudy ? 'BLOG' : 'STUDY ARCHIVE';
 
   const TEXT_COLOR = DARK_TEXT_PREFERED ? 'DARK' : 'LIGHT';
@@ -47,19 +47,15 @@ export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }
         backgroundColor: isPost ? vars.color.b2 : 'transparent',
       }}>
       <View as="div" className={NAV}>
-        <Btn as={isPost ? 'span' : 'div'} onClick={() => handleProfile()} className={NAV_TEXT_STYLE}>
-          {LeftFlexText}
-        </Btn>
+        <AboutBtn onClick={() => handleProfile()} />
+
         <View className={POST_TITLE_WRAPPER}>
-          {!isPost && (
-            <>
-              <Btn as={'Link'} href={isStudy ? '/' : '/study'} className={NAV_TEXT_STYLE}>
-                {BLOG_TRANSFER}
-              </Btn>
-              <Spacing size="0.3rem" dir="hori" />
-              <GithubLink />
-            </>
-          )}
+          <Btn as={'Link'} href={isStudy ? '/' : '/study'} className={NAV_TEXT_STYLE}>
+            {BLOG_TRANSFER}
+          </Btn>
+          <Spacing size="0.3rem" dir="hori" />
+          <GithubLink />
+
           {isPost && (
             <>
               <Spacing size="0.3rem" dir="hori" />
