@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const BASE = style([
   {
@@ -6,9 +6,9 @@ export const BASE = style([
     width: '100%',
     padding: '2rem',
   },
-]);
+])
 
 export const FOOTER_LINK = style({
   fontSize: '0.8rem',
   textAlign: 'center',
-});
+})

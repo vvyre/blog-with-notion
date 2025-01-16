@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const BASE = style({
   zIndex: '99999',
@@ -23,10 +23,10 @@ export const BASE = style({
       transform: 'translateX(-50%)',
     },
   },
-});
+})
 
 export const INNER = style({
   position: 'absolute',
   border: 'none',
   transition: 'height 0.1s ease-in-out',
-});
+})

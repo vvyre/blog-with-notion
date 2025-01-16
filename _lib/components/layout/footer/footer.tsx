@@ -1,7 +1,7 @@
-import { BASE, FOOTER_LINK } from './footer.css';
-import { Txt } from '../../basics/typography/txt/txt';
-import { View } from '../../basics/view/view';
-import { NOTION_BLOCK_LAYOUT } from '../../_blocks/block-layout.css';
+import { BASE, FOOTER_LINK } from './footer.css'
+import { Txt } from '../../basics/typography/txt/txt'
+import { View } from '../../basics/view/view'
+import { NOTION_BLOCK_LAYOUT } from '../../_blocks/block-layout.css'
 
 export function Footer() {
   return (
@@ -12,5 +12,5 @@ export function Footer() {
         Copyright 2024. Brewcold all rights reserved.
       </Txt>
     </View>
-  );
+  )
 }

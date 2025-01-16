@@ -1,3 +1,3 @@
 export function Strike({ ...props }) {
-  return <s {...props} />;
+  return <s {...props} />
 }

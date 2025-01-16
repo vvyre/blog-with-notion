@@ -1,5 +1,5 @@
-import { UNDERLINE } from '../typography.css';
+import { UNDERLINE } from '../typography.css'
 
 export function Underline({ ...props }) {
-  return <u className={UNDERLINE} {...props} />;
+  return <u className={UNDERLINE} {...props} />
 }

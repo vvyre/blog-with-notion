@@ -1,12 +1,12 @@
-import { JETBRAINS_MONO } from '@/public/fonts/fonts.css';
-import { globalStyle } from '@vanilla-extract/css';
+import { JETBRAINS_MONO } from '@/public/fonts/fonts.css'
+import { globalStyle } from '@vanilla-extract/css'
 
 export const UL = globalStyle('[role=list]', {
   fontFeatureSettings: '"calt", "case"',
   marginLeft: '0.75rem',
-});
+})
 
-export const LI = globalStyle('[role=listitem]', {});
+export const LI = globalStyle('[role=listitem]', {})
 
 export const LI_MARK = globalStyle('[role=listitem]::before', {
   fontFamily: JETBRAINS_MONO,
@@ -14,4 +14,4 @@ export const LI_MARK = globalStyle('[role=listitem]::before', {
   content: '●',
   fontWeight: 'inherit',
   marginRight: '0.5rem',
-});
+})

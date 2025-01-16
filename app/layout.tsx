@@ -1,18 +1,18 @@
-import '@/_lib/components/_blocks/code/hljs.css';
-import '@/_lib/styles/themes.css';
-import '@/_lib/styles/global.css';
-import '@/_lib/components/_blocks/toggle/details-summary-global.css';
-import '@/_lib/components/_blocks/numbered-list-item/ol-global.css';
-import '@/_lib/components/_blocks/bulleted-list-item/ul-global.css';
+import '@/_lib/components/_blocks/code/hljs.css'
+import '@/_lib/styles/themes.css'
+import '@/_lib/styles/global.css'
+import '@/_lib/components/_blocks/toggle/details-summary-global.css'
+import '@/_lib/components/_blocks/numbered-list-item/ol-global.css'
+import '@/_lib/components/_blocks/bulleted-list-item/ul-global.css'
 
-import { meta } from '@/constants/meta';
-import type { Metadata } from 'next';
-import { View } from '@/_lib/components/basics/view/view';
-import { notion_env, site_env } from '@/env';
-import { Providers } from '@/_lib/components/providers';
-import { Navigation } from '@/_lib/components/layout/navigation/navigation';
-import { getPost } from '@/fetch/notion';
-import { processedBlock } from '@/utils/process-block';
+import { meta } from '@/constants/meta'
+import type { Metadata } from 'next'
+import { View } from '@/_lib/components/basics/view/view'
+import { notion_env, site_env } from '@/env'
+import { Providers } from '@/_lib/components/providers'
+import { Navigation } from '@/_lib/components/layout/navigation/navigation'
+import { getPost } from '@/fetch/notion'
+import { processedBlock } from '@/utils/process-block'
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -41,15 +41,15 @@ export const metadata: Metadata = {
       'naver-site-verification': site_env.nv,
     },
   },
-};
+}
 
 export default async function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  const profile = await getPost(notion_env.about_id);
-  const blocks = await processedBlock(profile);
+  const profile = await getPost(notion_env.about_id)
+  const blocks = await processedBlock(profile)
 
   return (
     <html lang="ko">
@@ -60,5 +60,5 @@ export default async function RootLayout({
         </Providers>
       </View>
     </html>
-  );
+  )
 }

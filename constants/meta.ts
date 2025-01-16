@@ -1,8 +1,8 @@
-import { site_env } from '@/env';
-import logo from '#/img/logo.webp';
+import { site_env } from '@/env'
+import logo from '#/img/logo.webp'
 
-const TITLE = 'Brewcold';
-const DESCRIPTION = 'Writings about life as a developer';
+const TITLE = 'Brewcold'
+const DESCRIPTION = 'Writings about life as a developer'
 
 export const meta = {
   siteTitle: TITLE,
@@ -19,4 +19,4 @@ export const meta = {
     links: [{ name: 'Github', href: 'https://github.com/brewcold' }],
     copyright: 'Copyright 2024. BREWCOLD All rights reserved.',
   },
-};
+}

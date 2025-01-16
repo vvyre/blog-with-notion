@@ -1,5 +1,5 @@
-import { BASE } from './input.css';
+import { BASE } from './input.css'
 
 export function Input() {
-  return <input type="text" className={BASE} />;
+  return <input type="text" className={BASE} />
 }

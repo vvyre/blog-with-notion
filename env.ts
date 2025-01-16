@@ -2,7 +2,7 @@ export const notion_env = {
   api_key: process.env.NOTION_KEY ?? '',
   database_id: process.env.NOTION_BLOG_DATABASE_ID ?? '',
   about_id: process.env.NOTION_ABOUT_PAGE_ID ?? '',
-};
+}
 
 export const site_env = {
   root: process.env.NEXT_PUBLIC_ROOT ?? '',
@@ -11,4 +11,4 @@ export const site_env = {
   nv: process.env.NAVER_SITE_VERIFICATION ?? '',
   giscus: process.env.NEXT_PUBLIC_GISCUS_REPO ?? '',
   giscus_id: process.env.NEXT_PUBLIC_GISCUS_ID ?? '',
-};
+}

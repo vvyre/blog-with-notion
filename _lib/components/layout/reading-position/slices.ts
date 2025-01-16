@@ -1,13 +1,13 @@
-import type { MutableRefObject, Ref, RefObject } from 'react';
-import { create, StateCreator } from 'zustand';
-import { devtools } from 'zustand/middleware';
+import type { MutableRefObject, Ref, RefObject } from 'react'
+import { create, StateCreator } from 'zustand'
+import { devtools } from 'zustand/middleware'
 
 export interface ScrollStateSlice {
-  scrollHeightRef: RefObject<HTMLElement> | null;
-  anchorRef: RefObject<HTMLElement> | null;
-  setScrollHeightRef: (ref: RefObject<HTMLElement> | null) => void;
-  setAnchorRef: (ref: RefObject<HTMLElement> | null) => void;
-  resetRefs: () => void;
+  scrollHeightRef: RefObject<HTMLElement> | null
+  anchorRef: RefObject<HTMLElement> | null
+  setScrollHeightRef: (ref: RefObject<HTMLElement> | null) => void
+  setAnchorRef: (ref: RefObject<HTMLElement> | null) => void
+  resetRefs: () => void
 }
 
 export const createScrollRefSlice: StateCreator<
@@ -18,7 +18,9 @@ export const createScrollRefSlice: StateCreator<
 > = set => ({
   scrollHeightRef: null,
   anchorRef: null,
-  setScrollHeightRef: (ref: RefObject<HTMLElement> | null) => set(_ => ({ scrollHeightRef: ref })),
-  setAnchorRef: (ref: RefObject<HTMLElement> | null) => set(_ => ({ anchorRef: ref })),
+  setScrollHeightRef: (ref: RefObject<HTMLElement> | null) =>
+    set(_ => ({ scrollHeightRef: ref })),
+  setAnchorRef: (ref: RefObject<HTMLElement> | null) =>
+    set(_ => ({ anchorRef: ref })),
   resetRefs: () => set(_ => ({ scrollHeightRef: null, anchorRef: null })),
-});
+})

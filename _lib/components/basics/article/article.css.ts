@@ -1,10 +1,10 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const BASE = style({
   width: '100%',
   maxWidth: '62rem',
   margin: '0 auto',
-});
+})
 
 export const LAYOUT_CENTERED = style([
   {
@@ -17,4 +17,4 @@ export const LAYOUT_CENTERED = style([
     background: 'transparent',
     margin: '0 auto',
   },
-]);
+])

@@ -1,8 +1,8 @@
-import { Txt } from '../../basics/typography/txt/txt';
-import { View } from '../../basics/view/view';
-import { CALLOUT, CALLOUT_EMOJI } from './callout.css';
-import type { NotionComponentProps } from '@/_lib/types/block';
-import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import { Txt } from '../../basics/typography/txt/txt'
+import { View } from '../../basics/view/view'
+import { CALLOUT, CALLOUT_EMOJI } from './callout.css'
+import type { NotionComponentProps } from '@/_lib/types/block'
+import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
 
 export function Callout({ block }: NotionComponentProps<'callout'>) {
   return (
@@ -16,5 +16,5 @@ export function Callout({ block }: NotionComponentProps<'callout'>) {
         ))}
       </Txt>
     </View>
-  );
+  )
 }

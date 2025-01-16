@@ -1,6 +1,6 @@
-import { style, styleVariants } from '@vanilla-extract/css';
-import { TYPOGRAPHY } from '../../basics/typography/typography.css';
-import { vars } from '@/_lib/styles/themes.css';
+import { style, styleVariants } from '@vanilla-extract/css'
+import { TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { vars } from '@/_lib/styles/themes.css'
 
 export const BASE = style({
   height: '3rem',
@@ -21,14 +21,14 @@ export const BASE = style({
       padding: '0.4rem 1.5rem 0.4rem 1.5rem',
     },
   },
-});
+})
 
 export const NAV = style({
   display: 'flex',
   flexWrap: 'nowrap',
   justifyContent: 'space-between',
   alignItems: 'center',
-});
+})
 
 export const EXPANDED = style({
   display: 'flex',
@@ -41,16 +41,16 @@ export const EXPANDED = style({
   backgroundColor: vars.color.b3,
   height: '100dvh',
   zIndex: '9999',
-});
+})
 
 export const HIDE = style({
   display: 'none',
-});
+})
 
 export const BTN_WRAPPER = style({
   width: '100%',
   maxWidth: '10vw',
-});
+})
 
 export const POST_TITLE_WRAPPER = style([
   {
@@ -65,7 +65,7 @@ export const POST_TITLE_WRAPPER = style([
       },
     },
   },
-]);
+])
 
 export const HIDE_UNDER_700PX = style({
   '@media': {
@@ -73,7 +73,7 @@ export const HIDE_UNDER_700PX = style({
       display: 'none',
     },
   },
-});
+})
 
 export const HIDE_UNDER_500PX = style({
   '@media': {
@@ -81,7 +81,7 @@ export const HIDE_UNDER_500PX = style({
       display: 'none',
     },
   },
-});
+})
 
 export const POST_TITLE = style([
   {
@@ -99,9 +99,9 @@ export const POST_TITLE = style([
       },
     },
   },
-]);
+])
 
 export const TEXT_COLOR = styleVariants({
   post: { color: vars.color.default },
   main: { color: vars.color.default },
-});
+})

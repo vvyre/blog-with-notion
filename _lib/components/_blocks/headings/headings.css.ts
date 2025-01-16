@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
-import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css';
-import { TYPOGRAPHY } from '../../basics/typography/typography.css';
+import { style } from '@vanilla-extract/css'
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css'
+import { TYPOGRAPHY } from '../../basics/typography/typography.css'
 
 export const BASE = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
@@ -8,7 +8,7 @@ export const BASE = style([
     verticalAlign: 'middle',
     flexWrap: 'nowrap',
   },
-]);
+])
 
 export const HEADING_1 = style([
   BASE,
@@ -19,7 +19,7 @@ export const HEADING_1 = style([
     marginTop: '3rem',
     marginBottom: '1rem',
   },
-]);
+])
 
 export const HEADING_2 = style([
   BASE,
@@ -30,7 +30,7 @@ export const HEADING_2 = style([
     marginTop: '1.5rem',
     marginBottom: '1rem',
   },
-]);
+])
 
 export const HEADING_3 = style([
   BASE,
@@ -41,4 +41,4 @@ export const HEADING_3 = style([
     marginTop: '1rem',
     marginBottom: '1rem',
   },
-]);
+])

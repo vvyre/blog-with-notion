@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
-import { TYPOGRAPHY } from '../typography/typography.css';
-import { vars } from '@/_lib/styles/themes.css';
+import { style } from '@vanilla-extract/css'
+import { TYPOGRAPHY } from '../typography/typography.css'
+import { vars } from '@/_lib/styles/themes.css'
 
 export const BASE = style({
   cursor: 'pointer',
@@ -19,4 +19,4 @@ export const BASE = style({
       backgroundColor: vars.color.btn_bg,
     },
   },
-});
+})

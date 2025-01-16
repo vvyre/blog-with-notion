@@ -1,9 +1,16 @@
-import { APIErrorCode, ClientErrorCode, isNotionClientError, NotionClientError } from '@notionhq/client';
+import {
+  APIErrorCode,
+  ClientErrorCode,
+  isNotionClientError,
+  NotionClientError,
+} from '@notionhq/client'
 
-export const handleNotionError = <T extends (...args: any[]) => Promise<any>>(fn: T): T => {
+export const handleNotionError = <T extends (...args: any[]) => Promise<any>>(
+  fn: T
+): T => {
   return <T>(async (...args: any[]) => {
     try {
-      return await fn(...args);
+      return await fn(...args)
     } catch (error) {
       if (isNotionClientError(error)) {
         switch (error.code) {
@@ -13,5 +20,5 @@ export const handleNotionError = <T extends (...args: any[]) => Promise<any>>(fn
         }
       }
     }
-  });
-};
+  })
+}

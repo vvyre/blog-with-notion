@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const BACK_BUTTON_PLACEMENT = style({
   gridRow: 1,
@@ -9,4 +9,4 @@ export const BACK_BUTTON_PLACEMENT = style({
       gridColumn: 1,
     },
   },
-});
+})

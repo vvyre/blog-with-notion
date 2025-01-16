@@ -1,3 +1,3 @@
 export function Italic({ ...props }) {
-  return <i {...props} />;
+  return <i {...props} />
 }

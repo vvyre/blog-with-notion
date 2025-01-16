@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
-import { BASE as BTN_BASE } from '../../button/btn.css';
+import { style } from '@vanilla-extract/css'
+import { BASE as BTN_BASE } from '../../button/btn.css'
 
 export const BASE = style({
   width: '100%',
@@ -8,11 +8,11 @@ export const BASE = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-});
+})
 
 export const ERROR_BTN = style([
   BTN_BASE,
   {
     width: 'fit-content',
   },
-]);
+])

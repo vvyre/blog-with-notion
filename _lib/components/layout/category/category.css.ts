@@ -1,4 +1,4 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css'
 export const HOVER = style({
   selectors: {
     '&:hover': {
@@ -6,13 +6,13 @@ export const HOVER = style({
       textUnderlineOffset: '0.25rem',
     },
   },
-});
+})
 export const BASE = style([
   {
     margin: 0,
     padding: '0 0.75rem 0 0',
   },
-]);
+])
 export const CATEGORY = styleVariants({
   selected: [
     BASE,
@@ -24,4 +24,4 @@ export const CATEGORY = styleVariants({
     },
   ],
   options: [BASE, HOVER, {}],
-});
+})

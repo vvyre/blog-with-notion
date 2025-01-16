@@ -1,5 +1,5 @@
-import { vars } from '@/_lib/styles/themes.css';
-import { style, styleVariants } from '@vanilla-extract/css';
+import { vars } from '@/_lib/styles/themes.css'
+import { style, styleVariants } from '@vanilla-extract/css'
 
 export const TEXT_COLOR_THEME_VARIANT = styleVariants({
   LIGHT: {
@@ -8,7 +8,7 @@ export const TEXT_COLOR_THEME_VARIANT = styleVariants({
   DARK: {
     color: vars.color.blueblack,
   },
-});
+})
 
 export const TEXT_COLOR_WITH_THEME_HOVER_VARIANT = styleVariants({
   LIGHT: {
@@ -33,7 +33,7 @@ export const TEXT_COLOR_WITH_THEME_HOVER_VARIANT = styleVariants({
       },
     },
   },
-});
+})
 
 export const TYPOGRAPHY = {
   XXXL: {
@@ -72,17 +72,17 @@ export const TYPOGRAPHY = {
     fontSize: '0.8rem',
     fontWeight: 400,
   },
-};
+}
 
-export const TEXT_STYLE = styleVariants(TYPOGRAPHY);
+export const TEXT_STYLE = styleVariants(TYPOGRAPHY)
 
 export const BOLD = style({
   fontWeight: 600,
-});
+})
 
 export const ITALIC = style({
   fontStyle: 'italic',
-});
+})
 
 export const CODE = style({
   verticalAlign: 'text-bottom',
@@ -92,15 +92,15 @@ export const CODE = style({
   borderRadius: vars.border.radius.card,
   border: 'none',
   backgroundColor: vars.color.b1,
-});
+})
 
-export const STRIKE = style({});
+export const STRIKE = style({})
 
 export const UNDERLINE = style({
   textDecoration: 'underline',
   textUnderlineOffset: '0.25rem',
   textDecorationThickness: '1px',
-});
+})
 
 export const LINK = style([
   TYPOGRAPHY.M,
@@ -115,4 +115,4 @@ export const LINK = style([
       },
     },
   },
-]);
+])

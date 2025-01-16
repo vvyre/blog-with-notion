@@ -8,4 +8,4 @@ module.exports = {
     additionalSitemaps: ['https://www.brewcoldblue.com/server-sitemap.xml'],
   },
   outDir: './app/',
-};
+}

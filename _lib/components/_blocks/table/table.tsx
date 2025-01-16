@@ -1,5 +1,5 @@
-import type { NotionComponentProps } from '@/_lib/types/block';
+import type { NotionComponentProps } from '@/_lib/types/block'
 
 export function Table({ block }: NotionComponentProps<'table'>) {
-  console.log(block);
+  console.log(block)
 }

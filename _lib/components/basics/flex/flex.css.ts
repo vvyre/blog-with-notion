@@ -1,4 +1,4 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css'
 
 export const WIDTH_VARIANT = styleVariants({
   fit: {
@@ -7,11 +7,11 @@ export const WIDTH_VARIANT = styleVariants({
   fill: {
     width: '100%',
   },
-});
+})
 export const DIRECTION_VARIANT = styleVariants({
   row: { display: 'flex', flexDirection: 'row' },
   column: { display: 'flex', flexDirection: 'column' },
-});
+})
 
 export const JUSTIFY_VARIANT = styleVariants({
   start: { justifyContent: 'flex-start' },
@@ -22,7 +22,7 @@ export const JUSTIFY_VARIANT = styleVariants({
   spaceBetween: { justifyContent: 'space-between' },
   spaceAround: { justifyContent: 'space-around' },
   spaceEvenly: { justifyContent: 'space-evenly' },
-});
+})
 
 export const ALIGN_VARIANT = styleVariants({
   start: { alignItems: 'flex-start' },
@@ -31,9 +31,9 @@ export const ALIGN_VARIANT = styleVariants({
   flexEnd: { alignItems: 'flex-end' },
   center: { alignItems: 'center' },
   stretch: { alignItems: 'stretch' },
-});
+})
 
 export const WRAP_VARIANT = styleVariants({
   nowrap: { flexWrap: 'nowrap' },
   wrap: { flexWrap: 'wrap' },
-});
+})

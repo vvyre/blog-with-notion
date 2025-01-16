@@ -1,13 +1,17 @@
-import { Block } from './block';
-import { Fragment } from 'react';
-import { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map';
+import { Block } from './block'
+import { Fragment } from 'react'
+import { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map'
 
-export function ChildrenBlocks({ childrenBlocks }: { childrenBlocks: EntireNotionBlockResponse[] }) {
+export function ChildrenBlocks({
+  childrenBlocks,
+}: {
+  childrenBlocks: EntireNotionBlockResponse[]
+}) {
   return (
     <Fragment>
       {childrenBlocks?.map((block: EntireNotionBlockResponse) => {
-        return <Block key={block.id} block={block} />;
+        return <Block key={block.id} block={block} />
       })}
     </Fragment>
-  );
+  )
 }

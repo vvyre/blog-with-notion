@@ -1,17 +1,20 @@
-import { createGlobalTheme, createGlobalThemeContract } from '@vanilla-extract/css';
+import {
+  createGlobalTheme,
+  createGlobalThemeContract,
+} from '@vanilla-extract/css'
 
 const RADIUS = {
   card: '0.425rem',
   btn_square: '0.425rem',
   btn_round: '2rem',
-};
+}
 
 const PADDING = {
   card: '0.75rem 1rem 0.75rem 1rem',
   post_component: '0 1.25rem 0 1.25rem',
   btn_square: '0.4rem 0.55rem 0.4rem 0.55rem',
   btn_round: '0.65rem',
-};
+}
 
 export const vars = createGlobalThemeContract({
   color: {
@@ -71,7 +74,7 @@ export const vars = createGlobalThemeContract({
       btn_round: 'border-radius-btn-round',
     },
   },
-});
+})
 
 createGlobalTheme('[data-theme="light"]', vars, {
   border: { radius: RADIUS },
@@ -120,7 +123,7 @@ createGlobalTheme('[data-theme="light"]', vars, {
     yellow: '#ffb331',
     yellow_background: '#ffe69b',
   },
-});
+})
 
 createGlobalTheme('[data-theme="dark"]', vars, {
   border: { radius: RADIUS },
@@ -169,4 +172,4 @@ createGlobalTheme('[data-theme="dark"]', vars, {
     yellow: '#FFD154',
     yellow_background: '#FFF2C2',
   },
-});
+})

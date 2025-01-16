@@ -1,7 +1,7 @@
-import { style } from '@vanilla-extract/css';
-import { TYPOGRAPHY } from '../../basics/typography/typography.css';
-import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../../_blocks/block-layout.css';
-import { vars } from '@/_lib/styles/themes.css';
+import { style } from '@vanilla-extract/css'
+import { TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../../_blocks/block-layout.css'
+import { vars } from '@/_lib/styles/themes.css'
 
 export const BASE = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
@@ -16,7 +16,7 @@ export const BASE = style([
     minHeight: '15rem',
     paddingBottom: '3rem',
   },
-]);
+])
 
 export const BACK_BUTTON_PLACEMENT = style({
   gridRow: 1,
@@ -28,18 +28,18 @@ export const BACK_BUTTON_PLACEMENT = style({
       gridColumn: 1,
     },
   },
-});
+})
 
 export const BACK_BUTTON_STYLE_VARIANT = style({
   fontWeight: 400,
   fontSize: '1.75rem',
-});
+})
 
 export const INFO_BOX = style({
   margin: '3rem 0 3rem 0',
   width: '100%',
   maxWidth: '62rem',
-});
+})
 
 export const TITLE = style([
   TYPOGRAPHY.XXL,
@@ -51,25 +51,25 @@ export const TITLE = style([
     lineHeight: '1.2',
     wordBreak: 'keep-all',
   },
-]);
+])
 
 export const TITLE_ALIGN = style({
   textAlign: 'center',
-});
+})
 
 export const RELEASED_DATE = style({
   color: vars.color.gray,
   fontWeight: 400,
   textAlign: 'right',
-});
+})
 
 export const META = style({
   lineHeight: '1.65',
   verticalAlign: 'middle',
   textAlign: 'center',
   marginBottom: '1rem',
-});
+})
 
 export const SUMMARY = style({
   color: vars.color.gray,
-});
+})

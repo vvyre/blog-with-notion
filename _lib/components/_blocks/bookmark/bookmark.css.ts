@@ -1,7 +1,7 @@
-import { style } from '@vanilla-extract/css';
-import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css';
-import { TYPOGRAPHY } from '../../basics/typography/typography.css';
-import { vars } from '@/_lib/styles/themes.css';
+import { style } from '@vanilla-extract/css'
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css'
+import { TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { vars } from '@/_lib/styles/themes.css'
 
 export const BASE = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
@@ -17,15 +17,15 @@ export const BASE = style([
       },
     },
   },
-]);
+])
 
-export const INNER = style({});
+export const INNER = style({})
 
 export const DESC_URL = style({
   display: 'inline-flex',
   flexWrap: 'nowrap',
   alignItems: 'center',
-});
+})
 
 export const BOOKMARK_TITLE = style({
   lineHeight: '1.2',
@@ -33,18 +33,18 @@ export const BOOKMARK_TITLE = style({
   fontWeight: '600',
   color: vars.color.default,
   wordBreak: 'break-all',
-});
+})
 
 export const BOOKMARK_TEXT = style({
   lineHeight: '1.65',
   fontSize: '0.85rem',
   color: vars.color.gray,
   wordBreak: 'break-all',
-});
+})
 
 export const BOOKMARK_URL = style({
   lineHeight: '1.3',
   fontSize: '0.85rem',
   color: vars.notion.blue,
   wordBreak: 'break-all',
-});
+})

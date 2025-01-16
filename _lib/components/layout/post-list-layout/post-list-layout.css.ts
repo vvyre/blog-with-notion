@@ -1,5 +1,5 @@
-import { vars } from '@/_lib/styles/themes.css';
-import { style } from '@vanilla-extract/css';
+import { vars } from '@/_lib/styles/themes.css'
+import { style } from '@vanilla-extract/css'
 
 export const POST_LIST_CENTERED = style([
   {
@@ -24,4 +24,4 @@ export const POST_LIST_CENTERED = style([
       },
     },
   },
-]);
+])

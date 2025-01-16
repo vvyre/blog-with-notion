@@ -1,6 +1,6 @@
-import { NOTION_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css';
-import { vars } from '@/_lib/styles/themes.css';
-import { style } from '@vanilla-extract/css';
+import { NOTION_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css'
+import { vars } from '@/_lib/styles/themes.css'
+import { style } from '@vanilla-extract/css'
 
 export const BASE = style([
   NOTION_BLOCK_LAYOUT,
@@ -11,4 +11,4 @@ export const BASE = style([
     borderRadius: vars.border.radius.card,
     margin: '1rem 0 0 0',
   },
-]);
+])

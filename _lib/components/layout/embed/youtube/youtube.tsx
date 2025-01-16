@@ -1,10 +1,10 @@
-import { BASE } from './youtube.css';
+import { BASE } from './youtube.css'
 
 export function Youtube({ src }: { src: string }) {
-  const IDX = src.lastIndexOf('/');
-  const ID = src.slice(IDX + 1, -2);
-  const url = `https://www.youtube.com/embed/${ID}`;
-  const caption = `Youtube Video - ${url}`;
+  const IDX = src.lastIndexOf('/')
+  const ID = src.slice(IDX + 1, -2)
+  const url = `https://www.youtube.com/embed/${ID}`
+  const caption = `Youtube Video - ${url}`
   return (
     <>
       <iframe
@@ -18,5 +18,5 @@ export function Youtube({ src }: { src: string }) {
         aria-label={caption}
       />
     </>
-  );
+  )
 }

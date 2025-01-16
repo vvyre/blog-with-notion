@@ -1,7 +1,7 @@
-import { fontFamilyCode } from '@/_lib/styles/fonts.css';
-import { style } from '@vanilla-extract/css';
-import { NOTION_BLOCK_LAYOUT } from '../block-layout.css';
-import { vars } from '@/_lib/styles/themes.css';
+import { fontFamilyCode } from '@/_lib/styles/fonts.css'
+import { style } from '@vanilla-extract/css'
+import { NOTION_BLOCK_LAYOUT } from '../block-layout.css'
+import { vars } from '@/_lib/styles/themes.css'
 
 export const BASE = style([
   NOTION_BLOCK_LAYOUT,
@@ -23,4 +23,4 @@ export const BASE = style([
       },
     },
   },
-]);
+])

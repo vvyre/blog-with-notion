@@ -1,11 +1,11 @@
-'use client';
-import { categories } from '@/constants/category';
-import { Btn } from '../../basics/button/btn';
-import { CATEGORY } from './category.css';
-import { View } from '../../basics/view/view';
-import { LAYOUT_CENTERED } from '../../basics/article/article.css';
-import { Spacing } from '../../basics/spacing/spacing';
-import { useCategory } from '@/_lib/hooks/use-category';
+'use client'
+import { categories } from '@/constants/category'
+import { Btn } from '../../basics/button/btn'
+import { CATEGORY } from './category.css'
+import { View } from '../../basics/view/view'
+import { LAYOUT_CENTERED } from '../../basics/article/article.css'
+import { Spacing } from '../../basics/spacing/spacing'
+import { useCategory } from '@/_lib/hooks/use-category'
 
 export function Category() {
   return (
@@ -28,5 +28,5 @@ export function Category() {
     //   })}
     // </View>
     <></>
-  );
+  )
 }

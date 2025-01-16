@@ -1,24 +1,24 @@
 export interface DatabaseQuery {
-  filter?: FilterGroup;
-  sorts?: Sort[];
+  filter?: FilterGroup
+  sorts?: Sort[]
 }
 
 interface FilterGroup {
-  and?: Filter[];
-  or?: Filter[];
+  and?: Filter[]
+  or?: Filter[]
 }
 
 interface Filter {
-  property: string;
+  property: string
   checkbox?: {
-    equals: boolean;
-  };
-  number?: Object;
-  contains?: string;
-  equals?: string;
+    equals: boolean
+  }
+  number?: Object
+  contains?: string
+  equals?: string
 }
 
 interface Sort {
-  property: string;
-  direction: string;
+  property: string
+  direction: string
 }

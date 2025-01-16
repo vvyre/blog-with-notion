@@ -1,16 +1,22 @@
-import React from 'react';
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
-import { ALIGN_VARIANT, DIRECTION_VARIANT, JUSTIFY_VARIANT, WIDTH_VARIANT, WRAP_VARIANT } from './flex.css';
+import React from 'react'
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
+import {
+  ALIGN_VARIANT,
+  DIRECTION_VARIANT,
+  JUSTIFY_VARIANT,
+  WIDTH_VARIANT,
+  WRAP_VARIANT,
+} from './flex.css'
 
 type FlexProps<T extends ElementType> = {
-  as?: T;
-  width?: keyof typeof WIDTH_VARIANT;
-  flexDirection?: keyof typeof DIRECTION_VARIANT;
-  justifyContent?: keyof typeof JUSTIFY_VARIANT;
-  alignItems?: keyof typeof ALIGN_VARIANT;
-  flexWrap?: keyof typeof WRAP_VARIANT;
-  className?: string;
-} & ComponentPropsWithoutRef<T>;
+  as?: T
+  width?: keyof typeof WIDTH_VARIANT
+  flexDirection?: keyof typeof DIRECTION_VARIANT
+  justifyContent?: keyof typeof JUSTIFY_VARIANT
+  alignItems?: keyof typeof ALIGN_VARIANT
+  flexWrap?: keyof typeof WRAP_VARIANT
+  className?: string
+} & ComponentPropsWithoutRef<T>
 
 export function Flex<T extends ElementType>({
   as,
@@ -29,11 +35,11 @@ export function Flex<T extends ElementType>({
     ALIGN_VARIANT[alignItems],
     WRAP_VARIANT[flexWrap],
     className,
-  ].join(' ');
-  const Component = as ?? 'div';
+  ].join(' ')
+  const Component = as ?? 'div'
   return (
     <Component className={cn} {...props}>
       {props.children}
     </Component>
-  );
+  )
 }

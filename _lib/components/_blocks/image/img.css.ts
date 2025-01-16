@@ -1,7 +1,10 @@
-import { style } from '@vanilla-extract/css';
-import { NOTION_IMG_BLOCK_LAYOUT, NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css';
-import { vars } from '@/_lib/styles/themes.css';
-import { TYPOGRAPHY } from '../../basics/typography/typography.css';
+import { style } from '@vanilla-extract/css'
+import {
+  NOTION_IMG_BLOCK_LAYOUT,
+  NOTION_PARAGRAPH_BLOCK_LAYOUT,
+} from '../block-layout.css'
+import { vars } from '@/_lib/styles/themes.css'
+import { TYPOGRAPHY } from '../../basics/typography/typography.css'
 
 export const IMG_CONTAINER = style([
   NOTION_IMG_BLOCK_LAYOUT,
@@ -15,7 +18,7 @@ export const IMG_CONTAINER = style([
     height: '100%',
     margin: '2rem 0 2rem 0',
   },
-]);
+])
 
 export const IMG_CONTAINER_ZOOMED = style({
   cursor: 'zoom-out',
@@ -28,7 +31,7 @@ export const IMG_CONTAINER_ZOOMED = style({
   height: '100dvh',
   top: '0',
   left: '0',
-});
+})
 
 export const CAPTION_TXT_TEXTBOX = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
@@ -40,13 +43,13 @@ export const CAPTION_TXT_TEXTBOX = style([
     fontSize: TYPOGRAPHY.XXS.fontSize,
     fontWeight: 500,
   },
-]);
+])
 
 export const CAPTION_TXT_ZOOMED = style({
   display: 'none',
-});
+})
 
-export const CAPTION_ZOOMED = style([NOTION_PARAGRAPH_BLOCK_LAYOUT, {}]);
+export const CAPTION_ZOOMED = style([NOTION_PARAGRAPH_BLOCK_LAYOUT, {}])
 
 export const IMG = style({
   borderRadius: vars.border.radius.card,
@@ -54,4 +57,4 @@ export const IMG = style({
   width: '100%',
   height: '100%',
   objectFit: 'contain',
-});
+})

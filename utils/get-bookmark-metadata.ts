@@ -1,27 +1,27 @@
-import { ExtendedBookmarkObjectResponse } from '@/_lib/types/block-transformed';
-import { BookmarkBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { unfurl } from 'unfurl.js';
-import { Metadata } from 'unfurl.js/dist/types';
+import { ExtendedBookmarkObjectResponse } from '@/_lib/types/block-transformed'
+import { BookmarkBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints'
+import { unfurl } from 'unfurl.js'
+import { Metadata } from 'unfurl.js/dist/types'
 
 export interface BookmarkMeta extends Metadata {
-  url: string;
+  url: string
 }
 const fetchMeta = async (url: string): Promise<BookmarkMeta> => {
   const response = await unfurl(url, {
     oembed: true,
     timeout: 2000,
-  });
-  return { ...response, url };
-};
+  })
+  return { ...response, url }
+}
 
 export const getBookmarkMetadata = async (
   block: BookmarkBlockObjectResponse
 ): Promise<ExtendedBookmarkObjectResponse> => {
-  const url = block.bookmark.url;
+  const url = block.bookmark.url
 
-  const bookmarkInfo = await fetchMeta(url);
+  const bookmarkInfo = await fetchMeta(url)
   return {
     ...block,
     bookmarkInfo,
-  };
-};
+  }
+}

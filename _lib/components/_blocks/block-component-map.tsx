@@ -1,27 +1,27 @@
-import { BreadCrumb } from './breadcrumb/breadcrumb';
-import { NotionDivider } from './divider/notion-divider';
-import { Heading_1 } from './headings/heading_1';
-import { Heading_2 } from './headings/heading_2';
-import { Heading_3 } from './headings/heading_3';
-import { Paragraph } from './paragraph/paragraph';
-import { BulletedListItem } from './bulleted-list-item/bulleted-list-item';
-import { Callout } from './callout/callout';
-import { ChildDatabase } from './child-database/child-database';
-import { ChildPage } from './child-page/child-page';
-import { Column } from './column/column';
-import { ColumnList } from './column-list/column-list';
-import { NumberedListItem } from './numbered-list-item/numbered-list-item';
-import { BulletedListWrapper } from './bulleted-list-item/bulleted-list-wrapper';
-import { NumberedListWrapper } from './numbered-list-item/numbered-list-wrapper';
-import { Code } from './code/code';
-import { NotionImg } from './image/notion-img';
-import { NotionFile } from './file/notion-file';
-import { Divider } from '../basics/divider/divider';
-import { Quote } from './quote/quote';
-import { Bookmark } from './bookmark/bookmark';
-import { Toggle } from './toggle/toggle';
-import { BlockComponentMap } from '@/_lib/types/block-object-response-map';
-import { Empty } from '../basics/util/empty';
+import { BreadCrumb } from './breadcrumb/breadcrumb'
+import { NotionDivider } from './divider/notion-divider'
+import { Heading_1 } from './headings/heading_1'
+import { Heading_2 } from './headings/heading_2'
+import { Heading_3 } from './headings/heading_3'
+import { Paragraph } from './paragraph/paragraph'
+import { BulletedListItem } from './bulleted-list-item/bulleted-list-item'
+import { Callout } from './callout/callout'
+import { ChildDatabase } from './child-database/child-database'
+import { ChildPage } from './child-page/child-page'
+import { Column } from './column/column'
+import { ColumnList } from './column-list/column-list'
+import { NumberedListItem } from './numbered-list-item/numbered-list-item'
+import { BulletedListWrapper } from './bulleted-list-item/bulleted-list-wrapper'
+import { NumberedListWrapper } from './numbered-list-item/numbered-list-wrapper'
+import { Code } from './code/code'
+import { NotionImg } from './image/notion-img'
+import { NotionFile } from './file/notion-file'
+import { Divider } from '../basics/divider/divider'
+import { Quote } from './quote/quote'
+import { Bookmark } from './bookmark/bookmark'
+import { Toggle } from './toggle/toggle'
+import { BlockComponentMap } from '@/_lib/types/block-object-response-map'
+import { Empty } from '../basics/util/empty'
 
 export const blockComponentMap: BlockComponentMap = {
   audio: Empty,
@@ -61,4 +61,4 @@ export const blockComponentMap: BlockComponentMap = {
   text: Empty,
   unsupported: Divider,
   video: Divider,
-};
+}

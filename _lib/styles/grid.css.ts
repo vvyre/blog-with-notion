@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const BASE_GRID = style({
   display: 'grid',
@@ -12,7 +12,7 @@ export const BASE_GRID = style({
       gridTemplateColumns: 'repeat(6, 1fr)',
     },
   },
-});
+})
 
 export const BASE_PADDING = style({
   paddingRight: '2rem',
@@ -23,4 +23,4 @@ export const BASE_PADDING = style({
       paddingLeft: '0',
     },
   },
-});
+})

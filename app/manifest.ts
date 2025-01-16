@@ -1,6 +1,6 @@
-import { vars } from '@/_lib/styles/themes.css';
-import { meta } from '@/constants/meta';
-import { MetadataRoute } from 'next';
+import { vars } from '@/_lib/styles/themes.css'
+import { meta } from '@/constants/meta'
+import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -18,5 +18,5 @@ export default function manifest(): MetadataRoute.Manifest {
     //     type: 'image/x-icon',
     //   },
     // ],
-  };
+  }
 }

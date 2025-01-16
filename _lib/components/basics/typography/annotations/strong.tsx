@@ -1,5 +1,5 @@
-import { BOLD } from '../typography.css';
+import { BOLD } from '../typography.css'
 
 export function Strong({ ...props }) {
-  return <strong className={BOLD} {...props} />;
+  return <strong className={BOLD} {...props} />
 }
