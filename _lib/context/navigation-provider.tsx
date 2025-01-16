@@ -23,7 +23,6 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
 
   const [displayProfile, _, hideProfile, toggle] = useBooleanState(false)
   const handleProfile = () => {
-    if (isPost) return
     toggle()
   }
   return (
