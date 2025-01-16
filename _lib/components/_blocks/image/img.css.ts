@@ -13,6 +13,7 @@ export const IMG_CONTAINER = style([
     cursor: 'zoom-in',
     objectFit: 'contain',
     height: '100%',
+    margin: '2rem 0 2rem 0',
   },
 ]);
 
@@ -29,12 +30,15 @@ export const IMG_CONTAINER_ZOOMED = style({
   left: '0',
 });
 
-export const CAPTION_TXT = style([
+export const CAPTION_TXT_TEXTBOX = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
-  TYPOGRAPHY.S,
   {
-    marginTop: '0.25rem',
+    width: '100%',
+    marginTop: '0.35rem',
     color: vars.color.gray,
+    textAlign: 'left',
+    fontSize: TYPOGRAPHY.XXS.fontSize,
+    fontWeight: 500,
   },
 ]);
 

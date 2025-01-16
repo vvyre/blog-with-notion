@@ -17,7 +17,7 @@ export const HEADING_1 = style([
     fontSize: '1.275rem',
     lineHeight: '1.25',
     marginTop: '3rem',
-    marginBottom: '2rem',
+    marginBottom: '1rem',
   },
 ]);
 
@@ -27,7 +27,7 @@ export const HEADING_2 = style([
     fontWeight: 700,
     fontSize: TYPOGRAPHY.M.fontSize,
     lineHeight: '1.2',
-    marginTop: '2.5rem',
+    marginTop: '1.5rem',
     marginBottom: '1rem',
   },
 ]);

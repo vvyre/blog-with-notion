@@ -7,7 +7,7 @@ export const CODE_BLOCK = style([
   {
     backgroundColor: vars.color.b1,
     padding: '1.15rem',
-    margin: '3rem 0 3rem 0',
+    margin: '2rem 0 2rem 0',
     borderRadius: vars.border.radius.card,
   },
 ]);

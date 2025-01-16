@@ -17,8 +17,7 @@ globalStyle('html', {
   lineHeight: '1.8',
   fontFamily,
   fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
-  textRendering: 'optimizeLegibility',
-  WebkitFontSmoothing: 'antialiased',
+
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
 });
@@ -33,8 +32,6 @@ globalStyle('body', {
 });
 
 globalStyle('main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
-  textRendering: 'optimizeLegibility',
-  WebkitFontSmoothing: 'antialiased',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
   margin: 0,
@@ -131,12 +128,6 @@ globalStyle('::selection, ::-moz-selection', {
 
 globalStyle('p, span, code, ul li, ol li, li', {
   fontSize: '100%',
-});
-
-globalStyle('article>p, article>p>span', {
-  textAlign: 'justify',
-  textJustify: 'inter-word',
-  hyphens: 'auto',
 });
 
 globalStyle('span>code', {

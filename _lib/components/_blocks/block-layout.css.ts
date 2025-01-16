@@ -8,6 +8,11 @@ export const NOTION_BLOCK_LAYOUT_INLINE = style({
 export const NOTION_BLOCK_LAYOUT = style({
   width: '100%',
   maxWidth: '42rem',
+  '@media': {
+    '(0 <= width <= 700px)': {
+      padding: '0 1.5rem 0 1.5rem',
+    },
+  },
 });
 
 export const NOTION_PARAGRAPH_BLOCK_LAYOUT = style({

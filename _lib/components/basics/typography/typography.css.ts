@@ -90,7 +90,7 @@ export const CODE = style({
   padding: '0.1rem 0.25rem 0.1rem 0.25rem',
   borderRadius: vars.border.radius.card,
   border: 'none',
-  backgroundColor: vars.color.b3,
+  backgroundColor: vars.color.b1,
 });
 
 export const STRIKE = style({});
