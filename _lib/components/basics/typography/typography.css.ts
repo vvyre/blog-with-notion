@@ -86,7 +86,7 @@ export const ITALIC = style({
 
 export const CODE = style({
   verticalAlign: 'text-bottom',
-  fontSize: '0.825em',
+  fontSize: '0.8em',
   padding: '0.1rem 0.3rem 0.1rem 0.3rem',
   margin: '0 0.12rem 0 0.12rem',
   borderRadius: vars.border.radius.card,
