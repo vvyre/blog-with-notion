@@ -86,8 +86,9 @@ export const ITALIC = style({
 
 export const CODE = style({
   verticalAlign: 'text-bottom',
-  fontSize: '0.825rem',
-  padding: '0.1rem 0.25rem 0.1rem 0.25rem',
+  fontSize: '0.825em',
+  padding: '0.1rem 0.3rem 0.1rem 0.3rem',
+  margin: '0 0.12rem 0 0.12rem',
   borderRadius: vars.border.radius.card,
   border: 'none',
   backgroundColor: vars.color.b1,
@@ -106,7 +107,7 @@ export const LINK = style([
   {
     textDecoration: 'underline',
     color: `${vars.color.gray}`,
-    textUnderlineOffset: '0.22rem',
+    textUnderlineOffset: '0.25rem',
     textDecorationThickness: '1px',
     selectors: {
       '&:hover': {
