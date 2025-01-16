@@ -1,7 +1,6 @@
-import { JETBRAINS_MONO, PRETENDARD } from '@/public/fonts/fonts.css';
+import { JETBRAINS_MONO } from '@/public/fonts/fonts.css';
 
-const kor = PRETENDARD;
 const code = JETBRAINS_MONO;
 
-export const fontFamily = `${kor}, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif`;
+export const fontFamily = `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`;
 export const fontFamilyCode = code;
