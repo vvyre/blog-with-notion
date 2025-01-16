@@ -1,4 +1,3 @@
-import { BASE_GRID } from '@/_lib/styles/grid.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 import { TYPOGRAPHY } from '../../basics/typography/typography.css';
 import { vars } from '@/_lib/styles/themes.css';

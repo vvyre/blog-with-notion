@@ -2,7 +2,6 @@
 import { Btn } from '../../basics/button/btn';
 import { BASE, EXPANDED, HIDE, NAV, POST_TITLE_WRAPPER } from './navigation.css';
 import { View } from '../../basics/view/view';
-import { getTitle } from '@/utils/get-title';
 import { useContext, useEffect } from 'react';
 import { CurrentPostContext } from '@/_lib/context/current-post-provider';
 import { useCategory } from '@/_lib/hooks/use-category';
@@ -16,7 +15,6 @@ import { ThemeContext } from '@/_lib/context/theme-provider';
 import { LOGO } from './about/about-btn.css';
 import { BackgroundContext } from '@/_lib/context/background-provider';
 import { TEXT_COLOR_THEME_VARIANT } from '../../basics/typography/typography.css';
-import { vars } from '@/_lib/styles/themes.css';
 
 export function Navigation({ profile }: { profile: EntireNotionBlockResponse[] }) {
   const { theme, toggle } = useContext(ThemeContext);

@@ -1,5 +1,4 @@
 import { fontFamilyCode } from '@/_lib/styles/fonts.css';
-import { BASE_PADDING } from '@/_lib/styles/grid.css';
 import { style } from '@vanilla-extract/css';
 
 export const ABOUT = style([

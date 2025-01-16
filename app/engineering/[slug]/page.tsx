@@ -11,11 +11,10 @@ import { notion_env } from '@/env';
 import { ShareBtn } from '@/_lib/components/basics/button/share-btn/share-btn';
 import { Flex } from '@/_lib/components/basics/flex/flex';
 import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles-btn/other-articles-btn';
-import { NOTION_BLOCK_LAYOUT, NOTION_PARAGRAPH_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css';
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css';
 import RenderBlocks from '@/_lib/components/render-blocks';
 import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend';
 import { POST_LAYOUT } from '@/app/page.css';
-import { ReadingPosition } from '@/_lib/components/layout/reading-position/reading-position';
 import { PostBorder } from '@/_lib/components/layout/post-border/post-border';
 
 export interface PostPageProps {

@@ -1,7 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { fontFamily, fontFamilyCode } from './fonts.css';
 import { vars } from './themes.css';
-import { JETBRAINS_MONO } from '@/public/fonts/fonts.css';
 
 globalStyle('*, *:before, *:after', {
   boxSizing: 'inherit',
