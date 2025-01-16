@@ -33,6 +33,8 @@ export const LAYOUT_INNER = style([
 export const POST_LAYOUT = style({
   width: '100%',
   height: 'auto',
+  position: 'relative',
+  top: '-3rem',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
