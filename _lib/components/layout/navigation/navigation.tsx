@@ -1,6 +1,13 @@
 'use client'
 import { Btn } from '../../basics/button/btn'
-import { BASE, EXPANDED, HIDE, NAV, POST_TITLE_WRAPPER } from './navigation.css'
+import {
+  BASE,
+  EXPANDED,
+  FILTER_VARIANT,
+  HIDE,
+  NAV,
+  POST_TITLE_WRAPPER,
+} from './navigation.css'
 import { View } from '../../basics/view/view'
 import { useContext, useEffect } from 'react'
 import { CurrentPostContext } from '@/_lib/context/current-post-provider'
@@ -46,13 +53,7 @@ export function Navigation({
   return (
     <View
       as="nav"
-      className={BASE}
-      style={
-        isPost && {
-          backdropFilter: 'blur(8px)', //ios safari 9, chrome 76 and edge(2019), samsung in-app browser 12.0 (2020), firefox 103 (2022)
-          WebkitBackdropFilter: 'blur(8px)', //<safari 9
-        }
-      }
+      className={[BASE, isPost && FILTER_VARIANT.isPost].join(' ')}
     >
       <View as="div" className={NAV}>
         <AboutBtn onClick={() => handleProfile()} />

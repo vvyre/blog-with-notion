@@ -21,6 +21,13 @@ export const BASE = style({
   },
 })
 
+export const FILTER_VARIANT = styleVariants({
+  isPost: {
+    backdropFilter: 'blur(8px)', //ios safari 9, chrome 76 and edge(2019), samsung in-app browser 12.0 (2020), firefox 103 (2022)
+    WebkitBackdropFilter: 'blur(8px)', //<safari 9
+  },
+})
+
 export const NAV = style({
   display: 'flex',
   flexWrap: 'nowrap',
