@@ -1,12 +1,9 @@
+import { vars } from '@/_lib/styles/themes.css'
 import { style } from '@vanilla-extract/css'
 
-export const BACK_BUTTON_PLACEMENT = style({
-  gridRow: 1,
-  gridColumn: 3,
-  marginBottom: '1rem',
-  '@media': {
-    'screen and (max-width: 768px)': {
-      gridColumn: 1,
-    },
-  },
+export const BACK_BUTTON_BASE = style({
+  color: vars.color.default,
+  fontSize: '1.35rem',
+  fontWeight: '600',
+  lineHeight: 0,
 })

@@ -16,6 +16,7 @@ import RenderBlocks from '@/_lib/components/render-blocks'
 import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend'
 import { POST_LAYOUT } from '@/app/page.css'
 import { PostBorder } from '@/_lib/components/layout/post-border/post-border'
+import { BackButton } from '@/_lib/components/layout/back-button/back-button'
 
 export interface PostPageProps {
   params: Promise<{
@@ -56,6 +57,7 @@ export default async function Post({ params }: PostPageProps) {
   return (
     <View className={POST_LAYOUT}>
       <PostBorder>
+        <BackButton className={NOTION_PARAGRAPH_BLOCK_LAYOUT} />
         <PostTitle {...meta} />
         <RenderBlocks blocks={blocks} />
         <View className={NOTION_PARAGRAPH_BLOCK_LAYOUT}>
