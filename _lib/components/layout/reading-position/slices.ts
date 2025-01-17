@@ -1,6 +1,5 @@
-import type { MutableRefObject, Ref, RefObject } from 'react'
-import { create, StateCreator } from 'zustand'
-import { devtools } from 'zustand/middleware'
+import type { RefObject } from 'react'
+import { StateCreator } from 'zustand'
 
 export interface ScrollStateSlice {
   scrollHeightRef: RefObject<HTMLElement> | null
