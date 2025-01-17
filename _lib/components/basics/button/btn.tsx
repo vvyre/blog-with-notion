@@ -1,8 +1,11 @@
 import {
-  ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
+  ElementRef,
   ElementType,
+  forwardRef,
   MouseEvent,
   ReactNode,
+  Ref,
 } from 'react'
 import { BASE } from './btn.css'
 import Link from 'next/link'
@@ -13,30 +16,35 @@ type BtnProps<T extends ElementType> = {
   onClick?: (e: MouseEvent) => void
   children: ReactNode
   href?: string | Url
-} & ComponentPropsWithoutRef<T>
+} & ComponentPropsWithRef<T>
 
-export function Btn<T extends ElementType>({
-  as,
-  onClick,
-  children,
-  href,
-  ...props
-}: BtnProps<T>) {
-  const cn = props.className ?? BASE
-  const Component = as ?? 'button'
+export const Btn = forwardRef(
+  <T extends ElementType>(
+    { as, onClick, children, href, ...props }: BtnProps<T>,
+    ref: Ref<ElementRef<T>>
+  ) => {
+    const cn = props.className ?? BASE
+    const Component = as ?? 'button'
 
-  switch (Component) {
-    default:
-      return (
-        <Component className={cn} href={href} onClick={onClick} {...props}>
-          {children}
-        </Component>
-      )
-    case 'Link':
-      return (
-        <Link className={cn} href={href ?? '/'} scroll={props.scroll ?? false}>
-          {children}
-        </Link>
-      )
+    switch (Component) {
+      default:
+        return (
+          <Component className={cn} onClick={onClick} {...props} ref={ref}>
+            {children}
+          </Component>
+        )
+      case 'Link':
+        return (
+          <Link
+            className={cn}
+            href={href ?? '/'}
+            scroll={props.scroll ?? false}
+            ref={ref as Ref<HTMLAnchorElement>}
+            {...props}
+          >
+            {children}
+          </Link>
+        )
+    }
   }
-}
+)
