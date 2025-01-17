@@ -1,5 +1,5 @@
 import { ThemeContext } from '@/_lib/context/theme-provider'
-import { useLoadBackground } from '@/_lib/hooks/use-background'
+import { useLoadBackground } from '@/_lib/hooks/use-load-background'
 import { useCategory } from '@/_lib/hooks/use-category'
 import { useIsomorphicLayoutEffect } from '@syyu/util/react'
 import { useRef, useContext, useEffect } from 'react'
