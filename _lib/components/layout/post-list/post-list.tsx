@@ -12,9 +12,7 @@ import {
 } from './post-list.css'
 import { getDate } from '@/utils/get-date'
 import type { PageObject } from '@/_lib/types/notion-response'
-import { useContext } from 'react'
-import { BackgroundContext } from '@/_lib/context/background-provider'
-import { TEXT_COLOR_THEME_VARIANT } from '../../basics/typography/typography.css'
+import { useBackgroundStore } from '../background/store'
 
 interface PostListProps {
   post: PageObject
@@ -26,8 +24,8 @@ export function PostList({ post, category }: PostListProps) {
   const TITLE = getTitle(post)
   const DATE = getDate(post)
 
-  const { DARK_TEXT_PREFERED } = useContext(BackgroundContext)
-  const COLOR_KEY = DARK_TEXT_PREFERED ? 'DARK' : 'LIGHT'
+  const { PREFERS_DARK_TEXT } = useBackgroundStore()
+  const COLOR_KEY = PREFERS_DARK_TEXT() ? 'DARK' : 'LIGHT'
   // const TEXT_COLOR_STYLE = TEXT_COLOR_THEME_VARIANT[COLOR_KEY];
   const LIST_HOVER_STYLE = POST_LINK_THEME_VARIANT[COLOR_KEY]
 

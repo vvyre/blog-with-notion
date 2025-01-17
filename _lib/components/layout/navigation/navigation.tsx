@@ -9,7 +9,7 @@ import {
   POST_TITLE_WRAPPER,
 } from './navigation.css'
 import { View } from '../../basics/view/view'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { CurrentPostContext } from '@/_lib/context/current-post-provider'
 import { useCategory } from '@/_lib/hooks/use-category'
 import type { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map'
@@ -20,8 +20,8 @@ import { NavigationContext } from '@/_lib/context/navigation-provider'
 import { AboutBtn } from './about/about-btn'
 import { ThemeContext } from '@/_lib/context/theme-provider'
 import { LOGO } from './about/about-btn.css'
-import { BackgroundContext } from '@/_lib/context/background-provider'
 import { TEXT_COLOR_THEME_VARIANT } from '../../basics/typography/typography.css'
+import { useBackgroundStore } from '../background/store'
 
 export function Navigation({
   profile,
@@ -33,10 +33,10 @@ export function Navigation({
   const { setCurrentPost } = useContext(CurrentPostContext)
   const { handleProfile, hideProfile, displayProfile, path } =
     useContext(NavigationContext)
-  const { DARK_TEXT_PREFERED } = useContext(BackgroundContext)
+  const { PREFERS_DARK_TEXT } = useBackgroundStore()
   const { isPost } = useCategory()
 
-  const TEXT_COLOR = DARK_TEXT_PREFERED ? 'DARK' : 'LIGHT'
+  const TEXT_COLOR = PREFERS_DARK_TEXT() ? 'DARK' : 'LIGHT'
   const NAV_TEXT_STYLE = [
     LOGO,
     isPost && TEXT_COLOR_THEME_VARIANT[TEXT_COLOR],

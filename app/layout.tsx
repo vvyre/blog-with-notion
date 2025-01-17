@@ -53,12 +53,12 @@ export default async function RootLayout({
 
   return (
     <html lang="ko">
-      <View as="body">
-        <Providers>
+      <Providers>
+        <View as="body">
           <Navigation profile={blocks} />
           {children}
-        </Providers>
-      </View>
+        </View>
+      </Providers>
     </html>
   )
 }
