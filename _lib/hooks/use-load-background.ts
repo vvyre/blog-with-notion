@@ -4,7 +4,7 @@ import { useIsomorphicLayoutEffect } from '@syyu/util/react'
 import { getRandomInt } from '@/utils/get-random-int'
 import { preload } from 'react-dom'
 
-export const useBackground = (nums_of_files: number): string => {
+export const useLoadBackground = (nums_of_files: number): string => {
   const path = usePathname()
   const [num, setNum] = useState<number>(0)
   const [next, setNext] = useState<number>(0)
