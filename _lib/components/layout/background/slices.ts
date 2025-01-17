@@ -39,19 +39,22 @@ export const backgroundImageSlice: StateCreator<
 
 //명도, 픽셀 평균값 등 배경을 통한 계산식
 export interface BackgroundMetaSliceType {
-  brightness: number
-  setBrightness: (value: number) => void
-  PREFERS_DARK_TEXT: boolean
+  brightness: Map<string, number>
+  setBrightness: (brightness: Map<string, number>) => void
+  PREFERS_DARK_TEXT: () => boolean
 }
 export const backgroundMetaSlice: StateCreator<
   BackgroundMetaSliceType,
   [['zustand/devtools', never]],
   [],
   BackgroundMetaSliceType
-> = set => ({
-  brightness: 0,
-  setBrightness: (brightness: number) => set(_ => ({ brightness })),
-  PREFERS_DARK_TEXT: false,
+> = (set, get) => ({
+  brightness: new Map(),
+  setBrightness: brightness => set(_ => ({ brightness })),
+  PREFERS_DARK_TEXT: () => {
+    const entries = get().brightness.entries()
+    return entries.reduce((prev, [_, curr]) => prev + curr, 0) > 186
+  },
 })
 
 //배경의 영향을 받는 RefObject들
