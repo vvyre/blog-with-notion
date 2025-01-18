@@ -16,6 +16,8 @@ export const LAYOUT_BG = style([
   {
     position: 'absolute',
     top: 0,
+    width: '100%',
+    height: '100%',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundBlendMode: 'overlay',
@@ -46,7 +48,7 @@ export const LAYOUT_FILTER = style([
   {
     position: 'absolute',
     width: '100%',
-    height: '100dvh',
+    height: '100%',
     top: '0',
     backgroundColor: vars.color.background_filter,
   },
@@ -55,7 +57,7 @@ export const LAYOUT_FILTER = style([
 export const OVERFLOW = style({
   width: '100%',
   height: '100%',
-  position: 'fixed',
+  position: 'absolute',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

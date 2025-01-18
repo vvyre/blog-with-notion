@@ -1,9 +1,9 @@
-import { vars } from '@/_lib/styles/themes.css'
 import { style } from '@vanilla-extract/css'
 
 export const POST_LIST_CENTERED = style([
   {
     background: 'transparent',
+    position: 'absolute',
     lineHeight: 1.65,
     width: '100%',
     maxWidth: '62rem',
@@ -15,8 +15,9 @@ export const POST_LIST_CENTERED = style([
     alignItems: 'center',
     '@media': {
       '(0px <= width <= 700px)': {
-        paddingTop: '25rem',
-        paddingBottom: '7.5rem',
+        top: '7.5rem',
+        paddingBottom: '20%',
+        height: 'auto',
         flexDirection: 'column',
         flexWrap: 'nowrap',
         justifyContent: 'center',
