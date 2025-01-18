@@ -24,9 +24,8 @@ export function PostList({ post, category }: PostListProps) {
   const TITLE = getTitle(post)
   const DATE = getDate(post)
 
-  const { PREFERS_DARK_TEXT } = useBackgroundStore()
-  const COLOR_KEY = PREFERS_DARK_TEXT() ? 'DARK' : 'LIGHT'
-  // const TEXT_COLOR_STYLE = TEXT_COLOR_THEME_VARIANT[COLOR_KEY];
+  const { PREFERS_BLACK_TEXT } = useBackgroundStore()
+  const COLOR_KEY = PREFERS_BLACK_TEXT() ? 'DARK' : 'LIGHT'
   const LIST_HOVER_STYLE = POST_LINK_THEME_VARIANT[COLOR_KEY]
 
   return (
