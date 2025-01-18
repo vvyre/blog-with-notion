@@ -52,7 +52,7 @@ export const backgroundMetaSlice: StateCreator<
   brightness: new Map(),
   setBrightness: brightness => set(_ => ({ brightness })),
   PREFERS_BLACK_TEXT: () => {
-    const entries = get().brightness.entries()
+    const entries = Array.from(get().brightness.entries())
     return entries.reduce((prev, [_, curr]) => prev + curr, 0) > 186
   },
 })
