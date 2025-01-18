@@ -44,14 +44,13 @@ export function useBackgroundCanvas() {
     if (!src) return
 
     const ctx = canvasRef.current.getContext('2d')
-    if (!ctx) return
 
     const IMG = new Image()
     IMG.crossOrigin = 'anonymous'
     IMG.src = src
 
     IMG.onload = () => {
-      ctx.drawImage(
+      ctx!.drawImage(
         IMG,
         0,
         0,
@@ -68,16 +67,16 @@ export function useBackgroundCanvas() {
           bottom == null ||
           left == null
         )
-          return
+          return //해당하는 DOM이 없으면 로직 실행하지 않음
 
         const width = Math.max(0, right - left)
         const height = Math.max(0, bottom - top)
 
-        if (width <= 0 || height <= 0) {
+        if (width < 0 || height < 0) {
           updated.set(k, 0)
-          return
+          return //해당하는 DOM이 이상하면 (?) 로직 실행하지 않음
         }
-        const imageData = ctx.getImageData(left, top, width, height)?.data
+        const imageData = ctx!.getImageData(left, top, width, height)?.data
         let sumBrightness = 0
 
         //rgba 4채널
@@ -97,7 +96,7 @@ export function useBackgroundCanvas() {
       })
       setBrightness(updated)
     }
-  }, [imgSrc])
+  }, [src, isPost])
 
   return () => (
     <canvas
