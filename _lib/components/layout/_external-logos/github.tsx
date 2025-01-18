@@ -12,13 +12,16 @@ import { useBackgroundStore } from '../background/store'
 import { useEffect, useRef } from 'react'
 
 export function GithubLink() {
-  const { PREFERS_DARK_TEXT, addRef } = useBackgroundStore()
+  const { brightness, addRef } = useBackgroundStore()
 
   const githubRef = useRef<HTMLElement>(null)
+  const key = 'githubRef'
 
   useEffect(() => {
-    addRef('githubRef', githubRef)
+    addRef(key, githubRef)
   }, [githubRef])
+
+  const isDark = brightness.get(key)! > 186
 
   return (
     <Btn
@@ -28,17 +31,17 @@ export function GithubLink() {
       target="_blank"
       className={EXTERNAL_LINK}
     >
-      {PREFERS_DARK_TEXT() ? (
+      {isDark ? (
         <Image
           className={MENU_GITHUB_IMG}
           alt="brewcold github"
-          src={MARK_WHITE}
+          src={MARK_BLACK}
         />
       ) : (
         <Image
           className={MENU_GITHUB_IMG}
           alt="brewcold github"
-          src={MARK_BLACK}
+          src={MARK_WHITE}
         />
       )}
     </Btn>

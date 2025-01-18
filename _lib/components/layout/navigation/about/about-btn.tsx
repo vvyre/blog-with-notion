@@ -3,18 +3,26 @@ import { useEffect, useRef } from 'react'
 import { Btn } from '../../../basics/button/btn'
 import { LOGO } from './about-btn.css'
 import { useBackgroundStore } from '../../background/store'
+import { TEXT_COLOR_THEME_VARIANT } from '@/_lib/components/basics/typography/typography.css'
 export function AboutBtn({ ...props }) {
-  const profileButtonRef = useRef<HTMLButtonElement>(null)
-  const addRef = useBackgroundStore(state => state.addRef)
+  const aboutBtnRef = useRef<HTMLButtonElement>(null)
+
+  const { addRef, brightness } = useBackgroundStore()
+
+  const key = 'aboutBtn'
+  const isDark = brightness.get(key)! > 186
+  const TEXT_COLOR = isDark ? 'DARK' : 'LIGHT'
+
+  const NAV_TEXT_STYLE = [LOGO, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ')
 
   useEffect(() => {
-    addRef('profileBtn', profileButtonRef)
-  }, [profileButtonRef.current])
+    addRef('aboutBtn', aboutBtnRef)
+  }, [aboutBtnRef.current])
 
   return (
     <Btn
-      ref={profileButtonRef}
-      className={LOGO}
+      ref={aboutBtnRef}
+      className={NAV_TEXT_STYLE}
       aria-label="About Me"
       {...props}
     >
