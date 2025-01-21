@@ -31,8 +31,9 @@ export function useBackgroundCanvas() {
     if (!isPost) return
 
     const updated = new Map<string, number>()
-    if (theme === 'light') refs.entries().map(([k, _]) => updated.set(k, 255))
-    else refs.entries().map(([k, _]) => updated.set(k, 0))
+    if (theme === 'light')
+      Array.from(refs.entries()).map(([k, _]) => updated.set(k, 255))
+    else Array.from(refs.entries()).map(([k, _]) => updated.set(k, 0))
 
     setBrightness(updated)
   }, [isPost, theme])
