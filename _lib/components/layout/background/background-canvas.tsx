@@ -1,19 +1,22 @@
+'use client'
 import { ThemeContext } from '@/_lib/context/theme-provider'
 import { useLoadBackground } from '@/_lib/hooks/use-load-background'
-import { useCategory } from '@/_lib/hooks/use-category'
 import { useIsomorphicLayoutEffect } from '@syyu/util/react'
 import { useRef, useContext, useEffect } from 'react'
 import { useBackgroundStore } from './store'
 import { HIDE } from '../navigation/navigation.css'
+import { usePathname } from 'next/navigation'
 
-export function useBackgroundCanvas() {
+export function BackgroundCanvas() {
   const { theme } = useContext(ThemeContext)
-  const { setBrightness, setImageSrc, src, refs } = useBackgroundStore()
+  const { brightness, setBrightness, setImageSrc, src, refs } =
+    useBackgroundStore()
   const imgSrc = useLoadBackground(26)
-  const { isPost, path } = useCategory()
+  const path = usePathname()
+  const isPost = path.startsWith('/engineering')
 
   useEffect(() => {
-    setImageSrc(imgSrc)
+    if (path === '/') setImageSrc(imgSrc)
   }, [imgSrc, path])
 
   // 배경화면에 동적으로 영향을 받아야 하는 ref를 받아, 크기를 측정합니다.
@@ -26,21 +29,26 @@ export function useBackgroundCanvas() {
 
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  //포스트를 보고 있는 경우
+  //포스트 본문을 보고 있는 경우
   useIsomorphicLayoutEffect(() => {
-    if (!isPost) return
+    if (!isPost) {
+      return
+    }
 
     const updated = new Map<string, number>()
+
     if (theme === 'light')
       Array.from(refs.entries()).map(([k, _]) => updated.set(k, 255))
     else Array.from(refs.entries()).map(([k, _]) => updated.set(k, 0))
 
     setBrightness(updated)
-  }, [isPost, theme])
+  }, [theme, path, canvasRef.current])
 
   //메인 화면의 랜덤 사진 배경인 경우
   useIsomorphicLayoutEffect(() => {
-    if (isPost) return
+    if (isPost) {
+      return
+    }
     if (!canvasRef.current) return
     if (!src) return
 
@@ -99,13 +107,16 @@ export function useBackgroundCanvas() {
     }
   }, [src, isPost])
 
-  return () => (
-    <canvas
-      id="background_image"
-      width={500}
-      height={400}
-      className={HIDE}
-      ref={canvasRef}
-    />
+  return (
+    <>
+      <div />
+      <canvas
+        id="background_image"
+        width={500}
+        height={400}
+        className={HIDE}
+        ref={canvasRef}
+      />
+    </>
   )
 }

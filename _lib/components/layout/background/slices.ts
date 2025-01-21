@@ -41,7 +41,8 @@ export const backgroundImageSlice: StateCreator<
 export interface BackgroundMetaSliceType {
   brightness: Map<string, number>
   setBrightness: (brightness: Map<string, number>) => void
-  PREFERS_BLACK_TEXT: () => boolean
+  PREFERS_BLACK_TEXT: (key: string) => boolean
+  LIGHT_THEME_RECOMMEMDED: () => boolean
 }
 export const backgroundMetaSlice: StateCreator<
   BackgroundMetaSliceType,
@@ -51,9 +52,13 @@ export const backgroundMetaSlice: StateCreator<
 > = (set, get) => ({
   brightness: new Map(),
   setBrightness: brightness => set(_ => ({ brightness })),
-  PREFERS_BLACK_TEXT: () => {
+  PREFERS_BLACK_TEXT: (key: string) => {
+    const ref = get().brightness.get(key)
+    return ref ? ref > 186 : true
+  },
+  LIGHT_THEME_RECOMMEMDED: () => {
     const entries = Array.from(get().brightness.entries())
-    return entries.reduce((prev, [_, curr]) => prev + curr, 0) > 186
+    return entries.reduce((prev, [__, curr]) => prev + curr, 0) > 186
   },
 })
 
