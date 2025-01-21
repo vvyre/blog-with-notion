@@ -33,6 +33,19 @@ export const Btn = forwardRef(
             {children}
           </Component>
         )
+      case 'a':
+        return (
+          <Component
+            className={cn}
+            href={href}
+            target={props.target ?? '_blank'}
+            rel="noopener noreferrer"
+            ref={ref}
+            {...props}
+          >
+            {children}
+          </Component>
+        )
       case 'Link':
         return (
           <Link

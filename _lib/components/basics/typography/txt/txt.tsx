@@ -62,6 +62,7 @@ export function Txt<T extends ElementType>({
           className={cn}
           href={richText?.href ?? props.href}
           target={props.target ?? '_blank'}
+          rel="noopener noreferrer"
           {...props}
         >
           <Annotations
