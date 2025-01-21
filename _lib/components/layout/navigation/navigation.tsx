@@ -33,10 +33,10 @@ export function Navigation({
   const { setCurrentPost } = useContext(CurrentPostContext)
   const { handleProfile, hideProfile, displayProfile, path } =
     useContext(NavigationContext)
-  const { PREFERS_BLACK_TEXT } = useBackgroundStore()
+  const { LIGHT_THEME_RECOMMEMDED } = useBackgroundStore()
   const { isPost } = useCategory()
 
-  const TEXT_COLOR = PREFERS_BLACK_TEXT() ? 'DARK' : 'LIGHT'
+  const TEXT_COLOR = LIGHT_THEME_RECOMMEMDED() ? 'DARK' : 'LIGHT'
   const NAV_TEXT_STYLE = [LOGO, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ')
 
   useEffect(() => {
