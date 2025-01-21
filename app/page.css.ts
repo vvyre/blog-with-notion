@@ -4,7 +4,6 @@ import { style } from '@vanilla-extract/css'
 const LAYOUT = style({
   width: '100%',
   height: '100dvh',
-  position: 'fixed',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -14,10 +13,9 @@ const LAYOUT = style({
 export const LAYOUT_BG = style([
   LAYOUT,
   {
-    position: 'absolute',
-    top: 0,
+    position: 'relative',
     width: '100%',
-    height: '100%',
+    height: '100dvh',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundBlendMode: 'overlay',
