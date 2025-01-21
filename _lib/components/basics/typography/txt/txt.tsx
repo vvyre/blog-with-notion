@@ -82,7 +82,7 @@ export function Txt<T extends ElementType>({
           href={richText?.href ?? props.href}
           className={cn}
           {...props}
-          scroll={props.scroll ?? false}
+          scroll={props.scroll ?? true}
         >
           <Annotations
             richText={richText}

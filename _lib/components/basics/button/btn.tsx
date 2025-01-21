@@ -38,7 +38,7 @@ export const Btn = forwardRef(
           <Link
             className={cn}
             href={href ?? '/'}
-            scroll={props.scroll ?? false}
+            scroll={props.scroll ?? true}
             ref={ref as Ref<HTMLAnchorElement>}
             {...props}
           >
