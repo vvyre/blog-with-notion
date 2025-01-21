@@ -19,10 +19,11 @@ globalStyle('html', {
 
 globalStyle('body', {
   width: '100%',
+  overflow: 'scroll',
   height: 'auto',
   color: vars.color.default,
   background: 'transparent',
-  margin: 0,
+  margin: '-3rem 0 0 0',
   padding: 0,
   fontFeatureSettings:
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
@@ -50,6 +51,7 @@ globalStyle('main', {
   width: '100%',
   minHeight: '100dvh',
   height: 'fit-content',
+  overflow: 'hidden',
   paddingTop: '5rem',
 })
 
