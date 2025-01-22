@@ -130,6 +130,7 @@ export function BackgroundMetadata() {
 
   return (
     <>
+      {/** TODO: 컴포넌트를 따로 작성하지 않고 실제 배경으로 렌더링된 배경 컴포넌트의 ref를 따와서 측정하는 것으로 변경할 것 */}
       <canvas
         id="background_image"
         width={BODY_WIDTH * 1.1}
