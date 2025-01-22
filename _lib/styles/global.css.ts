@@ -19,8 +19,8 @@ globalStyle('html', {
 
 globalStyle('body', {
   width: '100%',
-  overflow: 'scroll',
   height: 'auto',
+  minHeight: '100dvh',
   color: vars.color.default,
   background: 'transparent',
   margin: '-3rem 0 0 0',

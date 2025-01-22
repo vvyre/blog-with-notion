@@ -20,13 +20,7 @@ export const LAYOUT_BG = style([
   },
 ])
 
-export const LAYOUT_CANVAS = style([
-  {
-    position: 'relative',
-    width: '100%',
-    height: '100dvh',
-  },
-])
+export const LAYOUT_CANVAS = style([{}])
 
 export const LAYOUT_INNER = style([
   LAYOUT,
