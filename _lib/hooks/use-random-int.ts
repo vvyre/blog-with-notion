@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { randomInt } from 'crypto'
+
+import { getRandomInt } from '@syyu/util'
 import { DependencyList, useEffect, useState } from 'react'
 
 export const useRandomInt = (
@@ -12,7 +13,7 @@ export const useRandomInt = (
   const [num, setNum] = useState<number>(() => init ?? low)
 
   useEffect(() => {
-    setNum(randomInt(high - low + 1) + low)
+    setNum(getRandomInt(high - low + 1) + low)
   }, [low, high, ...deps])
 
   return num
