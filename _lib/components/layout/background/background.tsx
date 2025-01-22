@@ -1,23 +1,20 @@
-'use client'
-import { LAYOUT_BG, LAYOUT_FILTER, OVERFLOW } from '@/app/page.css'
+import {
+  LAYOUT_BG,
+  LAYOUT_CANVAS,
+  LAYOUT_FILTER,
+  OVERFLOW,
+} from '@/app/page.css'
 import { View } from '../../basics/view/view'
 import { ComponentPropsWithoutRef } from 'react'
-import { useBackgroundStore } from './store'
+import { BackgroundCanvas } from './background-canvas'
 
 export function BackgroundLayout({
   ...props
 }: ComponentPropsWithoutRef<'div'>) {
-  const { src } = useBackgroundStore()
-
   return (
     <>
-      <View
-        className={props.className ?? LAYOUT_BG}
-        style={{
-          backgroundImage: `url('${src}')`,
-        }}
-        {...props}
-      >
+      <View className={props.className ?? LAYOUT_BG} {...props}>
+        <BackgroundCanvas className={LAYOUT_CANVAS} />
         <View className={LAYOUT_FILTER}>
           <View className={OVERFLOW}>{props.children}</View>
         </View>

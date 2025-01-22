@@ -16,10 +16,15 @@ export const LAYOUT_BG = style([
     position: 'relative',
     width: '100%',
     height: '100dvh',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundBlendMode: 'overlay',
-    backgroundPosition: 'center',
+    background: 'transparent',
+  },
+])
+
+export const LAYOUT_CANVAS = style([
+  {
+    position: 'relative',
+    width: '100%',
+    height: '100dvh',
   },
 ])
 

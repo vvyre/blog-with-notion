@@ -1,122 +1,120 @@
 'use client'
-import { ThemeContext } from '@/_lib/context/theme-provider'
-import { useLoadBackground } from '@/_lib/hooks/use-load-background'
-import { useIsomorphicLayoutEffect } from '@syyu/util/react'
-import { useRef, useContext, useEffect } from 'react'
-import { useBackgroundStore } from './store'
-import { HIDE } from '../navigation/navigation.css'
-import { usePathname } from 'next/navigation'
 
-export function BackgroundCanvas() {
-  const { theme } = useContext(ThemeContext)
-  const { brightness, setBrightness, setImageSrc, src, refs } =
-    useBackgroundStore()
-  const imgSrc = useLoadBackground(26)
-  const path = usePathname()
-  const isPost = path.startsWith('/engineering')
+import { useIsomorphicLayoutEffect } from '@syyu/util/react'
+import { useEffect, useRef, useState } from 'react'
+import { useBackgroundStore } from './store'
+
+export function BackgroundCanvas({ ...props }) {
+  const backgroundCanvasRef = useRef<HTMLCanvasElement>(null)
+  const mousePositionRef = useRef<{ mX: number; mY: number }>({
+    mX: 0,
+    mY: 0,
+  }) //상태로 추적하지 않음
+
+  const { src } = useBackgroundStore()
+  const [[width, height], setBodySize] = useState<[number, number]>([0, 0])
+
+  useIsomorphicLayoutEffect(() => {
+    setBodySize([
+      typeof window !== 'undefined' ? window.innerWidth : 0,
+      typeof window !== 'undefined' ? window.innerHeight : 0,
+    ])
+  }, [])
+
+  useIsomorphicLayoutEffect(() => {
+    const handleUpdate = () => {
+      if (typeof window !== 'undefined') {
+        const { left, top, right, bottom } =
+          document.documentElement.getBoundingClientRect()
+        const W = right - left || 0
+        const H = bottom - top || 0
+        setBodySize([W, H])
+      }
+    }
+
+    window.addEventListener('resize', handleUpdate)
+
+    return () => {
+      window.removeEventListener('resize', handleUpdate)
+    }
+  }, [])
 
   useEffect(() => {
-    if (path === '/') setImageSrc(imgSrc)
-  }, [imgSrc, path])
+    const handleMouseMove = (e: MouseEvent) =>
+      (mousePositionRef.current = { mX: e.clientX, mY: e.clientY })
 
-  // 배경화면에 동적으로 영향을 받아야 하는 ref를 받아, 크기를 측정합니다.
-  const targetLayouts = Array.from(refs.entries()).map(([k, ref]) => {
-    if (!ref.current) return [k, null, null, null, null] as const
+    window?.addEventListener('mousemove', handleMouseMove)
 
-    const { top, right, bottom, left } = ref.current.getBoundingClientRect()
-    return [k, top, right, bottom, left] as const
-  })
+    return () => window?.removeEventListener('mousemove', handleMouseMove)
+  }, [])
 
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  useEffect(() => {
+    const context = backgroundCanvasRef?.current?.getContext('2d')
 
-  //포스트 본문을 보고 있는 경우
-  useIsomorphicLayoutEffect(() => {
-    if (!isPost) {
-      return
-    }
-
-    const updated = new Map<string, number>()
-
-    if (theme === 'light')
-      Array.from(refs.entries()).map(([k, _]) => updated.set(k, 255))
-    else Array.from(refs.entries()).map(([k, _]) => updated.set(k, 0))
-
-    setBrightness(updated)
-  }, [theme, path, canvasRef.current])
-
-  //메인 화면의 랜덤 사진 배경인 경우
-  useIsomorphicLayoutEffect(() => {
-    if (isPost) {
-      return
-    }
-    if (!canvasRef.current) return
     if (!src) return
+    if (!context) return
 
-    const ctx = canvasRef.current.getContext('2d')
+    const img = new Image()
+    img.crossOrigin = 'anonymous'
+    img.src = src
 
-    const IMG = new Image()
-    IMG.crossOrigin = 'anonymous'
-    IMG.src = src
+    let animationFrameId: number
 
-    IMG.onload = () => {
-      ctx!.drawImage(
-        IMG,
-        0,
-        0,
-        canvasRef.current!.width, //위에서 타입 처리했기 때문에 있다고 가정함
-        canvasRef.current!.height
+    function draw() {
+      context?.clearRect(0, 0, width, height)
+
+      const middleX = width / 2
+      const middleY = height / 2
+      const { mX, mY } = mousePositionRef.current
+      const dx = mX - middleX
+      const dy = mY - middleY
+
+      const maxTilt = 0.05
+
+      // 점대칭 Skew
+      const skewX = Math.tan((dy / height) * maxTilt)
+      const skewY = Math.tan((dx / height) * maxTilt)
+
+      // background-cover
+      const scaleWidth = width / img.naturalWidth
+      const scaleHeight = height / img.naturalHeight
+      const scale = Math.max(scaleWidth, scaleHeight)
+      const drawWidth = img.naturalWidth * scale * 1.1
+      const drawHeight = img.naturalHeight * scale * 1.1
+
+      context?.save()
+
+      context?.translate(middleX, middleY)
+      context?.transform(1, skewY, skewX, 1, 0, 0)
+
+      // 캔버스 중앙에 이미지 중심이 놓이도록
+      context?.drawImage(
+        img,
+        -drawWidth / 2,
+        -drawHeight / 2,
+        drawWidth,
+        drawHeight
       )
 
-      const updated = new Map<string, number>()
-      targetLayouts.forEach(([k, top, right, bottom, left]) => {
-        if (
-          !k ||
-          top == null ||
-          right == null ||
-          bottom == null ||
-          left == null
-        )
-          return //해당하는 DOM이 없으면 로직 실행하지 않음
+      context?.restore()
 
-        const width = Math.max(0, right - left)
-        const height = Math.max(0, bottom - top)
-
-        if (width < 0 || height < 0) {
-          updated.set(k, 0)
-          return //해당하는 DOM이 이상하면 (?) 로직 실행하지 않음
-        }
-        const imageData = ctx!.getImageData(left, top, width, height)?.data
-        let sumBrightness = 0
-
-        //rgba 4채널
-        for (let i = 0; i < imageData.length; i += 4) {
-          const r = imageData[i]
-          const g = imageData[i + 1]
-          const b = imageData[i + 2]
-          //명도 계산식 - 3채널만 사용
-          const tempBrightness = 0.2126 * r + 0.7152 * g + 0.0722 * b
-          sumBrightness += tempBrightness
-        }
-
-        const totalPixels = width * height
-        const avrBrightness = sumBrightness / totalPixels
-
-        updated.set(k, avrBrightness)
-      })
-      setBrightness(updated)
+      animationFrameId = requestAnimationFrame(draw)
     }
-  }, [src, isPost])
+
+    if (img.complete) draw()
+    img.onload = () => draw()
+
+    return () => {
+      cancelAnimationFrame(animationFrameId)
+    }
+  }, [src, width, height])
 
   return (
-    <>
-      <div />
-      <canvas
-        id="background_image"
-        width={500}
-        height={400}
-        className={HIDE}
-        ref={canvasRef}
-      />
-    </>
+    <canvas
+      ref={backgroundCanvasRef}
+      width={width}
+      height={height}
+      {...props}
+    />
   )
 }
