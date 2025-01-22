@@ -18,13 +18,14 @@ import { Spacing } from '../../basics/spacing/spacing'
 import { PageObject } from '@/_lib/types/notion-response'
 import { CurrentPostContext } from '@/_lib/context/current-post-provider'
 import { useContext } from 'react'
-import { useIsomorphicLayoutEffect, useRandomNumber } from '@syyu/util/react'
+import { useIsomorphicLayoutEffect } from '@syyu/util/react'
 import { useRandomBackground } from '@/utils/get-random-background'
 import { vars } from '@/_lib/styles/themes.css'
+import { useRandomInt } from '@/_lib/hooks/use-random-int'
 
 export function PostTitle({ ...meta }: PageObject) {
   const { backgroundColor: base } = useRandomBackground()
-  const angle = useRandomNumber([15, 60], [], 'int')
+  const angle = useRandomInt([15, 60])
 
   const { setCurrentPost } = useContext(CurrentPostContext)
   const title = getTitle(meta)
