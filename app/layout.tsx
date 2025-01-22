@@ -13,7 +13,7 @@ import { Providers } from '@/_lib/components/providers'
 import { Navigation } from '@/_lib/components/layout/navigation/navigation'
 import { getPost } from '@/fetch/notion'
 import { processedBlock } from '@/utils/process-block'
-import { BackgroundCanvas } from '@/_lib/components/layout/background/background-canvas'
+import { BackgroundMetadata } from '@/_lib/components/layout/background/background-metadata'
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -57,7 +57,7 @@ export default async function RootLayout({
       <Providers>
         <View as="body">
           <Navigation profile={blocks} />
-          <BackgroundCanvas />
+          <BackgroundMetadata />
           {children}
         </View>
       </Providers>
