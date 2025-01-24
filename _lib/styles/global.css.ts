@@ -31,6 +31,8 @@ globalStyle('body', {
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
+  MozOsxFontSmoothing: 'grayscale',
+  WebkitFontSmoothing: 'antialiased',
 })
 
 globalStyle('main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
@@ -112,10 +114,9 @@ globalStyle('pre', {
 })
 
 globalStyle('code, pre, pre span', {
-  fontSize: '0.8rem',
+  fontSize: '0.815rem',
   lineHeight: '1.5',
-  letterSpacing: '-0.025rem',
-  fontFamily: MONOSPACE,
+  letterSpacing: '-0.015rem',
   fontFeatureSettings: 'normal',
   MozTabSize: 2,
   tabSize: 2,
