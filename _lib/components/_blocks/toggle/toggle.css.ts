@@ -13,5 +13,5 @@ export const BASE = style([
 
 export const SUMMARY_TXT = style({
   cursor: 'pointer',
-  fontWeight: '600',
+  fontWeight: 500,
 })

@@ -42,11 +42,11 @@ export const TYPOGRAPHY = {
   },
   XXL: {
     fontSize: '2.5rem',
-    fontWeight: 600,
+    fontWeight: 500,
   },
   XL: {
     fontSize: '1.3rem',
-    fontWeight: 600,
+    fontWeight: 500,
   },
   L: {
     fontSize: '1.275rem',
@@ -77,7 +77,7 @@ export const TYPOGRAPHY = {
 export const TEXT_STYLE = styleVariants(TYPOGRAPHY)
 
 export const BOLD = style({
-  fontWeight: 600,
+  fontWeight: 500,
 })
 
 export const ITALIC = style({

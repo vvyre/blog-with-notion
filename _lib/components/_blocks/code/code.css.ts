@@ -15,7 +15,7 @@ export const CODE_LANGUAGE = style({
   fontFeatureSettings: '"calt", "case"',
   textTransform: 'uppercase',
   fontSize: '0.9rem',
-  fontWeight: 600,
+  fontWeight: 500,
   color: vars.color.default,
 })
 export const CODE_PRE = style({

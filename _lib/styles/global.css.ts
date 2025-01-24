@@ -114,7 +114,7 @@ globalStyle('pre', {
 globalStyle('code, pre, pre span', {
   fontSize: '0.8rem',
   lineHeight: '1.5',
-  letterSpacing: '-0.5px',
+  letterSpacing: '-0.025rem',
   fontFamily: MONOSPACE,
   fontFeatureSettings: 'normal',
   MozTabSize: 2,

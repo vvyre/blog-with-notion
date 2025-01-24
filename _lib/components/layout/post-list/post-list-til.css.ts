@@ -24,7 +24,7 @@ export const POST_LINK_TIL = style({
 export const POST_TITLE_TIL = style([
   {
     fontSize: '1.15rem',
-    fontWeight: '600',
+    fontWeight: 500,
     cursor: 'pointer',
     '@media': {
       '(0px <= width <= 700px)': {

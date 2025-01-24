@@ -35,7 +35,7 @@ export const TITLE = style({
   width: '100%',
   fontSize: TYPOGRAPHY.XS.fontSize,
   color: vars.color.default,
-  fontWeight: 600,
+  fontWeight: 500,
 })
 
 export const DATE = style([

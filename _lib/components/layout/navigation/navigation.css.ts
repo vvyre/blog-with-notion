@@ -96,7 +96,7 @@ export const POST_TITLE = style([
     padding: 0,
     textAlign: 'right',
     color: vars.color.default,
-    fontWeight: '600',
+    fontWeight: 500,
     fontSize: TYPOGRAPHY.S.fontSize,
     '@media': {
       '(0 <= width <= 700px)': {

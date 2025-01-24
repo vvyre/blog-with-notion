@@ -30,7 +30,7 @@ export const DESC_URL = style({
 export const BOOKMARK_TITLE = style({
   lineHeight: '1.2',
   fontSize: TYPOGRAPHY.M.fontSize,
-  fontWeight: '600',
+  fontWeight: 500,
   color: vars.color.default,
   wordBreak: 'break-all',
 })

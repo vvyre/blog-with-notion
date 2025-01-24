@@ -88,7 +88,7 @@ export const POST_TITLE = style([
   {
     width: '100%',
     fontSize: '1.15rem',
-    fontWeight: '600',
+    fontWeight: 500,
     cursor: 'pointer',
     '@media': {
       '(0px <= width <= 700px)': {
@@ -116,7 +116,7 @@ export const RELEASED_DATE = style([
     wordSpacing: '-0.3rem',
     fontFamily: MONOSPACE,
     fontSize: TYPOGRAPHY.XXXS.fontSize,
-    fontWeight: 500,
+    fontWeight: 400,
     color: vars.color.white,
     textAlign: 'left',
     width: '100%',

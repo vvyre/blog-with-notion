@@ -13,10 +13,10 @@ export const GOOGLE_SANS_MONO = fontFace([
     fontWeight: '500',
     fontStyle: 'italic',
   },
-  { src: 'url(/fonts/code-700.ttf)', fontWeight: '600' },
+  { src: 'url(/fonts/code-700.ttf)', fontWeight: 500 },
   {
     src: 'url(/fonts/code-700-it.ttf)',
-    fontWeight: '600',
+    fontWeight: 500,
     fontStyle: 'italic',
   },
   { src: 'url(/fonts/code-700.ttf)', fontWeight: '700' },
