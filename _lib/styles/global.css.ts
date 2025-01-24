@@ -31,8 +31,6 @@ globalStyle('body', {
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
-  MozOsxFontSmoothing: 'grayscale',
-  WebkitFontSmoothing: 'antialiased', //os별, 브라우저별 폰트 렌더링 방식 차이 최소화
 })
 
 globalStyle('main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
@@ -114,8 +112,9 @@ globalStyle('pre', {
 })
 
 globalStyle('code, pre, pre span', {
-  fontSize: '0.85rem',
+  fontSize: '0.8rem',
   lineHeight: '1.5',
+  letterSpacing: '-0.5px',
   fontFamily: MONOSPACE,
   fontFeatureSettings: 'normal',
   MozTabSize: 2,
