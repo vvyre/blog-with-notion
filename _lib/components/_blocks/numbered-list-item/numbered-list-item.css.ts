@@ -1,6 +1,5 @@
 import { style } from '@vanilla-extract/css'
 import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css'
-import { JETBRAINS_MONO } from '@/public/fonts/fonts.css'
 
 export const BASE = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,

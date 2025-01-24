@@ -1,5 +1,5 @@
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 import { vars } from '@/_lib/styles/themes.css'
-import { JETBRAINS_MONO } from '@/public/fonts/fonts.css'
 import { globalStyle } from '@vanilla-extract/css'
 
 export const SUMMARY = globalStyle('details > summary', {
@@ -22,7 +22,7 @@ export const SUMMARY_OPEN = globalStyle('details[open] > summary', {
 
 export const SUMMARY_ICON = globalStyle('details > summary::before', {
   content: '⋯',
-  fontFamily: JETBRAINS_MONO,
+  fontFamily: MONOSPACE,
   fontWeight: '900',
   marginRight: '0.5rem',
 })
@@ -31,7 +31,7 @@ export const SUMMARY_ICON_OPEN = globalStyle(
   'details[open] > summary::before',
   {
     content: '⋮',
-    fontFamily: JETBRAINS_MONO,
+    fontFamily: MONOSPACE,
     fontWeight: '900',
     marginRight: '0.5rem',
   }

@@ -1,11 +1,11 @@
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 import { vars } from '@/_lib/styles/themes.css'
-import { JETBRAINS_MONO } from '@/public/fonts/fonts.css'
 import { style } from '@vanilla-extract/css'
 
 export const LOGO = style([
   {
     fontWeight: 900,
-    fontFamily: JETBRAINS_MONO,
+    fontFamily: MONOSPACE,
     textTransform: 'uppercase',
     wordSpacing: '-0.3rem',
     padding: vars.padding.btn_square,

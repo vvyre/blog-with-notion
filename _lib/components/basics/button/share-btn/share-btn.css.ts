@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
-import { JETBRAINS_MONO } from '@/public/fonts/fonts.css'
 import { vars } from '@/_lib/styles/themes.css'
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 
 export const SHARE_BTN_BASE = style({
   display: 'inline-flex',
@@ -14,7 +14,7 @@ export const SHARE_BTN_BASE = style({
 })
 
 export const PARAGRAPH_SHARE = style({
-  fontFamily: JETBRAINS_MONO,
+  fontFamily: MONOSPACE,
   fontWeight: '700',
   fontSize: '0.75em',
   fontFeatureSettings: '"calt" "case"',

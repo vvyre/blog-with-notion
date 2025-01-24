@@ -1,4 +1,4 @@
-import { fontFamilyCode } from '@/_lib/styles/fonts.css'
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 import { style } from '@vanilla-extract/css'
 
 export const ABOUT = style([
@@ -26,6 +26,6 @@ export const ABOUT_INNER = style([
 export const ABOUT_SITE_TITLE = style({
   textTransform: 'uppercase',
   fontWeight: 900,
-  fontFamily: fontFamilyCode,
+  fontFamily: MONOSPACE,
   fontSize: '3.25rem',
 })

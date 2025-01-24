@@ -1,4 +1,4 @@
-import { JETBRAINS_MONO } from '@/public/fonts/fonts.css'
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 import { globalStyle } from '@vanilla-extract/css'
 
 export const UL = globalStyle('[role=list]', {
@@ -9,7 +9,7 @@ export const UL = globalStyle('[role=list]', {
 export const LI = globalStyle('[role=listitem]', {})
 
 export const LI_MARK = globalStyle('[role=listitem]::before', {
-  fontFamily: JETBRAINS_MONO,
+  fontFamily: MONOSPACE,
   display: 'inline-block',
   content: '●',
   fontWeight: 'inherit',

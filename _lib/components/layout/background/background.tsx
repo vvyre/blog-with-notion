@@ -15,9 +15,7 @@ export function BackgroundLayout({
     <>
       <View className={props.className ?? LAYOUT_BG} {...props}>
         <BackgroundCanvas className={LAYOUT_CANVAS} />
-        <View className={LAYOUT_FILTER}>
-          <View className={OVERFLOW}>{props.children}</View>
-        </View>
+        <View className={OVERFLOW}>{props.children}</View>
       </View>
     </>
   )

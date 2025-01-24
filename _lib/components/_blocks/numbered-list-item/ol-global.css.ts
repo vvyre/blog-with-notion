@@ -1,4 +1,4 @@
-import { JETBRAINS_MONO } from '@/public/fonts/fonts.css'
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 import { globalStyle } from '@vanilla-extract/css'
 
 export const OL = globalStyle('[data-role=orderedlist]', {
@@ -12,7 +12,7 @@ export const LI = globalStyle('[data-role=orderedlistitem]', {
 })
 
 export const LI_MARK = globalStyle('[data-role=orderedlistitem]::before', {
-  fontFamily: JETBRAINS_MONO,
+  fontFamily: MONOSPACE,
   display: 'inline-block',
   content: "counter(list-counter) '. '",
   fontWeight: 'inherit',

@@ -1,7 +1,7 @@
 import { vars } from '@/_lib/styles/themes.css'
 import { style } from '@vanilla-extract/css'
 import { TEXT_STYLE, TYPOGRAPHY } from '../../basics/typography/typography.css'
-import { fontFamilyCode } from '@/_lib/styles/fonts.css'
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 
 export const POST_LINK_TIL = style({
   display: 'inline-flex',
@@ -38,7 +38,7 @@ export const RELEASED_DATE_TIL = style([
   TEXT_STYLE.XXXS,
   {
     wordSpacing: '-0.3rem',
-    fontFamily: fontFamilyCode,
+    fontFamily: MONOSPACE,
     fontSize: TYPOGRAPHY.XXXS.fontSize,
     fontWeight: 500,
     textAlign: 'left',

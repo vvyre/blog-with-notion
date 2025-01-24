@@ -1,4 +1,4 @@
-import { fontFamilyCode } from '@/_lib/styles/fonts.css'
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 import { style } from '@vanilla-extract/css'
 import { NOTION_BLOCK_LAYOUT } from '../block-layout.css'
 import { vars } from '@/_lib/styles/themes.css'
@@ -18,7 +18,7 @@ export const BASE = style([
       '&:after': {
         fontSize: '1rem',
         marginLeft: '0.25rem',
-        fontFamily: fontFamilyCode,
+        fontFamily: MONOSPACE,
         content: '↗︎',
       },
     },

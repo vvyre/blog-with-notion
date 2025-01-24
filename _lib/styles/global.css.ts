@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css'
-import { fontFamily, fontFamilyCode } from './fonts.css'
+import { MONOSPACE, SANS_SERIF } from './fonts.css'
 import { vars } from './themes.css'
 
 globalStyle('*, *:before, *:after', {
@@ -14,7 +14,7 @@ globalStyle('html', {
   margin: 0,
   padding: 0,
   lineHeight: '1.85',
-  fontFamily,
+  fontFamily: SANS_SERIF,
 })
 
 globalStyle('body', {
@@ -67,7 +67,7 @@ globalStyle(
 )
 
 globalStyle('input, button, select, textarea', {
-  fontFamily,
+  fontFamily: SANS_SERIF,
   fontFeatureSettings:
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   WebkitFontFeatureSettings:
@@ -90,7 +90,7 @@ globalStyle('textarea', {
 })
 
 globalStyle('a', {
-  fontFamily,
+  fontFamily: SANS_SERIF,
   fontFeatureSettings:
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   WebkitFontFeatureSettings:
@@ -116,7 +116,7 @@ globalStyle('pre', {
 globalStyle('code, pre, pre span', {
   fontSize: '0.85rem',
   lineHeight: '1.5',
-  fontFamily: fontFamilyCode,
+  fontFamily: MONOSPACE,
   fontFeatureSettings: 'normal',
   MozTabSize: 2,
   tabSize: 2,

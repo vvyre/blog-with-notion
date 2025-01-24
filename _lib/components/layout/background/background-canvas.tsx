@@ -69,7 +69,7 @@ export function BackgroundCanvas({ ...props }) {
       const dx = mX - middleX
       const dy = mY - middleY
 
-      const maxTilt = 0.05
+      const maxTilt = 0.075
 
       // 점대칭 Skew
       const skewX = Math.tan((dy / height) * maxTilt)

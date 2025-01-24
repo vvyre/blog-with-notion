@@ -1,4 +1,4 @@
-import { fontFamilyCode } from '@/_lib/styles/fonts.css'
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 import { style, styleVariants } from '@vanilla-extract/css'
 import { TEXT_STYLE, TYPOGRAPHY } from '../../basics/typography/typography.css'
 import { vars } from '@/_lib/styles/themes.css'
@@ -114,7 +114,7 @@ export const POST_SUMMARY = style([
 export const RELEASED_DATE = style([
   {
     wordSpacing: '-0.3rem',
-    fontFamily: fontFamilyCode,
+    fontFamily: MONOSPACE,
     fontSize: TYPOGRAPHY.XXXS.fontSize,
     fontWeight: 500,
     color: vars.color.white,
