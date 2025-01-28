@@ -1,18 +1,25 @@
 'use client'
 import { ThemeContext } from '@/_lib/context/theme-provider'
-import { useLoadBackground } from '@/_lib/hooks/use-load-background'
 import { useIsomorphicLayoutEffect } from '@syyu/util/react'
-import { useRef, useContext, useEffect, useState } from 'react'
+import { useRef, useContext, useState } from 'react'
 import { useBackgroundStore } from './store'
 import { HIDE } from '../navigation/navigation.css'
 import { usePathname } from 'next/navigation'
 
-export function BackgroundMetadata() {
+export function BackgroundMetadata({
+  backgroundImg,
+}: {
+  backgroundImg: string
+}) {
   const { theme } = useContext(ThemeContext)
   const { setBrightness, setImageSrc, src, refs } = useBackgroundStore()
-  const imgSrc = useLoadBackground(26)
+
   const path = usePathname()
   const isPost = path.startsWith('/engineering')
+
+  useIsomorphicLayoutEffect(() => {
+    if (!isPost) setImageSrc(backgroundImg)
+  }, [isPost, backgroundImg])
 
   const [[BODY_WIDTH, BODY_HEIGHT], setBodySize] = useState<[number, number]>([
     0, 0,
@@ -36,11 +43,7 @@ export function BackgroundMetadata() {
     }
   }, [])
 
-  useEffect(() => {
-    if (path === '/') setImageSrc(imgSrc)
-  }, [imgSrc, path])
-
-  // 배경화면에 동적으로 영향을 받아야 하는 ref를 받아, 크기를 측정합니다.
+  // 배경화면에 동적으로 영향을 받아야 하는 ref를 받아, 해당 ref 영역만큼의 크기를 측정합니다.
   const targetLayouts = Array.from(refs.entries()).map(([k, ref]) => {
     if (!ref.current) return [k, null, null, null, null] as const
 
@@ -50,11 +53,10 @@ export function BackgroundMetadata() {
 
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  //포스트 본문을 보고 있는 경우
+  // 포스트 본문을 보고 있는 경우
+  // 다크, 라이트 테마에 영향을 받아야 함
   useIsomorphicLayoutEffect(() => {
-    if (!isPost) {
-      return
-    }
+    if (!isPost) return
 
     const updated = new Map<string, number>()
 
@@ -65,7 +67,7 @@ export function BackgroundMetadata() {
     setBrightness(updated)
   }, [theme, path, canvasRef.current])
 
-  //메인 화면의 랜덤 사진 배경인 경우
+  // 메인 화면의 랜덤 사진 배경인 경우
   useIsomorphicLayoutEffect(() => {
     if (isPost) {
       return
@@ -130,7 +132,6 @@ export function BackgroundMetadata() {
 
   return (
     <>
-      {/** TODO: 컴포넌트를 따로 작성하지 않고 실제 배경으로 렌더링된 배경 컴포넌트의 ref를 따와서 측정하는 것으로 변경할 것 */}
       <canvas
         id="background_image"
         width={BODY_WIDTH * 1.1}
