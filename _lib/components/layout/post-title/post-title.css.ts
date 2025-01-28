@@ -47,7 +47,7 @@ export const TITLE = style([
     color: 'transparent',
     backgroundClip: 'text !important',
     WebkitBackgroundClip: 'text !important',
-    fontWeight: 500,
+    fontWeight: 600,
     lineHeight: '1.2',
     wordBreak: 'keep-all',
   },
