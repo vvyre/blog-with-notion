@@ -17,6 +17,6 @@ export const meta = {
   },
   footer: {
     links: [{ name: 'Github', href: 'https://github.com/brewcold' }],
-    copyright: 'Copyright 2024. BREWCOLD All rights reserved.',
+    copyright: 'Copyright 2024-2025. BREWCOLD All rights reserved.',
   },
 }

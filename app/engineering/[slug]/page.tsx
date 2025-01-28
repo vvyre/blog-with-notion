@@ -17,6 +17,7 @@ import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/art
 import { POST_LAYOUT } from '@/app/page.css'
 import { PostBorder } from '@/_lib/components/layout/post-border/post-border'
 import { BackButton } from '@/_lib/components/layout/back-button/back-button'
+import { Footer } from '@/_lib/components/layout/footer/footer'
 
 export interface PostPageProps {
   params: Promise<{
@@ -73,6 +74,7 @@ export default async function Post({ params }: PostPageProps) {
             targets={matchPost.properties.tags.multi_select}
           />
           <Spacing size="10rem" />
+          <Footer />
         </View>
       </PostBorder>
     </View>
