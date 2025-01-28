@@ -42,26 +42,26 @@ export const TYPOGRAPHY = {
   },
   XXL: {
     fontSize: '2.5rem',
-    fontWeight: 500,
+    fontWeight: 700,
   },
   XL: {
-    fontSize: '1.3rem',
-    fontWeight: 500,
+    fontSize: '1.35rem',
+    fontWeight: 600,
   },
   L: {
-    fontSize: '1.275rem',
+    fontSize: '1.25rem',
     fontWeight: 500,
   },
   M: {
-    fontSize: '1.15rem',
+    fontSize: '1.05rem',
     fontWeight: 400,
   },
   S: {
-    fontSize: '1rem',
+    fontSize: '0.975rem',
     fontWeight: 400,
   },
   XS: {
-    fontSize: '0.95rem',
+    fontSize: '0.925rem',
     fontWeight: 400,
   },
   XXS: {
