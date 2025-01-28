@@ -20,18 +20,21 @@ export const IMG_CONTAINER = style([
   },
 ])
 
-export const IMG_CONTAINER_ZOOMED = style({
-  cursor: 'zoom-out',
-  zIndex: '1',
-  backgroundColor: vars.color.default,
-  padding: '1.5rem',
-  position: 'fixed',
-  display: 'flex',
-  width: '100vw',
-  height: '100dvh',
-  top: '0',
-  left: '0',
-})
+export const IMG_CONTAINER_ZOOMED = style([
+  {
+    cursor: 'zoom-out',
+    zIndex: '999999',
+    backgroundColor: vars.color.default,
+    padding: '3rem 1.5rem 3rem 1.5rem',
+    margin: 0,
+    position: 'fixed',
+    display: 'flex',
+    width: '100vw',
+    height: '100dvh',
+    top: '0',
+    left: '0',
+  },
+])
 
 export const CAPTION_TXT_TEXTBOX = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
