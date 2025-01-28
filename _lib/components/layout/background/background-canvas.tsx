@@ -68,8 +68,6 @@ export function BackgroundCanvas({ ...props }) {
       context!.textAlign = 'center'
       context!.textBaseline = 'middle'
 
-      console.log(src, `${aws.cloudfrontRoot}/${aws.bucketDirectory}`, '')
-
       const TXT = src
         .replace(`${aws.cloudfrontRoot}/${aws.bucketDirectory}`, '')
         .replace('.webp', '')

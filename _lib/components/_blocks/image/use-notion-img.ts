@@ -24,7 +24,7 @@ export const useNotionImg = (block: ExtendedImageBlockObjectResponse) => {
           const reloadedImg = await response.json()
           setImgUrl(getImgUrl(reloadedImg))
         } catch (err) {
-          console.log('notion-img-client-err', err)
+          console.warn('notion-img-client-err', err)
           setFetchError(err)
         } finally {
           setIsReloading(false)

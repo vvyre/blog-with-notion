@@ -27,8 +27,6 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
       if (img.height >= 400) setImgSize([img.width / 2, img.height / 2])
       else setImgSize([img.width, img.height])
     }
-
-    console.log(imgUrl, [width, height])
   }, [imgUrl])
 
   return (

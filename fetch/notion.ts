@@ -35,13 +35,13 @@ export const getPostList = async (
   }
   try {
     const response = await notion.databases.query(query)
-    console.log(
+    console.warn(
       '************' + database_id.slice(-4),
       '>>>> POSTLIST FETCH CALL'
     )
     return response.results as PageObject[]
   } catch (err) {
-    console.log('\n', database_id, err, '\n', '>>>> POSTLIST FETCH ERROR')
+    console.error('\n', database_id, err, '\n', '>>>> POSTLIST FETCH ERROR')
     return []
   }
 }
@@ -50,7 +50,7 @@ export const getCachedPostList = async (database_id: string) => {
   if (!POST_LIST_CACHE[database_id]) {
     POST_LIST_CACHE[database_id] = getPostList(database_id)
   } else
-    console.log('************' + database_id.slice(-4), '>>>> CACHED POSTLIST')
+    console.warn('************' + database_id.slice(-4), '>>>> CACHED POSTLIST')
 
   return POST_LIST_CACHE[database_id]
 }
@@ -64,7 +64,7 @@ export const getPostMetaData = async (page_id: string): Promise<PageObject> => {
 const getChildrenBlocks = async (
   parent_block_id: string
 ): Promise<(BlockObjectResponse | PartialBlockObjectResponse)[]> => {
-  console.log(
+  console.warn(
     '************' + parent_block_id.slice(-4),
     '>>>> BLOCK FETCH CALL'
   )
@@ -109,7 +109,7 @@ export const getPost = async (
 export const getSingleBlock = async (
   block_id: string
 ): Promise<GetBlockResponse> => {
-  console.log(
+  console.warn(
     '************' + block_id.slice(-4),
     '>>>> SINGLE BLOCK FETCH CALL'
   )

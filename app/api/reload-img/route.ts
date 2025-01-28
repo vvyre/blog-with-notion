@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     if (block) return Response.json(block)
     else return Response.json({ block: null })
   } catch (err) {
-    console.log('route-err', err)
+    console.error('route-err', err)
     return Response.json({ block: null })
   }
 }
