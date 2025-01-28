@@ -4,6 +4,7 @@ import { Btn } from '../../../basics/button/btn'
 import { LOGO } from './about-btn.css'
 import { useBackgroundStore } from '../../background/store'
 import { TEXT_COLOR_THEME_VARIANT } from '@/_lib/components/basics/typography/typography.css'
+import { NAV_BTN } from '../navigation.css'
 export function AboutBtn({ ...props }) {
   const aboutBtnRef = useRef<HTMLButtonElement>(null)
 
@@ -13,7 +14,9 @@ export function AboutBtn({ ...props }) {
   const isDark = brightness.get(key)! > 186
   const TEXT_COLOR = isDark ? 'DARK' : 'LIGHT'
 
-  const NAV_TEXT_STYLE = [LOGO, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ')
+  const NAV_TEXT_STYLE = [NAV_BTN, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(
+    ' '
+  )
 
   useEffect(() => {
     addRef('aboutBtn', aboutBtnRef)

@@ -1,6 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css'
 import { TYPOGRAPHY } from '../../basics/typography/typography.css'
 import { vars } from '@/_lib/styles/themes.css'
+import { MONOSPACE } from '@/_lib/styles/fonts.css'
 
 export const BASE = style({
   height: '3rem',
@@ -67,6 +68,31 @@ export const POST_TITLE_WRAPPER = style([
     '@media': {
       '(0 <= width <= 700px)': {
         fontSize: TYPOGRAPHY.S.fontSize,
+      },
+    },
+  },
+])
+
+export const NAV_BTN = style([
+  {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontWeight: 900,
+    fontFamily: MONOSPACE,
+    textTransform: 'uppercase',
+    wordSpacing: '-0.3rem',
+    letterSpacing: '0.03rem',
+    padding: vars.padding.btn_square,
+    fontSize: '0.85rem',
+    textAlign: 'center',
+    background: 'transparent',
+    border: 'none',
+    borderRadius: vars.border.radius.btn_square,
+    outline: 'none',
+    selectors: {
+      '&:hover': {
+        backgroundColor: vars.color.b1,
       },
     },
   },

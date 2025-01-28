@@ -10,6 +10,7 @@ import {
 
 import { useBackgroundStore } from '../background/store'
 import { useEffect, useRef } from 'react'
+import { NAV_BTN } from '../navigation/navigation.css'
 
 export function GithubLink() {
   const { brightness, addRef } = useBackgroundStore()
@@ -29,7 +30,7 @@ export function GithubLink() {
       as="a"
       href="https://github.com/brewcold"
       target="_blank"
-      className={EXTERNAL_LINK}
+      className={NAV_BTN}
     >
       {isDark ? (
         <Image

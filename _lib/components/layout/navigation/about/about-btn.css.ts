@@ -8,12 +8,17 @@ export const LOGO = style([
     fontFamily: MONOSPACE,
     textTransform: 'uppercase',
     wordSpacing: '-0.3rem',
+    letterSpacing: '0.03rem',
     padding: vars.padding.btn_square,
-    fontSize: '0.85rem',
+    fontSize: '0.9rem',
     textAlign: 'center',
-    borderRadius: vars.border.radius.card,
     background: 'transparent',
     border: 'none',
+    selectors: {
+      '&:hover': {
+        outline: `1px solid ${vars.color.highlight}`,
+      },
+    },
   },
 ])
 
@@ -28,7 +33,17 @@ const BASE = style({
   cursor: 'pointer',
 })
 
-export const EXTERNAL_LINK = style([BASE, {}])
+export const EXTERNAL_LINK = style([
+  BASE,
+  {
+    borderRadius: vars.border.radius.btn_square,
+    selectors: {
+      '&:hover': {
+        backgroundColor: vars.color.b1,
+      },
+    },
+  },
+])
 
 export const MENU_GITHUB_PLACEMENT = style({
   justifySelf: 'right',

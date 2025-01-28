@@ -6,6 +6,7 @@ import {
   FILTER_VARIANT,
   HIDE,
   NAV,
+  NAV_BTN,
   POST_TITLE_WRAPPER,
 } from './navigation.css'
 import { View } from '../../basics/view/view'
@@ -37,7 +38,9 @@ export function Navigation({
   const { isPost } = useCategory()
 
   const TEXT_COLOR = LIGHT_THEME_RECOMMEMDED() ? 'DARK' : 'LIGHT'
-  const NAV_TEXT_STYLE = [LOGO, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ')
+  const NAV_TEXT_STYLE = [NAV_BTN, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(
+    ' '
+  )
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null)
@@ -58,7 +61,7 @@ export function Navigation({
           <GithubLink />
           {isPost && (
             <>
-              <Spacing size="0.3rem" dir="hori" />
+              <Spacing size="0.15rem" dir="hori" />
               <Btn onClick={() => toggle()} className={NAV_TEXT_STYLE}>
                 {theme === 'light' ? '🌚' : '🌞'}
               </Btn>
