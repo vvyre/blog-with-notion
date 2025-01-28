@@ -2,7 +2,7 @@ import { S3 } from '@aws-sdk/client-s3'
 import { aws } from '@/env'
 import { getRandomInt } from './get-random-int'
 
-export const getBackgroundImg = async (): Promise<string> => {
+export const getBackgroundImg = async (): Promise<[string, string]> => {
   const { accessKeyId, secretAccessKey, region, bucketName, bucketDirectory } =
     aws
 
@@ -34,10 +34,11 @@ export const getBackgroundImg = async (): Promise<string> => {
     const idx = getRandomInt([0, NUMS_OF_FILES])
 
     const src = aws.cloudfrontRoot + '/' + files[idx].key || ''
+    const title = files[idx].key?.replace(aws.bucketDirectory, '') || ''
 
-    return src
+    return [src, title]
   } catch (error) {
     console.warn('AWS ERROR', error)
-    return ''
+    return ['', '']
   }
 }

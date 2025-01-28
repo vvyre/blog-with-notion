@@ -18,6 +18,7 @@ export const aws = {
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ?? '',
   region: process.env.AWS_REGION ?? '',
   bucketName: process.env.AWS_BUCKET_NAME ?? '',
-  bucketDirectory: process.env.AWS_BUCKET_BACKGROUND_DIRECTORY ?? '',
+  bucketDirectory:
+    process.env.NEXT_PUBLIC_AWS_BUCKET_BACKGROUND_DIRECTORY ?? '',
   cloudfrontRoot: process.env.NEXT_PUBLIC_AWS_BUCKET_CLOUDFRONT_ROOT ?? '',
 }

@@ -52,7 +52,7 @@ export default async function RootLayout({
 }>) {
   const profile = await getPost(notion_env.about_id)
   const blocks = await processedBlock(profile)
-  const backgroundImg = await getBackgroundImg()
+  const [backgroundImg] = await getBackgroundImg()
 
   return (
     <html lang="ko">
