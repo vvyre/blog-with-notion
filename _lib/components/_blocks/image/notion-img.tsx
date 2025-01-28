@@ -1,5 +1,5 @@
 'use client'
-import Image from 'next/image'
+import { default as Img } from 'next/image'
 import reloadingFallback from '#/img/loading.svg'
 import { getPlainText } from '@/utils/get-plain-text'
 import { Txt } from '../../basics/typography/txt/txt'
@@ -12,16 +12,28 @@ import {
   IMG_CONTAINER_ZOOMED,
 } from './img.css'
 import { useNotionImg } from './use-notion-img'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { NotionComponentProps } from '@/_lib/types/block'
 
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
   const { imgUrl, reload, isReloading } = useNotionImg(block)
+  const [[width, height], setImgSize] = useState<[number, number]>([400, 300])
   const [zoomed, setZoomed] = useState<boolean>(false)
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = imgUrl
+    img.onload = () => {
+      if (img.height >= 400) setImgSize([img.width / 2, img.height / 2])
+      else setImgSize([img.width, img.height])
+    }
+
+    console.log(imgUrl, [width, height])
+  }, [imgUrl])
 
   return (
     <View as="figure" className={zoomed ? IMG_CONTAINER_ZOOMED : IMG_CONTAINER}>
-      <Image
+      <Img
         unoptimized
         className={IMG}
         key={imgUrl}
@@ -31,8 +43,8 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
         onError={() => reload()}
         onClick={() => setZoomed(!zoomed)}
         blurDataURL={block.blurDataURL}
-        width={1680}
-        height={1200}
+        width={width}
+        height={height}
       />
       {block.image.caption.length > 0 && (
         <Txt

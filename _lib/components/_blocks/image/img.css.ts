@@ -57,7 +57,6 @@ export const CAPTION_ZOOMED = style([NOTION_PARAGRAPH_BLOCK_LAYOUT, {}])
 export const IMG = style({
   borderRadius: vars.border.radius.card,
   position: 'relative',
-  width: '100%',
-  height: '100%',
+  width: 'auto',
   objectFit: 'contain',
 })
