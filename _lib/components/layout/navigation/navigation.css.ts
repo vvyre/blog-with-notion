@@ -92,7 +92,7 @@ export const NAV_BTN = style([
     outline: 'none',
     selectors: {
       '&:hover': {
-        backgroundColor: vars.color.b1,
+        backgroundColor: vars.color.btn_bg,
       },
     },
   },
