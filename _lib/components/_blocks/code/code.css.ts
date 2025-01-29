@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { NOTION_BLOCK_LAYOUT } from '../block-layout.css'
 import { vars } from '@/_lib/styles/themes.css'
-import { GOOGLE_SANS_MONO_STRONG } from '@/public/fonts/fonts.css'
 import { MONOSPACE } from '@/_lib/styles/fonts.css'
 
 export const CODE_BLOCK = style([
@@ -16,13 +15,12 @@ export const CODE_BLOCK = style([
 export const CODE_LANGUAGE = style({
   fontFeatureSettings: '"calt", "case"',
   fontSize: '0.8rem',
-  letterSpacing: '-0.01rem',
   fontFamily: MONOSPACE,
   fontWeight: 600,
   color: vars.color.default,
 })
 export const CODE_PRE = style({
   overflowX: 'auto',
-  fontFamily: GOOGLE_SANS_MONO_STRONG,
+  fontFamily: MONOSPACE,
   color: vars.color.default,
 })

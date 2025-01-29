@@ -15,9 +15,8 @@ export const FOOTER_LINK = style({
 
 export const FOOTER_COPYRIGHT = style({
   fontFamily: MONOSPACE,
-  fontWeight: 500,
+  fontWeight: 700,
   wordSpacing: '-0.2rem',
-  letterSpacing: '-0.01rem',
   fontSize: '0.7rem',
   textAlign: 'center',
 })

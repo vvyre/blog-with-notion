@@ -64,7 +64,6 @@ export function BackgroundCanvas({ ...props }) {
       context!.fillStyle = 'white'
 
       context!.wordSpacing = '-0.15rem'
-      context!.letterSpacing = '-0.01rem'
       context!.textAlign = 'center'
       context!.textBaseline = 'middle'
 
