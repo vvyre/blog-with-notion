@@ -14,7 +14,7 @@ export const POST_LIST_CENTERED = style([
     justifyContent: 'center',
     alignItems: 'center',
     '@media': {
-      '(0px <= width <= 700px)': {
+      '(0px <= width <= 480px)': {
         top: '7.5rem',
         paddingBottom: '20%',
         height: 'auto',

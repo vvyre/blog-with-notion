@@ -33,7 +33,7 @@ export const POST_LIST_BASE = style({
   justifyContent: 'center',
   marginBottom: '0.75rem',
   '@media': {
-    '(0px <= width <= 700px)': {
+    '(0px <= width <= 480px)': {
       marginBottom: '0',
       display: 'flex',
       width: '100%',
@@ -77,7 +77,7 @@ export const POST_LINK = style({
   color: vars.color.postListTitleText,
   borderRadius: vars.border.radius.card,
   '@media': {
-    '(0px <= width <= 700px)': {
+    '(0px <= width <= 480px)': {
       display: 'flex',
       width: '100%',
     },
@@ -91,7 +91,7 @@ export const POST_TITLE = style([
     fontWeight: 600,
     cursor: 'pointer',
     '@media': {
-      '(0px <= width <= 700px)': {
+      '(0px <= width <= 480px)': {
         fontSize: '0.9rem',
       },
     },
@@ -104,7 +104,7 @@ export const POST_SUMMARY = style([
     cursor: 'pointer',
     width: '100%',
     '@media': {
-      '(0 <= width <= 700px)': {
+      '(0 <= width <= 480px)': {
         fontSize: '0.9rem',
       },
     },

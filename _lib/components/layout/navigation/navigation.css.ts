@@ -15,7 +15,7 @@ export const BASE = style({
   top: '0',
   backgroundColor: 'transparent',
   '@media': {
-    '(0 <= width <= 700px)': {
+    '(0 <= width <= 480px)': {
       bottom: '0',
       padding: '0.4rem 1.5rem 0.4rem 1.5rem',
     },
@@ -66,7 +66,7 @@ export const POST_TITLE_WRAPPER = style([
     color: vars.color.default,
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
-      '(0 <= width <= 700px)': {
+      '(0 <= width <= 480px)': {
         fontSize: TYPOGRAPHY.S.fontSize,
       },
     },
@@ -98,9 +98,9 @@ export const NAV_BTN = style([
   },
 ])
 
-export const HIDE_UNDER_700PX = style({
+export const HIDE_UNDER_480px = style({
   '@media': {
-    '(0 <= width <= 700px)': {
+    '(0 <= width <= 480px)': {
       display: 'none',
     },
   },
@@ -125,7 +125,7 @@ export const POST_TITLE = style([
     fontWeight: 500,
     fontSize: TYPOGRAPHY.S.fontSize,
     '@media': {
-      '(0 <= width <= 700px)': {
+      '(0 <= width <= 480px)': {
         fontSize: TYPOGRAPHY.XXS.fontSize,
       },
     },
