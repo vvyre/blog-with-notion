@@ -58,5 +58,7 @@ export const IMG = style({
   borderRadius: vars.border.radius.card,
   position: 'relative',
   width: 'auto',
+  height: 'auto',
+  maxWidth: '100%',
   objectFit: 'contain',
 })
