@@ -13,8 +13,6 @@ globalStyle('html', {
   fontSize: '100%',
   margin: 0,
   padding: 0,
-  lineHeight: '1.85',
-  fontFamily: SANS_SERIF,
 })
 
 globalStyle('body', {
@@ -25,6 +23,9 @@ globalStyle('body', {
   background: 'transparent',
   margin: '-3rem 0 0 0',
   padding: 0,
+  lineHeight: '1.85',
+  fontFamily: SANS_SERIF,
+  wordSpacing: '-0.2rem',
   fontFeatureSettings:
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   WebkitFontFeatureSettings:
@@ -68,6 +69,7 @@ globalStyle(
 
 globalStyle('input, button, select, textarea', {
   fontFamily: SANS_SERIF,
+  wordSpacing: '-0.2rem',
   fontFeatureSettings:
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   WebkitFontFeatureSettings:
@@ -95,7 +97,7 @@ globalStyle('a', {
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
   WebkitFontFeatureSettings:
     "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
-  fontSize: '100%',
+  fontSize: 'inherit',
   textDecoration: 'none',
   color: 'inherit',
   outline: 0,
@@ -135,7 +137,7 @@ globalStyle('img, video, canvas, svg', {
 
 globalStyle('::selection, ::-moz-selection', {
   backgroundColor: vars.color.default,
-  color: vars.color.b2,
+  color: vars.color.invert,
 })
 
 globalStyle('p, span, code, ul li, ol li, li', {
