@@ -41,19 +41,19 @@ export const TYPOGRAPHY = {
     fontWeight: 900,
   },
   XXL: {
-    fontSize: '2.5rem',
+    fontSize: '2.25rem',
     fontWeight: 700,
   },
   XL: {
-    fontSize: '1.35rem',
+    fontSize: '1.45rem',
     fontWeight: 600,
   },
   L: {
-    fontSize: '1.25rem',
+    fontSize: '1.3rem',
     fontWeight: 500,
   },
   M: {
-    fontSize: '1.05rem',
+    fontSize: '1.075rem',
     fontWeight: 400,
   },
   S: {

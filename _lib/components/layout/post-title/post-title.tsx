@@ -40,6 +40,11 @@ export function PostTitle({ ...meta }: PageObject) {
   return (
     <View className={BASE}>
       <View className={INFO_BOX}>
+        <Txt as="div" className={META}>
+          <Txt as="span" className={RELEASED_DATE}>
+            {rel_date}
+          </Txt>
+        </Txt>
         <Heading as="h1" className={TITLE_ALIGN}>
           <Txt
             as="span"
@@ -51,15 +56,8 @@ export function PostTitle({ ...meta }: PageObject) {
             {title}
           </Txt>
         </Heading>
-        <Spacing size="1rem" />
-        <Txt as="div" className={META}>
-          <Txt as="span" className={SUMMARY}>
-            {summary}
-          </Txt>
-          <Spacing size="0" />
-          <Txt as="span" className={RELEASED_DATE}>
-            {rel_date}
-          </Txt>
+        <Txt as="p" className={SUMMARY}>
+          {summary}
         </Txt>
       </View>
     </View>

@@ -6,8 +6,8 @@ import { Txt } from '../../basics/typography/txt/txt'
 
 export function BackButton({ ...props }) {
   return (
-    <View as="span" {...props}>
-      <Btn as="Link" href={'/'}>
+    <View {...props}>
+      <Btn as="Link" href={'/'} className={BACK_BUTTON_BASE}>
         <Txt as="span" className={BACK_BUTTON_BASE}>
           {'←'}
         </Txt>

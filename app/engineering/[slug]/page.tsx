@@ -59,6 +59,7 @@ export default async function Post({ params }: PostPageProps) {
     <View className={POST_LAYOUT}>
       <PostBorder>
         <BackButton className={NOTION_PARAGRAPH_BLOCK_LAYOUT} />
+        <Spacing size="1rem" />
         <PostTitle {...meta} />
         <RenderBlocks blocks={blocks} />
         <View className={NOTION_PARAGRAPH_BLOCK_LAYOUT}>

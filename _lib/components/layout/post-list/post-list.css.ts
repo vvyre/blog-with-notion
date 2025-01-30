@@ -114,7 +114,6 @@ export const POST_SUMMARY = style([
 export const RELEASED_DATE = style([
   {
     wordSpacing: '-0.3rem',
-    fontFamily: MONOSPACE,
     fontSize: TYPOGRAPHY.XXXS.fontSize,
     fontWeight: 500,
     color: vars.color.white,
