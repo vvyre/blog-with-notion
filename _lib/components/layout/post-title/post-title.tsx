@@ -34,7 +34,7 @@ export function PostTitle({ ...meta }: PageObject) {
     let left = getRandomBackground().backgroundColor
     let right = getRandomBackground().backgroundColor
 
-    while (IS_VALID_COLOR_PAIR(left, right)) {
+    while (!IS_INVALID_COLOR_PAIR(left, right)) {
       left = getRandomBackground().backgroundColor
       right = getRandomBackground().backgroundColor
     }
@@ -76,16 +76,18 @@ export function PostTitle({ ...meta }: PageObject) {
   )
 }
 
-const IS_VALID_COLOR_PAIR = (
+const BLOCKED_BACKGROUND_COLORS = [
+  vars.notion.default,
+  vars.notion.gray,
+  vars.notion.gray_background,
+]
+
+const IS_INVALID_COLOR_PAIR = (
   c1: ReturnType<typeof useRandomBackground>['backgroundColor'],
   c2: ReturnType<typeof useRandomBackground>['backgroundColor']
 ) =>
-  !c1 &&
-  !c2 &&
-  (c1 === c2 ||
-    c1 === vars.notion.default ||
-    c1 === vars.notion.gray ||
-    c1 === vars.notion.gray_background ||
-    c2 === vars.notion.default ||
-    c2 === vars.notion.gray ||
-    c2 === vars.notion.gray_background)
+  !c1 ||
+  !c2 ||
+  c1 === c2 ||
+  BLOCKED_BACKGROUND_COLORS.includes(c1) ||
+  BLOCKED_BACKGROUND_COLORS.includes(c2)
