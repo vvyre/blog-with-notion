@@ -25,16 +25,19 @@ import {
 import { vars } from '@/_lib/styles/themes.css'
 
 export function PostTitle({ ...meta }: PageObject) {
-  const [gradient, setGradient] = useState(() => ({
-    left: vars.color.default,
-    right: vars.color.highlight,
+  const [gradient, setGradient] = useState<{
+    left: string | null
+    right: string | null
+  }>(() => ({
+    left: null,
+    right: null,
   }))
 
   useEffect(() => {
     let left = getRandomBackground().backgroundColor
     let right = getRandomBackground().backgroundColor
 
-    while (!IS_INVALID_COLOR_PAIR(left, right)) {
+    while (IS_INVALID_COLOR_PAIR(left, right)) {
       left = getRandomBackground().backgroundColor
       right = getRandomBackground().backgroundColor
     }
