@@ -16,6 +16,16 @@ const PADDING = {
   btn_round: '0.65rem',
 }
 
+export const NOTION_THEMES = {
+  blue: '#1b64da',
+  green: '#13D483',
+  orange: '#FA5A15',
+  pink: '#ff6666',
+  purple: '#7F38EC',
+  red: '#e42939',
+  yellow: '#ffb331',
+}
+
 export const vars = createGlobalThemeContract({
   color: {
     theme: 'color-theme',
