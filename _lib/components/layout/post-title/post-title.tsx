@@ -80,6 +80,8 @@ const BLOCKED_BACKGROUND_COLORS = [
   vars.notion.default,
   vars.notion.gray,
   vars.notion.gray_background,
+  vars.notion.yellow_background,
+  vars.notion.green_background,
 ]
 
 const IS_INVALID_COLOR_PAIR = (
