@@ -27,10 +27,10 @@ import { vars } from '@/_lib/styles/themes.css'
 export function PostTitle({ ...meta }: PageObject) {
   const [gradient, setGradient] = useState(() => ({
     left: vars.color.default,
-    right: vars.color.default,
+    right: vars.color.highlight,
   }))
 
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     let left = getRandomBackground().backgroundColor
     let right = getRandomBackground().backgroundColor
 
@@ -80,10 +80,12 @@ const IS_VALID_COLOR_PAIR = (
   c1: ReturnType<typeof useRandomBackground>['backgroundColor'],
   c2: ReturnType<typeof useRandomBackground>['backgroundColor']
 ) =>
-  c1 === vars.notion.default ||
-  c1 === vars.notion.gray ||
-  c1 === vars.notion.gray_background ||
-  c2 === vars.notion.default ||
-  c2 === vars.notion.gray ||
-  c2 === vars.notion.gray_background ||
-  c1 === c2
+  !c1 &&
+  !c2 &&
+  (c1 === c2 ||
+    c1 === vars.notion.default ||
+    c1 === vars.notion.gray ||
+    c1 === vars.notion.gray_background ||
+    c2 === vars.notion.default ||
+    c2 === vars.notion.gray ||
+    c2 === vars.notion.gray_background)

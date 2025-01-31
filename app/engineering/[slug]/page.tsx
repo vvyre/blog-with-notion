@@ -18,6 +18,8 @@ import { POST_LAYOUT } from '@/app/page.css'
 import { PostBorder } from '@/_lib/components/layout/post-border/post-border'
 import { BackButton } from '@/_lib/components/layout/back-button/back-button'
 import { Footer } from '@/_lib/components/layout/footer/footer'
+import { randomTheme } from '@/utils/random-theme'
+import { Metadata, Viewport } from 'next'
 
 export interface PostPageProps {
   params: Promise<{
@@ -37,7 +39,9 @@ export async function generateStaticParams() {
   })
 }
 
-export async function generateMetadata({ params }: PostPageProps) {
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
   const posts = await getCachedPostList(notion_env.database_id)
   const { slug } = await params
   const [matchPost] = posts.filter(post => parsedSlug(post) === slug)
@@ -46,6 +50,10 @@ export async function generateMetadata({ params }: PostPageProps) {
     title: `${getTitle(matchPost)} – ${meta.siteTitle}`,
     description: getSummary(matchPost),
   }
+}
+
+export async function generateViewport(): Promise<Viewport> {
+  return { themeColor: randomTheme() }
 }
 
 export default async function Post({ params }: PostPageProps) {

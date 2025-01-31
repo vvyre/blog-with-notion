@@ -6,7 +6,7 @@ import '@/_lib/components/_blocks/numbered-list-item/ol-global.css'
 import '@/_lib/components/_blocks/bulleted-list-item/ul-global.css'
 
 import { meta } from '@/constants/meta'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { View } from '@/_lib/components/basics/view/view'
 import { notion_env, site_env } from '@/env'
 import { Providers } from '@/_lib/components/providers'
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Brewcold', url: meta.og.url }],
   creator: 'Brewcold',
   publisher: 'Brewcold',
-
   openGraph: {
     url: meta.og.url,
     title: meta.og.title,

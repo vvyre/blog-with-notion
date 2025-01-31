@@ -18,12 +18,24 @@ const PADDING = {
 
 export const NOTION_THEMES = {
   blue: '#1b64da',
+  blue_background: '#90c2ff',
+  brown: '#8a775f',
+  brown_background: '#dbd3c8',
+  default: '#303236',
+  gray: '#808286',
+  gray_background: '#E6E6E7',
   green: '#13D483',
+  green_background: '#E4FA98',
   orange: '#FA5A15',
+  orange_background: '#eda16f',
   pink: '#ff6666',
+  pink_background: '#ffcccc',
   purple: '#7F38EC',
+  purple_background: '#DA98FA',
   red: '#e42939',
+  red_background: '#feafb4',
   yellow: '#ffb331',
+  yellow_background: '#ffe69b',
 }
 
 export const vars = createGlobalThemeContract({
