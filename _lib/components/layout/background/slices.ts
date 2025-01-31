@@ -4,7 +4,7 @@ import { RefObject } from 'react'
 import { StateCreator } from 'zustand'
 
 type CSSVarFunc = typeof vars.notion.default
-const { backgroundColor } = getRandomBackground
+const { backgroundColor } = getRandomBackground()
 
 //색상 배경
 export interface RandomBackgroundSliceType {

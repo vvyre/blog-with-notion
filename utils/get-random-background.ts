@@ -5,9 +5,12 @@ import { useCategory } from '@/_lib/hooks/use-category'
 import { useRandomInt } from '@/_lib/hooks/use-random-int'
 
 const N = objectKeys(vars.notion).length
-const num = getRandomInt([0, N])
-export const getRandomBackground = {
-  backgroundColor: vars.notion[objectKeys(vars.notion)[num]],
+
+export const getRandomBackground = () => {
+  const num = getRandomInt([0, N])
+  return {
+    backgroundColor: vars.notion[objectKeys(vars.notion)[num]],
+  }
 }
 
 export const useRandomBackground = () => {

@@ -14,18 +14,33 @@ import {
   TITLE_ALIGN,
 } from './post-title.css'
 import { getSummary } from '@/utils/get-summary'
-import { Spacing } from '../../basics/spacing/spacing'
 import { PageObject } from '@/_lib/types/notion-response'
 import { CurrentPostContext } from '@/_lib/context/current-post-provider'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@syyu/util/react'
-import { useRandomBackground } from '@/utils/get-random-background'
+import {
+  getRandomBackground,
+  useRandomBackground,
+} from '@/utils/get-random-background'
 import { vars } from '@/_lib/styles/themes.css'
-import { useRandomInt } from '@/_lib/hooks/use-random-int'
 
 export function PostTitle({ ...meta }: PageObject) {
-  const { backgroundColor: base } = useRandomBackground()
-  const angle = useRandomInt([15, 60])
+  const [gradient, setGradient] = useState(() => ({
+    left: vars.color.default,
+    right: vars.color.default,
+  }))
+
+  useIsomorphicLayoutEffect(() => {
+    let left = getRandomBackground().backgroundColor
+    let right = getRandomBackground().backgroundColor
+
+    while (IS_VALID_COLOR_PAIR(left, right)) {
+      left = getRandomBackground().backgroundColor
+      right = getRandomBackground().backgroundColor
+    }
+
+    setGradient({ left, right })
+  }, [])
 
   const { setCurrentPost } = useContext(CurrentPostContext)
   const title = getTitle(meta)
@@ -39,20 +54,17 @@ export function PostTitle({ ...meta }: PageObject) {
 
   return (
     <View className={BASE}>
-      <View className={INFO_BOX}>
-        <Txt as="div" className={META}>
-          <Txt as="span" className={RELEASED_DATE}>
-            {rel_date}
-          </Txt>
+      <View
+        className={INFO_BOX}
+        style={{
+          background: `linear-gradient(to right, ${gradient.left}, ${gradient.right})`,
+        }}
+      >
+        <Txt as="span" className={RELEASED_DATE}>
+          {rel_date}
         </Txt>
         <Heading as="h1" className={TITLE_ALIGN}>
-          <Txt
-            as="span"
-            className={TITLE}
-            style={{
-              background: `linear-gradient(.${angle}turn, ${vars.color.default}, ${base})`,
-            }}
-          >
+          <Txt as="span" className={TITLE}>
             {title}
           </Txt>
         </Heading>
@@ -63,3 +75,15 @@ export function PostTitle({ ...meta }: PageObject) {
     </View>
   )
 }
+
+const IS_VALID_COLOR_PAIR = (
+  c1: ReturnType<typeof useRandomBackground>['backgroundColor'],
+  c2: ReturnType<typeof useRandomBackground>['backgroundColor']
+) =>
+  c1 === vars.notion.default ||
+  c1 === vars.notion.gray ||
+  c1 === vars.notion.gray_background ||
+  c2 === vars.notion.default ||
+  c2 === vars.notion.gray ||
+  c2 === vars.notion.gray_background ||
+  c1 === c2
