@@ -45,11 +45,11 @@ export const POST_LINK_THEME_VARIANT = styleVariants({
   DARK: {
     selectors: {
       '&:hover': {
-        backgroundColor: vars.color.postListBgDark,
+        backgroundColor: vars.color.btn_bg,
         color: vars.color.postListTextHoveredDark,
       },
       '&:active': {
-        backgroundColor: vars.color.postListBgDark,
+        backgroundColor: vars.color.btn_bg,
         color: vars.color.postListTextHoveredDark,
       },
     },
@@ -57,11 +57,11 @@ export const POST_LINK_THEME_VARIANT = styleVariants({
   LIGHT: {
     selectors: {
       '&:hover': {
-        backgroundColor: vars.color.postListBgLight,
+        backgroundColor: vars.color.btn_bg,
         color: vars.color.postListTextHoveredLight,
       },
       '&:active': {
-        backgroundColor: vars.color.postListBgLight,
+        backgroundColor: vars.color.btn_bg,
         color: vars.color.postListTextHoveredLight,
       },
     },

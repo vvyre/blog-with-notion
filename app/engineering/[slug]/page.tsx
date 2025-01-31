@@ -20,6 +20,8 @@ import { BackButton } from '@/_lib/components/layout/back-button/back-button'
 import { Footer } from '@/_lib/components/layout/footer/footer'
 import { randomTheme } from '@/utils/random-theme'
 import { Metadata, Viewport } from 'next'
+import { vars } from '@/_lib/styles/themes.css'
+import { useSystemTheme } from '@/_lib/hooks/use-system-theme'
 
 export interface PostPageProps {
   params: Promise<{
@@ -53,7 +55,9 @@ export async function generateMetadata({
 }
 
 export async function generateViewport(): Promise<Viewport> {
-  return { themeColor: randomTheme() }
+  return {
+    themeColor: '#303236',
+  }
 }
 
 export default async function Post({ params }: PostPageProps) {

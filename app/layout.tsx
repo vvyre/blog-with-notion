@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Brewcold', url: meta.og.url }],
   creator: 'Brewcold',
   publisher: 'Brewcold',
+
   openGraph: {
     url: meta.og.url,
     title: meta.og.title,

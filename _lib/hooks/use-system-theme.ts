@@ -32,8 +32,10 @@ export const useSystemTheme = (): [THEME, () => void] => {
       )
 
       // 시스템 테마 변경이 있다면 시스템 테마 변경을 따릅니다
-      const handleThemeChange = (e: MediaQueryListEvent) =>
+      const handleThemeChange = (e: MediaQueryListEvent) => {
         e.matches ? setDarkWithStorage() : setLightWithStorage()
+      }
+
       deviceThemeMediaQuery.addEventListener('change', handleThemeChange)
 
       return () =>
@@ -41,9 +43,18 @@ export const useSystemTheme = (): [THEME, () => void] => {
     }
   }, [])
 
+  useIsomorphicLayoutEffect(() => {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+    metaThemeColor?.setAttribute(
+      'content',
+      theme === 'dark' ? '#303236' : '#F7F8FB'
+    )
+  }, [theme])
+
   useEffect(() => {
-    if (isClient() && typeof localStorage !== 'undefined')
+    if (isClient() && typeof localStorage !== 'undefined') {
       document.body.dataset.theme = theme
+    }
   }, [theme])
 
   return useMemo(() => [theme, toggle], [theme, toggle])
