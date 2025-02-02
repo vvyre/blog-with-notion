@@ -7,15 +7,14 @@ import { useRandomIntState } from '@/_lib/hooks/use-random-int-state'
 const N = objectKeys(vars.notion).length
 
 export const getRandomBackground = () => {
-  const num = getRandomInt([0, N - 1])
+  const num = getRandomInt([0, N])
   return {
     backgroundColor: vars.notion[objectKeys(vars.notion)[num]],
   }
 }
 
 export const useRandomBackground = () => {
-  const { path } = useCategory()
-  const P = useRandomIntState([0, N - 1])
+  const [P] = useRandomIntState([0, N])
 
   return {
     backgroundColor: vars.notion[objectKeys(vars.notion)[P]],

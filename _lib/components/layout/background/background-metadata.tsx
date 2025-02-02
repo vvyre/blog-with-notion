@@ -7,7 +7,6 @@ import { HIDE } from '../navigation/navigation.css'
 import { usePathname } from 'next/navigation'
 import { aws } from '@/env'
 import { useRandomIntState } from '@/_lib/hooks/use-random-int-state'
-import { useRandomIntEffect } from '@/_lib/hooks/use-random-int-effect'
 
 export function BackgroundMetadata({
   backgroundImgList,
@@ -21,14 +20,17 @@ export function BackgroundMetadata({
   const isPost = path.startsWith('/engineering')
 
   const NUMS_OF_FILES = backgroundImgList.length
-  const idx = useRandomIntEffect([0, NUMS_OF_FILES], [isPost])
+  const [idx, render] = useRandomIntState([0, NUMS_OF_FILES])
 
   const IMG_SRC = idx
     ? aws.cloudfrontRoot + '/' + backgroundImgList[idx].key || ''
     : ''
 
   useIsomorphicLayoutEffect(() => {
-    if (!isPost) setImageSrc(IMG_SRC)
+    if (!isPost) {
+      render()
+      setImageSrc(IMG_SRC)
+    }
   }, [isPost, backgroundImgList])
 
   const [[BODY_WIDTH, BODY_HEIGHT], setBodySize] = useState<[number, number]>([

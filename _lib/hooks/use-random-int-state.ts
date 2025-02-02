@@ -5,14 +5,18 @@ import { DependencyList, useEffect, useState } from 'react'
 
 /** low 이상 high 미만 */
 export const useRandomIntState = (
-  range: [number, number],
-  deps: DependencyList = []
-): number => {
+  range: [number, number]
+): [number, () => void] => {
   const [low, high] =
     range[0] < range[1] ? [range[0], range[1]] : [range[1], range[0]]
-  const [num] = useState<number>(() =>
+  const [num, setNum] = useState<number>(() =>
     typeof window === 'undefined' ? low : getRandomInt([low, high]) + low
   )
 
-  return num
+  const render = () =>
+    setNum(
+      typeof window === 'undefined' ? low : getRandomInt([low, high]) + low
+    )
+
+  return [num, render]
 }
