@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 export const POST_LIST_CENTERED = style([
   {
-    background: 'transparent',
+    backgroundColor: 'transparent',
     position: 'absolute',
     lineHeight: 1.65,
     width: '100%',

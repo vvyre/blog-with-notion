@@ -12,7 +12,7 @@ export const LOGO = style([
     padding: vars.padding.btn_square,
     fontSize: '0.9rem',
     textAlign: 'center',
-    background: 'transparent',
+    backgroundColor: 'transparent',
     border: 'none',
     selectors: {
       '&:hover': {

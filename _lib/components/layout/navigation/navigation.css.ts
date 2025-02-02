@@ -86,7 +86,7 @@ export const NAV_BTN = style([
     padding: vars.padding.btn_square,
     fontSize: '0.85rem',
     textAlign: 'center',
-    background: 'transparent',
+    backgroundColor: 'transparent',
     border: 'none',
     borderRadius: vars.border.radius.btn_square,
     outline: 'none',
@@ -116,7 +116,7 @@ export const HIDE_UNDER_500PX = style({
 
 export const POST_TITLE = style([
   {
-    background: 'transparent',
+    backgroundColor: 'transparent',
     border: 'none',
     margin: 0,
     padding: 0,

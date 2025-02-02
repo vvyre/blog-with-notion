@@ -6,7 +6,7 @@ import '@/_lib/components/_blocks/numbered-list-item/ol-global.css'
 import '@/_lib/components/_blocks/bulleted-list-item/ul-global.css'
 
 import { meta } from '@/constants/meta'
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import { View } from '@/_lib/components/basics/view/view'
 import { notion_env, site_env } from '@/env'
 import { Providers } from '@/_lib/components/providers'
@@ -52,14 +52,14 @@ export default async function RootLayout({
 }>) {
   const profile = await getPost(notion_env.about_id)
   const blocks = await processedBlock(profile)
-  const [backgroundImg] = await getBackgroundImg()
+  const backgroundImgList = await getBackgroundImg()
 
   return (
     <html lang="ko">
       <Providers>
         <View as="body">
           <Navigation profile={blocks} />
-          <BackgroundMetadata backgroundImg={backgroundImg} />
+          <BackgroundMetadata backgroundImgList={backgroundImgList} />
           {children}
         </View>
       </Providers>

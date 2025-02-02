@@ -5,11 +5,14 @@ import { useRef, useContext, useState } from 'react'
 import { useBackgroundStore } from './store'
 import { HIDE } from '../navigation/navigation.css'
 import { usePathname } from 'next/navigation'
+import { aws } from '@/env'
+import { useRandomIntState } from '@/_lib/hooks/use-random-int-state'
+import { useRandomIntEffect } from '@/_lib/hooks/use-random-int-effect'
 
 export function BackgroundMetadata({
-  backgroundImg,
+  backgroundImgList,
 }: {
-  backgroundImg: string
+  backgroundImgList: { key: string | undefined }[]
 }) {
   const { theme } = useContext(ThemeContext)
   const { setBrightness, setImageSrc, src, refs } = useBackgroundStore()
@@ -17,9 +20,16 @@ export function BackgroundMetadata({
   const path = usePathname()
   const isPost = path.startsWith('/engineering')
 
+  const NUMS_OF_FILES = backgroundImgList.length
+  const idx = useRandomIntEffect([0, NUMS_OF_FILES], [isPost])
+
+  const IMG_SRC = idx
+    ? aws.cloudfrontRoot + '/' + backgroundImgList[idx].key || ''
+    : ''
+
   useIsomorphicLayoutEffect(() => {
-    if (!isPost) setImageSrc(backgroundImg)
-  }, [isPost, backgroundImg])
+    if (!isPost) setImageSrc(IMG_SRC)
+  }, [isPost, backgroundImgList])
 
   const [[BODY_WIDTH, BODY_HEIGHT], setBodySize] = useState<[number, number]>([
     0, 0,
@@ -65,7 +75,7 @@ export function BackgroundMetadata({
     else Array.from(refs.entries()).map(([k, _]) => updated.set(k, 0))
 
     setBrightness(updated)
-  }, [theme, path, canvasRef.current])
+  }, [theme, path])
 
   // 메인 화면의 랜덤 사진 배경인 경우
   useIsomorphicLayoutEffect(() => {

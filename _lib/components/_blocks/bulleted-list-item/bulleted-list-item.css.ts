@@ -7,6 +7,6 @@ export const BASE = style([
     listStyleType: 'disc',
     paddingLeft: '2.5rem',
     fontFeatureSettings:
-      "'case', 'tnum', 'cv13',  'ss02', 'cv09', 'ss07', 'ss05'",
+      "'case', 'tnum', 'cv13', 'ss02', 'cv09', 'ss07', 'ss05'",
   },
 ])
