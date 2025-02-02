@@ -16,7 +16,7 @@ export const LAYOUT_BG = style([
     position: 'relative',
     width: '100%',
     height: '100dvh',
-    background: 'transparent',
+    backgroundColor: 'transparent',
   },
 ])
 

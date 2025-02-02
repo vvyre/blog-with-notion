@@ -20,16 +20,14 @@ globalStyle('body', {
   height: 'auto',
   minHeight: '100dvh',
   color: vars.color.default,
-  background: 'transparent',
+  backgroundColor: 'transparent',
   margin: '-3rem 0 0 0',
   padding: 0,
   lineHeight: '1.85',
   fontFamily: SANS_SERIF,
   wordSpacing: '-0.2rem',
-  fontFeatureSettings:
-    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
-  WebkitFontFeatureSettings:
-    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
+  WebkitFontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
   MozOsxFontSmoothing: 'grayscale',
@@ -41,10 +39,8 @@ globalStyle('main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
   MozTextSizeAdjust: '100%',
   margin: 0,
   padding: 0,
-  fontFeatureSettings:
-    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
-  WebkitFontFeatureSettings:
-    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  fontFeatureSettings: "'case', 'ss02', 'cv13', 'cv09', 'ss05', 'ss07'",
+  WebkitFontFeatureSettings: "'case', 'ss02', 'cv13', 'cv09', 'ss05', 'ss07'",
   fontWeight: 400,
 })
 
@@ -70,10 +66,8 @@ globalStyle(
 globalStyle('input, button, select, textarea', {
   fontFamily: SANS_SERIF,
   wordSpacing: '-0.2rem',
-  fontFeatureSettings:
-    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
-  WebkitFontFeatureSettings:
-    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
+  WebkitFontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   margin: 0,
   font: 'inherit',
 })
@@ -93,15 +87,13 @@ globalStyle('textarea', {
 
 globalStyle('a', {
   fontFamily: SANS_SERIF,
-  fontFeatureSettings:
-    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
-  WebkitFontFeatureSettings:
-    "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07', 'kern'",
+  fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
+  WebkitFontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   fontSize: 'inherit',
   textDecoration: 'none',
   color: 'inherit',
   outline: 0,
-  background: 'transparent',
+  backgroundColor: 'transparent',
   border: 'none',
 })
 
