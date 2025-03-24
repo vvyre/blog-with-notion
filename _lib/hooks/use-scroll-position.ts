@@ -1,5 +1,5 @@
 import { isClient } from '@syyu/util'
-import { useIsomorphicLayoutEffect } from '@syyu/util/react'
+import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { RefObject, useEffect, useState } from 'react'
 import { useDebouncedCallback } from './use-debounced-callback'
 
@@ -11,8 +11,8 @@ import { useDebouncedCallback } from './use-debounced-callback'
  * @returns {[number, number, number]} [ref 기준 현재 스크롤 위치px, body로부터의 현재 스크롤 위치px, DOM 높이px (없을 경우 body 기준)]
  */
 export function useScrollPosition(
-  scrollHeightRef: RefObject<HTMLElement> | null = null,
-  anchorRef: RefObject<HTMLElement> | null = null,
+  scrollHeightRef: RefObject<HTMLElement | null> | null = null,
+  anchorRef: RefObject<HTMLElement | null> | null = null,
   scrollDebouncingDelay: number = 25
 ): [number, number, number] {
   const [relativePosition, setRelativePosition] = useState<number>(0)

@@ -17,7 +17,7 @@ import { getSummary } from '@/utils/get-summary'
 import { PageObject } from '@/_lib/types/notion-response'
 import { CurrentPostContext } from '@/_lib/context/current-post-provider'
 import { useContext, useEffect, useState } from 'react'
-import { useIsomorphicLayoutEffect } from '@syyu/util/react'
+import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import {
   getRandomBackground,
   useRandomBackground,

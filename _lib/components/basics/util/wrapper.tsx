@@ -1,4 +1,4 @@
-import { cloneElement, type ReactNode } from 'react'
+import { cloneElement, JSX, type ReactNode } from 'react'
 
 export function Wrapper({
   as,

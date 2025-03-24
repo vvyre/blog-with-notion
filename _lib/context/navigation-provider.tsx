@@ -1,7 +1,7 @@
 import { createContext } from 'react'
 import type { ReactNode } from 'react'
 import { noop } from '@syyu/util'
-import { useBooleanState } from '@syyu/util/react'
+import { useBooleanState } from '@frfla/react-hooks'
 import { useCategory } from '../hooks/use-category'
 
 interface NavigationContextType {

@@ -1,4 +1,4 @@
-import { useBooleanState } from '@syyu/util/react'
+import { useBooleanState } from '@frfla/react-hooks'
 import { useEffect } from 'react'
 
 export const useClipboard = (duration?: number, onError?: () => any) => {

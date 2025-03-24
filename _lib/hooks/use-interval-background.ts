@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { useIsomorphicLayoutEffect } from '@syyu/util/react'
+import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { getRandomInt } from '@/utils/get-random-int'
 import { preload } from 'react-dom'
 

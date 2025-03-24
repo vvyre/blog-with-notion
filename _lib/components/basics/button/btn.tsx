@@ -1,6 +1,6 @@
 import {
   ComponentPropsWithRef,
-  ElementRef,
+  ComponentRef,
   ElementType,
   forwardRef,
   MouseEvent,
@@ -21,7 +21,7 @@ type BtnProps<T extends ElementType> = {
 export const Btn = forwardRef(
   <T extends ElementType>(
     { as, onClick, children, href, ...props }: BtnProps<T>,
-    ref: Ref<ElementRef<T>>
+    ref: Ref<ComponentRef<T>>
   ) => {
     const cn = props.className ?? BASE
     const Component = as ?? 'button'

@@ -13,7 +13,7 @@ export interface RandomBackgroundSliceType {
 }
 export const randomBackgroundSlice: StateCreator<
   RandomBackgroundSliceType,
-  [['zustand/devtools', never]],
+  [],
   [],
   RandomBackgroundSliceType
 > = set => ({
@@ -29,7 +29,7 @@ export interface BackgroundImageSliceType {
 }
 export const backgroundImageSlice: StateCreator<
   BackgroundImageSliceType,
-  [['zustand/devtools', never]],
+  [],
   [],
   BackgroundImageSliceType
 > = set => ({
@@ -46,7 +46,7 @@ export interface BackgroundMetaSliceType {
 }
 export const backgroundMetaSlice: StateCreator<
   BackgroundMetaSliceType,
-  [['zustand/devtools', never]],
+  [],
   [],
   BackgroundMetaSliceType
 > = (set, get) => ({
@@ -67,7 +67,7 @@ export interface TargetElementSliceType {
   //Map+WeakSet으로 중복 체크 최적화
   refs: Map<string, RefObject<HTMLElement>>
   hasRef: (ref: RefObject<HTMLElement>, k?: string) => boolean
-  addRef: (k: string, ref: RefObject<HTMLElement>) => void
+  addRef: <T extends HTMLElement | null>(k: string, ref: RefObject<T>) => void
   resetRef: () => void
   //ref.current 확인용 Weakset, 일반적인 방법으로 복사할 수 없어 상태 추적이 불가능함
   //중복 확인용으로만 사용하며 참조되지 않으면 GC가 바로 내부 원소의 참조를 해제함
@@ -75,7 +75,7 @@ export interface TargetElementSliceType {
 }
 export const targetElementSlice: StateCreator<
   TargetElementSliceType,
-  [['zustand/devtools', never]],
+  [],
   [],
   TargetElementSliceType
 > = (set, get) => ({
@@ -89,13 +89,13 @@ export const targetElementSlice: StateCreator<
     return false
   },
   //ref로 weakset 먼저 탐색
-  addRef: (k: string, ref: RefObject<HTMLElement>) =>
+  addRef: <T extends HTMLElement | null>(k: string, ref: RefObject<T>) =>
     set(state => {
       const updatedRefs = new Map(state.refs)
       if (ref.current !== null)
         if (!state.DON_T_USE_THIS__THIS_IS_UNTRACKABLE.has(ref.current)) {
           state.DON_T_USE_THIS__THIS_IS_UNTRACKABLE.add(ref.current)
-          updatedRefs.set(k, ref)
+          updatedRefs.set(k, ref as RefObject<HTMLElement>)
         }
       //만약 추가되지 않았을 때에도 상태 자체는 변화된 것으로 간주하고 업데이트
       return { refs: updatedRefs }

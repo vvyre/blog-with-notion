@@ -1,6 +1,6 @@
 'use client'
 import { ThemeContext } from '@/_lib/context/theme-provider'
-import { useIsomorphicLayoutEffect } from '@syyu/util/react'
+import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { useRef, useContext, useState } from 'react'
 import { useBackgroundStore } from './store'
 import { HIDE } from '../navigation/navigation.css'

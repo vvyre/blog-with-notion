@@ -1,6 +1,6 @@
 'use client'
 
-import { useIsomorphicLayoutEffect } from '@syyu/util/react'
+import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useBackgroundStore } from './store'
 import { MONOSPACE } from '@/_lib/styles/fonts.css'

@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import { Btn } from '../../../basics/button/btn'
-import { LOGO } from './about-btn.css'
 import { useBackgroundStore } from '../../background/store'
 import { TEXT_COLOR_THEME_VARIANT } from '@/_lib/components/basics/typography/typography.css'
 import { NAV_BTN } from '../navigation.css'

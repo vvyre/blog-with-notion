@@ -7,7 +7,7 @@ import { Flex } from '../../basics/flex/flex'
 import { getCodeLanguage } from '@/utils/get-code-language'
 import type { NotionComponentProps } from '@/_lib/types/block'
 import { Btn } from '../../basics/button/btn'
-import { useTextCopy } from '@syyu/util/react'
+import { useTextCopy } from '@frfla/react-hooks'
 
 export function Code({ block }: NotionComponentProps<'code'>) {
   const codeLang = getCodeLanguage(block.code.language)

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
 import { getRandomInt } from '@/utils/get-random-int'
-import { useIsomorphicLayoutEffect } from '@syyu/util/react'
+import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { DependencyList, useEffect, useState } from 'react'
 
 /** low 이상 high 미만 */

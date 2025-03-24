@@ -6,7 +6,7 @@ import { PostListObject } from '@/_lib/types/notion-response'
 import { PostListFallback } from '../post-list/post-list-fallback'
 import { ComponentPropsWithoutRef, useContext } from 'react'
 import { PostListContext } from '@/_lib/context/post-list-provider'
-import { useIsomorphicLayoutEffect } from '@syyu/util/react'
+import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 
 export function PostListLayout({
   posts,

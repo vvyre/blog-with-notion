@@ -9,18 +9,15 @@ import {
   targetElementSlice,
   TargetElementSliceType,
 } from './slices'
-import { devtools } from 'zustand/middleware'
 
-export const useBackgroundStore = create<
-  RandomBackgroundSliceType &
-    BackgroundImageSliceType &
-    BackgroundMetaSliceType &
-    TargetElementSliceType
->()(
-  devtools((...a) => ({
-    ...randomBackgroundSlice(...a),
-    ...backgroundImageSlice(...a),
-    ...backgroundMetaSlice(...a),
-    ...targetElementSlice(...a),
-  }))
-)
+type Slices = RandomBackgroundSliceType &
+  BackgroundImageSliceType &
+  BackgroundMetaSliceType &
+  TargetElementSliceType
+
+export const useBackgroundStore = create<Slices>()((...a) => ({
+  ...randomBackgroundSlice(...a),
+  ...backgroundImageSlice(...a),
+  ...backgroundMetaSlice(...a),
+  ...targetElementSlice(...a),
+}))
