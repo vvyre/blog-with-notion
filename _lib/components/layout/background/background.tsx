@@ -3,7 +3,7 @@ import {
   LAYOUT_CANVAS,
   LAYOUT_FILTER,
   OVERFLOW,
-} from '@/app/page.css'
+} from '@/_lib/components/layout/background/background.css'
 import { View } from '../../basics/view/view'
 import { ComponentPropsWithoutRef } from 'react'
 import { BackgroundCanvas } from './background-canvas'

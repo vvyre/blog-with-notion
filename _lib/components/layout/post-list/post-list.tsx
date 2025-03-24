@@ -22,7 +22,6 @@ interface PostListProps {
 export function PostList({ post, category }: PostListProps) {
   const URI = `/${category}/${parsedSlug(post)}`
   const TITLE = getTitle(post)
-  const DATE = getDate(post)
 
   const { LIGHT_THEME_RECOMMEMDED } = useBackgroundStore()
   const COLOR_KEY = LIGHT_THEME_RECOMMEMDED() ? 'DARK' : 'LIGHT'
@@ -31,10 +30,7 @@ export function PostList({ post, category }: PostListProps) {
   return (
     <List as="li" className={POST_LIST_BASE}>
       <Txt as="Link" href={URI} className={`${POST_LINK} ${LIST_HOVER_STYLE}`}>
-        <Txt as="div" className={`${RELEASED_DATE}`}>
-          {DATE}
-        </Txt>
-        <Txt as="div" className={POST_TITLE}>
+        <Txt as="p" className={POST_TITLE}>
           {TITLE}
         </Txt>
       </Txt>

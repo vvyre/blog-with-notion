@@ -7,6 +7,8 @@ import { PostListFallback } from '../post-list/post-list-fallback'
 import { ComponentPropsWithoutRef, useContext } from 'react'
 import { PostListContext } from '@/_lib/context/post-list-provider'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
+import { getDate, getYear } from '@/utils/get-date'
+import { PostListYear } from '../post-list/post-list-year'
 
 export function PostListLayout({
   posts,
@@ -27,9 +29,17 @@ export function PostListLayout({
   return (
     <View as="ul" className={props?.className ?? POST_LIST_CENTERED} {...props}>
       {postList?.posts && postList?.posts?.length > 0 ? (
-        postList?.posts.map(post => (
-          <PostList category={category} key={post.id} post={post} />
-        ))
+        postList?.posts.map((post, idx) => {
+          const curYear = getYear(post)
+          if (!idx || curYear !== getYear(postList?.posts[idx - 1]))
+            return (
+              <View key={post.id}>
+                <PostListYear>{curYear}</PostListYear>
+                <PostList category={category} post={post} />
+              </View>
+            )
+          return <PostList category={category} key={post.id} post={post} />
+        })
       ) : (
         <PostListFallback />
       )}

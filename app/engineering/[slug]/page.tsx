@@ -14,7 +14,7 @@ import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles
 import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css'
 import RenderBlocks from '@/_lib/components/render-blocks'
 import { ArticleRecommend } from '@/_lib/components/layout/article-recommend/article-recommend'
-import { POST_LAYOUT } from '@/app/page.css'
+import { POST_LAYOUT } from '@/_lib/components/layout/background/background.css'
 import { PostBorder } from '@/_lib/components/layout/post-border/post-border'
 import { BackButton } from '@/_lib/components/layout/back-button/back-button'
 import { Footer } from '@/_lib/components/layout/footer/footer'

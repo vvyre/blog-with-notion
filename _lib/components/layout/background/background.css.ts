@@ -59,10 +59,6 @@ export const OVERFLOW = style({
   justifyContent: 'center',
   alignItems: 'center',
   overflowY: 'auto',
-  maskImage:
-    'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
-  WebkitMaskImage:
-    'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
 })
 
 export const FLEX = style({

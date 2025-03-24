@@ -4,8 +4,8 @@ import {
 } from '@vanilla-extract/css'
 
 const RADIUS = {
-  card: '0.425rem',
-  btn_square: '0.425rem',
+  card: '0.625rem',
+  btn_square: '0.625rem',
   btn_round: '2rem',
 }
 
@@ -119,10 +119,10 @@ createGlobalTheme('[data-theme="light"]', vars, {
     btn_bg: 'rgba(230,232,236,0.5)',
     nav_bg: 'transparent',
     postListTitleText: 'rgba(255,255,0,1)',
-    postListTextHoveredDark: 'rgba(252, 254, 255, 1)',
-    postListTextHoveredLight: 'rgba(252, 254, 255, 1)',
-    postListBgDark: 'rgba(88,91,94,0.4)',
-    postListBgLight: 'rgba(88,91,94,0.4)',
+    postListTextHoveredDark: 'rgba(64, 66, 70, 1)',
+    postListTextHoveredLight: 'rgba(64, 66, 70, 1)',
+    postListBgDark: 'rgba(252, 254, 255, 1)',
+    postListBgLight: 'rgba(252, 254, 255, 1)',
   },
   notion: {
     blue: '#1b64da',
@@ -168,10 +168,10 @@ createGlobalTheme('[data-theme="dark"]', vars, {
     btn_bg: 'rgba(40,42,46,0.5)',
     nav_bg: 'transparent',
     postListTitleText: 'rgba(255,255,0,1)',
-    postListTextHoveredDark: 'rgba(252, 254, 255, 1)',
-    postListTextHoveredLight: 'rgba(252, 254, 255, 1)',
-    postListBgDark: 'rgba(88,91,94,0.4)',
-    postListBgLight: 'rgba(88,91,94,0.4)',
+    postListTextHoveredDark: 'rgba(64, 66, 70, 1)',
+    postListTextHoveredLight: 'rgba(64, 66, 70, 1)',
+    postListBgDark: 'rgba(252, 254, 255, 1)',
+    postListBgLight: 'rgba(252, 254, 255, 1)',
   },
   notion: {
     blue: '#4A90E2',

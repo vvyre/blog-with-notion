@@ -2,27 +2,21 @@ import { style } from '@vanilla-extract/css'
 
 export const POST_LIST_CENTERED = style([
   {
-    backgroundColor: 'transparent',
+    background: 'transparent',
     position: 'absolute',
     lineHeight: 1.65,
     width: '100%',
-    maxWidth: '62rem',
-    padding: '1rem',
+    maxWidth: '31.25rem',
     display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    margin: '0 auto',
+    top: '10rem',
+    gap: '0.75rem',
+    paddingBottom: '20%',
+    height: 'auto',
+    flexDirection: 'column',
+    flexWrap: 'nowrap',
     justifyContent: 'center',
-    alignItems: 'center',
-    '@media': {
-      '(0px <= width <= 768px)': {
-        top: '7.5rem',
-        paddingBottom: '20%',
-        height: 'auto',
-        flexDirection: 'column',
-        flexWrap: 'nowrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-    },
+    alignItems: 'flex-start',
+    zIndex: 9,
   },
 ])

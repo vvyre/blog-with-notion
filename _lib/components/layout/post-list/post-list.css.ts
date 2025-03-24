@@ -1,55 +1,37 @@
-import { MONOSPACE } from '@/_lib/styles/fonts.css'
 import { style, styleVariants } from '@vanilla-extract/css'
 import { TEXT_STYLE, TYPOGRAPHY } from '../../basics/typography/typography.css'
 import { vars } from '@/_lib/styles/themes.css'
 
-export const GRID_SPAN = style({
-  gridColumn: 'span 12',
-  '@media': {
-    '(0 <= width <= 768px)': {
-      gridColumn: 'span 6',
-    },
-  },
-})
-
-export const POST_THUMBNAIL = style({
-  width: '100%',
-  height: '12rem',
-  backgroundColor: vars.color.b2,
-})
-
-export const POST_TEXT = style({
-  color: vars.color.gray,
-  selectors: {
-    '&:hover': {
-      color: vars.color.default,
-    },
-  },
-})
-
 export const POST_LIST_BASE = style({
   cursor: 'pointer',
-  display: 'inline-flex',
   justifyContent: 'center',
-  marginBottom: '0.75rem',
-  '@media': {
-    '(0px <= width <= 480px)': {
-      marginBottom: '0',
-      display: 'flex',
-      width: '100%',
-    },
-  },
+  display: 'flex',
+})
+
+export const POST_LINK = style({
+  padding: vars.padding.card,
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+  display: 'flex',
+  width: '100%',
+  color: vars.color.postListTitleText,
+  borderRadius: vars.border.radius.card,
+  zIndex: '9',
+  backgroundColor: 'transparent',
+  backdropFilter: 'blur(4px)', //ios safari 9, chrome 76 and edge(2019), samsung in-app browser 12.0 (2020), firefox 103 (2022)
+  WebkitBackdropFilter: 'blur(4px)', //<safari 9
 })
 
 export const POST_LINK_THEME_VARIANT = styleVariants({
   DARK: {
     selectors: {
       '&:hover': {
-        backgroundColor: vars.color.btn_bg,
+        backgroundColor: vars.color.postListBgDark,
         color: vars.color.postListTextHoveredDark,
       },
       '&:active': {
-        backgroundColor: vars.color.btn_bg,
+        backgroundColor: vars.color.postListBgDark,
         color: vars.color.postListTextHoveredDark,
       },
     },
@@ -57,29 +39,13 @@ export const POST_LINK_THEME_VARIANT = styleVariants({
   LIGHT: {
     selectors: {
       '&:hover': {
-        backgroundColor: vars.color.btn_bg,
+        backgroundColor: vars.color.postListBgLight,
         color: vars.color.postListTextHoveredLight,
       },
       '&:active': {
-        backgroundColor: vars.color.btn_bg,
+        backgroundColor: vars.color.postListBgLight,
         color: vars.color.postListTextHoveredLight,
       },
-    },
-  },
-})
-
-export const POST_LINK = style({
-  display: 'inline-flex',
-  padding: vars.padding.card,
-  flexDirection: 'column',
-  justifyContent: 'flex-start',
-  alignItems: 'center',
-  color: vars.color.postListTitleText,
-  borderRadius: vars.border.radius.card,
-  '@media': {
-    '(0px <= width <= 480px)': {
-      display: 'flex',
-      width: '100%',
     },
   },
 })
@@ -115,7 +81,6 @@ export const RELEASED_DATE = style([
   {
     fontSize: TYPOGRAPHY.XXXS.fontSize,
     fontWeight: 500,
-    color: vars.color.white,
     textAlign: 'left',
     width: '100%',
     cursor: 'pointer',
