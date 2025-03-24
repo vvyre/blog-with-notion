@@ -37,7 +37,6 @@ export const POST_TITLE_TIL = style([
 export const RELEASED_DATE_TIL = style([
   TEXT_STYLE.XXXS,
   {
-    wordSpacing: '-0.3rem',
     fontFamily: MONOSPACE,
     fontSize: TYPOGRAPHY.XXXS.fontSize,
     fontWeight: 500,

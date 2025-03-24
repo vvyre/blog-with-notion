@@ -1,33 +1,33 @@
 import { fontFace } from '@vanilla-extract/css'
 
 export const SANS_SERIF_SYNTHESIZED = fontFace([
-  { src: 'url(/fonts/body-v.ttf)', fontWeight: 400 },
+  { src: 'url(/fonts/Pretendard-Regular.subset.woff2)', fontWeight: 400 },
   {
-    src: 'url(/fonts/body-v-it.ttf)',
+    src: 'url(/fonts/Pretendard-Regular.subset.woff2)',
     fontWeight: 400,
     fontStyle: 'italic',
   },
-  { src: 'url(/fonts/body-v.ttf)', fontWeight: 500 },
+  { src: 'url(/fonts/Pretendard-Medium.subset.woff2)', fontWeight: 500 },
   {
-    src: 'url(/fonts/body-v-it.ttf)',
+    src: 'url(/fonts/Pretendard-Medium.subset.woff2)',
     fontWeight: 500,
     fontStyle: 'italic',
   },
-  { src: 'url(/fonts/body-v.ttf)', fontWeight: 600 },
+  { src: 'url(/fonts/Pretendard-Semibold.subset.woff2)', fontWeight: 600 },
   {
-    src: 'url(/fonts/body-v-it.ttf)',
+    src: 'url(/fonts/Pretendard-Semibold.subset.woff2)',
     fontWeight: 600,
     fontStyle: 'italic',
   },
-  { src: 'url(/fonts/body-v.ttf)', fontWeight: 700 },
+  { src: 'url(/fonts/Pretendard-Bold.subset.woff2)', fontWeight: 700 },
   {
-    src: 'url(/fonts/body-v-it.ttf)',
+    src: 'url(/fonts/Pretendard-Bold.subset.woff2)',
     fontWeight: 700,
     fontStyle: 'italic',
   },
-  { src: 'url(/fonts/body-v.ttf)', fontWeight: 900 },
+  { src: 'url(/fonts/Pretendard-Black.subset.woff2)', fontWeight: 900 },
   {
-    src: 'url(/fonts/body-v-it.ttf)',
+    src: 'url(/fonts/Pretendard-Black.subset.woff2)',
     fontWeight: 900,
     fontStyle: 'italic',
   },

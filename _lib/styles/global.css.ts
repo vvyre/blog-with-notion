@@ -25,7 +25,6 @@ globalStyle('body', {
   padding: 0,
   lineHeight: '1.85',
   fontFamily: SANS_SERIF,
-  wordSpacing: '-0.2rem',
   fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   WebkitFontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   WebkitTextSizeAdjust: '100%',
@@ -65,7 +64,6 @@ globalStyle(
 
 globalStyle('input, button, select, textarea', {
   fontFamily: SANS_SERIF,
-  wordSpacing: '-0.2rem',
   fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   WebkitFontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   margin: 0,

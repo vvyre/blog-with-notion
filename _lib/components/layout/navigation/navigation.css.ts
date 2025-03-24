@@ -81,7 +81,7 @@ export const NAV_BTN = style([
     fontWeight: 900,
     fontFamily: MONOSPACE,
     textTransform: 'uppercase',
-    wordSpacing: '-0.3rem',
+    wordSpacing: '-0.2rem',
     letterSpacing: '0.03rem',
     padding: vars.padding.btn_square,
     fontSize: '0.85rem',

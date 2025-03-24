@@ -47,8 +47,6 @@ export const TITLE = style([
   {
     color: 'transparent',
     fontWeight: 700,
-    wordSpacing: '-0.5rem',
-    letterSpacing: '-0.05rem',
     lineHeight: '1.2',
     wordBreak: 'keep-all',
   },
