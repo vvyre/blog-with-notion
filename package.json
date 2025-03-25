@@ -1,7 +1,9 @@
 {
-  "name": "brewcold-blog",
-  "version": "0.1.0",
+  "name": "blog-with-notion",
+  "version": "1.0.0",
   "private": true,
+  "author": "vvyre <seung.yoon.yu@gmail.com>",
+  "repository": "git@github.com:vvyre/blog-with-notion.git",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
