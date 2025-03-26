@@ -28,7 +28,7 @@ export function AboutBtn({ ...props }) {
       aria-label="About Me"
       {...props}
     >
-      Brewcold
+      WYRE
     </Btn>
   )
 }

@@ -1,12 +1,12 @@
 import { site_env } from '@/env'
 import logo from '#/img/logo.webp'
 
-const TITLE = 'Brewcold'
+const TITLE = 'wyre.dev'
 const DESCRIPTION = 'Writings about life as a developer'
 
 export const meta = {
   siteTitle: TITLE,
-  siteDomain: 'brewcoldblue.com',
+  siteDomain: 'wyre.run',
   siteDiscription: DESCRIPTION,
   og: {
     url: site_env.root,
@@ -16,7 +16,7 @@ export const meta = {
     images: logo,
   },
   footer: {
-    links: [{ name: 'Github', href: 'https://github.com/brewcold' }],
-    copyright: 'Copyright 2024-2025. BREWCOLD All rights reserved.',
+    links: [{ name: 'Github', href: 'https://github.com/vvyre' }],
+    copyright: 'Copyright 2024-2025. vvyre All rights reserved.',
   },
 }

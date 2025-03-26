@@ -19,9 +19,9 @@ import { getBackgroundImg } from '@/utils/get-background-img'
 export const metadata: Metadata = {
   title: meta.siteTitle,
   description: meta.siteDiscription,
-  authors: [{ name: 'Brewcold', url: meta.og.url }],
-  creator: 'Brewcold',
-  publisher: 'Brewcold',
+  authors: [{ name: 'Seungyoon Yu', url: meta.og.url }],
+  creator: 'Seungyoon Yu',
+  publisher: 'Seungyoon Yu',
 
   openGraph: {
     url: meta.og.url,

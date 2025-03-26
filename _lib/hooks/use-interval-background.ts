@@ -9,9 +9,9 @@ export const useIntervalBackground = (nums_of_files: number): string => {
   const [num, setNum] = useState<number | null>(null)
   const [next, setNext] = useState<number>(0)
   const url = num
-    ? `https://raw.githubusercontent.com/brewcold/blog/refs/heads/main/_backgrounds/brewcold-bg-${num}.webp`
+    ? `https://raw.githubusercontent.com/vvyre/blog-with-notion/refs/heads/main/_backgrounds/brewcold-bg-${num}.webp`
     : ''
-  const nextUrl = `https://raw.githubusercontent.com/brewcold/blog/refs/heads/main/_backgrounds/brewcold-bg-${next}.webp`
+  const nextUrl = `https://raw.githubusercontent.com/vvyre/blog-with-notion/refs/heads/main/_backgrounds/brewcold-bg-${next}.webp`
 
   useIsomorphicLayoutEffect(() => {
     setNum(getRandomInt([0, nums_of_files - 1]))
