@@ -1,7 +1,7 @@
 import { site_env } from '@/env'
 import logo from '#/img/logo.webp'
 
-const TITLE = 'wyre.dev'
+const TITLE = 'wyreframelife'
 const DESCRIPTION = 'Writings about life as a developer'
 
 export const meta = {
@@ -17,6 +17,6 @@ export const meta = {
   },
   footer: {
     links: [{ name: 'Github', href: 'https://github.com/vvyre' }],
-    copyright: 'Copyright 2024-2025. vvyre All rights reserved.',
+    copyright: 'Copyright 2024-2025. Seungyoon Yu All rights reserved.',
   },
 }
