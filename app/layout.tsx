@@ -13,8 +13,8 @@ import { Providers } from '@/_lib/components/providers'
 import { Navigation } from '@/_lib/components/layout/navigation/navigation'
 import { getPost } from '@/_lib/utils/fetch/notion'
 import { processedBlock } from '@/_lib/utils/block-processing/process-block'
-import { BackgroundMetadata } from '@/_lib/components/layout/background/background-metadata'
-import { getBackgroundImg } from '@/_lib/utils/fetch/get-background-img'
+import { BackgroundControl } from '@/_lib/components/layout/background/background-control'
+import { getBackgroundImgs } from '@/_lib/utils/fetch/get-background-imgs'
 
 export const metadata: Metadata = {
   title: meta.siteTitle,
@@ -52,14 +52,14 @@ export default async function RootLayout({
 }>) {
   const profile = await getPost(notion_env.about_id)
   const blocks = await processedBlock(profile)
-  const backgroundImgList = await getBackgroundImg()
+  const imgSrcList = await getBackgroundImgs()
 
   return (
     <html lang="ko">
       <Providers>
         <View as="body">
           <Navigation profile={blocks} />
-          <BackgroundMetadata backgroundImgList={backgroundImgList} />
+          <BackgroundControl imgSrcList={imgSrcList} />
           {children}
         </View>
       </Providers>
