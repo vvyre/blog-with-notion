@@ -1,7 +1,7 @@
 import { S3 } from '@aws-sdk/client-s3'
 import { aws } from '@/env'
 
-export const getBackgroundImg = async (): Promise<
+export const getBackgroundImgs = async (): Promise<
   { key: string | undefined }[]
 > => {
   const { accessKeyId, secretAccessKey, region, bucketName, bucketDirectory } =

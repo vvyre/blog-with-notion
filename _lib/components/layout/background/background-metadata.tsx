@@ -21,11 +21,9 @@ export function BackgroundMetadata({
 
   const NUMS_OF_FILES = backgroundImgList.length
   const [idx, render] = useRandomIntState([0, NUMS_OF_FILES])
+  const IMG_SRC = aws.cloudfrontRoot + '/' + backgroundImgList[idx].key
 
-  const IMG_SRC = idx
-    ? aws.cloudfrontRoot + '/' + backgroundImgList[idx].key || ''
-    : ''
-
+  //초기 그림 로드
   useIsomorphicLayoutEffect(() => {
     if (!isPost) {
       render()
@@ -37,6 +35,7 @@ export function BackgroundMetadata({
     0, 0,
   ])
 
+  //DOM 사이즈 업데이트 핸들러
   useIsomorphicLayoutEffect(() => {
     const handleUpdate = () => {
       if (typeof window !== 'undefined') {
@@ -55,7 +54,7 @@ export function BackgroundMetadata({
     }
   }, [])
 
-  // 배경화면에 동적으로 영향을 받아야 하는 ref를 받아, 해당 ref 영역만큼의 크기를 측정합니다.
+  // 배경화면에 동적으로 영향을 받아야 하는 ref를 받아, 해당 ref 영역만큼의 크기를 측정
   const targetLayouts = Array.from(refs.entries()).map(([k, ref]) => {
     if (!ref.current) return [k, null, null, null, null] as const
 
@@ -67,6 +66,7 @@ export function BackgroundMetadata({
 
   // 포스트 본문을 보고 있는 경우
   // 다크, 라이트 테마에 영향을 받아야 함
+  // TODO: 스크롤했을 경우
   useIsomorphicLayoutEffect(() => {
     if (!isPost) return
 
@@ -80,6 +80,7 @@ export function BackgroundMetadata({
   }, [theme, path])
 
   // 메인 화면의 랜덤 사진 배경인 경우
+  // TODO: 스크롤했을 경우
   useIsomorphicLayoutEffect(() => {
     if (isPost) {
       return
@@ -128,7 +129,7 @@ export function BackgroundMetadata({
           const r = imageData[i]
           const g = imageData[i + 1]
           const b = imageData[i + 2]
-          //명도 계산식 - 3채널만 사용
+          //명도 계산식 - 투명도 무시하고 3채널만 사용
           const tempBrightness = 0.2126 * r + 0.7152 * g + 0.0722 * b
           sumBrightness += tempBrightness
         }
