@@ -8,10 +8,10 @@ import { usePathname } from 'next/navigation'
 import { aws } from '@/env'
 import { useRandomIntState } from '@/_lib/hooks/use-random-int-state'
 
-export function BackgroundMetadata({
-  backgroundImgList,
+export function BackgroundControl({
+  imgSrcList,
 }: {
-  backgroundImgList: { key: string | undefined }[]
+  imgSrcList: { key: string | undefined }[]
 }) {
   const { theme } = useContext(ThemeContext)
   const { setBrightness, setImageSrc, src, refs } = useBackgroundStore()
@@ -19,9 +19,9 @@ export function BackgroundMetadata({
   const path = usePathname()
   const isPost = path.startsWith('/engineering')
 
-  const NUMS_OF_FILES = backgroundImgList.length
+  const NUMS_OF_FILES = imgSrcList.length
   const [idx, render] = useRandomIntState([0, NUMS_OF_FILES])
-  const IMG_SRC = aws.cloudfrontRoot + '/' + backgroundImgList[idx].key
+  const IMG_SRC = aws.cloudfrontRoot + '/' + imgSrcList[idx].key
 
   //초기 그림 로드
   useIsomorphicLayoutEffect(() => {
@@ -29,7 +29,7 @@ export function BackgroundMetadata({
       render()
       setImageSrc(IMG_SRC)
     }
-  }, [isPost, backgroundImgList])
+  }, [isPost, imgSrcList])
 
   const [[BODY_WIDTH, BODY_HEIGHT], setBodySize] = useState<[number, number]>([
     0, 0,
