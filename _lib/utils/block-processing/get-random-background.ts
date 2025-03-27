@@ -1,6 +1,6 @@
 import { vars } from '@/_lib/styles/themes.css'
 import { objectKeys } from '@syyu/util'
-import { getRandomInt } from './get-random-int'
+import { getRandomInt } from '../get-random-int'
 import { useCategory } from '@/_lib/hooks/use-category'
 import { useRandomIntState } from '@/_lib/hooks/use-random-int-state'
 

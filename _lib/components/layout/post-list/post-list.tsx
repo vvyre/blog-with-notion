@@ -1,7 +1,7 @@
 'use client'
 import { List } from '../../basics/list/list'
-import { getTitle } from '@/utils/get-title'
-import { parsedSlug } from '@/utils/parsed-slug'
+import { getTitle } from '@/_lib/utils/block-processing/get-title'
+import { parsedSlug } from '@/_lib/utils/block-processing/parsed-slug'
 import { Txt } from '../../basics/typography/txt/txt'
 import {
   POST_LINK,
@@ -10,7 +10,7 @@ import {
   POST_TITLE,
   RELEASED_DATE,
 } from './post-list.css'
-import { getDate } from '@/utils/get-date'
+import { getDate } from '@/_lib/utils/block-processing/get-date'
 import type { PageObject } from '@/_lib/types/notion-response'
 import { useBackgroundStore } from '../background/store'
 

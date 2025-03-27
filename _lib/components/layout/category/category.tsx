@@ -1,5 +1,5 @@
 'use client'
-import { categories } from '@/constants/category'
+import { categories } from '@/_lib/constants/category'
 import { Btn } from '../../basics/button/btn'
 import { CATEGORY } from './category.css'
 import { View } from '../../basics/view/view'

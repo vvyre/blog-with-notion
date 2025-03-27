@@ -6,7 +6,7 @@ import {
   TEXT_COLOR_GREEN,
 } from './share-btn.css'
 import { site_env } from '@/env'
-import { cleanUrl } from '@/utils/clean-url'
+import { cleanUrl } from '@/_lib/utils/clean-url'
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { useClipboard } from '@/_lib/hooks/use-clipboard'

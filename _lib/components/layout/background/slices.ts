@@ -1,5 +1,5 @@
 import { vars } from '@/_lib/styles/themes.css'
-import { getRandomBackground } from '@/utils/get-random-background'
+import { getRandomBackground } from '@/_lib/utils/block-processing/get-random-background'
 import { RefObject } from 'react'
 import { StateCreator } from 'zustand'
 

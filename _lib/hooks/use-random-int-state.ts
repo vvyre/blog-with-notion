@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
-import { getRandomInt } from '@/utils/get-random-int'
+import { getRandomInt } from '@/_lib/utils/get-random-int'
 import { DependencyList, useEffect, useState } from 'react'
 
 /** low 이상 high 미만 */

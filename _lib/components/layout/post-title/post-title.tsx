@@ -1,7 +1,7 @@
 'use client'
 import { Heading } from '../../basics/typography/heading/heading'
-import { getTitle } from '@/utils/get-title'
-import { getDate } from '@/utils/get-date'
+import { getTitle } from '@/_lib/utils/block-processing/get-title'
+import { getDate } from '@/_lib/utils/block-processing/get-date'
 import { Txt } from '../../basics/typography/txt/txt'
 import { View } from '../../basics/view/view'
 import {
@@ -13,15 +13,15 @@ import {
   INFO_BOX,
   TITLE_ALIGN,
 } from './post-title.css'
-import { getSummary } from '@/utils/get-summary'
+import { getSummary } from '@/_lib/utils/block-processing/get-summary'
 import { PageObject } from '@/_lib/types/notion-response'
-import { CurrentPostContext } from '@/_lib/context/current-post-provider'
+import { CurrentPostContext } from '@/_lib/components/context/current-post-provider'
 import { useContext, useEffect, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import {
   getRandomBackground,
   useRandomBackground,
-} from '@/utils/get-random-background'
+} from '@/_lib/utils/block-processing/get-random-background'
 import { vars } from '@/_lib/styles/themes.css'
 
 export function PostTitle({ ...meta }: PageObject) {

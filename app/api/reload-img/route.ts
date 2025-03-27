@@ -1,4 +1,4 @@
-import { getSingleBlock } from '@/fetch/notion'
+import { getSingleBlock } from '@/_lib/utils/fetch/notion'
 import { NextRequest } from 'next/server'
 
 export async function POST(req: NextRequest) {

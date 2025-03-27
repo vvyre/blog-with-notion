@@ -5,16 +5,16 @@ import '@/_lib/components/_blocks/toggle/details-summary-global.css'
 import '@/_lib/components/_blocks/numbered-list-item/ol-global.css'
 import '@/_lib/components/_blocks/bulleted-list-item/ul-global.css'
 
-import { meta } from '@/constants/meta'
+import { meta } from '@/_lib/constants/meta'
 import type { Metadata } from 'next'
 import { View } from '@/_lib/components/basics/view/view'
 import { notion_env, site_env } from '@/env'
 import { Providers } from '@/_lib/components/providers'
 import { Navigation } from '@/_lib/components/layout/navigation/navigation'
-import { getPost } from '@/fetch/notion'
-import { processedBlock } from '@/utils/process-block'
+import { getPost } from '@/_lib/utils/fetch/notion'
+import { processedBlock } from '@/_lib/utils/block-processing/process-block'
 import { BackgroundMetadata } from '@/_lib/components/layout/background/background-metadata'
-import { getBackgroundImg } from '@/utils/get-background-img'
+import { getBackgroundImg } from '@/_lib/utils/fetch/get-background-img'
 
 export const metadata: Metadata = {
   title: meta.siteTitle,

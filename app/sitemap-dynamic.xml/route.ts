@@ -1,6 +1,6 @@
 import { notion_env, site_env } from '@/env'
-import { getCachedPostList } from '@/fetch/notion'
-import { parsedSlug } from '@/utils/parsed-slug'
+import { getCachedPostList } from '@/_lib/utils/fetch/notion'
+import { parsedSlug } from '@/_lib/utils/block-processing/parsed-slug'
 import { getServerSideSitemap, ISitemapField } from 'next-sitemap'
 
 export async function GET(request: Request) {

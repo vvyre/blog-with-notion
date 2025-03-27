@@ -1,11 +1,11 @@
 import RSS from 'rss'
-import { meta } from '@/constants/meta'
+import { meta } from '@/_lib/constants/meta'
 import { notion_env, site_env } from '@/env'
-import { getCachedPostList } from '@/fetch/notion'
-import { getTitle } from '@/utils/get-title'
-import { getSummary } from '@/utils/get-summary'
-import { parsedSlug } from '@/utils/parsed-slug'
-import { getDate } from '@/utils/get-date'
+import { getCachedPostList } from '@/_lib/utils/fetch/notion'
+import { getTitle } from '@/_lib/utils/block-processing/get-title'
+import { getSummary } from '@/_lib/utils/block-processing/get-summary'
+import { parsedSlug } from '@/_lib/utils/block-processing/parsed-slug'
+import { getDate } from '@/_lib/utils/block-processing/get-date'
 
 export async function GET() {
   const feed = new RSS({

@@ -3,7 +3,7 @@ import { BASE, HEADING_3 } from './headings.css'
 import type { NotionComponentProps } from '@/_lib/types/block'
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
 import { ShareBtn } from '../../basics/button/share-btn/share-btn'
-import { cleanUrl } from '@/utils/clean-url'
+import { cleanUrl } from '@/_lib/utils/clean-url'
 export function Heading_3({ block }: NotionComponentProps<'heading_3'>) {
   const TITLE = block.heading_3.rich_text.map(
     (txt: RichTextItemResponse) => txt.plain_text

@@ -5,9 +5,9 @@ import { POST_LIST_CENTERED } from './post-list-layout.css'
 import { PostListObject } from '@/_lib/types/notion-response'
 import { PostListFallback } from '../post-list/post-list-fallback'
 import { ComponentPropsWithoutRef, useContext } from 'react'
-import { PostListContext } from '@/_lib/context/post-list-provider'
+import { PostListContext } from '@/_lib/components/context/post-list-provider'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
-import { getDate, getYear } from '@/utils/get-date'
+import { getDate, getYear } from '@/_lib/utils/block-processing/get-date'
 import { PostListYear } from '../post-list/post-list-year'
 
 export function PostListLayout({

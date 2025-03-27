@@ -1,7 +1,7 @@
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
-import { getRandomInt } from '@/utils/get-random-int'
+import { getRandomInt } from '@/_lib/utils/get-random-int'
 import { preload } from 'react-dom'
 
 export const useIntervalBackground = (nums_of_files: number): string => {

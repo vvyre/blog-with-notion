@@ -1,4 +1,4 @@
-import type { PageObject } from '../_lib/types/notion-response'
+import type { PageObject } from '@/_lib/types/notion-response'
 
 export function getDate(post: PageObject) {
   const result = post.properties.date.date?.start?.slice(0, -3)

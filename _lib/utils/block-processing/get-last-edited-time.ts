@@ -1,4 +1,4 @@
-import type { PageObject } from '../_lib/types/notion-response'
+import type { PageObject } from '@/_lib/types/notion-response'
 
 export function getLastEditedTime(post: PageObject) {
   const date = new Date(post.last_edited_time)

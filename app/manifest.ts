@@ -1,4 +1,4 @@
-import { meta } from '@/constants/meta'
+import { meta } from '@/_lib/constants/meta'
 import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {

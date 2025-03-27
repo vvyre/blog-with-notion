@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { PostListObject } from '../types/notion-response'
+import type { PostListObject } from '@/_lib/types/notion-response'
 import { noop } from '@syyu/util'
 
 interface PostListContextType {

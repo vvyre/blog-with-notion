@@ -1,5 +1,5 @@
 'use client'
-import { ThemeContext } from '@/_lib/context/theme-provider'
+import { ThemeContext } from '@/_lib/components/context/theme-provider'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { useRef, useContext, useState } from 'react'
 import { useBackgroundStore } from './store'

@@ -1,14 +1,14 @@
 import { Tag } from '@/_lib/types/block'
 import { PageObject, PostListObject } from '@/_lib/types/notion-response'
-import { getTitle } from '@/utils/get-title'
-import { parsedSlug } from '@/utils/parsed-slug'
+import { getTitle } from '@/_lib/utils/block-processing/get-title'
+import { parsedSlug } from '@/_lib/utils/block-processing/parsed-slug'
 import { List } from '../../basics/list/list'
 import { BASE, DATE, POST_LIST, TITLE, UL } from './article-recommend.css'
 import { Txt } from '../../basics/typography/txt/txt'
 import { Spacing } from '../../basics/spacing/spacing'
 import { View } from '../../basics/view/view'
 import { Btn } from '../../basics/button/btn'
-import { getDate } from '@/utils/get-date'
+import { getDate } from '@/_lib/utils/block-processing/get-date'
 
 export function ArticleRecommend({
   posts,

@@ -1,4 +1,4 @@
-import { debounce } from '@/utils/debounce'
+import { debounce } from '@/_lib/utils/debounce'
 import { DependencyList, useCallback, useEffect, useRef } from 'react'
 
 /** returns `fn` with `delay`ms debouncing

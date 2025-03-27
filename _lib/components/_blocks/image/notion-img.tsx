@@ -1,7 +1,7 @@
 'use client'
 import { default as Img } from 'next/image'
 import reloadingFallback from '#/img/loading.svg'
-import { getPlainText } from '@/utils/get-plain-text'
+import { getPlainText } from '@/_lib/utils/block-processing/get-plain-text'
 import { Txt } from '../../basics/typography/txt/txt'
 import { View } from '../../basics/view/view'
 import {

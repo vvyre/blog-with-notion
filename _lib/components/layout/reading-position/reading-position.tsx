@@ -2,7 +2,7 @@
 import { vars } from '@/_lib/styles/themes.css'
 import { View } from '../../basics/view/view'
 import { useScrollPosition } from '@/_lib/hooks/use-scroll-position'
-import { useRandomBackground } from '@/utils/get-random-background'
+import { useRandomBackground } from '@/_lib/utils/block-processing/get-random-background'
 import { BASE, INNER } from './reading-position.css'
 
 import { useReadingPositionStore } from './store'

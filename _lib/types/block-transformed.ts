@@ -5,7 +5,7 @@ import type {
   ImageBlockObjectResponse,
   RichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints'
-import { BookmarkMeta } from '@/utils/get-bookmark-metadata'
+import { BookmarkMeta } from '@/_lib/utils/block-processing/get-bookmark-metadata'
 import { BlockObjectResponseMap } from './block-object-response-map'
 
 export interface Image_File {
