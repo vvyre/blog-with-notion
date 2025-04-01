@@ -1,5 +1,5 @@
 import { NOTION_THEMES, vars } from '@/_lib/styles/themes.css'
-import { objectKeys } from '@syyu/util'
+import { objectKeys } from '@frfla/laser'
 import { getRandomInt } from '../get-random-int'
 
 const N = objectKeys(NOTION_THEMES).length

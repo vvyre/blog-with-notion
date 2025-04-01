@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
-import { isClient } from '@syyu/util'
+import { isClient } from '@frfla/laser'
 
 type THEME = 'light' | 'dark'
 

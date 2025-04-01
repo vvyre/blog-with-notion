@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 import type { ReactNode } from 'react'
 import type { PostListObject } from '@/_lib/types/notion-response'
-import { noop } from '@syyu/util'
+import { noop } from '@frfla/laser'
 
 interface PostListContextType {
   postList: Record<string, PostListObject> | null

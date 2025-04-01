@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.735.0",
+    "@frfla/laser": "^0.0.1",
     "@frfla/react-hooks": "^0.0.9",
     "@notionhq/client": "^2.2.15",
-    "@syyu/util": "1.3.12",
     "@vanilla-extract/css": "^1.14.1",
     "highlight.js": "^11.9.0",
     "next": "15.2.3",
@@ -35,7 +35,6 @@
     "@types/rss": "^0.0.32",
     "@vanilla-extract/next-plugin": "^2.3.6",
     "eslint": "^9.18.0",
-    "eslint-config-next": "^15.1.4",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.4",

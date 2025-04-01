@@ -1,4 +1,4 @@
-import { isClient } from '@syyu/util'
+import { isClient } from '@frfla/laser'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { RefObject, useEffect, useState } from 'react'
 import { useDebouncedCallback } from './use-debounced-callback'

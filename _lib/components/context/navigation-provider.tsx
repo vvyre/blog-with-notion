@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 import type { ReactNode } from 'react'
-import { noop } from '@syyu/util'
+import { noop } from '@frfla/laser'
 import { useBooleanState } from '@frfla/react-hooks'
 import { useCategory } from '@/_lib/hooks/use-category'
 
