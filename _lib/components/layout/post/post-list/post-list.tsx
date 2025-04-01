@@ -1,18 +1,11 @@
 'use client'
-import { List } from '../../basics/list/list'
+import { List } from '@/_lib/components/basics/list/list'
 import { getTitle } from '@/_lib/utils/block-processing/get-title'
 import { parsedSlug } from '@/_lib/utils/block-processing/parsed-slug'
-import { Txt } from '../../basics/typography/txt/txt'
-import {
-  POST_LINK,
-  POST_LINK_THEME_VARIANT,
-  POST_LIST_BASE,
-  POST_TITLE,
-  RELEASED_DATE,
-} from './post-list.css'
-import { getDate } from '@/_lib/utils/block-processing/get-date'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
+import { POST_LINK, POST_LINK_THEME_VARIANT, POST_LIST_BASE, POST_TITLE } from './post-list.css'
 import type { PageObject } from '@/_lib/types/notion-response'
-import { useBackgroundStore } from '../background/store'
+import { useBackgroundStore } from '@/_lib/components/layout/background/store'
 
 interface PostListProps {
   post: PageObject

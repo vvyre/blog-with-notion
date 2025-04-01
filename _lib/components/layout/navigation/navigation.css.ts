@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css'
-import { TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
 import { vars } from '@/_lib/styles/themes.css'
 import { MONOSPACE } from '@/_lib/styles/fonts.css'
 

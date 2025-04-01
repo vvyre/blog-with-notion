@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef } from 'react'
-import { Btn } from '../../../basics/button/btn'
-import { useBackgroundStore } from '../../background/store'
+import { Btn } from '@/_lib/components/basics/button/btn'
+import { useBackgroundStore } from '@/_lib/components/layout/background/store'
 import { TEXT_COLOR_THEME_VARIANT } from '@/_lib/components/basics/typography/typography.css'
 import { NAV_BTN } from '../navigation.css'
 export function LogoButton({ ...props }) {

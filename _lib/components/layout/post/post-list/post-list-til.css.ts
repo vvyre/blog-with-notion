@@ -1,6 +1,6 @@
 import { vars } from '@/_lib/styles/themes.css'
 import { style } from '@vanilla-extract/css'
-import { TEXT_STYLE, TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { TEXT_STYLE, TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
 import { MONOSPACE } from '@/_lib/styles/fonts.css'
 
 export const POST_LINK_TIL = style({

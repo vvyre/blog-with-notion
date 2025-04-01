@@ -1,12 +1,12 @@
 'use client'
-import { View } from '../../basics/view/view'
+import { View } from '@/_lib/components/basics/view/view'
 import hljs from 'highlight.js'
 import { CODE_BLOCK, CODE_LANGUAGE, CODE_PRE } from './code.css'
-import { Txt } from '../../basics/typography/txt/txt'
-import { Flex } from '../../basics/flex/flex'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
+import { Flex } from '@/_lib/components/basics/flex/flex'
 import { getCodeLanguage } from '@/_lib/utils/block-processing/get-code-language'
 import type { NotionComponentProps } from '@/_lib/types/block'
-import { Btn } from '../../basics/button/btn'
+import { Btn } from '@/_lib/components/basics/button/btn'
 import { useTextCopy } from '@frfla/react-hooks'
 
 export function Code({ block }: NotionComponentProps<'code'>) {
@@ -23,10 +23,7 @@ export function Code({ block }: NotionComponentProps<'code'>) {
         <Txt className={CODE_LANGUAGE}>{codeLang}</Txt>
         <Btn onClick={() => copy(codeText)}>{isCopied ? '😆' : '📋'}</Btn>
       </Flex>
-      <pre
-        className={CODE_PRE}
-        dangerouslySetInnerHTML={{ __html: codeHtml }}
-      />
+      <pre className={CODE_PRE} dangerouslySetInnerHTML={{ __html: codeHtml }} />
     </View>
   )
 }

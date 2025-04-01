@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react'
-import { View } from '../../basics/view/view'
-import { Txt } from '../../basics/typography/txt/txt'
+import { View } from '@/_lib/components/basics/view/view'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
 import { BASE } from './post-list-year.css'
 
 export function PostListYear({ ...props }: ComponentPropsWithoutRef<'div'>) {

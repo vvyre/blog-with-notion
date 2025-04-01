@@ -1,5 +1,5 @@
 import { MONOSPACE } from '@/_lib/styles/fonts.css'
-import { TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
 import { style } from '@vanilla-extract/css'
 import { vars } from '@/_lib/styles/themes.css'
 

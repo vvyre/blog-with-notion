@@ -1,18 +1,11 @@
-import { View } from '../../basics/view/view'
-import { Txt } from '../../basics/typography/txt/txt'
-import {
-  BASE,
-  BOOKMARK_TEXT,
-  BOOKMARK_TITLE,
-  BOOKMARK_URL,
-  DESC_URL,
-  INNER,
-} from './bookmark.css'
+import { View } from '@/_lib/components/basics/view/view'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
+import { BASE, BOOKMARK_TEXT, BOOKMARK_TITLE, BOOKMARK_URL, DESC_URL, INNER } from './bookmark.css'
 import type { NotionComponentProps } from '@/_lib/types/block'
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
-import { Heading } from '../../basics/typography/heading/heading'
-import { Flex } from '../../basics/flex/flex'
-import { Spacing } from '../../basics/spacing/spacing'
+import { Heading } from '@/_lib/components/basics/typography/heading/heading'
+import { Flex } from '@/_lib/components/basics/flex/flex'
+import { Spacing } from '@/_lib/components/basics/spacing/spacing'
 
 export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
   const og = block.bookmarkInfo.open_graph
@@ -25,13 +18,7 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
       className={BASE}
       aria-label={`Bookmark: ${block.bookmarkInfo.title ?? 'No title available'}`}
     >
-      <Flex
-        as="div"
-        className={INNER}
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="flexStart"
-      >
+      <Flex as="div" className={INNER} flexDirection="column" justifyContent="center" alignItems="flexStart">
         <Heading color="gray" as="h3" size="L" className={BOOKMARK_TITLE}>
           {block.bookmarkInfo.title}
         </Heading>
@@ -58,23 +45,13 @@ export function Bookmark({ block }: NotionComponentProps<'bookmark'>) {
 
         <Spacing size="0.4rem" />
         {og?.description && (
-          <Txt
-            color="gray"
-            className={BOOKMARK_TEXT}
-            aria-describedby="bookmark description"
-          >
+          <Txt color="gray" className={BOOKMARK_TEXT} aria-describedby="bookmark description">
             {og.description}
           </Txt>
         )}
 
         {block.bookmark.caption.map((txt: RichTextItemResponse, idx) => (
-          <Txt
-            key={idx}
-            as="p"
-            richText={txt}
-            className={BOOKMARK_TEXT}
-            aria-describedby="bookmark caption"
-          />
+          <Txt key={idx} as="p" richText={txt} className={BOOKMARK_TEXT} aria-describedby="bookmark caption" />
         ))}
       </Flex>
     </View>

@@ -1,27 +1,16 @@
 'use client'
-import { Heading } from '../../basics/typography/heading/heading'
+import { Heading } from '@/_lib/components/basics/typography/heading/heading'
 import { getTitle } from '@/_lib/utils/block-processing/get-title'
 import { getDate } from '@/_lib/utils/block-processing/get-date'
-import { Txt } from '../../basics/typography/txt/txt'
-import { View } from '../../basics/view/view'
-import {
-  BASE,
-  TITLE,
-  SUMMARY,
-  RELEASED_DATE,
-  META,
-  INFO_BOX,
-  TITLE_ALIGN,
-} from './post-title.css'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
+import { View } from '@/_lib/components/basics/view/view'
+import { BASE, TITLE, SUMMARY, RELEASED_DATE, META, INFO_BOX, TITLE_ALIGN } from './post-title.css'
 import { getSummary } from '@/_lib/utils/block-processing/get-summary'
 import { PageObject } from '@/_lib/types/notion-response'
 import { CurrentPostContext } from '@/_lib/components/context/current-post-provider'
 import { useContext, useEffect, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
-import {
-  getRandomBackground,
-  useRandomBackground,
-} from '@/_lib/utils/block-processing/get-random-background'
+import { getRandomBackground, useRandomBackground } from '@/_lib/utils/block-processing/get-random-background'
 import { vars } from '@/_lib/styles/themes.css'
 
 export function PostTitle({ ...meta }: PageObject) {
@@ -90,9 +79,4 @@ const BLOCKED_BACKGROUND_COLORS = [
 const IS_INVALID_COLOR_PAIR = (
   c1: ReturnType<typeof useRandomBackground>['backgroundColor'],
   c2: ReturnType<typeof useRandomBackground>['backgroundColor']
-) =>
-  !c1 ||
-  !c2 ||
-  c1 === c2 ||
-  BLOCKED_BACKGROUND_COLORS.includes(c1) ||
-  BLOCKED_BACKGROUND_COLORS.includes(c2)
+) => !c1 || !c2 || c1 === c2 || BLOCKED_BACKGROUND_COLORS.includes(c1) || BLOCKED_BACKGROUND_COLORS.includes(c2)

@@ -1,6 +1,6 @@
 import { NotionBlock } from '@/_lib/types/block'
-import { View } from '../../basics/view/view'
-import { Txt } from '../../basics/typography/txt/txt'
+import { View } from '@/_lib/components/basics/view/view'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
 import type { NotionComponentProps } from '@/_lib/types/block'
 import { MentionRichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
 

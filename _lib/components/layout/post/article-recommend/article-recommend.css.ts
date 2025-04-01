@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css'
 import { RELEASED_DATE } from '../post-list/post-list.css'
-import { BASE as BTN_BASE } from '../../basics/button/btn.css'
-import { TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { BASE as BTN_BASE } from '@/_lib/components/basics/button/btn.css'
+import { TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
 import { vars } from '@/_lib/styles/themes.css'
 
 export const BASE = style({

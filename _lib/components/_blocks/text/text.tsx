@@ -1,4 +1,4 @@
-import { Txt } from '../../basics/typography/txt/txt'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
 import type { TextRichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
 
 export function NotionText({ block }: { block: TextRichTextItemResponse }) {

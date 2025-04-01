@@ -2,15 +2,9 @@
 import { default as Img } from 'next/image'
 import reloadingFallback from '#/img/loading.svg'
 import { getPlainText } from '@/_lib/utils/block-processing/get-plain-text'
-import { Txt } from '../../basics/typography/txt/txt'
-import { View } from '../../basics/view/view'
-import {
-  CAPTION_TXT_TEXTBOX,
-  CAPTION_TXT_ZOOMED,
-  IMG,
-  IMG_CONTAINER,
-  IMG_CONTAINER_ZOOMED,
-} from './img.css'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
+import { View } from '@/_lib/components/basics/view/view'
+import { CAPTION_TXT_TEXTBOX, CAPTION_TXT_ZOOMED, IMG, IMG_CONTAINER, IMG_CONTAINER_ZOOMED } from './img.css'
 import { useNotionImg } from './use-notion-img'
 import { useEffect, useState } from 'react'
 import type { NotionComponentProps } from '@/_lib/types/block'
@@ -45,10 +39,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
         height={height}
       />
       {block.image.caption.length > 0 && (
-        <Txt
-          as="figcaption"
-          className={zoomed ? CAPTION_TXT_ZOOMED : CAPTION_TXT_TEXTBOX}
-        >
+        <Txt as="figcaption" className={zoomed ? CAPTION_TXT_ZOOMED : CAPTION_TXT_TEXTBOX}>
           {getPlainText(block.image.caption)}
         </Txt>
       )}

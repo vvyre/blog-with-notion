@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css'
-import { TEXT_STYLE, TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { TEXT_STYLE, TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
 import { vars } from '@/_lib/styles/themes.css'
 
 export const POST_LIST_BASE = style({

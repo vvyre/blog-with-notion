@@ -1,8 +1,8 @@
 'use client'
 import { ReactNode, useEffect, useRef } from 'react'
-import { View } from '../../basics/view/view'
+import { View } from '@/_lib/components//basics/view/view'
 import { useReadingPositionStore } from '../reading-position/store'
-import { LAYOUT_CENTERED } from '../../basics/article/article.css'
+import { LAYOUT_CENTERED } from '@/_lib/components/basics/article/article.css'
 
 export function PostBorder({ children }: { children: ReactNode }) {
   const { setAnchorRef, setScrollHeightRef } = useReadingPositionStore()

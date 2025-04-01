@@ -1,4 +1,4 @@
-import { Flex } from '../../basics/flex/flex'
+import { Flex } from '@/_lib/components//basics/flex/flex'
 import reloadingFallback from '#/img/loading.svg'
 import Image from 'next/image'
 

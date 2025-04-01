@@ -1,10 +1,7 @@
 import { style } from '@vanilla-extract/css'
-import {
-  NOTION_IMG_BLOCK_LAYOUT,
-  NOTION_PARAGRAPH_BLOCK_LAYOUT,
-} from '../block-layout.css'
+import { NOTION_IMG_BLOCK_LAYOUT, NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css'
 import { vars } from '@/_lib/styles/themes.css'
-import { TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
 
 export const IMG_CONTAINER = style([
   NOTION_IMG_BLOCK_LAYOUT,

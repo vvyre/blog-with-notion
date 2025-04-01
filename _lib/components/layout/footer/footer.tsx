@@ -1,7 +1,7 @@
-import { BASE, FOOTER_COPYRIGHT, FOOTER_LINK } from './footer.css'
-import { Txt } from '../../basics/typography/txt/txt'
-import { View } from '../../basics/view/view'
-import { NOTION_BLOCK_LAYOUT } from '../../_blocks/block-layout.css'
+import { BASE, FOOTER_COPYRIGHT } from './footer.css'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
+import { View } from '@/_lib/components/basics/view/view'
+import { NOTION_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css'
 import { meta } from '@/_lib/constants/meta'
 
 export function Footer() {

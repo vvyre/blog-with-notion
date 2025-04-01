@@ -1,5 +1,5 @@
 import { getCachedPostList } from '@/_lib/utils/fetch/notion'
-import { PostListLayout } from '@/_lib/components/layout/post-list-layout/post-list-layout'
+import { PostListLayout } from '@/_lib/components/layout/post/post-list/post-list-layout/post-list-layout'
 import { notion_env } from '@/env'
 import { BackgroundLayout } from '@/_lib/components/layout/background/background'
 

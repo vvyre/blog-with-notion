@@ -1,8 +1,8 @@
 'use client'
-import { Btn } from '../../basics/button/btn'
-import { View } from '../../basics/view/view'
+import { Btn } from '@/_lib/components/basics/button/btn'
+import { View } from '@/_lib/components/basics/view/view'
 import { BACK_BUTTON_BASE } from './back-button.css'
-import { Txt } from '../../basics/typography/txt/txt'
+import { Txt } from '@/_lib/components/basics/typography/txt/txt'
 
 export function BackButton({ ...props }) {
   return (

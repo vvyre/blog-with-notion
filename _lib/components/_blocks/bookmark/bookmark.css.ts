@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css'
-import { TYPOGRAPHY } from '../../basics/typography/typography.css'
+import { TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
 import { vars } from '@/_lib/styles/themes.css'
 
 export const BASE = style([
