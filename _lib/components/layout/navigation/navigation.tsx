@@ -1,62 +1,35 @@
 'use client'
 import { Btn } from '../../basics/button/btn'
-import {
-  BASE,
-  EXPANDED,
-  FILTER_VARIANT,
-  HIDE,
-  NAV,
-  NAV_BTN,
-  POST_TITLE_WRAPPER,
-} from './navigation.css'
+import { BASE, FILTER_VARIANT, NAV, NAV_BTN, POST_TITLE_WRAPPER } from './navigation.css'
 import { View } from '../../basics/view/view'
-import { useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect } from 'react'
 import { CurrentPostContext } from '@/_lib/components/context/current-post-provider'
 import { useCategory } from '@/_lib/hooks/use-category'
-import type { EntireNotionBlockResponse } from '@/_lib/types/block-object-response-map'
 import { Spacing } from '../../basics/spacing/spacing'
 import { GithubLink } from '../_external-logos/github'
-import { About } from './about/about'
-import { NavigationContext } from '@/_lib/components/context/navigation-provider'
-import { AboutBtn } from './about/about-btn'
+import { LogoButton } from './logo-button/logo-button'
 import { ThemeContext } from '@/_lib/components/context/theme-provider'
-import { LOGO } from './about/about-btn.css'
 import { TEXT_COLOR_THEME_VARIANT } from '../../basics/typography/typography.css'
 import { useBackgroundStore } from '../background/store'
 
-export function Navigation({
-  profile,
-}: {
-  profile: EntireNotionBlockResponse[]
-}) {
+export function Navigation() {
   const { theme, toggle } = useContext(ThemeContext)
 
   const { setCurrentPost } = useContext(CurrentPostContext)
-  const { handleProfile, hideProfile, displayProfile, path } =
-    useContext(NavigationContext)
   const { LIGHT_THEME_RECOMMEMDED } = useBackgroundStore()
   const { isPost } = useCategory()
 
   const TEXT_COLOR = LIGHT_THEME_RECOMMEMDED() ? 'DARK' : 'LIGHT'
-  const NAV_TEXT_STYLE = [NAV_BTN, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(
-    ' '
-  )
+  const NAV_TEXT_STYLE = [NAV_BTN, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ')
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null)
   }, [isPost])
 
-  useEffect(() => {
-    hideProfile()
-  }, [path])
-
   return (
-    <View
-      as="nav"
-      className={[BASE, isPost && FILTER_VARIANT.isPost].join(' ')}
-    >
+    <View as="nav" className={[BASE, isPost && FILTER_VARIANT.isPost].join(' ')}>
       <View as="div" className={NAV}>
-        <AboutBtn onClick={() => handleProfile()} />
+        <LogoButton />
         <View className={POST_TITLE_WRAPPER}>
           <GithubLink />
           {isPost && (
@@ -68,11 +41,6 @@ export function Navigation({
             </>
           )}
         </View>
-      </View>
-      {/* 프로필 */}
-      <View className={displayProfile ? EXPANDED : HIDE}>
-        <Spacing size="1rem" />
-        <About blocks={profile} />
       </View>
     </View>
   )
