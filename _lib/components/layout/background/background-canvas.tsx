@@ -3,7 +3,7 @@
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useBackgroundStore } from './store'
-import { MONOSPACE } from '@/_lib/styles/fonts.css'
+import { MONOSPACE, SANS_SERIF } from '@/_lib/styles/fonts.css'
 import { aws } from '@/env'
 import { vars } from '@/_lib/styles/themes.css'
 
@@ -20,8 +20,7 @@ export function BackgroundCanvas({ ...props }) {
   useIsomorphicLayoutEffect(() => {
     setBodySize([window.innerWidth, window.innerHeight])
 
-    const handleResize = () =>
-      setBodySize([window.innerWidth, window.innerHeight])
+    const handleResize = () => setBodySize([window.innerWidth, window.innerHeight])
 
     window.addEventListener('resize', handleResize)
 
@@ -29,8 +28,7 @@ export function BackgroundCanvas({ ...props }) {
   }, [])
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) =>
-      (mousePositionRef.current = { mX: e.clientX, mY: e.clientY })
+    const handleMouseMove = (e: MouseEvent) => (mousePositionRef.current = { mX: e.clientX, mY: e.clientY })
 
     window?.addEventListener('mousemove', handleMouseMove)
 
@@ -60,11 +58,9 @@ export function BackgroundCanvas({ ...props }) {
     let animationFrameId: number
 
     function drawText() {
-      context!.font = `700 0.75rem ${MONOSPACE}`
+      context!.font = `600 0.8rem ${SANS_SERIF}`
       context!.fillStyle = 'white'
-
-      context!.wordSpacing = '-0.15rem'
-      context!.textAlign = 'center'
+      context!.textAlign = 'right'
       context!.textBaseline = 'middle'
 
       const TXT = src
@@ -73,7 +69,7 @@ export function BackgroundCanvas({ ...props }) {
         .replaceAll('-', ' ')
         .toLocaleUpperCase()
 
-      context?.fillText(TXT, width / 2, 26)
+      context?.fillText(TXT, width - 24, height - 24)
     }
 
     function draw() {
@@ -99,13 +95,7 @@ export function BackgroundCanvas({ ...props }) {
       context?.transform(1, 0, 0, 1, 0, 0)
 
       // 캔버스 중앙에 이미지 중심이 놓이도록
-      context?.drawImage(
-        img,
-        -drawWidth / 2,
-        -drawHeight / 2,
-        drawWidth,
-        drawHeight
-      )
+      context?.drawImage(img, -drawWidth / 2, -drawHeight / 2, drawWidth, drawHeight)
       context?.restore()
       context?.save()
 
@@ -127,12 +117,5 @@ export function BackgroundCanvas({ ...props }) {
     }
   }, [src, width, height])
 
-  return (
-    <canvas
-      ref={backgroundCanvasRef}
-      width={width * dpr}
-      height={height * dpr}
-      {...props}
-    />
-  )
+  return <canvas ref={backgroundCanvasRef} width={width * dpr} height={height * dpr} {...props} />
 }
