@@ -11,6 +11,7 @@ import { LogoButton } from './logo-button/logo-button'
 import { ThemeContext } from '@/_lib/components/context/theme-provider'
 import { TEXT_COLOR_THEME_VARIANT } from '@/_lib/components/basics/typography/typography.css'
 import { useBackgroundStore } from '../background/store'
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 
 export function Navigation() {
   const { theme, toggle } = useContext(ThemeContext)
@@ -36,7 +37,11 @@ export function Navigation() {
             <>
               <Spacing size="0.15rem" dir="hori" />
               <Btn onClick={() => toggle()} className={NAV_TEXT_STYLE}>
-                {theme === 'light' ? '🌚' : '🌞'}
+                {theme === 'light' ? (
+                  <MoonIcon width="1.1rem" height="1.1rem" />
+                ) : (
+                  <SunIcon width="1.1rem" height="1.1rem" />
+                )}
               </Btn>
             </>
           )}

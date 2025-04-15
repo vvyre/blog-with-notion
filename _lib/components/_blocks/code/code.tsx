@@ -8,6 +8,7 @@ import { getCodeLanguage } from '@/_lib/utils/block-processing/get-code-language
 import type { NotionComponentProps } from '@/_lib/types/block'
 import { Btn } from '@/_lib/components/basics/button/btn'
 import { useTextCopy } from '@frfla/react-hooks'
+import { CopyIcon, RocketIcon } from '@radix-ui/react-icons'
 
 export function Code({ block }: NotionComponentProps<'code'>) {
   const codeLang = getCodeLanguage(block.code.language)
@@ -21,7 +22,7 @@ export function Code({ block }: NotionComponentProps<'code'>) {
     <View as="div" className={CODE_BLOCK}>
       <Flex justifyContent="spaceBetween" alignItems="center">
         <Txt className={CODE_LANGUAGE}>{codeLang}</Txt>
-        <Btn onClick={() => copy(codeText)}>{isCopied ? '😆' : '📋'}</Btn>
+        <Btn onClick={() => copy(codeText)}>{isCopied ? <RocketIcon /> : <CopyIcon />}</Btn>
       </Flex>
       <pre className={CODE_PRE} dangerouslySetInnerHTML={{ __html: codeHtml }} />
     </View>

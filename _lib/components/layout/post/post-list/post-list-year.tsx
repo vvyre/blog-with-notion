@@ -1,14 +1,13 @@
 import { ComponentPropsWithoutRef } from 'react'
 import { View } from '@/_lib/components/basics/view/view'
-import { Txt } from '@/_lib/components/basics/typography/txt/txt'
 import { BASE } from './post-list-year.css'
+import { LayersIcon } from '@radix-ui/react-icons'
 
 export function PostListYear({ ...props }: ComponentPropsWithoutRef<'div'>) {
   return (
-    <View {...props}>
-      <Txt as="div" className={BASE}>
-        {props.children}
-      </Txt>
+    <View as="div" className={BASE} {...props}>
+      <LayersIcon />
+      <span>{props.children}</span>
     </View>
   )
 }

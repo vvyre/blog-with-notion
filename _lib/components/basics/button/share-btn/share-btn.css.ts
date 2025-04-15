@@ -3,9 +3,10 @@ import { vars } from '@/_lib/styles/themes.css'
 import { MONOSPACE } from '@/_lib/styles/fonts.css'
 
 export const SHARE_BTN_BASE = style({
-  display: 'inline-flex',
+  display: 'inline-block',
+  verticalAlign: 'text-bottom',
   height: 'auto',
-  width: '1.2rem',
+  width: '1.35rem',
   marginLeft: '0.33rem',
   padding: 0,
   border: 'none',
@@ -16,7 +17,6 @@ export const SHARE_BTN_BASE = style({
 export const PARAGRAPH_SHARE = style({
   fontFamily: MONOSPACE,
   fontWeight: '700',
-  fontSize: '0.75em',
   fontFeatureSettings: '"calt" "case"',
   color: vars.color.default,
   selectors: {

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { useClipboard } from '@/_lib/hooks/use-clipboard'
 import { Txt } from '@/_lib/components/basics/typography/txt/txt'
 import { useCategory } from '@/_lib/hooks/use-category'
+import { CheckIcon, Link2Icon } from '@radix-ui/react-icons'
 
 export function ShareBtn({ subtitle }: { subtitle?: string }) {
   const { path } = useCategory()
@@ -24,9 +25,9 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
   const handleClick = () => copy(fullUrl)
 
   return subtitle ? (
-    <Btn as="span" className={SHARE_BTN_BASE} onClick={handleClick} aria-label={`hare link for ${subtitle}`}>
+    <Btn as="div" className={SHARE_BTN_BASE} onClick={handleClick} aria-label={`hare link for ${subtitle}`}>
       <Txt as="span" className={`${PARAGRAPH_SHARE} ${isCopied && TEXT_COLOR_GREEN}`}>
-        {isCopied ? '😆' : '🔗'}
+        {isCopied ? <CheckIcon width="1.3rem" height="1.3rem" /> : <Link2Icon width="1.3rem" height="1.3rem" />}
       </Txt>
     </Btn>
   ) : (

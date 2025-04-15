@@ -4,6 +4,8 @@ import { Btn } from '@/_lib/components/basics/button/btn'
 import { useBackgroundStore } from '@/_lib/components/layout/background/store'
 import { TEXT_COLOR_THEME_VARIANT } from '@/_lib/components/basics/typography/typography.css'
 import { NAV_BTN } from '../navigation.css'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { usePathname } from 'next/navigation'
 export function LogoButton({ ...props }) {
   const logoButtonRef = useRef<HTMLButtonElement>(null)
 
@@ -19,9 +21,11 @@ export function LogoButton({ ...props }) {
     addRef('logoButton', logoButtonRef)
   }, [logoButtonRef.current])
 
+  const path = usePathname()
+
   return (
     <Btn as="Link" href="/" ref={logoButtonRef} className={NAV_TEXT_STYLE} aria-label="About Me" {...props}>
-      WYRE
+      {path === '/' ? 'WYRE' : <HamburgerMenuIcon width="1.1rem" height="1.1rem" />}
     </Btn>
   )
 }
