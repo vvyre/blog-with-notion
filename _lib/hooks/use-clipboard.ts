@@ -8,7 +8,7 @@ export const useClipboard = (duration?: number, onError?: () => any) => {
     try {
       await navigator.clipboard.writeText(text)
       setCopied()
-    } catch (err) {
+    } catch {
       onError && onError()
     }
   }

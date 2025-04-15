@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css'
-import { MONOSPACE, SANS_SERIF } from './fonts.css'
+import { SANS_SERIF } from './fonts.css'
 import { vars } from './themes.css'
 
 globalStyle('*, *:before, *:after', {
@@ -55,12 +55,9 @@ globalStyle('main', {
   backgroundColor: vars.color.b2,
 })
 
-globalStyle(
-  'body[data-theme] main, body[data-theme] nav, body[data-theme] section',
-  {
-    transition: 'background-color 0.15s ease, color 0.15s ease',
-  }
-)
+globalStyle('body[data-theme] main, body[data-theme] nav, body[data-theme] section', {
+  transition: 'background-color 0.15s ease, color 0.15s ease',
+})
 
 globalStyle('input, button, select, textarea', {
   fontFamily: SANS_SERIF,
