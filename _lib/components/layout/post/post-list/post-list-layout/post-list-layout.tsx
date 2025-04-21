@@ -9,6 +9,7 @@ import { PostListContext } from '@/_lib/components/context/post-list-provider'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { getYear } from '@/_lib/utils/block-processing/get-date'
 import { PostListYear } from '../post-list-year'
+import { POST_LIST_WRAPPER } from '../post-list.css'
 
 export function PostListLayout({
   posts,
@@ -33,7 +34,7 @@ export function PostListLayout({
           const curYear = getYear(post)
           if (!idx || curYear !== getYear(postList?.posts[idx - 1]))
             return (
-              <View key={post.id}>
+              <View key={post.id} className={POST_LIST_WRAPPER}>
                 <PostListYear>{curYear}</PostListYear>
                 <PostList category={category} post={post} />
               </View>

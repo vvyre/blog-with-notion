@@ -6,7 +6,7 @@ export const POST_LIST_CENTERED = style([
     position: 'absolute',
     lineHeight: 1.65,
     width: '100%',
-    maxWidth: '31.25rem',
+    maxWidth: '26rem',
     display: 'flex',
     margin: '0 auto',
     top: '10rem',

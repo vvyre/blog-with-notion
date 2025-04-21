@@ -1,16 +1,13 @@
-import {
-  createGlobalTheme,
-  createGlobalThemeContract,
-} from '@vanilla-extract/css'
+import { createGlobalTheme, createGlobalThemeContract } from '@vanilla-extract/css'
 
 const RADIUS = {
-  card: '0.625rem',
-  btn_square: '0.625rem',
+  card: '0.75rem',
+  btn_square: '0.75rem',
   btn_round: '2rem',
 }
 
 const PADDING = {
-  card: '0.75rem 1rem 0.75rem 1rem',
+  card: '0.75rem 1.15rem 0.75rem 1.15rem',
   post_component: '0 1.25rem 0 1.25rem',
   btn_square: '0.4rem 0.55rem 0.4rem 0.55rem',
   btn_round: '0.65rem',

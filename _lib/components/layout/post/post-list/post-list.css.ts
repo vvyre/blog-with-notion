@@ -2,10 +2,15 @@ import { style, styleVariants } from '@vanilla-extract/css'
 import { TEXT_STYLE, TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
 import { vars } from '@/_lib/styles/themes.css'
 
+export const POST_LIST_WRAPPER = style({
+  width: '100%',
+})
+
 export const POST_LIST_BASE = style({
   cursor: 'pointer',
   justifyContent: 'center',
   display: 'flex',
+  width: '100%',
 })
 
 export const POST_LINK = style({
@@ -53,7 +58,7 @@ export const POST_LINK_THEME_VARIANT = styleVariants({
 export const POST_TITLE = style([
   {
     width: '100%',
-    fontSize: '1.15rem',
+    fontSize: '1.05rem',
     fontWeight: 600,
     cursor: 'pointer',
     '@media': {
