@@ -3,6 +3,7 @@ import { styleVariants } from '@vanilla-extract/css'
 
 export const TEXT_COLOR = styleVariants({
   default: { color: vars.notion.default },
+  default_background: { backgroundColor: vars.notion.default_background, color: vars.notion.default },
   blue: { color: vars.notion.blue },
   blue_background: {
     backgroundColor: vars.notion.blue_background,
