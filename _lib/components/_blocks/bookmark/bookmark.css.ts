@@ -16,6 +16,11 @@ export const BASE = style([
         border: `1px solid ${vars.color.highlight}`,
       },
     },
+    '@media': {
+      '(0 <= width <= 480px)': {
+        borderRadius: 0,
+      },
+    },
   },
 ])
 

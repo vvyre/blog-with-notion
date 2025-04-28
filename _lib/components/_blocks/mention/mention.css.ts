@@ -12,6 +12,11 @@ export const BASE = style([
     marginBottom: '0.25rem',
     padding: vars.padding.btn_square,
     borderRadius: vars.border.radius.card,
+    '@media': {
+      '(0 <= width <= 480px)': {
+        borderRadius: 0,
+      },
+    },
     backgroundColor: vars.color.b1,
     fontSize: '0.8rem',
     selectors: {

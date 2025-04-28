@@ -58,4 +58,9 @@ export const IMG = style({
   height: 'auto',
   maxWidth: '100%',
   objectFit: 'contain',
+  '@media': {
+    '(0 <= width <= 480px)': {
+      borderRadius: 0,
+    },
+  },
 })

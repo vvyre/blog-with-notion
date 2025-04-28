@@ -10,6 +10,11 @@ export const CODE_BLOCK = style([
     padding: '1.15rem',
     margin: '2rem 0 2rem 0',
     borderRadius: vars.border.radius.card,
+    '@media': {
+      '(0 <= width <= 480px)': {
+        borderRadius: 0,
+      },
+    },
   },
 ])
 export const CODE_LANGUAGE = style({

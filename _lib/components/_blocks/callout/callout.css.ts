@@ -1,8 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import {
-  NOTION_BLOCK_LAYOUT,
-  NOTION_PARAGRAPH_BLOCK_LAYOUT,
-} from '../block-layout.css'
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css'
 import { vars } from '@/_lib/styles/themes.css'
 
 export const CALLOUT = style([
@@ -12,6 +9,11 @@ export const CALLOUT = style([
     padding: '1.25rem',
     marginBottom: '1rem',
     borderRadius: vars.border.radius.card,
+    '@media': {
+      '(0 <= width <= 480px)': {
+        borderRadius: 0,
+      },
+    },
   },
 ])
 
