@@ -44,7 +44,7 @@ export const EXPANDED = style({
   opacity: '0.95',
   alignItems: 'center',
   width: '100%',
-  backgroundColor: vars.color.b3,
+  backgroundColor: vars.color.b1,
   height: '100dvh',
   zIndex: '9999',
 })

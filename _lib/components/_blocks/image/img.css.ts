@@ -21,8 +21,8 @@ export const IMG_CONTAINER_ZOOMED = style([
   {
     cursor: 'zoom-out',
     zIndex: '999999',
-    backgroundColor: vars.color.default,
-    padding: '3rem 1.5rem 3rem 1.5rem',
+    backgroundColor: 'rgba(0,0,0,0.8)',
+    padding: '1rem',
     margin: 0,
     position: 'fixed',
     display: 'flex',
@@ -40,7 +40,7 @@ export const CAPTION_TXT_TEXTBOX = style([
     marginTop: '0.35rem',
     color: vars.color.gray,
     textAlign: 'left',
-    fontSize: TYPOGRAPHY.XXS.fontSize,
+    fontSize: TYPOGRAPHY.XS.fontSize,
     fontWeight: 500,
   },
 ])

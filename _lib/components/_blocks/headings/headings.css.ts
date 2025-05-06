@@ -16,7 +16,7 @@ export const HEADING_1 = style([
     fontWeight: 700,
     fontSize: TYPOGRAPHY.L.fontSize,
     lineHeight: '1.25',
-    marginTop: '3rem',
+    marginTop: '2rem',
     marginBottom: '1rem',
   },
 ])

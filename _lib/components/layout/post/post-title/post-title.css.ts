@@ -1,9 +1,9 @@
 import { style } from '@vanilla-extract/css'
 import { TYPOGRAPHY } from '@/_lib/components/basics/typography/typography.css'
-import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css'
+import { NOTION_IMG_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css'
 
 export const BASE = style([
-  NOTION_PARAGRAPH_BLOCK_LAYOUT,
+  NOTION_IMG_BLOCK_LAYOUT,
   {
     display: 'flex',
     width: '100%',
@@ -12,7 +12,8 @@ export const BASE = style([
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     height: 'auto',
-    marginBottom: '3rem',
+    paddingInline: '1rem',
+    marginBottom: '2rem',
   },
 ])
 
@@ -42,24 +43,23 @@ export const INFO_BOX = style({
 })
 
 export const TITLE = style([
-  TYPOGRAPHY.XXL,
+  TYPOGRAPHY.XXXL,
   {
     color: 'transparent',
     fontWeight: 700,
     lineHeight: '1.2',
-    wordBreak: 'keep-all',
+    wordBreak: 'break-all',
   },
 ])
 
 export const TITLE_ALIGN = style({
-  textAlign: 'left',
-  paddingRight: '15%',
+  textAlign: 'center',
 })
 
 export const RELEASED_DATE = style({
   color: 'transparent',
-  fontSize: TYPOGRAPHY.XS.fontSize,
-  fontWeight: 600,
+  fontSize: TYPOGRAPHY.M.fontSize,
+  fontWeight: 500,
   textAlign: 'left',
 })
 
@@ -71,7 +71,7 @@ export const META = style({
 
 export const SUMMARY = style({
   color: 'transparent',
+  textAlign: 'center',
   fontSize: TYPOGRAPHY.M.fontSize,
   fontWeight: 600,
-  marginTop: '0.5rem',
 })

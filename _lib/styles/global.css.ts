@@ -23,7 +23,7 @@ globalStyle('body', {
   backgroundColor: 'transparent',
   margin: '-3rem 0 0 0',
   padding: 0,
-  lineHeight: '1.85',
+  lineHeight: '1.65em',
   fontFamily: SANS_SERIF,
   fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   WebkitFontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
@@ -103,8 +103,8 @@ globalStyle('pre', {
 })
 
 globalStyle('code, pre, pre span', {
-  fontSize: '0.815rem',
-  lineHeight: '1.5',
+  fontSize: '0.775rem',
+  lineHeight: '1.6',
   fontFeatureSettings: 'normal',
   MozTabSize: 2,
   tabSize: 2,

@@ -1,10 +1,9 @@
 'use client'
 import { Heading } from '@/_lib/components/basics/typography/heading/heading'
 import { getTitle } from '@/_lib/utils/block-processing/get-title'
-import { getDate } from '@/_lib/utils/block-processing/get-date'
 import { Txt } from '@/_lib/components/basics/typography/txt/txt'
 import { View } from '@/_lib/components/basics/view/view'
-import { BASE, TITLE, SUMMARY, RELEASED_DATE, META, INFO_BOX, TITLE_ALIGN } from './post-title.css'
+import { BASE, TITLE, SUMMARY, INFO_BOX, TITLE_ALIGN } from './post-title.css'
 import { getSummary } from '@/_lib/utils/block-processing/get-summary'
 import { PageObject } from '@/_lib/types/notion-response'
 import { CurrentPostContext } from '@/_lib/components/context/current-post-provider'
@@ -12,6 +11,11 @@ import { useContext, useEffect, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { getRandomBackground, useRandomBackground } from '@/_lib/utils/block-processing/get-random-background'
 import { vars } from '@/_lib/styles/themes.css'
+import { Spacing } from '@/_lib/components/basics/spacing/spacing'
+import { Btn } from '@/_lib/components/basics/button/btn'
+import { BACK_BUTTON_BASE } from '../back-button/back-button.css'
+import { DoubleArrowDownIcon } from '@radix-ui/react-icons'
+import { Flex } from '@/_lib/components/basics/flex/flex'
 
 export function PostTitle({ ...meta }: PageObject) {
   const [gradient, setGradient] = useState<{
@@ -37,7 +41,6 @@ export function PostTitle({ ...meta }: PageObject) {
   const { setCurrentPost } = useContext(CurrentPostContext)
   const title = getTitle(meta)
   const summary = getSummary(meta)
-  const rel_date = getDate(meta)
 
   //SSR-ED Content
   useIsomorphicLayoutEffect(() => {
@@ -45,24 +48,32 @@ export function PostTitle({ ...meta }: PageObject) {
   }, [meta.id])
 
   return (
-    <View className={BASE}>
+    <View className={[BASE].join('')}>
       <View
         className={INFO_BOX}
         style={{
           background: `linear-gradient(to right, ${gradient.left}, ${gradient.right})`,
         }}
       >
-        <Txt as="span" className={RELEASED_DATE}>
-          {rel_date}
-        </Txt>
-        <Heading as="h1" className={TITLE_ALIGN}>
-          <Txt as="span" className={TITLE}>
-            {title}
+        <Btn as="Link" href={'/'} className={BACK_BUTTON_BASE}>
+          <Txt as="span" className={BACK_BUTTON_BASE}>
+            ←
           </Txt>
-        </Heading>
-        <Txt as="p" className={SUMMARY}>
-          {summary}
-        </Txt>
+        </Btn>
+        <Spacing size="3rem" />
+        <View className={TITLE_ALIGN}>
+          <Heading as="h1" className={TITLE}>
+            {title}
+          </Heading>
+          <Txt as="p" className={SUMMARY}>
+            {summary}
+          </Txt>
+        </View>
+
+        <Spacing size="3rem" />
+        <Flex>
+          <DoubleArrowDownIcon width="12px" height="12px" />
+        </Flex>
       </View>
     </View>
   )

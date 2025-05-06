@@ -16,7 +16,6 @@ import RenderBlocks from '@/_lib/components/render-blocks'
 import { ArticleRecommend } from '@/_lib/components/layout/post/article-recommend/article-recommend'
 import { POST_LAYOUT } from '@/_lib/components/layout/background/background.css'
 import { PostBorder } from '@/_lib/components/layout/post/post-border/post-border'
-import { BackButton } from '@/_lib/components/layout/post/back-button/back-button'
 import { Footer } from '@/_lib/components/layout/footer/footer'
 import { Metadata, Viewport } from 'next'
 
@@ -65,8 +64,6 @@ export default async function Post({ params }: PostPageProps) {
   return (
     <View className={POST_LAYOUT}>
       <PostBorder>
-        <BackButton className={NOTION_PARAGRAPH_BLOCK_LAYOUT} />
-        <Spacing size="1rem" />
         <PostTitle {...meta} />
         <RenderBlocks blocks={blocks} />
         <View className={NOTION_PARAGRAPH_BLOCK_LAYOUT}>

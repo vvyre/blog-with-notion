@@ -37,39 +37,39 @@ export const TEXT_COLOR_WITH_THEME_HOVER_VARIANT = styleVariants({
 
 export const TYPOGRAPHY = {
   XXXL: {
-    fontSize: '4.5rem',
-    fontWeight: 900,
+    fontSize: '2.75rem',
+    fontWeight: 700,
   },
   XXL: {
-    fontSize: '2.25rem',
+    fontSize: '1.5rem',
     fontWeight: 700,
   },
   XL: {
-    fontSize: '1.45rem',
+    fontSize: '1.15rem',
     fontWeight: 600,
   },
   L: {
-    fontSize: '1.3rem',
+    fontSize: '1.05rem',
     fontWeight: 500,
   },
   M: {
-    fontSize: '1.075rem',
-    fontWeight: 400,
-  },
-  S: {
-    fontSize: '0.975rem',
-    fontWeight: 400,
-  },
-  XS: {
     fontSize: '0.925rem',
     fontWeight: 400,
   },
+  S: {
+    fontSize: '0.875rem',
+    fontWeight: 400,
+  },
+  XS: {
+    fontSize: '0.815rem',
+    fontWeight: 400,
+  },
   XXS: {
-    fontSize: '0.9rem',
+    fontSize: '0.75rem',
     fontWeight: 400,
   },
   XXXS: {
-    fontSize: '0.8rem',
+    fontSize: '0.7rem',
     fontWeight: 400,
   },
 }
@@ -77,7 +77,7 @@ export const TYPOGRAPHY = {
 export const TEXT_STYLE = styleVariants(TYPOGRAPHY)
 
 export const BOLD = style({
-  fontWeight: 500,
+  fontWeight: 600,
 })
 
 export const ITALIC = style({
@@ -85,10 +85,12 @@ export const ITALIC = style({
 })
 
 export const CODE = style({
-  verticalAlign: 'middle',
-  fontSize: '0.8em',
-  padding: '0.1rem 0.45rem 0.1rem 0.45rem',
-  marginInline: '0.12rem',
+  verticalAlign: 'text-top',
+  fontSize: '0.715rem',
+  padding: '0.2rem 0.5rem 0.2rem 0.5rem',
+  letterSpacing: '0.02rem',
+  fontWeight: 500,
+  marginRight: '0.15rem',
   borderRadius: vars.border.radius.card,
   border: 'none',
   backgroundColor: vars.color.b1,

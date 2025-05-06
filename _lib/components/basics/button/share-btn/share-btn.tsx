@@ -27,7 +27,7 @@ export function ShareBtn({ subtitle }: { subtitle?: string }) {
   return subtitle ? (
     <Btn as="div" className={SHARE_BTN_BASE} onClick={handleClick} aria-label={`hare link for ${subtitle}`}>
       <Txt as="span" className={`${PARAGRAPH_SHARE} ${isCopied && TEXT_COLOR_GREEN}`}>
-        {isCopied ? <CheckIcon width="1.3rem" height="1.3rem" /> : <Link2Icon width="1.3rem" height="1.3rem" />}
+        {isCopied ? <CheckIcon /> : <Link2Icon />}
       </Txt>
     </Btn>
   ) : (
