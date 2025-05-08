@@ -53,7 +53,7 @@ export const TYPOGRAPHY = {
     fontWeight: 500,
   },
   M: {
-    fontSize: '0.925rem',
+    fontSize: '0.9375rem',
     fontWeight: 400,
   },
   S: {
@@ -61,15 +61,15 @@ export const TYPOGRAPHY = {
     fontWeight: 400,
   },
   XS: {
-    fontSize: '0.815rem',
+    fontSize: '0.825rem',
     fontWeight: 400,
   },
   XXS: {
-    fontSize: '0.75rem',
+    fontSize: '0.8rem',
     fontWeight: 400,
   },
   XXXS: {
-    fontSize: '0.7rem',
+    fontSize: '0.775rem',
     fontWeight: 400,
   },
 }
