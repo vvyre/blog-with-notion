@@ -49,11 +49,11 @@ export const TYPOGRAPHY = {
     fontWeight: 600,
   },
   L: {
-    fontSize: '1.05rem',
+    fontSize: '1.08rem',
     fontWeight: 500,
   },
   M: {
-    fontSize: '0.9375rem',
+    fontSize: '0.95rem',
     fontWeight: 400,
   },
   S: {
