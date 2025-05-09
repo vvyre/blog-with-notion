@@ -1,11 +1,15 @@
 import { Flex } from '@/_lib/components//basics/flex/flex'
-import reloadingFallback from '#/img/loading.svg'
-import Image from 'next/image'
+import { Spacing } from '@/_lib/components/basics/spacing/spacing'
+import { BorderDashedIcon } from '@radix-ui/react-icons'
 
 export function PostListFallback() {
   return (
     <Flex width="fill" justifyContent="center" alignItems="center">
-      <Image src={reloadingFallback} alt="loading" />
+      <Spacing size="5rem" />
+      <BorderDashedIcon />
+      <br />
+      one moment please...
+      <Spacing size="5rem" />
     </Flex>
   )
 }
