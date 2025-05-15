@@ -1,12 +1,12 @@
 'use client'
 import { default as Img } from 'next/image'
-import reloadingFallback from '#/img/loading.svg'
 import { getPlainText } from '@/_lib/utils/block-processing/get-plain-text'
 import { Txt } from '@/_lib/components/basics/typography/txt/txt'
 import { View } from '@/_lib/components/basics/view/view'
 import { CAPTION_TXT_TEXTBOX, CAPTION_TXT_ZOOMED, IMG, IMG_CONTAINER, IMG_CONTAINER_ZOOMED } from './img.css'
 import { useNotionImg } from './use-notion-img'
 import { useEffect, useState } from 'react'
+import loading from '#/img/loading.svg'
 import type { NotionComponentProps } from '@/_lib/types/block'
 
 export function NotionImg({ block }: NotionComponentProps<'image'>) {
@@ -29,7 +29,7 @@ export function NotionImg({ block }: NotionComponentProps<'image'>) {
         unoptimized
         className={IMG}
         key={imgUrl}
-        src={isReloading ? reloadingFallback : imgUrl}
+        src={isReloading ? loading : imgUrl}
         alt={getPlainText(block?.image?.caption)}
         priority
         onError={() => reload()}
