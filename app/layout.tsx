@@ -6,13 +6,18 @@ import '@/_lib/components/_blocks/numbered-list-item/ol-global.css'
 import '@/_lib/components/_blocks/bulleted-list-item/ul-global.css'
 
 import { meta } from '@/_lib/constants/meta'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { View } from '@/_lib/components/basics/view/view'
 import { site_env } from '@/env'
 import { Providers } from '@/_lib/components/providers'
 import { Navigation } from '@/_lib/components/layout/navigation/navigation'
 import { BackgroundControl } from '@/_lib/components/layout/background/background-control'
 import { getBackgroundImgs } from '@/_lib/utils/fetch/get-background-imgs'
+import { vars } from '@/_lib/styles/themes.css'
+
+export const viewport: Viewport = {
+  themeColor: vars.color.default,
+}
 
 export const metadata: Metadata = {
   title: meta.siteTitle,

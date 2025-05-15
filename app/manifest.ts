@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: meta.siteTitle,
     description: meta.siteDiscription,
     start_url: '/',
-    display: 'browser',
+    display: 'standalone',
     icons: [
       {
         src: '/favicon.ico',
