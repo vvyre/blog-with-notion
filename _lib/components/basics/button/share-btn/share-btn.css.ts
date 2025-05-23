@@ -19,18 +19,23 @@ export const PARAGRAPH_SHARE = style({
   fontWeight: '700',
   fontFeatureSettings: '"calt" "case"',
   color: vars.color.default,
-  selectors: {
-    '&:hover': {
-      color: vars.notion.purple_background,
+
+  '@media': {
+    '(hover: hover) and (pointer: fine)': {
+      ':hover': {
+        color: vars.notion.purple_background,
+      },
     },
   },
 })
 
 export const TEXT_COLOR_GREEN = style({
   color: vars.notion.green,
-  selectors: {
-    '&:hover': {
-      color: vars.notion.green,
+  '@media': {
+    '(hover: hover) and (pointer: fine)': {
+      ':hover': {
+        color: vars.notion.green,
+      },
     },
   },
 })

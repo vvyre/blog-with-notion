@@ -30,26 +30,30 @@ export const POST_LINK = style({
 
 export const POST_LINK_THEME_VARIANT = styleVariants({
   DARK: {
-    selectors: {
-      '&:hover': {
-        backgroundColor: vars.color.postListBgDark,
-        color: vars.color.postListTextHoveredDark,
-      },
-      '&:active': {
-        backgroundColor: vars.color.postListBgDark,
-        color: vars.color.postListTextHoveredDark,
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.color.postListBgDark,
+          color: vars.color.postListTextHoveredDark,
+        },
+        ':active': {
+          backgroundColor: vars.color.postListBgDark,
+          color: vars.color.postListTextHoveredDark,
+        },
       },
     },
   },
   LIGHT: {
-    selectors: {
-      '&:hover': {
-        backgroundColor: vars.color.postListBgLight,
-        color: vars.color.postListTextHoveredLight,
-      },
-      '&:active': {
-        backgroundColor: vars.color.postListBgLight,
-        color: vars.color.postListTextHoveredLight,
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.color.postListBgLight,
+          color: vars.color.postListTextHoveredLight,
+        },
+        ':active': {
+          backgroundColor: vars.color.postListBgLight,
+          color: vars.color.postListTextHoveredLight,
+        },
       },
     },
   },
@@ -103,45 +107,167 @@ export const POST_CATEGORY = style([
 
 export const HOVER_TEXT = styleVariants({
   default: {
-    selectors: { '&:hover': { backgroundColor: vars.notion.default } },
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.default,
+        },
+      },
+    },
   },
-  blue: { selectors: { '&:hover': { backgroundColor: vars.notion.blue } } },
+  blue: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.blue,
+        },
+      },
+    },
+  },
   blue_background: {
-    selectors: { '&:hover': { backgroundColor: vars.notion.blue_background } },
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.notion.blue_background,
+        },
+      },
+    },
   },
-  brown: { selectors: { '&:hover': { backgroundColor: vars.notion.brown } } },
+  brown: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.brown,
+        },
+      },
+    },
+  },
   brown_background: {
-    selectors: { '&:hover': { backgroundColor: vars.notion.brown_background } },
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.notion.brown_background,
+        },
+      },
+    },
   },
-  gray: { selectors: { '&:hover': { backgroundColor: vars.notion.gray } } },
+  gray: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.gray,
+        },
+      },
+    },
+  },
   gray_background: {
-    selectors: { '&:hover': { backgroundColor: vars.notion.gray_background } },
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.notion.gray_background,
+        },
+      },
+    },
   },
-  green: { selectors: { '&:hover': { backgroundColor: vars.notion.green } } },
+  green: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.green,
+        },
+      },
+    },
+  },
   green_background: {
-    selectors: { '&:hover': { backgroundColor: vars.notion.gray_background } },
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.notion.green_background,
+        },
+      },
+    },
   },
-  orange: { selectors: { '&:hover': { backgroundColor: vars.notion.orange } } },
+  orange: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.orange,
+        },
+      },
+    },
+  },
   orange_background: {
-    selectors: {
-      '&:hover': { backgroundColor: vars.notion.orange_background },
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.notion.orange_background,
+        },
+      },
     },
   },
-  pink: { selectors: { '&:hover': { backgroundColor: vars.notion.pink } } },
+  pink: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.pink,
+        },
+      },
+    },
+  },
   pink_background: {
-    selectors: { '&:hover': { backgroundColor: vars.notion.pink_background } },
-  },
-  purple: { selectors: { '&:hover': { backgroundColor: vars.notion.purple } } },
-  purple_background: {
-    selectors: {
-      '&:hover': { backgroundColor: vars.notion.purple_background },
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.notion.pink_background,
+        },
+      },
     },
   },
-  red: { selectors: { '&:hover': { backgroundColor: vars.notion.red } } },
-  red_background: {
-    selectors: { '&:hover': { backgroundColor: vars.notion.red_background } },
+  purple: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.purple,
+        },
+      },
+    },
   },
-  yellow: { selectors: { '&:hover': { backgroundColor: vars.notion.yellow } } },
+  purple_background: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.notion.purple_background,
+        },
+      },
+    },
+  },
+  red: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.red,
+        },
+      },
+    },
+  },
+  red_background: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          backgroundColor: vars.notion.red_background,
+        },
+      },
+    },
+  },
+  yellow: {
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.yellow,
+        },
+      },
+    },
+  },
   yellow_background: {
     selectors: {
       '&:hover': { backgroundColor: vars.notion.yellow_background },

@@ -2,7 +2,7 @@ import { ReactNode, createContext } from 'react'
 import { useSystemTheme } from '@/_lib/hooks/use-system-theme'
 import { useServerInsertedHTML } from 'next/navigation'
 
-export const ThemeContext = createContext<{ theme: string; toggle: Function }>({
+export const ThemeContext = createContext<{ theme: string; toggle: () => void }>({
   theme: 'light',
   toggle: () => {},
 })

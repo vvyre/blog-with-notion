@@ -11,12 +11,11 @@ export const BASE = style({
   backgroundColor: 'transparent',
   backgroundBlendMode: 'exclusion',
   color: vars.color.gray,
-  selectors: {
-    '&:hover': {
-      backgroundColor: vars.color.btn_bg,
-    },
-    '&:active': {
-      backgroundColor: vars.color.btn_bg,
+  '@media': {
+    '(hover: hover) and (pointer: fine)': {
+      ':hover': {
+        backgroundColor: vars.color.btn_bg,
+      },
     },
   },
 })

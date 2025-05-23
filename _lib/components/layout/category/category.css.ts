@@ -1,9 +1,11 @@
 import { style, styleVariants } from '@vanilla-extract/css'
 export const HOVER = style({
-  selectors: {
-    '&:hover': {
-      textDecoration: 'underline',
-      textUnderlineOffset: '0.25rem',
+  '@media': {
+    '(hover: hover) and (pointer: fine)': {
+      ':hover': {
+        textDecoration: 'underline',
+        textUnderlineOffset: '0.25rem',
+      },
     },
   },
 })

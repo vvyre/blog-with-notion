@@ -11,14 +11,14 @@ export const BASE = style([
     padding: vars.padding.card,
     borderRadius: vars.border.radius.card,
     border: '1px solid transparent',
-    selectors: {
-      '&:hover': {
-        border: `1px solid ${vars.color.highlight}`,
-      },
-    },
     '@media': {
       '(0 <= width <= 480px)': {
         borderRadius: 0,
+      },
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          border: `1px solid ${vars.color.highlight}`,
+        },
       },
     },
   },

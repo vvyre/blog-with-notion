@@ -13,23 +13,21 @@ export const TEXT_COLOR_THEME_VARIANT = styleVariants({
 export const TEXT_COLOR_WITH_THEME_HOVER_VARIANT = styleVariants({
   LIGHT: {
     color: vars.color.white,
-    selectors: {
-      '&:hover': {
-        color: vars.color.blueblack,
-      },
-      '&:active': {
-        color: vars.color.blueblack,
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.color.blueblack,
+        },
       },
     },
   },
   DARK: {
     color: vars.color.blueblack,
-    selectors: {
-      '&:hover': {
-        color: vars.color.white,
-      },
-      '&:active': {
-        color: vars.color.white,
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.color.white,
+        },
       },
     },
   },
@@ -111,9 +109,11 @@ export const LINK = style([
     color: `${vars.color.gray}`,
     textUnderlineOffset: '0.25rem',
     textDecorationThickness: '1px',
-    selectors: {
-      '&:hover': {
-        color: vars.notion.blue,
+    '@media': {
+      '(hover: hover) and (pointer: fine)': {
+        ':hover': {
+          color: vars.notion.blue,
+        },
       },
     },
   },
