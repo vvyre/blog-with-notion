@@ -20,19 +20,12 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: meta.siteTitle,
-  description: meta.siteDiscription,
-  authors: [{ name: 'Seungyoon Yu', url: meta.og.url }],
-  creator: 'Seungyoon Yu',
-  publisher: 'Seungyoon Yu',
+  ...meta,
 
   openGraph: {
-    url: meta.og.url,
-    title: meta.og.title,
-    type: meta.og.type,
-    description: meta.og.description,
-    images: meta.og.images.src,
-    siteName: meta.og.title,
+    ...meta.openGraph,
+    images: meta.openGraph.images.src,
+    siteName: meta.openGraph.title,
   },
   alternates: {
     canonical: site_env.root,

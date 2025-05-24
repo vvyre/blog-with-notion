@@ -43,20 +43,22 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const { slug } = await params
   const [matchPost] = posts.filter(post => parsedSlug(post) === slug)
 
-  const title = `${getTitle(matchPost)} – ${meta.siteTitle}`
+  const title = `${getTitle(matchPost)} – ${meta.title}`
   const description = getSummary(matchPost)
-  const postURI = `${meta.og.url}/engineering/${slug}`
+  const postURI = `${meta.openGraph.url}/engineering/${slug}`
   return {
+    ...meta,
     title,
     description,
     keywords: '',
     openGraph: {
+      ...meta.openGraph,
       url: postURI,
       title: title,
-      type: meta.og.type,
+      type: meta.openGraph.type,
       description: description,
-      images: meta.og.images.src,
-      siteName: meta.og.title,
+      images: meta.openGraph.images.src,
+      siteName: meta.openGraph.title,
     },
   }
 }
