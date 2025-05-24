@@ -18,6 +18,7 @@ import { POST_LAYOUT } from '@/_lib/components/layout/background/background.css'
 import { PostBorder } from '@/_lib/components/layout/post/post-border/post-border'
 import { Footer } from '@/_lib/components/layout/footer/footer'
 import { Metadata, Viewport } from 'next'
+import { vars } from '@/_lib/styles/themes.css'
 
 export interface PostPageProps {
   params: Promise<{
@@ -42,15 +43,27 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const { slug } = await params
   const [matchPost] = posts.filter(post => parsedSlug(post) === slug)
 
+  const title = `${getTitle(matchPost)} – ${meta.siteTitle}`
+  const description = getSummary(matchPost)
+  const postURI = `${meta.og.url}/engineering/${slug}`
   return {
-    title: `${getTitle(matchPost)} – ${meta.siteTitle}`,
-    description: getSummary(matchPost),
+    title,
+    description,
+    keywords: '',
+    openGraph: {
+      url: postURI,
+      title: title,
+      type: meta.og.type,
+      description: description,
+      images: meta.og.images.src,
+      siteName: meta.og.title,
+    },
   }
 }
 
 export async function generateViewport(): Promise<Viewport> {
   return {
-    themeColor: '#303236',
+    themeColor: vars.color.default,
   }
 }
 
