@@ -4,6 +4,6 @@ import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '../block-layout.css'
 export const BASE = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
   {
-    marginBottom: '1rem',
+    marginBlock: '0.5rem',
   },
 ])

@@ -7,7 +7,7 @@ export const BASE = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
   {
     backgroundColor: vars.color.b1,
-    margin: '2rem 1.25rem 2rem 1.25rem',
+    margin: '1rem 1.25rem 1rem 1.25rem',
     padding: vars.padding.card,
     borderRadius: vars.border.radius.card,
     border: '1px solid transparent',

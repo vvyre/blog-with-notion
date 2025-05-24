@@ -16,7 +16,7 @@ export const IMG_CONTAINER = style([
     cursor: 'zoom-in',
     objectFit: 'contain',
     height: '100%',
-    margin: '2rem 0 2rem 0',
+    margin: '1rem 0 1rem 0',
   },
 ])
 

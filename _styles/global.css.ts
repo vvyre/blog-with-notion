@@ -3,13 +3,11 @@ import { SANS_SERIF } from './fonts.css'
 import { vars } from './themes.css'
 
 globalStyle('*, *:before, *:after', {
-  boxSizing: 'inherit',
-  MozBoxSizing: 'inherit',
+  boxSizing: 'border-box',
+  MozBoxSizing: 'border-box',
 })
 
 globalStyle('html', {
-  boxSizing: 'border-box',
-  MozBoxSizing: 'border-box',
   fontSize: '100%',
   margin: 0,
   padding: 0,
@@ -23,10 +21,11 @@ globalStyle('body', {
   backgroundColor: 'transparent',
   margin: '-3rem 0 0 0',
   padding: 0,
-  lineHeight: '1.65em',
+  lineHeight: '1',
   fontFamily: SANS_SERIF,
   fontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
   WebkitFontFeatureSettings: "'case', 'ss02',  'cv13', 'cv09', 'ss05', 'ss07'",
+  textSizeAdjust: '100%',
   WebkitTextSizeAdjust: '100%',
   MozTextSizeAdjust: '100%',
   MozOsxFontSmoothing: 'grayscale',
@@ -38,6 +37,7 @@ globalStyle('main, article, section, nav, p, h1, h2, h3, h4, h5, h6', {
   MozTextSizeAdjust: '100%',
   margin: 0,
   padding: 0,
+  lineHeight: '1.65',
   fontFeatureSettings: "'case', 'ss02', 'cv13', 'cv09', 'ss05', 'ss07'",
   WebkitFontFeatureSettings: "'case', 'ss02', 'cv13', 'cv09', 'ss05', 'ss07'",
   fontWeight: 400,

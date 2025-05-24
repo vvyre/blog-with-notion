@@ -43,15 +43,15 @@ export const TYPOGRAPHY = {
     fontWeight: 700,
   },
   XL: {
-    fontSize: '1.15rem',
+    fontSize: '1.3rem',
     fontWeight: 600,
   },
   L: {
-    fontSize: '1.08rem',
+    fontSize: '0.975rem',
     fontWeight: 500,
   },
   M: {
-    fontSize: '0.95rem',
+    fontSize: '0.975rem',
     fontWeight: 400,
   },
   S: {

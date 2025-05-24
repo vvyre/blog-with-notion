@@ -18,7 +18,7 @@ export const NOTION_BLOCK_LAYOUT = style({
 export const NOTION_PARAGRAPH_BLOCK_LAYOUT = style({
   width: '100%',
   maxWidth: '42rem',
-  margin: '0 1.25rem 0 1.25rem',
+  margin: '0 0.75rem 0 0.75rem',
   wordBreak: 'break-all',
   padding: vars.padding.post_component,
 })
