@@ -18,7 +18,13 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
+      "components/*": ["./_components/*"],
+      "constants/*": ["./_constants/*"],
+      "hooks/*": ["./_hooks/*"],
+      "styles/*": ["./_styles/*"],
+      "stores/*": ["./_stores/*"],
+      "utils/*": ["./_utils/*"],
+      "types/*": ["./+types/*"],
       "#/*": ["./public/*"]
     },
     "target": "ES2017"
@@ -30,7 +36,7 @@
     ".next/types/**/*.ts",
     ".storybook/stories/**/*.stories.tsx",
     ".storybook/stories/**/*.stories.ts",
-    "_lib/components/tally/tally.jsx"
+    "_components/tally/tally.jsx"
   ],
   "exclude": ["node_modules"]
 }

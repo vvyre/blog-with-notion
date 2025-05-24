@@ -1,11 +1,11 @@
-import { meta } from '@/_lib/constants/meta'
+import { meta } from 'constants/meta'
 import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: meta.siteTitle,
-    short_name: meta.siteTitle,
-    description: meta.siteDiscription,
+    name: meta.title,
+    short_name: meta.title,
+    description: meta.description,
     start_url: '/',
     display: 'standalone',
     icons: [

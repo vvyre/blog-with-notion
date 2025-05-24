@@ -1,24 +1,24 @@
-import { getSummary } from '@/_lib/utils/block-processing/get-summary'
-import { getTitle } from '@/_lib/utils/block-processing/get-title'
-import { parsedSlug } from '@/_lib/utils/block-processing/parsed-slug'
-import { meta } from '@/_lib/constants/meta'
-import { getCachedPostList, getPost, getPostMetaData } from '@/_lib/utils/fetch/notion'
-import { PostTitle } from '@/_lib/components/layout/post/post-title/post-title'
-import { Spacing } from '@/_lib/components/basics/spacing/spacing'
-import { processedBlock } from '@/_lib/utils/block-processing/process-block'
-import { View } from '@/_lib/components/basics/view/view'
-import { notion_env } from '@/env'
-import { ShareBtn } from '@/_lib/components/basics/button/share-btn/share-btn'
-import { Flex } from '@/_lib/components/basics/flex/flex'
-import { OtherArticlesBtn } from '@/_lib/components/basics/button/other-articles-btn/other-articles-btn'
-import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from '@/_lib/components/_blocks/block-layout.css'
-import RenderBlocks from '@/_lib/components/render-blocks'
-import { ArticleRecommend } from '@/_lib/components/layout/post/article-recommend/article-recommend'
-import { POST_LAYOUT } from '@/_lib/components/layout/background/background.css'
-import { PostBorder } from '@/_lib/components/layout/post/post-border/post-border'
-import { Footer } from '@/_lib/components/layout/footer/footer'
+import { getSummary } from 'utils/block-processing/get-summary'
+import { getTitle } from 'utils/block-processing/get-title'
+import { parsedSlug } from 'utils/block-processing/parsed-slug'
+import { meta } from 'constants/meta'
+import { getCachedPostList, getPost, getPostMetaData } from 'utils/fetch/notion'
+import { PostTitle } from 'components/_sections/post/post-title/post-title'
+import { Spacing } from 'components/basics/spacing/spacing'
+import { processedBlock } from 'utils/block-processing/process-block'
+import { View } from 'components/basics/view/view'
+import { notion_env } from 'constants/envs'
+import { ShareBtn } from 'components/basics/button/share-btn/share-btn'
+import { Flex } from 'components/basics/flex/flex'
+import { OtherArticlesBtn } from 'components/basics/button/other-articles-btn/other-articles-btn'
+import { NOTION_PARAGRAPH_BLOCK_LAYOUT } from 'components/notion-blocks/block-layout.css'
+import RenderBlocks from 'components/notion-blocks/render-blocks'
+import { ArticleRecommend } from 'components/_sections/post/article-recommend/article-recommend'
+import { POST_LAYOUT } from 'components/_sections/background/background.css'
+import { PostBorder } from 'components/_sections/post/post-border/post-border'
+import { Footer } from 'components/_sections/footer/footer'
 import { Metadata, Viewport } from 'next'
-import { vars } from '@/_lib/styles/themes.css'
+import { vars } from 'styles/themes.css'
 
 export interface PostPageProps {
   params: Promise<{
@@ -88,7 +88,11 @@ export default async function Post({ params }: PostPageProps) {
             <OtherArticlesBtn />
           </Flex>
           <Spacing size="1rem" />
-          <ArticleRecommend id={matchPost.id} posts={posts} targets={matchPost.properties.tags.multi_select} />
+          <ArticleRecommend
+            id={matchPost.id}
+            posts={posts}
+            targets={matchPost.properties.tags.multi_select}
+          />
           <Spacing size="10rem" />
           <Footer />
         </View>
