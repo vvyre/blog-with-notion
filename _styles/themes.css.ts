@@ -92,20 +92,16 @@ const NOTION_COLORS_COMMON = {
   default_background: 'oklch(0.9517 0.0030 253.10)',
 } as const
 
-/* -------------------------------------------------------------------------- */
-/*  Light-mode overrides                                                      */
-/* -------------------------------------------------------------------------- */
-
 const COLORS_LIGHT = {
   theme: 'oklch(0.9958 0.0025 228.78)',
-  invert: 'oklch(0.9958 0.0025 228.78)',
-  default: 'oklch(0.4940 0.0091 265.27)',
+  invert: 'oklch(0.9037 0 0)',
+  default: 'oklch(0.4386 0 0)',
   gray: 'oklch(0.6062 0.0065 264.52)',
 
-  b1: 'oklch(0.9550 0.0013 263.08)',
-  b2: 'oklch(1.0000 0.0000 0.00)',
-  b3: 'oklch(0.9031 0.0024 264.40)',
-  b4: 'oklch(0.4695 0.0062 247.96 / 0.4)',
+  b1: 'oklch(1.0000 0.0000 0.00)',
+  b2: 'oklch(0.9801 0 0)',
+  b3: 'oklch(0.9006 0 0)',
+  b4: 'oklch(0.3791 0 0 / 50%)',
   btn_bg: COLORS_COMMON.lightgray,
 } as const
 
@@ -114,7 +110,7 @@ const NOTION_COLORS_LIGHT = {
   blue_background: 'oklch(0.8019 0.1019 253.85)',
   brown: 'oklch(0.5805 0.0422 73.31)',
   brown_background: 'oklch(0.8702 0.0174 76.10)',
-  default: 'oklch(0.3167 0.0076 264.46)',
+  default: 'oklch(0.4386 0 0)',
   gray: 'oklch(0.6062 0.0065 264.52)',
   gray_background: 'oklch(0.9252 0.0013 286.37)',
   green: 'oklch(0.7667 0.1800 156.92)',
@@ -131,20 +127,16 @@ const NOTION_COLORS_LIGHT = {
   yellow_background: 'oklch(0.9597 0.0633 94.68)',
 } as const
 
-/* -------------------------------------------------------------------------- */
-/*  Dark-mode overrides                                                       */
-/* -------------------------------------------------------------------------- */
-
 const COLORS_DARK = {
   theme: 'oklch(0.1173 0.0020 259.41)',
-  invert: 'oklch(0.3157 0.0071 260.78)',
-  default: 'oklch(0.9958 0.0025 228.78)',
+  invert: 'oklch(0.4386 0 0)',
+  default: 'oklch(0.9037 0 0)',
   gray: 'oklch(0.7839 0.0050 266.94)',
 
-  b1: 'oklch(0.2049 0.0060 264.63)',
-  b2: 'oklch(0.3167 0.0076 264.46)',
-  b3: 'oklch(0.3798 0.0060 264.41)',
-  b4: 'oklch(0.3157 0.0071 260.78 / 0.4)',
+  b1: 'oklch(0.2686 0 0)',
+  b2: 'oklch(0.3942 0 0)',
+  b3: 'oklch(0.5103 0 0)',
+  b4: 'oklch(0.3791 0 0 / 50%)',
   btn_bg: 'oklch(0.2618 0.0063 260.61 / 0.5)',
 } as const
 
@@ -153,7 +145,7 @@ const NOTION_COLORS_DARK = {
   blue_background: 'oklch(0.8580 0.1034 252.55)',
   brown: 'oklch(0.6291 0.0384 73.31)',
   brown_background: 'oklch(0.9263 0.0160 75.32)',
-  default: 'oklch(0.9958 0.0025 228.78)',
+  default: 'oklch(0.9037 0 0)',
   gray: 'oklch(0.7839 0.0050 266.94)',
   gray_background: 'oklch(0.9361 0.0010 286.03)',
   green: 'oklch(0.7997 0.1768 156.56)',
