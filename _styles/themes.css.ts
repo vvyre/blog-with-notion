@@ -162,18 +162,10 @@ const NOTION_COLORS_DARK = {
   yellow_background: 'oklch(0.9822 0.0620 94.65)',
 } as const
 
-/* -------------------------------------------------------------------------- */
-/*  Shared layout pieces                                                      */
-/* -------------------------------------------------------------------------- */
-
 const BASE_LAYOUT = {
   border: { radius: RADIUS },
   padding: PADDING,
 } as const
-
-/* -------------------------------------------------------------------------- */
-/*  Theme creation                                                            */
-/* -------------------------------------------------------------------------- */
 
 createGlobalTheme('[data-theme="light"]', vars, {
   ...BASE_LAYOUT,
