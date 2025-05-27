@@ -13,28 +13,6 @@ const PADDING = {
   btn_round: '0.65rem',
 }
 
-export const NOTION_THEMES = {
-  blue: '#1b64da',
-  blue_background: '#90c2ff',
-  brown: '#8a775f',
-  brown_background: '#dbd3c8',
-  default: '#303236',
-  gray: '#808286',
-  gray_background: '#E6E6E7',
-  green: '#13D483',
-  green_background: '#E4FA98',
-  orange: '#FA5A15',
-  orange_background: '#eda16f',
-  pink: '#ff6666',
-  pink_background: '#ffcccc',
-  purple: '#7F38EC',
-  purple_background: '#DA98FA',
-  red: '#e42939',
-  red_background: '#feafb4',
-  yellow: '#ffb331',
-  yellow_background: '#ffe69b',
-}
-
 export const vars = createGlobalThemeContract({
   color: {
     theme: 'color-theme',
@@ -95,103 +73,124 @@ export const vars = createGlobalThemeContract({
     },
   },
 })
+const COLORS_COMMON = {
+  background_filter: 'oklch(0.4695 0.0062 247.96 / 0.5)',
+  white: 'oklch(1.0000 0.0000 0.00)',
+  whitegray: 'oklch(0.975 0 975)',
+  lightgray: 'oklch(0.95 0 95)',
+  blueblack: 'oklch(0.3798 0.0060 264.41)',
+  highlight: 'oklch(0.5868 0.2043 256.27)',
+  nav_bg: 'transparent',
+  postListTitleText: 'oklch(0.9561 0.2447 100 / 0.8)',
+  postListTextHoveredLight: 'oklch(0.4940 0.0091 265.27)',
+  postListTextHoveredDark: 'oklch(0.4940 0.0091 265.27)',
+  postListBgLight: 'oklch(0.9958 0.0025 228.78)',
+  postListBgDark: 'oklch(0.9958 0.0025 228.78)',
+} as const
 
-createGlobalTheme('[data-theme="light"]', vars, {
+const NOTION_COLORS_COMMON = {
+  default_background: 'oklch(0.9517 0.0030 253.10)',
+} as const
+
+/* -------------------------------------------------------------------------- */
+/*  Light-mode overrides                                                      */
+/* -------------------------------------------------------------------------- */
+
+const COLORS_LIGHT = {
+  theme: 'oklch(0.9958 0.0025 228.78)',
+  invert: 'oklch(0.9958 0.0025 228.78)',
+  default: 'oklch(0.4940 0.0091 265.27)',
+  gray: 'oklch(0.6062 0.0065 264.52)',
+
+  b1: 'oklch(0.9550 0.0013 263.08)',
+  b2: 'oklch(1.0000 0.0000 0.00)',
+  b3: 'oklch(0.9031 0.0024 264.40)',
+  b4: 'oklch(0.4695 0.0062 247.96 / 0.4)',
+  btn_bg: COLORS_COMMON.lightgray,
+} as const
+
+const NOTION_COLORS_LIGHT = {
+  blue: 'oklch(0.5321 0.1942 260.16)',
+  blue_background: 'oklch(0.8019 0.1019 253.85)',
+  brown: 'oklch(0.5805 0.0422 73.31)',
+  brown_background: 'oklch(0.8702 0.0174 76.10)',
+  default: 'oklch(0.3167 0.0076 264.46)',
+  gray: 'oklch(0.6062 0.0065 264.52)',
+  gray_background: 'oklch(0.9252 0.0013 286.37)',
+  green: 'oklch(0.7667 0.1800 156.92)',
+  green_background: 'oklch(0.9474 0.1248 119.18)',
+  orange: 'oklch(0.6740 0.2072 39.23)',
+  orange_background: 'oklch(0.8178 0.1240 61.20)',
+  pink: 'oklch(0.6462 0.2295 22.07)',
+  pink_background: 'oklch(0.8705 0.1322 22.15)',
+  purple: 'oklch(0.5415 0.2476 294.45)',
+  purple_background: 'oklch(0.8211 0.1663 294.48)',
+  red: 'oklch(0.5700 0.2139 29.29)',
+  red_background: 'oklch(0.8604 0.1264 29.89)',
+  yellow: 'oklch(0.7912 0.1154 92.48)',
+  yellow_background: 'oklch(0.9597 0.0633 94.68)',
+} as const
+
+/* -------------------------------------------------------------------------- */
+/*  Dark-mode overrides                                                       */
+/* -------------------------------------------------------------------------- */
+
+const COLORS_DARK = {
+  theme: 'oklch(0.1173 0.0020 259.41)',
+  invert: 'oklch(0.3157 0.0071 260.78)',
+  default: 'oklch(0.9958 0.0025 228.78)',
+  gray: 'oklch(0.7839 0.0050 266.94)',
+
+  b1: 'oklch(0.2049 0.0060 264.63)',
+  b2: 'oklch(0.3167 0.0076 264.46)',
+  b3: 'oklch(0.3798 0.0060 264.41)',
+  b4: 'oklch(0.3157 0.0071 260.78 / 0.4)',
+  btn_bg: 'oklch(0.2618 0.0063 260.61 / 0.5)',
+} as const
+
+const NOTION_COLORS_DARK = {
+  blue: 'oklch(0.6232 0.1846 257.68)',
+  blue_background: 'oklch(0.8580 0.1034 252.55)',
+  brown: 'oklch(0.6291 0.0384 73.31)',
+  brown_background: 'oklch(0.9263 0.0160 75.32)',
+  default: 'oklch(0.9958 0.0025 228.78)',
+  gray: 'oklch(0.7839 0.0050 266.94)',
+  gray_background: 'oklch(0.9361 0.0010 286.03)',
+  green: 'oklch(0.7997 0.1768 156.56)',
+  green_background: 'oklch(0.9589 0.1218 119.00)',
+  orange: 'oklch(0.7057 0.2033 39.13)',
+  orange_background: 'oklch(0.8908 0.1220 60.88)',
+  pink: 'oklch(0.6740 0.2259 22.03)',
+  pink_background: 'oklch(0.9100 0.1299 22.08)',
+  purple: 'oklch(0.6287 0.2414 294.29)',
+  purple_background: 'oklch(0.8585 0.1630 294.38)',
+  red: 'oklch(0.6417 0.2084 29.23)',
+  red_background: 'oklch(0.8980 0.1242 29.86)',
+  yellow: 'oklch(0.8550 0.1130 92.38)',
+  yellow_background: 'oklch(0.9822 0.0620 94.65)',
+} as const
+
+/* -------------------------------------------------------------------------- */
+/*  Shared layout pieces                                                      */
+/* -------------------------------------------------------------------------- */
+
+const BASE_LAYOUT = {
   border: { radius: RADIUS },
   padding: PADDING,
-  color: {
-    theme: 'rgba(252, 254, 255, 1)',
-    background_filter: 'rgba(88,91,94,0.5)',
-    white: '#FFFFFF',
-    whitegray: '#F7F8FB',
-    lightgray: '#A0A2A6',
-    default: 'rgba(64, 66, 70, 1)',
-    invert: 'rgba(252, 254, 255, 1)',
-    blueblack: '#404246',
-    gray: '#808286',
-    highlight: '#3696eb',
-    b1: '#F7F8FB',
-    b2: '#FFFFFF',
-    b3: '#E6E9EA',
-    b4: 'rgba(88,91,94,0.4)',
-    btn_bg: 'rgba(230,232,236,0.5)',
-    nav_bg: 'transparent',
-    postListTitleText: 'rgba(255,255,0,1)',
-    postListTextHoveredDark: 'rgba(64, 66, 70, 1)',
-    postListTextHoveredLight: 'rgba(64, 66, 70, 1)',
-    postListBgDark: 'rgba(252, 254, 255, 1)',
-    postListBgLight: 'rgba(252, 254, 255, 1)',
-  },
-  notion: {
-    blue: '#1b64da',
-    blue_background: '#90c2ff',
-    brown: '#8a775f',
-    brown_background: '#dbd3c8',
-    default: '#303236',
-    default_background: 'rgba(240,242,246,1)',
-    gray: '#808286',
-    gray_background: '#E6E6E7',
-    green: '#13D483',
-    green_background: '#E4FA98',
-    orange: '#FA5A15',
-    orange_background: '#eda16f',
-    pink: '#ff6666',
-    pink_background: '#ffcccc',
-    purple: '#7F38EC',
-    purple_background: '#DA98FA',
-    red: '#e42939',
-    red_background: '#feafb4',
-    yellow: '#ffb331',
-    yellow_background: '#ffe69b',
-  },
+} as const
+
+/* -------------------------------------------------------------------------- */
+/*  Theme creation                                                            */
+/* -------------------------------------------------------------------------- */
+
+createGlobalTheme('[data-theme="light"]', vars, {
+  ...BASE_LAYOUT,
+  color: { ...COLORS_COMMON, ...COLORS_LIGHT },
+  notion: { ...NOTION_COLORS_COMMON, ...NOTION_COLORS_LIGHT },
 })
 
 createGlobalTheme('[data-theme="dark"]', vars, {
-  border: { radius: RADIUS },
-  padding: PADDING,
-  color: {
-    theme: '#101216',
-    background_filter: 'rgba(88,91,94,0.5)',
-    white: '#FFFFFF',
-    whitegray: '#F7F8FB',
-    lightgray: '#A0A2A6',
-    default: 'rgba(252, 254, 255, 1)',
-    invert: 'rgba(48,50,54,1)',
-    blueblack: '#404246',
-    gray: '#C3C5C9',
-    highlight: '#3696eb',
-    b1: '#202226',
-    b2: '#303236',
-    b3: '#404246',
-    b4: 'rgba(48,50,54,0.4)',
-    btn_bg: 'rgba(40,42,46,0.5)',
-    nav_bg: 'transparent',
-    postListTitleText: 'rgba(255,255,0,1)',
-    postListTextHoveredDark: 'rgba(64, 66, 70, 1)',
-    postListTextHoveredLight: 'rgba(64, 66, 70, 1)',
-    postListBgDark: 'rgba(252, 254, 255, 1)',
-    postListBgLight: 'rgba(252, 254, 255, 1)',
-  },
-  notion: {
-    blue: '#4A90E2',
-    blue_background: '#A6D4FF',
-    brown: '#A68A6F',
-    brown_background: '#EDE3D6',
-    default: 'rgba(252, 254, 255, 1)',
-    default_background: 'rgba(240,242,246,1)',
-    gray: '#C3C5C9',
-    gray_background: '#F2F2F3',
-    green: '#2EE59D',
-    green_background: '#E8FFD5',
-    orange: '#FF7F41',
-    orange_background: '#FFC199',
-    pink: '#FF8896',
-    pink_background: '#FFE0E5',
-    purple: '#9B6BFF',
-    purple_background: '#E8D7FF',
-    red: '#FF5A68',
-    red_background: '#FFD6DA',
-    yellow: '#FFD154',
-    yellow_background: '#FFF2C2',
-  },
+  ...BASE_LAYOUT,
+  color: { ...COLORS_COMMON, ...COLORS_DARK },
+  notion: { ...NOTION_COLORS_COMMON, ...NOTION_COLORS_DARK },
 })
