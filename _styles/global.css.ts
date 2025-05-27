@@ -123,8 +123,8 @@ globalStyle('img, video, canvas, svg', {
 })
 
 globalStyle('::selection, ::-moz-selection', {
-  backgroundColor: vars.color.default,
-  color: vars.color.invert,
+  backgroundColor: 'transparent',
+  color: vars.color.default,
 })
 
 globalStyle('p, span, code, ul li, ol li, li', {
