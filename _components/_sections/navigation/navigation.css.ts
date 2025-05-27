@@ -25,6 +25,7 @@ export const BASE = style({
 export const FILTER_VARIANT = styleVariants({
   isPost: {
     background: vars.color.b2,
+    color: vars.color.default,
   },
 })
 
