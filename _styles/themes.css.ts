@@ -133,7 +133,7 @@ const COLORS_DARK = {
   default: 'oklch(0.9037 0 0)',
   gray: 'oklch(0.7839 0.0050 266.94)',
 
-  b1: 'oklch(0.2686 0 0)',
+  b1: 'oklch(0.3368 0 0)',
   b2: 'oklch(0.3942 0 0)',
   b3: 'oklch(0.5103 0 0)',
   b4: 'oklch(0.3791 0 0 / 50%)',
