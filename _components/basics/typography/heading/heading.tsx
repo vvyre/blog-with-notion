@@ -5,8 +5,7 @@ import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoi
 import type { ComponentProps, ElementType } from 'react'
 import { TEXT_COLOR } from '../annotations/color.css'
 
-type HeadingProps<T extends ElementType> = {
-  as?: T
+type VariantProps = {
   bold?: boolean
   code?: boolean
   italic?: boolean
@@ -16,7 +15,13 @@ type HeadingProps<T extends ElementType> = {
   color?: keyof typeof vars.notion
   richText?: RichTextItemResponse
   className?: string
-} & ComponentProps<T>
+}
+
+type HeadingProps<T extends ElementType> = {
+  as?: T
+} & VariantProps &
+  Omit<ComponentProps<T>, keyof VariantProps>
+
 export function Heading<T extends ElementType>({
   as,
   bold,
