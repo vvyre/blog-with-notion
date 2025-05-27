@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Annotations } from '../annotations/annotations'
 import { LINK, TEXT_STYLE } from '../typography.css'
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
-import type { ComponentProps, ElementType } from 'react'
+import { memo, type ComponentPropsWithoutRef, type ElementType } from 'react'
 import { vars } from 'styles/themes.css'
 import { TEXT_COLOR } from '../annotations/color.css'
 
@@ -17,9 +17,9 @@ type TxtProps<T extends ElementType> = {
   richText?: RichTextItemResponse
   size?: keyof typeof TEXT_STYLE
   className?: string
-} & ComponentProps<T>
+} & ComponentPropsWithoutRef<T>
 
-export function Txt<T extends ElementType>({
+function T<T extends ElementType>({
   as,
   bold,
   code,
@@ -99,3 +99,6 @@ export function Txt<T extends ElementType>({
       )
   }
 }
+
+export const Txt = memo(T)
+Txt.displayName = 'Txt'
