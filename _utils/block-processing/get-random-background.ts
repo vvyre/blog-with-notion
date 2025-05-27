@@ -1,7 +1,6 @@
 import { vars } from 'styles/themes.css'
 import { objectKeys } from '@frfla/laser'
 import { getRandomInt } from '../get-random-int'
-import { useCategory } from 'hooks/use-category'
 import { useRandomIntState } from 'hooks/use-random-int-state'
 
 const N = objectKeys(vars.notion).length

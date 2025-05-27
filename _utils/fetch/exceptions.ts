@@ -1,9 +1,4 @@
-import {
-  APIErrorCode,
-  ClientErrorCode,
-  isNotionClientError,
-  NotionClientError,
-} from '@notionhq/client'
+import { APIErrorCode, isNotionClientError } from '@notionhq/client'
 
 export const handleNotionError = <T extends (...args: any[]) => Promise<any>>(
   fn: T

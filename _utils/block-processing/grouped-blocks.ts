@@ -31,7 +31,7 @@ const process = (blocks: BlockObjectResponse[]) => {
           [key]: {
             children: group[prevBlock],
           },
-          //@ts-ignore
+          //@ts-expect-error 커스텀 타입 작성
           type: key,
           id: `${key}_${block.id}`,
           has_content: false,
@@ -50,7 +50,7 @@ const process = (blocks: BlockObjectResponse[]) => {
         [key]: {
           children: group[prevBlock],
         },
-        //@ts-ignore
+        //@ts-expect-error 커스텀 타입 작성
         type: key,
         id: `${key}_${block.id}`,
         has_content: false,

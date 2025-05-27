@@ -1,4 +1,4 @@
-import { PageObject, PageProperties } from 'types/notion-response'
+import { PageObject } from 'types/notion-response'
 
 export function getTitle(post: PageObject) {
   if (Array.isArray(post.properties.title.title)) {
