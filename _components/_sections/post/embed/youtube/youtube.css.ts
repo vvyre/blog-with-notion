@@ -10,8 +10,9 @@ export const BASE = style([
     minHeight: '23.5rem',
     borderRadius: vars.border.radius.card,
     '@media': {
-      '(0 <= width <= 480px)': {
+      '(0 <= width <= 430px)': {
         borderRadius: 0,
+        paddingInline: 0,
       },
     },
     margin: '1rem 0 0 0',

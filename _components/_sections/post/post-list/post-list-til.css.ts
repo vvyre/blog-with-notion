@@ -12,7 +12,7 @@ export const POST_LINK_TIL = style({
   color: vars.color.default,
   borderRadius: vars.border.radius.card,
   '@media': {
-    '(0px <= width <= 480px)': {
+    '(0px <= width <= 430px)': {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -27,7 +27,7 @@ export const POST_TITLE_TIL = style([
     fontWeight: 500,
     cursor: 'pointer',
     '@media': {
-      '(0px <= width <= 480px)': {
+      '(0px <= width <= 430px)': {
         fontSize: '0.9rem',
       },
     },

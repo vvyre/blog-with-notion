@@ -12,7 +12,7 @@ export const BASE = style([
     borderRadius: vars.border.radius.card,
     border: '1px solid transparent',
     '@media': {
-      '(0 <= width <= 480px)': {
+      '(0 <= width <= 430px)': {
         borderRadius: 0,
       },
       '(hover: hover) and (pointer: fine)': {

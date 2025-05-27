@@ -13,7 +13,7 @@ export const BASE = style([
     padding: vars.padding.btn_square,
     borderRadius: vars.border.radius.card,
     '@media': {
-      '(0 <= width <= 480px)': {
+      '(0 <= width <= 430px)': {
         borderRadius: 0,
       },
     },

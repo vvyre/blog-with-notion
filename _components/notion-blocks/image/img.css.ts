@@ -61,9 +61,11 @@ export const IMG = style({
   height: 'auto',
   maxWidth: '100%',
   objectFit: 'contain',
+  paddingInline: '0.75rem',
   '@media': {
-    '(0 <= width <= 480px)': {
+    '(0 <= width <= 430px)': {
       borderRadius: 0,
+      paddingInline: 0,
     },
   },
 })

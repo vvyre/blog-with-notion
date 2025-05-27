@@ -9,7 +9,7 @@ export const NOTION_BLOCK_LAYOUT = style({
   width: '100%',
   maxWidth: '42rem',
   '@media': {
-    '(0 <= width <= 480px)': {
+    '(0 <= width <= 430px)': {
       padding: '0 1.5rem 0 1.5rem',
     },
   },

@@ -66,7 +66,7 @@ export const POST_TITLE = style([
     fontWeight: 600,
     cursor: 'pointer',
     '@media': {
-      '(0px <= width <= 480px)': {
+      '(0px <= width <= 430px)': {
         fontSize: '0.9rem',
       },
     },
@@ -79,7 +79,7 @@ export const POST_SUMMARY = style([
     cursor: 'pointer',
     width: '100%',
     '@media': {
-      '(0 <= width <= 480px)': {
+      '(0 <= width <= 430px)': {
         fontSize: '0.9rem',
       },
     },

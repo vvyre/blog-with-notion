@@ -10,7 +10,7 @@ export const CALLOUT = style([
     marginBottom: '1rem',
     borderRadius: vars.border.radius.card,
     '@media': {
-      '(0 <= width <= 480px)': {
+      '(0 <= width <= 430px)': {
         borderRadius: 0,
       },
     },

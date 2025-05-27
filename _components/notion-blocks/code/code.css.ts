@@ -11,7 +11,7 @@ export const CODE_BLOCK = style([
     margin: '1rem 0 1rem 0',
     borderRadius: vars.border.radius.card,
     '@media': {
-      '(0 <= width <= 480px)': {
+      '(0 <= width <= 430px)': {
         borderRadius: 0,
       },
     },
