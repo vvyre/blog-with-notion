@@ -24,8 +24,7 @@ export const BASE = style({
 
 export const FILTER_VARIANT = styleVariants({
   isPost: {
-    backdropFilter: 'blur(8px)', //ios safari 9, chrome 76 and edge(2019), samsung in-app browser 12.0 (2020), firefox 103 (2022)
-    WebkitBackdropFilter: 'blur(8px)', //<safari 9
+    background: vars.color.b2,
   },
 })
 
@@ -41,7 +40,6 @@ export const EXPANDED = style({
   position: 'fixed',
   top: '3rem',
   left: 0,
-  opacity: '0.95',
   alignItems: 'center',
   width: '100%',
   backgroundColor: vars.color.b1,
@@ -83,6 +81,7 @@ export const NAV_BTN = style([
     textTransform: 'uppercase',
     wordSpacing: '-0.2rem',
     letterSpacing: '0.03rem',
+    color: vars.color.default,
     padding: vars.padding.btn_square,
     fontSize: '0.85rem',
     textAlign: 'center',
