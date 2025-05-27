@@ -1,7 +1,7 @@
 import { memo } from 'react'
-import type { ComponentPropsWithoutRef } from 'react'
+import type { ComponentProps } from 'react'
 
-export interface SpacingProps extends ComponentPropsWithoutRef<'div'> {
+export interface SpacingProps extends ComponentProps<'div'> {
   size: string
   dir?: 'vert' | 'right' | 'left' | 'hori'
 }
@@ -16,3 +16,5 @@ export const Spacing = memo(({ size, dir = 'vert' }: SpacingProps) => {
   if (dir === 'right') return <span style={{ ...right_style }} />
   else return <span style={{ ...left_style }} />
 })
+
+Spacing.displayName = 'Spacing'

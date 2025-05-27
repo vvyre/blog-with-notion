@@ -1,7 +1,7 @@
-import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
 import { LAYOUT_CENTERED } from './article.css'
 
-interface ArticleProps extends ComponentPropsWithoutRef<'article'> {
+interface ArticleProps extends ComponentProps<'article'> {
   children: ReactNode
 }
 

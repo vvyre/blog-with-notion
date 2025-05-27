@@ -1,7 +1,7 @@
-import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
 import { BASE } from './tag.css'
 
-interface TagProps extends ComponentPropsWithoutRef<'span'> {
+interface TagProps extends ComponentProps<'span'> {
   children: ReactNode
 }
 export function Tag({ children, ...props }: TagProps) {

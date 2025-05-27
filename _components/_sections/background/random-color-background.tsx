@@ -1,9 +1,9 @@
 'use client'
-import { type ComponentPropsWithoutRef } from 'react'
+import { type ComponentProps } from 'react'
 import { View } from 'components/basics/view/view'
 import { useBackgroundStore } from './store'
 
-export function RandomColorBackground({ ...props }: ComponentPropsWithoutRef<'div'>) {
+export function RandomColorBackground({ ...props }: ComponentProps<'div'>) {
   const { backgroundColor } = useBackgroundStore()
   return (
     <View

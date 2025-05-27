@@ -1,9 +1,9 @@
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
+import type { ComponentProps, ElementType, ReactNode } from 'react'
 
 type ListProps<T extends ElementType> = {
   as?: T
   children: ReactNode
-} & ComponentPropsWithoutRef<T>
+} & ComponentProps<T>
 
 export function List<T extends ElementType>({ as, children, ...props }: ListProps<T>) {
   const className = props.className

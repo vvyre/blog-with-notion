@@ -1,14 +1,13 @@
 import {
   LAYOUT_BG,
   LAYOUT_CANVAS,
-  LAYOUT_FILTER,
   OVERFLOW,
 } from 'components/_sections/background/background.css'
 import { View } from 'components/basics/view/view'
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentProps } from 'react'
 import { BackgroundCanvas } from './background-canvas'
 
-export function BackgroundLayout({ ...props }: ComponentPropsWithoutRef<'div'>) {
+export function BackgroundLayout({ ...props }: ComponentProps<'div'>) {
   return (
     <>
       <View className={props.className ?? LAYOUT_BG} {...props}>

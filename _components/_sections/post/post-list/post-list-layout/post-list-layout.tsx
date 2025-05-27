@@ -4,7 +4,7 @@ import { View } from 'components/basics/view/view'
 import { POST_LIST_CENTERED } from './post-list-layout.css'
 import { PostListObject } from 'types/notion-response'
 import { PostListFallback } from '../post-list-fallback'
-import { ComponentPropsWithoutRef, useContext } from 'react'
+import { ComponentProps, useContext } from 'react'
 import { PostListContext } from 'components/context/post-list-provider'
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { getYear } from 'utils/block-processing/get-date'
@@ -18,7 +18,7 @@ export function PostListLayout({
 }: {
   posts: PostListObject
   category: string
-} & ComponentPropsWithoutRef<'ul'>) {
+} & ComponentProps<'ul'>) {
   const { postList, setPostList } = useContext(PostListContext)
 
   /** SSR-ED Content */

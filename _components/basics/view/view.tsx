@@ -1,22 +1,17 @@
-import { ComponentPropsWithRef, ElementType, forwardRef, ReactNode, Ref } from 'react'
+import { ComponentProps, ElementType, ReactNode } from 'react'
 import { BASE } from './view.css'
 
 type ViewProps<T extends ElementType> = {
   as?: T
   children: ReactNode
-} & ComponentPropsWithRef<T>
+} & ComponentProps<T>
 
-function V<T extends ElementType>(
-  { as, children, ...props }: ViewProps<T>,
-  ref: Ref<HTMLElement>
-) {
+export function View<T extends ElementType>({ as, children, ...props }: ViewProps<T>) {
   const Component = as ?? 'div'
   const cn = props.className ?? BASE
   return (
-    <Component className={cn} ref={ref} {...props}>
+    <Component className={cn} ref={props.ref} {...props}>
       {children}
     </Component>
   )
 }
-
-export const View = forwardRef(V)

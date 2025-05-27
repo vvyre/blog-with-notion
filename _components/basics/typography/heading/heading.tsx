@@ -2,7 +2,7 @@ import { vars } from 'styles/themes.css'
 import { Annotations } from '../annotations/annotations'
 import { TEXT_STYLE } from '../typography.css'
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
-import type { ComponentPropsWithoutRef, ElementType } from 'react'
+import type { ComponentProps, ElementType } from 'react'
 import { TEXT_COLOR } from '../annotations/color.css'
 
 type HeadingProps<T extends ElementType> = {
@@ -16,7 +16,7 @@ type HeadingProps<T extends ElementType> = {
   color?: keyof typeof vars.notion
   richText?: RichTextItemResponse
   className?: string
-} & ComponentPropsWithoutRef<T>
+} & ComponentProps<T>
 export function Heading<T extends ElementType>({
   as,
   bold,

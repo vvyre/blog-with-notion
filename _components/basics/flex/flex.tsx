@@ -1,5 +1,5 @@
 import React from 'react'
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
+import type { ComponentProps, ElementType, ReactNode } from 'react'
 import {
   ALIGN_VARIANT,
   DIRECTION_VARIANT,
@@ -16,7 +16,7 @@ type FlexProps<T extends ElementType> = {
   alignItems?: keyof typeof ALIGN_VARIANT
   flexWrap?: keyof typeof WRAP_VARIANT
   className?: string
-} & ComponentPropsWithoutRef<T>
+} & ComponentProps<T>
 
 export function Flex<T extends ElementType>({
   as,
