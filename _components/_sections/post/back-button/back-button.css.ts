@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 import { vars } from 'styles/themes.css'
 
 export const BACK_BUTTON_BASE = style({
-  padding: '0.5rem',
+  padding: '0.1rem 0.5rem 0.1rem 0.5rem',
   backgroundColor: vars.color.btn_bg,
   borderRadius: '1.5rem',
   border: '1px solid transparent',

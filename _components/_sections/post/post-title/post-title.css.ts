@@ -1,9 +1,10 @@
 import { style } from '@vanilla-extract/css'
 import { TYPOGRAPHY } from 'components/basics/typography/typography.css'
-import { NOTION_IMG_BLOCK_LAYOUT } from 'components/notion-blocks/block-layout.css'
+import { NOTION_BLOCK_LAYOUT } from 'components/notion-blocks/block-layout.css'
+import { vars } from 'styles/themes.css'
 
 export const BASE = style([
-  NOTION_IMG_BLOCK_LAYOUT,
+  NOTION_BLOCK_LAYOUT,
   {
     display: 'flex',
     width: '100%',
@@ -37,29 +38,31 @@ export const BACK_BUTTON_STYLE_VARIANT = style({
 export const INFO_BOX = style({
   margin: '2.5rem 0.5rem 2.5rem 0.5rem',
   width: '100%',
-  backgroundClip: 'text !important',
-  WebkitBackgroundClip: 'text !important',
   maxWidth: '62rem',
 })
 
 export const TITLE = style([
-  TYPOGRAPHY.XXXL,
   {
-    color: 'transparent',
-    fontWeight: 700,
-    lineHeight: '1.2',
+    color: vars.color.default,
+    fontSize: TYPOGRAPHY.XXL.fontSize,
+    fontWeight: 600,
+    lineHeight: '1.3',
     wordBreak: 'break-all',
+    backgroundColor: 'transparent',
   },
 ])
 
 export const TITLE_ALIGN = style({
-  textAlign: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'flex-start',
 })
 
 export const RELEASED_DATE = style({
-  color: 'transparent',
+  color: vars.color.default,
   fontSize: TYPOGRAPHY.M.fontSize,
-  fontWeight: 500,
+  fontWeight: 400,
   textAlign: 'left',
 })
 
@@ -70,8 +73,8 @@ export const META = style({
 })
 
 export const SUMMARY = style({
-  color: 'transparent',
+  color: vars.color.default,
   textAlign: 'center',
   fontSize: TYPOGRAPHY.M.fontSize,
-  fontWeight: 600,
+  fontWeight: 400,
 })

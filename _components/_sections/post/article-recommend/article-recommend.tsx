@@ -3,12 +3,12 @@ import { PostListObject } from 'types/notion-response'
 import { getTitle } from 'utils/block-processing/get-title'
 import { parsedSlug } from 'utils/block-processing/parsed-slug'
 import { List } from 'components/basics/list/list'
-import { BASE, POST_LIST, TITLE, UL } from './article-recommend.css'
+import { BASE, POST_LIST, SECTION_TITLE, TITLE, UL } from './article-recommend.css'
 import { Txt } from 'components/basics/typography/txt/txt'
 import { Spacing } from 'components/basics/spacing/spacing'
 import { View } from 'components/basics/view/view'
-import { Btn } from 'components/basics/button/btn'
-import { getDate } from 'utils/block-processing/get-date'
+import { Heading } from 'components/basics/typography/heading/heading'
+import UI from './ui'
 
 export function ArticleRecommend({
   posts,
@@ -27,28 +27,27 @@ export function ArticleRecommend({
           targets.filter(tag => (tag.id === t.id ? true : false))
         )
     )
-    .sort(_ => Math.random() - 0.5)
+    .sort(() => Math.random() - 0.5)
     .slice(0, 5)
+
+  const tags = targets.map(tags => tags.name)
 
   return (
     <View className={BASE}>
-      <Txt as="span" bold>
-        비슷한 글
-      </Txt>
+      <Heading as="h2" className={SECTION_TITLE}>{`${UI.recommend}${tags.join(
+        ', '
+      )}`}</Heading>
       <Spacing size="1rem" />
       <List className={UL}>
         {recommended.map(p => {
           const title = getTitle(p)
           const slug = parsedSlug(p)
-          const date = getDate(p)
 
           return (
-            <List as="li" key={p.id}>
-              <Btn as="Link" href={slug} className={POST_LIST}>
-                <Txt as="span" className={TITLE}>
-                  {title}
-                </Txt>
-              </Btn>
+            <List as="li" key={p.id} className={POST_LIST}>
+              <Txt as="Link" href={slug} className={TITLE}>
+                {title}
+              </Txt>
             </List>
           )
         })}

@@ -1,6 +1,5 @@
 import { style } from '@vanilla-extract/css'
 import { RELEASED_DATE } from '../post-list/post-list.css'
-import { BASE as BTN_BASE } from 'components/basics/button/btn.css'
 import { TYPOGRAPHY } from 'components/basics/typography/typography.css'
 import { vars } from 'styles/themes.css'
 
@@ -14,28 +13,46 @@ export const BASE = style({
   alignItems: 'center',
 })
 
+export const SECTION_TITLE = style({
+  fontSize: TYPOGRAPHY.L.fontSize,
+  color: vars.color.default,
+  fontWeight: 600,
+  textAlign: 'center',
+})
+
 export const UL = style({
   listStyleType: 'none',
   width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'flex-start',
+  gap: '0.5rem',
 })
 
 export const POST_LIST = style([
-  BTN_BASE,
   {
+    display: 'inline-block',
     width: '100%',
-    display: 'flex',
     gap: '0.75rem',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    textAlign: 'left',
   },
 ])
 
 export const TITLE = style({
-  textAlign: 'center',
+  display: 'inline-block',
   width: '100%',
-  fontSize: TYPOGRAPHY.XS.fontSize,
+  fontSize: TYPOGRAPHY.S.fontSize,
   color: vars.color.default,
-  fontWeight: 500,
+  fontWeight: 400,
+  '@media': {
+    '(hover: hover) and (pointer: fine)': {
+      ':hover': {
+        textDecoration: 'underline',
+        textUnderlineOffset: '0.25rem',
+      },
+    },
+  },
 })
 
 export const DATE = style([
