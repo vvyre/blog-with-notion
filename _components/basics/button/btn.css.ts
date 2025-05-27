@@ -8,13 +8,14 @@ export const BASE = style({
   borderRadius: vars.border.radius.card,
   fontSize: TYPOGRAPHY.S.fontSize,
   border: `1px solid transparent`,
-  backgroundColor: 'transparent',
+  backgroundColor: vars.color.btn_bg,
   backgroundBlendMode: 'exclusion',
   color: vars.color.gray,
   '@media': {
     '(hover: hover) and (pointer: fine)': {
       ':hover': {
-        backgroundColor: vars.color.btn_bg,
+        outline: `0.1rem solid ${vars.color.btn_bg}`,
+        outlineOffset: '0.2rem',
       },
     },
   },
