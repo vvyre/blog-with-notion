@@ -35,7 +35,7 @@ export const TEXT_COLOR_WITH_THEME_HOVER_VARIANT = styleVariants({
 
 export const TYPOGRAPHY = {
   XXXL: {
-    fontSize: '2.75rem',
+    fontSize: '2.25rem',
     fontWeight: 700,
   },
   XXL: {

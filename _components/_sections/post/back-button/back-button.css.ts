@@ -4,7 +4,7 @@ import { vars } from 'styles/themes.css'
 export const BACK_BUTTON_BASE = style({
   padding: '0.1rem 0.5rem 0.1rem 0.5rem',
   backgroundColor: vars.color.btn_bg,
-  borderRadius: '1.5rem',
+  borderRadius: '',
   border: '1px solid transparent',
   '@media': {
     '(hover: hover) and (pointer: fine)': {
@@ -18,6 +18,6 @@ export const BACK_BUTTON_BASE = style({
 
 export const BACK_BUTTON_INNER = style({
   color: 'transparent',
-  fontSize: '1.5rem',
+  fontSize: '0',
   fontWeight: 500,
 })

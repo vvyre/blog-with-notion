@@ -1,8 +1,8 @@
 import { createGlobalTheme, createGlobalThemeContract } from '@vanilla-extract/css'
 
 const RADIUS = {
-  card: '0.75rem',
-  btn_square: '0.75rem',
+  card: '0m',
+  btn_square: '0',
   btn_round: '2rem',
 }
 

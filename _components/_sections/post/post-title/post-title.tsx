@@ -12,8 +12,6 @@ import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { Spacing } from 'components/basics/spacing/spacing'
 import { Btn } from 'components/basics/button/btn'
 import { BACK_BUTTON_BASE } from '../back-button/back-button.css'
-import { DoubleArrowDownIcon } from '@radix-ui/react-icons'
-import { Flex } from 'components/basics/flex/flex'
 import { getDate } from 'utils/block-processing/get-date'
 import { getTags } from 'utils/block-processing/get-tags'
 import { Tag } from '../tag/tag'
@@ -55,11 +53,6 @@ export function PostTitle({ ...meta }: PageObject) {
             ))}
           </TagBase>
         </View>
-
-        <Spacing size="3rem" />
-        <Flex>
-          <DoubleArrowDownIcon width="12px" height="12px" />
-        </Flex>
       </View>
     </View>
   )

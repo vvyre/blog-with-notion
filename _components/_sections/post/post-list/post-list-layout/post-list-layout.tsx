@@ -10,6 +10,7 @@ import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { getYear } from 'utils/block-processing/get-date'
 import { PostListYear } from '../post-list-year'
 import { POST_LIST_WRAPPER } from '../post-list.css'
+import { Header } from 'components/_sections/header/header'
 
 export function PostListLayout({
   posts,
@@ -29,6 +30,7 @@ export function PostListLayout({
 
   return (
     <View as="ul" className={props?.className ?? POST_LIST_CENTERED} {...props}>
+      <Header />
       {postList?.posts && postList?.posts?.length > 0 ? (
         postList?.posts.map((post, idx) => {
           const curYear = getYear(post)
