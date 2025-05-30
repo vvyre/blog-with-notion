@@ -5,7 +5,6 @@ import { meta } from 'constants/meta'
 import { GithubLink } from '../external-logos/github'
 import { Flex } from 'components/basics/flex/flex'
 
-export const revalidate = 3600
 export function Header() {
   return (
     <View className={BASE}>
