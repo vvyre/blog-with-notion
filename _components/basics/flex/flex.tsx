@@ -15,6 +15,7 @@ type VariantProps = {
   alignItems?: keyof typeof ALIGN_VARIANT
   flexWrap?: keyof typeof WRAP_VARIANT
   className?: string
+  gap?: string
 }
 
 type FlexProps<T extends ElementType> = {
@@ -30,6 +31,7 @@ export const Flex = memo(
     justifyContent = 'center',
     alignItems = 'center',
     flexWrap = 'wrap',
+    gap = '0.35rem',
     className,
     ...props
   }: FlexProps<T>) => {
@@ -43,7 +45,13 @@ export const Flex = memo(
     ].join(' ')
     const Component = as ?? 'div'
     return (
-      <Component className={cn} {...props}>
+      <Component
+        className={cn}
+        {...props}
+        style={{
+          gap,
+        }}
+      >
         {props.children}
       </Component>
     )
