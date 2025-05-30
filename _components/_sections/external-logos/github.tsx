@@ -6,8 +6,9 @@ import MARK_BLACK from '#/img/github-mark.svg'
 import { MENU_GITHUB_IMG } from '../navigation/logo-button/logo-button.css'
 
 import { useBackgroundStore } from '../background/store'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { NAV_BTN } from '../navigation/navigation.css'
+import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 
 export function GithubLink() {
   const { brightness, addRef } = useBackgroundStore()
@@ -15,7 +16,7 @@ export function GithubLink() {
   const githubRef = useRef<HTMLElement>(null)
   const key = 'githubRef'
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     addRef(key, githubRef)
   }, [githubRef])
 

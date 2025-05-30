@@ -32,7 +32,7 @@ export const FILTER_VARIANT = styleVariants({
 export const NAV = style({
   display: 'flex',
   flexWrap: 'nowrap',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
 })
 
@@ -77,7 +77,7 @@ export const NAV_BTN = style([
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    fontWeight: 900,
+    fontWeight: 600,
     fontFamily: MONOSPACE,
     textTransform: 'uppercase',
     wordSpacing: '-0.2rem',

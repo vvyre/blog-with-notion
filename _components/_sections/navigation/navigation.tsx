@@ -6,33 +6,26 @@ import { useContext, useEffect } from 'react'
 import { CurrentPostContext } from 'components/context/current-post-provider'
 import { useCategory } from 'hooks/use-category'
 import { Spacing } from 'components/basics/spacing/spacing'
-import { GithubLink } from '../external-logos/github'
-import { LogoButton } from './logo-button/logo-button'
 import { ThemeContext } from 'components/context/theme-provider'
 import { TEXT_COLOR_THEME_VARIANT } from 'components/basics/typography/typography.css'
-import { useBackgroundStore } from '../background/store'
 import { Half2Icon, SunIcon } from '@radix-ui/react-icons'
 
 export function Navigation() {
   const { theme, toggle } = useContext(ThemeContext)
-
   const { setCurrentPost } = useContext(CurrentPostContext)
-  const { LIGHT_THEME_RECOMMEMDED } = useBackgroundStore()
   const { isPost } = useCategory()
 
-  const TEXT_COLOR = LIGHT_THEME_RECOMMEMDED() ? 'DARK' : 'LIGHT'
+  const TEXT_COLOR = theme === 'light' ? 'DARK' : 'LIGHT'
   const NAV_TEXT_STYLE = [NAV_BTN, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ')
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null)
-  }, [isPost])
+  }, [isPost, setCurrentPost])
 
   return (
     <View as="nav" className={[BASE, isPost && FILTER_VARIANT.isPost].join(' ')}>
       <View as="div" className={NAV}>
-        <LogoButton />
         <View className={POST_TITLE_WRAPPER}>
-          <GithubLink />
           {isPost && (
             <>
               <Spacing size="0.15rem" dir="hori" />
