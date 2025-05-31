@@ -6,7 +6,7 @@ export const TEXT_COLOR_THEME_VARIANT = styleVariants({
     color: vars.color.white,
   },
   DARK: {
-    color: vars.color.blueblack,
+    color: vars.color.blacktext,
   },
 })
 
@@ -16,13 +16,13 @@ export const TEXT_COLOR_WITH_THEME_HOVER_VARIANT = styleVariants({
     '@media': {
       '(hover: hover) and (pointer: fine)': {
         ':hover': {
-          color: vars.color.blueblack,
+          color: vars.color.blacktext,
         },
       },
     },
   },
   DARK: {
-    color: vars.color.blueblack,
+    color: vars.color.blacktext,
     '@media': {
       '(hover: hover) and (pointer: fine)': {
         ':hover': {
