@@ -1,7 +1,7 @@
 import { site_env } from 'constants/envs'
 import logo from '#/img/logo.webp'
 const TITLE = 'wyreframelife'
-const DESCRIPTION = 'Writings about life as a engineer'
+const DESCRIPTION = 'Writings about life as an engineer'
 
 export const meta = {
   title: TITLE,
