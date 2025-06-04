@@ -2,6 +2,7 @@
 import 'components/notion-blocks/code/hljs.css'
 import 'styles/themes.css'
 import 'styles/global.css'
+import 'styles/global-fonts.css'
 import 'components/notion-blocks/toggle/details-summary-global.css'
 import 'components/notion-blocks/numbered-list-item/ol-global.css'
 import 'components/notion-blocks/bulleted-list-item/ul-global.css'
