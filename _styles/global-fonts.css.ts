@@ -25,13 +25,19 @@ globalFontFace('Mona Sans', {
 })
 
 globalFontFace('Hubot Sans', {
-  src: 'url("/fonts/HubotSansExpanded-Mdeium.woff2") format("woff2")',
-  fontWeight: '400',
+  src: 'url("/fonts/HubotSansExpanded-Medium.woff2") format("woff2")',
+  fontWeight: '500',
   fontStyle: 'normal',
 })
 
 globalFontFace('Hubot Sans', {
   src: 'url("/fonts/HubotSansExpanded-Bold.woff2") format("woff2")',
   fontWeight: '700',
+  fontStyle: 'normal',
+})
+
+globalFontFace('Hubot Sans', {
+  src: 'url("/fonts/HubotSansExpanded-Black.woff2") format("woff2")',
+  fontWeight: '900',
   fontStyle: 'normal',
 })
