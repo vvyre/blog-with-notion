@@ -1,21 +1,24 @@
 import { style } from '@vanilla-extract/css'
 import { TYPOGRAPHY } from 'components/basics/typography/typography.css'
+import { TITLES } from 'styles/fonts.css'
 import { vars } from 'styles/themes.css'
 
 export const BASE = style({
   paddingInline: '0',
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.5rem',
+  gap: '0.2rem',
   backgroundColor: vars.color.white,
   width: '100%',
-  padding: '0.75rem 1rem 1rem 1rem',
+  padding: '1rem 1rem 1rem 1rem',
 })
 
 export const SITE_TITLE = style({
-  fontSize: TYPOGRAPHY.XXXL.fontSize,
-  fontWeight: 500,
+  fontSize: TYPOGRAPHY.XXL.fontSize,
+  fontWeight: 900,
+  fontFamily: TITLES,
   color: vars.color.blacktext,
+  textTransform: 'uppercase',
   lineHeight: 1,
 })
 

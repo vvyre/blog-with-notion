@@ -3,9 +3,8 @@
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useBackgroundStore } from './store'
-import { MONOSPACE, SANS_SERIF } from 'styles/fonts.css'
+import { TITLES } from 'styles/fonts.css'
 import { aws } from 'constants/envs'
-import { vars } from 'styles/themes.css'
 
 export function BackgroundCanvas({ ...props }) {
   const backgroundCanvasRef = useRef<HTMLCanvasElement>(null)
@@ -14,7 +13,7 @@ export function BackgroundCanvas({ ...props }) {
     mY: 0,
   }) //상태로 추적하지 않음
 
-  const { src, PREFERS_BLACK_TEXT } = useBackgroundStore()
+  const { src } = useBackgroundStore()
   const [[width, height], setBodySize] = useState<[number, number]>([0, 0])
 
   useIsomorphicLayoutEffect(() => {
@@ -56,10 +55,10 @@ export function BackgroundCanvas({ ...props }) {
     img.crossOrigin = 'anonymous'
     img.src = src
 
-    let animationFrameId: number
+    let animationFrameId: number = Number.MIN_SAFE_INTEGER
 
     function drawText() {
-      context!.font = `600 0.8rem ${SANS_SERIF}`
+      context!.font = `600 0.8rem ${TITLES}`
       context!.fillStyle = 'white'
       context!.textAlign = 'right'
       context!.textBaseline = 'middle'
@@ -101,8 +100,8 @@ export function BackgroundCanvas({ ...props }) {
       context?.save()
 
       //필터
-      context!.globalAlpha = 0.25 // 반투명도
-      context!.fillStyle = '#404246'
+      context!.globalAlpha = 0.3 // 반투명도
+      context!.fillStyle = '#000000'
       context!.fillRect(0, 0, width, height)
       context?.restore()
 

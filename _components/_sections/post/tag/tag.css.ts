@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { TYPOGRAPHY } from 'components/basics/typography/typography.css'
+import { TITLES } from 'styles/fonts.css'
 import { vars } from 'styles/themes.css'
 
 export const BASE = style({
@@ -8,7 +9,8 @@ export const BASE = style({
   backgroundColor: vars.color.btn_bg,
   color: vars.color.gray,
   fontSize: TYPOGRAPHY.XXS.fontSize,
-  fontWeight: 600,
+  fontWeight: 500,
+  fontFamily: TITLES,
   selectors: {
     '&:before': {
       content: '#',

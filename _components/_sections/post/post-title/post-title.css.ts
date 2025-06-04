@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css'
 import { TYPOGRAPHY } from 'components/basics/typography/typography.css'
 import { NOTION_BLOCK_LAYOUT } from 'components/notion-blocks/block-layout.css'
+import { TITLES } from 'styles/fonts.css'
 import { vars } from 'styles/themes.css'
 
 export const BASE = style([
@@ -44,8 +45,9 @@ export const INFO_BOX = style({
 export const TITLE = style([
   {
     color: vars.color.default,
+    fontFamily: TITLES,
     fontSize: TYPOGRAPHY.XXL.fontSize,
-    fontWeight: 600,
+    fontWeight: 500,
     lineHeight: '1.3',
     wordBreak: 'break-all',
     backgroundColor: 'transparent',
@@ -61,6 +63,7 @@ export const TITLE_ALIGN = style({
 
 export const RELEASED_DATE = style({
   color: vars.color.default,
+  fontFamily: TITLES,
   fontSize: TYPOGRAPHY.M.fontSize,
   fontWeight: 400,
   textAlign: 'left',
