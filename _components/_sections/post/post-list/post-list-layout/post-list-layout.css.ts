@@ -22,7 +22,6 @@ export const POST_LIST_CENTERED = style([
       '(0 <= width <= 600px)': {
         top: 0,
         paddingInline: 0,
-        gap: '0',
         maxWidth: '100%',
       },
     },

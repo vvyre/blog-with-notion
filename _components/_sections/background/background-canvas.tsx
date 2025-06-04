@@ -115,7 +115,7 @@ export function BackgroundCanvas({ ...props }) {
     return () => {
       cancelAnimationFrame(animationFrameId)
     }
-  }, [src, width, height])
+  }, [src, width, height, dpr])
 
   return (
     <canvas
