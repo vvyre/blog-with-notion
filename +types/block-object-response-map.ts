@@ -22,7 +22,6 @@ import type {
   ParagraphBlockObjectResponse,
   PdfBlockObjectResponse,
   QuoteBlockObjectResponse,
-  RichTextItemResponse,
   SyncedBlockBlockObjectResponse,
   TableBlockObjectResponse,
   TableOfContentsBlockObjectResponse,

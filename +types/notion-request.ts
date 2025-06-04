@@ -13,7 +13,7 @@ interface Filter {
   checkbox?: {
     equals: boolean
   }
-  number?: Object
+  number?: object
   contains?: string
   equals?: string
 }

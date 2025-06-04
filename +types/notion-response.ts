@@ -8,7 +8,7 @@ import type { Tag } from './block'
 export interface QueryDatabase {
   object: string
   results: unknown
-  next_cursor: Object | null
+  next_cursor: object | null
   has_more: boolean
   type: string
   request_id: string
@@ -18,11 +18,11 @@ export interface PageFullData {
   id: string
   created_time: string
   last_edited_time: string
-  created_by: Object
-  last_edited_by: Object
-  cover: Object | null
-  icon: Object | null
-  parent: Object
+  created_by: object
+  last_edited_by: object
+  cover: object | null
+  icon: object | null
+  parent: object
   archived: boolean
   properties: PageProperties
   url: string
@@ -58,7 +58,7 @@ export type PageProperties = {
   }
   summary: { rich_text: RichText[] }
   slug: { rich_text: RichText[] }
-  published: {}
+  published: object
   thumbnail: { thumbnail: [] }
   tags: { multi_select: Tag[] }
   ID: {
@@ -74,13 +74,13 @@ export type PageMetaDataResponse = {
   meta: PageObjectResponse
 }
 
-export type PageObject = {
+export type Pageobject = {
   properties: PageProperties
   last_edited_time: string
 } & GetPageResponse
 
-export type PostListObject = PageObject[]
+export type PostListobject = Pageobject[]
 
-export type ExtendedPostListObject = Partial<
-  PostListObject & { properties: PageProperties }
+export type ExtendedPostListobject = Partial<
+  PostListobject & { properties: PageProperties }
 >[]
