@@ -83,9 +83,9 @@ export const ITALIC = style({
 })
 
 export const CODE = style({
-  verticalAlign: 'text-top',
-  fontSize: '0.715rem',
-  padding: '0.2rem 0.5rem 0.2rem 0.5rem',
+  verticalAlign: 'text-bottom',
+  fontSize: '0.73rem',
+  padding: '0.2rem 0.35rem 0.15rem 0.35rem',
   letterSpacing: '0.02rem',
   fontWeight: 500,
   marginRight: '0.15rem',
