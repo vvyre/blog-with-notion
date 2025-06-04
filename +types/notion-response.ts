@@ -74,13 +74,13 @@ export type PageMetaDataResponse = {
   meta: PageObjectResponse
 }
 
-export type Pageobject = {
+export type PageObject = {
   properties: PageProperties
   last_edited_time: string
 } & GetPageResponse
 
-export type PostListobject = Pageobject[]
+export type PostListObject = PageObject[]
 
-export type ExtendedPostListobject = Partial<
-  PostListobject & { properties: PageProperties }
+export type ExtendedPostListObject = Partial<
+  PostListObject & { properties: PageProperties }
 >[]
