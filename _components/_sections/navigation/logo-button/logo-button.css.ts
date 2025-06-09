@@ -16,7 +16,8 @@ export const LOGO = style([
     border: 'none',
     selectors: {
       '&:hover': {
-        outline: `1px solid ${vars.color.highlight}`,
+        outline: `0.1rem solid ${vars.color.highlight}`,
+        outlineOffset: '0.2rem',
       },
     },
   },
@@ -28,7 +29,7 @@ const BASE = style({
   justifyContent: 'center',
   width: 'fit-content',
   height: 'fit-content',
-  outline: `1px solid transparent`,
+  outline: `0.1rem solid transparent`,
   borderRadius: '100%',
   cursor: 'pointer',
 })
@@ -59,11 +60,12 @@ export const MENU_GITHUB = style({
   borderRadius: '1.75rem',
   backgroundColor: 'transparent',
   fontWeight: 700,
-  outline: `1px solid transparent`,
+  outline: `0.1rem solid transparent`,
   transition: 'outline 0.1s ease-out',
   selectors: {
     '&:hover': {
-      outline: `1px solid ${vars.color.theme}`,
+      outline: `0.1rem solid ${vars.color.theme}`,
+      outlineOffset: '0.2rem',
     },
   },
 })

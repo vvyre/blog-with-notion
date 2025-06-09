@@ -10,14 +10,15 @@ export const BASE = style([
     margin: '1rem 1.25rem 1rem 1.25rem',
     padding: vars.padding.card,
     borderRadius: vars.border.radius.card,
-    border: '1px solid transparent',
+    border: 'none',
     '@media': {
       '(0 <= width <= 430px)': {
         borderRadius: 0,
       },
       '(hover: hover) and (pointer: fine)': {
         ':hover': {
-          border: `1px solid ${vars.color.highlight}`,
+          outline: `0.1rem solid ${vars.color.highlight}`,
+          outlineOffset: '0.2rem',
         },
       },
     },

@@ -4,7 +4,6 @@ import { View } from 'components/basics/view/view'
 import { useScrollPosition } from 'hooks/use-scroll-position'
 import { useRandomBackground } from 'utils/block-processing/get-random-background'
 import { BASE, INNER } from './reading-position.css'
-
 import { useReadingPositionStore } from './store'
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
@@ -17,7 +16,7 @@ export function ReadingPosition() {
     resetRefs()
   }, [path])
 
-  const [pos, _, height] = useScrollPosition(scrollHeightRef, anchorRef, 15)
+  const [pos, , height] = useScrollPosition(scrollHeightRef, anchorRef, 15)
 
   //round, toFixed로 스크롤 끝단에서의 감성 조정
   //완전 끝까지 다 스크롤하지 않아도 글을 다 읽었으면 원을 다 채울 수 있도록

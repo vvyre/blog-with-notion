@@ -5,7 +5,7 @@ export const BACK_BUTTON_BASE = style({
   padding: '0.1rem 0.5rem 0.1rem 0.5rem',
   backgroundColor: vars.color.btn_bg,
   borderRadius: '',
-  border: '1px solid transparent',
+  border: 'none',
   '@media': {
     '(hover: hover) and (pointer: fine)': {
       ':hover': {
