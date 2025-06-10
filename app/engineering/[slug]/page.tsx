@@ -3,7 +3,7 @@ import { getTitle } from 'utils/block-processing/get-title'
 import { parsedSlug } from 'utils/block-processing/parsed-slug'
 import { meta } from 'constants/meta'
 import { getCachedPostList, getPost, getPostMetaData } from 'utils/fetch/notion'
-import { PostTitle } from 'components/_sections/post/post-title/post-title'
+import { PostHeader } from 'components/_sections/post/post-header/post-header'
 import { Spacing } from 'components/basics/spacing/spacing'
 import { processedBlock } from 'utils/block-processing/process-block'
 import { View } from 'components/basics/view/view'
@@ -79,7 +79,7 @@ export default async function Post({ params }: PostPageProps) {
   return (
     <View className={POST_LAYOUT}>
       <PostBorder>
-        <PostTitle {...meta} />
+        <PostHeader {...meta} />
         <RenderBlocks blocks={blocks} />
         <View className={NOTION_PARAGRAPH_BLOCK_LAYOUT}>
           <Spacing size="3rem" dir="vert" />

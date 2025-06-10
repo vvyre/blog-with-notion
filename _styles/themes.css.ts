@@ -1,9 +1,10 @@
 import { createGlobalTheme, createGlobalThemeContract } from '@vanilla-extract/css'
 
 const RADIUS = {
-  card: '0m',
-  btn_square: '0',
-  btn_round: '2rem',
+  card: '16px',
+  list: '12px',
+  btn_square: '8px',
+  btn_round: '20px',
 }
 
 const PADDING = {
@@ -68,6 +69,7 @@ export const vars = createGlobalThemeContract({
   border: {
     radius: {
       card: 'border-radius-card',
+      list: 'border-radius-list',
       btn_square: 'border-radius-btn-square',
       btn_round: 'border-radius-btn-round',
     },
@@ -77,7 +79,7 @@ const COLORS_COMMON = {
   background_filter: 'oklch(0.4695 0.0062 247.96 / 0.5)',
   white: 'oklch(1.0000 0.0000 0.00)',
   whitegray: 'oklch(0.975 0 975)',
-  lightgray: 'oklch(0.95 0 95)',
+  lightgray: 'oklch(0.92 0 95)',
   blacktext: 'oklch(0.4386 0 0)',
   highlight: 'oklch(0.5868 0.2043 256.27)',
   nav_bg: 'transparent',
@@ -137,7 +139,7 @@ const COLORS_DARK = {
   b2: 'oklch(0.3942 0 0)',
   b3: 'oklch(0.5103 0 0)',
   b4: 'oklch(0.3791 0 0 / 50%)',
-  btn_bg: 'oklch(0.2618 0.0063 260.61 / 0.5)',
+  btn_bg: 'oklch(0.25 0.0063 250 / 0.5)',
 } as const
 
 const NOTION_COLORS_DARK = {
