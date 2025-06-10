@@ -10,7 +10,7 @@ export const BASE = style({
   border: `1px solid transparent`,
   backgroundColor: vars.color.btn_bg,
   backgroundBlendMode: 'exclusion',
-  color: vars.color.gray,
+  color: vars.color.default,
   '@media': {
     '(hover: hover) and (pointer: fine)': {
       ':hover': {
