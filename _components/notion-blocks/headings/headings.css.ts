@@ -5,7 +5,9 @@ import { TYPOGRAPHY } from 'components/basics/typography/typography.css'
 export const BASE = style([
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
   {
-    verticalAlign: 'middle',
+    marginLeft: '-1.25rem',
+    display: 'flex',
+    justifyContent: 'flex-start',
     flexWrap: 'nowrap',
   },
 ])

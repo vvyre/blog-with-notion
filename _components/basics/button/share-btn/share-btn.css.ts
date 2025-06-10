@@ -3,20 +3,31 @@ import { vars } from 'styles/themes.css'
 import { MONOSPACE } from 'styles/fonts.css'
 
 export const SHARE_BTN_BASE = style({
-  display: 'inline-block',
-  verticalAlign: 'text-bottom',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '1rem',
   height: 'auto',
-  width: '1.35rem',
-  marginLeft: '0.33rem',
+  marginLeft: '0',
   padding: 0,
   border: 'none',
   backgroundColor: 'transparent',
   cursor: 'pointer',
+  marginRight: '0.25rem',
+  '@media': {
+    '(0 <= width <= 42rem)': {
+      transform: 'translateX(0)',
+    },
+  },
 })
 
 export const PARAGRAPH_SHARE = style({
   fontFamily: MONOSPACE,
   fontWeight: '700',
+  display: 'inline-flex',
+  height: '1rem',
+  alignItems: 'center',
+  justifyContent: 'center',
   fontFeatureSettings: '"calt" "case"',
   color: vars.color.default,
 

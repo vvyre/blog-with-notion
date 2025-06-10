@@ -1,5 +1,5 @@
 import { Heading } from 'components/basics/typography/heading/heading'
-import { BASE, HEADING_1 } from './headings.css'
+import { HEADING_1 } from './headings.css'
 import type { NotionComponentProps } from 'types/block'
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
 import { ShareBtn } from 'components/basics/button/share-btn/share-btn'
@@ -13,9 +13,9 @@ export function Heading_1({ block }: NotionComponentProps<'heading_1'>) {
     <>
       <a id={cleanUrl(block.heading_1.rich_text[0].plain_text)} aria-hidden="true" />
 
-      <Heading as="h2" className={[BASE, HEADING_1].join(' ')}>
-        {TITLE}
+      <Heading as="h2" className={HEADING_1}>
         <ShareBtn subtitle={block.heading_1.rich_text[0].plain_text} />
+        {TITLE}
       </Heading>
     </>
   )
