@@ -19,25 +19,8 @@ export const BASE = style([
   },
 ])
 
-export const BACK_BUTTON_PLACEMENT = style({
-  gridRow: 1,
-  gridColumn: 3,
-  marginBottom: '3rem',
-  '@media': {
-    'screen and (max-width: 768px)': {
-      gridRow: 1,
-      gridColumn: 1,
-    },
-  },
-})
-
-export const BACK_BUTTON_STYLE_VARIANT = style({
-  fontWeight: 400,
-  fontSize: '1.75rem',
-})
-
 export const INFO_BOX = style({
-  margin: '2.5rem 0.5rem 2.5rem 0.5rem',
+  margin: '0 0.5rem 3rem 0.5rem',
   width: '100%',
   maxWidth: '62rem',
 })

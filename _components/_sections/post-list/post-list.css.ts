@@ -21,7 +21,7 @@ export const POST_LINK = style({
   display: 'flex',
   width: '100%',
   color: vars.color.postListTitleText,
-  borderRadius: vars.border.radius.card,
+  borderRadius: vars.border.radius.list,
   zIndex: '9',
   backgroundColor: 'transparent',
   backdropFilter: 'blur(4px)', //ios safari 9, chrome 76 and edge(2019), samsung in-app browser 12.0 (2020), firefox 103 (2022)

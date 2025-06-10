@@ -6,7 +6,7 @@ import { BASE } from './github.css'
 export function GithubLink() {
   return (
     <Txt as="a" href="https://github.com/vvyre" target="_blank" className={BASE}>
-      <GitHubLogoIcon color={vars.color.blacktext} />
+      <GitHubLogoIcon color={vars.color.white} />
     </Txt>
   )
 }

@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { RELEASED_DATE } from '../post-list/post-list.css'
+import { RELEASED_DATE } from '../../post-list/post-list.css'
 import { TYPOGRAPHY } from 'components/basics/typography/typography.css'
 import { vars } from 'styles/themes.css'
 

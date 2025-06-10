@@ -3,7 +3,7 @@ import { Heading } from 'components/basics/typography/heading/heading'
 import { getTitle } from 'utils/block-processing/get-title'
 import { Txt } from 'components/basics/typography/txt/txt'
 import { View } from 'components/basics/view/view'
-import { BASE, TITLE, SUMMARY, INFO_BOX, TITLE_ALIGN } from './post-title.css'
+import { BASE, TITLE, SUMMARY, INFO_BOX, TITLE_ALIGN } from './post-header.css'
 import { getSummary } from 'utils/block-processing/get-summary'
 import { PageObject } from 'types/notion-response'
 import { CurrentPostContext } from 'components/context/current-post-provider'
@@ -17,7 +17,7 @@ import { getTags } from 'utils/block-processing/get-tags'
 import { Tag } from '../tag/tag'
 import { TagBase } from '../tag/tag-base'
 
-export function PostTitle({ ...meta }: PageObject) {
+export function PostHeader({ ...meta }: PageObject) {
   const { setCurrentPost } = useContext(CurrentPostContext)
   const title = getTitle(meta)
   const summary = getSummary(meta)
@@ -35,7 +35,7 @@ export function PostTitle({ ...meta }: PageObject) {
         <Btn as="Link" href={'/'} className={BACK_BUTTON_BASE}>
           <Txt as="span">←</Txt>
         </Btn>
-        <Spacing size="3rem" />
+        <Spacing size="2rem" />
         <View className={TITLE_ALIGN}>
           <Txt as="p" className={SUMMARY}>
             {rel_date}

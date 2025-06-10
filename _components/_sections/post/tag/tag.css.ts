@@ -4,7 +4,7 @@ import { vars } from 'styles/themes.css'
 
 export const BASE = style({
   padding: '0.1rem 0.5rem 0.1rem 0.5rem',
-  borderRadius: '0',
+  borderRadius: vars.border.radius.btn_square,
   backgroundColor: vars.color.btn_bg,
   color: vars.color.default,
   fontSize: TYPOGRAPHY.XXS.fontSize,
