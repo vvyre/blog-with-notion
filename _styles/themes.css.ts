@@ -75,8 +75,10 @@ export const vars = createGlobalThemeContract({
     },
   },
 })
-const COLORS_COMMON = {
+export const COLORS_COMMON = {
   background_filter: 'oklch(0.4695 0.0062 247.96 / 0.5)',
+  backgroundLight: 'oklch(0.9801 0 0)',
+  backgroundDark: 'oklch(0.3942 0 0)',
   white: 'oklch(1.0000 0.0000 0.00)',
   whitegray: 'oklch(0.975 0 975)',
   lightgray: 'oklch(0.92 0 95)',

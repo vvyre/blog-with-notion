@@ -17,8 +17,7 @@ import { ArticleRecommend } from 'components/_sections/post/article-recommend/ar
 import { POST_LAYOUT } from 'components/_sections/background/background.css'
 import { PostBorder } from 'components/_sections/post/post-border/post-border'
 import { Footer } from 'components/_sections/footer/footer'
-import { Metadata, Viewport } from 'next'
-import { vars } from 'styles/themes.css'
+import { Metadata } from 'next'
 
 export interface PostPageProps {
   params: Promise<{
@@ -60,12 +59,6 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       images: meta.openGraph.images.src,
       siteName: meta.openGraph.title,
     },
-  }
-}
-
-export async function generateViewport(): Promise<Viewport> {
-  return {
-    themeColor: vars.color.default,
   }
 }
 

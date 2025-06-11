@@ -8,22 +8,21 @@ import 'components/notion-blocks/numbered-list-item/ol-global.css'
 import 'components/notion-blocks/bulleted-list-item/ul-global.css'
 
 import { meta } from 'constants/meta'
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import { View } from 'components/basics/view/view'
 import { site_env } from 'constants/envs'
 import { Providers } from 'components/providers'
 import { Navigation } from 'components/_sections/navigation/navigation'
 import { BackgroundControl } from 'components/_sections/background/background-control'
 import { getBackgroundImgs } from 'utils/fetch/get-background-imgs'
-import { vars } from 'styles/themes.css'
-
-export const viewport: Viewport = {
-  themeColor: vars.color.default,
-}
+import { COLORS_COMMON } from 'styles/themes.css'
 
 export const metadata: Metadata = {
   ...meta,
-
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: COLORS_COMMON.backgroundLight },
+    { media: '(prefers-color-scheme: dark)', color: COLORS_COMMON.backgroundDark },
+  ],
   openGraph: {
     ...meta.openGraph,
     images: meta.openGraph.images.src,
