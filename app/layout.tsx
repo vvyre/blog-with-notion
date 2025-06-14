@@ -51,13 +51,13 @@ export default async function RootLayout({
 
   return (
     <html lang="ko">
-      <Providers>
-        <View as="body">
+      <View as="body">
+        <Providers>
           <Navigation />
           <BackgroundControl imgSrcList={imgSrcList} />
           {children}
-        </View>
-      </Providers>
+        </Providers>
+      </View>
     </html>
   )
 }
