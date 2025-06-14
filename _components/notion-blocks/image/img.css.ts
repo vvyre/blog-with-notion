@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import {
+  NOTION_BLOCK_LAYOUT,
   NOTION_IMG_BLOCK_LAYOUT,
   NOTION_PARAGRAPH_BLOCK_LAYOUT,
 } from '../block-layout.css'
