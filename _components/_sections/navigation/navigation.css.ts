@@ -4,20 +4,28 @@ import { vars } from 'styles/themes.css'
 import { MONOSPACE } from 'styles/fonts.css'
 
 export const BASE = style({
-  height: '3rem',
-  width: '100%',
+  height: '100dvh',
+  width: '3rem',
+  borderRight: `0.1rem solid transparent`,
   zIndex: '99999',
-  padding: '0.4rem 2rem 0.4rem 2rem',
-  position: 'sticky',
+  padding: '0.4rem 1.25rem 0.4rem 1.25rem',
+  position: 'fixed',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
-  top: '0',
+  justifyContent: 'flex-start',
+  left: '0',
+  top: 0,
   backgroundColor: 'transparent',
+  borderRadius: 0,
   '@media': {
     '(0 <= width <= 430px)': {
-      bottom: '0',
-      padding: '0.4rem 1.5rem 0.4rem 1.5rem',
+      borderRight: `none`,
+      borderTop: `0.1rem solid ${vars.color.default}`,
+      top: 'calc(100% - 2.5rem)',
+      height: '2.5rem',
+      width: '100%',
+      flexDirection: 'row',
+      padding: '1rem',
     },
   },
 })
@@ -26,6 +34,7 @@ export const FILTER_VARIANT = styleVariants({
   isPost: {
     background: vars.color.b2,
     color: vars.color.default,
+    borderRight: `0.1rem solid ${vars.color.default}`,
   },
 })
 

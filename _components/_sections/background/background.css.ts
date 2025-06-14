@@ -30,7 +30,8 @@ export const LAYOUT_INNER = style([
 ])
 
 export const POST_LAYOUT = style({
-  width: '100%',
+  width: 'calc(100% - 3rem)',
+  transform: 'translateX(3rem)',
   height: 'auto',
   position: 'relative',
   display: 'flex',
@@ -38,6 +39,12 @@ export const POST_LAYOUT = style({
   justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: 'transparent',
+  '@media': {
+    '(0 <= width <= 430px)': {
+      width: '100%',
+      transform: 'translateX(0)',
+    },
+  },
 })
 
 export const LAYOUT_FILTER = style([
