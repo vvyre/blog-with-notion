@@ -18,6 +18,8 @@ export const vars = createGlobalThemeContract({
   color: {
     theme: 'color-theme',
     background_filter: 'color-background-filter',
+    backgroundLight: 'color-background-light',
+    backgroundDark: 'color-background-dark',
     white: 'color-white',
     whitegray: 'color-whitegray',
     lightgray: 'color-lightgray',
