@@ -4,37 +4,43 @@ import { vars } from 'styles/themes.css'
 import { MONOSPACE } from 'styles/fonts.css'
 
 export const BASE = style({
-  height: '100dvh',
-  width: '3rem',
-  borderRight: `0.1rem solid transparent`,
+  backgroundColor: vars.color.b2,
   zIndex: '99999',
-  padding: '0.4rem 1.25rem 0.4rem 1.25rem',
   position: 'fixed',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
   left: '0',
   top: 0,
-  backgroundColor: 'transparent',
-  borderRadius: 0,
   '@media': {
     '(0 <= width <= 430px)': {
-      borderRight: `none`,
-      borderTop: `0.1rem solid ${vars.color.default}`,
-      top: 'calc(100% - 2.5rem)',
-      height: '2.5rem',
+      border: `none`,
       width: '100%',
+      top: 'calc(100% - 4rem)',
       flexDirection: 'row',
-      padding: '1rem',
     },
   },
 })
 
-export const FILTER_VARIANT = styleVariants({
+export const NAV_FLEX = styleVariants({
   isPost: {
-    background: vars.color.b2,
     color: vars.color.default,
-    borderRight: `0.1rem solid ${vars.color.default}`,
+    borderRadius: vars.border.radius.card,
+    height: 'calc(100dvh - 1rem)',
+    width: '5rem',
+    padding: '1rem',
+    margin: '0.5rem',
+    backgroundColor: vars.color.b1,
+    '@media': {
+      '(0 <= width <= 430px)': {
+        borderRadius: vars.border.radius.card,
+        height: '3rem',
+        width: '100%',
+        padding: '0.25rem',
+        margin: '0.5rem',
+        border: `none`,
+      },
+    },
   },
 })
 
@@ -66,15 +72,19 @@ export const BTN_WRAPPER = style({
   maxWidth: '10vw',
 })
 
-export const POST_TITLE_WRAPPER = style([
+export const MENU_WRAPPER = style([
   {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
+    height: '100%',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
     color: vars.color.default,
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
       '(0 <= width <= 430px)': {
+        width: '100%',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         fontSize: TYPOGRAPHY.S.fontSize,
       },
     },
@@ -92,12 +102,12 @@ export const NAV_BTN = style([
     wordSpacing: '-0.2rem',
     letterSpacing: '0.03rem',
     color: vars.color.default,
-    padding: vars.padding.btn_square,
+    padding: vars.padding.card,
     fontSize: '0.85rem',
     textAlign: 'center',
     backgroundColor: 'transparent',
     border: 'none',
-    borderRadius: vars.border.radius.btn_square,
+    borderRadius: vars.border.radius.card,
     outline: 'none',
     selectors: {
       '&:hover': {

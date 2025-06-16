@@ -30,8 +30,8 @@ export const LAYOUT_INNER = style([
 ])
 
 export const POST_LAYOUT = style({
-  width: 'calc(100% - 3rem)',
-  transform: 'translateX(3rem)',
+  width: 'calc(100% - 6rem)',
+  transform: 'translateX(6rem)',
   height: 'auto',
   position: 'relative',
   display: 'flex',

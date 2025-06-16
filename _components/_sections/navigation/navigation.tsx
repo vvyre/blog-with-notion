@@ -1,6 +1,6 @@
 'use client'
 import { Btn } from 'components/basics/button/btn'
-import { BASE, FILTER_VARIANT, NAV, NAV_BTN, POST_TITLE_WRAPPER } from './navigation.css'
+import { BASE, NAV_FLEX, HIDE, NAV, NAV_BTN, MENU_WRAPPER } from './navigation.css'
 import { View } from 'components/basics/view/view'
 import { useContext, useEffect } from 'react'
 import { CurrentPostContext } from 'components/context/current-post-provider'
@@ -16,20 +16,20 @@ export function Navigation() {
   const { isPost } = useCategory()
 
   const TEXT_COLOR = theme === 'light' ? 'DARK' : 'LIGHT'
-  const NAV_TEXT_STYLE = [NAV_BTN, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ')
+  const NAV_MENU = [NAV_BTN, TEXT_COLOR_THEME_VARIANT[TEXT_COLOR]].join(' ')
 
   useEffect(() => {
     if (!isPost) setCurrentPost(null)
   }, [isPost, setCurrentPost])
 
   return (
-    <View as="nav" className={[BASE, isPost && FILTER_VARIANT.isPost].join(' ')}>
-      <View as="div" className={NAV}>
-        <View className={POST_TITLE_WRAPPER}>
+    <View as="nav" className={isPost ? BASE : HIDE}>
+      <View as="div" className={[NAV, isPost && NAV_FLEX.isPost].join(' ')}>
+        <View className={MENU_WRAPPER}>
           {isPost && (
             <>
               <Spacing size="0.15rem" dir="hori" />
-              <Btn onClick={() => toggle()} className={NAV_TEXT_STYLE}>
+              <Btn onClick={() => toggle()} className={NAV_MENU}>
                 {theme === 'light' ? (
                   <Half2Icon width="1.1rem" height="1.1rem" />
                 ) : (
