@@ -16,7 +16,7 @@ globalStyle('html', {
 globalStyle('body', {
   width: '100%',
   height: 'auto',
-  minHeight: 'calc(100dvh + 3rem)',
+  minHeight: '100dvh',
   color: vars.color.default,
   backgroundColor: 'transparent',
   margin: '0',

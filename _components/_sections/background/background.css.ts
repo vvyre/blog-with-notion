@@ -15,6 +15,7 @@ export const LAYOUT_BG = style([
   {
     position: 'relative',
     width: '100%',
+    overflow: 'hidden',
     height: '100dvh',
     backgroundColor: 'transparent',
   },
