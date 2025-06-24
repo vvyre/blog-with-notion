@@ -3,20 +3,29 @@ import { TYPOGRAPHY } from 'components/basics/typography/typography.css'
 import { vars } from 'styles/themes.css'
 import { MONOSPACE } from 'styles/fonts.css'
 
+export const BACKGROUND_BASE = styleVariants({
+  isPost: {
+    backgroundColor: 'transparent',
+  },
+  isMain: {
+    backgroundColor: 'transparent',
+  },
+})
 export const BASE = style({
-  backgroundColor: vars.color.b2,
   zIndex: '99999',
   position: 'fixed',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
   left: '0',
-  top: 0,
+  opacity: 0.85,
+  top: '50%',
+  transform: 'translateY(-50%)',
   '@media': {
     '(0 <= width <= 430px)': {
       border: `none`,
       width: '100%',
-      top: 'calc(100% - 4rem)',
+      top: 'calc(100% - 5rem)',
       flexDirection: 'row',
     },
   },
@@ -26,9 +35,9 @@ export const NAV_FLEX = styleVariants({
   isPost: {
     color: vars.color.default,
     borderRadius: vars.border.radius.card,
-    height: 'calc(100dvh - 1rem)',
-    width: '5rem',
-    padding: '1rem',
+    height: '100%',
+    width: '3.5rem',
+    padding: '1rem 0.25rem 1rem 0.25rem',
     margin: '0.5rem',
     backgroundColor: vars.color.b1,
     '@media': {
@@ -36,8 +45,8 @@ export const NAV_FLEX = styleVariants({
         borderRadius: vars.border.radius.card,
         height: '3rem',
         width: '100%',
-        padding: '0.25rem',
-        margin: '0.5rem',
+        padding: '0.25rem 1rem 0.25rem 1rem',
+        marginInline: '0.75rem',
         border: `none`,
       },
     },
@@ -46,7 +55,6 @@ export const NAV_FLEX = styleVariants({
 
 export const NAV = style({
   display: 'flex',
-  flexWrap: 'nowrap',
   justifyContent: 'center',
   alignItems: 'center',
 })
@@ -75,15 +83,20 @@ export const BTN_WRAPPER = style({
 export const MENU_WRAPPER = style([
   {
     display: 'flex',
+    flexDirection: 'column',
     height: '100%',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
+    width: '100%',
+    gap: '0.25rem',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
     color: vars.color.default,
     fontSize: TYPOGRAPHY.L.fontSize,
     '@media': {
       '(0 <= width <= 430px)': {
         width: '100%',
-        justifyContent: 'space-between',
+        gap: 0,
+        flexDirection: 'row-reverse',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         fontSize: TYPOGRAPHY.S.fontSize,
       },
@@ -93,7 +106,7 @@ export const MENU_WRAPPER = style([
 
 export const NAV_BTN = style([
   {
-    display: 'flex',
+    display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
     fontWeight: 600,
@@ -102,12 +115,12 @@ export const NAV_BTN = style([
     wordSpacing: '-0.2rem',
     letterSpacing: '0.03rem',
     color: vars.color.default,
-    padding: vars.padding.card,
+    padding: '0.5rem 0.75rem 0.5rem 0.75rem',
     fontSize: '0.85rem',
     textAlign: 'center',
     backgroundColor: 'transparent',
     border: 'none',
-    borderRadius: vars.border.radius.card,
+    borderRadius: vars.border.radius.list,
     outline: 'none',
     selectors: {
       '&:hover': {
