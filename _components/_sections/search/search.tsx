@@ -15,9 +15,6 @@ export function Search() {
         appId={appId}
         indexName={indexName}
         apiKey={apiKey}
-        searchParameters={{
-          facetFilters: ['language:ko', 'version:1.0.0'],
-        }}
         insights
       />
     </View>
