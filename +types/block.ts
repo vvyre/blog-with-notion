@@ -6,12 +6,12 @@ import type {
   BlockObjectResponseMap,
   EntireNotionBlockResponse,
 } from './block-object-response-map'
-import { blockComponentMap } from '../_components/notion-blocks/block-component-map'
 import { vars } from '../_styles/themes.css'
 
-/** 타입 가드  */
-export function isBlockType(type: string): type is keyof typeof blockComponentMap {
-  return type in blockComponentMap
+export type TraversableBlock = WithChildren<BlockObjectResponse>
+
+export type BlockWithRichText = TraversableBlock & {
+  [K in TraversableBlock['type']]: { rich_text: RichTextItemResponse[] }
 }
 
 export type NotionBlock = BlockObjectResponseMap[keyof BlockObjectResponseMap]
@@ -20,8 +20,8 @@ export type ExtendedRichText<T> = {
   [K in keyof T]: T[K] extends RichTextItemResponse
     ? RichTextItemResponse
     : T[K] extends object
-      ? ExtendedRichText<T[K]>
-      : T[K]
+    ? ExtendedRichText<T[K]>
+    : T[K]
 }
 
 export type NotionComponentProps<T extends keyof BlockObjectResponseMap> = {
@@ -31,9 +31,7 @@ export type NotionComponentProps<T extends keyof BlockObjectResponseMap> = {
 export type WithChildren<T extends BlockObjectResponse> = T & {
   has_children: true
 } & {
-  [K in keyof T]: K extends T['type']
-    ? T[K] & { children: EntireNotionBlockResponse[] }
-    : T[K]
+  [K in keyof T]: K extends T['type'] ? T[K] & { children: TraversableBlock[] } : T[K]
 }
 
 export interface Tag {

@@ -1,15 +1,15 @@
 import { Block } from './block'
 import { Fragment } from 'react'
-import { EntireNotionBlockResponse } from 'types/block-object-response-map'
+import { TraversableBlock } from 'types/block'
 
 export function ChildrenBlocks({
   childrenBlocks,
 }: {
-  childrenBlocks: EntireNotionBlockResponse[]
+  childrenBlocks: TraversableBlock[]
 }) {
   return (
     <Fragment>
-      {childrenBlocks?.map((block: EntireNotionBlockResponse) => {
+      {childrenBlocks?.map((block: TraversableBlock) => {
         return <Block key={block.id} block={block} />
       })}
     </Fragment>

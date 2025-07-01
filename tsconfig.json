@@ -25,7 +25,8 @@
       "stores/*": ["./_stores/*"],
       "utils/*": ["./_utils/*"],
       "types/*": ["./+types/*"],
-      "#/*": ["./public/*"]
+      "#/*": ["./public/*"],
+      "scripts": ["./scripts/*"]
     },
     "target": "ES2017"
   },

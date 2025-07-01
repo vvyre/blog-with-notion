@@ -15,21 +15,15 @@ import { Providers } from 'components/providers'
 import { Navigation } from 'components/_sections/navigation/navigation'
 import { BackgroundControl } from 'components/_sections/background/background-control'
 import { getBackgroundImgs } from 'utils/fetch/get-background-imgs'
-import { COLORS_COMMON } from 'styles/themes.css'
 
 export const metadata: Metadata = {
   ...meta,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: COLORS_COMMON.backgroundLight },
-    { media: '(prefers-color-scheme: dark)', color: COLORS_COMMON.backgroundDark },
-  ],
   openGraph: {
     ...meta.openGraph,
     images: meta.openGraph.images.src,
     siteName: meta.openGraph.title,
   },
   alternates: {
-    canonical: site_env.root,
     types: {
       'application/rss+xml': [{ url: 'feed.xml', title: 'RSS' }],
     },

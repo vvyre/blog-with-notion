@@ -1,10 +1,6 @@
 import { Block } from 'components/notion-blocks/block'
-import type { EntireNotionBlockResponse } from 'types/block-object-response-map'
+import { TraversableBlock } from 'types/block'
 
-export default function RenderBlocks({
-  blocks,
-}: {
-  blocks: EntireNotionBlockResponse[]
-}) {
-  return blocks.map((b: EntireNotionBlockResponse) => <Block key={b.id} block={b} />)
+export default function RenderBlocks({ blocks }: { blocks: TraversableBlock[] }) {
+  return blocks.map((b: TraversableBlock) => <Block key={b.id} block={b} />)
 }
