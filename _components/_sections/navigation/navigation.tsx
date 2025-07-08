@@ -15,9 +15,9 @@ import { CurrentPostContext } from 'components/context/current-post-provider'
 import { useCategory } from 'hooks/use-category'
 import { ThemeContext } from 'components/context/theme-provider'
 import { TEXT_COLOR_THEME_VARIANT } from 'components/basics/typography/typography.css'
-import { Half2Icon, MagnifyingGlassIcon, SunIcon } from '@radix-ui/react-icons'
+import { Half2Icon, SunIcon } from '@radix-ui/react-icons'
 import { useBooleanState } from '@frfla/react-hooks'
-import { Search } from '../search/search'
+// import { Search } from '../search/search'
 
 export function Navigation() {
   const [hydrated, setHydrated] = useState<boolean>(false)
@@ -39,16 +39,12 @@ export function Navigation() {
   if (!hydrated) return null
   return (
     <>
-      {isSearching && <Search />}
       <View
         as="nav"
         className={[BASE, BACKGROUND_BASE[isPost ? 'isPost' : 'isMain']].join(' ')}
       >
         <View as="div" className={[NAV, NAV_FLEX.isPost].join(' ')}>
           <View className={MENU_WRAPPER}>
-            <Btn onClick={() => toggleSearch()} className={NAV_MENU}>
-              <MagnifyingGlassIcon width="1.1rem" height="1.1rem" />
-            </Btn>
             <Btn onClick={() => toggle()} className={NAV_MENU}>
               {theme === 'light' ? (
                 <Half2Icon width="1.1rem" height="1.1rem" />
