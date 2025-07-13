@@ -3,7 +3,7 @@
 import { useIsomorphicLayoutEffect } from '@frfla/react-hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useBackgroundStore } from './store'
-import { TITLES } from 'styles/fonts.css'
+import { SANS_SERIF } from 'styles/fonts.css'
 import { aws } from 'constants/envs'
 
 export function BackgroundCanvas({ ...props }) {
@@ -58,7 +58,7 @@ export function BackgroundCanvas({ ...props }) {
     let animationFrameId: number = Number.MIN_SAFE_INTEGER
 
     function drawText() {
-      context!.font = `600 0.8rem ${TITLES}`
+      context!.font = `600 0.8rem ${SANS_SERIF}`
       context!.fillStyle = 'white'
       context!.textAlign = 'right'
       context!.textBaseline = 'middle'
