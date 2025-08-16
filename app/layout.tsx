@@ -47,7 +47,7 @@ export default async function RootLayout({
     <html lang="ko">
       <View as="body">
         <Providers>
-          <Navigation />
+          {/* <Navigation /> */}
           <BackgroundControl imgSrcList={imgSrcList} />
           {children}
         </Providers>
