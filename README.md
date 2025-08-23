@@ -8,3 +8,4 @@
 - 2024.11.24 커밋 컨벤션 변경 (feat/fix/chore/docs/refactor/delete)
 - 2025.01.14 Context → Zustand 마이그레이션 시작
 - 2025.05.24 디렉토리 구조 대폭 변경 및 전체 코드 재포맷
+- 2025.08.23 버전 관리 방법 변경 (`semver` -> `0.YYMMDD.V`)
