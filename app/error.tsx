@@ -1,7 +1,7 @@
 'use client'
 
-import { ErrorFallback } from 'components/basics/util/error-fallback/error-fallback'
-import { View } from 'components/basics/view/view'
+import { ErrorFallback } from 'components/common/util/error-fallback/error-fallback'
+import { View } from 'components/common/view/view'
 import { useEffect } from 'react'
 
 export default function Error({

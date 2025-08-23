@@ -1,7 +1,7 @@
 import { getCachedPostList } from 'utils/fetch/notion'
-import { PostListLayout } from 'components/_sections/post-list/post-list-layout/post-list-layout'
+import { PostListLayout } from 'components/sections/post-list/post-list-layout/post-list-layout'
 import { notion_env } from 'constants/envs'
-import { BackgroundLayout } from 'components/_sections/background/background'
+import { BackgroundLayout } from 'components/sections/background/background'
 
 export const revalidate = 3600
 

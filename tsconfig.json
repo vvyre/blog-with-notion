@@ -18,13 +18,13 @@
       }
     ],
     "paths": {
-      "components/*": ["./_components/*"],
-      "constants/*": ["./_constants/*"],
-      "hooks/*": ["./_hooks/*"],
-      "styles/*": ["./_styles/*"],
-      "stores/*": ["./_stores/*"],
-      "utils/*": ["./_utils/*"],
-      "types/*": ["./+types/*"],
+      "components/*": ["./components/*"],
+      "constants/*": ["./constants/*"],
+      "hooks/*": ["./hooks/*"],
+      "styles/*": ["./styles/*"],
+      "stores/*": ["./stores/*"],
+      "utils/*": ["./utils/*"],
+      "types/*": ["./types/*"],
       "#/*": ["./public/*"],
       "scripts": ["./scripts/*"]
     },
@@ -37,7 +37,7 @@
     ".next/types/**/*.ts",
     ".storybook/stories/**/*.stories.tsx",
     ".storybook/stories/**/*.stories.ts",
-    "_components/tally/tally.jsx"
+    "components/tally/tally.jsx"
   ],
   "exclude": ["node_modules"]
 }
